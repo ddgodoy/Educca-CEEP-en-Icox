@@ -1,0 +1,15 @@
+index:
+  is_secure:   on                # Sólo para usuarios autenticados
+  credentials: [[ alumno, profesor, supervisor ]]
+
+RankingModulo:
+  is_secure:    on
+  credentials: [ supervisor ]
+
+seguimientoTemas:
+  is_secure:    on
+  credentials: [[ profesor, supervisor ]]
+
+all:
+  is_secure:    on
+  credentials:  [[ alumno, profesor, supervisor ]]

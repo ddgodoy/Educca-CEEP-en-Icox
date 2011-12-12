@@ -1,0 +1,7 @@
+index:
+  is_secure:   on                # Sólo para usuarios autenticados
+  credentials: profesor
+
+all:
+  is_secure:    on
+  credentials:  profesor
