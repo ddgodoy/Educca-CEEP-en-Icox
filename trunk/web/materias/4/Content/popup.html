@@ -1,0 +1,37 @@
+﻿<html xmlns:gm xmlns:gmv="urn:schemas-microsoft-com:vml" xmlns:v="urn:schemas-microsoft-com:vml">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2008.
+-->
+ <head> <base target="_blank"> <title>Composica Enterprise Popup</title> <meta http-equiv="content-type" content="text/html; charset=utf-8"> <meta http-equiv="imagetoolbar" content="no">  <link rel="stylesheet" id="oBaseTheme" href="" type="text/css"> <link rel="stylesheet" id="oTheme" href="" type="text/css"> <link rel="stylesheet" id="oRuntimeStyle" href="Runtime/runtime.css" type="text/css"> <link rel="stylesheet" id="oBehaveStyle" href="" type="text/css">  <link rel="stylesheet" id="oCustomRules" href="" type="text/css"> <![if !IE]> <link rel="stylesheet" href="Runtime/adaptie.css" type="text/css"> <script type="text/javascript"src="Runtime/adaptie.js"></script> <script type="text/javascript"src="Runtime/emubehavior.js"></script> <![endif]> <script type="text/javascript"src="Runtime/project.js"></script> <script type="text/javascript"src="Runtime/httpLoader.js"></script> <script type="text/javascript"src="Project/const.js"></script> <script type="text/javascript"src="Runtime/embedPlay.js"></script> <script type="text/javascript"src="Runtime/run.js"></script> <script type="text/javascript"defer>var oArg=dialogArguments,oConfig=oArg.config,sProjectId=oArg.project,oResource=oArg.resource,sId=oResource.getAttribute("id")
+bTestReview=oArg.testReview,oPersist={sId:oArg.persist},sCurrentTheme="@NONE"
+function initLoad(){loadProject(sProjectId,oResource)}
+function loadProject(sId,sResource){var oXML=oConfig
+if(oConfig.firstChild){document.title=oConfig.firstChild.getAttribute("title")
+oTopLevelLayer.runtimeStyle.width="100%"
+oTopLevelLayer.runtimeStyle.height="100%"
+oCustomRules.href=cacheURL(GET_CUSTOM_STYLESHEET+"?project="+encodeURIComponent(sId))
+oBaseTheme.href=cacheURL(GENERIC_REDIRECTOR+"?url="+encodeURIComponent(cacheURL(GET_PROJECT_RESOURCE+"?readonly=1&project="+encodeURIComponent(sProjectId)+"&resource="+encodeURIComponent("../../Themes/baseTheme.css"))))
+if(oResource){loadResource(oResource,true)}else{alert("Recurso no encontrado.")}}else{alert("Proyecto no encontrado.")}}
+function initPage(){if(oArg.matchsize){setTimeout(matchToSize,250)}}
+function loadVariables(){}
+function matchToSize(){if(window.dialogHeight&&window.dialogWidth){var iHDiff=parseInt(window.dialogHeight)-document.body.offsetHeight,iWDiff=parseInt(window.dialogWidth)-document.body.offsetWidth
+oContentArea.style.oveflowY="scroll"
+oContentArea.style.height="99px"
+oContentArea.style.width="99px"
+var iH=oContentArea.scrollHeight,iW=oContentArea.scrollWidth
+oContentArea.style.oveflow="hidden"
+oContentArea.style.height="100%"
+oContentArea.style.width="100%"
+window.dialogWidth=(iW+iWDiff)+"px"
+window.dialogHeight=(iH+iHDiff)+"px"
+while(document.body.offsetHeight>document.body.clientHeight)window.dialogWidth=(parseInt(window.dialogWidth)+4)+"px"
+while(document.body.offsetWidth>document.body.clientWidth)window.dialogHeight=(parseInt(window.dialogHeight)+4)+"px"
+if(dialogArguments.center=="on"){window.dialogLeft=((screen.width-parseInt(window.dialogWidth))/2)+"px"
+window.dialogTop=((screen.height-parseInt(window.dialogHeight))/2)+"px"}}else{resizeTo(document.body.scrollWidth,document.body.scrollHeight)}}
+VarInterface={Init:function(){}}</script> </head> <body> <div id="oTopLevelLayer" class="topLevelLayer"> <gm:contentarea id="oContentArea"> <div id="oDocContent"></div><div id="oMenuContent"></div><div id="oMasterContent"></div> </gm:contentarea> </div> </body> </html>
