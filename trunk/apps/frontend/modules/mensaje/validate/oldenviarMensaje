@@ -1,0 +1,21 @@
+methods:
+  post: [curso, asunto, contenidomsj]
+
+names:
+
+  curso:
+    required:         true
+    validators:       [mensajeValidator]
+
+  asunto:
+    required:         true
+    required_msg:     Debe especificar un asunto
+
+  contenidomsj:
+    required:         true
+    required_msg:     No puede enviar un mensaje vacio
+
+mensajeValidator:
+  class:              myMensajeValidator
+  param:
+    mensajeError:     algo falla
