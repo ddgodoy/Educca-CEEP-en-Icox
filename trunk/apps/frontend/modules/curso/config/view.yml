@@ -1,0 +1,4 @@
+all:
+  components:
+    menu: [menu, variable]
+    menu_top: [menu_top, variable]

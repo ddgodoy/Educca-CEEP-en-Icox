@@ -1,0 +1,23 @@
+index:
+  is_secure:   on
+  credentials: [[ alumno, profesor, supervisor, examinandose ]]
+
+crearEjercicio:
+  is_secure:   on
+  credentials: profesor
+
+editarCuestionCorta:
+  is_secure:   on
+  credentials: profesor
+
+editarCuestionTest:
+  is_secure:   on
+  credentials: profesor
+
+editarEjercicio:
+  is_secure:   on
+  credentials: profesor
+
+all:
+  is_secure:    on
+  credentials:  [[ alumno, profesor, supervisor, administrador, examinandose ]]
