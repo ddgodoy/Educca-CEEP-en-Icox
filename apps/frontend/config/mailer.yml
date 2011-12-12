@@ -1,0 +1,8 @@
+all:
+  mailer: smtp
+  hostname:  mail.adra-online.com
+  port:      2525
+  charset:   utf-8
+  content_type: text/html
+  username: adra+adra-online.com
+  password: Adra2007

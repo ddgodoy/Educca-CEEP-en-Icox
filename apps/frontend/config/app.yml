@@ -1,0 +1,41 @@
+---
+all: 
+  sfSimpleForumPlugin: 
+    forum_name: Foros Academia Ceep
+    display_categories: 1
+    use_feeds: 
+    count_views: 1
+    max_per_block: 10
+    include_breadcrumb: 1
+    breadcrumb_separator: »
+    max_per_page: 10
+    pages_displayed: 5
+    feed_max: 10
+    show_author_details: 1
+  sfSexyButtonPlugin: 
+    stylesheet: /sfSexyButtonPlugin/css/sexy_button
+    div_class: sexy-button-clear
+    button_class: sexy-button
+  captcha: 
+    alphabet: abcdefghjkmnptwx23678
+    length: 6
+  core: 
+    minicial: comercial
+    ainicial: index
+  db: 
+    server: none
+    name: none
+    user: none
+    password: none
+  lms: 
+    nombre:  Plataforma Ceep
+    descripcion: Plataforma online de formacion para oposiciones de oficiales
+    keywords: plataforma, elearning
+    color_top: 326c9e
+  empresa: 
+    nombre: Centro Europeo de Estudios Profesionales
+    cuenta: 0034 4323 89 3000423456
+    email:  administracion@ceepvirtual.com
+    userEmail: administracion@ceepvirtual.com
+    serverEmail: mail.ceepvirtual.com 
+    pwdEmail: Ceep09

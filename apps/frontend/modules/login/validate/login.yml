@@ -1,0 +1,24 @@
+methods:
+  post: [nombreusuario, password]
+
+names:
+  nombreusuario:
+    required:     true
+    required_msg: introduce tu nombre de usuario
+    validators:   [nombreusuarioValidator, usuarioValidator]
+
+  password:
+    required:     true
+    required_msg: introduce tu password
+
+nombreusuarioValidator:
+    class:        sfStringValidator
+    param:
+      min:        5
+      min_error:  el nombre de usuario debe contener al menos 5 caracteres
+
+usuarioValidator:
+    class:         myLoginValidator
+    param:
+      password:    password
+      login_error: la cuenta especificada no existe o ha introducido una contrase&ntilde;a incorrecta

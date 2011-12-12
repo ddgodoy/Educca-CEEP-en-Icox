@@ -1,0 +1,31 @@
+methods:
+  post: [ nombre, precio, pulsadosCursos ]
+names:
+
+  nombre:
+    required:     Yes
+    required_msg: Introduce el nombre del curso
+    validators:   nombreValidator
+
+  precio:
+    required:     Yes
+    required_msg: Introduce el precio del curso
+
+
+  pulsadosCursos:
+    required:     Yes
+    required_msg: Introduce tu ciudad
+    validators:   pulsadosValidator
+
+pulsadosValidator:
+    class:        nuevoModuloValidator
+    param:
+      pulsadosCursos:        pulsadosCursos
+
+nombreValidator:
+    class:      sfStringValidator
+    param:
+      min:        5
+      min_error:  El nombre del m&oacute;dulo no puede tener menos de 4 caracteres
+      max:        40
+      max_error:  El nombre del m&oacute;dulo no puede tener m&aacute;s de 40 caracteres
