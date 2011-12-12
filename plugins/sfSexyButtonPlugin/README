@@ -1,0 +1,80 @@
+= sfSexyButton plugin =
+
+== Overview ==
+
+This plugin help you to create pretty looking textual buttons (with alternate
+pressed state) using CSS.
+
+Dynamic buttons save you heaps of time otherwise
+spent creating graphics and will basically make you a happier person
+at the end of the day.
+
+Original idea by Alex Griffioen from [http://www.oscaralexander.com/tutorials/how-to-make-sexy-buttons-with-css.html].
+
+== Installation ==
+
+To install sfSexyButtonPlugin:
+
+{{{
+php symfony plugin-install http://plugins.symfony-project.com/sfSexyButtonPlugin
+
+php symfony cc
+}}}
+
+You can customize sexy buttons stylesheet per applicaction basis
+Add the following lines to your app.yml and modify them according to your own CSS:
+
+{{{
+  sfSexyButtonPlugin:
+    stylesheet:   /sfSexyButtonPlugin/css/sexy_button
+    div_class:    sexy-button-clear
+    button_class: sexy_button
+}}}
+
+== Usage ==
+
+The sfSexyButton plugin gives you access to set of `sexy_button*` helpers:
+
+{{{
+#!php
+
+<?php use_helper('SexyButton') ?>
+
+<?php
+
+  // single button
+  echo sexy_button_to('Action', 'my_module/my_action');
+
+  // line of buttons
+  echo '<div class="sexy-button-clear">';
+  echo sexy_button_to('Action1', 'my_module/my_action1', 'nodiv=true');
+  echo sexy_button_to('Action2', 'my_module/my_action2', 'nodiv=true' );
+  echo '</div>';
+
+  // javascript
+  echo sexy_button_to_function('Action1', 'alert(1);');
+
+  // AJAX call
+  echo sexy_button_to_remote('AJAX', array( 'url' => 'my_module/my_action1' ));
+
+  // sexy submit button
+  echo form_tag('my_module/action');
+  echo sexy_submit_tag();
+  echo '</form>';
+?>
+
+}}}
+
+== History ==
+
+{{{
+1.0.3 BUGFIX Missing a semi-colon (thanks to Benjamin Meynell)
+1.0.2 Added sexy_reset_tag() and configuration via app.yml
+1.0.1 Added ommited form.onsubmit handler call (thanks to Halil.Koklu)
+1.0.0 Initial release
+}}}
+
+== License ==
+
+For the full copyright and license information, please view the LICENSE
+file that was distributed with this source code.
