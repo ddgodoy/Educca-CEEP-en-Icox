@@ -1,0 +1,87 @@
+sfYzAjaxValidationPlugin:
+
+The sfYzAjaxValidation plugin provides client side validation by using AJAX to access Symfony's native validation code and updating it to the client side. Since the validation is done by Symfony's native validation functions, with the exception of file upload validators, all validators, regardless if it  is a built-in symfony validator or is custom written, should work without any problems. There is no need to rewrite any of the validators into JavaScript as the validation processing is still done on the server.
+
+Setup:
+
+Installation:
+
+	If you have pear installed, goto the home directory of your project in the command line and type:
+
+	php symfony plugin-install http://plugins.symfony-project.com/sfYzAjaxValidationPlugin
+
+	Otherwise, download the latest version in the Wiki and place the sfYzAjaxValidationPlugin folder into the plugins directory of your Symfony project. Now copy the yzAjaxValidation folder located in  sfYzAjaxValidationPlugin\web\js\ into your project's js folder
+
+	
+	Now, from your projects root directory, type the following to clear the cache:
+	
+	symfony cc
+	
+	Installation is now complete!
+
+Setup:
+
+	Enable the yzAjaxValidation module in the settings.yml file of the application that will be using this plugin. Example: file: myproject\apps\backend\config\settings.yml:
+
+... settings ...
+
+dev:
+  .settings:
+    # E_ALL | E_STRICT = 4095
+    error_reporting:        4095
+    web_debug:              on
+    cache:                  off
+    no_script_name:         off
+    etag:                   off
+    enabled_modules:        [default, yzAjaxValidation]
+
+
+... rest of settings file ...
+
+Usage:
+
+	Validation is provided by three helpers:
+
+yzValidatorHelper::form_remote_tag($options = array(), $options_html = array())
+yzValidatorHelper::submit_to_remote($name, $value, $options = array(), $options_html = array())
+yzValidatorHelper::form_tag($url_for_options = '', $options = array())
+
+These static methods can be used in the same way as the symfony helpers of the same name. 
+
+Example:
+
+    <?php  
+      echo yzValidatorHelper::form_remote_tag(array(
+      'update'   => 'comment_edit_section',
+      'url'      => 'xApp_Actions/commentUpdate_?js=on',
+      'complete' =>  visual_effect('highlight', 'post_edit_new_comment', array('duration' => 0.5 )),));
+    ?>
+
+    <div id='comment_edit_content'>
+      <p><label for=''>Comment Text:</label></p>
+      <?php echo form_error("comment_content")?>
+      <?php echo input_tag('comment_content','')?>
+    </div>
+
+   <?php echo submit_tag('submit'); ?>
+  </form>
+
+As one can see, there is no difference between the usage of the Symfony form or javascript helpers and the corresponding  yzValidatorHelper methods.
+
+Optional AJAX options for the validation request can be set in the $options array.  Just prefix the option name with 'yzValidation_' so it is distinguishable from the normal option settings.
+
+ <?php echo 
+    yzValidator form_remote_tag
+    ('Delete this post', array( 'update'=> 'feedback', 
+    'url'=> 'post/delete?id='.$post->getId(), 
+    'yzValidation_loading' => "Element.show('indicator_while_validating)",
+    'yzValidation_complete'=> "Element. hide ('indicator_while_validating')",
+    'loading' => "Element.show('indicator')", 
+    'complete'=> "Element. hide('indicator')", ));
+ ? >
+
+... rest of the form ...
+
+ </form>
+
+In the above example, the 'indicator_while_validating' field will be made visible when validation is in progress. The 'indicator' field will be made visible if validation is successful and the form is being submitted to post/delete. Basically setting the options for the validation request is the same as setting it for the normal remote function helpers. The only difference is that the option name is prefixed with 'yzValidation_'. Even though the form_tag does not usually take ajax options, yzValidatorHelper::form_tag can take yzValidation_ options in its options array.

@@ -1,0 +1,45 @@
+propel:
+
+  sf_simple_forum_category:
+    _attributes:   { phpName: sfSimpleForumCategory, package: plugins.sfSimpleForumPlugin.lib.model }
+    id:
+    name:          varchar(255)
+    stripped_name: varchar(255)
+    description:   longvarchar
+    rank:          integer
+    created_at:
+
+  sf_simple_forum_forum:
+    _attributes:   { phpName: sfSimpleForumForum, package: plugins.sfSimpleForumPlugin.lib.model }
+    id:
+    name:          varchar(255)
+    stripped_name: varchar(255)
+    description:   longvarchar
+    rank:          integer
+    category_id:   { type: integer, foreignTable: sf_simple_forum_category, foreignReference: id, onDelete: cascade }
+    curso_id:      { type: bigint, foreignTable: curso, foreignReference: id, onDelete: cascade }
+    created_at:
+    # performance enhancers
+    nb_posts:      bigint
+    nb_threads:    bigint
+    latest_reply_author_name: varchar(255)
+    latest_replied_at: timestamp
+
+  sf_simple_forum_post:
+    _attributes:   { phpName: sfSimpleForumPost, package: plugins.sfSimpleForumPlugin.lib.model }
+    id:
+    title:         varchar(255)
+    content:       longvarchar
+    is_sticked:    { type: boolean, default: false }
+    user_id:       { type: bigint, foreignTable: usuario, foreignReference: id, onDelete: cascade }
+    forum_id:      { type: integer, foreignTable: sf_simple_forum_forum, foreignReference: id, onDelete: cascade }
+    parent_id:     { type: integer, foreignTable: sf_simple_forum_post, foreignReference: id, onDelete: cascade } # unfortunately, onDelete cascade does not work for self references in Propel, so this will be emulated in the object
+    created_at:
+    # performance enhancers
+    stripped_title: varchar(255)
+    author_name:   varchar(255)
+    nb_replies:    bigint
+    nb_views:      bigint
+    latest_reply_author_name: varchar(255)
+    latest_replied_at: timestamp
+
