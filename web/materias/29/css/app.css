@@ -1,0 +1,1035 @@
+/* CSS file */
+HBox {
+borderSkin: Embed(source="/images/ApplicationControlBar.png",
+		scaleGridLeft="15", scaleGridTop="2", scaleGridRight="30", scaleGridBottom="40");
+	
+	color: #000000;
+}		
+
+
+.Global
+{
+	color:#cccccc;
+	themeColor:#D9AD21;	
+}
+/*
+//------------------------------
+//  AccordionHeader
+//------------------------------
+*/
+Accordion
+{
+	
+	/* border-skin:Embed(source="/images/AccordionBorder.png",
+		scaleGridLeft="1", scaleGridTop="20", scaleGridRight="2", scaleGridBottom="25"); */
+	border-thickness-left:0;
+	border-thickness-right:1;
+	border-thickness-top:0;
+	border-thickness-bottom:0;
+	border-style:none;
+	backgroundAlpha:0;
+	color:#000000;
+	
+	
+	padding-left:10;
+	padding-right:10;
+	padding-top:10;
+	padding-bottom:10;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+	
+	
+}
+AccordionHeader
+{
+	disabledSkin: Embed(source="/images/AccordionHeader_disabledSkin.png",
+		scaleGridLeft="50", scaleGridTop="1", scaleGridRight="52", scaleGridBottom="21");
+	downSkin: Embed(source="/images/AccordionHeader_downSkin.png",
+		scaleGridLeft="50", scaleGridTop="1", scaleGridRight="52", scaleGridBottom="21");
+	overSkin: Embed(source="/images/AccordionHeader_overSkin.png",
+		scaleGridLeft="50", scaleGridTop="1", scaleGridRight="52", scaleGridBottom="21");
+	selectedDisabledSkin: Embed(source="/images/AccordionHeader_selectedSkin.png",
+		scaleGridLeft="50", scaleGridTop="1", scaleGridRight="52", scaleGridBottom="21");
+	selectedDownSkin: Embed(source="/images/AccordionHeader_selectedSkin.png",
+		scaleGridLeft="50", scaleGridTop="1", scaleGridRight="52", scaleGridBottom="21");
+	selectedOverSkin: Embed(source="/images/AccordionHeader_selectedSkin.png",
+		scaleGridLeft="50", scaleGridTop="1", scaleGridRight="52", scaleGridBottom="21");
+	selectedUpSkin: Embed(source="/images/AccordionHeader_selectedSkin.png",
+		scaleGridLeft="50", scaleGridTop="1", scaleGridRight="52", scaleGridBottom="21");
+	upSkin: Embed(source="/images/AccordionHeader_upSkin.png",
+		scaleGridLeft="50", scaleGridTop="1", scaleGridRight="52", scaleGridBottom="21");
+	itemRollOverColor:#000000;
+	itemSelectionColor:#000000;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+	color: #000000;
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+/*
+//------------------------------
+//  Application
+//------------------------------
+*/
+Application
+{
+	/* backgroundImage: Embed(source="/images/BackgroundImage.png"); */
+	background-color:#000000;
+	color: #000000;
+	themeColor: #FFF600;
+	
+   backgroundGradientColors: #222222, #777777;
+
+
+}
+
+/*
+//------------------------------
+//  Button
+//------------------------------
+*/
+Button
+{
+	disabledSkin: Embed(source="/images/Button_disabledSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="60", scaleGridBottom="18");
+	downSkin: Embed(source="/images/Button_downSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="60", scaleGridBottom="18");
+	overSkin: Embed(source="/images/Button_overSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="60", scaleGridBottom="18");
+	upSkin: Embed(source="/images/Button_upSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="60", scaleGridBottom="18");
+	color: #787878;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+	selectedUpSkin: Embed(source="/images/Button_overSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="60", scaleGridBottom="18");
+	selectedOverSkin: Embed(source="/images/Button_overSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="60", scaleGridBottom="18");
+	selectedDisabledSkin: Embed(source="/images/Button_disabledSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="60", scaleGridBottom="18");
+	selectedDownSkin: Embed(source="/images/Button_upSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="60", scaleGridBottom="18");
+	disabledColor: #222626;
+			
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+/* 
+//------------------------------ 
+//  ButtonBar 
+//------------------------------ 
+*/ 
+
+ButtonBar 
+{ 
+        buttonStyleName: "buttonBarButton"; 
+        firstButtonStyleName: "firstButtonBarButton"; 
+        lastButtonStyleName: "lastButtonBarButton";
+	color: #787878; 
+}
+
+ToggleButtonBar 
+{ 
+        buttonStyleName: "buttonBarButton"; 
+        firstButtonStyleName: "firstButtonBarButton"; 
+        lastButtonStyleName: "lastButtonBarButton";
+	color: #787272;
+	selectedButtonTextStyleName: toggleButtonBarSelectedButtonText; 
+}
+
+/* 
+//------------------------------ 
+//  ButtonBarButtons 
+//------------------------------ 
+*/ 
+
+.firstButtonBarButton 
+{ 
+    disabledSkin: Embed(source="/images/ButtonBar_firstDisabledSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    downSkin: Embed(source="/images/ButtonBar_firstDownSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    overSkin: Embed(source="/images/ButtonBar_firstOverSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedDisabledSkin: Embed(source="/images/ButtonBar_firstSelectedDisabledSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedDownSkin: Embed(source="/images/ButtonBar_firstSelectedUpSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedOverSkin: Embed(source="/images/ButtonBar_firstSelectedUpSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedUpSkin: Embed(source="/images/ButtonBar_firstSelectedUpSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    upSkin: Embed(source="/images/ButtonBar_firstUpSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18");
+	textRollOverColor: #000000;
+	color: #7F7F7F;
+	textSelectedColor: #000000;
+	disabledColor: #DADADA; 
+			
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+.buttonBarButton 
+{ 
+    disabledSkin: Embed(source="/images/ButtonBar_buttonDisabledSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="10", scaleGridBottom="15"); 
+		 
+    downSkin: Embed(source="/images/ButtonBar_buttonDownSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="10", scaleGridBottom="15"); 
+    overSkin: Embed(source="/images/ButtonBar_buttonOverSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="10", scaleGridBottom="15"); 
+    selectedDisabledSkin: Embed(source="/images/ButtonBar_buttonSelectedDisabledSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="10", scaleGridBottom="15"); 
+    selectedDownSkin: Embed(source="/images/ButtonBar_buttonSelectedUpSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="10", scaleGridBottom="15"); 
+    selectedOverSkin: Embed(source="/images/ButtonBar_buttonSelectedUpSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="10", scaleGridBottom="15"); 
+    selectedUpSkin: Embed(source="/images/ButtonBar_buttonSelectedUpSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="10", scaleGridBottom="15"); 
+    upSkin: Embed(source="/images/ButtonBar_buttonUpSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="10", scaleGridBottom="15"); 
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+
+.lastButtonBarButton 
+{ 
+    disabledSkin: Embed(source="/images/ButtonBar_lastDisabledSkin.png",
+		scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    downSkin: Embed(source="/images/ButtonBar_lastDownSkin.png",
+		scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    overSkin: Embed(source="/images/ButtonBar_lastOverSkin.png",
+		scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    selectedDisabledSkin: Embed(source="/images/ButtonBar_lastSelectedDisabledSkin.png",
+		scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    selectedDownSkin: Embed(source="/images/ButtonBar_lastSelectedUpSkin.png",
+		scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    selectedOverSkin: Embed(source="/images/ButtonBar_lastSelectedUpSkin.png",
+		scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    selectedUpSkin: Embed(source="/images/ButtonBar_lastSelectedUpSkin.png",
+		scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    upSkin: Embed(source="/images/ButtonBar_lastUpSkin.png",
+		scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+			
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+/*
+//------------------------------
+//  CheckBox
+//------------------------------
+*/
+CheckBox
+{
+	disabledIcon: Embed(source="/images/CheckBox_disabledIcon.png");
+	downIcon: Embed(source="/images/CheckBox_downIcon.png");
+	overIcon: Embed(source="/images/CheckBox_overIcon.png");
+	selectedDisabledIcon: Embed(source="/images/CheckBox_selectedDisabledIcon.png");
+	selectedDownIcon: Embed(source="/images/CheckBox_selectedDownIcon.png");
+	selectedOverIcon: Embed(source="/images/CheckBox_selectedOverIcon.png");
+	selectedUpIcon: Embed(source="/images/CheckBox_selectedUpIcon.png");
+	upIcon: Embed(source="/images/CheckBox_upIcon.png");
+	textRollOverColor: #787878;
+	textSelectedColor: #787878;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}		
+
+/*
+//------------------------------
+//  ColorPicker
+//------------------------------
+*/
+ColorPicker
+{
+	swatchBorderColor: #787878;
+	swatchBorderSize: 0;
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}		
+
+/*
+//------------------------------
+//  ComboBox
+//------------------------------
+*/
+ComboBox
+{
+
+	disabledSkin: Embed(source="/images/ComboBoxArrow_disabledSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="18"); 
+	downSkin: Embed(source="/images/ComboBoxArrow_downSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="18"); 
+	editableDisabledSkin: Embed(source="/images/ComboBoxArrow_editableDisabledSkin.png",
+		scaleGridLeft="0", scaleGridTop="0", scaleGridRight="17", scaleGridBottom="22");
+	editableDownSkin: Embed(source="/images/ComboBoxArrow_editableDownSkin.png",
+		scaleGridLeft="0", scaleGridTop="0", scaleGridRight="17", scaleGridBottom="22");
+	editableOverSkin: Embed(source="/images/ComboBoxArrow_editableOverSkin.png",
+		scaleGridLeft="0", scaleGridTop="0", scaleGridRight="17", scaleGridBottom="22");
+	editableUpSkin: Embed(source="/images/ComboBoxArrow_editableUpSkin.png",
+		scaleGridLeft="0", scaleGridTop="0", scaleGridRight="17", scaleGridBottom="22");
+	overSkin: Embed(source="/images/ComboBoxArrow_overSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="18"); 
+	upSkin: Embed(source="/images/ComboBoxArrow_upSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="18");
+	color: #000000;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+	dropdownStyleName: comboBoxDropdown;
+	selectionDuration: 1000;
+	borderThickness: 0; 
+		
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}		
+
+
+/*
+//------------------------------
+//  CursorManager
+//------------------------------
+*/
+CursorManager
+{
+	busyCursor: Embed(source="/images/BusyCursor.png");
+	busyCursorBackground: Embed(source="/images/BusyCursor.png");
+}
+List
+{
+	color: #787878;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+	alternatingItemColors: #141414, #1C1A19;
+	
+	rollOverColor: #E2C31F;
+	selectionColor: #787878;
+	selectionDuration: 1000;
+	borderColor: #282424;
+	
+}
+/*
+//------------------------------
+//  DataGrid
+//------------------------------
+*/
+DataGrid
+{
+
+	columnDropIndicatorSkin: Embed(source="/images/DataGrid_columnDropIndicatorSkin.png");
+	columnResizeSkin: Embed(source="/images/DataGrid_columnResizeSkin.png");
+	headerSeparatorSkin: Embed(source="/images/DataGrid_headerSeparatorSkin.png");
+	sortArrowSkin: Embed(source="/images/DataGrid_sortArrowSkin.png");
+	stretchCursor: Embed(source="/images/DataGrid_stretchCursor.png");
+	rollOverColor: #E2C31F;
+	selectionColor: #787878;
+	color: #787878;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+	headerColors: #FBFC1C, #D6A621;
+	verticalGridLineColor: #787878;
+	horizontalGridLines: false;
+	horizontalGridLineColor: #E2E2E2;
+	backgroundDisabledColor: #1C1A19;
+	alternatingItemColors: #141414, #1C1A19;
+	headerStyleName: dataGridHeader;
+	selectionDuration: 1000;
+	borderColor: #282424;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+/*
+//------------------------------
+//  DateChooser
+//------------------------------
+*/
+DateChooser
+{
+	nextMonthDisabledSkin: Embed(source="/images/DateChooser_nextMonthDisabledSkin.png");
+	nextMonthDownSkin: Embed(source="/images/DateChooser_nextMonthDownSkin.png");
+	nextMonthOverSkin: Embed(source="/images/DateChooser_nextMonthOverSkin.png");
+	nextMonthUpSkin: Embed(source="/images/DateChooser_nextMonthUpSkin.png");
+	prevMonthDisabledSkin: Embed(source="/images/DateChooser_prevMonthDisabledSkin.png");
+	prevMonthDownSkin: Embed(source="/images/DateChooser_prevMonthDownSkin.png");
+	prevMonthOverSkin: Embed(source="/images/DateChooser_prevMonthOverSkin.png");
+	prevMonthUpSkin: Embed(source="/images/DateChooser_prevMonthUpSkin.png");
+	
+	nextYearDisabledSkin: Embed(source="/images/DateChooser_nextYearDisabledSkin.png");
+	nextYearDownSkin: Embed(source="/images/DateChooser_nextYearDownSkin.png");
+	nextYearOverSkin: Embed(source="/images/DateChooser_nextYearOverSkin.png");
+	nextYearUpSkin: Embed(source="/images/DateChooser_nextYearUpSkin.png");
+	prevYearDisabledSkin: Embed(source="/images/DateChooser_prevYearDisabledSkin.png");
+	prevYearDownSkin: Embed(source="/images/DateChooser_prevYearDownSkin.png");
+	prevYearOverSkin: Embed(source="/images/DateChooser_prevYearOverSkin.png");
+	prevYearUpSkin: Embed(source="/images/DateChooser_prevYearUpSkin.png");
+
+	todayIndicatorSkin: Embed(source="/images/DateChooser_todayIndicatorSkin.png");	
+	
+	rollOverIndicatorSkin: Embed(source="/images/DateChooser_rollOverIndicatorSkin.png");
+	selectionIndicatorSkin: Embed(source="/images/DateChooser_selectionIndicatorSkin.png");
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+	item-selection-color:#000000;
+	headerColors: #56514E, #131313;
+	borderColor: #787878;
+	cornerRadius: 8;
+	color: #787878;
+	headerStyleName: dateChooserHeader;
+	selectionColor: #000000;
+	rollOverColor: #000000;
+	todayColor: #000000;
+	backgroundColor: #000000;
+	backgroundAlpha: 1.0;
+	todayStyleName: dateChooserToday;
+}
+
+/*
+//------------------------------
+//  DateField
+//------------------------------
+*/
+DateField
+{
+	disabledSkin: Embed(source="/images/DateField_disabledSkin.png"); 
+	downSkin: Embed(source="/images/DateField_downSkin.png"); 
+	overSkin: Embed(source="/images/DateField_overSkin.png"); 
+	upSkin: Embed(source="/images/DateField_upSkin.png");
+	color: #787878; 
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+/*
+//------------------------------
+//  DividedBox
+//------------------------------
+*/
+DividedBox
+{
+	dividerSkin: Embed(source="/images/DividedBox_dividerSkin.png");
+	horizontalCursor: Embed(source="/images/DividedBox_horizontalCursor.png");
+	verticalCursor: Embed(source="/images/DividedBox_verticalCursor.png");
+	
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+/*
+//------------------------------
+//  DragManager
+//------------------------------
+*/
+DragManager
+{
+	copyCursor: Embed(source="/images/DragManager_copyCursor.png");
+
+	defaultDragImageSkin: Embed(source="/images/DragManager_defaultDragImageSkin.png",
+		scaleGridLeft="1", scaleGridTop="1", scaleGridRight="19", scaleGridBottom="19");
+
+	linkCursor: Embed(source="/images/DragManager_linkCursor.png");
+	moveCursor: Embed(source="/images/DragManager_moveCursor.png");
+	rejectCursor: Embed(source="/images/DragManager_rejectCursor.png");
+	
+}
+
+/*
+//------------------------------
+//  FormItem
+//------------------------------
+*/
+FormItem
+{
+	indicatorSkin: Embed(source="/images/FormItem_indicatorSkin.png");
+	color: #787878;
+		  
+}
+
+/*
+//------------------------------
+//  Image
+//------------------------------
+*/
+Image
+{
+
+	brokenImageSkin: Embed(source="/images/Loader_brokenImageSkin.png");
+	
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+
+}
+
+/*
+//------------------------------
+//  LinkButton
+//------------------------------
+*/
+LinkButton
+{
+	disabledSkin: Embed(source="/images/LinkButton_disabledSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="61", scaleGridBottom="18");
+	downSkin: Embed(source="/images/LinkButton_downSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="61", scaleGridBottom="18");
+	overSkin: Embed(source="/images/LinkButton_overSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="61", scaleGridBottom="18");
+	upSkin: Embed(source="/images/LinkButton_upSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="61", scaleGridBottom="18");
+	color:#787878;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}		
+
+/*
+//------------------------------
+//  Loader
+//------------------------------
+*/
+Loader
+{
+
+	brokenImageSkin: Embed(source="/images/Loader_brokenImageSkin.png");
+
+}
+
+/*
+//------------------------------
+//  Menu
+//------------------------------
+*/
+Menu
+{
+	branchIcon: Embed(source="/images/Menu_branchIcon.png");
+	branchDisabledIcon: Embed(source="/images/Menu_branchDisabledIcon.png");
+	checkIcon: Embed(source="/images/Menu_checkIcon.png");
+	checkDisabledIcon: Embed(source="/images/Menu_checkDisabledIcon.png");
+	radioIcon: Embed(source="/images/Menu_radioIcon.png");
+	radioDisabledIcon: Embed(source="/images/Menu_radioDisabledIcon.png");
+	separatorSkin: Embed(source="/images/Menu_separatorSkin.png");
+	color: #787878;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+	rollOverColor: #DFBC20;
+	selectionColor: #787878;
+	selectionDuration: 1000;
+	borderColor: #282424;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+/*
+//------------------------------
+//  MenuBar
+//------------------------------
+*/
+MenuBar
+{
+
+	backgroundSkin: Embed(source="/images/MenuBar_backgroundSkin.png",
+		scaleGridLeft="13", scaleGridTop="8", scaleGridRight="16", scaleGridBottom="11");
+	itemUpSkin: Embed(source="/images/MenuBar_itemUpSkin.png");
+	itemOverSkin: Embed(source="/images/MenuBar_itemOverSkin.png");
+	itemDownSkin: Embed(source="/images/MenuBar_itemDownSkin.png");
+	color:#787878;
+	font-weight:bold;
+	item-roll-over-color:#000000;
+	item-selection-color:#000000;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+/*
+//------------------------------
+//  NumericStepper
+//------------------------------
+*/
+NumericStepper
+{
+
+	downArrowDisabledSkin: Embed(source="/images/NumericStepperDownArrow_DisabledSkin.png");
+	downArrowDownSkin: Embed(source="/images/NumericStepperDownArrow_DownSkin.png");
+	downArrowOverSkin: Embed(source="/images/NumericStepperDownArrow_OverSkin.png");
+	downArrowUpSkin: Embed(source="/images/NumericStepperDownArrow_UpSkin.png");
+	upArrowDisabledSkin: Embed(source="/images/NumericStepperUpArrow_DisabledSkin.png");
+	upArrowDownSkin: Embed(source="/images/NumericStepperUpArrow_DownSkin.png");
+	upArrowOverSkin: Embed(source="/images/NumericStepperUpArrow_OverSkin.png");
+	upArrowUpSkin: Embed(source="/images/NumericStepperUpArrow_UpSkin.png");
+	color: #787878;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+
+}
+
+/*
+//------------------------------
+//  Panel
+//------------------------------
+*/
+Panel
+{
+
+	closeButtonDisabledSkin: Embed(source="/images/Panel_closeButtonDisabledSkin.png");
+	closeButtonDownSkin: Embed(source="/images/Panel_closeButtonDownSkin.png");
+	closeButtonOverSkin: Embed(source="/images/Panel_closeButtonOverSkin.png");
+	closeButtonUpSkin: Embed(source="/images/Panel_closeButtonUpSkin.png");
+	borderThicknessLeft: 15;
+	borderThicknessRight: 15;
+	borderThicknessTop: 5;
+	borderThicknessBottom: 5;
+	headerHeight: 0;
+	padding-top:20;
+	padding-left:10;
+	padding-right:10;
+	padding-bottom:30;
+	text-align:center;
+	color: #FFFFFF;
+	titleStyleName: panelTitle;
+	fontWeight: normal;
+	fontSize: 10;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+.Panel2
+{
+
+	closeButtonDisabledSkin: Embed(source="/images/Panel_closeButtonDisabledSkin.png");
+	closeButtonDownSkin: Embed(source="/images/Panel_closeButtonDownSkin.png");
+	closeButtonOverSkin: Embed(source="/images/Panel_closeButtonOverSkin.png");
+	closeButtonUpSkin: Embed(source="/images/Panel_closeButtonUpSkin.png");
+	
+	borderSkin: Embed(source="/images/Panel_borderSkin2.png",
+		scaleGridLeft="150", scaleGridTop="100", scaleGridRight="151", scaleGridBottom="160");
+/* 	titleBackgroundSkin: Embed(source="/images/empty.swf", symbol="Panel_titleBackgroundSkin"); */
+	color:#000000;
+	borderThicknessLeft: 15;
+	borderThicknessRight: 15;
+	borderThicknessTop: 30;
+	borderThicknessBottom: 5;
+	headerHeight: 30;
+	padding-top:35;
+	padding-left:10;
+	padding-right:10;
+	padding-bottom:30;
+	text-align:left;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+RichTextEditor
+{
+
+	borderSkin: Embed(source="/images/Panel_borderSkin2.png",
+		scaleGridLeft="15", scaleGridTop="40", scaleGridRight="265", scaleGridBottom="160");
+	borderThicknessLeft: 15;
+	borderThicknessRight: 15;
+	borderThicknessTop: 10;
+	borderThicknessBottom: 70;
+	headerHeight: 10;
+	padding-top:10;
+	padding-left:10;
+	padding-right:10;
+	padding-bottom:70;
+	text-align:left;
+	
+	color: #000000;
+	titleStyleName: panelTitle;
+	fontWeight: normal;
+	fontSize: 10;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+ApplicationControlBar
+{
+	borderSkin: Embed(source="/images/ApplicationControlBar.png",
+		scaleGridLeft="15", scaleGridTop="2", scaleGridRight="30", scaleGridBottom="40");
+	color: #000000;
+		
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+/*
+//------------------------------
+//  Panel ControlBar
+//------------------------------
+*/
+ControlBar
+{
+	/* borderSkin: Embed(source="/images/Panel_controlBarBackgroundSkin.png",
+		scaleGridLeft="3", scaleGridTop="1", scaleGridRight="273", scaleGridBottom="17"); */
+}
+
+/*
+//------------------------------
+//  PopUpButton
+//------------------------------
+*/
+PopUpButton
+{
+
+	disabledSkin: Embed(source="/images/PopUpButton_DisabledSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="17");
+	downSkin: Embed(source="/images/PopUpButton_downLeftSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="17");
+	overSkin: Embed(source="/images/PopUpButton_overLeftSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="17");
+	popUpDownSkin: Embed(source="/images/PopUpButton_downRightSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="17");
+	popUpOverSkin: Embed(source="/images/PopUpButton_overRightSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="17");
+	upSkin: Embed(source="/images/PopUpButton_upSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="64", scaleGridBottom="17");
+	color: #787878;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+		
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+		
+}
+
+
+/*
+//------------------------------
+//  ProgressBar
+//------------------------------
+*/
+ProgressBar
+{
+
+	barSkin: Embed(source="/images/ProgressBarSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="30", scaleGridBottom="5");
+	indeterminateSkin: Embed(source="/images/ProgressIndeterminateSkin.png");
+	trackSkin: Embed(source="/images/ProgressTrackSkin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="30", scaleGridBottom="5");
+	textAlign: center;
+	color: #787878;
+	trackHeight: 10;
+		
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+		
+
+}
+
+/*
+//------------------------------
+//  RadioButton
+//------------------------------
+*/
+RadioButton
+{
+
+	disabledIcon: Embed(source="/images/RadioButton_disabledIcon.png");
+	downIcon: Embed(source="/images/RadioButton_downIcon.png");
+	overIcon: Embed(source="/images/RadioButton_overIcon.png");
+	selectedDisabledIcon: Embed(source="/images/RadioButtonSelected_disabledIcon.png");
+	selectedDownIcon: Embed(source="/images/RadioButtonSelected_downIcon.png");
+	selectedOverIcon: Embed(source="/images/RadioButtonSelected_overIcon.png");
+	selectedUpIcon: Embed(source="/images/RadioButtonSelected_upIcon.png");
+	upIcon: Embed(source="/images/RadioButton_upIcon.png");
+	color: #787878;
+	textRollOverColor: #787878;
+	textSelectedColor: #787878;
+	
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+		
+
+}
+
+/*
+//------------------------------
+//  ScrollBar
+//------------------------------
+*/
+ScrollBar
+{
+	borderColor: #787878;
+	cornerRadius: 0;
+	padding-top:1;
+	padding-bottom:1;
+	up-arrow-skin: ClassReference(null);
+ 	down-arrow-skin: ClassReference(null);
+	fillAlphas: 0, 0;
+	
+	trackColors: #000000, #000000;
+	thumbUpSkin: Embed(source="images/ScrollThumb_upSkin.png",
+		scaleGridLeft="1", scaleGridTop="4", scaleGridRight="8", scaleGridBottom="48");
+	thumbOverSkin: Embed(source="images/ScrollThumb_overSkin.png",
+		scaleGridLeft="1", scaleGridTop="4", scaleGridRight="8", scaleGridBottom="48");
+	thumbDownSkin: Embed(source="images/ScrollThumb_downSkin.png",
+		scaleGridLeft="1", scaleGridTop="4", scaleGridRight="8", scaleGridBottom="48");
+
+/* 	downArrowDisabledSkin: Embed(source="/images/ScrollArrowDown_disabledSkin.png");
+	downArrowDownSkin: Embed(source="/images/ScrollArrowDown_downSkin.png");
+	downArrowOverSkin: Embed(source="/images/ScrollArrowDown_overSkin.png");
+	downArrowUpSkin: Embed(source="/images/ScrollArrowDown_upSkin.png"); */
+	/* upArrowDisabledSkin: Embed(source="/images/ScrollArrowUp_disabledSkin.png");
+	upArrowDownSkin: Embed(source="/images/ScrollArrowUp_downSkin.png");
+	upArrowOverSkin: Embed(source="/images/ScrollArrowUp_overSkin.png");
+	upArrowUpSkin: Embed(source="/images/ScrollArrowUp_upSkin.png"); */
+/* 	up-arrow-skin: ClassReference(null);
+ 	down-arrow-skin: ClassReference(null);
+
+	thumbDownSkin: Embed(source="/images/ScrollThumb_downSkin.png",
+		scaleGridLeft="1", scaleGridTop="4", scaleGridRight="8", scaleGridBottom="48");
+	thumbIcon: Embed(source="/images/ScrollBar_thumbIcon.png");
+	thumbOverSkin: Embed(source="/images/ScrollThumb_overSkin.png",
+		scaleGridLeft="1", scaleGridTop="4", scaleGridRight="8", scaleGridBottom="48");
+	thumbUpSkin: Embed(source="/images/ScrollThumb_upSkin.png",
+		scaleGridLeft="1", scaleGridTop="4", scaleGridRight="8", scaleGridBottom="48");
+	trackSkin: Embed(source="/images/ScrollTrack_Skin.png",
+		scaleGridLeft="2", scaleGridTop="2", scaleGridRight="8", scaleGridBottom="48"); */
+		
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+/*
+//------------------------------
+//  Slider
+//------------------------------
+*/
+Slider
+{
+	thumbDisabledSkin: Embed(source="/images/SliderThumb_disabledSkin.png");
+	thumbDownSkin: Embed(source="/images/SliderThumb_downSkin.png");
+	thumbOverSkin: Embed(source="/images/SliderThumb_overSkin.png");
+	thumbUpSkin: Embed(source="/images/SliderThumb_upSkin.png");
+	trackHighlightSkin: Embed(source="/images/SliderHighlight_Skin.png",
+		scaleGridLeft="1", scaleGridTop="0", scaleGridRight="46", scaleGridBottom="3");
+	trackSkin: Embed(source="/images/SliderTrack_Skin.png",
+		scaleGridLeft="2", scaleGridTop="0", scaleGridRight="77", scaleGridBottom="3");
+	
+	color:#787878;
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+HSlider
+{
+	thumbDisabledSkin: Embed(source="/images/SliderThumb_disabledSkin.png");
+	thumbDownSkin: Embed(source="/images/SliderThumb_downSkin.png");
+	thumbOverSkin: Embed(source="/images/SliderThumb_overSkin.png");
+	thumbUpSkin: Embed(source="/images/SliderThumb_upSkin.png");
+	trackHighlightSkin: Embed(source="/images/SliderHighlight_Skin.png",
+		scaleGridLeft="1", scaleGridTop="0", scaleGridRight="46", scaleGridBottom="3");
+	trackSkin: Embed(source="/images/SliderTrack_Skin.png",
+		scaleGridLeft="2", scaleGridTop="0", scaleGridRight="77", scaleGridBottom="3");
+		
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+VSlider
+{
+	thumbDisabledSkin: Embed(source="/images/SliderThumb_disabledSkin.png",scaleGridBottom="8",scaleGridLeft="1",scaleGridTop="1",scaleGridRight="8");
+	thumbDownSkin: Embed(source="/images/SliderThumb_downSkin.png");
+	thumbOverSkin: Embed(source="/images/SliderThumb_overSkin.png");
+	thumbUpSkin: Embed(source="/images/SliderThumb_upSkin.png",scaleGridBottom="8",scaleGridLeft="1",scaleGridTop="1",scaleGridRight="8");
+	trackHighlightSkin: Embed(source="/images/SliderHighlight_Skin.png",
+		scaleGridLeft="1", scaleGridTop="0", scaleGridRight="46", scaleGridBottom="3");
+	trackSkin: Embed(source="/images/SliderTrack_Skin.png",
+		scaleGridLeft="2", scaleGridTop="1", scaleGridRight="77", scaleGridBottom="8");
+	tickColor: "[0xe2c31f]";
+	trackColors: "[0xe2c31f]";
+	slideDuration: 100;
+		
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+	
+}
+
+
+/*
+//------------------------------
+//  Tab
+//------------------------------
+*/
+TabNavigator
+{
+	background-alpha:0;
+	horizontal-align:right;
+	border-color:#5B5656;
+	horizontalGap:10;
+	tab-height:35;
+	color: #787878;
+	selectedTabTextStyleName: tabNavigatorSelectedTabText;
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+TabBar
+{
+	
+	firstButtonStyleName: "tabStyle";
+	tabStyleName: "tabStyle";
+	lastButtonStyleName: "tabStyle";
+	color: #787878;
+	selectedTabTextStyleName: tabBarSelectedTabText;
+		
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+}
+
+.tabStyle {
+	disabledSkin: Embed(source="/images/Tab_disabledSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="49", scaleGridBottom="20");
+	downSkin: Embed(source="/images/Tab_downSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="49", scaleGridBottom="20");
+	overSkin: Embed(source="/images/Tab_overSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="49", scaleGridBottom="20");
+	selectedDisabledSkin: Embed(source="/images/TabSelected_disabledSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="49", scaleGridBottom="20");
+	selectedDownSkin: Embed(source="/images/TabSelected_upSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="49", scaleGridBottom="20");
+	selectedOverSkin: Embed(source="/images/TabSelected_upSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="49", scaleGridBottom="20");
+	selectedUpSkin: Embed(source="/images/TabSelected_upSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="49", scaleGridBottom="20");
+	upSkin: Embed(source="/images/Tab_upSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="49", scaleGridBottom="20");
+	
+	tabHeight:45;
+		
+		/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+
+}
+
+/*
+//------------------------------
+//  ToolTip
+//------------------------------
+*/
+ToolTip
+{
+
+	borderSkin: Embed(source="/images/ToolTip_borderSkin.png",
+		scaleGridLeft="4", scaleGridTop="4", scaleGridRight="78", scaleGridBottom="18");
+	color: #FFFFFF;
+			
+}
+
+/*
+//------------------------------
+//  Tree
+//------------------------------
+*/
+Tree
+{
+	defaultLeafIcon: Embed(source="/images/Tree_defaultLeafIcon.png");
+	disclosureClosedIcon: Embed(source="/images/Tree_disclosureClosedIcon.png");
+	disclosureOpenIcon: Embed(source="/images/Tree_disclosureOpenIcon.png");
+	folderClosedIcon: Embed(source="/images/Tree_folderClosedIcon.png");
+	folderOpenIcon: Embed(source="/images/Tree_folderOpenIcon.png");
+	background-alpha:100;
+	text-align:left;
+	color:#FFFFFF;
+	roll-over-color:#E5B61B;
+	selection-color:#858080;
+	selectionDuration:1000;
+	
+	border-style:outset;
+	textRollOverColor: #000000;
+	textSelectedColor: #000000;
+	cornerRadius: 20;
+	borderThickness: 20;
+	borderColor: #282424;
+	backgroundColor: #FFFFFF;
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+		
+	
+}
+
+
+
+TextInput
+{
+	borderSkin: Embed(source="/images/textBox.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10");
+	color: #787878;
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */	
+	
+}
+TextArea
+{
+	borderSkin: Embed(source="/images/textBox.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10");
+	color: #787878;
+	/* focusSkin: Embed(source="/images/textBoxFocus.png",
+	scaleGridLeft="5", scaleGridTop="5", scaleGridRight="10", scaleGridBottom="10"); */
+		
+}
+.toggleButtonBarSelectedButtonText
+{
+	color: #000000;
+}
+.tabNavigatorSelectedTabText
+{
+	color: #000000;
+}
+.tabBarSelectedTabText
+{
+	color: #000000;
+}
+.panelTitle
+{
+	fontWeight: bold;
+	fontSize: 11;
+	color: #000000;
+}
+.dateChooserHeader
+{
+	color: #787878;
+}
+.dataGridHeader
+{
+	color: #000000;
+	fontWeight: bold;
+}
+.comboBoxDropdown
+{
+	selectionColor: #787878;
+	rollOverColor: #E2C31F;
+	alternatingItemColors: #141414, #1C1A19;
+	borderColor: #282424;
+}
+.dateChooserToday
+{
+	color: #000000;
+}
+	TitleWindow {
+			borderStyle: solid;
+			backgroundAlpha: 1;
+			backgroundColor: #BAC8DE;
+			roundedBottomCorners: true;
+        	closeButtonDownSkin:Embed(source="assets/downClose.png");
+			closeButtonOverSkin:Embed(source="assets/overClose.png");
+			closeButtonUpSkin:Embed(source="assets/upClose.png");
+			showCloseButton:true;
+	borderColor: #06261C;
+	statusStyleName: titleWindowStatus;
+	borderAlpha: 1.0;
+	cornerRadius: 20;
+	headerHeight: 20;
+	color: #891B1B;
+    	}
+.titleWindowStatus
+{
+}
+	

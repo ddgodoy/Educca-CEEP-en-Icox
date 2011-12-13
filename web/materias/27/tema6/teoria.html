@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Curso RSC</title>
+<script language="javascript" src="../shared/js/estilos.js"></script>
+<script language="javascript"  src="menu.js"></script>
+<script type="text/javascript" src="../shared/js/virtualpaginate.js"></script>
+
+<script type="text/javascript" src="../shared/js/BubbleTooltips.js"></script>
+<script type="text/javascript" src="BubbleTooltips.js"></script>
+<script type="text/javascript">
+window.onload=function(){enableTooltips("contenido")};
+</script>
+
+<script type="text/javascript" src="../shared/js/prototype.js"></script>
+<script type="text/javascript" src="../shared/js/bubble.js"></script>
+
+<script language="javascript">
+	var tiempo_actual = new Date().getTime();
+	
+	function cerrarVentana() {
+	if (confirm("¿Estás seguro de que quieres abandonar la teoría?")) 
+		window.close();
+	}
+	
+	function completar() {
+	if (confirm("¿Quieres marcar la teoría del tema como Completada?")) {
+		opener.status_completado();
+		window.close();
+		}
+	}	
+		
+</script>
+<link href="../shared/css/bubble.css" rel="stylesheet" type="text/css" />
+
+<link href="../shared/css/curso.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+/*Sample CSS used for the Virtual Pagination Demos. Modify/ remove as desired*/
+
+.virtualpage, .virtualpage2, .virtualpage3{
+/*hide the broken up pieces of contents until script is called. Remove if desired*/
+display: none;
+}
+
+.paginationstyle{ /*Style for demo pagination divs*/
+	width: 250px;
+	padding: 2px 0;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.paginationstyle select{ /*Style for demo pagination divs' select menu*/
+	border: 1px solid navy;
+	margin: 0 15px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+}
+
+.paginationstyle a{ /*Pagination links style*/
+padding: 0 5px;
+text-decoration: none;
+border: 1px solid black;
+color: navy;
+background-color: white;
+}
+
+.paginationstyle a:hover, .paginationstyle a.selected{
+color: #000;
+background-color: #FEE496;
+}
+
+.paginationstyle a.imglinks{ /*Pagination Image links style (class="imglinks") */
+border: 0;
+padding: 0;
+}
+
+.paginationstyle a.imglinks img{
+vertical-align: middle;
+border: 0;
+}
+
+.paginationstyle a.imglinks a:hover{
+background: none;
+}
+
+.paginationstyle .flatview a:hover, .paginationstyle .flatview a.selected{ /*Pagination div "flatview" links style*/
+color: #000;
+background-color: yellow;
+}
+
+#page #listingpaginate {
+	position: absolute;
+	left: 244px;
+	top: 557px;
+	vertical-align: top;
+}
+body {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+
+#gmap {display:block; width:600px; height:242px; background:url(imagenes/mapa.jpg); position:relative; margin:0 auto 2em auto;}
+#gmap a {color:#000; font-family:arial, sans-serif; font-size:1.2em; font-weight:bold; text-transform:uppercase;}
+
+a#title2, a#title2:visited {
+	display:block;
+	width:600px;
+	height:0;
+	padding-top:242px;
+	position:absolute;
+	left:0;
+	top:0;
+	background:transparent url(imagenes/mapa_color.jpg) no-repeat 400px 400px;
+	cursor:default;
+	text-decoration:none;
+}
+* html a#title2 {height:242px; he\ight:0;}
+#gmap a#title2:hover {background-position: 0 0; overflow:visible; color:#c00;}
+	
+a#suecia {display:block; width:43px; height:0; padding-top:91px; overflow:visible; position:absolute; left:122px; top:19px; background:transparent url(imagenes/suecia.jpg) no-repeat 400px 400px;}
+* html a#suecia {height:0; he\ight:0;}
+a#suecia:hover {background-position: 0 0; overflow:visible;}
+
+a#finlandia{display:block; width:41px; height:0; padding-top:70px; overflow:visible; position:absolute; left:152px; top:11px; background:transparent url(imagenes/finlandia.jpg) no-repeat 400px 400px;}
+* html a#finlandia {height:0; he\ight:0;}
+a#finlandia:hover {background-position: 0 0; overflow:visible;}
+
+a#francia {display:block; width:61px; height:0; padding-top:61px; overflow:visible; position:absolute; left:47px; top:125px; background:transparent url(imagenes/francia.jpg) no-repeat 400px 400px;}
+* html a#francia {height:0; he\ight:0;}
+a#francia:hover {background-position: 0 0; overflow:visible;}
+
+a#alemania {display:block; width:46px; height:0; padding-top:52px; overflow:visible; position:absolute; left:94px; top:108px; background:transparent url(imagenes/alemania.jpg) no-repeat 400px 400px;}
+* html a#alemania {height:0; he\ight:0;}
+a#alemania:hover {background-position: 0 0; overflow:visible;}
+
+a#canada {display:block; width:72px; height:0; padding-top:59px; overflow:visible; position:absolute; left:322px; top:51px; background:transparent url(imagenes/canada.jpg) no-repeat 400px 400px;}
+* html a#canada {height:0; he\ight:0;}
+a#canada:hover {background-position: 0 0; overflow:visible;}
+
+a#eeuu {display:block; width:54px; height:0; padding-top:31px; overflow:visible; position:absolute; left:333px; top:99px; background:transparent url(imagenes/eeuu.jpg) no-repeat 400px 400px;}
+* html a#eeuu {height:0; he\ight:0;}
+a#eeuu:hover {background-position: 0 0; overflow:visible;}
+
+a#australia {display:block; width:38px; height:0; padding-top:35px; overflow:visible; position:absolute; left:540px; top:185px; background:transparent url(imagenes/australia.jpg) no-repeat 400px 400px;}
+* html a#australia {height:0; he\ight:0;}
+a#australia:hover {background-position: 0 0; overflow:visible;}
+
+a#mexico {display:block; width:28px; height:0; padding-top:28px; overflow:visible; position:absolute; left:342px; top:125px; background:transparent url(imagenes/mexico.jpg) no-repeat 400px 400px;}
+* html a#mexico {height:0; he\ight:0;}
+a#mexico:hover {background-position: 0 0; overflow:visible;}
+
+a#brasil {display:block; width:36px; height:0; padding-top:44px; overflow:visible; position:absolute; left:375px; top:154px; background:transparent url(imagenes/brazil.jpg) no-repeat 400px 400px;}
+* html a#brasil {height:0; he\ight:0;}
+a#brasil:hover {background-position: 0 0; overflow:visible;}
+
+a#sudafrica {display:block; width:29px; height:0; padding-top:29px; overflow:visible; position:absolute; left:462px; top:192px; background:transparent url(imagenes/sudafrica.jpg) no-repeat 400px 400px;}
+* html a#sudafrica {height:0; he\ight:0;}
+a#sudafrica:hover {background-position: 0 0; overflow:visible;}
+</style>
+</head>
+
+<body onunload="javascript: window.opener.setElapsedTime(); window.opener.location.reload();">
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip">This DIV has a tip!!.</div>
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip2">This DIV has a tip!!.</div>
+<div id="page">
+	  <div class="super" id="super"><img src="../shared/imagenes/logo.gif" alt="Responsabilidad Social Corporativa" width="247" height="33"/></div> 
+	 
+	<div id="menusup">
+	  <div align="right"><a href="javascript:cerrarVentana()"><img src="../shared/imagenes/home.jpg" width="25" height="31" hspace="5" border="0" onmouseover="ddrivetip('Volver al Indice'); return false;" onmouseout="hideddrivetip()"/></a>
+	  <script language="javascript">
+	  	var estado = opener.status;
+		if (estado == "completed") {
+			document.writeln("<a href=\"cuestionario.html\"><img src=\"../shared/imagenes/ejercic.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Ir al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" /></a>");
+		} else {
+			document.writeln("<img src=\"../shared/imagenes/ejercic_no.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Aun no tienes acceso al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" />");
+		}
+	  </script>
+	  <a href="javascript:void(0)" onclick="open ('../shared/bibliografia.html','biblio','left=100,top=90,width=760,height=620,scrollbars=1,toolbar=1,resizable=1');"><img src="../shared/imagenes/biblio.jpg" width="25" height="31" hspace="5"  onmouseover="ddrivetip('Bibliografía'); return false;" onmouseout="hideddrivetip()" border="0"/></a></div>
+  </div>
+  <div id="contenido">
+  		<div class="virtualpage">
+			  <p><strong>6.- COMPROMISOS Y NORMAS DE RSC.</strong></p>
+    <p class="titulo"><strong>6.1.- la responsabilidad corporativa en España.</strong></p>
+    <p>En <strong>Espa&ntilde;a </strong>la iniciativa pol&iacute;tica del grupo  parlamentario de <strong>Convergencia i Uni&oacute;n</strong> institucionaliza<img src="imagenes/tema6.1.jpg" width="250" height="204" align="right" class="imgint" /> en 2001, en el <strong><a href="http://www.congreso.es/" title="Para más información mira en..." target="_blank">Congreso de los Diputados</a>,</strong> la  aprobaci&oacute;n de la propuesta para la creaci&oacute;n de una <strong>Subcomisi&oacute;n de  Responsabilidad Social Corporativa</strong>. </p>
+    <p>El  nacimiento de esta Subcomisi&oacute;n se plantea como <span class="txtcursiva">&rdquo;<strong>un espacio de encuentro</strong>&rdquo;</span>  de todos los sectores implicados, empezando por las empresas, pero tambi&eacute;n los  profesionales, las asociaciones de consumidores y las organizaciones sociales,  lo que se materializa posteriormente con la <strong>Resoluci&oacute;n</strong><strong> del Congreso de los Diputados en el a&ntilde;o  2003,</strong> que aprueba entonces el Gobierno, y da lugar a la creaci&oacute;n de una <strong>Comisi&oacute;n de Expertos, </strong>en septiembre  de 2004, para empezar a discutir el tema de la RSC. En el a&ntilde;o 2005 esta Comisi&oacute;n se desdoblo en tres iniciativas  paralelas o grupos de trabajo.</p>
+    <p>De esta forma, Espa&ntilde;a se  alinear&iacute;a con las recomendaciones del <strong>Libro  Blanco de la UE de  2000,</strong> con las conclusiones de la <strong>Cumbre</strong><strong> de Lisboa y el Libro Verde</strong>, y de hecho  los responsables de esta iniciativa afirmar&iacute;an que los trabajos de la Subcomisi&oacute;n, y los que  pudiera llevar a cabo el Gobierno, podr&iacute;an convertirse en referencia para la Uni&oacute;n Europea.</p>
+  		</div>
+		<div class="virtualpage">
+    <p>Las iniciativas son las siguientes: </p>
+    <ul>
+      <li class="listaplus">La primera iniciativa es el macro  estudio que patrocina la <strong><a href="http://www.fef.es" target="_blank" title="Para saber más de esta fundación mira en...">Fundaci&oacute;n de Estudios Financieros</a>, FEF,</strong> casi por  encargo del entonces, y hoy candidato a Alcalde de Madrid, <strong>director de la   Oficina Econ&oacute;mica del Gobierno</strong>, Miguel Sebasti&aacute;n.La FEF ha convocado para discutir  sobre esta propuesta a entidades como el IESE, el Club de Excelencia en  Sostenibilidad, la   Fundaci&oacute;n Entorno, la Fundaci&oacute;n Empresa  y Sociedad, Ur&iacute;a y Men&eacute;ndez Abogados.</li>
+    </ul>
+    <ul>
+      <li class="listaplus">La segunda iniciativa  de gran  calado en Espa&ntilde;a es la de <strong><a href="http://www.foretica.es" target="_blank" title="Para saber más de esta asociación mira en su página oficial en...">For&eacute;tica</a>.</strong> La asociaci&oacute;n fo<img src="imagenes/foretica.jpg" width="150" height="101" border="0" align="right" />menta <strong>pol&iacute;ticas de  gesti&oacute;n &eacute;tica y socialmente responsable en empresas e instituciones</strong> como  parte de sus valores corporativos y promueve sistemas de gesti&oacute;n verificables.  En la actualidad, la organizaci&oacute;n cuenta con m&aacute;s de <strong>150 asociados</strong>, 92 de los cuales son empresas que se han  comprometido a la implantaci&oacute;n de un <strong>c&oacute;digo  de conducta</strong>. Esta herramienta de gesti&oacute;n reci&eacute;n actualizada que supone  establecer unos est&aacute;ndares muy altos en las relaciones con sus proveedores,  clientes, medio ambiente y dem&aacute;s grupos de inter&eacute;s implicados.</li>
+    </ul>
+    <ul>
+      <li class="listaplus">La tercera iniciativa  es la propuesta por la <a href="http://www.udc.es" target="_blank" title="Informate más de la universidad en su página...">Universidad de La Coru&ntilde;a</a> que pone en marcha  una <strong>C&aacute;tedra sobre Responsabilidad Social  Corporativa </strong>que llevar&aacute; el nombre de <strong>Inditex</strong>.  La c&aacute;tedra inici&oacute; su actividad con un acto inaugural que se desarroll&oacute; el 3 de  noviembre de 2005 y cuya primera lecci&oacute;n magistral corri&oacute; a cargo de Eudald  Carbonell, coordinador del Proyecto Atapuerca, toma como tema  <span class="txtcursiva">&quot;Responsabilidad Social, una propuesta de humanizaci&oacute;n para el tercer  milenio&quot;</span>.</li>
+    </ul>
+  </div>
+  <div class="virtualpage">
+    <p>As&iacute; tambi&eacute;n, en Espa&ntilde;a existe la organizaci&oacute;n de RSC<strong> <a href="http://www.empresaysociedad.org/feys/es" target="_blank" title="Para saber más de esta fundación visita su página en...">Fundaci&oacute;n  Empresa-Sociedad</a></strong>, constituida con <strong>el objetivo principal</strong> de estimular  el <strong>alcance y la calidad de la acci&oacute;n social de la empresa </strong>a fin de  generar un efecto multiplicador en el flujo de recursos empresariales hacia  proyectos sociales. Dicha Fundaci&oacute;n realiza peri&oacute;dicamente diversas <strong>encuestas  de opini&oacute;n entre la poblaci&oacute;n espa&ntilde;ola</strong> para conocer el parecer de  consumidores y empresas sobre este tema.</p>
+    <p>El <strong><a href="http://www.observatoriorsc.org/" title="Para saber más de este observatorio puedes informate  más en..." target="_blank">Observatorio de la Responsabilidad Social Corporativa</a>, OBRSC</strong>, <img src="imagenes/obrsc.jpg" width="201" height="98" align="right" class="imgint" />se  creo a partir de un grupo de organizaciones, interesadas en desarrollar la RSC y los conceptos que la  conforman. Su presentaci&oacute;n oficial bajo la forma de Asociaci&oacute;n Legal para el  desarrollo del car&aacute;cter &eacute;tico de las PYMES, y presenta su <span class="txtcursiva">&ldquo;<strong>Gu&iacute;a de  Responsabilidad Social Corporativa para PYMES</strong>&rdquo;</span>, de la mano de su  coordinador, Orencio V&aacute;zquez. Con la iniciativa de la Gu&iacute;a para PYMES, el <strong>Observatorio  de RSC </strong>responde al llamamiento realizado por <strong>la Comisi&oacute;n Europea</strong><strong> en su Comunicaci&oacute;n de julio de 2002</strong>, donde se destacaba la necesidad de  adaptar las pr&aacute;cticas e instrumentos de la responsabilidad social a la  situaci&oacute;n espec&iacute;fica de las PYMES, debido a su importancia en la creaci&oacute;n de  empleo y en el desarrollo econ&oacute;mico. </p>
+    <p align="center"><img src="imagenes/bubble6.2.1.b1.gif" width="414" height="174" /></p>
+  </div>
+  <div class="virtualpage">
+    <p>De  otro lado, el Ministerio de Econom&iacute;a y Hacienda considera que una posible ley  de RSC deber&iacute;a limitarse a establecer marcos de <span class="txtcursiva">&quot;<strong>transparencia y verificaci&oacute;n</strong>&quot;</span> y no desvirtuar el <strong>car&aacute;cter voluntario de estas pol&iacute;ticas  empresariales</strong>. As&iacute; lo afirma el Director General de Pol&iacute;tica Econ&oacute;mica del  Ministerio, &Aacute;ngel Torres, en su comparecencia en la Subcomisi&oacute;n de RSC del  Congreso de los Diputados, en la que se apunta que el an&aacute;lisis sobre una  regulaci&oacute;n de estas cuestiones debe realizarse <span class="txtcursiva">&quot;valorando pros y  contras&quot;</span>, ya que en caso contrario, se corre el riesgo de que las  empresas se vuelvan reticentes ante un concepto que se debe salvaguardar con la  colaboraci&oacute;n de todos los grupos de inter&eacute;s, dadas sus interesantes  potencialidades</p>
+    <p class="titulo"><strong>6.2.- la evoluci&oacute;n de la sociedad espa&ntilde;ola en la RSC</strong></p>
+    <p>Para poder predecir la evoluci&oacute;n de la RSC en nuestra sociedad y  adecuarnos lo mejor posible en nuestras organizaciones empresariales, lo mejor  es recurrir a <strong>estudios</strong> realizados en nuestro pa&iacute;s sobre la materia. </p>
+    <p>Los estudios m&aacute;s relevantes sobre RSC en Espa&ntilde;a son los  realizados por <strong><a href="http://www.csreurope.org/" target="_blank" title="Visita la p&aacute;gina de CSR Europe en...">CSR Europe</a></strong>, con la colaboraci&oacute;n espa&ntilde;ola de la <strong><a href="http://www.empresaysociedad.org/" target="_blank" title="Si quieres informarte m&aacute;s entra en...">Fundaci&oacute;n   Empresa-Sociedad</a></strong> y, de otra parte, los estudios que  realiz&oacute; <strong><a href="http://www.pwc.com/" target="_blank" title="Para saber m&aacute;s de esta fundaci&oacute;n visita su p&aacute;gina...">Price Waterhouse Coopers</a></strong>, en 2003, sobre el an&aacute;lisis de <strong>43  empresas espa&ntilde;olas</strong>, muchas de ellas l&iacute;deres en su sector. Ambos estudios,  se rese&ntilde;an por su complementariedad.</p>
+    <p>Estos dos estudios evidencian que aunque se ha avanzado  mucho en la implementaci&oacute;n de las pol&iacute;ticas de RSC en Espa&ntilde;a en los &uacute;ltimos  a&ntilde;os, aun queda mucho camino por recorrer.</p>
+    <p align="center"><img src="imagenes/tema7.16.jpg" width="188" height="110" align="middle" class="imgint" /></p>
+  </div>
+  <div class="virtualpage">
+    <div align="center">
+      <table width="670" height="33" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="327" valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="327" height="36" align="absbottom">
+            <param name="movie" value="imagenes/CSR Europe.swf" />
+            <param name="quality" value="high" />
+			<param name="wmode" value="transparent"/>
+            <embed src="imagenes/CSR Europe.swf" width="327" height="36" wmode="transparent" align="absbottom" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
+          </object></td>
+          <td width="343">
+            <div align="right">
+              <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="327" height="50">
+                <param name="movie" value="imagenes/tema6.pag5_con.swf" />
+                <param name="quality" value="high" />
+				<param name="wmode" value="transparent"/>
+                <embed src="imagenes/tema6.pag5_con.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="327" height="50" wmode="transparent"></embed>
+              </object>
+          </div></td>
+        </tr>
+        <tr>
+          <td height="17" align="left">
+            <div align="left">
+              <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300">
+                <param name="movie" value="imagenes/colorMenu.swf" />
+                <param name="quality" value="high" />
+				<param name="wmode" value="transparent"/>
+                <embed src="imagenes/colorMenu.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300" wmode="transparent"></embed>
+              </object>
+          </div></td>
+          <td>
+            
+              <div align="center">
+                  <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300">
+                    <param name="movie" value="imagenes/colorMenu2.swf" />
+                    <param name="quality" value="high" />
+					<param name="wmode" value="transparent"/>
+                    <embed src="imagenes/colorMenu2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300" wmode="transparent"/></embed>
+                  </object>
+            </div></td>
+        </tr>
+        </table>
+      <img src="imagenes/bubble6.pag7b.gif" width="414" height="103" /></div>
+  </div>
+  <div class="virtualpage">
+    <p>Desde esta  perspectiva, para comprender mejor el aut&eacute;ntico significado del concepto y  evitar confusiones, la RSC  se compone de una serie de <strong>par&aacute;metros</strong>:</p>
+    <table width="646" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#00FFFF">
+      <tr>
+        <td><div align="center">Acci&oacute;n Social </div></td>
+        <td><div align="center">Desarrollo sostenible </div></td>
+        <td><div align="center">Gobierno corporativo </div></td>
+        <td><div align="center">Reputaci&oacute;n corporativa </div></td>
+      </tr>
+    </table>
+     
+    <div align="center">
+      <table width="327" height="33" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="327" valign="top"><div align="justify">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="404" height="69">
+              <param name="movie" value="imagenes/tema6.6.swf" />
+              <param name="quality" value="high" />
+              <embed src="imagenes/tema6.6.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="404" height="69"></embed>
+            </object>
+          </div></td>
+          <td width="327" valign="top"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="285" height="48">
+            <param name="movie" value="imagenes/tema6.6.b.swf" />
+            <param name="quality" value="high" />
+            <embed src="imagenes/tema6.6.b.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="285" height="48"></embed>
+          </object></td>
+        </tr>
+        <tr>
+          <td height="17" align="left"><div align="left">
+            <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300">
+              <param name="movie" value="imagenes/colorMenu4.swf" />
+              <param name="quality" value="high" />
+			  <param name="wmode" value="transparent"/>
+              <embed src="imagenes/colorMenu4.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300" wmode="transparent"></embed>
+            </object>
+          </div></td>
+          <td align="left"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300">
+            <param name="movie" value="imagenes/colorMenu3.swf" />
+            <param name="quality" value="high" />
+			<param name="wmode" value="transparent"/>
+            <embed src="imagenes/colorMenu3.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300" wmode="transparent"></embed>
+          </object></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="virtualpage">
+    <p class="titulo"><strong>6.3.- situaci&oacute;n de la RSC en los pa&iacute;ses. </strong></p>
+    <p>En Europa, desde algunos a&ntilde;os, diversas voces se han alzado  para exigir de las<strong><img src="imagenes/tema7.13.jpg" width="250" height="135" align="right" class="imgint" /></strong> empresas un enfoque de RSC, que entre otras cuestiones avance en aspectos vitales tales como:</p>
+    <ul>
+      <li class="listadedo">La de aumentar la  responsabilidad de los administradores.</li>
+    </ul>
+    <ul>
+      <li class="listadedo">La protecci&oacute;n al peque&ntilde;o  accionista.</li>
+    </ul>
+    <ul>
+      <li class="listadedo">La obligaci&oacute;n de tener  transparencia en sus cuentas de resultado.</li>
+    </ul>
+    <p>&nbsp;</p>
+    <p>Este marco de responsabilidad social supone que las empresas  deben de <strong>hacer p&uacute;blicos los pactos entre socios de compa&ntilde;&iacute;as que coticen o  la obligaci&oacute;n de informar anualmente al gobierno sobre pr&aacute;cticas y estructura  de <span class="txtcursiva">&ldquo;buen gobierno&rdquo;</span></strong>...</p>
+    <p>En<strong> Espa&ntilde;a </strong>destaca el<strong> Informe Aldama, </strong>que ha  sido el punto de referencia para la reforma de la <strong>Ley</strong><strong> de Sociedades  An&oacute;nimas y la Ley  del Mercado de Valores. </strong></p>
+  </div>
+  <div class="virtualpage">
+    <p>Las <strong>l&iacute;neas maestras</strong> del Informe Aldama pretenden  abordar el problema de aumentar la participaci&oacute;n del inversor, regula las  asociaciones de accionistas y la participaci&oacute;n en las juntas de los inversores  institucionales en fondos de inversi&oacute;n y pensiones.</p>
+    <p>Tambi&eacute;n es importante resaltar las reformas de la <strong>Ley Financiera</strong>, <strong>Ley de OPAS</strong>, el <strong>Libro Blanco sobre la Contabilidad de la Empresa</strong> y otros que,  sobre todo desde el plano financiero, ayudan a la implementaci&oacute;n de la RSE. </p>
+    <p>Igualmente en el plano del laboral, el acatamiento de normas  que garantizan derechos de los trabajadores se a&uacute;na a las buenas pr&aacute;cticas que  se demandan de las empresas, sin embargo no lo hacen directamente como RSE y  por eso no se tratan por separado. </p>
+	<dl id="gmap" style="border-left:1px solid darkgreen;border-top:1px solid darkgreen;border-right:1px solid darkgreen;border-bottom:1px solid darkgreen; padding-bottom:0">
+	<dt><a id="title2" title="Pasa el ratón por encima de los país con un color más intenso" href="#"></a></dt>
+<dd><a id="suecia" title="Suecia: apoyó expresamente el Global Compact de las Naciones Unidas. Cuenta con el partenariado sueco para la responsabilidad global en el que participan empresas que se ajusten a los lineamientos de la OCDE y el Global Compact." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="finlandia" title="Finlandia: existen premios a empresas que provean informes sociales y medioambientales." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="francia" title="Francia: la ley sobre fondos de reserva para los fondos de pensiones requiere que se discrimine la información de inversión siguiendo criterios éticos y respecto a multinacionales francesas el deber de presentar informes sociales y medioambientales." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="alemania" title="Alemania: Todos los fondos de pensiones deben presentar informes relativos a inversiones socialmente responsables. Ha implementado una estrategia nacional de desarrollo sostenible y la incorporación de los objetivos del Protocolo de Kyoto antes del 2012." href="http://www.eco-fair-trade-net.de" target="_blank" style="border-bottom: 0px"></a></dd>
+<dd><a id="canada" title="Canada: la Bolsa de Valores de Toronto cuenta con una “Políticas de Responsabilidad Corporativa”, o la Ley de las Corporaciones de Negocios." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="eeuu" title="EEUU: Ley Sarbanes Oxley. Está dirigida básicamente a la independencia del auditor, a la responsabilidad corporativa, a los descubiertos financieros en las empresas que coticen en bolsa, y a los conflictos de intereses de los analistas financieros. " href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="australia" title="Australia: el Parlamento en Sidney ha publicado las “Prácticas del Buen Gobierno” en el sector público." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="mexico" title="México: en este país existen algunos esfuerzos desde la sociedad civil como AliaRSE" href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="brasil" title="Brasil: cuenta con un Instituto muy dinámico respecto a la RSE: Ethos, creado para ayudar a los empresarios a comprender e incorporar el concepto de responsabilidad social en su gestión." href="http://www.ethos.org.br" target="_blank" style="border-bottom: 0px"></a></dd>
+<dd><a id="sudafrica" title="Sudáfrica: tienen el Reporte King II" href="http://www.ecgi.de/codes/country_documents/south_africa/executive_summary.pdf" target="_blank" style="border-bottom: 0px"></a></dd>
+</dl>	
+  </div>
+  <div class="virtualpage">
+    <p><img src="imagenes/tema7.14.jpg" width="250" height="138" align="left" class="imgint" />La RSC en pa&iacute;ses en v&iacute;as de desarrollo tuvo su oportunidad de  cimentarse en la mesa redonda sobre <span class="txtcursiva">&ldquo;<strong>La Responsabilidad Social Corporativa en los pa&iacute;ses en v&iacute;as de desarrollo&rdquo;</strong></span>. El objetivo final de la  mesa redonda estaba dirigido a contribuir al desarrollo de pol&iacute;ticas de  responsabilidad corporativa y actividades sociales, en particular en t&eacute;rminos  de impacto sobre los pobres en pa&iacute;ses en v&iacute;a de desarrollo, por eso se propuso  un di&aacute;logo p&uacute;blico sobre la RSE  con &eacute;nfasis en la inclusi&oacute;n de los que detentan los medios pol&iacute;ticos,  econ&oacute;micos y sociales. Se identificaron intereses comunes entre los empresarios  por la competitividad relacionada con el desaf&iacute;o de la RSE; el papel de los gobiernos  que realizan cooperaci&oacute;n o ayudas al desarrollo sobre la importancia del  desarrollo sostenible. Es tambi&eacute;n invaluable el esfuerzo que se hace desde los mismos pa&iacute;ses en  v&iacute;as de desarrollo por poner freno a los desmanes de algunas empresas.</p>
+  <p>En el &aacute;mbito latinoamericano existe la organizaci&oacute;n <strong><em>Empresa</em></strong> que comparten una misma visi&oacute;n de promover la RSC en el hemisferio. En la  &uacute;ltima d&eacute;cada, un gran n&uacute;mero de empresas ha reconocido los beneficios en el <strong><em>bottom-line</em></strong> de incorporar pr&aacute;cticas y pol&iacute;ticas socialmente responsables. Desde la <span class="txtcursiva">&ldquo;<strong>Siesta  Laboral</strong>&rdquo;</span> en una empresa chilena, pasando por la <em>Companhia de  Eletricidade de Pernambuco</em> en Brasil que incentiva el uso racional de la  energ&iacute;a, el voluntariado y la educaci&oacute;n, hasta Confec&aacute;maras en Colombia que  realiz&oacute; un estudio sobre las empresas colombianas y su grado de RSE. Adem&aacute;s  desde organismos multilaterales como el Banco Mundial o el Banco Interamericano  de Desarrollo se propugna por introducir la RSE en pa&iacute;ses en v&iacute;a de desarrollo.</p>
+    <p>En general lo que se observa es un <strong>creciente inter&eacute;s  desde la sociedad civil y el empresariado </strong>sobre la responsabilidad social,  medioambiental y financiera. Sin embargo, la <strong>falta de promoci&oacute;n por parte  del sector gubernamental</strong> a todos los niveles de pr&aacute;cticas empresariales, responsable aunque las iniciativas de certificados de calidad ISO, EFQM, se  orientan a la consecuci&oacute;n de la   RSC.</p>
+  </div>
+  <div class="virtualpage">
+    <p class="titulo"><strong>6.4.- normas b&aacute;sicas de la RSC </strong></p>
+    <p>En general, en todos los pa&iacute;ses de econom&iacute;as avanzadas se  observa un <strong>creciente inter&eacute;s desde la sociedad civil y el empresariado </strong>sobre  la responsabilidad social, medioambiental y financiera. Sin embargo, la <strong>falta  de promoci&oacute;n e implicaci&oacute;n por parte de los poderes p&uacute;blicos</strong> a todos los  niveles, supone que en las organizaciones las pr&aacute;cticas empresariales  responsable a&uacute;n tiene poco predicamento, aunque destacan las iniciativas  empresariales de certificaci&oacute;n en los <strong>Sistemas de Gesti&oacute;n de Calidad y de  Gesti&oacute;n Medioambiental <a href="http://es.wikipedia.org/wiki/Organizaci%C3%B3n_Internacional_para_la_Estandarizaci%C3%B3n" target="_blank" title="Si quieres saber más de esta organización entra en...">ISO</a> / EFQM / <a href="http://ecotur.caib.es/emas/?q=es/node/10" target="_blank" title="Si quieres saber más sobre EMAS entra en...">EMAS</a></strong>; los cuales orientan y primigenian  la consecuci&oacute;n de la RSC  como estadio superior de excelencia empresarial.</p>
+    <p>Aunque  las normas internacionales y europeas certifican sistemas de producci&oacute;n, en al  actualidad, hay que insistir, <strong>no existen  sistemas de homologaci&oacute;n, control y verificaci&oacute;n de RSC</strong> en las empresas,  dado su car&aacute;cter de voluntariedad.</p>
+    <p>Asumir  una norma de RSC es de momento impensable, ya que esta aspiraci&oacute;n de  determinados grupos de inter&eacute;s choca de forma frontal con la posici&oacute;n de las  empresas y <strong>la Organizaci&oacute;n Internacional</strong><strong> de Estandarizaci&oacute;n ISO</strong></p>
+    <p>La <strong>Asociaci&oacute;n Espa&ntilde;ola</strong><strong> de Normalizaci&oacute;n y Certificaci&oacute;n <a href="http://www.aenor.es/" target="_blank" title="Si quieres saber más de esta asociación entra en su página en...">AENOR</a></strong>, ha aprobado la elaboraci&oacute;n  de la <strong>Gu&iacute;a</strong><strong> de  Recomendaciones</strong> como formato orientador pero de menor rango que la norma.  Para el director de Desarrollo Estrat&eacute;gico y Corporativo de AENOR, el concepto  de la RSC <span class="txtcursiva">&quot;<em>no est&aacute; a&uacute;n lo suficientemente maduro</em>&quot;</span>,  situaci&oacute;n que equipar&aacute; a la del concepto de gesti&oacute;n medioambiental en los a&ntilde;os 80. </p>
+  </div>
+   <div class="virtualpage">
+    <p>De forma m&aacute;s prosaica se destaca el modelo de <strong>Excelencia  Empresarial</strong> de la <a href="http://www.efqm.org/" target="_blank" title="Para saber más sobre este modelo visita la página en..."><strong><em>European Foundation Quality Management</em></strong></a><strong>, EFQM</strong>, en este  modelo de Calidad Total se establece un sistema de autoevaluaci&oacute;n de los  resultados alcanzados en la gesti&oacute;n empresarial en los tres <strong>grupos clave de  inter&eacute;s</strong>: clientes, trabajadores y sociedad, as&iacute; como los tipos y calidad de  las acciones desarrolladas para alcanzarlos.</p>
+    <p align="center"><img src="imagenes/tema7.15.jpg" width="383" height="92" class="imgint" /></p>
+    <p>Tambi&eacute;n cabe destacar las <strong>etiquetas ecol&oacute;gicas</strong> de  productos y la aparici&oacute;n de <strong>c&oacute;digos de conducta &eacute;tica empresarial</strong> promovidos mayoritariamente por colectivos empresariales.</p>
+    <p>Los dos<strong> primeros sistemas de medida</strong> que han aparecido  de RSC y que por su trascendencia deben destacarse son:</p>
+    <ul>
+      <li class="listaplus">El <strong>&iacute;ndice SAI 8000  (2001)</strong>, de origen norteamericano, una norma uniforme y auditable  mediante un sistema de verificaci&oacute;n por terceras partes. </li>
+    </ul>
+    <ul>
+      <li class="listaplus">La <strong>Gu&iacute;a de <span class="txtcursiva">&quot;Global Reporting Iniciative&quot;</span>  (2002)</strong>. La <a href="http://www.globalreporting.org/" target="_blank" title=" Para saber más de este sistema visita su página en...">GRI</a> elabora con  detalle <strong>indicadores de actuaci&oacute;n econ&oacute;mica, ambiental y social</strong>, sobre  los cuales las empresas pueden optar por informar o no.</li>
+    </ul>
+  </div>
+  <div class="virtualpage">
+    <p>Crear una <strong>arquitectura  de gesti&oacute;n que sustente la</strong> <strong>interrelaci&oacute;n</strong> entre <strong>las pol&iacute;ticas, estrategias,  comportamientos y procesos de la empresa </strong>es lo que se intenta mediante las <strong>normas voluntarias de RSC</strong>. Las &aacute;reas fundamentales en el marco  conceptual son las siguientes:</p>
+    <p align="center">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="596" height="311">
+        <param name="movie" value="imagenes/tema6.14.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent">
+        <embed src="imagenes/tema6.14.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="596" height="311" wmode="transparent"></embed>
+      </object>
+    </p>
+  </div>
+  <div class="virtualpage">
+    <table width="100%" border="1" cellpadding="0" cellspacing="0" bordercolor="#000066">
+      <tr>
+        <td><table width="100%" border="0">
+          <tr>
+            <td height="30" align="center" bgcolor="#D2FAC9"><strong>REFERENCIAS INTERNACIONALES RELEVANTES DE R.S.C.</strong></td>
+          </tr>
+          <tr>
+            <td height="25" align="center"> Modelo Europeo de  Excelencia Empresarial, EFQM (2000)</td>
+          </tr>
+          <tr>
+            <td height="25" align="center" bgcolor="#E7FCE2">UN / &quot;Global Compact Iniciative&quot; (2000)</td>
+          </tr>
+          <tr>
+            <td height="25" align="center">OIT/Principios de actuaci&oacute;n de empresas  multinacionales, (1997/2000) y conjunto de Convenios y Recomendaciones</td>
+          </tr>
+          <tr>
+            <td height="25" align="center" bgcolor="#E7FCE2">OCDE / Directrices para empresas multinacionales,  (2000)</td>
+          </tr>
+          <tr>
+            <td height="25" align="center">Libro Verde de la Comisi&oacute;n Europea  (2001)</td>
+          </tr>
+          <tr>
+            <td height="25" align="center" bgcolor="#E7FCE2">OIT-ANDI / Manual de Balance Social, (2001)</td>
+          </tr>
+          <tr>
+            <td height="25" align="center">Social Accountability 8000 (Acci&oacute;n social)</td>
+          </tr>
+          <tr>
+            <td height="25" align="center" bgcolor="#E7FCE2">Global Reporting Iniciative 2003 (Sostenibilidad)</td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+    <div id="final">
+      <p align="center"><a href="#" onmouseout="MM_swapImgRestore()" onclick="completar()" title="Marcar 'Tema Completado'" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/completado.gif" alt="Marcar Tema Completado" width="76" height="80" border="0" id="completa"/></a></p>
+      <p align="center" class="txtfinal">&iexcl;Enhorabuena! has llegado al final del Tema 6, para poder realizar la autoevaluaci&oacute;n aseg&uacute;rate de haber<br />
+        revisado bien la teor&iacute;a 
+        y pulsa el bot&oacute;n de Marcar Tema Completado. </p>
+    </div>
+  </div>
+  </div>
+ 
+	<div id="listingpaginate" class="paginationstyle">
+		<a href="#" rel="previous" class="imglinks"><img src="../shared/imagenes/atras.jpg" align="absmiddle" /></a>
+		<select name="select" id="selnum">
+	  </select>
+  <a href="#" rel="next" class="imglinks"><img src="../shared/imagenes/adelante.jpg" align="absmiddle" /></a>  </div>
+	<script type="text/javascript">
+		//virtualpaginate(className, pieces_to_show_per_page)
+		var pagecontent=new virtualpaginate("virtualpage", 1)
+		pagecontent.buildpagination("listingpaginate")
+	</script>
+  	<div id="arbol">INICIO > TEORIA > COMPROMISOS Y NORMAS DE RSC </div>
+	<div id="sign">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="80" height="20" class="flash">
+        <param name="movie" value="../shared/imagenes/menu.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="../shared/imagenes/menu.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="80" height="20" wmode="transparent"></embed>
+      </object>
+  </div>
+</div>
+</body>
+</html>

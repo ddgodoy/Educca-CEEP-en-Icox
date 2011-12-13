@@ -1,0 +1,414 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Curso RSC</title>
+<script language="javascript" src="../shared/js/estilos.js"></script>
+
+<script type="text/javascript" src="../shared/js/virtualpaginate.js"></script>
+
+<script type="text/javascript" src="../shared/js/BubbleTooltips.js"></script>
+<script type="text/javascript" src="BubbleTooltips.js"></script>
+<script type="text/javascript">
+window.onload=function(){enableTooltips("contenido")};
+</script>
+
+<script type="text/javascript" src="../shared/js/prototype.js"></script>
+<script type="text/javascript" src="../shared/js/bubble.js"></script>
+
+<script language="javascript">
+	var tiempo_actual = new Date().getTime();
+	
+	function cerrarVentana() {
+	if (confirm("¿Estás seguro de que quieres abandonar la teoría?")) 
+		window.close();
+	}
+	
+	function completar() {
+	if (confirm("¿Quieres marcar la teoría del tema como Completada?")) {
+		opener.status_completado();
+		window.close();
+		}
+	}  	
+		
+</script>
+<link href="../shared/css/bubble.css" rel="stylesheet" type="text/css" />
+
+<link href="../shared/css/curso.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+/*Sample CSS used for the Virtual Pagination Demos. Modify/ remove as desired*/
+
+.virtualpage, .virtualpage2, .virtualpage3{
+/*hide the broken up pieces of contents until script is called. Remove if desired*/
+display: none;
+}
+
+.paginationstyle{ /*Style for demo pagination divs*/
+	width: 250px;
+	padding: 2px 0;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.paginationstyle select{ /*Style for demo pagination divs' select menu*/
+	border: 1px solid navy;
+	margin: 0 15px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+}
+
+.paginationstyle a{ /*Pagination links style*/
+padding: 0 5px;
+text-decoration: none;
+border: 1px solid black;
+color: navy;
+background-color: white;
+}
+
+.paginationstyle a:hover, .paginationstyle a.selected{
+color: #000;
+background-color: #FEE496;
+}
+
+.paginationstyle a.imglinks{ /*Pagination Image links style (class="imglinks") */
+border: 0;
+padding: 0;
+}
+
+.paginationstyle a.imglinks img{
+vertical-align: middle;
+border: 0;
+}
+
+.paginationstyle a.imglinks a:hover{
+background: none;
+}
+
+.paginationstyle .flatview a:hover, .paginationstyle .flatview a.selected{ /*Pagination div "flatview" links style*/
+color: #000;
+background-color: yellow;
+}
+
+#page #listingpaginate {
+	position: absolute;
+	left: 244px;
+	top: 551px;
+	vertical-align: top;
+}
+body {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+</style>
+</head>
+
+<body onunload="javascript: window.opener.setElapsedTime(); window.opener.location.reload();">
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip">This DIV has a tip!!.</div>
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip2">This DIV has a tip!!.</div>
+<div id="page">
+	  <div class="super" id="super"><img src="../shared/imagenes/logo.gif" alt="Responsabilidad Social Corporativa" width="247" height="33"/></div> 
+	 
+	<div id="menusup">
+	  <div align="right"><a href="javascript:cerrarVentana()"><img src="../shared/imagenes/home.jpg" width="25" height="31" hspace="5" border="0" onmouseover="ddrivetip('Volver al Indice'); return false;" onmouseout="hideddrivetip()"/></a>
+	  <script language="javascript">
+	  	var estado = opener.status;
+		if (estado == "completed" || status == "failed") {
+			document.writeln("<a href=\"cuestionario.html\"><img src=\"../shared/imagenes/ejercic.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Ir al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" /></a>");
+		} else {
+			document.writeln("<img src=\"../shared/imagenes/ejercic_no.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Aun no tienes acceso al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" />");
+		}
+	  </script>
+	  <a href="javascript:void(0)" onclick="open ('../shared/bibliografia.html','biblio','left=100,top=90,width=760,height=620,scrollbars=1,toolbar=1,resizable=1');"><img src="../shared/imagenes/biblio.jpg" width="25" height="31" hspace="5"  onmouseover="ddrivetip('Bibliografía'); return false;" onmouseout="hideddrivetip()" border="0"/></a></div>
+  </div>
+  <div id="contenido">
+  		<div class="virtualpage">
+			<p class="titulo"><strong>1.- introduccion al concepto de la responsabilidad social corporativa &ndash;RSC-</strong></p>
+  <p>&nbsp;</p>
+  <p>Nueva Econom&iacute;a, Globalizaci&oacute;n, Innovaci&oacute;n, Gesti&oacute;n  del Conocimiento... son conceptos que se han incorporado recientemente a la  realidad de la gesti&oacute;n empresarial y la sociedad en general. </p>
+  <p align="left"><img src="imagenes/tema1.1_2.jpg" alt="Globalizaci&oacute;n" width="150" height="149" align="right" class="imgint" />En realidad, lo que subyace detr&aacute;s de estos t&eacute;rminos es la b&uacute;squeda constante de soluciones  para la Gesti&oacute;n de las Organizaciones, orientada a la creaci&oacute;n de valor y a la  competitividad sostenida en un entorno en constante cambio... Y si hay algo  que, en la actualidad, es realmente constante es, precisamente eso, el cambio.  La pregunta ante esta situaci&oacute;n es clara: <img src="imagenes/img1.1.gif" alt="&iquest;Estamos preparados?" width="188" height="25" class="imgtxtpregunta" /></p>
+  <p class="scroll2">La clave para  responder a esta pregunta pasa por asumir que <span class="txtcursiva">&ldquo;no estamos en una &eacute;poca de  cambios, sino en un cambio de &eacute;poca&rdquo;</span>...</p>
+  La Gesti&oacute;n o Direcci&oacute;n de la Responsabilidad Social Empresarial se est&aacute;  convirtiendo en uno de los conceptos m&aacute;s notables en la Direcci&oacute;n de Empresas.  Prueba de ello son los distintos estudios, art&iacute;culos, libros, conferencias y  seminarios que en todo el mundo est&aacute;n surgiendo sobre la materia.
+		<p>Efectivamente, hoy nadie puede dudar que la capacidad de toda organización para aprender y asumir sus responsabilidades sociales más rápidamente que sus rivales es una de las mayores y más sostenibles ventajas competitivas para el futuro desarrollo y crecimiento de las empresas. Y, desde luego, esa capacidad para poder optimizar la “la responsabilidad” como recurso estratégico y diferencial mediante una gestión más inteligente, más eficaz y más eficiente, permite posicionar a cualquier entidad como una organización más preparada para sobrevivir en una economía en permanente estado de turbulencia.</p>
+		</div>
+		<div class="virtualpage">
+		<p>Que la  Responsabilidad Social Corporativa es una disciplina relativamente  joven es algo obvio, sin embargo, el gran inter&eacute;s que despert&oacute; desde  sus inicios, as&iacute; como la intensidad de estudios, enfoques y modelos que  han surgido al hilo de esta aparici&oacute;n, han conseguido un resultado  espectacular, han conseguido arrojar cierta luz acerca de c&oacute;mo poner en  marcha iniciativas que permitan a las empresas gestionar  convenientemente su diferenciaci&oacute;n basada en la responsabilidad.</p>
+      <table width="293" height="226" border="0" align="right" cellpadding="0" cellspacing="0">
+        <tr>
+          <td align="right"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="276" height="206" hspace="0" vspace="0" title="Chart">
+            <param name="movie" value="chart.swf" />
+            <param name="quality" value="high" />
+            <embed src="chart.swf" width="276" height="206" hspace="0" vspace="0" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
+          </object></td>
+        </tr>
+      </table>
+      <p>Las empresas espa&ntilde;olas se enfrentan a <strong>retos sin precedentes y de  gran impacto estrat&eacute;gico</strong>. Algunos de ellos podr&iacute;amos definirlos como  m&aacute;s <strong>tradicionales</strong>: bajo nivel de crecimiento, deslocalizaci&oacute;n, presi&oacute;n  en m&aacute;rgenes y un entorno de mercado en el que hay una cierta saturaci&oacute;n  de nuevos productos y en el que es muy dif&iacute;cil diferenciar  significativamente las marcas. Otros retos, est&aacute;n relacionados con <strong>aspectos intangibles</strong>, menos previsibles y en cierta medida m&aacute;s  complejos de gestionar, pero est&aacute;n afectando a la propia esencia de la  relaci&oacute;n de los productores y distribuidores con los consumidores y la  comunidad y, por lo tanto, a la marca.</p>
+      <p>El efecto combinado de estos retos supone que <strong>las compa&ntilde;&iacute;as deben  buscar v&iacute;as innovadoras de diferenciaci&oacute;n, creaci&oacute;n de valor y  mitigaci&oacute;n y gesti&oacute;n de los riesgos</strong>.</p>
+      <p>Las <strong>compa&ntilde;&iacute;as l&iacute;deres</strong> est&aacute;n desarrollando <strong>estrategias centradas en  potenciar la confianza en la marca y el crecimiento y efectividad</strong> de  las mismas, entre las cuales las estrategias de Reputaci&oacute;n y  Responsabilidad Social Corporativa (RSC) que tienen una importancia  fundamental.</p>
+
+		</div>
+		<div class="virtualpage">
+			<p>La responsabilidad  social no es algo novedoso en el mundo empresarial, aunque en estos &uacute;ltimos  a&ntilde;os est&aacute; adquiriendo una nueva dimensi&oacute;n por el especial inter&eacute;s que conlleva,  demandando una gesti&oacute;n cuidada como <strong>valor estrat&eacute;gico</strong>, que supere lo  anecd&oacute;tico o lo filantr&oacute;pico. Cualquier empresa consolidada que se analice  desarrolla diversidad de <strong>acciones de responsabilidad social</strong> respecto a  los principales <strong>grupos de inter&eacute;s</strong> con los que se relaciona:  trabajadores, clientes, proveedores y la sociedad en general </p>
+    <p>La responsabilidad  social corporativa es un intento de moralizar la actividad de la empresa al  incorporarla <strong>practicas &eacute;ticas de  responsabilidad, de reciprocidad y de obligaci&oacute;n</strong>, desde la idea prevalente  de entender que ello puede convertirse en una ventaja competitiva.</p>
+    <p><img src="imagenes/tema1.1_3.jpg" alt="Businessman" width="102" height="102" hspace="10" align="left" /><br />
+    &iquest;Cu&aacute;l es la  empresa que ante un problema familiar grave o una necesidad acuciante de un  trabajador no tiene el m&iacute;nimo inter&eacute;s de intentar ofrecerle su ayuda?</p>
+    <p><img src="imagenes/tema1.1_4.jpg" alt="Poluci&oacute;n" width="90" height="100" align="right" class="imgint" /></p>
+    <p>&nbsp;</p>
+    <p align="right">&iquest;Cu&aacute;l es la  empresa que se despreocupa de que los productos que fabrica puedan generar da&ntilde;os  graves al medio ambiente? </p>
+    <p>&nbsp;</p>
+    <p><img src="imagenes/tema1.1_5.jpg" alt="Ni&ntilde;os" width="190" height="105" hspace="10" align="left" /><br />
+      <br />
+    &iquest;Cu&aacute;l es la  empresa asentada en un municipio de peque&ntilde;o o mediano tama&ntilde;o que no colabora de  alguna forma en una importante iniciativa que el Ayuntamiento promueve para el  desarrollo municipal y para la que se le solicita una ayuda que puede ofrecer?</p>
+		</div>
+		<div class="virtualpage">
+		     <p>Posiblemente  se piense que estas son cosas interesantes pero que no forman parte del  cometido empresarial que es <strong>ofrecer productos de calidad a un buen precio y  obtener de ello un beneficio econ&oacute;mico</strong>. Bien, ello es cierto solo en parte,  pero lo que no conviene a estas alturas es confundir a <strong>los verdaderos  empresarios que crean riqueza y bienestar en nuestra sociedad</strong>, con los  negociantes o los meros especuladores que se mueven exclusivamente por el af&aacute;n  personal de lucro, en el plazo m&aacute;s inmediato posible, contribuyendo bien poco o  nada a la sociedad de la que se aprovechan continuamente. </p>
+    <p><strong><img src="imagenes/tema1.1_6.jpg" alt="Trust" width="242" height="236" align="right" /></strong><br />
+    En realidad, en un  mismo entorno conviven organizaciones preocupadas por <strong>los valores propios de  una sociedad humanizada</strong> e individuos o colectivos guiados exclusivamente  por fines materialistas, incluso no &eacute;ticos.</p>
+    <p>La satisfacci&oacute;n  de las expectativas de los clientes estaba limitada tradicionalmente a la  calidad de los productos y bienes; sin embargo, hoy en d&iacute;a, <strong>la clave es  <span class="txtcursiva">&ldquo;construir confianza&rdquo;</span></strong>, que no es una cuesti&oacute;n de publicidad o marketing,  sino de <span class="txtcursiva">&ldquo;consistencia y coherencia en hacer lo que decimos que hacemos&rdquo;</span>.</p>
+    <p>La Responsabilidad Social  Corporativa constituye para la empresa un <strong>marco integrador de sus pol&iacute;ticas  y actuaciones con los clientes, accionistas, empleados y todos los grupos de inter&eacute;s </strong>con los que se  relaciona. Ello le permite desarrollar su labor en una <strong>sociedad avanzada</strong> que plantea a las empresas <strong>la satisfacci&oacute;n de nuevas y m&aacute;s exigentes  demandas y expectativas.</strong></p>
+		</div>
+		<div class="virtualpage">
+		<p>La <strong>Responsabilidad Social</strong><strong> de la Empresa</strong>, est&aacute; estructurado en una  primera parte en las razones del porqu&eacute; en los &uacute;ltimos a&ntilde;os <a href="http://es.wikipedia.org/wiki/Stakeholders" target="_blank" title="Si quieres saber más sobre este concepto mira en:"><strong><em>stakeholders</em></strong></a> y <strong>el consumidor com&uacute;n</strong> demandan de  la empresa una <strong>mayor participaci&oacute;n en el &aacute;rea social y una actitud proactiva  con el entorno</strong> donde se desarrolla. </p>
+    <p>Desde este enfoque hoy hablamos de <strong>desarrollo  sostenible de la empresa</strong><span class="superindice"><sup onmouseover="ddrivetip2('El Concepto de Desarrollo Sostenible se funda en la Cumbre de la Tierra organizada por Naciones Unidas en Río de Janeiro en 1992, donde 172 gobiernos y 108 Jefes de Estado aprobaron tres grandes acuerdos que habrían de regir el futuro, de un lado el Programa 21, un plan de acción mundial para promover el desarrollo sostenible; la Declaración de Río sobre medio ambiente y el desarrollo, como conjunto de principios relativos a los derechos civiles y obligaciones de los Estados; y una Declaración de Principios relativos a los bosques como directrices de ordenación sostenible de los bosques del mundo.');return false;" onmouseout="hideddrivetip()">[1]</sup></span><strong>, </strong>que es mucho m&aacute;s que un concepto ecol&oacute;gico, ya que plantea el <strong>reto de combinar econom&iacute;a din&aacute;mica con una  sociedad que ofrezca oportunidades para todos, al tiempo que mejore la  productividad de los recursos y se desliga crecimiento de la degradaci&oacute;n del  medio ambiente</strong>. </p>
+    <p><img src="imagenes/tema1.1_7.jpg" alt="EU" width="218" height="206" align="right" class="imgint" />Este nuevo concepto tiene un fuerte impacto en la Uni&oacute;n Europea en el <strong>Tratado de &Aacute;msterdam</strong> que entro en vigor  en <strong>1999</strong> y que hace suyo el concepto  de desarrollo sostenible en su articulo 2 <span class="txtcursiva">&rdquo;<strong><em>La Uni&oacute;n tendr&aacute; los siguientes  objetivos(...) promover el progreso econ&oacute;mico y social y un alto nivel de  empleo y conseguir un desarrollo equilibrado y sostenible principalmente  mediante el fortalecimiento de la cohesi&oacute;n econ&oacute;mica y social</em></strong>&rdquo;</span> As&iacute;  mismo, estos preceptos de desarrollo sostenible se recogen en el <strong>Informe Brundtland</strong><span class="superindice"><sup onmouseover="ddrivetip2('Informe de la Comisión Mundial sobre Medio Ambiente y Desarrollo (ONU 1987) y que debe su denominación al Presidente de la comisión encargada de su elaboración, el entonces primer ministro de Noruega Gro Harlem Brundtland.');return false;" onmouseout="hideddrivetip()">[2]</sup></span><strong>,</strong> este Informe define el concepto como <span class="txtcursiva">&ldquo;<strong><em>el  desarrollo que satisface las necesidades del presente sin poner en peligro la  capacidad de las futuras generaciones para satisfacer sus propias necesidades</em></strong>&rdquo;</span>,  en esencia se trata de <strong>garantizar una  mejor calidad de vida para la poblaci&oacute;n actual y futura</strong>, y de tomar  conciencia de los riesgos que el actual modelo de desarrollo tiene respecto al <strong>mantenimiento de la sostenibilidad</strong>.</p>
+	</div>
+	<div class="virtualpage">
+	<p>La <strong>Comisi&oacute;n de las Comunidades Europeas<span class="superindice"><sup onmouseover="ddrivetip2('Com 2001 366 final.'); return false;" onmouseout="hideddrivetip()">[3]</sup></span></strong>  entiende el desarrollo sostenible como un <strong>crecimiento  basado en el pleno empleo, el respeto al medio ambiente y la competitividad de  las empresas</strong>. Desde estas visiones el crecimiento econ&oacute;mico se hace sobre  la necesidad de <strong>modificar los par&aacute;metros  de producci&oacute;n y consumo</strong> para conseguir pautas sostenibles desde la  responsabilidad compartida, el progreso social como la consecuci&oacute;n de <strong>los objetivos de erradicaci&oacute;n de la pobreza  y aumento de la calidad de vida</strong>, como <strong>principio  de la solidaridad intra e intergeneracional</strong>, y <strong>respeto al medio ambiente</strong>, junto con una <strong>pol&iacute;tica social</strong> que impulse a las empresas de forma eficiente.</p>
+    <p>Desde esta <strong>nueva &oacute;ptica de RSC</strong> las <strong>dos ideas principales</strong> son:</p>
+    <ul>
+      <li class="lista_flag">El desarrollo como dimensi&oacute;n econ&oacute;mica, social y  medioambiental.</li>
+    </ul>
+    <ul>
+      <li class="lista_flag">La responsabilidad ante las generaciones futuras de dejar  sufriente recurso social, medioambiental y econ&oacute;mico para que puedan disfrutar  de al menos el mismo grado de bienestar que la generaci&oacute;n actual.</li>
+    </ul>
+    <p>Dos son las  grandes estrategias para aproximarse progresivamente a un crecimiento econ&oacute;mico  fundamentado en el desarrollo sostenible:</p>
+    <p><img src="imagenes/tema1.1_8.jpg" alt="Europa" width="83" height="72" align="left" class="imgint" /></p>
+    <p><strong><br />
+    </strong>La estrategia  procedente de la <strong>acci&oacute;n publica</strong> en el &aacute;mbito europeo mediante una din&aacute;mica en  cascada de pol&iacute;ticas de sostenibilidad productiva mediante recomendaciones,  reglamentos y dict&aacute;menes.<img src="imagenes/tema1.1_9.jpg" width="83" height="73" align="right" class="imgint" /></p>
+    <p align="right"><strong><br />
+      <br />
+      <br />
+    </strong>La estrategia  procedente de la <strong>acci&oacute;n privada</strong> de responsabilidad social corporativa</p>
+	</div>
+	<div class="virtualpage">
+	<p>La actividad empresarial va asociada impl&iacute;citamente a los <strong>beneficios  sociales</strong> que comporta, ya sea de manera <strong>expresa y voluntaria o incluso  sin pretenderlo</strong>. Toda empresa que genera puestos de trabajo directos e  indirectos, es fuente de <strong>riqueza social</strong>, m&aacute;s all&aacute; de <strong>los beneficios</strong> que generen sus <strong>productos y servicios</strong> a sus usuarios y a la propia  empresa y sus accionistas. </p>
+    <p>Estos beneficios podr&aacute;n ser reinvertidos en la  empresa para asegurar su crecimiento y seguir generando riqueza, y se  convertir&aacute;n en manos de sus receptores, junto a los salarios percibidos por sus  colaboradores, en fuente de consumo, adem&aacute;s de aportar ingresos a la Administraci&oacute;n para  contribuir al desarrollo econ&oacute;mico del municipio, regi&oacute;n o pa&iacute;s, <strong>socializ&aacute;ndose  as&iacute; la riqueza generada</strong>. </p>
+    <p>Los mercados son cada vez m&aacute;s competitivos y <strong>las empresas han visto en la RSC una oportunidad de  diferenciarse</strong> y crear <strong>ventajas competitivas</strong>. La RSC se mueve en el &aacute;mbito de  lo voluntario, de la competitividad. La   RSC es <strong>una oportunidad para que la empresa conozca mejor  el entorno con el que se relaciona y responda adecuada y r&aacute;pidamente a los  cambios.</strong> Por otro lado, la RSC  es una eficaz herramienta de <strong>minimizaci&oacute;n del riesgo social, ambiental y de  la reputaci&oacute;n</strong> de la empresa. </p>
+    <p align="center"><img src="imagenes/tema1.1_10.jpg" alt="Meeting" width="305" height="121" border="1" /></p>
+    <p>La RSC se origina a partir de una <strong>decisi&oacute;n que toman los empresarios y directivos</strong> de la organizaci&oacute;n.  Existe una <strong>nueva generaci&oacute;n</strong> de directivos y empresarios que, <strong>conscientes</strong> del impacto social y ambiental de su actividad, se comprometen con una <strong>gesti&oacute;n  responsable e implantan pr&aacute;cticas sostenibles</strong>. Sin duda, factores como la  formaci&oacute;n o el entorno en el que desarrollan su actividad han propiciado la  aparici&oacute;n de estos <span class="txtcursiva">&quot;nuevos&quot;</span> profesionales. </p>
+    </div>
+	<div class="virtualpage">
+	<p>El <strong>desarrollo  espectacular de la RSC</strong>,  el creciente inter&eacute;s por estos temas y la implantaci&oacute;n de pr&aacute;cticas de gesti&oacute;n  sostenible en las empresas tiene origen en una serie de causas que han  impulsado este fen&oacute;meno. Algunos de los principales <strong>motivos</strong> que  fortalecen el desarrollo de la RSC  son:</p>
+    <p>&nbsp;</p>
+    <blockquote>
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td width="51%">
+            <p><strong><img src="imagenes/tema1.1_11.jpg" width="40" height="40" hspace="4" align="absmiddle" />Esc&aacute;ndalos <a href="imagenes/bubble1.1.b.gif" rel="bubble" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0"/></a></strong></p>
+            <p><strong><img src="imagenes/tema1.1_12.jpg" width="40" height="40" hspace="4" align="absmiddle" />Deterioro del medio ambiente </strong><strong><a href="imagenes/bubble1.2.b.gif" rel="bubble" style="border-bottom-color:#FFFFFF" target="_blank"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+          
+            <div id="tip">
+              <div align="left"><img src="../shared/imagenes/bombilla.gif" alt="Tip" width="16" height="16" /><span class="Estilo2"><strong>Tip:</strong> Pasar el rat&oacute;n por encima del bocadillo <img src="../shared/imagenes/bubble.gif" width="12" height="12" /> para una explicaci&oacute;n detallada de cada punto.</span></div>
+            </div>
+            
+              <p><strong><img src="imagenes/tema1.1_16.jpg" width="40" height="40" hspace="4" align="absmiddle" />El origen &eacute;tico de la RSC <a href="imagenes/bubble1.3.b.gif" rel="bubble" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+              <p><strong><img src="imagenes/tema1.1_14.jpg" width="40" height="40" hspace="4" align="absmiddle" />Insuficiencia del derecho</strong> <strong><a href="imagenes/bubble1.4.b.gif" rel="bubble" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+              <p><strong><img src="imagenes/tema1.1_15.jpg" width="40" height="40" hspace="4" align="absmiddle" />Presi&oacute;n de los grupos de inter&eacute;s </strong><strong><a href="imagenes/bubble1.5.b.gif" rel="bubble" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+              <p><strong><img src="imagenes/tema1.1_13.jpg" width="40" height="40" hspace="4" align="absmiddle" />Globalizaci&oacute;n </strong><strong><a href="imagenes/bubble1.6.b.gif" rel="bubble" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+          </td>
+          <td width="49%"><p><strong><img src="imagenes/tema1.1_17.jpg" width="40" height="40" hspace="4" align="absmiddle" /><a href="imagenes/bubble1.7.b.gif" rel="bubble" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a> Crisis del estado del bienestar </strong> <strong><a href="imagenes/bubble1.4.gif" rel="bubble" style="border-bottom-color:#FFFFFF"></a></strong></p>
+            <p><strong><img src="imagenes/tema1.1_18.jpg" width="48" height="48" hspace="4" align="absmiddle" /><a href="imagenes/bubble1.8.b.gif" rel="bubble" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a> Mala imagen  </strong><strong><a href="imagenes/bubble1.5.gif" rel="bubble" style="border-bottom-color:#FFFFFF"></a></strong></p>
+          <p><strong><img src="imagenes/tema1.1_19.jpg" width="33" height="40" hspace="4" align="absmiddle" /><a href="imagenes/bubble1.9.b.gif" rel="bubble" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a> Regulaci&oacute;n </strong><strong><a href="imagenes/bubble1.6.gif" rel="bubble" style="border-bottom-color:#FFFFFF"></a></strong></p></td>
+        </tr>
+      </table>
+      <p>&nbsp;</p>
+    </blockquote>
+	</div>
+	<div class="virtualpage">
+	<p>El concepto de <strong>Responsabilidad Social de la Empresa</strong>, se ajusta  sobretodo a lo que en t&eacute;rminos anglosajones se entiende como <strong><em>Corporate  Governance</em></strong>. La RSE  se entiende a grosso modo <strong>c&oacute;mo la acci&oacute;n conjunta de toda la empresa concienciada,</strong> trabajadores, directivos y due&ntilde;os, del papel que tiene &eacute;sta como unidad de  negocio que crea valor y que pervive en un espacio del que se lucra. </p>
+    <p><strong>Concienciaci&oacute;n  en el plano social, </strong>de ayuda a los m&aacute;s desfavorecidos y de respeto a los  consumidores<strong>, concienciaci&oacute;n ambiental de sostenibilidad y responsabilidad </strong>con  el medio ambiente y <strong>concienciaci&oacute;n econ&oacute;mica</strong> de pr&aacute;cticas leales,  transparentes en el manejo de sus finanzas y de inversiones socialmente  responsables. Es decir, la   Empresa Buena. Este modelo de empresa de acuerdo con el <span class="txtcursiva"><strong>&ldquo;<em>C&oacute;digo  del buen gobierno de la empresa sostenible&rdquo;</em></strong></span>, que ha sido elaborado por  las tres entidades impulsoras del <strong>Foro de Desarrollo Sostenible: <a href="http://www.iese.edu/es/" title="Para informate más:" target="_blank">IESE</a>,  <a href="http://www.pwc.com/es/esp/main/home/index.html" title="Visita la página:" target="_blank">PricewaterhouseCoopers</a>&nbsp; y <a href="http://www.fundacionentorno.org/" title="Para más información visita:" target="_blank">Fundaci&oacute;n  Entorno</a></strong>, se caracterizan porque:<span class="txtcursiva"> &ldquo;c<em>rea valor econ&oacute;mico, medioambiental y  social a corto y largo plazo, contribuyendo de esta forma al aumento del  bienestar de las generaciones presentes y futuras, tanto en su entorno  inmediato como en el planeta en general&rdquo;</em></span>.</p>
+    <p>La RSC es una herramienta que <strong>intenta  integrar ciertos valores en la gesti&oacute;n empresarial</strong> ordinaria. Cuando  atiende a sus <strong>interlocutores o grupos de  inter&eacute;s</strong>, una empresa es capaz de gestionar mejor su propio desarrollo y sus  resultados. En consecuencia las motivaciones que conducen a asumir los  compromisos en materia de RSC son numerosos y variados. </p>
+    <p><img src="imagenes/tema1.1_20.jpg" width="110" height="99" hspace="4" align="left" />Los <strong>factores externos</strong> son tan diversos como  las propias iniciativas de RSC y tienen su origen en las actuaciones y  presiones ejercidas por los inversores, los consumidores, las autoridades  p&uacute;blicas, las ONGs, los sindicatos y otros grupos de inter&eacute;s.</p>
+    <p> Los <strong>factores internos</strong> pueden agruparse en  torno a seis realidades principales: la reputaci&oacute;n, la marca, la rentabilidad,  la eficiencia, la contrataci&oacute;n y la competitividad, y la gesti&oacute;n de riesgos. Estos  son los factores que determinan los compromisos en materia de RSC.</p>
+	</div>
+	<div class="virtualpage">
+	<p>Toda empresa que  desee <strong>implantar pol&iacute;ticas y pr&aacute;cticas</strong> de RSC debe responder a estas  cuestiones iniciales o <strong>Preguntas B&aacute;sicas:</strong></p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td width="52%"><blockquote>
+          <p><img src="imagenes/img1.2.gif" width="245" height="27" align="absmiddle" class="imgtxtpregunta" /><strong><br />
+              <img src="imagenes/img1.3.gif" width="330" height="27" class="imgtxtpregunta" /><br />
+          </strong><img src="imagenes/img1.4.gif" width="330" height="27" class="imgtxtpregunta" /></p>
+        </blockquote></td>
+        <td width="48%"><img src="imagenes/tema1.1_21.jpg" alt="Por qu&eacute;" width="107" height="106" /></td>
+      </tr>
+    </table>
+    <p><strong></strong>Estas preguntas  sobre la RSC  permiten a la empresa reflexionar sobre la verdadera naturaleza de su actividad y construir una base s&oacute;lida sobre la que progresar  adecuadamente. </p>
+	
+    <p>El los &uacute;ltimos  a&ntilde;os <strong>han proliferado las Declaraciones de RSC</strong> de car&aacute;cter internacional o local, lo que ha contribuido a divulgar este <strong>nuevo paradigma de gesti&oacute;n.</strong> Estas declaraciones generales se han desarrollado en documentos de car&aacute;cter <strong>sectorial</strong> para facilitar la implantaci&oacute;n de las pr&aacute;cticas de  RSC en funci&oacute;n de la naturaleza de cada actividad. </p>
+    <p>La RSC parte del supuesto de que <strong>las empresas cumplen con las exigencias normativas y voluntariamente  invierten en capital humano, entorno y en las relaciones con los interlocutores  o stakeholders</strong>. Una empresa act&uacute;a de forma socialmente responsable cuando  sus iniciativas tienen en cuenta los siguientes criterios:</p>
+    <ul>
+      <li class="lista">Se desarrolla de forma  voluntaria, yendo algunos pasos m&aacute;s all&aacute; de las normas legales.</li>
+      <li class="lista">Hay interacci&oacute;n con los  stakeholders mediante un dialogo social fruto de la confianza reciproca.</li>
+      <li class="lista">Las preocupaciones  sociales y ambientales est&aacute;n integradas en todas sus actuaciones empresariales.</li>
+    </ul>
+	</div>
+	<div class="virtualpage">
+	<p>La participaci&oacute;n empresarial en el <strong>esfuerzo colectivo de sostenibilidad y b&uacute;squeda de la cohesi&oacute;n social</strong> es la raz&oacute;n de ser de una econom&iacute;a globalizada, en la que el desarrollo exige  hacer compatible los beneficios con el desarrollo sostenible. </p>
+    <p><strong>Las empresas son el problema pero tambi&eacute;n  la soluci&oacute;n</strong>, ya que ellas ser&aacute;n las primeras interesadas en una excelente  gesti&oacute;n de los recursos. Adem&aacute;s, la empresa forma parte de la sociedad, de la  que participa en sus preocupaciones y valores. La empresa conocer&aacute; el &eacute;xito o  el fracaso en funci&oacute;n de las buenas relaciones que sepa entretejer con las  diferentes partes interesadas, sus stakeholders.</p>
+    <p> <img src="imagenes/img1.5.gif" alt="empresa" width="250" height="232" align="right" class="imgint" />En este sentido la empresa  debe responder ante sus accionistas, pero tambi&eacute;n debe hacerlo ante sus partes  interesadas, estableciendo una relaci&oacute;n de confianza y colaboraci&oacute;n, de lo  contrario no sobrevivir&aacute; en el mercado. En definitiva, la empresa no debe  olvidar que <strong>es la sociedad la que le  otorga su derecho a operar en mercado,</strong> sino esta abocada al fracaso. </p>
+    <p>Todo  esto no significa que la empresa ahora sea una ONG, sino que las empresas deben  ser <strong>eficientes, rentables e innovadoras,  han de ser capaces de generar riqueza y prosperidad</strong>, pero no a cualquier  precio ni de cualquier manera. La sociedad esta inmersa en <strong>cambios vertiginosos sociales, tecnol&oacute;gicos y econ&oacute;micos</strong> y la  empresa participa plenamente en esta din&aacute;mica, de hecho es ella misma art&iacute;fice  de dichos cambios: Quedarse anclada en modelos propios de otros tiempos es una  apuesta segura hacia el fracaso.</p>
+	</div>
+	<div class="virtualpage">
+	  <p>&nbsp;</p>
+    <p>La <strong>Responsabilidad</strong><strong> de la   Empresa </strong>se distingue en cuatro  vertientes fundamentales:</p>
+    <p>&nbsp;</p>
+    <p><strong><img src="imagenes/tema1.1_22.jpg" alt="etica" width="250" height="300" align="left" /><br />
+    Responsabilidad  econ&oacute;mica</strong>. Las empresas se crean para  proporcionar bienes y servicios que satisfagan las expectativas y necesidades  de los clientes por un precio justo. Desde esta naturaleza econ&oacute;mica las  empresas tienen la responsabilidad objetiva de maximizar sus beneficios para  dar satisfacci&oacute;n a los grupos de inter&eacute;s que perviven en su se&ntilde;o. <br />
+    </p>
+    <p><strong>Responsabilidad legal.</strong> Las empresas deben actuar desde el reconocimiento delas  leyes y preceptos legales, que limitan su actividad en el funcionamiento del  mercado y que han sido dadas por la ciudadan&iacute;a para conseguir el equilibrio  social.<br />
+    </p>
+    <p><strong> Responsabilidad &eacute;tica.</strong> Tiene que ver con los principios de justicia, equidad y  moralidad que esperan los grupos de inter&eacute;s.<br />
+    </p>
+    <p><strong>Responsabilidad  filantr&oacute;pica.</strong> La sociedad espera de las  empresas su compromiso con el desarrollo y la protecci&oacute;n del bienestar desde la  &oacute;ptica de la reversibilidad social de las empresas.</p>
+	</div>
+	<div class="virtualpage">
+	<p>Por contra la <strong>Responsabilidad Social</strong><strong> de la Empresa </strong>se vislumbra<strong> desde las definiciones cl&aacute;sicas</strong> como referencia a <span class="txtcursiva">&ldquo;<strong>las decisiones y acciones tomadas por  razones que al menos parcialmente se encuentran m&aacute;s all&aacute; de los intereses  econ&oacute;micos y t&eacute;cnicos de la empresa</strong>&rdquo;</span><span class="superindice"><sup onmouseover="ddrivetip2('Davis, K 1960”Can business afford to ignore its social responsabilities?” California Management Review, vol.2, nº 3, pp.70-76');return false;" onmouseout="hideddrivetip()">[4]</sup></span></p>
+    <p>De esta forma la empresa puede tener intereses, motivaciones y competencia  sobre asuntos sociales, que no se corresponde estrictamente con la simple  actividad productiva y comercial entendida como generadora de ben&eacute;ficos, ya que  las <strong>acciones de responsabilidad social </strong>pueden  ayudar a mejorar el contexto en el que se mueve la empresa, indirectamente,  incrementar sus ben&eacute;ficos y reforzar su posici&oacute;n competitiva.. </p>
+    <p><img src="imagenes/tema1.1_23.jpg" alt="La Casa Encendida" width="250" height="214" align="left" class="imgint" />La <strong>acci&oacute;n social de  la empresa o actividades de filantrop&iacute;a empresarial</strong>, es hoy una realidad en  todo el mundo desarrollado y manifiesta un r&aacute;pido crecimiento en todos los  pa&iacute;ses. La mayor&iacute;a de las grandes empresas practica la acci&oacute;n social, como  tambi&eacute;n un n&uacute;mero creciente de medianas y peque&ntilde;as empresas. En consecuencia,  las Administraciones P&uacute;blicas y muchas entidades del tercer sector, fundaciones  y asociaciones, cuentan con el apoyo empresarial como uno de los mecanismos de  financiaci&oacute;n.</p>
+    <p>Se entiende <strong>por  acci&oacute;n social de la empresa</strong> el conjunto <strong>de acciones no lucrativas</strong> de la empresa, cuya misi&oacute;n es <strong>contribuir a mejorar la calidad de vida</strong> de las comunidades donde act&uacute;a, mediante proyectos sociales, formativos,  culturales y medioambientales. Normalmente esta acci&oacute;n social se manifiesta  mediante el patrocinio, el mecenazgo, la filantrop&iacute;a y la caridad. </p>
+	</div>
+	<div class="virtualpage">
+	<p>En el transcurso de los &uacute;ltimos veinte a&ntilde;os en <strong>Espa&ntilde;a</strong> se ha registrado un fuerte  impulso a las <strong>acciones sociales de  filantrop&iacute;a</strong>. No existen registros sistem&aacute;ticos ni estad&iacute;sticas de esta  actividad, pero algunos <strong>estudios sit&uacute;an  en m&aacute;s de 300</strong> <strong>millones de euros  anuales las actividades de filantrop&iacute;a empresarial</strong>, sin contar con las  actividades de <strong>obra social de las cajas  de ahorro</strong> que en 2004 fue de <strong>1.163  millones de euros</strong>.</p>
+    <p>Algunas de estas <strong>razones  del desarrollo de actividades de acci&oacute;n social</strong> se deben a:</p>
+    <p><img src="imagenes/tema1.1_24.jpg" alt="Demanda" width="109" height="83" align="left" class="imgint" /></p>
+    <p><br />
+    Fuerte crecimiento en  las &uacute;ltimas d&eacute;cadas de la demanda de la presencia de las empresas en el apoyo a  actividades de raz&oacute;n social.</p>
+    <p>Reconsideraci&oacute;n de la  funci&oacute;n social o ciudadana de la empresa<img src="imagenes/tema1.1_26.jpg" alt="Engranaje" width="106" height="106" align="right" class="imgint" /></p>
+    <p>&nbsp;</p>
+    <p>Incapacidad de  autofinanciaci&oacute;n de muchas actividades de inter&eacute;s general, de tipo cultural o  sanitario, y presi&oacute;n de las necesidades econ&oacute;micas crecientes de un amplio  colectivo de organizaciones p&uacute;blicas y privadas no lucrativas. </p>
+    <p><img src="imagenes/tema1.1_25.jpg" alt="Impuestos" width="120" height="101" align="left" class="imgint" /><br />
+      <br />
+    Mejora del trato fiscal  y legal a estas actividades.</p>
+    <p>Desarrollo de las  fundaciones como brazo gestor de las actividades filantr&oacute;picas.</p>
+	</div>
+	<div class="virtualpage">
+	<p>Esta <strong>acci&oacute;n social corporativa </strong>se produce por el inter&eacute;s de  las empresas en incrementar su valor en la comunidad en la opera, que influye  directamente en sus <strong>oportunidades  competitivas</strong>, desde una relaci&oacute;n positiva, as&iacute; las ventajas que reciben  son:</p>
+    <ul>
+      <li class="lista">Mejora de la imagen de  marca o de la empresa.</li>
+      <li class="lista">Incremento de la  notoriedad.</li>
+      <li class="lista">Comunicar con causa y Ampliar su mercado meta.
+      <li class="lista">Obtener interrelaciones  con el sector publico y la sociedad civil organizada</li>
+    </ul>
+    <p>Desde esta perspectiva se puede concluir que la RSC, hay que enfocarla desde <strong>cuatro &aacute;mbitos</strong> bien definidos:</p>
+    <p><strong><img src="imagenes/tema1.1_29.jpg" alt="Laboral" width="50" height="50" hspace="4" align="left" /><br />Aspecto laboral</strong>: cumplimiento de las normas de trabajo, respeto al  trabajador en todos los niveles jer&aacute;rquicos y puesta en marcha de c&oacute;digos de  conducta y principios de la OIT<span class="superindice"><sup onmouseover="ddrivetip2('Organización Internacional del Trabajo.');return false;" onmouseout="hideddrivetip()">[1]</sup></span></p>
+    <p><strong><img src="imagenes/tema1.1_27.jpg" alt="Dinero" width="50" height="50" hspace="4" align="left" /><br />
+    Aspecto econ&oacute;mico</strong>: elaboraci&oacute;n de cuentas transparentes y p&uacute;blicas, e  inversiones socialmente responsables (utilizando criterios &eacute;ticos y de  exclusi&oacute;n, a la hora de invertir).</p>
+    <p><strong><img src="imagenes/tema1.1_28.jpg" alt="Ambiente" width="50" height="46" hspace="4" align="left" /><br />
+    Aspecto ambiental</strong>: respetando el medio ambiente y usando sellos de calidad  ecol&oacute;gica, o alusi&oacute;n directa al consumidor de c&oacute;mo se obtuvo el producto, o se  prest&oacute; el servicio.</p>
+    <p><strong><img src="imagenes/tema1.1_30.jpg" alt="Social" width="50" height="50" align="left" />Aspecto social</strong>: invertir un porcentaje de las ganancias en proyectos que  ayuden a mejorar el nivel de vida de personas sin recursos. O tener proyectos  de vinculaci&oacute;n a colectivos desfavorecidos.</p>
+	</div>
+	<div class="virtualpage">
+	<p>No hay que olvidar que las empresas existen para producir  mercanc&iacute;as o servicios que la <strong>sociedad desea y necesita</strong>, adem&aacute;s de  generar el beneficio econ&oacute;mico a la inversi&oacute;n, y ello en un <strong>clima de  estabilidad y confianza</strong>. Por todo ello, el cumplimiento de este objetivo es  su <strong>primera y principal responsabilidad</strong>. Si fracasa en esta misi&oacute;n, no  puede esperarse que asuma otras.  La empresa, sus propietarios y otros part&iacute;cipes <strong>dependen de la sociedad donde operan</strong> en cuanto a su existencia y  prosperidad, pero tambi&eacute;n tienen respecto a ella <strong>importantes obligaciones. </strong></p>
+    <p>Desde perspectivas negativas de RSC, una corriente de  pensamiento ha venido considerando los objetivos sociales y econ&oacute;micos como  incompatibles, probablemente porque la   RSC ha adolecido de estar su contenido demasiado vinculado a  la <strong>filosof&iacute;a moral,</strong> alejada de una visi&oacute;n de <strong><em>manegement </em></strong><strong>estructural y estrat&eacute;gica</strong>.</p>
+    <p> Este  enfoque, netamente financiero, liderado por <strong><a href="http://www.gestiopolis.com/recursos/documentos/fulldocs/eco/friedman.htm" title="Si quieres saber más de Friedman visita:" target="_blank">Milton Friedman</a>,</strong> Premio  N&oacute;bel de Econom&iacute;a y creador de la <strong><a href="http://es.wikipedia.org/wiki/Escuela_de_Econom%C3%ADa_de_Chicago" title="Para más información visita su página en:" target="_blank">Escuela de Chicago</a></strong>, pone el <strong>enfoque en los accionistas </strong>como  elemento principal y considera que los directivos deben de actuar como agentes  defendiendo exclusivamente los intereses de los propietarios de las compa&ntilde;&iacute;as,  en tanto que satisfacer los intereses de otros grupos repercutir&iacute;a  negativamente en el valor de las empresas y lesionar&iacute;a los intereses,<span class="txtcursiva"><strong>&ldquo; los  &uacute;nicos leg&iacute;timos&rdquo;</strong></span><strong>, de los accionistas</strong>.</p>
+    <p align="center"><img src="imagenes/tema1.1_31.jpg" alt="Accionistas" width="250" height="161" /></p>    
+	</div>
+	<div class="virtualpage">
+	<p>A pesar de sus  evidentes beneficios, la RSC  tambi&eacute;n se enfrenta a <strong>cr&iacute;ticas e impedimentos en contra de su implantaci&oacute;n  en las empresas</strong>. Si no fuera as&iacute;, seguramente todas las empresas  implantar&iacute;an pr&aacute;cticas de RSC. Conocer estas cr&iacute;ticas permite <strong>reforzar</strong> los argumentos y <strong>construir </strong>un concepto de RSC m&aacute;s s&oacute;lido, a la vez que  m&aacute;s sutil y matizado.</p>
+    <p><img src="imagenes/tema1.1_32.jpg" alt="Dinero" width="220" height="209" align="left" class="imgint" />La cr&iacute;tica m&aacute;s  conocida es la de<strong> Milton Friedman </strong>y su c&eacute;lebre<strong> <span class="txtcursiva">&quot;<em>the business  of business is business&quot;</em></span>. </strong>A pesar de ser una postura superada ya  hace tiempo,  y en cierta medida matizada por el propio autor, todav&iacute;a tiene ac&eacute;rrimos  defensores que se enfocan en una <strong>idea de empresa &uacute;nica y exclusivamente  econ&oacute;mica</strong>, olvidando cualquier asomo de <strong>dimensi&oacute;n social</strong>.<strong> </strong></p>
+    <p>Tambi&eacute;n es frecuente <strong>asociar  RSC con coste econ&oacute;mico</strong>. Algunos autores la consideran como un <strong>autoimpuesto</strong> que supone un gasto a&ntilde;adido para la organizaci&oacute;n. Este argumento nace de <strong>la  confusi&oacute;n entre RSC y acci&oacute;n social</strong>. La realidad es que <strong>una empresa  puede ser perfectamente responsable sin dedicar un euro a acci&oacute;n social</strong> y,  al contrario, una organizaci&oacute;n puede ser tremendamente irresponsable aunque  dedique grandes cantidades de dinero a <strong>actividades filantr&oacute;picas</strong>. </p>
+    <p>Otra cr&iacute;tica  derivada de la una idea asistencial de la RSC es que los accionistas son los due&ntilde;os de la  empresa y son ellos los que deben decidir si deben dedicar recursos para los  colectivos desfavorecidos. Por tanto, se trata de una decisi&oacute;n personal que no pueden tomar los directivos de la empresa con el dinero de los accionistas. Dos cosas hay que decir a esto. Aunque los recursos  dedicados a acci&oacute;n social generen el mismo beneficio para el destinatario  procedan del accionista o de la empresa, no tienen el mismo efecto en cuanto a  la <strong>creaci&oacute;n de cultura, imagen y reputaci&oacute;n</strong> de la empresa. Por otra parte, &iquest;son los accionistas los  &uacute;nicos <span class="txtcursiva">&quot;propietarios&quot;</span> de la empresa? Legalmente, no hay discusi&oacute;n,  pero sin duda, los <strong>grupos de inter&eacute;s tambi&eacute;n reciben valor creado por la  empresa</strong> y tienen cierta capacidad de influencia en la gesti&oacute;n de la  empresa. </p>
+	</div>
+	<div class="virtualpage">
+	<p><img src="imagenes/tema1.1_33b.jpg" alt="Dos caras" width="250" height="205" align="left" class="imgint" />Una cr&iacute;tica muy  extendida es que la RSC  es una <strong>herramienta publicitaria</strong> y <strong>de relaciones  p&uacute;blicas</strong>. Es cierto que muchas organizaciones hacen poco y dice  que hacen mucho. El <strong>reto </strong>es <strong>hacer lo que dicen que hacen y asumir la RSC de una manera m&aacute;s  integral, no como una soluci&oacute;n cosm&eacute;tica y superficial</strong>. Esta <strong>perversi&oacute;n  de la RSC </strong>se  deriva de entender la RSC  como un medio y no como un fin en s&iacute; misma.</p>
+    <p>Desde el lado <strong>profesional  y directivo</strong> se argumenta que no se ocupan de la RSC porque est&aacute;n centrados en  el <strong><em>core businnes</em></strong> de la empresa. De nuevo, se entiende a la RSC como algo superficial,  accesorio, de lo que se puede prescindir. Pero como se ha visto, la RSC trata de las operaciones  comerciales y de las relaciones cotidianas con los grupos de inter&eacute;s (clientes, proveedores,  empleados,...) &iquest;no es eso core business? </p>
+    <p>A menudo tambi&eacute;n  se esgrime el argumento en contra de la   RSC de que <strong>lo social es responsabilidad del gobierno y de  las organizaciones sociales</strong>. Sin duda, esto es as&iacute;, pero esta  responsabilidad no es exclusiva y todos los ciudadanos son responsables del  desarrollo y bienestar de la sociedad. La empresa, como <strong>ciudadano  corporativo</strong> que es, <strong>contribuye con su actividad a la mejora de la  comunidad y debe minimizar las externalidades negativas que se deriven de sus  operaciones.</strong> Cada agente debe asumir su responsabilidad social desde su rol  en la sociedad y cooperando con otras instituciones para <strong>multiplicar el beneficio</strong> <strong>de las acciones emprendidas</strong>. Un buen ejemplo de esto es la creciente colaboraci&oacute;n entre las  empresas y organizaciones civiles u ONGs. </p>
+	</div>
+	<div class="virtualpage">
+	<p>Una &uacute;ltima  cr&iacute;tica o impedimento a la implantaci&oacute;n de la RSC es que supone nuevos <strong>riesgos</strong> para la  empresa. Algunos directivos ven en la   RSC una <strong>exigencia de transparencia </strong>que puede desvelar  algunas <strong>debilidades de la empresa</strong>. Tambi&eacute;n se suele decir que la RSC estimula el desarrollo  normativo de los aspectos sociales y ambientales de la gesti&oacute;n  empresarial.</p>
+    <p> <img src="imagenes/tema1.1_33.jpg" alt="Lupa" width="250" height="188" align="right" class="imgint" />En cierta medida estas apreciaciones tienen parte de  verdad. Efectivamente, algunas de las empresas l&iacute;deres en la implantaci&oacute;n de  pr&aacute;cticas responsables sienten que se han puesto en el <strong>centro de las miradas</strong> y que son las m&aacute;s criticadas. Esto es una paradoja que desincentiva a las  empresas, pues ven que es mejor no hacer nada ante el temor a ser criticadas. </p>
+    <p>La <strong>corriente positiva  de pensamiento estrat&eacute;gico de RSC</strong> sostiene que <strong>el comportamiento socialmente responsable no tiene por qu&eacute; ser  incompatible con la creaci&oacute;n de valor y la participaci&oacute;n de los interesados</strong> en la compa&ntilde;&iacute;a <span class="txtcursiva">&ldquo;<strong><em>stakeholders</em></strong>&rdquo;</span>, desde este punto de vista <strong>el  gobierno de la empresa es un proceso complejo de negociaci&oacute;n</strong> que busca <strong>equilibrar  intereses de todos los grupos</strong> que participan de forma directa e indirecta  en la marcha empresarial. </p>
+    <p>Si, los comportamientos socialmente responsables  inducen e<strong>fectos positivos a largo plazo</strong> que contribuyen a aumentar el  rendimiento y valor de las empresas compensando la <strong>aparente expropiaci&oacute;n</strong> sufrida por los accionistas, en tanto que <strong>mejoran las relaciones del  entorno, reducen riesgos y aumentan la reputaci&oacute;n</strong>, rigi&eacute;ndose por el  principio de <strong>sacrificar beneficios inmediatos a cambio de maximizar en el  largo plazo</strong> el valor para el total de los grupos de inter&eacute;s de la empresa.</p>
+	</div>
+	<div class="virtualpage">
+	<p>La <strong>satisfacci&oacute;n  de los clientes</strong> con una compa&ntilde;&iacute;a est&aacute; condicionada por las <strong>relaciones </strong>que  &eacute;sta tiene con los <strong>empleados, la sociedad y otros colectivos</strong> y, por  tanto, los consumidores est&aacute;n dispuestos a penalizar a las compa&ntilde;&iacute;as no  responsables.</p>
+    <p><img src="imagenes/tema1.1_34.jpg" width="200" height="300" align="right" class="imgint" />La Responsabilidad Social Corporativa <strong>es  el compromiso de mantener un comportamiento corporativo autoexigente y  transparente que responda a las expectativas de los diferentes <em>stakeholders </em>o  grupos de inter&eacute;s</strong>: accionistas, empleados, proveedores, consumidores,  sociedad, &hellip; Es la forma de construir confianza, que <strong>contribuye a la  reputaci&oacute;n y genera valor para la empresa</strong>. Es un factor competitivo para  alcanzar el liderazgo, sedimentando en los valores de la empresa, la &eacute;tica, el  buen gobierno y la transparencia empresarial.</p>
+    <p>Teniendo en cuenta que una de las finalidades de toda  empresa es <strong>optimizar beneficios</strong> para <strong>enfrentarse a la competitividad  del mercado</strong> y asegurar en lo posible su <strong>pervivencia,</strong> &iquest;por qu&eacute; los  empresarios deber&iacute;an seleccionar <strong>inversiones espec&iacute;ficas</strong> en  Responsabilidad Social, m&aacute;s all&aacute; de las estrictamente esenciales y exigibles  legalmente? &iquest;D&oacute;nde est&aacute; el l&iacute;mite entre las normas reglamentarias y las  voluntarias?.</p>
+    <p> En realidad, a&uacute;n es posible mantener cierta despreocupaci&oacute;n ante  estos temas y pasar desapercibido, por ejemplo, disimulando ciertos tipos de <span class="txtcursiva"><strong>&quot;desviaciones</strong>&quot;</span>,  aprovech&aacute;ndose de trabajadores inmigrantes, pag&aacute;ndoles sueldos &iacute;nfimos con  horarios extenuantes, no aplicando con rigor las normas de seguridad en el  trabajo, no formando debidamente a los trabajadores, no cuidando  suficientemente los aspectos medioambientales y no ofreciendo productos de la  necesaria calidad, y todo ello para obtener el m&aacute;ximo beneficio. Sin embargo,  cuando algunas de tales carencias se ponen al descubierto de diferentes formas,  por la autoridad competente, por sus clientes, etc., es sabido que los costes  pueden ser incalculables. </p>
+	</div>
+	<div class="virtualpage">
+	<p>Estas perspectivas de acometer la RSC tiene que ver con las  respuestas de las empresas que pueden ser seg&uacute;n Clarkson<span class="superindice"><sup onmouseover="ddrivetip2('Autor norteamericano que evalúa las implicaciones estratégicas de RSC y análisis de los stakeholders.');return false;" onmouseout="hideddrivetip()">[5]</sup></span> como sigue:</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p align="center"><img src="imagenes/img1.6.gif" alt="Tabla Clarkson" width="529" height="225" border="1" /></p>
+	</div>
+	<div class="virtualpage">
+	<p>Desde la perspectiva avanzada y proactiva de la <strong>mejora  continua de la calidad</strong> muchas organizaciones plantean <strong>sus principios, su</strong> <strong>declaraci&oacute;n  de intenciones, o su c&oacute;digo de buenas pr&aacute;cticas</strong>, pero el camino a la  excelencia debe implementar cambios desde varias perspectivas:</p>
+    <p><img src="imagenes/tema1.1_35.jpg" alt="Direccion" width="50" height="50" hspace="4" align="absmiddle" />Desde el punto de vista  de la <strong>direcci&oacute;n </strong><strong><a href="imagenes/bubble1.10.gif" rel="bubble" style="border-bottom-color:#FFFFFF" target="_blank"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+    <p><img src="imagenes/tema1.1_36.jpg" alt="Interno" width="50" height="50" hspace="4" align="absmiddle" />Desde el punto de vista <strong>interno  laboral</strong><strong> </strong><strong><a href="imagenes/bubble1.11.gif" rel="bubble" style="border-bottom-color:#FFFFFF" target="_blank"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+    <p><img src="imagenes/tema1.1_37.jpg" alt="Financiero" width="50" height="50" hspace="4" align="absmiddle" />Desde el punto de vista <strong>interno  financiero</strong><strong> </strong><strong><a href="imagenes/bubble1.12.gif" rel="bubble" style="border-bottom-color:#FFFFFF" target="_blank"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+    <p><img src="imagenes/tema1.1_38.jpg" alt="Produccion" width="50" height="50" hspace="4" align="absmiddle" />Desde el punto de vista <strong>interno  productivo</strong><strong> </strong><strong><a href="imagenes/bubble1.13.gif" rel="bubble" style="border-bottom-color:#FFFFFF" target="_blank"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong><br />
+    </p>
+    <p>      <img src="imagenes/tema1.1_39.jpg" alt="Inversiones" width="50" height="50" hspace="4" align="absmiddle" />Desde el punto de vista <strong>externo  de inversi&oacute;n</strong><strong> </strong><strong><a href="imagenes/bubble1.14.gif" rel="bubble" style="border-bottom-color:#FFFFFF" target="_blank"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+    <p><img src="imagenes/tema1.1_40.jpg" alt="Info" width="50" height="50" hspace="4" align="absmiddle" />Desde el punto de vista <strong>externo de informaci&oacute;n</strong><strong> </strong><strong><a href="imagenes/bubble1.15.gif" rel="bubble" style="border-bottom-color:#FFFFFF" target="_blank"><img src="../shared/imagenes/bubble.gif" width="12" height="12" border="0" /></a></strong></p>
+	</div>
+	<div class="virtualpage">
+	<p>Lo anterior debe cobijar tanto a las propias empresas como a sus  filiales y proveedores. Cuando una empresa grande exige de una peque&ntilde;a o  mediana con la que trabaja, que siga criterios de responsabilidad en cuanto a  derechos humanos, laborales y en todos los sentidos, estar&aacute; haciendo que su  proveedor se preocupe e intente implementar estas buenas pr&aacute;cticas en su  empresa. </p>
+    <p>Todo ello es as&iacute; porque con certeza, el motor que mueve a gestionar la RSC en las empresas no es  puramente financiero, se alimenta de <strong>forma proactiva y voluntaria</strong>, m&aacute;s  all&aacute; de los aspectos econ&oacute;micos, en una <strong>mejora de la reputaci&oacute;n y en una  obtenci&oacute;n de ventajas competitivas </strong>con una <strong>visi&oacute;n de negocio</strong> <strong>a  largo plazo.</strong> La toma de decisiones empresariales tendr&aacute; siempre  irremisiblemente una <strong><em>dimensi&oacute;n moral</em></strong>, la cual puede ser f&aacute;cil de  vulnerar, pero no tanto de controlar a medio y largo plazo sus efectos  perversos. </p>
+    <p>La RSC ha experimentado una <strong>progresi&oacute;n  paralela a la evoluci&oacute;n hist&oacute;rica de la orientaci&oacute;n de la empresa</strong>. Un resumen esquem&aacute;tico de esta  evoluci&oacute;n de las empresas y su nueva orientaci&oacute;n puede ser: </p>
+    <p><img src="imagenes/tema1.1_41.jpg" alt="Orientacion" width="168" height="262" align="right" /></p>
+    <p>&nbsp;</p>
+    <ul>
+      <li class="lista_flag">orientaci&oacute;n a la <strong>producci&oacute;n</strong> (hasta los a&ntilde;os  treinta).<br />
+        <br />
+      </li>
+      <li class="lista_flag">orientaci&oacute;n a las <strong>ventas</strong> (hasta los a&ntilde;os  ochenta).<br />
+        <br />
+      </li>
+      <li class="lista_flag">orientaci&oacute;n al <strong>consumidor</strong> (hasta los a&ntilde;os  noventa.<br />
+        <br />
+      </li>
+      <li class="lista_flag">orientaci&oacute;n al <strong>cliente</strong> (hasta el nuevo siglo).<br />
+          <br />
+      </li>
+      <li class="lista_flag">orientaci&oacute;n a la <strong>competencia y la sociedad en  general</strong>.</li>
+    </ul>
+	</div>
+	<div class="virtualpage">
+	<p>La orientaci&oacute;n  de la empresa a la sociedad a menudo <strong>ha comenzado como una reacci&oacute;n defensiva  ante la presi&oacute;n</strong> de determinados grupos  sociales. El <strong>reto es interiorizar</strong> la RSC y que <strong>las empresas  tomen la iniciativa</strong>, pasando de acciones aisladas de car&aacute;cter filantr&oacute;pico  y de comunicaci&oacute;n a la verdadera <strong>integraci&oacute;n de las demandas sociales y ambientales de las  partes interesadas </strong>en sus actividades de negocio. Como dice Peter Drucker, <span class="txtcursiva"><em>&quot;<strong>El administrador moderno, debe ser un activista pol&iacute;tico. Cada vez se dar&aacute; mayor cuenta de que,  en estos tiempos turbulentos, en adici&oacute;n a la gesti&oacute;n de su empresa, deber&aacute;  convertirse en el l&iacute;der e integrador de una sociedad pluralista</strong></em>&quot;</span>.</p>
+    <p>La RSC es uno de los principios esenciales de lo que se denomina en t&eacute;rminos  empresariales <span class="txtcursiva">&quot;<strong>la nueva cultura de empresa</strong>&quot;</span>. Junto a otros  principios con los que se interrelaciona, tales como: <strong>visi&oacute;n a medio y largo  plazo; &eacute;tica, valor clave en todas las actuaciones; personas y capital  intelectual, su principal activo; necesidad de innovaci&oacute;n y mejora continua en  todos los &aacute;mbitos en un marco de Calidad Total</strong>.</p>
+    <p align="center"><img src="imagenes/img1.7.gif" alt="Tabla factores" width="600" height="246" /></p>
+	</div>
+	<div class="virtualpage">
+	<p>La <strong>nueva  estrategia global europea</strong> para esta d&eacute;cada se marca unos objetivos b&aacute;sicos,  que son:</p>
+    <ul>
+      <li class="lista">Poseer  la econom&iacute;a basada en el conocimiento m&aacute;s competitiva y din&aacute;mica del mundo,</li>
+      <li class="lista">Capaz  de conseguir un crecimiento empleos,</li>
+      <li class="lista">Y  una mayor cohesi&oacute;n social</li>
+    </ul>
+    <p>Este desaf&iacute;o, traducido  a la operativa de las empresas, representa alcanzar <strong>el reto de dar respuesta  satisfactoria a metas relativas a responsabilidades econ&oacute;micas, sociales y  medioambientales</strong>. </p>
+    <p>Para ello se utilizan los informes de triple base <span class="txtcursiva">&quot;<strong><em>triple  bottom line</em></strong>&quot;</span> en los balances anuales de las empresas que ya se  empiezan a realizar por las m&aacute;s importantes organizaciones.Pero no todas la  compa&ntilde;&iacute;as tienen cabida en la RSC,  aunque esta supone la mayor parte de las veces una cuesti&oacute;n de estrategia  competitiva, hay una serie de consideraciones o filtros a algunas de ellas que  les impide estar en esta nueva categor&iacute;a empresarial de compromiso social.</p>
+    <p> Seg&uacute;n el tipo de negocio y de acuerdo con la <strong><a href="http://www.socialinvest.org" title="Para saber más sobre SIF visita:" target="_blank">Social Investment Forum</a> </strong> SIF<span class="superindice"><sup onmouseover="ddrivetip2('Organizaci&oacute;n estadounidense dedicada a promocionar el concepto y crecimiento de la inversi&oacute;n socialmente responsable.');return false;" onmouseout="hideddrivetip()">[6]</sup></span> se viene  aplicando unos filtros de selecci&oacute;n que condicionan el tipo de actividad  empresarial admitido, de esta forma es habitual la exclusi&oacute;n total o parcial de  empresas dedicadas a la fabricaci&oacute;n de productos y/o comercializaci&oacute;n de  tabacos, bebidas alcoh&oacute;licas, servicios relacionados con el juego, armamento,  energ&iacute;a nuclear, pornograf&iacute;a, contracepci&oacute;n y abortivos ,etc.</p>
+	<div id="final">
+      <p align="center"><a href="#" onclick="completar()" title="Completar el Tema 1" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/completado.gif" alt="Marcar Tema Completado" name="completa" width="76" height="80" border="0"/></a></p>
+      <p align="center" class="txtfinal">&iexcl;Enhorabuena! has llegado al final del Tema 1, para poder realizar la autoevaluaci&oacute;n aseg&uacute;rate de haber<br />
+        revisado bien la teor&iacute;a 
+        y pulsa el bot&oacute;n de Marcar Tema Completado. </p>
+    </div>
+	</div>
+  </div>
+	<div id="listingpaginate" class="paginationstyle">
+		<a href="#" rel="previous" class="imglinks"><img src="../shared/imagenes/atras.jpg" align="absmiddle" /></a>
+		<select name="select">
+	  </select>
+  <a href="#" rel="next" class="imglinks"><img src="../shared/imagenes/adelante.jpg" align="absmiddle" /></a>  </div>
+	<script type="text/javascript">
+		//virtualpaginate(className, pieces_to_show_per_page)
+		var pagecontent=new virtualpaginate("virtualpage", 1)
+		pagecontent.buildpagination("listingpaginate")
+	</script>
+  	<div id="arbol">INICIO > TEORIA > INTRODUCCION AL CONCEPTO DE RSC</div>
+</div>
+</body>
+</html>
