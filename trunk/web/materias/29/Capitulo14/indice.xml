@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+	<boton texto="Crear el documento principal              " pagina="1" despy="520" />
+	<boton texto="La pestaña Correspondencia                " pagina="6" despy="0" />
+	<boton texto="Insertar campos de combinación            " pagina="7" despy="0" />
+	<boton texto="Buscar un registro                        " pagina="8" despy="0" />
+	<boton texto="Destinatarios de combinar correspondencia " pagina="9" despy="142" />
+	<boton texto="Filtar destinatarios                      " pagina="10" despy="440" />
+	<boton texto="Ordenar destinatarios                     " pagina="11" despy="837" />
+	<boton texto="Asignar campos                            " pagina="12" despy="640" />
+	<boton texto="Combinar al imprimir                      " pagina="13" despy="618" />
+	<boton texto="Combinar en correo electrónico            " pagina="14" despy="400" />
+</menu>

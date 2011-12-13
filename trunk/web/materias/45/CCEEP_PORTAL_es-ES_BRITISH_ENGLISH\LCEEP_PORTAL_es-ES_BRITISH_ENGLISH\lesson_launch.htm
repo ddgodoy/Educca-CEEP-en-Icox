@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"[]>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>LMS Access</title>
+    <script type="text/javascript" src="../../include/ADL_APIWrapper.js">
+    </script>
+    <script type="text/javascript" src="../../include/ADL_SCOFunctions.js">
+    </script>
+    <script type="text/javascript" src="../../include/SCORM_Wrapper.js">
+    </script>
+    <script type="text/javascript" src="../../include/ScormAccess.js">
+    </script>
+    <style type="text/css">
+        body
+        {
+        	text-align: center;
+        }
+        .image
+        {
+        	text-align: left;
+        }
+        .box
+        {
+        	width: 640px;
+        	border: solid 1pt #d8d8d8;
+        	background-repeat: repeat-x;
+        	background-image: url('../../include/Blue_gradation_zone02.png');
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 150px;
+            text-align: left;
+            font-family: verdana, arial, helvetica, sans-serif;
+        	font-size: 11px;
+        }
+        .title
+        {
+        	color: #b6c91c;
+        	font-size: 20px;
+        	font-family: verdana, arial, helvetica, sans-serif;
+            list-style-position:outside;
+            list-style-image: url('../../include/Green_chip.png');
+            margin-left: 10px;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+        .link
+        {
+        	font-family: verdana, arial, helvetica, sans-serif;
+        	font-size: 11px;
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-bottom: 55px;
+        }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+        insertFlash();
+    </script>
+    <div class="image">
+      <img src="../../include/logo_tmm.png" alt="logo tmm" />
+    </div>
+    <div class="box">
+      <div id="TitleZone" class="title">
+        <ul>
+          <li>Acceso a la aplicación</li>
+        </ul>
+      </div>
+      <div id="LinkZone" style="display:none" class="link">
+        <a href="" target="_tmm_new_window_lms" onclick="getHandle()" id="TmmOpenLink">Por favor, haz clic aquí para abrir la aplicación en otra ventana.</a>
+      </div>
+      <div id="InitLabelZone" class="link">Por favor, espera mientras se inicializa la aplicación.</div>
+      <div id="TmmErrorLabelZone" style="display:none" class="link">Se ha producido un error (código {0}).</div>
+      <div id="CloseWindowLabelZone" style="display:none" class="link">A partir de ahora, ya puedes cerrar esta ventana.</div>
+      <div id="LeaveLabelZone" style="display:none" class="link">A partir de ahora, ya puedes salir de la aplicación.</div>
+      <div id="WaitLabelZone" style="display:none" class="link">Por favor, espera. Se está grabando tu progresión...</div>
+      <div id="DoNotCloseLabelZone" style="display:none" class="link">Por favor, no cierres esta ventana mientras utilices la aplicación.</div>
+    </div>
+    <input id="UnBeforeUnloadText" type="hidden" value="Precaución: Si cierras esta página ahora perderás los datos que se están transmitiendo." />
+  </body>
+</html>

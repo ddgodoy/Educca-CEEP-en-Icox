@@ -1,0 +1,43 @@
+<STYLE TYPE="text/css">
+<!--
+
+<LINK REL=FONTDEF SRC="/css/fonts/kroeger.pfr">
+<LINK REL=FONTDEF SRC="/css/fonts/hooge.pfr">
+
+
+.txtfalso	{font-family:"kroeger 05_55"; font-size:8px; color:#9F0F18; text-transform:uppercase}
+.txtazul	{font-family:"kroeger 05_55"; font-size:8px; color:#9F0F18; text-transform:uppercase}
+.txtgrpal	{font-family:"kroeger 05_55"; font-size:8px; color:#6F6F6F; text-transform:uppercase}
+.txtgrmed {font-family:"kroeger 05_55"; font-size:8px; color:#525252; text-transform:uppercase}
+.txtgrosc	{font-family:"kroeger 05_55"; font-size:8px; color:#61615F; text-transform:uppercase}
+.txtbl		{font-family:"kroeger 05_55"; font-size:8px; color:#FFFFFF; text-transform:uppercase}
+.txtcomu	{font-family:"kroeger 05_55"; font-size:8px; color:#5F5147; text-transform:uppercase}
+.txtreg		{font-family:"kroeger 05_55"; font-size:8px; color:#D4D0C8; text-transform:uppercase}
+.txtamarll	{font-family:"kroeger 05_55"; font-size:8px; color:#A98007; text-transform:uppercase}
+.pincodes	{font-family:"kroeger 05_55"; font-size:8px; color:#847675; text-transform:uppercase}
+
+.titazul	{font-family:"hooge 05_65"; font-size:8px; color:#2282BE; text-transform:uppercase;}
+.titgrpal	{font-family:"hooge 05_65"; font-size:8px; color:#847675; text-transform:uppercase;}
+.titgrosc	{font-family:"hooge 05_65"; font-size:8px; color:#525252; text-transform:uppercase;}
+.titmarr	{font-family:"hooge 05_65"; font-size:8px; color:#69443C; text-transform:uppercase;}    
+.titbl		{font-family:"hooge 05_65"; font-size:8px; color:#FFFFFF; text-transform:uppercase;}
+.titrojo	{font-family:"hooge 05_65"; font-size:8px; color:#B50000; text-transform:uppercase;}
+.titrojobig	{font-family:"hooge 05_65"; font-size:16px; color:#B50000; text-transform:uppercase}
+
+.combo		{font-family:"hooge 05_65"; font-size:8px; background-color:#F2F1ED; border-width:0px;}
+.txtnormal	{font-family:arial,helvetica; font-size:10px; color:#847675;}
+.registro	{font-family: MSSansSerif; font-size:13px; color: #483D39; padding-left: 2; padding-right: 2; padding-top: 2; padding-bottom: 2; width:365; background-color: #E2DFD8; height:134; rows: 12; cols: 300; border-width: 0; }
+  
+.light		{font-family: verdana; font-size:9px; overflow:hide; color:#525252; padding-left:4px; background-color: #FFFFFF; BORDER-BOTTOM: #B4B0A5 1px solid;  BORDER-LEFT: #B4B0A5 1px solid;  BORDER-RIGHT: #B4B0A5 1px solid; BORDER-TOP: #B4B0A5 1px solid; }
+.lightsmall {font-family: "kroeger 05_55"; font-size:8px; color:#525252; text-transform:uppercase; overflow:hide; padding-left:4px;padding-top:2px; background-color: #FFFFFF; BORDER-BOTTOM: #B4B0A5 1px solid;  BORDER-LEFT: #B4B0A5 1px solid;  BORDER-RIGHT: #B4B0A5 1px solid; BORDER-TOP: #B4B0A5 1px solid; }
+.combosmall {font-family: "kroeger 05_55"; font-size:8px; text-transform:uppercase; background-color:#FFFFFF; border-width:0;}
+.noborder 	{border: 0px solid #000000  }
+
+.scroll		{scrollbar-face-color: #C4BDB5; scrollbar-shadow-color: #C4BDB5; scrollbar-highlight-color: #C4BDB5; scrollbar-3dlight-color: #C4BDB5; scrollbar-darkshadow-color: #C4BDB5; scrollbar-track-color: #F4F4F0; scrollbar-arrow-color: #FFFFFF;}
+.oldscroll	{SCROLLBAR-FACE-COLOR: #FFFFFF; SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF; SCROLLBAR-SHADOW-COLOR: #FFFFFF; SCROLLBAR-3DLIGHT-COLOR: #C4BDB5; SCROLLBAR-DARKSHADOW-COLOR: #C4BDB5; SCROLLBAR-ARROW-COLOR: #C4BDB5; SCROLLBAR-TRACK-COLOR: #C4BDB5; SCROLLBAR-BASE-COLOR: #C4BDB5;A.txtgrpal {text-decoration:none;font-size:8px;font-family:"kroeger 05_55";color:#6F6F6F}
+
+A.txtgrpal	{font-family:"kroeger 05_55"; font-size:8px; color:#6F6F6F; text-decoration:none;}
+A.linklight {font-family:"hooge 05_65"; font-size:8px; text-decoration:none;}
+
+-->
+</STYLE>

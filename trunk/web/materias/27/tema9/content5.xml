@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<content btnText="1" txt="1. Establecer objetivos y est&#225;ndares: la empresa debe tener una referencia respecto a la que realizar el control. La primera son los objetivos. Adicionalmente, la organizaci&#243;n puede utilizar como referencia los criterios y requisitos de los est&#225;ndares de gesti&#243;n socialmente responsable. Algunos de los m&#225;s relevantes son: SA 8000, AA 1000, SGE 21, SI 10000, ECS2000, y la norma de Aenor UNE 165010 EX." color="66cc330099cc"/>
+	<content btnText="2" txt="2. Medir resultados: la mejor manera de medir los resultados es utilizar indicadores de RSC." color="0099cc"/>
+	<content btnText="3" txt="3. Comparar resultados con objetivos y est&#225;ndares: la comparaci&#243;n se realiza de una manera formal y sistem&#225;tica mediante las auditorias de RSC. El proceso de auditor&#237;a incluye la definici&#243;n del alcance, la selecci&#243;n del auditor, la ejecuci&#243;n de la auditor&#237;a y la elaboraci&#243;n del informe de auditor&#237;a." color="ff9900"/>
+	<content btnText="4" txt="4. An&#225;lisis de las desviaciones: consiste en evaluar las desviaciones para centrarse en aquellas m&#225;s significativas o sobre las que la empresa puede actuar, e identificar las causas que han dado origen a tales desviaciones." color="996699"/>
+	<content btnText="5" txt="5. Acci&#243;n correctiva y acci&#243;n preventiva: por &#250;ltimo, la empresa debe tomar acciones correctivas encaminadas a evitar la repetici&#243;n de las causas que motivaros las desviaciones negativas y a potenciar las casas de las desviaciones positivas para ello necesita de establecer las auditor&#237;as." color="996699"/>
+
+</root>

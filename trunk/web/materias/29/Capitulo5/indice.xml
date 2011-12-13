@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+	<boton texto="Formato de un texto   " pagina="1" despy="0" />
+	<boton texto="Formato carácter      " pagina="2" despy="0" />
+	<boton texto="Formato parrafo       " pagina="4" despy="0" />
+	<boton texto="Tabulaciones          " pagina="5" despy="574" />
+	<boton texto="Cambiar a mayúsculas  " pagina="7" despy="0" />
+	<boton texto="Copiar formato        " pagina="7" despy="750" />
+	<boton texto="Paneles de formato    " pagina="4" despy="0" />
+	<boton texto="Crear formatos        " pagina="7" despy="750" />
+</menu>

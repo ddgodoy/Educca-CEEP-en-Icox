@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+	<boton texto="Configurar páginas           " pagina="1"  despy="0" />
+	<boton texto="Encabezados y pies de página " pagina="4"  despy="0" />
+	<boton texto="Números de página            " pagina="6"  despy="480" />
+</menu>

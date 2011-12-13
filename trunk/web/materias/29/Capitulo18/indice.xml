@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+	<boton texto="Marcadores            " pagina="1" despy="0" />
+	<boton texto="Notas al pie          " pagina="3" despy="213" />
+	<boton texto="Referencias cruzadas  " pagina="6" despy="480" />
+</menu>
