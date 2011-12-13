@@ -1,0 +1,73 @@
+﻿<public:component lightweight="true">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2009.
+-->
+ <public:attach event="ondocumentready" for="element" onevent="CustomLogin.init()" /> <script language="jscript" src="Runtime/login.js"></script> <script language="jscript" src="Runtime/notice.js"></script> <script language="jscript" src="Runtime/md5.js"></script> <script language="jscript">
+var oElem=element,oDoc=oElem.document,oProject=window.oConfig&&oConfig.firstChild,CustomLogin
+CustomLogin={init:function(){Login.init(oDoc)
+if(Login.auth||Login.mode!="custom"){this.hide()}else{if(oElem.getAttribute("curDisp")!==null){oElem.style.display=oElem.getAttribute("curDisp")
+oElem.removeAttribute("curDisp")}
+Login.listen(this,"hide")
+this.start()}},hide:function(){if(oElem.style.display!="none"){oElem.setAttribute("curDisp",oElem.style.display)
+oElem.style.display="none"}},start:function(){var rxUser=/^[a-zA-Z0-9_\-]+$/,oForm=oElem.getElementsByTagName("loginform")[0],oSubmit=oElem.getElementsByTagName("loginsubmit")[0],oRegister=oElem.getElementsByTagName("loginregister")[0],oNotice=new Notice(oElem.getElementsByTagName("notice")[0]),oUser,oPass,oRepass
+if(oForm){var aInps=oForm.getElementsByTagName("input")
+for(var i=0;i<3;i++){var oInp=aInps[i]
+if(oInp){if(oInp.type=="text")oUser=oInp
+else if(oInp.type=="password"){if(!oPass)oPass=oInp
+else oRepass=oInp}}}}
+if(oForm&&oSubmit&&oRegister&&oUser&&oPass&&oRepass){if(oForm.style.display!="none"){oForm.style.top=oForm.getAttribute("curTop")||""
+oForm.setAttribute("curDisp",oForm.style.display)
+oForm.style.display="none"}
+oUser.onselectstart=oPass.onselectstart=oRepass.onselectstart=function(){event.cancelBubble=true;}
+oElem.onclick=function(){if(oForm.contains(event.srcElement))return
+if(oForm.style.display=="none"){oForm.style.display=oForm.getAttribute("curDisp")
+oUser.focus()}else{oForm.style.display="none"}}
+opacityOverlay(oElem)
+oPass.onkeypress=function(){if(event.keyCode==13)oSubmit.click();}
+oRepass.onkeypress=function(){if(event.keyCode==13)oRegister.click();}
+oSubmit.onclick=function(){if(this.disabled)return false
+var sUser=oUser.value=oUser.value.trim(),sPass=oPass.value=oPass.value.trim()
+if(!sUser){oNotice.show(0)
+oUser.focus()
+return false}
+if(!sPass){oNotice.show(1)
+oPass.focus()
+return false}
+oSubmit.disabled=true
+oRegister.disabled=true
+Login.post({m:"custom",u:sUser,p:MD5(sPass)},function(){oNotice.show(2)
+oSubmit.disabled=false
+oRegister.disabled=false})}
+opacityOverlay(oSubmit)
+oRegister.onclick=function(){if(this.disabled)return false
+var sUser=oUser.value=oUser.value.trim(),sPass=oPass.value=oPass.value.trim(),sRepass=oRepass.value=oRepass.value.trim()
+if(!sUser){oNotice.show(3)
+oUser.focus()
+return false}
+if(!rxUser.test(sUser)){oNotice.show(4)
+oUser.focus()
+return false}
+if(!sPass){oNotice.show(5)
+oPass.focus()
+return false}
+if(!sRepass){oNotice.show(6)
+oRepass.focus()
+return false}
+if(sPass!=sRepass){oNotice.show(7)
+oRepass.focus()
+return false}
+oSubmit.disabled=true
+oRegister.disabled=true
+Login.post({m:"custom",u:sUser,p:MD5(sPass),r:MD5(sRepass)},function(){oNotice.show(8)
+oUser.focus()
+oSubmit.disabled=false
+oRegister.disabled=false})}
+opacityOverlay(oRegister)}else{this.hide()}}}
+String.prototype.trim=function(){return this.replace(/^\s+|\s+$/g,"")}
+</script> </public:component>

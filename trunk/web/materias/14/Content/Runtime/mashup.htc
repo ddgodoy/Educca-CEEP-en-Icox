@@ -1,0 +1,25 @@
+﻿<public:component lightweight="true">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2009.
+-->
+ <public:attach event="ondocumentready" for="element" onevent="initMash()" /> <script language="jscript">
+var oDoc=element.document,oBtn,oInp
+function initMash(){if(element.tagName=="usearch"){oBtn=element.getElementsByTagName("ubtn")[0]
+oInp=element.getElementsByTagName("input")[0]
+if(oInp){if(element.getAttribute("readOnly")=="true"){oInp.setAttribute("readOnly","true")}
+if(oBtn){oBtn.onclick=commit}
+oInp.onkeypress=function(){if(event.keyCode==13){commit()}}}}}
+function commit(){var oRd=element.getElementsByTagName("input")
+for(var iR=0;iR<oRd.length;iR++){if(oRd[iR].checked){var oEng=oRd[iR].parentElement,url=oEng.getAttribute("url"),srch=oInp.value
+if(url){if(url=="custom")url=oEng.getAttribute("customurl")
+if(url){url="http://"+url+encodeURIComponent(srch)
+if(element.getAttribute("results")=="external"){window.open(url,"universalSearch")}else{var oF=element.getElementsByTagName("iframe")[0]
+if(oF){oF.src=url}}}}
+break}}}
+</script> </public:component>

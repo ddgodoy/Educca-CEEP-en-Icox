@@ -1,0 +1,43 @@
+﻿<public:component lightweight="true">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2009.
+-->
+ <public:event name="onlogin" id="eLogin" /> <public:attach event="ondocumentready" for="element" onevent="init()" /> <public:property name="stuffed" />  <public:method name="fireVarChange" /> <public:method name="commitInteraction" /> <public:method name="initInteraction" /> <public:method name="isVarSupported" /> <public:method name="getVarValue" /> <public:event name="onvarchange" id="eVarChg" /> <public:event name="onactivityinit" id="eInit" /> <public:event name="onactivitycheck" id="eCheck" /> <public:event name="onactivitydone" id="eDone" /> <script language="jscript" src="Runtime/rating.js"></script> <script language="jscript" src="Runtime/FeedFetcher.js"></script> <script language="jscript">
+var oEl=element,sVarPrefix="rating "
+function init(){var oParent=oEl,bInit=false
+while(oParent=oParent.parentNode){try{if(oParent.readyState!="complete"){setTimeout(init,50)
+return}
+if(oParent.isManualRating&&oParent.isManualRating())return
+if(oParent==oEl.document)bInit=true}catch(e){return}}
+if(bInit)new Rating(oEl)
+element.setAttribute("alreadyDone","true")}
+function isVarSupported(sVar){return sVar.substr(0,sVarPrefix.length)==sVarPrefix}
+function getVarValue(sVar){return oEl.getAttribute(sVar.substr(sVarPrefix.length))}
+function fireVarChange(){eVarChg.fire()
+if(!oEl.initInter){try{oEl.initInteraction();}catch(e){}
+oEl.initInter=true}}
+function initInteraction(){if(oEl.getAttribute("autoscorm")!="false"){var oEvent=createEventObject(),sPattern="1[:]"+oEl.getAttribute("count"),sDesc=oEl.getAttribute("desc")||null
+oEvent.start=new Date()
+oEvent.activity="rating"
+oEvent.correctPattern=sPattern
+oEvent.desc=sDesc
+oEvent.unscored=true
+eInit.fire(oEvent)}}
+function commitInteraction(iValue){if(oEl.getAttribute("autoscorm")!="false"){var oEvent=createEventObject()
+oEvent.activity="rating"
+oEvent.userPattern=iValue
+oEvent.checkTime=new Date()
+eCheck.fire(oEvent)
+var oEvent=createEventObject()
+oEvent.activity="rating"
+oEvent.userPattern=iValue
+oEvent.checkTime=new Date()
+oEvent.unscored=true
+eDone.fire(oEvent)}}
+</script> </public:component>

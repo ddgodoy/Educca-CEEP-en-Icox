@@ -1,0 +1,83 @@
+﻿<public:component lightweight="true">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2009.
+-->
+ <public:attach event="ondocumentready" for="element" onevent="initSurvey()" />  <public:attach event="ondocumentready" for="element" onevent="initVar()" /> <public:method name="isVarSupported" /> <public:method name="getVarValue" /> <public:event name="onvarchange" id="eVarChg" /> <public:event name="onactivityinit" id="eActivityInit" /> <public:event name="onactivitycheck" id="eCheck" /> <public:event name="onactivitydone" id="eDone" /> <script language="jscript">
+var bItems=element.getAttribute("storeitems")=="true",bTotal=element.getAttribute("storetotal")=="true",bAvg=element.getAttribute("storeavg")=="true"
+function initSurvey(){var oItems=element.getElementsByTagName("svitem"),oHash={},iLast=+element.getAttribute("lastindex")+1,oSend=element.getElementsByTagName("svsend")[0],iSum=0,iCount=0
+for(var iI=0;iI<oItems.length;iI++){var oItem=oItems[iI],iIdx=oItem.getAttribute("svindex")
+if(oHash[iIdx]){iIdx=iLast++
+oItem.setAttribute("svindex",iIdx)}
+oHash[iIdx]=oItem
+if(!element.alreadyDone){var sType=oItem.getAttribute("svtype"),oQ=oItem.getElementsByTagName("svquestion")[0],sDesc=oQ?oQ.innerText:"",iSubIndex=oItem.getAttribute("scormSubNdx"),sPattern
+if(sType=="svrating"){var oR=oItem.getElementsByTagName("rating")[0]
+if(oR){var iMax=+oR.getAttribute("count")
+sPattern="1[:]"+iMax
+iSum+=iMax
+iCount++
+oItem.item=oR
+if(bItems)initInteraction("rating",sPattern,sDesc,iSubIndex)}}else if(sType=="svtext"){var oT=oItem.getElementsByTagName("textarea")[0]
+if(oT){oItem.item=oT
+if(bItems)initInteraction("text",sPattern,sDesc,iSubIndex)}}}}
+var sSuffix=element.getAttribute("desc")||"",oSur=element.document.getElementsByTagName("survey")
+if(!sSuffix&&oSur.length>1){for(var iS=0;iS<oSur.length;iS++){if(oSur[iS]==element){sSuffix="Encuesta #"+(iS+1)
+break}}}
+if(sSuffix)sSuffix=" ("+sSuffix+")"
+if(bTotal&&!element.alreadyDone){var iSubIndex=element.getAttribute("scormSubNdx_total")
+initInteraction("rating",("1[:]"+iSum),("Puntuación Total de Encuesta"+sSuffix),iSubIndex)}
+if(bAvg&&!element.alreadyDone){var iSubIndex=element.getAttribute("scormSubNdx_avg")
+initInteraction("rating",(iCount?"1[:]"+Math.round(iSum/iCount):""),("Puntuación Media de Encuesta"+sSuffix),iSubIndex)}
+if(oSend){oSend.onclick=commitSurvey}
+element.alreadyDone="true"}
+function commitSurvey(){var oMsg=element.getElementsByTagName("svsendmsg")[0],oItems=element.getElementsByTagName("svitem"),iTotalScore=0,iAnsCnt=0
+for(var iI=0;iI<oItems.length;iI++){var oItem=oItems[iI],iSubIndex=oItem.getAttribute("scormSubNdx")
+if(oItem.getAttribute("svtype")=="svrating"){var oR=oItem.item
+if(oR){var iScore=+oR.getAttribute("score")
+if(iScore){iTotalScore+=iScore
+iAnsCnt++}
+if(bItems&&iScore){commitInteraction("rating",iScore,iSubIndex)}}}else if(oItem.getAttribute("svtype")=="svtext"){var oT=oItem.item
+if(oT&&bItems){var sText=oT.value
+commitInteraction("text",sText,iSubIndex)}}}
+if(bTotal){var iSubIndex=element.getAttribute("scormSubNdx_total")
+commitInteraction("rating",iTotalScore,iSubIndex)}
+if(bAvg){var iAvg=iAnsCnt?iTotalScore/iAnsCnt:0,iSubIndex=element.getAttribute("scormSubNdx_avg")
+commitInteraction("rating",iAvg.toFixed(2),iSubIndex)}
+if(oMsg)oMsg.style.visibility="visible"}
+function initInteraction(sType,sPattern,sDesc,iSubIndex){var oEvent=createEventObject()
+oEvent.start=new Date()
+oEvent.activity=sType
+oEvent.correctPattern=sPattern
+oEvent.desc=sDesc
+oEvent.subindex=iSubIndex
+oEvent.unscored=true
+eActivityInit.fire(oEvent)}
+function commitInteraction(sType,sPattern,iSubIndex){var oEvent=createEventObject()
+oEvent.activity=sType
+oEvent.userPattern=sPattern
+oEvent.checkTime=new Date()
+oEvent.subindex=iSubIndex
+eCheck.fire(oEvent)
+var oEvent=createEventObject()
+oEvent.activity=sType
+oEvent.userPattern=sPattern
+oEvent.checkTime=new Date()
+oEvent.subindex=iSubIndex
+eDone.fire(oEvent)}
+var oVariables={"correct answers":null,"incorrect answers":null,"total answers":null,"attempts left":null,"current attempt":null,"total attempts":null}
+function isVarSupported(sVar){return oVariables[sVar]!==undefined}
+function getVarValue(sVar){return oVariables[sVar]}
+function initVar(){element.attachEvent("oncheck",updateVariables)}
+function updateVariables(){oVariables["correct answers"]=iCorrect
+oVariables["incorrect answers"]=iIncorrect
+oVariables["total answers"]=iTotalCorrect
+oVariables["attempts left"]=iTotalAttempts-element.tries
+oVariables["current attempt"]=element.tries
+oVariables["total attempts"]=iTotalAttempts
+eVarChg.fire()}
+</script> </public:component>

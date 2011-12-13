@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lesson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../lesson_v1.xsd" id="bD04" href="http://www6.tellmemorecampus.com/cmd101/modplatforms.axrq" type="3" launch_type="0" nilang_default="33" paramstring="" ptf_name="ceep_ESP_std_s" flash_baseurl="/tmm/screen/main.swf" object_classid="ED25942D-9213-4724-BEE7-3657B73E6927" object_base="/tmm/screen/" object_src="/bin/tellmemore.tmm" object_codebase="/bin/NpTmm9.cab#version=9,0,0,1" new_window="1" close_launcher="0" no_ocx="0" check_install="1" client_id="" nilang_creation="33">
+	<title>
+		<!-- <langstring lang="en" nilang="14">TITLE</langstring> -->
+	<langstring lang="en" nilang="33">Programa de formaci&#x00F3;n personalizado</langstring>
+</title>
+	<description>
+		<!-- <langstring lang="en" nilang="14">DESCRIPTION</langstring> -->
+	<langstring lang="en" nilang="33">El programa de formaci&#x00F3;n con el que va a estudiar ha sido realizado por su Tutor.  Antes de empezar su formaci&#x00F3;n, ejecute el test del ordenador y aseg&#x00FA;rese de que todos los programas necesarios para que TELL ME MORE funcione correctamente est&#x00E1;n instalados.   Cuando usted entra por primera vez en un m&#x00F3;dulo y accede a la Tabla de progresi&#x00F3;n, trate de empezar la formaci&#x00F3;n siguiendo las instrucciones que aparecen en la pantalla.  La casilla que parpadea le indica d&#x00F3;nde tiene que empezar y a continuaci&#x00F3;n, pulse en ''Siguiente actividad de la lecci&#x00F3;n''.   Sepa que, cuando sit&#x00FA;a el puntero del rat&#x00F3;n en una casilla de la tabla de progresi&#x00F3;n, aparece el  porcentaje de ejercicios realizados y el porcentaje de ejercicios correctos.</langstring>
+</description>
+</lesson>

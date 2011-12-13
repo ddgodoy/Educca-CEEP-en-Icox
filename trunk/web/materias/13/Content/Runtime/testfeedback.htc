@@ -1,0 +1,162 @@
+﻿<public:component lightweight="true">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2009.
+-->
+  <public:attach event="ondocumentready" for="element" onevent="init()" /> <public:method name="isVarSupported" /> <public:method name="getVarValue" /> <public:method name="init" /> <public:method name="reinitTest" /> <public:event name="onvarchange" id="eVarChg" /> <script language="jscript">
+var oStruct=oConfig.selectSingleNode(".//structure")
+function init(iForceId){if(element.getAttribute("feedbackDone")!="true"||iForceId){var sId=iForceId||element.getAttribute("testId")
+if(element.getAttribute("explicit")=="true"&&!sId){return}
+if(!sId){if(oResource.previousSibling&&oResource.previousSibling.tagName=="test"){sId=oResource.previousSibling.getAttribute("id")}else{var oNode=oResource
+while(oNode.tagName!="test"){oNode=getNavNode(oNode,"previous",true,true)
+if(!oNode)break}
+if(oNode.tagName=="test")sId=oNode.getAttribute("id")}}
+if(sId){var oTest=oNode||oConfig.selectSingleNode("//test[@id=\""+sId+"\"]")
+if(!oTest)return
+var aSects=oTest.childNodes,oResults={title:oTest.getAttribute("title"),totalscore:+oTest.getAttribute("totalscore"),totalquestions:+oTest.getAttribute("totalquestions"),correct:+oTest.getAttribute("correct"),incorrect:+oTest.getAttribute("incorrect"),partial:+oTest.getAttribute("partial"),passscore:+oTest.getAttribute("passScore")||0,sections:[]}
+if(oTest.selectNodes(".//*[@visited=\"true\" and (not(@skip) or @skip!=\"true\")]").length==0&&element.getAttribute("explicit")!="true"){navigateTo(true,getNavNode(oTest))
+return}
+for(var iSect=0;iSect<aSects.length;iSect++){var oSect=aSects[iSect],oSectResults={totalscore:getFixed(+oSect.getAttribute("totalscore")),maxscore:getFixed(+oSect.getAttribute("weight")),correct:+oSect.getAttribute("correct"),incorrect:+oSect.getAttribute("incorrect"),partial:+oSect.getAttribute("partial"),title:oSect.getAttribute("vtitle")||oSect.getAttribute("title")}
+oResults.sections[iSect]=oSectResults}
+oVariables["total score"]=oResults.totalscore
+oVariables["total questions"]=oResults.totalquestions
+oVariables["correct answers"]=oResults.correct
+oVariables["incorrect answers"]=oResults.totalquestions-oResults.correct-oResults.partial
+oVariables["partial answers"]=oResults.partial
+oVariables["pass score"]=oResults.passscore
+oVariables["test title"]=oResults.title
+eVarChg.fire()
+var oPass=element.getElementsByTagName("tfbpass")[0],oFail=element.getElementsByTagName("tfbfail")[0]
+if(oResults.totalscore>=oResults.passscore){if(oFail){oFail.style.display="none"
+oFail.style.visibility="hidden"
+switchEmbeds(oFail,"off")}
+if(oPass){if(!autoRedirect(oPass)){oPass.style.display="inline"
+oPass.style.visibility="visible"
+switchEmbeds(oPass,"on")}}}else{if(oPass){oPass.style.display="none"
+oPass.style.visibility="hidden"
+switchEmbeds(oPass,"off")}
+if(oFail){if(!autoRedirect(oFail)){oFail.style.display="inline"
+oFail.style.visibility="visible"
+switchEmbeds(oFail,"on")}}}
+var oCustom=element.getElementsByTagName("tfbcustom")
+if(oCustom.length){for(var iC=0;iC<oCustom.length;iC++){var oFB=oCustom[iC],sCondition=oFB.getAttribute("condition")
+if(sCondition){var bMatch=getConditionMatch(sCondition,oTest)
+if(bMatch){if(!autoRedirect(oFB)){oFB.style.display="inline"
+switchEmbeds(oFB,"on")}}}}}
+var oTFBR=element.getElementsByTagName("tfbresults")[0]
+if(oTFBR){var bMatch=true,sCondition=oTFBR.getAttribute("condition")
+if(sCondition){bMatch=getConditionMatch(sCondition,oTest)}
+if(!bMatch){oTFBR.runtimeStyle.display="none"}}
+var oTFBTS=element.getElementsByTagName("tfbsummary")[0]
+if(oTFBTS){var bMatch=true,sCondition=oTFBTS.getAttribute("condition")
+if(sCondition){bMatch=getConditionMatch(sCondition,oTest)}
+if(!bMatch){oTFBTS.runtimeStyle.display="none"}}
+var oTFBS=element.getElementsByTagName("tfbsections")[0]
+if(oTFBS){var bMatch=true,sCondition=oTFBS.getAttribute("condition")
+if(sCondition){bMatch=getConditionMatch(sCondition,oTest)}
+if(bMatch){var oTable=oTFBS.getElementsByTagName("tbody")[0]
+if(oTable&&oTable.childNodes.length>0){var oRow=oTable.lastChild,oNewRow
+for(var iSect=0;iSect<oResults.sections.length;iSect++){var oResSect=oResults.sections[iSect]
+if(iSect==0){oNewRow=oRow}else{oNewRow=oTable.appendChild(oRow.cloneNode(true))}
+if(oNewRow.childNodes[0])oNewRow.childNodes[0].innerText=oResSect.title
+if(oNewRow.childNodes[1])oNewRow.childNodes[1].innerText=getFixed(oResSect.totalscore*1,2)+" / "+getFixed(oResSect.maxscore,2)
+if(oNewRow.childNodes[2])oNewRow.childNodes[2].innerText=oResSect.correct
+if(oNewRow.childNodes[3])oNewRow.childNodes[3].innerText=oResSect.incorrect
+if(oNewRow.childNodes[4])oNewRow.childNodes[4].innerText=oResSect.partial}}}else{oTFBS.runtimeStyle.display="none"}}
+if(element.getElementsByTagName("tfbdetails").length){var oFBD=element.getElementsByTagName("tfbdetails")[0],oTable=oFBD.getElementsByTagName("tbody")[0],bLinks=oFBD.getAttribute("showlinks")||"true",bMatch=true,sCondition=oFBD.getAttribute("condition")
+if(sCondition){bMatch=getConditionMatch(sCondition,oTest)}
+if(bMatch&&(oResults.totalscore<100||oFBD.getAttribute("showcorrect")=="true")){if(oTable&&oTable.childNodes.length>0){var aQuest=oTest.selectNodes(".//page"),oRow,oNewRow,iLen=oTable.childNodes.length
+for(var iQuest=0;iQuest<aQuest.length;iQuest++){var oQuest=aQuest[iQuest],iIndex=1,iScore=+oQuest.getAttribute("score")||0,iMaxScore=+oQuest.getAttribute("maxScore")
+if(iScore&&iScore<iMaxScore)iIndex=3
+else if(!iScore)iIndex=2
+if(iIndex==1&&oFBD.getAttribute("showcorrect")=="false"||iIndex==2&&oFBD.getAttribute("showincorrect")=="false"||iIndex==3&&oFBD.getAttribute("showpartial")=="false"){continue}
+if(oTable.childNodes[iIndex])oRow=oTable.childNodes[iIndex]
+else oRow=oTable.lastChild
+oNewRow=oTable.appendChild(oRow.cloneNode(true))
+if(oNewRow.childNodes[0])oNewRow.childNodes[0].innerText=iQuest+1
+if(oNewRow.childNodes[1]){var oCell=oNewRow.childNodes[1]
+oCell.innerText=oQuest.getAttribute("title")
+if(bLinks=="true"){oCell.id=oQuest.getAttribute("id")
+oCell.style.cursor="hand"
+oCell.onclick=navigateTo}}
+if(oNewRow.childNodes[2])oNewRow.childNodes[2].innerText=getFixed((oQuest.getAttribute("score")*1||0),2)+" / "+getFixed((oQuest.getAttribute("maxScore")*1||0),2)}
+for(var i=1;i<iLen;i++){oTable.removeChild(oTable.childNodes[1])}}}else{oFBD.style.display="none"}}
+if(element.getElementsByTagName("tfbreview").length){var oFBR=element.getElementsByTagName("tfbreview")[0],bMatch=true,sCondition=oFBR.getAttribute("condition")
+if(sCondition){bMatch=getConditionMatch(sCondition,oTest)}
+if(bMatch&&oTest.getAttribute("allowReview")!="false"){if(sId){var oTargetNode=oStruct.selectSingleNode(".//*[@id=\""+sId+"\"]")
+if(oTargetNode){var oNavTrgt=getNavNode(oTargetNode)
+if(oNavTrgt){oFBR.id=oNavTrgt.getAttribute("id")
+oFBR.style.cursor="hand"
+oFBR.onclick=navigateTo}}}
+opacityOverlay(oFBR)}else{oFBR.style.display="none"}}
+if(element.getElementsByTagName("tfbretest").length){var oFBRE=element.getElementsByTagName("tfbretest")[0],targetId=oFBRE.getAttribute("targetId")||sId,iMaxAttempts=(oTest.getAttribute("attempts")||0)*1,iCurAttempts=(oTest.getAttribute("curAttempts")||0)*1,bMatch=true,sCondition=oFBRE.getAttribute("condition")
+if(sCondition){bMatch=getConditionMatch(sCondition,oTest)}
+if(!bMatch||(iMaxAttempts&&iCurAttempts&&iCurAttempts>=iMaxAttempts)){oFBRE.style.display="none"}else{opacityOverlay(oFBRE)
+if(targetId){var oTargetNode=oStruct.selectSingleNode(".//*[@id=\""+targetId+"\"]")
+if(oTargetNode){var oNavTrgt=getNavNode(oTargetNode)
+if(oNavTrgt){oFBRE.id=oNavTrgt.getAttribute("id")
+oFBRE.targetId=oFBRE.id
+oFBRE.style.cursor="hand"
+oFBRE.onclick=function(){reinitTest(oTest,oFBRE)
+navigateTo(true,getNavNode(oTest))}}}}}}}
+element.setAttribute("feedbackDone","true")}}
+function getConditionMatch(sCondition,oTest){var aCondition=sCondition.split(";")
+for(var iN=0;iN<aCondition.length;iN++){var aItem=aCondition[iN].split("|"),iMin=+aItem[1],iMax=+aItem[2],oNode=oTest,iScore=oNode.getAttribute("totalscore")
+if(aItem[0].indexOf("section")==0){var iWeight
+oNode=oTest.selectSingleNode("//section[@id=\""+aItem[0]+"\"]")
+if(oNode){iWeight=+oNode.getAttribute("weight")
+iScore=oNode.getAttribute("totalscore")
+iMin=iWeight*iMin/100
+iMax=iWeight*iMax/100}}
+if(iScore<iMin||iScore>iMax){return false}}
+return true}
+function autoRedirect(oElem){var sTargetId=oElem.getAttribute("targetId")
+if(sTargetId){var oTargetNode=oStruct.selectSingleNode(".//*[@id=\""+sTargetId+"\"]")
+if(oTargetNode){oTargetNode=getNavNode(oTargetNode)
+if(oTargetNode&&oTargetNode!=oResource){element.runtimeStyle.visibility="hidden"
+loadResource(oTargetNode)
+return true}}}
+return false}
+function navigateTo(iForceId,oTestNode){if(window.loadResource){var sId=event&&event.srcElement.id?event.srcElement.id:element.id
+if(event&&!sId&&!oTestNode){var oSrc=event.srcElement
+while(!oSrc.id&&oSrc!=element){oSrc=oSrc.parentElement}
+sId=oSrc.id}
+var oNewResource=oTestNode?oTestNode:oStruct.selectSingleNode(".//*[@id=\""+sId+"\"]")
+if(oNewResource&&(oNewResource!=oResource||iForceId)){loadResource(oNewResource)}}}
+function reinitTest(oTestNode,oNav){if(oTestNode){oTestNode.removeAttribute("totalscore")
+oTestNode.removeAttribute("totalquestions")
+oTestNode.removeAttribute("correct")
+oTestNode.removeAttribute("incorrect")
+oTestNode.removeAttribute("partial")
+oTestNode.removeAttribute("lock")
+oTestNode.removeAttribute("status")
+oTestNode.removeAttribute("reviewMode")
+LMSInterface.ResetObjective(oTestNode)
+var oSects=oTestNode.selectNodes(".//section")
+for(var iS=0;iS<oSects.length;iS++){var oSect=oSects[iS]
+oSect.removeAttribute("totalscore")
+oSect.removeAttribute("totalquestions")
+oSect.removeAttribute("correct")
+oSect.removeAttribute("incorrect")
+oSect.removeAttribute("partial")}
+var oPages=oTestNode.selectNodes(".//page")
+for(var iP=0;iP<oPages.length;iP++){var oPage=oPages[iP],sId=oPage.getAttribute("id")
+oPage.setAttribute("total",0)
+oPage.setAttribute("correct",0)
+oPage.setAttribute("finalTotal",0)
+oPage.setAttribute("finalCorrect",0)
+oPage.removeAttribute("score")
+oPage.removeAttribute("unlocked")
+LMSInterface.ResetInteraction(oPage)
+if(sId){oPersist[sId]=null}}
+if(oNav&&oNav.targetId){var oTargetNode=oConfig.selectSingleNode(".//*[@id=\""+oNav.targetId+"\"]")
+if(oTargetNode){oNav.id=getNavNode(oTargetNode).getAttribute("id")}}}}
+var oVariables={"test title":null,"total questions":null,"total answers":null,"correct answers":null,"incorrect answers":null,"partial answers":null,"total score":null,"pass score":null}
+function isVarSupported(sVar){return oVariables[sVar]!==undefined}
+function getVarValue(sVar){return oVariables[sVar]}
+</script> </public:component>
