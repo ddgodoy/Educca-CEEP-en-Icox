@@ -1,0 +1,2109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.5 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="EXCEL2007" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd" version="1.2">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <adlcp:location>imsmetadata.xml</adlcp:location>
+  </metadata>
+  <organizations default="ORG-F4C3FEC718BB382FF31C535A12EDE26B">
+    <organization identifier="ORG-F4C3FEC718BB382FF31C535A12EDE26B" structure="hierarchical">
+      <title>Organization</title>
+      <item identifier="ITEM-2CEB66B92916F07B8896F57699445B80" isvisible="true" identifierref="RES-AA48BD9394A32FF27FA5DDBAA5B88C5D">
+        <title>EXCEL2007</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-AA48BD9394A32FF27FA5DDBAA5B88C5D" type="webcontent" href="Navidad.html">
+      <file href="Navidad.html" />
+      <file href="AC_OETags.js" />
+      <file href="NAVIDAD.swf" />
+      <file href="SCORM_API_wrapper.js" />
+    </resource>
+    <resource identifier="RES-DDA717A7148257F1E894A38C0421AE01" type="webcontent" href="assets/TreeIcons/Accordion.png">
+      <file href="assets/TreeIcons/Accordion.png" />
+    </resource>
+    <resource identifier="RES-98483F532934051CB871DDA759EB244A" type="webcontent" href="assets/TreeIcons/application.png">
+      <file href="assets/TreeIcons/application.png" />
+    </resource>
+    <resource identifier="RES-6F3381824B99B0A5F7569634CD88625F" type="webcontent" href="assets/TreeIcons/ApplicationControlBar.png">
+      <file href="assets/TreeIcons/ApplicationControlBar.png" />
+    </resource>
+    <resource identifier="RES-C026410E491EF7A53602ABE83DC773FF" type="webcontent" href="assets/TreeIcons/Button.png">
+      <file href="assets/TreeIcons/Button.png" />
+    </resource>
+    <resource identifier="RES-0D5470EB21EA48F45F6B8EF935D0D878" type="webcontent" href="assets/TreeIcons/ButtonBar.png">
+      <file href="assets/TreeIcons/ButtonBar.png" />
+    </resource>
+    <resource identifier="RES-8A5D129C2F6AEB3069B51AE737EB127F" type="webcontent" href="assets/TreeIcons/ColorPicker.png">
+      <file href="assets/TreeIcons/ColorPicker.png" />
+    </resource>
+    <resource identifier="RES-413C998AF28E661EA3A4865D45772D86" type="webcontent" href="assets/TreeIcons/ComboBox.png">
+      <file href="assets/TreeIcons/ComboBox.png" />
+    </resource>
+    <resource identifier="RES-685C1B2E4C06F1588287F28C200E72F9" type="webcontent" href="assets/TreeIcons/DateChooser.png">
+      <file href="assets/TreeIcons/DateChooser.png" />
+    </resource>
+    <resource identifier="RES-C404DE5E80A1F75604DD0187DAB34245" type="webcontent" href="assets/TreeIcons/HDividedBox.png">
+      <file href="assets/TreeIcons/HDividedBox.png" />
+    </resource>
+    <resource identifier="RES-3A4D4A4020F4A2334B7FA20019945395" type="webcontent" href="assets/TreeIcons/HRule.png">
+      <file href="assets/TreeIcons/HRule.png" />
+    </resource>
+    <resource identifier="RES-AE5AC6E31BE9D7D8EB1158064194F56A" type="webcontent" href="assets/TreeIcons/HScrollBar.png">
+      <file href="assets/TreeIcons/HScrollBar.png" />
+    </resource>
+    <resource identifier="RES-B7BBE95E11465A1B8F08121E0EBFBE87" type="webcontent" href="assets/TreeIcons/HSlider.png">
+      <file href="assets/TreeIcons/HSlider.png" />
+    </resource>
+    <resource identifier="RES-788CB17503DB590EA8AC4EEC36AA15B7" type="webcontent" href="assets/TreeIcons/LinkBar.png">
+      <file href="assets/TreeIcons/LinkBar.png" />
+    </resource>
+    <resource identifier="RES-4EFA19A30FD60E8D040AF7EBA9B902AE" type="webcontent" href="assets/TreeIcons/LinkButton.png">
+      <file href="assets/TreeIcons/LinkButton.png" />
+    </resource>
+    <resource identifier="RES-08DB13C4F2ED5DB1F86574E64C93DAA9" type="webcontent" href="assets/TreeIcons/List.png">
+      <file href="assets/TreeIcons/List.png" />
+    </resource>
+    <resource identifier="RES-6B290604E6BE5B8742DB80DD4C847814" type="webcontent" href="assets/TreeIcons/MenuBar.png">
+      <file href="assets/TreeIcons/MenuBar.png" />
+    </resource>
+    <resource identifier="RES-1C5D1281F3F4F9ADA14464599E277AA3" type="webcontent" href="assets/TreeIcons/NumericStepper.png">
+      <file href="assets/TreeIcons/NumericStepper.png" />
+    </resource>
+    <resource identifier="RES-6A43305FB1DDEA1C764F895F6CD14597" type="webcontent" href="assets/TreeIcons/Panel.png">
+      <file href="assets/TreeIcons/Panel.png" />
+    </resource>
+    <resource identifier="RES-6B445E41ABF163B3C3E75DD7D7D4F134" type="webcontent" href="assets/TreeIcons/ProgressBar.png">
+      <file href="assets/TreeIcons/ProgressBar.png" />
+    </resource>
+    <resource identifier="RES-154AB0A5739B9C97EEDD14CBD42FDC7B" type="webcontent" href="assets/TreeIcons/TabNavigator.png">
+      <file href="assets/TreeIcons/TabNavigator.png" />
+    </resource>
+    <resource identifier="RES-5843169C80BA634697807492CD75ACFB" type="webcontent" href="assets/TreeIcons/TextArea.png">
+      <file href="assets/TreeIcons/TextArea.png" />
+    </resource>
+    <resource identifier="RES-60D0873580D12D06A9AC75F3619AAB02" type="webcontent" href="assets/TreeIcons/TextInput.png">
+      <file href="assets/TreeIcons/TextInput.png" />
+    </resource>
+    <resource identifier="RES-8336E6C7D3651BBA5A9B5735FE0CF4B6" type="webcontent" href="assets/TreeIcons/ToggleButtonBar.png">
+      <file href="assets/TreeIcons/ToggleButtonBar.png" />
+    </resource>
+    <resource identifier="RES-9B38AF893C27F997A2F4E0A60F49369D" type="webcontent" href="assets/TreeIcons/ToolTip.png">
+      <file href="assets/TreeIcons/ToolTip.png" />
+    </resource>
+    <resource identifier="RES-4F36CFC316C9CA4C5FB9D11C423CA66B" type="webcontent" href="assets/TreeIcons/Tree.png">
+      <file href="assets/TreeIcons/Tree.png" />
+    </resource>
+    <resource identifier="RES-9784528D10B5EB7E175C15F9CF538525" type="webcontent" href="assets/TreeIcons/VDividedBox.png">
+      <file href="assets/TreeIcons/VDividedBox.png" />
+    </resource>
+    <resource identifier="RES-8E781C1A75D77FDE77B4F052C972AC2C" type="webcontent" href="assets/TreeIcons/VRule.png">
+      <file href="assets/TreeIcons/VRule.png" />
+    </resource>
+    <resource identifier="RES-B47B6BBF1C89B2B3C8F7D396B3496B65" type="webcontent" href="assets/TreeIcons/VScrollBar.png">
+      <file href="assets/TreeIcons/VScrollBar.png" />
+    </resource>
+    <resource identifier="RES-3C22FDEDDCABA840C1D393582F4584DC" type="webcontent" href="assets/TreeIcons/VSlider.png">
+      <file href="assets/TreeIcons/VSlider.png" />
+    </resource>
+    <resource identifier="RES-94D2701908AC9EE5ED238676AF1028A7" type="webcontent" href="assets/86.png">
+      <file href="assets/86.png" />
+    </resource>
+    <resource identifier="RES-4A08BFDA77058B9BBD79106C9BB92CF5" type="webcontent" href="assets/alert.png">
+      <file href="assets/alert.png" />
+    </resource>
+    <resource identifier="RES-F141403BF121E863DB0EA3D512EC1E60" type="webcontent" href="assets/alignCenter.png">
+      <file href="assets/alignCenter.png" />
+    </resource>
+    <resource identifier="RES-5DE0BD6E6BE689DDEC6E20E44C4C574F" type="webcontent" href="assets/alignLeft.png">
+      <file href="assets/alignLeft.png" />
+    </resource>
+    <resource identifier="RES-CAC21A92CFA10AC36FFECD273FCD9550" type="webcontent" href="assets/alignRight.png">
+      <file href="assets/alignRight.png" />
+    </resource>
+    <resource identifier="RES-A41DB4C6781379D69B82A1A03C72C06D" type="webcontent" href="assets/arial.ttf">
+      <file href="assets/arial.ttf" />
+    </resource>
+    <resource identifier="RES-FD7BFE15EC2F30716A772A4BA9703FD9" type="webcontent" href="assets/backgrounds.swf">
+      <file href="assets/backgrounds.swf" />
+    </resource>
+    <resource identifier="RES-7CE9F05C9B33CD8DBF24FA60FCF90358" type="webcontent" href="assets/borderAppControlDefault.png">
+      <file href="assets/borderAppControlDefault.png" />
+    </resource>
+    <resource identifier="RES-588940274BBE5E0706FE0BB2369F0D4E" type="webcontent" href="assets/borderInset.png">
+      <file href="assets/borderInset.png" />
+    </resource>
+    <resource identifier="RES-B798808DE639E120A051812968C47B01" type="webcontent" href="assets/borderNone.png">
+      <file href="assets/borderNone.png" />
+    </resource>
+    <resource identifier="RES-2620B74E942DF3C15D48C2312594CFFE" type="webcontent" href="assets/borderOutset.png">
+      <file href="assets/borderOutset.png" />
+    </resource>
+    <resource identifier="RES-CC8A2DDA42FBCCEFEE337C04A37A0B93" type="webcontent" href="assets/borderPanelDefault.png">
+      <file href="assets/borderPanelDefault.png" />
+    </resource>
+    <resource identifier="RES-AC9061598CDB6BFE9D066CF31CB0EA0D" type="webcontent" href="assets/borderSolid.png">
+      <file href="assets/borderSolid.png" />
+    </resource>
+    <resource identifier="RES-6EE9EA284B3A7905E1EA05248AEA51AE" type="webcontent" href="assets/brushedMetal.jpg">
+      <file href="assets/brushedMetal.jpg" />
+    </resource>
+    <resource identifier="RES-3759C10A7E9172BA6E3A5C4F73CA9C7F" type="webcontent" href="assets/center.gif">
+      <file href="assets/center.gif" />
+    </resource>
+    <resource identifier="RES-5A80B32431A34D7E392DC787DA67C53D" type="webcontent" href="assets/center.png">
+      <file href="assets/center.png" />
+    </resource>
+    <resource identifier="RES-1C826A28C9E943D1BDE0BB8902EFE5F0" type="webcontent" href="assets/checkMark.png">
+      <file href="assets/checkMark.png" />
+    </resource>
+    <resource identifier="RES-7456F53F66CD15C55015F1B4A2208B02" type="webcontent" href="assets/closeNav.png">
+      <file href="assets/closeNav.png" />
+    </resource>
+    <resource identifier="RES-19B427F25B5E4EA263CB7625B8BF1478" type="webcontent" href="assets/colorWheel.png">
+      <file href="assets/colorWheel.png" />
+    </resource>
+    <resource identifier="RES-A2201ED3AE89D8680CD20140F1F48A68" type="webcontent" href="assets/control_pause.png">
+      <file href="assets/control_pause.png" />
+    </resource>
+    <resource identifier="RES-8EBD040E444CA338AFA0A76CA2BED249" type="webcontent" href="assets/control_pause_blue.png">
+      <file href="assets/control_pause_blue.png" />
+    </resource>
+    <resource identifier="RES-F96E43FC716660524B2A247326AE8CF8" type="webcontent" href="assets/control_play.png">
+      <file href="assets/control_play.png" />
+    </resource>
+    <resource identifier="RES-E316C006FCE3ACCE34F4B8388C768E32" type="webcontent" href="assets/control_play_blue.png">
+      <file href="assets/control_play_blue.png" />
+    </resource>
+    <resource identifier="RES-34CB16FEB16A7741F06CFF7CAA59D6BE" type="webcontent" href="assets/control_stop.png">
+      <file href="assets/control_stop.png" />
+    </resource>
+    <resource identifier="RES-331030F3C785FA42DBB9E88DD7C08A12" type="webcontent" href="assets/control_stop_blue.png">
+      <file href="assets/control_stop_blue.png" />
+    </resource>
+    <resource identifier="RES-FEE97BD8C69ED0388B3A1A28C923B869" type="webcontent" href="assets/disclose_close.png">
+      <file href="assets/disclose_close.png" />
+    </resource>
+    <resource identifier="RES-58D69BBF8EF694A84AE4391161AAD077" type="webcontent" href="assets/disclose_open.png">
+      <file href="assets/disclose_open.png" />
+    </resource>
+    <resource identifier="RES-6BF4B2C930FCE76EB61E3A8FC1E53D7C" type="webcontent" href="assets/export.png">
+      <file href="assets/export.png" />
+    </resource>
+    <resource identifier="RES-8CF5ACC1E158B4392052022D54319A2D" type="webcontent" href="assets/fseLogo.png">
+      <file href="assets/fseLogo.png" />
+    </resource>
+    <resource identifier="RES-5083B84B58316D0BA53BEA6D7BB30F75" type="webcontent" href="assets/Internet%20Config.png">
+      <file href="assets/Internet%20Config.png" />
+    </resource>
+    <resource identifier="RES-E73B6C6BB2831BDCDC5D39A8AAEC66AC" type="webcontent" href="assets/left.gif">
+      <file href="assets/left.gif" />
+    </resource>
+    <resource identifier="RES-D91C7FCA0CDD52B2593A791B840C1654" type="webcontent" href="assets/left.png">
+      <file href="assets/left.png" />
+    </resource>
+    <resource identifier="RES-3E14EE68CC5B61A431A741809C92D31E" type="webcontent" href="assets/navCategories.png">
+      <file href="assets/navCategories.png" />
+    </resource>
+    <resource identifier="RES-D9C864C5310154E101AEB4B0D57377E6" type="webcontent" href="assets/navIcons.png">
+      <file href="assets/navIcons.png" />
+    </resource>
+    <resource identifier="RES-9B846ECEC8538FA9B36783CF5100014F" type="webcontent" href="assets/navList.png">
+      <file href="assets/navList.png" />
+    </resource>
+    <resource identifier="RES-96A0DCADAFD6D17FA12235B573508C87" type="webcontent" href="assets/openNav.png">
+      <file href="assets/openNav.png" />
+    </resource>
+    <resource identifier="RES-CE9A360B6F569EAF056DE2EB7377FAF1" type="webcontent" href="assets/right.gif">
+      <file href="assets/right.gif" />
+    </resource>
+    <resource identifier="RES-D5512F354B485AA82026B313DDE92C2C" type="webcontent" href="assets/right.png">
+      <file href="assets/right.png" />
+    </resource>
+    <resource identifier="RES-4FD97ACEB4B0A608E9BEE9E735DB381A" type="webcontent" href="assets/shadowCenter.png">
+      <file href="assets/shadowCenter.png" />
+    </resource>
+    <resource identifier="RES-5F2919F61F0A3C541D485FECE75B8B89" type="webcontent" href="assets/shadowLeft.png">
+      <file href="assets/shadowLeft.png" />
+    </resource>
+    <resource identifier="RES-BD18A134359527B4701EAA183BE2401A" type="webcontent" href="assets/shadowRight.png">
+      <file href="assets/shadowRight.png" />
+    </resource>
+    <resource identifier="RES-31A8976C30772E7266953D182B5DB2EE" type="webcontent" href="Capitulo0/Andaluciamotor.swf">
+      <file href="Capitulo0/Andaluciamotor.swf" />
+    </resource>
+    <resource identifier="RES-97AB1E31124352AFC00DD597415F98B3" type="webcontent" href="Capitulo0/BUSCARV.swf">
+      <file href="Capitulo0/BUSCARV.swf" />
+    </resource>
+    <resource identifier="RES-9D15E4C5759A27805FAAFA069C759B99" type="webcontent" href="Capitulo0/CalculoNIF.swf">
+      <file href="Capitulo0/CalculoNIF.swf" />
+    </resource>
+    <resource identifier="RES-ABEBDB5C50E645CA70C69EC2F3181C3F" type="webcontent" href="Capitulo0/Evolucionventas.swf">
+      <file href="Capitulo0/Evolucionventas.swf" />
+    </resource>
+    <resource identifier="RES-469D0BE5B7EE1466994A928880C6D890" type="webcontent" href="Capitulo0/excel.htm">
+      <file href="Capitulo0/excel.htm" />
+    </resource>
+    <resource identifier="RES-27F318D3FA3BCD8B1ECC91259806E05F" type="webcontent" href="Capitulo0/Fichaalmacen.swf">
+      <file href="Capitulo0/Fichaalmacen.swf" />
+    </resource>
+    <resource identifier="RES-10E6164DC14F4DA65AD1BD2DBE2AF889" type="webcontent" href="Capitulo0/Formatoyseries.swf">
+      <file href="Capitulo0/Formatoyseries.swf" />
+    </resource>
+    <resource identifier="RES-BA67AEEF8D6E6EB5F51F515EE8EC6935" type="webcontent" href="Capitulo0/Formulaslargas.swf">
+      <file href="Capitulo0/Formulaslargas.swf" />
+    </resource>
+    <resource identifier="RES-E23544A3BEF633CB4F69B419A0BEE002" type="webcontent" href="Capitulo0/Formyfuncs.swf">
+      <file href="Capitulo0/Formyfuncs.swf" />
+    </resource>
+    <resource identifier="RES-96CC80C5FE87B0D104060AB0737C7EC6" type="webcontent" href="Capitulo0/FuncionSI.swf">
+      <file href="Capitulo0/FuncionSI.swf" />
+    </resource>
+    <resource identifier="RES-0C45BB483593561FD614C8ABA097BFC7" type="webcontent" href="Capitulo0/FuncionSIrep.swf">
+      <file href="Capitulo0/FuncionSIrep.swf" />
+    </resource>
+    <resource identifier="RES-788996B6F9346D446ED63F978F5D6CAD" type="webcontent" href="Capitulo0/Graficos.swf">
+      <file href="Capitulo0/Graficos.swf" />
+    </resource>
+    <resource identifier="RES-7A87381C4EC4EEA6DF3FC17CDBD450E7" type="webcontent" href="Capitulo0/Graficosxy.swf">
+      <file href="Capitulo0/Graficosxy.swf" />
+    </resource>
+    <resource identifier="RES-47100CDA1F6B0239986EFEE50AD36E67" type="webcontent" href="Capitulo0/Habslect.swf">
+      <file href="Capitulo0/Habslect.swf" />
+    </resource>
+    <resource identifier="RES-90CDDD4D12E5B057B1469992B3214FFB" type="webcontent" href="Capitulo0/Hojasext.swf">
+      <file href="Capitulo0/Hojasext.swf" />
+    </resource>
+    <resource identifier="RES-E3B2A88144BF92945C3A82A0CA700092" type="webcontent" href="Capitulo0/Listaproys.swf">
+      <file href="Capitulo0/Listaproys.swf" />
+    </resource>
+    <resource identifier="RES-390956AF813F585D2059CFB79FCC4F7B" type="webcontent" href="Capitulo0/Regcompras.swf">
+      <file href="Capitulo0/Regcompras.swf" />
+    </resource>
+    <resource identifier="RES-317C7016D3BBB6C5F8C0777B6115B3F8" type="webcontent" href="Capitulo0/Repasogeneral.swf">
+      <file href="Capitulo0/Repasogeneral.swf" />
+    </resource>
+    <resource identifier="RES-8893281F7DF6970D8E353F783548D452" type="webcontent" href="Capitulo0/Repasolistasytablasdin.swf">
+      <file href="Capitulo0/Repasolistasytablasdin.swf" />
+    </resource>
+    <resource identifier="RES-300C0C0A9F07672C8FEF0607D961D4FD" type="webcontent" href="Capitulo0/Repgraficos.swf">
+      <file href="Capitulo0/Repgraficos.swf" />
+    </resource>
+    <resource identifier="RES-135ECA9A25CCF05B2A57883FAA4A4E9D" type="webcontent" href="Capitulo0/Repgral.swf">
+      <file href="Capitulo0/Repgral.swf" />
+    </resource>
+    <resource identifier="RES-BEA24703BAB67FA776B6FA6E976F77A5" type="webcontent" href="Capitulo0/Solver.swf">
+      <file href="Capitulo0/Solver.swf" />
+    </resource>
+    <resource identifier="RES-AB782CD691E0D6CF87B4B9E96BC9144B" type="webcontent" href="Capitulo0/Solver2.swf">
+      <file href="Capitulo0/Solver2.swf" />
+    </resource>
+    <resource identifier="RES-AB18950CDFDE7C032812E647EA5A2DCE" type="webcontent" href="Capitulo0/Tabladin.swf">
+      <file href="Capitulo0/Tabladin.swf" />
+    </resource>
+    <resource identifier="RES-43731BE32ADD86788E56D054B6ACEF48" type="webcontent" href="Capitulo0/Tabladin2.swf">
+      <file href="Capitulo0/Tabladin2.swf" />
+    </resource>
+    <resource identifier="RES-BC60DB6889F8CBE535ED08979777747D" type="webcontent" href="Capitulo0/Tablas1.swf">
+      <file href="Capitulo0/Tablas1.swf" />
+    </resource>
+    <resource identifier="RES-1E8DFDBB97C4BF191E81A4A2440C9937" type="webcontent" href="Capitulo0/Tablas2.swf">
+      <file href="Capitulo0/Tablas2.swf" />
+    </resource>
+    <resource identifier="RES-D51227224C2DAE6D884582282260A1AF" type="webcontent" href="Capitulo0/Tallas.swf">
+      <file href="Capitulo0/Tallas.swf" />
+    </resource>
+    <resource identifier="RES-B1ADCE22DE8A2C814144E3B483890F8D" type="webcontent" href="Capitulo0/Temperaturas.swf">
+      <file href="Capitulo0/Temperaturas.swf" />
+    </resource>
+    <resource identifier="RES-9EEBCE986CC7894194042EE572157698" type="webcontent" href="Capitulo0/toletras.swf">
+      <file href="Capitulo0/toletras.swf" />
+    </resource>
+    <resource identifier="RES-0A9659C36CE14F593A1857B03C0822E4" type="webcontent" href="Capitulo1/CAPITULO0101.flv">
+      <file href="Capitulo1/CAPITULO0101.flv" />
+    </resource>
+    <resource identifier="RES-F59450C9C7F879F629AD40DD0D8CF99F" type="webcontent" href="Capitulo1/FCapitulo1.swf">
+      <file href="Capitulo1/FCapitulo1.swf" />
+    </resource>
+    <resource identifier="RES-DDA5E594FB559E43C713386D848FAA73" type="webcontent" href="Capitulo10/evaulacion101/evaulacion101.htm">
+      <file href="Capitulo10/evaulacion101/evaulacion101.htm" />
+      <file href="Capitulo10/evaulacion101/evaulacion101.swf" />
+      <file href="Capitulo10/evaulacion101/standard.js" />
+    </resource>
+    <resource identifier="RES-59860BB75991772CEBF096E6184EF198" type="webcontent" href="Capitulo10/evaulacion101/evaulacion101.swf">
+      <file href="Capitulo10/evaulacion101/evaulacion101.swf" />
+    </resource>
+    <resource identifier="RES-FD9848CF968ED2463A2BEFA982B04A36" type="webcontent" href="Capitulo10/evaulacion101/evaulacion101_skin.swf">
+      <file href="Capitulo10/evaulacion101/evaulacion101_skin.swf" />
+    </resource>
+    <resource identifier="RES-F98FCFCC90C352542D0E142C1223751F" type="webcontent" href="Capitulo10/evaulacion101/standard.js">
+      <file href="Capitulo10/evaulacion101/standard.js" />
+    </resource>
+    <resource identifier="RES-0D94CD83F9CC7EEDB41AD4507582CD86" type="webcontent" href="Capitulo10/CAPITULO1401.flv">
+      <file href="Capitulo10/CAPITULO1401.flv" />
+    </resource>
+    <resource identifier="RES-22640A981EC925CA2D30E14C0B6874D9" type="webcontent" href="Capitulo10/CAPITULO1402.flv">
+      <file href="Capitulo10/CAPITULO1402.flv" />
+    </resource>
+    <resource identifier="RES-370CE32212039D7EC82E645054BFFE71" type="webcontent" href="Capitulo10/FCapitulo10.swf">
+      <file href="Capitulo10/FCapitulo10.swf" />
+    </resource>
+    <resource identifier="RES-A876B7EF5CEED3476EDC136C1401DBB2" type="webcontent" href="Capitulo11/evaulacion111/evaulacion111.htm">
+      <file href="Capitulo11/evaulacion111/evaulacion111.htm" />
+      <file href="Capitulo11/evaulacion111/evaulacion111.swf" />
+      <file href="Capitulo11/evaulacion111/standard.js" />
+    </resource>
+    <resource identifier="RES-36423CD5274E07C76F7C8A486535B95F" type="webcontent" href="Capitulo11/evaulacion111/evaulacion111.swf">
+      <file href="Capitulo11/evaulacion111/evaulacion111.swf" />
+    </resource>
+    <resource identifier="RES-74F5BFA7835F008D5DCB359F80EC6D1C" type="webcontent" href="Capitulo11/evaulacion111/evaulacion111_skin.swf">
+      <file href="Capitulo11/evaulacion111/evaulacion111_skin.swf" />
+    </resource>
+    <resource identifier="RES-6090516078E35464F84882990A895A09" type="webcontent" href="Capitulo11/evaulacion111/standard.js">
+      <file href="Capitulo11/evaulacion111/standard.js" />
+    </resource>
+    <resource identifier="RES-5DB410911B84DE8AFEE2283E9FF00891" type="webcontent" href="Capitulo11/CAPITULO0901.flv">
+      <file href="Capitulo11/CAPITULO0901.flv" />
+    </resource>
+    <resource identifier="RES-563BA38C51CAE15C9C373F9EEDC35C7E" type="webcontent" href="Capitulo11/FCapitulo11.swf">
+      <file href="Capitulo11/FCapitulo11.swf" />
+    </resource>
+    <resource identifier="RES-FD67F1AE6B276F21A2F8DCF804195936" type="webcontent" href="Capitulo12/evaulacion121/evaulacion121.htm">
+      <file href="Capitulo12/evaulacion121/evaulacion121.htm" />
+      <file href="Capitulo12/evaulacion121/evaulacion121.swf" />
+      <file href="Capitulo12/evaulacion121/standard.js" />
+    </resource>
+    <resource identifier="RES-D64C8455E657E61B9FADA3332D9C3864" type="webcontent" href="Capitulo12/evaulacion121/evaulacion121.swf">
+      <file href="Capitulo12/evaulacion121/evaulacion121.swf" />
+    </resource>
+    <resource identifier="RES-EBAC156A107487C7697B018615D87A20" type="webcontent" href="Capitulo12/evaulacion121/evaulacion121_skin.swf">
+      <file href="Capitulo12/evaulacion121/evaulacion121_skin.swf" />
+    </resource>
+    <resource identifier="RES-2A777AF9673AE14961D4291EE92150AD" type="webcontent" href="Capitulo12/evaulacion121/standard.js">
+      <file href="Capitulo12/evaulacion121/standard.js" />
+    </resource>
+    <resource identifier="RES-EEE183FD46E984BCF7C93F144F731A00" type="webcontent" href="Capitulo12/FCapitulo12.swf">
+      <file href="Capitulo12/FCapitulo12.swf" />
+    </resource>
+    <resource identifier="RES-AA263DED42AAB87C6D109A707DFC06B3" type="webcontent" href="Capitulo13/evaulacion131/evaulacion131.htm">
+      <file href="Capitulo13/evaulacion131/evaulacion131.htm" />
+      <file href="Capitulo13/evaulacion131/evaulacion131.swf" />
+      <file href="Capitulo13/evaulacion131/standard.js" />
+    </resource>
+    <resource identifier="RES-58D777A7FDDF487BD7E29A42D1120F81" type="webcontent" href="Capitulo13/evaulacion131/evaulacion131.swf">
+      <file href="Capitulo13/evaulacion131/evaulacion131.swf" />
+    </resource>
+    <resource identifier="RES-C09AD5CDA6E5B7D8DD86AEBB77689EFF" type="webcontent" href="Capitulo13/evaulacion131/evaulacion131_skin.swf">
+      <file href="Capitulo13/evaulacion131/evaulacion131_skin.swf" />
+    </resource>
+    <resource identifier="RES-893D49162D57443A7C2FC9C0887E72C7" type="webcontent" href="Capitulo13/evaulacion131/standard.js">
+      <file href="Capitulo13/evaulacion131/standard.js" />
+    </resource>
+    <resource identifier="RES-A347FA493EF1021AB61F9FC4A8114F0B" type="webcontent" href="Capitulo13/CAPITULO1001.flv">
+      <file href="Capitulo13/CAPITULO1001.flv" />
+    </resource>
+    <resource identifier="RES-9BA22096D72D5AEB70A0B660A02B0212" type="webcontent" href="Capitulo13/Capitulo13.swf">
+      <file href="Capitulo13/Capitulo13.swf" />
+    </resource>
+    <resource identifier="RES-367AA94A5877E8D2284EF6D3C6692E41" type="webcontent" href="Capitulo13/FCapitulo13.swf">
+      <file href="Capitulo13/FCapitulo13.swf" />
+    </resource>
+    <resource identifier="RES-5E3EC6E920FAF765FE8475DEF76D33D3" type="webcontent" href="Capitulo14/evaulacion141/evaulacion141.htm">
+      <file href="Capitulo14/evaulacion141/evaulacion141.htm" />
+      <file href="Capitulo14/evaulacion141/evaulacion141.swf" />
+      <file href="Capitulo14/evaulacion141/standard.js" />
+    </resource>
+    <resource identifier="RES-F42B8EA8046C6EB7908F16D01AF1CC16" type="webcontent" href="Capitulo14/evaulacion141/evaulacion141.swf">
+      <file href="Capitulo14/evaulacion141/evaulacion141.swf" />
+    </resource>
+    <resource identifier="RES-AC4A0C17DC6528F52E4836967829C992" type="webcontent" href="Capitulo14/evaulacion141/evaulacion141_skin.swf">
+      <file href="Capitulo14/evaulacion141/evaulacion141_skin.swf" />
+    </resource>
+    <resource identifier="RES-7BF67AD32233D954CD120D8D33702FB7" type="webcontent" href="Capitulo14/evaulacion141/standard.js">
+      <file href="Capitulo14/evaulacion141/standard.js" />
+    </resource>
+    <resource identifier="RES-F29C5580D11029DF8013B07982D27C82" type="webcontent" href="Capitulo14/Capitulo14.swf">
+      <file href="Capitulo14/Capitulo14.swf" />
+    </resource>
+    <resource identifier="RES-0C62D8747E3F233B29E6C1E7B18F68BB" type="webcontent" href="Capitulo14/VCapitu1101.swf">
+      <file href="Capitulo14/VCapitu1101.swf" />
+    </resource>
+    <resource identifier="RES-893D438ABA624E0026C6FD75AA1B35C9" type="webcontent" href="Capitulo15/evaulacion151/evaulacion151.htm">
+      <file href="Capitulo15/evaulacion151/evaulacion151.htm" />
+      <file href="Capitulo15/evaulacion151/evaulacion151.swf" />
+      <file href="Capitulo15/evaulacion151/standard.js" />
+    </resource>
+    <resource identifier="RES-2A4D54FD8A000E3087909E3D81F14CF6" type="webcontent" href="Capitulo15/evaulacion151/evaulacion151.swf">
+      <file href="Capitulo15/evaulacion151/evaulacion151.swf" />
+    </resource>
+    <resource identifier="RES-4222B86BFF798FA9C6AFEB70471D70BE" type="webcontent" href="Capitulo15/evaulacion151/evaulacion151_skin.swf">
+      <file href="Capitulo15/evaulacion151/evaulacion151_skin.swf" />
+    </resource>
+    <resource identifier="RES-DA9C1878AD6977E5939672BDF475396F" type="webcontent" href="Capitulo15/evaulacion151/standard.js">
+      <file href="Capitulo15/evaulacion151/standard.js" />
+    </resource>
+    <resource identifier="RES-BD3F965A6CB1DA11FD1718F04217A43B" type="webcontent" href="Capitulo15/CAPITULO1102.flv">
+      <file href="Capitulo15/CAPITULO1102.flv" />
+    </resource>
+    <resource identifier="RES-15B20AEBB603D28C7418A6FBCE78FE44" type="webcontent" href="Capitulo15/FCapitulo15.swf">
+      <file href="Capitulo15/FCapitulo15.swf" />
+    </resource>
+    <resource identifier="RES-EE4DE17D7AA5C4EC8E00F15DD208CCE8" type="webcontent" href="Capitulo16/evaulacion161/evaulacion161.htm">
+      <file href="Capitulo16/evaulacion161/evaulacion161.htm" />
+      <file href="Capitulo16/evaulacion161/evaulacion161.swf" />
+      <file href="Capitulo16/evaulacion161/standard.js" />
+    </resource>
+    <resource identifier="RES-0AC51A1FFA4AE0648DE7EF141403C9A1" type="webcontent" href="Capitulo16/evaulacion161/evaulacion161.swf">
+      <file href="Capitulo16/evaulacion161/evaulacion161.swf" />
+    </resource>
+    <resource identifier="RES-536CA4F6464E97EA1A00A23BED9F7CF5" type="webcontent" href="Capitulo16/evaulacion161/evaulacion161_skin.swf">
+      <file href="Capitulo16/evaulacion161/evaulacion161_skin.swf" />
+    </resource>
+    <resource identifier="RES-23C373D054D26EDD2DFD365FC32D1010" type="webcontent" href="Capitulo16/evaulacion161/standard.js">
+      <file href="Capitulo16/evaulacion161/standard.js" />
+    </resource>
+    <resource identifier="RES-F7F4CDE6755B50613060CED6E7C34F1D" type="webcontent" href="Capitulo16/CAPITULO1103.flv">
+      <file href="Capitulo16/CAPITULO1103.flv" />
+    </resource>
+    <resource identifier="RES-50573F98A91323A16971365821074237" type="webcontent" href="Capitulo16/FCapitulo16.swf">
+      <file href="Capitulo16/FCapitulo16.swf" />
+    </resource>
+    <resource identifier="RES-8752BC80E263B2DEFDCF72DE3DBB0E43" type="webcontent" href="Capitulo17/evaulacion171/evaulacion171.htm">
+      <file href="Capitulo17/evaulacion171/evaulacion171.htm" />
+      <file href="Capitulo17/evaulacion171/evaulacion171.swf" />
+      <file href="Capitulo17/evaulacion171/standard.js" />
+    </resource>
+    <resource identifier="RES-322ECDC2B1B519F42BCB2C4F2BF596CB" type="webcontent" href="Capitulo17/evaulacion171/evaulacion171.swf">
+      <file href="Capitulo17/evaulacion171/evaulacion171.swf" />
+    </resource>
+    <resource identifier="RES-7BCAB98B0F001E8FF82037946A00159A" type="webcontent" href="Capitulo17/evaulacion171/evaulacion171_skin.swf">
+      <file href="Capitulo17/evaulacion171/evaulacion171_skin.swf" />
+    </resource>
+    <resource identifier="RES-0CB4C804B5F99A8A1EC35BBC7E8CA6A8" type="webcontent" href="Capitulo17/evaulacion171/standard.js">
+      <file href="Capitulo17/evaulacion171/standard.js" />
+    </resource>
+    <resource identifier="RES-C55D438198C48CA0D258A0E022A4C891" type="webcontent" href="Capitulo17/CAPITULO1201.flv">
+      <file href="Capitulo17/CAPITULO1201.flv" />
+    </resource>
+    <resource identifier="RES-8074D030C03B9DDD256B0DE54634183A" type="webcontent" href="Capitulo17/CAPITULO1202.flv">
+      <file href="Capitulo17/CAPITULO1202.flv" />
+    </resource>
+    <resource identifier="RES-1AB2AC24B727E0B366D70353B0E045FB" type="webcontent" href="Capitulo17/CAPITULO1203.flv">
+      <file href="Capitulo17/CAPITULO1203.flv" />
+    </resource>
+    <resource identifier="RES-BD22EDA7B86BC6057B105BF67DD6BBC5" type="webcontent" href="Capitulo17/CAPITULO1204.flv">
+      <file href="Capitulo17/CAPITULO1204.flv" />
+    </resource>
+    <resource identifier="RES-35671D2BDDA8AE7F3A90525A56D3ADE2" type="webcontent" href="Capitulo17/CAPITULO1205.flv">
+      <file href="Capitulo17/CAPITULO1205.flv" />
+    </resource>
+    <resource identifier="RES-56A60B72DFD385BD5227F2592DBA22C1" type="webcontent" href="Capitulo17/FCapitulo17.swf">
+      <file href="Capitulo17/FCapitulo17.swf" />
+    </resource>
+    <resource identifier="RES-7CA3DA54BCE51B03460C8B8D7832BBA1" type="webcontent" href="Capitulo18/evaulacion181/evaulacion181.htm">
+      <file href="Capitulo18/evaulacion181/evaulacion181.htm" />
+      <file href="Capitulo18/evaulacion181/evaulacion181.swf" />
+      <file href="Capitulo18/evaulacion181/standard.js" />
+    </resource>
+    <resource identifier="RES-28F57458A3B1E92FB0E10985A08F04E7" type="webcontent" href="Capitulo18/evaulacion181/evaulacion181.swf">
+      <file href="Capitulo18/evaulacion181/evaulacion181.swf" />
+    </resource>
+    <resource identifier="RES-258E61CCF497DFE1571ED3F2A0B09FB9" type="webcontent" href="Capitulo18/evaulacion181/evaulacion181_skin.swf">
+      <file href="Capitulo18/evaulacion181/evaulacion181_skin.swf" />
+    </resource>
+    <resource identifier="RES-9EE6AF7278DDA4E00C00328059EC5F5E" type="webcontent" href="Capitulo18/evaulacion181/standard.js">
+      <file href="Capitulo18/evaulacion181/standard.js" />
+    </resource>
+    <resource identifier="RES-B6A1D0A915D560EEFAC666E24BC57FEF" type="webcontent" href="Capitulo18/CAPITULO1501.flv">
+      <file href="Capitulo18/CAPITULO1501.flv" />
+    </resource>
+    <resource identifier="RES-F6743D6468E7DA83324A201487476BDF" type="webcontent" href="Capitulo18/CAPITULO1502.flv">
+      <file href="Capitulo18/CAPITULO1502.flv" />
+    </resource>
+    <resource identifier="RES-6947B7AD2DB9F9BC0A3F4843E7A5371B" type="webcontent" href="Capitulo18/FCapitulo18.htm">
+      <file href="Capitulo18/FCapitulo18.htm" />
+      <file href="Capitulo18/FCapitulo18.swf" />
+      <file href="Capitulo18/standard.js" />
+    </resource>
+    <resource identifier="RES-C960AE3FFC479D57455BD3822985655F" type="webcontent" href="Capitulo18/FCapitulo18.swf">
+      <file href="Capitulo18/FCapitulo18.swf" />
+    </resource>
+    <resource identifier="RES-6AB8C372FB262F17A6F0D548DDD29AB5" type="webcontent" href="Capitulo18/standard.js">
+      <file href="Capitulo18/standard.js" />
+    </resource>
+    <resource identifier="RES-62E1BE8DC01BFAF9F444E80F9DAC6D39" type="webcontent" href="Capitulo2/evaulacion021/evaulacion021.htm">
+      <file href="Capitulo2/evaulacion021/evaulacion021.htm" />
+      <file href="Capitulo2/evaulacion021/evaulacion021.swf" />
+      <file href="Capitulo2/evaulacion021/standard.js" />
+    </resource>
+    <resource identifier="RES-B06AA30862406247893A7D96E4B20DAC" type="webcontent" href="Capitulo2/evaulacion021/evaulacion021.swf">
+      <file href="Capitulo2/evaulacion021/evaulacion021.swf" />
+    </resource>
+    <resource identifier="RES-F032A95B289E0694070D16ECF086742C" type="webcontent" href="Capitulo2/evaulacion021/evaulacion021_skin.swf">
+      <file href="Capitulo2/evaulacion021/evaulacion021_skin.swf" />
+    </resource>
+    <resource identifier="RES-382FD0ADEF4EA3C46E11EB21DC2D67DE" type="webcontent" href="Capitulo2/evaulacion021/standard.js">
+      <file href="Capitulo2/evaulacion021/standard.js" />
+    </resource>
+    <resource identifier="RES-6A1C13F0CA506817A5E84CC04E7C84AE" type="webcontent" href="Capitulo2/CAPITULO0201.flv">
+      <file href="Capitulo2/CAPITULO0201.flv" />
+    </resource>
+    <resource identifier="RES-6EFB17145D9F69F1929804CDF69BFBC1" type="webcontent" href="Capitulo2/FCapitulo2.swf">
+      <file href="Capitulo2/FCapitulo2.swf" />
+    </resource>
+    <resource identifier="RES-0F949F0869253FCE5EE0E67B2E00D52A" type="webcontent" href="Capitulo3/evaulacion31/evaulacion31.htm">
+      <file href="Capitulo3/evaulacion31/evaulacion31.htm" />
+      <file href="Capitulo3/evaulacion31/evaulacion31.swf" />
+      <file href="Capitulo3/evaulacion31/standard.js" />
+    </resource>
+    <resource identifier="RES-29D6FB2C8158FDB274D23C6BC28A3551" type="webcontent" href="Capitulo3/evaulacion31/evaulacion31.swf">
+      <file href="Capitulo3/evaulacion31/evaulacion31.swf" />
+    </resource>
+    <resource identifier="RES-CBFCD09FA95B25B9DEA2A8487C7634F6" type="webcontent" href="Capitulo3/evaulacion31/evaulacion31_skin.swf">
+      <file href="Capitulo3/evaulacion31/evaulacion31_skin.swf" />
+    </resource>
+    <resource identifier="RES-A3C8A7666CF2D46B7A4F46FD8CAB065A" type="webcontent" href="Capitulo3/evaulacion31/standard.js">
+      <file href="Capitulo3/evaulacion31/standard.js" />
+    </resource>
+    <resource identifier="RES-E7FA6C5E228C917CAF05056F5A43F26C" type="webcontent" href="Capitulo3/CAPITULO0301.flv">
+      <file href="Capitulo3/CAPITULO0301.flv" />
+    </resource>
+    <resource identifier="RES-4CD58E9728D743C343B74A8773C6A740" type="webcontent" href="Capitulo3/CAPITULO0302.flv">
+      <file href="Capitulo3/CAPITULO0302.flv" />
+    </resource>
+    <resource identifier="RES-C7DEDC71131183989129C2678A75A924" type="webcontent" href="Capitulo3/CAPITULO0303.flv">
+      <file href="Capitulo3/CAPITULO0303.flv" />
+    </resource>
+    <resource identifier="RES-AB3E7E3506EB6C463C82FD09F1CA4045" type="webcontent" href="Capitulo3/CAPITULO0304.flv">
+      <file href="Capitulo3/CAPITULO0304.flv" />
+    </resource>
+    <resource identifier="RES-E2A0125E0E1FE057ED49000F5B15AF67" type="webcontent" href="Capitulo3/FCapitulo3.swf">
+      <file href="Capitulo3/FCapitulo3.swf" />
+    </resource>
+    <resource identifier="RES-E402115AA8AB384FA3B58815F26C6E12" type="webcontent" href="Capitulo4/evaulacion41/evaulacion41.htm">
+      <file href="Capitulo4/evaulacion41/evaulacion41.htm" />
+      <file href="Capitulo4/evaulacion41/evaulacion41.swf" />
+      <file href="Capitulo4/evaulacion41/standard.js" />
+    </resource>
+    <resource identifier="RES-ABB556DD4854076501B6D024BB5B201A" type="webcontent" href="Capitulo4/evaulacion41/evaulacion41.swf">
+      <file href="Capitulo4/evaulacion41/evaulacion41.swf" />
+    </resource>
+    <resource identifier="RES-1CFB6461DA092425C38690B7D4BF8F93" type="webcontent" href="Capitulo4/evaulacion41/evaulacion41_skin.swf">
+      <file href="Capitulo4/evaulacion41/evaulacion41_skin.swf" />
+    </resource>
+    <resource identifier="RES-08FFB2F9879508F529BCEB12B48BBA57" type="webcontent" href="Capitulo4/evaulacion41/standard.js">
+      <file href="Capitulo4/evaulacion41/standard.js" />
+    </resource>
+    <resource identifier="RES-D38DE9D58F5035B66E2CC60D8E252548" type="webcontent" href="Capitulo4/CAPITULO0401.flv">
+      <file href="Capitulo4/CAPITULO0401.flv" />
+    </resource>
+    <resource identifier="RES-3A19FB4162F30A469ED2F318B24903D7" type="webcontent" href="Capitulo4/FCapitulo4.swf">
+      <file href="Capitulo4/FCapitulo4.swf" />
+    </resource>
+    <resource identifier="RES-0084310853717BB45F2EA2DF893F54F1" type="webcontent" href="Capitulo5/evaulacion51/evaulacion51.htm">
+      <file href="Capitulo5/evaulacion51/evaulacion51.htm" />
+      <file href="Capitulo5/evaulacion51/evaulacion51.swf" />
+      <file href="Capitulo5/evaulacion51/standard.js" />
+    </resource>
+    <resource identifier="RES-8F8FBA0EB12CB8F28057DC07494D3324" type="webcontent" href="Capitulo5/evaulacion51/evaulacion51.swf">
+      <file href="Capitulo5/evaulacion51/evaulacion51.swf" />
+    </resource>
+    <resource identifier="RES-1C5539DB13D2EC73BBFE85B70341B390" type="webcontent" href="Capitulo5/evaulacion51/evaulacion51_skin.swf">
+      <file href="Capitulo5/evaulacion51/evaulacion51_skin.swf" />
+    </resource>
+    <resource identifier="RES-34E2D5F00395D318DF744E6F8BC1B5E2" type="webcontent" href="Capitulo5/evaulacion51/standard.js">
+      <file href="Capitulo5/evaulacion51/standard.js" />
+    </resource>
+    <resource identifier="RES-EC80F83C88176824D39543141751E162" type="webcontent" href="Capitulo5/CAPITULO0501.flv">
+      <file href="Capitulo5/CAPITULO0501.flv" />
+    </resource>
+    <resource identifier="RES-A3671C3EEAA4F9808FD5CCE8D7C12C1F" type="webcontent" href="Capitulo5/CAPITULO0502.flv">
+      <file href="Capitulo5/CAPITULO0502.flv" />
+    </resource>
+    <resource identifier="RES-FD65B5CA05B9E33BEF81E3710C6A338E" type="webcontent" href="Capitulo5/CAPITULO0503.flv">
+      <file href="Capitulo5/CAPITULO0503.flv" />
+    </resource>
+    <resource identifier="RES-57498E99D4AACD166E9835D91B754E5F" type="webcontent" href="Capitulo5/CAPITULO0504.flv">
+      <file href="Capitulo5/CAPITULO0504.flv" />
+    </resource>
+    <resource identifier="RES-4AAFECF8EEE40F3ADAC5D47E1131551A" type="webcontent" href="Capitulo5/CAPITULO0505.flv">
+      <file href="Capitulo5/CAPITULO0505.flv" />
+    </resource>
+    <resource identifier="RES-0C88502B2D4E0BBBCA32FCC172DC97FC" type="webcontent" href="Capitulo5/CAPITULO0506.flv">
+      <file href="Capitulo5/CAPITULO0506.flv" />
+    </resource>
+    <resource identifier="RES-7282D2CC37D8301381B646A7ABF63376" type="webcontent" href="Capitulo5/FCapitulo5.swf">
+      <file href="Capitulo5/FCapitulo5.swf" />
+    </resource>
+    <resource identifier="RES-A663214727CAD2578041E5F0000AB5B0" type="webcontent" href="Capitulo6/evaulacion61/evaulacion61.htm">
+      <file href="Capitulo6/evaulacion61/evaulacion61.htm" />
+      <file href="Capitulo6/evaulacion61/evaulacion61.swf" />
+      <file href="Capitulo6/evaulacion61/standard.js" />
+    </resource>
+    <resource identifier="RES-707E1B4C380A99C20801B794030725A7" type="webcontent" href="Capitulo6/evaulacion61/evaulacion61.swf">
+      <file href="Capitulo6/evaulacion61/evaulacion61.swf" />
+    </resource>
+    <resource identifier="RES-93209027D3C9A87EA4A265A502264B77" type="webcontent" href="Capitulo6/evaulacion61/evaulacion61_skin.swf">
+      <file href="Capitulo6/evaulacion61/evaulacion61_skin.swf" />
+    </resource>
+    <resource identifier="RES-C6C290DFAAD5762C4641CA13A91D0D44" type="webcontent" href="Capitulo6/evaulacion61/standard.js">
+      <file href="Capitulo6/evaulacion61/standard.js" />
+    </resource>
+    <resource identifier="RES-1981400EFF2A54B16FEBCEC2F02D56D6" type="webcontent" href="Capitulo6/CAPITULO0601.flv">
+      <file href="Capitulo6/CAPITULO0601.flv" />
+    </resource>
+    <resource identifier="RES-69E0BC77751BF027D2CE5BC63E58B15E" type="webcontent" href="Capitulo6/CAPITULO0602.flv">
+      <file href="Capitulo6/CAPITULO0602.flv" />
+    </resource>
+    <resource identifier="RES-45AC2420BA82C6526000F84B1A131D7C" type="webcontent" href="Capitulo6/CAPITULO0603.flv">
+      <file href="Capitulo6/CAPITULO0603.flv" />
+    </resource>
+    <resource identifier="RES-7FC482F70FF3AE5E32FE3FBE21B7A059" type="webcontent" href="Capitulo6/CAPITULO0605.flv">
+      <file href="Capitulo6/CAPITULO0605.flv" />
+    </resource>
+    <resource identifier="RES-B8CF8DE405A0E02EEF94E10821A92FA7" type="webcontent" href="Capitulo6/CAPITULO0606.flv">
+      <file href="Capitulo6/CAPITULO0606.flv" />
+    </resource>
+    <resource identifier="RES-B52A19643062B81BC3F512F983F8F788" type="webcontent" href="Capitulo6/FCapitulo6.swf">
+      <file href="Capitulo6/FCapitulo6.swf" />
+    </resource>
+    <resource identifier="RES-E5A160DBE1841F9F929C44015B3A1E6A" type="webcontent" href="Capitulo7/evaulacion71/evaulacion71.htm">
+      <file href="Capitulo7/evaulacion71/evaulacion71.htm" />
+      <file href="Capitulo7/evaulacion71/evaulacion71.swf" />
+      <file href="Capitulo7/evaulacion71/standard.js" />
+    </resource>
+    <resource identifier="RES-C2A8E1566886286303FE7807C8691231" type="webcontent" href="Capitulo7/evaulacion71/evaulacion71.swf">
+      <file href="Capitulo7/evaulacion71/evaulacion71.swf" />
+    </resource>
+    <resource identifier="RES-CA3A2A9AE5904685344A5FF5EB206C42" type="webcontent" href="Capitulo7/evaulacion71/evaulacion71_skin.swf">
+      <file href="Capitulo7/evaulacion71/evaulacion71_skin.swf" />
+    </resource>
+    <resource identifier="RES-9CE045239D72570EF3FFA9A8F191B4DA" type="webcontent" href="Capitulo7/evaulacion71/standard.js">
+      <file href="Capitulo7/evaulacion71/standard.js" />
+    </resource>
+    <resource identifier="RES-D463432CBEA2449A3D5209F30B91F3D4" type="webcontent" href="Capitulo7/CAPITULO0701.flv">
+      <file href="Capitulo7/CAPITULO0701.flv" />
+    </resource>
+    <resource identifier="RES-E85B9619D27608998E9480ED45BEC4AD" type="webcontent" href="Capitulo7/CAPITULO0702.flv">
+      <file href="Capitulo7/CAPITULO0702.flv" />
+    </resource>
+    <resource identifier="RES-259B1F9F3017DD36E711472DD60A430B" type="webcontent" href="Capitulo7/CAPITULO0703.flv">
+      <file href="Capitulo7/CAPITULO0703.flv" />
+    </resource>
+    <resource identifier="RES-D4A85A88A34688FF13C1A83A79BCBC9B" type="webcontent" href="Capitulo7/CAPITULO0704.flv">
+      <file href="Capitulo7/CAPITULO0704.flv" />
+    </resource>
+    <resource identifier="RES-2C689B6CC5ABB086DB5C3ED62FE8080B" type="webcontent" href="Capitulo7/CAPITULO0705.flv">
+      <file href="Capitulo7/CAPITULO0705.flv" />
+    </resource>
+    <resource identifier="RES-8A4BD755DCA738092CF60D58292A191F" type="webcontent" href="Capitulo7/FCapitulo7.swf">
+      <file href="Capitulo7/FCapitulo7.swf" />
+    </resource>
+    <resource identifier="RES-6145AA3439BB71302923778209AEF60E" type="webcontent" href="Capitulo8/evaulacion81/evaulacion81.htm">
+      <file href="Capitulo8/evaulacion81/evaulacion81.htm" />
+      <file href="Capitulo8/evaulacion81/evaulacion81.swf" />
+      <file href="Capitulo8/evaulacion81/standard.js" />
+    </resource>
+    <resource identifier="RES-C34452F50F146B3A0A7B4A1ABBF9688B" type="webcontent" href="Capitulo8/evaulacion81/evaulacion81.swf">
+      <file href="Capitulo8/evaulacion81/evaulacion81.swf" />
+    </resource>
+    <resource identifier="RES-2DD45BD0E025EDDED59D14667D2D0FDA" type="webcontent" href="Capitulo8/evaulacion81/evaulacion81_skin.swf">
+      <file href="Capitulo8/evaulacion81/evaulacion81_skin.swf" />
+    </resource>
+    <resource identifier="RES-BC4441022A3D816EBB89CFEDF8EBB965" type="webcontent" href="Capitulo8/evaulacion81/standard.js">
+      <file href="Capitulo8/evaulacion81/standard.js" />
+    </resource>
+    <resource identifier="RES-E3509DA5AA8090215E6F20FC5761E585" type="webcontent" href="Capitulo8/CAPITULO0801.flv">
+      <file href="Capitulo8/CAPITULO0801.flv" />
+    </resource>
+    <resource identifier="RES-CBF00E39DF0B9698360DCA62E253CA80" type="webcontent" href="Capitulo8/CAPITULO0802.flv">
+      <file href="Capitulo8/CAPITULO0802.flv" />
+    </resource>
+    <resource identifier="RES-0463D5E5177E0BCF2F29CC0CD95B0552" type="webcontent" href="Capitulo8/CAPITULO0803.flv">
+      <file href="Capitulo8/CAPITULO0803.flv" />
+    </resource>
+    <resource identifier="RES-F333F8F7BEFFD311D218EBCB40CE8899" type="webcontent" href="Capitulo8/CAPITULO0804.flv">
+      <file href="Capitulo8/CAPITULO0804.flv" />
+    </resource>
+    <resource identifier="RES-9B28C38070698AAA1034FCBB56606FFA" type="webcontent" href="Capitulo8/CAPITULO0805.flv">
+      <file href="Capitulo8/CAPITULO0805.flv" />
+    </resource>
+    <resource identifier="RES-1B4439E45773C866E739F9D4C727425A" type="webcontent" href="Capitulo8/FCapitulo8.swf">
+      <file href="Capitulo8/FCapitulo8.swf" />
+    </resource>
+    <resource identifier="RES-6808C048D9DEB01265A65AD0DBC9A570" type="webcontent" href="Capitulo9/evaulacion91/evaulacion91.htm">
+      <file href="Capitulo9/evaulacion91/evaulacion91.htm" />
+      <file href="Capitulo9/evaulacion91/evaulacion91.swf" />
+      <file href="Capitulo9/evaulacion91/standard.js" />
+    </resource>
+    <resource identifier="RES-3FDE6148684ACF083304B99D83975B31" type="webcontent" href="Capitulo9/evaulacion91/evaulacion91.swf">
+      <file href="Capitulo9/evaulacion91/evaulacion91.swf" />
+    </resource>
+    <resource identifier="RES-C1D47D544256A53C3BF3783B7847CB77" type="webcontent" href="Capitulo9/evaulacion91/evaulacion91_skin.swf">
+      <file href="Capitulo9/evaulacion91/evaulacion91_skin.swf" />
+    </resource>
+    <resource identifier="RES-592AFD3259EF60EE95C38179F79CBE4A" type="webcontent" href="Capitulo9/evaulacion91/standard.js">
+      <file href="Capitulo9/evaulacion91/standard.js" />
+    </resource>
+    <resource identifier="RES-A12E38D1BB586B01FBB6BB3B8E8BB6CB" type="webcontent" href="Capitulo9/CAPITULO1301.flv">
+      <file href="Capitulo9/CAPITULO1301.flv" />
+    </resource>
+    <resource identifier="RES-299A2521315411DF94C23E85D465D794" type="webcontent" href="Capitulo9/CAPITULO1302.flv">
+      <file href="Capitulo9/CAPITULO1302.flv" />
+    </resource>
+    <resource identifier="RES-F47EADD5E71CD5D63DA5A0DCB01D0498" type="webcontent" href="Capitulo9/FCapitulo9.swf">
+      <file href="Capitulo9/FCapitulo9.swf" />
+    </resource>
+    <resource identifier="RES-AB1732EAF1875D848F1E7B78E668F65C" type="webcontent" href="HEXCEL/Excel/3D.xls">
+      <file href="HEXCEL/Excel/3D.xls" />
+    </resource>
+    <resource identifier="RES-3B5B8C5B5721C9F0ABB14F722A707C9F" type="webcontent" href="HEXCEL/Excel/Acumula.xls">
+      <file href="HEXCEL/Excel/Acumula.xls" />
+    </resource>
+    <resource identifier="RES-E96714B0346C79D513EAE52BD96B2AA0" type="webcontent" href="HEXCEL/Excel/Aeropuertos.xls">
+      <file href="HEXCEL/Excel/Aeropuertos.xls" />
+    </resource>
+    <resource identifier="RES-37095A4801371BB5F9FB8DF4F021B21A" type="webcontent" href="HEXCEL/Excel/ajuste.xls">
+      <file href="HEXCEL/Excel/ajuste.xls" />
+    </resource>
+    <resource identifier="RES-2E78A06A9B075D4E4F4E40949742DE6E" type="webcontent" href="HEXCEL/Excel/Aritmetica.xls">
+      <file href="HEXCEL/Excel/Aritmetica.xls" />
+    </resource>
+    <resource identifier="RES-99D051209ABFF08FE1E73AA5B8704B1D" type="webcontent" href="HEXCEL/Excel/busquedas.xls">
+      <file href="HEXCEL/Excel/busquedas.xls" />
+    </resource>
+    <resource identifier="RES-57933EB4FD1A20688C68BDB7F090EA0A" type="webcontent" href="HEXCEL/Excel/calendario.xls">
+      <file href="HEXCEL/Excel/calendario.xls" />
+    </resource>
+    <resource identifier="RES-FC5B43E1DB593BB5954CE2CFBD37D182" type="webcontent" href="HEXCEL/Excel/Coincidencias.xls">
+      <file href="HEXCEL/Excel/Coincidencias.xls" />
+    </resource>
+    <resource identifier="RES-269A53172B07CA2993E192E31FB12C6E" type="webcontent" href="HEXCEL/Excel/consolidar.xls">
+      <file href="HEXCEL/Excel/consolidar.xls" />
+    </resource>
+    <resource identifier="RES-5407AC047FBAA736C8319441187B771D" type="webcontent" href="HEXCEL/Excel/ControlPagos.xls">
+      <file href="HEXCEL/Excel/ControlPagos.xls" />
+    </resource>
+    <resource identifier="RES-69B8BCC1DF26F30DCCA050437F3DF83C" type="webcontent" href="HEXCEL/Excel/Convolucion.xls">
+      <file href="HEXCEL/Excel/Convolucion.xls" />
+    </resource>
+    <resource identifier="RES-251CC27751CE9D1DE18416AD47EF0DDF" type="webcontent" href="HEXCEL/Excel/CriteriosYO.xls">
+      <file href="HEXCEL/Excel/CriteriosYO.xls" />
+    </resource>
+    <resource identifier="RES-3B43AC8C5F0434281D20BF3424E09A3E" type="webcontent" href="HEXCEL/Excel/DiasSep.xls">
+      <file href="HEXCEL/Excel/DiasSep.xls" />
+    </resource>
+    <resource identifier="RES-A7C31C2C7E4A1921FDF363C0A0676A2C" type="webcontent" href="HEXCEL/Excel/Distribuciones.xls">
+      <file href="HEXCEL/Excel/Distribuciones.xls" />
+    </resource>
+    <resource identifier="RES-98195EF0136B9159A750AD69DEC52A5F" type="webcontent" href="HEXCEL/Excel/DobleBuscarv.xls">
+      <file href="HEXCEL/Excel/DobleBuscarv.xls" />
+    </resource>
+    <resource identifier="RES-F2EC2715085BEBE72E7B9E996D98C1E4" type="webcontent" href="HEXCEL/Excel/Dudas.xls">
+      <file href="HEXCEL/Excel/Dudas.xls" />
+    </resource>
+    <resource identifier="RES-7CAA59161EB79CF1603AB57CBC853ED7" type="webcontent" href="HEXCEL/Excel/fechas.xls">
+      <file href="HEXCEL/Excel/fechas.xls" />
+    </resource>
+    <resource identifier="RES-22F66EF021358AF2F9CA21BCADC705CF" type="webcontent" href="HEXCEL/Excel/Filtros.xls">
+      <file href="HEXCEL/Excel/Filtros.xls" />
+    </resource>
+    <resource identifier="RES-DFFB5C6F9D7C2405C7A8366E5411F103" type="webcontent" href="HEXCEL/Excel/Formulario.xls">
+      <file href="HEXCEL/Excel/Formulario.xls" />
+    </resource>
+    <resource identifier="RES-6ADD69BA3E829F7A726749D0ED77E91B" type="webcontent" href="HEXCEL/Excel/gamma.xls">
+      <file href="HEXCEL/Excel/gamma.xls" />
+    </resource>
+    <resource identifier="RES-E59E3DC87F365C96CAF65CCC66CB73AE" type="webcontent" href="HEXCEL/Excel/HistoricoIBEX.xls">
+      <file href="HEXCEL/Excel/HistoricoIBEX.xls" />
+    </resource>
+    <resource identifier="RES-F7F446026B532C817233B847F4512780" type="webcontent" href="HEXCEL/Excel/Intervalos.xls">
+      <file href="HEXCEL/Excel/Intervalos.xls" />
+    </resource>
+    <resource identifier="RES-E06363463D57F279D0FD07139B87EF4C" type="webcontent" href="HEXCEL/Excel/jerarquia.xls">
+      <file href="HEXCEL/Excel/jerarquia.xls" />
+    </resource>
+    <resource identifier="RES-CFF23101241F451A50C03762D0F2B264" type="webcontent" href="HEXCEL/Excel/Localiza.xls">
+      <file href="HEXCEL/Excel/Localiza.xls" />
+    </resource>
+    <resource identifier="RES-B8472F97914072E2965FC69A445ACC03" type="webcontent" href="HEXCEL/Excel/logicas.xls">
+      <file href="HEXCEL/Excel/logicas.xls" />
+    </resource>
+    <resource identifier="RES-B591C7FFC0274E28CD4293F294F3F5E4" type="webcontent" href="HEXCEL/Excel/Matricial.xls">
+      <file href="HEXCEL/Excel/Matricial.xls" />
+    </resource>
+    <resource identifier="RES-7F6B17080F65AACA54F0D6E47D420788" type="webcontent" href="HEXCEL/Excel/MaxB.xls">
+      <file href="HEXCEL/Excel/MaxB.xls" />
+    </resource>
+    <resource identifier="RES-AA48E57E279199D19F36B80A54998513" type="webcontent" href="HEXCEL/Excel/MaxMin.xls">
+      <file href="HEXCEL/Excel/MaxMin.xls" />
+    </resource>
+    <resource identifier="RES-ABFC43D732A861617FE008F77CB92E6B" type="webcontent" href="HEXCEL/Excel/MediaMovil.xls">
+      <file href="HEXCEL/Excel/MediaMovil.xls" />
+    </resource>
+    <resource identifier="RES-85C8996301DA9A91B3F83A5EB6417094" type="webcontent" href="HEXCEL/Excel/mensualidad.xls">
+      <file href="HEXCEL/Excel/mensualidad.xls" />
+    </resource>
+    <resource identifier="RES-BE891AA74F78E9C0A97811BDE831C3BE" type="webcontent" href="HEXCEL/Excel/Meses.xls">
+      <file href="HEXCEL/Excel/Meses.xls" />
+    </resource>
+    <resource identifier="RES-2833130DD80A3ADF72F06D8B244CE333" type="webcontent" href="HEXCEL/Excel/minimoref.xls">
+      <file href="HEXCEL/Excel/minimoref.xls" />
+    </resource>
+    <resource identifier="RES-31181FA4640AF829F5DC1A79A8C0416A" type="webcontent" href="HEXCEL/Excel/MinNo0.xls">
+      <file href="HEXCEL/Excel/MinNo0.xls" />
+    </resource>
+    <resource identifier="RES-4E6718E498F9BAC403D6E5CCABA63887" type="webcontent" href="HEXCEL/Excel/Mixtura.xls">
+      <file href="HEXCEL/Excel/Mixtura.xls" />
+    </resource>
+    <resource identifier="RES-A67ACA42649C7811A4501956C70858A3" type="webcontent" href="HEXCEL/Excel/Montecarlo.xls">
+      <file href="HEXCEL/Excel/Montecarlo.xls" />
+    </resource>
+    <resource identifier="RES-E8287CB9C25F0752B65996D9A2D9A1E1" type="webcontent" href="HEXCEL/Excel/Multiple.xls">
+      <file href="HEXCEL/Excel/Multiple.xls" />
+    </resource>
+    <resource identifier="RES-A9CB6116DBBABE324D5D1D909E380652" type="webcontent" href="HEXCEL/Excel/NoRepe.xls">
+      <file href="HEXCEL/Excel/NoRepe.xls" />
+    </resource>
+    <resource identifier="RES-9D128F542A77A055352675023BEEDEB4" type="webcontent" href="HEXCEL/Excel/ordena.xls">
+      <file href="HEXCEL/Excel/ordena.xls" />
+    </resource>
+    <resource identifier="RES-AC8303EA16C968776DB4B39327BD7340" type="webcontent" href="HEXCEL/Excel/Parejas.xls">
+      <file href="HEXCEL/Excel/Parejas.xls" />
+    </resource>
+    <resource identifier="RES-F6FB150AF0E63A61BFEB8B900A9C4E7A" type="webcontent" href="HEXCEL/Excel/pedidos.xls">
+      <file href="HEXCEL/Excel/pedidos.xls" />
+    </resource>
+    <resource identifier="RES-840592102DF0A6E27D61F90D80DBF61C" type="webcontent" href="HEXCEL/Excel/Prorrateo.xls">
+      <file href="HEXCEL/Excel/Prorrateo.xls" />
+    </resource>
+    <resource identifier="RES-C5191FEFEDAA475161018906CC5A7053" type="webcontent" href="HEXCEL/Excel/RangoDinamico.xls">
+      <file href="HEXCEL/Excel/RangoDinamico.xls" />
+    </resource>
+    <resource identifier="RES-1246BE0CA2FC01F215550693FA364330" type="webcontent" href="HEXCEL/Excel/Repes.xls">
+      <file href="HEXCEL/Excel/Repes.xls" />
+    </resource>
+    <resource identifier="RES-0C713253FF81F353F6B7C2BADAAB249C" type="webcontent" href="HEXCEL/Excel/Residuo.xls">
+      <file href="HEXCEL/Excel/Residuo.xls" />
+    </resource>
+    <resource identifier="RES-25F27DB0CF809EE7D56379BF5B5F6559" type="webcontent" href="HEXCEL/Excel/Residuo.xlsx">
+      <file href="HEXCEL/Excel/Residuo.xlsx" />
+    </resource>
+    <resource identifier="RES-58D43C381D714D1BC0920A33D9E2CC7D" type="webcontent" href="HEXCEL/Excel/reversion.xls">
+      <file href="HEXCEL/Excel/reversion.xls" />
+    </resource>
+    <resource identifier="RES-4C5C72036BA9BD1FB65901D0187E58C3" type="webcontent" href="HEXCEL/Excel/RuidoBlanco.xls">
+      <file href="HEXCEL/Excel/RuidoBlanco.xls" />
+    </resource>
+    <resource identifier="RES-5367BE11D7273C01AA48603724E8871B" type="webcontent" href="HEXCEL/Excel/RuidoBlancoBolsa.xls">
+      <file href="HEXCEL/Excel/RuidoBlancoBolsa.xls" />
+    </resource>
+    <resource identifier="RES-9B3849EAC3A0A881EF29AAFBEF22E01A" type="webcontent" href="HEXCEL/Excel/selectivo.xls">
+      <file href="HEXCEL/Excel/selectivo.xls" />
+    </resource>
+    <resource identifier="RES-E1524F3B7897276285BAD590848EAEE6" type="webcontent" href="HEXCEL/Excel/Solver.xls">
+      <file href="HEXCEL/Excel/Solver.xls" />
+    </resource>
+    <resource identifier="RES-FA5022F5A5F85FF70C3B7D93B34B21A5" type="webcontent" href="HEXCEL/Excel/SumaCondi.xls">
+      <file href="HEXCEL/Excel/SumaCondi.xls" />
+    </resource>
+    <resource identifier="RES-163400A67EE76BC9D3A4D5789973B2EA" type="webcontent" href="HEXCEL/Excel/SumarSI.xls">
+      <file href="HEXCEL/Excel/SumarSI.xls" />
+    </resource>
+    <resource identifier="RES-2E5063AA2F94B08C272AC3CA2351CA7E" type="webcontent" href="HEXCEL/Excel/TextoValor.xls">
+      <file href="HEXCEL/Excel/TextoValor.xls" />
+    </resource>
+    <resource identifier="RES-CA96FE5715FB74BBCE4C9DF191BA9570" type="webcontent" href="HEXCEL/Excel/TotalBuscarV.xls">
+      <file href="HEXCEL/Excel/TotalBuscarV.xls" />
+    </resource>
+    <resource identifier="RES-7BA3FE5E1E10D42B82E72FFAE10B407D" type="webcontent" href="HEXCEL/Excel/Ultimo.xls">
+      <file href="HEXCEL/Excel/Ultimo.xls" />
+    </resource>
+    <resource identifier="RES-8883CA54F8650146B95B52346A2B66E8" type="webcontent" href="HEXCEL/Excel/UnTercio.xls">
+      <file href="HEXCEL/Excel/UnTercio.xls" />
+    </resource>
+    <resource identifier="RES-C501CCBA983552A699E3AD71B79F8B63" type="webcontent" href="HEXCEL/Excel/VA.xls">
+      <file href="HEXCEL/Excel/VA.xls" />
+    </resource>
+    <resource identifier="RES-5B87DDB840251F3F17352687310F38A6" type="webcontent" href="HEXCEL/Excel/Validacion.xls">
+      <file href="HEXCEL/Excel/Validacion.xls" />
+    </resource>
+    <resource identifier="RES-AA356641CE43FF18714639AC926387FF" type="webcontent" href="HEXCEL/Excel/vinculo.xls">
+      <file href="HEXCEL/Excel/vinculo.xls" />
+    </resource>
+    <resource identifier="RES-1D3340675AED0E05C0824F56F49F9973" type="webcontent" href="HEXCEL/Financieras/Amortiza.xls">
+      <file href="HEXCEL/Financieras/Amortiza.xls" />
+    </resource>
+    <resource identifier="RES-A9C04DB96C42417638AD37553F47AA95" type="webcontent" href="HEXCEL/Financieras/Bonos.xls">
+      <file href="HEXCEL/Financieras/Bonos.xls" />
+    </resource>
+    <resource identifier="RES-8E78DA4C5742EF7E2238B6134E21B459" type="webcontent" href="HEXCEL/Financieras/CtaCte.xls">
+      <file href="HEXCEL/Financieras/CtaCte.xls" />
+    </resource>
+    <resource identifier="RES-859E81CE956DBA60A66DD2DB4DA9DDD4" type="webcontent" href="HEXCEL/Financieras/ECO2005jun.xls">
+      <file href="HEXCEL/Financieras/ECO2005jun.xls" />
+    </resource>
+    <resource identifier="RES-619E5DFF22B1F9715CC90BEE563C0CC5" type="webcontent" href="HEXCEL/Financieras/ECOjun2006.xls">
+      <file href="HEXCEL/Financieras/ECOjun2006.xls" />
+    </resource>
+    <resource identifier="RES-D2AB563FD11B656F2203115187B7E2E2" type="webcontent" href="HEXCEL/Financieras/ECOsep2005.xls">
+      <file href="HEXCEL/Financieras/ECOsep2005.xls" />
+    </resource>
+    <resource identifier="RES-D7D2987D95DB4AB88554677E9E41C202" type="webcontent" href="HEXCEL/Financieras/ECOsep2006.xls">
+      <file href="HEXCEL/Financieras/ECOsep2006.xls" />
+    </resource>
+    <resource identifier="RES-40E0C93F7E6A61CCD7B58A93C605B11B" type="webcontent" href="HEXCEL/Financieras/EjerciciosVarios.xls">
+      <file href="HEXCEL/Financieras/EjerciciosVarios.xls" />
+    </resource>
+    <resource identifier="RES-36D88BA98BBAEB8862CB0D5022F96FCB" type="webcontent" href="HEXCEL/Financieras/ETTI.xls">
+      <file href="HEXCEL/Financieras/ETTI.xls" />
+    </resource>
+    <resource identifier="RES-C408C6208503406663220ADDA40947DA" type="webcontent" href="HEXCEL/Financieras/Ex200505.xls">
+      <file href="HEXCEL/Financieras/Ex200505.xls" />
+    </resource>
+    <resource identifier="RES-0D6A0CA728160FACFA096B3BF47BC20E" type="webcontent" href="HEXCEL/Financieras/FRA.xls">
+      <file href="HEXCEL/Financieras/FRA.xls" />
+    </resource>
+    <resource identifier="RES-E6B93FB151BBA72F1DBE24859569308B" type="webcontent" href="HEXCEL/Financieras/FRA_CompVend.xls">
+      <file href="HEXCEL/Financieras/FRA_CompVend.xls" />
+    </resource>
+    <resource identifier="RES-5EE2290A178275C976E1D559C290BC5C" type="webcontent" href="HEXCEL/Financieras/GeoTotal.xls">
+      <file href="HEXCEL/Financieras/GeoTotal.xls" />
+    </resource>
+    <resource identifier="RES-0FF377A5B6825DBF9366082E865A4A87" type="webcontent" href="HEXCEL/Financieras/inmunizacion.xls">
+      <file href="HEXCEL/Financieras/inmunizacion.xls" />
+    </resource>
+    <resource identifier="RES-CC1E734E8E4AE26FD92A9C1BC45FE6B2" type="webcontent" href="HEXCEL/Financieras/LADE2005jun.xls">
+      <file href="HEXCEL/Financieras/LADE2005jun.xls" />
+    </resource>
+    <resource identifier="RES-C381FFD43D7180589F2C932D27BB0D54" type="webcontent" href="HEXCEL/Financieras/LADE21mayo2004.xls">
+      <file href="HEXCEL/Financieras/LADE21mayo2004.xls" />
+    </resource>
+    <resource identifier="RES-DB318CE0570E7AA7BB50D984B48125BF" type="webcontent" href="HEXCEL/Financieras/LADEjun2006.xls">
+      <file href="HEXCEL/Financieras/LADEjun2006.xls" />
+    </resource>
+    <resource identifier="RES-ACEEF2AB3BDD365698757188834AA382" type="webcontent" href="HEXCEL/Financieras/LADEjunio2007.pdf">
+      <file href="HEXCEL/Financieras/LADEjunio2007.pdf" />
+    </resource>
+    <resource identifier="RES-01698A62F7493737B12CA993C340679F" type="webcontent" href="HEXCEL/Financieras/LADEjunio2007.xls">
+      <file href="HEXCEL/Financieras/LADEjunio2007.xls" />
+    </resource>
+    <resource identifier="RES-6DFE585F5CB885402A3BCBD4D550BD2C" type="webcontent" href="HEXCEL/Financieras/LADEmayo2007.xls">
+      <file href="HEXCEL/Financieras/LADEmayo2007.xls" />
+    </resource>
+    <resource identifier="RES-E26DA5EC34959936F9E27C122F63F913" type="webcontent" href="HEXCEL/Financieras/LADEsep2005.xls">
+      <file href="HEXCEL/Financieras/LADEsep2005.xls" />
+    </resource>
+    <resource identifier="RES-4A5FD65F5F6F76CDDB58D1A9F999136F" type="webcontent" href="HEXCEL/Financieras/LADEsep2007.xls">
+      <file href="HEXCEL/Financieras/LADEsep2007.xls" />
+    </resource>
+    <resource identifier="RES-A69E4D47266A748C5585E96393BD19DC" type="webcontent" href="HEXCEL/Financieras/Leasing.xls">
+      <file href="HEXCEL/Financieras/Leasing.xls" />
+    </resource>
+    <resource identifier="RES-F60329620FE597603E07744C1D4C53E5" type="webcontent" href="HEXCEL/Financieras/LetrasTesoro.xls">
+      <file href="HEXCEL/Financieras/LetrasTesoro.xls" />
+    </resource>
+    <resource identifier="RES-57A58D4619E7079142A022CDE352B5BF" type="webcontent" href="HEXCEL/Financieras/Leyes.xls">
+      <file href="HEXCEL/Financieras/Leyes.xls" />
+    </resource>
+    <resource identifier="RES-7E227EF96C61399538312D6FD6088689" type="webcontent" href="HEXCEL/Financieras/MatFinJunio2004ECO.xls">
+      <file href="HEXCEL/Financieras/MatFinJunio2004ECO.xls" />
+    </resource>
+    <resource identifier="RES-78DBAC73303D088EB9731D09E76A148B" type="webcontent" href="HEXCEL/Financieras/MatFinJunio2004LADE.xls">
+      <file href="HEXCEL/Financieras/MatFinJunio2004LADE.xls" />
+    </resource>
+    <resource identifier="RES-3882078239BCD49D4380CA05AB328CC1" type="webcontent" href="HEXCEL/Financieras/MF01.xls">
+      <file href="HEXCEL/Financieras/MF01.xls" />
+    </resource>
+    <resource identifier="RES-05DA854F3886AAEC5C54E10D51E5A2B4" type="webcontent" href="HEXCEL/Financieras/MOFfeb2004.xls">
+      <file href="HEXCEL/Financieras/MOFfeb2004.xls" />
+    </resource>
+    <resource identifier="RES-EA7FF2BB0B938B617FE44233A3747EDF" type="webcontent" href="HEXCEL/Financieras/MOFfeb2005.xls">
+      <file href="HEXCEL/Financieras/MOFfeb2005.xls" />
+    </resource>
+    <resource identifier="RES-05A71414A319D54BBC25FEB9E5F5EA31" type="webcontent" href="HEXCEL/Financieras/MOF_Ej1.xls">
+      <file href="HEXCEL/Financieras/MOF_Ej1.xls" />
+    </resource>
+    <resource identifier="RES-BFFC9C745BF8F265FAD5869FCF2FDF62" type="webcontent" href="HEXCEL/Financieras/MOF_Ej2.xls">
+      <file href="HEXCEL/Financieras/MOF_Ej2.xls" />
+    </resource>
+    <resource identifier="RES-3E263F86B28B3D8B96D578141B53F925" type="webcontent" href="HEXCEL/Financieras/MOF_Ej3.xls">
+      <file href="HEXCEL/Financieras/MOF_Ej3.xls" />
+    </resource>
+    <resource identifier="RES-D4735CA8523018107826FA9A45A6D6FF" type="webcontent" href="HEXCEL/Financieras/MOF_Ej4.xls">
+      <file href="HEXCEL/Financieras/MOF_Ej4.xls" />
+    </resource>
+    <resource identifier="RES-F8893C99A843E7C3F78AF3DF93421548" type="webcontent" href="HEXCEL/Financieras/Opta04P1.xls">
+      <file href="HEXCEL/Financieras/Opta04P1.xls" />
+    </resource>
+    <resource identifier="RES-84654BCA5000CAA038EFDBE4AA13AD63" type="webcontent" href="HEXCEL/Financieras/Opta04P2.xls">
+      <file href="HEXCEL/Financieras/Opta04P2.xls" />
+    </resource>
+    <resource identifier="RES-2833DACB99636E8B5878588D14745173" type="webcontent" href="HEXCEL/Financieras/Opta04P3.xls">
+      <file href="HEXCEL/Financieras/Opta04P3.xls" />
+    </resource>
+    <resource identifier="RES-88C6F0692BB879E3F750E9305793DEB6" type="webcontent" href="HEXCEL/Financieras/Opta04P4.xls">
+      <file href="HEXCEL/Financieras/Opta04P4.xls" />
+    </resource>
+    <resource identifier="RES-F326FAF4360B93F575180AEF770A042E" type="webcontent" href="HEXCEL/Financieras/P01MF.xls">
+      <file href="HEXCEL/Financieras/P01MF.xls" />
+    </resource>
+    <resource identifier="RES-3C64CF10043B6E2CA282E00ED2FB678D" type="webcontent" href="HEXCEL/Financieras/P02MF.xls">
+      <file href="HEXCEL/Financieras/P02MF.xls" />
+    </resource>
+    <resource identifier="RES-38981A083CC9703F0ECD911B69C5F6D9" type="webcontent" href="HEXCEL/Financieras/P03MF.xls">
+      <file href="HEXCEL/Financieras/P03MF.xls" />
+    </resource>
+    <resource identifier="RES-7D6E11B374A9275CB2975BEC0BD7FD2D" type="webcontent" href="HEXCEL/Financieras/P04MF.xls">
+      <file href="HEXCEL/Financieras/P04MF.xls" />
+    </resource>
+    <resource identifier="RES-5A1B0E759592808F5F44E7A42E18A953" type="webcontent" href="HEXCEL/Financieras/PrePos.xls">
+      <file href="HEXCEL/Financieras/PrePos.xls" />
+    </resource>
+    <resource identifier="RES-E34E66125C541A287D8241FB61BCABD1" type="webcontent" href="HEXCEL/Financieras/PrestaGeo.xls">
+      <file href="HEXCEL/Financieras/PrestaGeo.xls" />
+    </resource>
+    <resource identifier="RES-D65AA28626FA851B26864140CB591521" type="webcontent" href="HEXCEL/Financieras/prestamos.xls">
+      <file href="HEXCEL/Financieras/prestamos.xls" />
+    </resource>
+    <resource identifier="RES-0C21CC0D85A1DD3505DD185D877771F5" type="webcontent" href="HEXCEL/Financieras/Rentas.xls">
+      <file href="HEXCEL/Financieras/Rentas.xls" />
+    </resource>
+    <resource identifier="RES-EE14DE57096DDB0954B738BAC5318DA6" type="webcontent" href="HEXCEL/Financieras/SimpleCompuesta.xls">
+      <file href="HEXCEL/Financieras/SimpleCompuesta.xls" />
+    </resource>
+    <resource identifier="RES-FD94F59492AB87462DE4285FE3759639" type="webcontent" href="HEXCEL/Financieras/swap.xls">
+      <file href="HEXCEL/Financieras/swap.xls" />
+    </resource>
+    <resource identifier="RES-1543BDAF255A9CB2042ABC2579EF92B6" type="webcontent" href="HEXCEL/Financieras/TantosEfectivos.xls">
+      <file href="HEXCEL/Financieras/TantosEfectivos.xls" />
+    </resource>
+    <resource identifier="RES-3B20B5C3A9E880FB5F70B032C8526786" type="webcontent" href="HEXCEL/Financieras/UCMjun05.xls">
+      <file href="HEXCEL/Financieras/UCMjun05.xls" />
+    </resource>
+    <resource identifier="RES-74B365310B6899437306C0A97519CE3A" type="webcontent" href="HEXCEL/Financieras/VanTir.xls">
+      <file href="HEXCEL/Financieras/VanTir.xls" />
+    </resource>
+    <resource identifier="RES-B31623A7F30FAA237627C36CD2234811" type="webcontent" href="HEXCEL/Financieras/VarGeo.xls">
+      <file href="HEXCEL/Financieras/VarGeo.xls" />
+    </resource>
+    <resource identifier="RES-11979EA5CD9663FE0B67CB567258D800" type="webcontent" href="HEXCEL/Macros/600montecarlo.xls">
+      <file href="HEXCEL/Macros/600montecarlo.xls" />
+    </resource>
+    <resource identifier="RES-9E551DEBBA55620432A8DF910D69D3CD" type="webcontent" href="HEXCEL/Macros/Abecedario.xls">
+      <file href="HEXCEL/Macros/Abecedario.xls" />
+    </resource>
+    <resource identifier="RES-741195C41071FF958A2C7C9A8F786417" type="webcontent" href="HEXCEL/Macros/adivina.xls">
+      <file href="HEXCEL/Macros/adivina.xls" />
+    </resource>
+    <resource identifier="RES-D9AC2480844F7333CF9E2D83F1CF65FB" type="webcontent" href="HEXCEL/Macros/aLetras.xls">
+      <file href="HEXCEL/Macros/aLetras.xls" />
+    </resource>
+    <resource identifier="RES-B7D16C725BBDF468E4ABA644C4F40860" type="webcontent" href="HEXCEL/Macros/Array.xls">
+      <file href="HEXCEL/Macros/Array.xls" />
+    </resource>
+    <resource identifier="RES-A6122B7D83D2DD4036FD3BEDCA834B89" type="webcontent" href="HEXCEL/Macros/AutoCuadro.xls">
+      <file href="HEXCEL/Macros/AutoCuadro.xls" />
+    </resource>
+    <resource identifier="RES-C5F01E5EDA8246D74AA19FFA58D884AD" type="webcontent" href="HEXCEL/Macros/CalculoNIF.xls">
+      <file href="HEXCEL/Macros/CalculoNIF.xls" />
+    </resource>
+    <resource identifier="RES-FF8A2DC31BB957EDFDB47A1B53C56F08" type="webcontent" href="HEXCEL/Macros/CeldaColor.xls">
+      <file href="HEXCEL/Macros/CeldaColor.xls" />
+    </resource>
+    <resource identifier="RES-5D23E35A98471F362BC4E24AD14A7232" type="webcontent" href="HEXCEL/Macros/CeldasVacias.xls">
+      <file href="HEXCEL/Macros/CeldasVacias.xls" />
+    </resource>
+    <resource identifier="RES-AECC404BDF28AB337772772722CB272A" type="webcontent" href="HEXCEL/Macros/ComparaValores.xls">
+      <file href="HEXCEL/Macros/ComparaValores.xls" />
+    </resource>
+    <resource identifier="RES-297C5293817B04A4F0A13544C7FE1E8D" type="webcontent" href="HEXCEL/Macros/Compare.xls">
+      <file href="HEXCEL/Macros/Compare.xls" />
+    </resource>
+    <resource identifier="RES-A4DD89B1E640489764AD8F7B368B84A6" type="webcontent" href="HEXCEL/Macros/Completar.xls">
+      <file href="HEXCEL/Macros/Completar.xls" />
+    </resource>
+    <resource identifier="RES-2E9AB79F3F35F274DF99AEE090350F79" type="webcontent" href="HEXCEL/Macros/CompVtaBolsa.xls">
+      <file href="HEXCEL/Macros/CompVtaBolsa.xls" />
+    </resource>
+    <resource identifier="RES-AA3E302B5DBC9BDF1C922CAA0B80746A" type="webcontent" href="HEXCEL/Macros/concilia.xls">
+      <file href="HEXCEL/Macros/concilia.xls" />
+    </resource>
+    <resource identifier="RES-1EE6CF08D5243C2D11E5B13D74C4A28D" type="webcontent" href="HEXCEL/Macros/Consolidado.xls">
+      <file href="HEXCEL/Macros/Consolidado.xls" />
+    </resource>
+    <resource identifier="RES-387777975AE7E30ED12EEF9C2CCB1AE7" type="webcontent" href="HEXCEL/Macros/determinante.xls">
+      <file href="HEXCEL/Macros/determinante.xls" />
+    </resource>
+    <resource identifier="RES-B66E04BA3F9CA7A00AFDF15BE216656B" type="webcontent" href="HEXCEL/Macros/DigitoControl.xls">
+      <file href="HEXCEL/Macros/DigitoControl.xls" />
+    </resource>
+    <resource identifier="RES-2152FFD2E9C482C411A100BE26EE2695" type="webcontent" href="HEXCEL/Macros/e.xls">
+      <file href="HEXCEL/Macros/e.xls" />
+    </resource>
+    <resource identifier="RES-83746D2009CEE0E0D124D02E55D1684C" type="webcontent" href="HEXCEL/Macros/EliminarValores.xls">
+      <file href="HEXCEL/Macros/EliminarValores.xls" />
+    </resource>
+    <resource identifier="RES-4766FFFB9B923A4859715D5B285244DC" type="webcontent" href="HEXCEL/Macros/Expedientes.xls">
+      <file href="HEXCEL/Macros/Expedientes.xls" />
+    </resource>
+    <resource identifier="RES-D83563885F2F5124FE7DAAB27BD8734D" type="webcontent" href="HEXCEL/Macros/Fechador.xls">
+      <file href="HEXCEL/Macros/Fechador.xls" />
+    </resource>
+    <resource identifier="RES-485F091A3E111B9ECC1130D75AD3CAC3" type="webcontent" href="HEXCEL/Macros/FiltroBD.xls">
+      <file href="HEXCEL/Macros/FiltroBD.xls" />
+    </resource>
+    <resource identifier="RES-26C4754F8DF0F65F61BC5E0F45BA09BD" type="webcontent" href="HEXCEL/Macros/Formulario.xls">
+      <file href="HEXCEL/Macros/Formulario.xls" />
+    </resource>
+    <resource identifier="RES-3E165D1DC74F888240EE00B719CAABA2" type="webcontent" href="HEXCEL/Macros/FunPerso.xls">
+      <file href="HEXCEL/Macros/FunPerso.xls" />
+    </resource>
+    <resource identifier="RES-718827E78921B80668AD518E37D279DB" type="webcontent" href="HEXCEL/Macros/GeneraRND.xls">
+      <file href="HEXCEL/Macros/GeneraRND.xls" />
+    </resource>
+    <resource identifier="RES-4DF83E70A8A1D675F1AF06B6E0107679" type="webcontent" href="HEXCEL/Macros/glosario.xls">
+      <file href="HEXCEL/Macros/glosario.xls" />
+    </resource>
+    <resource identifier="RES-3FD53F5517454DABE35ADBC0B763128B" type="webcontent" href="HEXCEL/Macros/glosarioALL.xls">
+      <file href="HEXCEL/Macros/glosarioALL.xls" />
+    </resource>
+    <resource identifier="RES-8729B112C7F8928B7506A86EBD461314" type="webcontent" href="HEXCEL/Macros/Laborables.xls">
+      <file href="HEXCEL/Macros/Laborables.xls" />
+    </resource>
+    <resource identifier="RES-97274D833C6BB0F88F8DE3C500E3B647" type="webcontent" href="HEXCEL/Macros/LimpiaFilas.xls">
+      <file href="HEXCEL/Macros/LimpiaFilas.xls" />
+    </resource>
+    <resource identifier="RES-48FF6D8057A1BC749E24DAE2EBFC08A5" type="webcontent" href="HEXCEL/Macros/ListaHojas.xls">
+      <file href="HEXCEL/Macros/ListaHojas.xls" />
+    </resource>
+    <resource identifier="RES-880FA9B66B8215CF7779C80F0E942837" type="webcontent" href="HEXCEL/Macros/Localiza.xls">
+      <file href="HEXCEL/Macros/Localiza.xls" />
+    </resource>
+    <resource identifier="RES-A143B1D3D8F76A5F9F88225BBA0BA0F2" type="webcontent" href="HEXCEL/Macros/Mac01.xls">
+      <file href="HEXCEL/Macros/Mac01.xls" />
+    </resource>
+    <resource identifier="RES-D0DCD2507A1B0C71103557DAC1801E14" type="webcontent" href="HEXCEL/Macros/MacroPrestamo.xls">
+      <file href="HEXCEL/Macros/MacroPrestamo.xls" />
+    </resource>
+    <resource identifier="RES-AE179990D6C116358933AC8B8FDD9476" type="webcontent" href="HEXCEL/Macros/MinRef.xls">
+      <file href="HEXCEL/Macros/MinRef.xls" />
+    </resource>
+    <resource identifier="RES-72602A76AA09AC496167767198D31558" type="webcontent" href="HEXCEL/Macros/MuertosyHeridos.xls">
+      <file href="HEXCEL/Macros/MuertosyHeridos.xls" />
+    </resource>
+    <resource identifier="RES-B9B0DF2CA02470F597AB9B0DFB94310D" type="webcontent" href="HEXCEL/Macros/nacimiento.xls">
+      <file href="HEXCEL/Macros/nacimiento.xls" />
+    </resource>
+    <resource identifier="RES-C0AC5E3F6F34CE1A40345DB73F1AFA50" type="webcontent" href="HEXCEL/Macros/OnTime.xls">
+      <file href="HEXCEL/Macros/OnTime.xls" />
+    </resource>
+    <resource identifier="RES-02556372F5FC294CB6CAC886D3B03570" type="webcontent" href="HEXCEL/Macros/PasaMatriz.xls">
+      <file href="HEXCEL/Macros/PasaMatriz.xls" />
+    </resource>
+    <resource identifier="RES-F2E6F02BFFF253C40C5DE1B97B3AE494" type="webcontent" href="HEXCEL/Macros/permuta.xls">
+      <file href="HEXCEL/Macros/permuta.xls" />
+    </resource>
+    <resource identifier="RES-401E3ECEAAD6908B70F40E23DF607EAB" type="webcontent" href="HEXCEL/Macros/piedras.xls">
+      <file href="HEXCEL/Macros/piedras.xls" />
+    </resource>
+    <resource identifier="RES-9771D3D1F0879F47BA0E82FBD7B4A52D" type="webcontent" href="HEXCEL/Macros/primos.xls">
+      <file href="HEXCEL/Macros/primos.xls" />
+    </resource>
+    <resource identifier="RES-FCEC757DD9E07643095CB905D84439A8" type="webcontent" href="HEXCEL/Macros/Residencia.xls">
+      <file href="HEXCEL/Macros/Residencia.xls" />
+    </resource>
+    <resource identifier="RES-1EF2CF26ED56A767503C786249377F99" type="webcontent" href="HEXCEL/Macros/RNDunicos.xls">
+      <file href="HEXCEL/Macros/RNDunicos.xls" />
+    </resource>
+    <resource identifier="RES-7C65D8127E22BBA2EE6CB3CE0D034386" type="webcontent" href="HEXCEL/Macros/sumar.xls">
+      <file href="HEXCEL/Macros/sumar.xls" />
+    </resource>
+    <resource identifier="RES-F5ECD2303FC6FE46520AECB8FC50B32A" type="webcontent" href="HEXCEL/default.htm">
+      <file href="HEXCEL/default.htm" />
+      <file href="HEXCEL/excel.htm" />
+      <file href="HEXCEL/Excel/3D.xls" />
+      <file href="HEXCEL/Excel/Acumula.xls" />
+      <file href="HEXCEL/Excel/Aeropuertos.xls" />
+      <file href="HEXCEL/Excel/ajuste.xls" />
+      <file href="HEXCEL/Excel/Aritmetica.xls" />
+      <file href="HEXCEL/Excel/busquedas.xls" />
+      <file href="HEXCEL/Excel/calendario.xls" />
+      <file href="HEXCEL/Excel/Coincidencias.xls" />
+      <file href="HEXCEL/Excel/consolidar.xls" />
+      <file href="HEXCEL/Excel/ControlPagos.xls" />
+      <file href="HEXCEL/Excel/Convolucion.xls" />
+      <file href="HEXCEL/Excel/CriteriosYO.xls" />
+      <file href="HEXCEL/Excel/DiasSep.xls" />
+      <file href="HEXCEL/Excel/Distribuciones.xls" />
+      <file href="HEXCEL/Excel/DobleBuscarv.xls" />
+      <file href="HEXCEL/Excel/Dudas.xls" />
+      <file href="HEXCEL/Excel/fechas.xls" />
+      <file href="HEXCEL/Excel/Filtros.xls" />
+      <file href="HEXCEL/Excel/Formulario.xls" />
+      <file href="HEXCEL/Excel/gamma.xls" />
+      <file href="HEXCEL/Excel/HistoricoIBEX.xls" />
+      <file href="HEXCEL/Excel/Intervalos.xls" />
+      <file href="HEXCEL/Excel/jerarquia.xls" />
+      <file href="HEXCEL/Excel/Localiza.xls" />
+      <file href="HEXCEL/Excel/logicas.xls" />
+      <file href="HEXCEL/Excel/Matricial.xls" />
+      <file href="HEXCEL/Excel/MaxB.xls" />
+      <file href="HEXCEL/Excel/MaxMin.xls" />
+      <file href="HEXCEL/Excel/MediaMovil.xls" />
+      <file href="HEXCEL/Excel/mensualidad.xls" />
+      <file href="HEXCEL/Excel/Meses.xls" />
+      <file href="HEXCEL/Excel/minimoref.xls" />
+      <file href="HEXCEL/Excel/MinNo0.xls" />
+      <file href="HEXCEL/Excel/Mixtura.xls" />
+      <file href="HEXCEL/Excel/Montecarlo.xls" />
+      <file href="HEXCEL/Excel/Multiple.xls" />
+      <file href="HEXCEL/Excel/NoRepe.xls" />
+      <file href="HEXCEL/Excel/ordena.xls" />
+      <file href="HEXCEL/Excel/Parejas.xls" />
+      <file href="HEXCEL/Excel/pedidos.xls" />
+      <file href="HEXCEL/Excel/Prorrateo.xls" />
+      <file href="HEXCEL/Excel/RangoDinamico.xls" />
+      <file href="HEXCEL/Excel/Repes.xls" />
+      <file href="HEXCEL/Excel/Residuo.xls" />
+      <file href="HEXCEL/Excel/Residuo.xlsx" />
+      <file href="HEXCEL/Excel/reversion.xls" />
+      <file href="HEXCEL/Excel/RuidoBlanco.xls" />
+      <file href="HEXCEL/Excel/RuidoBlancoBolsa.xls" />
+      <file href="HEXCEL/Excel/selectivo.xls" />
+      <file href="HEXCEL/Excel/Solver.xls" />
+      <file href="HEXCEL/Excel/SumaCondi.xls" />
+      <file href="HEXCEL/Excel/SumarSI.xls" />
+      <file href="HEXCEL/Excel/TextoValor.xls" />
+      <file href="HEXCEL/Excel/TotalBuscarV.xls" />
+      <file href="HEXCEL/Excel/Ultimo.xls" />
+      <file href="HEXCEL/Excel/UnTercio.xls" />
+      <file href="HEXCEL/Excel/VA.xls" />
+      <file href="HEXCEL/Excel/Validacion.xls" />
+      <file href="HEXCEL/Excel/vinculo.xls" />
+      <file href="HEXCEL/financieras.htm" />
+      <file href="HEXCEL/Financieras/Amortiza.xls" />
+      <file href="HEXCEL/Financieras/Bonos.xls" />
+      <file href="HEXCEL/Financieras/CtaCte.xls" />
+      <file href="HEXCEL/Financieras/ECO2005jun.xls" />
+      <file href="HEXCEL/Financieras/ECOjun2006.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2005.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2006.xls" />
+      <file href="HEXCEL/Financieras/EjerciciosVarios.xls" />
+      <file href="HEXCEL/Financieras/ETTI.xls" />
+      <file href="HEXCEL/Financieras/Ex200505.xls" />
+      <file href="HEXCEL/Financieras/FRA.xls" />
+      <file href="HEXCEL/Financieras/FRA_CompVend.xls" />
+      <file href="HEXCEL/Financieras/GeoTotal.xls" />
+      <file href="HEXCEL/Financieras/inmunizacion.xls" />
+      <file href="HEXCEL/Financieras/LADE2005jun.xls" />
+      <file href="HEXCEL/Financieras/LADE21mayo2004.xls" />
+      <file href="HEXCEL/Financieras/LADEjun2006.xls" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.pdf" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.xls" />
+      <file href="HEXCEL/Financieras/LADEmayo2007.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2005.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2007.xls" />
+      <file href="HEXCEL/Financieras/Leasing.xls" />
+      <file href="HEXCEL/Financieras/LetrasTesoro.xls" />
+      <file href="HEXCEL/Financieras/Leyes.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004ECO.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004LADE.xls" />
+      <file href="HEXCEL/Financieras/MF01.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej1.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej2.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej3.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej4.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2004.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2005.xls" />
+      <file href="HEXCEL/Financieras/Opta04P1.xls" />
+      <file href="HEXCEL/Financieras/Opta04P2.xls" />
+      <file href="HEXCEL/Financieras/Opta04P3.xls" />
+      <file href="HEXCEL/Financieras/Opta04P4.xls" />
+      <file href="HEXCEL/Financieras/P01MF.xls" />
+      <file href="HEXCEL/Financieras/P02MF.xls" />
+      <file href="HEXCEL/Financieras/P03MF.xls" />
+      <file href="HEXCEL/Financieras/P04MF.xls" />
+      <file href="HEXCEL/Financieras/PrePos.xls" />
+      <file href="HEXCEL/Financieras/PrestaGeo.xls" />
+      <file href="HEXCEL/Financieras/prestamos.xls" />
+      <file href="HEXCEL/Financieras/Rentas.xls" />
+      <file href="HEXCEL/Financieras/SimpleCompuesta.xls" />
+      <file href="HEXCEL/Financieras/swap.xls" />
+      <file href="HEXCEL/Financieras/TantosEfectivos.xls" />
+      <file href="HEXCEL/Financieras/UCMjun05.xls" />
+      <file href="HEXCEL/Financieras/VanTir.xls" />
+      <file href="HEXCEL/Financieras/VarGeo.xls" />
+      <file href="HEXCEL/macros.htm" />
+      <file href="HEXCEL/Macros/600montecarlo.xls" />
+      <file href="HEXCEL/Macros/Abecedario.xls" />
+      <file href="HEXCEL/Macros/adivina.xls" />
+      <file href="HEXCEL/Macros/aLetras.xls" />
+      <file href="HEXCEL/Macros/Array.xls" />
+      <file href="HEXCEL/Macros/AutoCuadro.xls" />
+      <file href="HEXCEL/Macros/CalculoNIF.xls" />
+      <file href="HEXCEL/Macros/CeldaColor.xls" />
+      <file href="HEXCEL/Macros/CeldasVacias.xls" />
+      <file href="HEXCEL/Macros/ComparaValores.xls" />
+      <file href="HEXCEL/Macros/Compare.xls" />
+      <file href="HEXCEL/Macros/Completar.xls" />
+      <file href="HEXCEL/Macros/CompVtaBolsa.xls" />
+      <file href="HEXCEL/Macros/concilia.xls" />
+      <file href="HEXCEL/Macros/Consolidado.xls" />
+      <file href="HEXCEL/Macros/determinante.xls" />
+      <file href="HEXCEL/Macros/DigitoControl.xls" />
+      <file href="HEXCEL/Macros/e.xls" />
+      <file href="HEXCEL/Macros/EliminarValores.xls" />
+      <file href="HEXCEL/Macros/Expedientes.xls" />
+      <file href="HEXCEL/Macros/Fechador.xls" />
+      <file href="HEXCEL/Macros/FiltroBD.xls" />
+      <file href="HEXCEL/Macros/Formulario.xls" />
+      <file href="HEXCEL/Macros/FunPerso.xls" />
+      <file href="HEXCEL/Macros/GeneraRND.xls" />
+      <file href="HEXCEL/Macros/glosario.xls" />
+      <file href="HEXCEL/Macros/glosarioALL.xls" />
+      <file href="HEXCEL/Macros/Laborables.xls" />
+      <file href="HEXCEL/Macros/LimpiaFilas.xls" />
+      <file href="HEXCEL/Macros/ListaHojas.xls" />
+      <file href="HEXCEL/Macros/Localiza.xls" />
+      <file href="HEXCEL/Macros/Mac01.xls" />
+      <file href="HEXCEL/Macros/MacroPrestamo.xls" />
+      <file href="HEXCEL/Macros/MinRef.xls" />
+      <file href="HEXCEL/Macros/MuertosyHeridos.xls" />
+      <file href="HEXCEL/Macros/nacimiento.xls" />
+      <file href="HEXCEL/Macros/OnTime.xls" />
+      <file href="HEXCEL/Macros/PasaMatriz.xls" />
+      <file href="HEXCEL/Macros/permuta.xls" />
+      <file href="HEXCEL/Macros/piedras.xls" />
+      <file href="HEXCEL/Macros/primos.xls" />
+      <file href="HEXCEL/Macros/Residencia.xls" />
+      <file href="HEXCEL/Macros/RNDunicos.xls" />
+      <file href="HEXCEL/Macros/sumar.xls" />
+      <file href="HEXCEL/trucos.htm" />
+    </resource>
+    <resource identifier="RES-E1F0D892A3AAE8025F61AEDDF10BDAAF" type="webcontent" href="HEXCEL/excel.htm">
+      <file href="HEXCEL/excel.htm" />
+      <file href="HEXCEL/default.htm" />
+      <file href="HEXCEL/Excel/3D.xls" />
+      <file href="HEXCEL/Excel/Acumula.xls" />
+      <file href="HEXCEL/Excel/Aeropuertos.xls" />
+      <file href="HEXCEL/Excel/ajuste.xls" />
+      <file href="HEXCEL/Excel/Aritmetica.xls" />
+      <file href="HEXCEL/Excel/busquedas.xls" />
+      <file href="HEXCEL/Excel/calendario.xls" />
+      <file href="HEXCEL/Excel/Coincidencias.xls" />
+      <file href="HEXCEL/Excel/consolidar.xls" />
+      <file href="HEXCEL/Excel/ControlPagos.xls" />
+      <file href="HEXCEL/Excel/Convolucion.xls" />
+      <file href="HEXCEL/Excel/CriteriosYO.xls" />
+      <file href="HEXCEL/Excel/DiasSep.xls" />
+      <file href="HEXCEL/Excel/Distribuciones.xls" />
+      <file href="HEXCEL/Excel/DobleBuscarv.xls" />
+      <file href="HEXCEL/Excel/Dudas.xls" />
+      <file href="HEXCEL/Excel/fechas.xls" />
+      <file href="HEXCEL/Excel/Filtros.xls" />
+      <file href="HEXCEL/Excel/Formulario.xls" />
+      <file href="HEXCEL/Excel/gamma.xls" />
+      <file href="HEXCEL/Excel/HistoricoIBEX.xls" />
+      <file href="HEXCEL/Excel/Intervalos.xls" />
+      <file href="HEXCEL/Excel/jerarquia.xls" />
+      <file href="HEXCEL/Excel/Localiza.xls" />
+      <file href="HEXCEL/Excel/logicas.xls" />
+      <file href="HEXCEL/Excel/Matricial.xls" />
+      <file href="HEXCEL/Excel/MaxB.xls" />
+      <file href="HEXCEL/Excel/MaxMin.xls" />
+      <file href="HEXCEL/Excel/MediaMovil.xls" />
+      <file href="HEXCEL/Excel/mensualidad.xls" />
+      <file href="HEXCEL/Excel/Meses.xls" />
+      <file href="HEXCEL/Excel/minimoref.xls" />
+      <file href="HEXCEL/Excel/MinNo0.xls" />
+      <file href="HEXCEL/Excel/Mixtura.xls" />
+      <file href="HEXCEL/Excel/Montecarlo.xls" />
+      <file href="HEXCEL/Excel/Multiple.xls" />
+      <file href="HEXCEL/Excel/NoRepe.xls" />
+      <file href="HEXCEL/Excel/ordena.xls" />
+      <file href="HEXCEL/Excel/Parejas.xls" />
+      <file href="HEXCEL/Excel/pedidos.xls" />
+      <file href="HEXCEL/Excel/Prorrateo.xls" />
+      <file href="HEXCEL/Excel/RangoDinamico.xls" />
+      <file href="HEXCEL/Excel/Repes.xls" />
+      <file href="HEXCEL/Excel/Residuo.xls" />
+      <file href="HEXCEL/Excel/Residuo.xlsx" />
+      <file href="HEXCEL/Excel/reversion.xls" />
+      <file href="HEXCEL/Excel/RuidoBlanco.xls" />
+      <file href="HEXCEL/Excel/RuidoBlancoBolsa.xls" />
+      <file href="HEXCEL/Excel/selectivo.xls" />
+      <file href="HEXCEL/Excel/Solver.xls" />
+      <file href="HEXCEL/Excel/SumaCondi.xls" />
+      <file href="HEXCEL/Excel/SumarSI.xls" />
+      <file href="HEXCEL/Excel/TextoValor.xls" />
+      <file href="HEXCEL/Excel/TotalBuscarV.xls" />
+      <file href="HEXCEL/Excel/Ultimo.xls" />
+      <file href="HEXCEL/Excel/UnTercio.xls" />
+      <file href="HEXCEL/Excel/VA.xls" />
+      <file href="HEXCEL/Excel/Validacion.xls" />
+      <file href="HEXCEL/Excel/vinculo.xls" />
+      <file href="HEXCEL/financieras.htm" />
+      <file href="HEXCEL/Financieras/Amortiza.xls" />
+      <file href="HEXCEL/Financieras/Bonos.xls" />
+      <file href="HEXCEL/Financieras/CtaCte.xls" />
+      <file href="HEXCEL/Financieras/ECO2005jun.xls" />
+      <file href="HEXCEL/Financieras/ECOjun2006.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2005.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2006.xls" />
+      <file href="HEXCEL/Financieras/EjerciciosVarios.xls" />
+      <file href="HEXCEL/Financieras/ETTI.xls" />
+      <file href="HEXCEL/Financieras/Ex200505.xls" />
+      <file href="HEXCEL/Financieras/FRA.xls" />
+      <file href="HEXCEL/Financieras/FRA_CompVend.xls" />
+      <file href="HEXCEL/Financieras/GeoTotal.xls" />
+      <file href="HEXCEL/Financieras/inmunizacion.xls" />
+      <file href="HEXCEL/Financieras/LADE2005jun.xls" />
+      <file href="HEXCEL/Financieras/LADE21mayo2004.xls" />
+      <file href="HEXCEL/Financieras/LADEjun2006.xls" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.pdf" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.xls" />
+      <file href="HEXCEL/Financieras/LADEmayo2007.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2005.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2007.xls" />
+      <file href="HEXCEL/Financieras/Leasing.xls" />
+      <file href="HEXCEL/Financieras/LetrasTesoro.xls" />
+      <file href="HEXCEL/Financieras/Leyes.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004ECO.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004LADE.xls" />
+      <file href="HEXCEL/Financieras/MF01.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej1.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej2.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej3.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej4.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2004.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2005.xls" />
+      <file href="HEXCEL/Financieras/Opta04P1.xls" />
+      <file href="HEXCEL/Financieras/Opta04P2.xls" />
+      <file href="HEXCEL/Financieras/Opta04P3.xls" />
+      <file href="HEXCEL/Financieras/Opta04P4.xls" />
+      <file href="HEXCEL/Financieras/P01MF.xls" />
+      <file href="HEXCEL/Financieras/P02MF.xls" />
+      <file href="HEXCEL/Financieras/P03MF.xls" />
+      <file href="HEXCEL/Financieras/P04MF.xls" />
+      <file href="HEXCEL/Financieras/PrePos.xls" />
+      <file href="HEXCEL/Financieras/PrestaGeo.xls" />
+      <file href="HEXCEL/Financieras/prestamos.xls" />
+      <file href="HEXCEL/Financieras/Rentas.xls" />
+      <file href="HEXCEL/Financieras/SimpleCompuesta.xls" />
+      <file href="HEXCEL/Financieras/swap.xls" />
+      <file href="HEXCEL/Financieras/TantosEfectivos.xls" />
+      <file href="HEXCEL/Financieras/UCMjun05.xls" />
+      <file href="HEXCEL/Financieras/VanTir.xls" />
+      <file href="HEXCEL/Financieras/VarGeo.xls" />
+      <file href="HEXCEL/macros.htm" />
+      <file href="HEXCEL/Macros/600montecarlo.xls" />
+      <file href="HEXCEL/Macros/Abecedario.xls" />
+      <file href="HEXCEL/Macros/adivina.xls" />
+      <file href="HEXCEL/Macros/aLetras.xls" />
+      <file href="HEXCEL/Macros/Array.xls" />
+      <file href="HEXCEL/Macros/AutoCuadro.xls" />
+      <file href="HEXCEL/Macros/CalculoNIF.xls" />
+      <file href="HEXCEL/Macros/CeldaColor.xls" />
+      <file href="HEXCEL/Macros/CeldasVacias.xls" />
+      <file href="HEXCEL/Macros/ComparaValores.xls" />
+      <file href="HEXCEL/Macros/Compare.xls" />
+      <file href="HEXCEL/Macros/Completar.xls" />
+      <file href="HEXCEL/Macros/CompVtaBolsa.xls" />
+      <file href="HEXCEL/Macros/concilia.xls" />
+      <file href="HEXCEL/Macros/Consolidado.xls" />
+      <file href="HEXCEL/Macros/determinante.xls" />
+      <file href="HEXCEL/Macros/DigitoControl.xls" />
+      <file href="HEXCEL/Macros/e.xls" />
+      <file href="HEXCEL/Macros/EliminarValores.xls" />
+      <file href="HEXCEL/Macros/Expedientes.xls" />
+      <file href="HEXCEL/Macros/Fechador.xls" />
+      <file href="HEXCEL/Macros/FiltroBD.xls" />
+      <file href="HEXCEL/Macros/Formulario.xls" />
+      <file href="HEXCEL/Macros/FunPerso.xls" />
+      <file href="HEXCEL/Macros/GeneraRND.xls" />
+      <file href="HEXCEL/Macros/glosario.xls" />
+      <file href="HEXCEL/Macros/glosarioALL.xls" />
+      <file href="HEXCEL/Macros/Laborables.xls" />
+      <file href="HEXCEL/Macros/LimpiaFilas.xls" />
+      <file href="HEXCEL/Macros/ListaHojas.xls" />
+      <file href="HEXCEL/Macros/Localiza.xls" />
+      <file href="HEXCEL/Macros/Mac01.xls" />
+      <file href="HEXCEL/Macros/MacroPrestamo.xls" />
+      <file href="HEXCEL/Macros/MinRef.xls" />
+      <file href="HEXCEL/Macros/MuertosyHeridos.xls" />
+      <file href="HEXCEL/Macros/nacimiento.xls" />
+      <file href="HEXCEL/Macros/OnTime.xls" />
+      <file href="HEXCEL/Macros/PasaMatriz.xls" />
+      <file href="HEXCEL/Macros/permuta.xls" />
+      <file href="HEXCEL/Macros/piedras.xls" />
+      <file href="HEXCEL/Macros/primos.xls" />
+      <file href="HEXCEL/Macros/Residencia.xls" />
+      <file href="HEXCEL/Macros/RNDunicos.xls" />
+      <file href="HEXCEL/Macros/sumar.xls" />
+      <file href="HEXCEL/trucos.htm" />
+    </resource>
+    <resource identifier="RES-9CBA0867111D5B61A8012E8B5077785F" type="webcontent" href="HEXCEL/financieras.htm">
+      <file href="HEXCEL/financieras.htm" />
+      <file href="HEXCEL/default.htm" />
+      <file href="HEXCEL/excel.htm" />
+      <file href="HEXCEL/Excel/3D.xls" />
+      <file href="HEXCEL/Excel/Acumula.xls" />
+      <file href="HEXCEL/Excel/Aeropuertos.xls" />
+      <file href="HEXCEL/Excel/ajuste.xls" />
+      <file href="HEXCEL/Excel/Aritmetica.xls" />
+      <file href="HEXCEL/Excel/busquedas.xls" />
+      <file href="HEXCEL/Excel/calendario.xls" />
+      <file href="HEXCEL/Excel/Coincidencias.xls" />
+      <file href="HEXCEL/Excel/consolidar.xls" />
+      <file href="HEXCEL/Excel/ControlPagos.xls" />
+      <file href="HEXCEL/Excel/Convolucion.xls" />
+      <file href="HEXCEL/Excel/CriteriosYO.xls" />
+      <file href="HEXCEL/Excel/DiasSep.xls" />
+      <file href="HEXCEL/Excel/Distribuciones.xls" />
+      <file href="HEXCEL/Excel/DobleBuscarv.xls" />
+      <file href="HEXCEL/Excel/Dudas.xls" />
+      <file href="HEXCEL/Excel/fechas.xls" />
+      <file href="HEXCEL/Excel/Filtros.xls" />
+      <file href="HEXCEL/Excel/Formulario.xls" />
+      <file href="HEXCEL/Excel/gamma.xls" />
+      <file href="HEXCEL/Excel/HistoricoIBEX.xls" />
+      <file href="HEXCEL/Excel/Intervalos.xls" />
+      <file href="HEXCEL/Excel/jerarquia.xls" />
+      <file href="HEXCEL/Excel/Localiza.xls" />
+      <file href="HEXCEL/Excel/logicas.xls" />
+      <file href="HEXCEL/Excel/Matricial.xls" />
+      <file href="HEXCEL/Excel/MaxB.xls" />
+      <file href="HEXCEL/Excel/MaxMin.xls" />
+      <file href="HEXCEL/Excel/MediaMovil.xls" />
+      <file href="HEXCEL/Excel/mensualidad.xls" />
+      <file href="HEXCEL/Excel/Meses.xls" />
+      <file href="HEXCEL/Excel/minimoref.xls" />
+      <file href="HEXCEL/Excel/MinNo0.xls" />
+      <file href="HEXCEL/Excel/Mixtura.xls" />
+      <file href="HEXCEL/Excel/Montecarlo.xls" />
+      <file href="HEXCEL/Excel/Multiple.xls" />
+      <file href="HEXCEL/Excel/NoRepe.xls" />
+      <file href="HEXCEL/Excel/ordena.xls" />
+      <file href="HEXCEL/Excel/Parejas.xls" />
+      <file href="HEXCEL/Excel/pedidos.xls" />
+      <file href="HEXCEL/Excel/Prorrateo.xls" />
+      <file href="HEXCEL/Excel/RangoDinamico.xls" />
+      <file href="HEXCEL/Excel/Repes.xls" />
+      <file href="HEXCEL/Excel/Residuo.xls" />
+      <file href="HEXCEL/Excel/Residuo.xlsx" />
+      <file href="HEXCEL/Excel/reversion.xls" />
+      <file href="HEXCEL/Excel/RuidoBlanco.xls" />
+      <file href="HEXCEL/Excel/RuidoBlancoBolsa.xls" />
+      <file href="HEXCEL/Excel/selectivo.xls" />
+      <file href="HEXCEL/Excel/Solver.xls" />
+      <file href="HEXCEL/Excel/SumaCondi.xls" />
+      <file href="HEXCEL/Excel/SumarSI.xls" />
+      <file href="HEXCEL/Excel/TextoValor.xls" />
+      <file href="HEXCEL/Excel/TotalBuscarV.xls" />
+      <file href="HEXCEL/Excel/Ultimo.xls" />
+      <file href="HEXCEL/Excel/UnTercio.xls" />
+      <file href="HEXCEL/Excel/VA.xls" />
+      <file href="HEXCEL/Excel/Validacion.xls" />
+      <file href="HEXCEL/Excel/vinculo.xls" />
+      <file href="HEXCEL/Financieras/Amortiza.xls" />
+      <file href="HEXCEL/Financieras/Bonos.xls" />
+      <file href="HEXCEL/Financieras/CtaCte.xls" />
+      <file href="HEXCEL/Financieras/ECO2005jun.xls" />
+      <file href="HEXCEL/Financieras/ECOjun2006.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2005.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2006.xls" />
+      <file href="HEXCEL/Financieras/EjerciciosVarios.xls" />
+      <file href="HEXCEL/Financieras/ETTI.xls" />
+      <file href="HEXCEL/Financieras/Ex200505.xls" />
+      <file href="HEXCEL/Financieras/FRA.xls" />
+      <file href="HEXCEL/Financieras/FRA_CompVend.xls" />
+      <file href="HEXCEL/Financieras/GeoTotal.xls" />
+      <file href="HEXCEL/Financieras/inmunizacion.xls" />
+      <file href="HEXCEL/Financieras/LADE2005jun.xls" />
+      <file href="HEXCEL/Financieras/LADE21mayo2004.xls" />
+      <file href="HEXCEL/Financieras/LADEjun2006.xls" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.pdf" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.xls" />
+      <file href="HEXCEL/Financieras/LADEmayo2007.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2005.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2007.xls" />
+      <file href="HEXCEL/Financieras/Leasing.xls" />
+      <file href="HEXCEL/Financieras/LetrasTesoro.xls" />
+      <file href="HEXCEL/Financieras/Leyes.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004ECO.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004LADE.xls" />
+      <file href="HEXCEL/Financieras/MF01.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej1.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej2.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej3.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej4.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2004.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2005.xls" />
+      <file href="HEXCEL/Financieras/Opta04P1.xls" />
+      <file href="HEXCEL/Financieras/Opta04P2.xls" />
+      <file href="HEXCEL/Financieras/Opta04P3.xls" />
+      <file href="HEXCEL/Financieras/Opta04P4.xls" />
+      <file href="HEXCEL/Financieras/P01MF.xls" />
+      <file href="HEXCEL/Financieras/P02MF.xls" />
+      <file href="HEXCEL/Financieras/P03MF.xls" />
+      <file href="HEXCEL/Financieras/P04MF.xls" />
+      <file href="HEXCEL/Financieras/PrePos.xls" />
+      <file href="HEXCEL/Financieras/PrestaGeo.xls" />
+      <file href="HEXCEL/Financieras/prestamos.xls" />
+      <file href="HEXCEL/Financieras/Rentas.xls" />
+      <file href="HEXCEL/Financieras/SimpleCompuesta.xls" />
+      <file href="HEXCEL/Financieras/swap.xls" />
+      <file href="HEXCEL/Financieras/TantosEfectivos.xls" />
+      <file href="HEXCEL/Financieras/UCMjun05.xls" />
+      <file href="HEXCEL/Financieras/VanTir.xls" />
+      <file href="HEXCEL/Financieras/VarGeo.xls" />
+      <file href="HEXCEL/macros.htm" />
+      <file href="HEXCEL/Macros/600montecarlo.xls" />
+      <file href="HEXCEL/Macros/Abecedario.xls" />
+      <file href="HEXCEL/Macros/adivina.xls" />
+      <file href="HEXCEL/Macros/aLetras.xls" />
+      <file href="HEXCEL/Macros/Array.xls" />
+      <file href="HEXCEL/Macros/AutoCuadro.xls" />
+      <file href="HEXCEL/Macros/CalculoNIF.xls" />
+      <file href="HEXCEL/Macros/CeldaColor.xls" />
+      <file href="HEXCEL/Macros/CeldasVacias.xls" />
+      <file href="HEXCEL/Macros/ComparaValores.xls" />
+      <file href="HEXCEL/Macros/Compare.xls" />
+      <file href="HEXCEL/Macros/Completar.xls" />
+      <file href="HEXCEL/Macros/CompVtaBolsa.xls" />
+      <file href="HEXCEL/Macros/concilia.xls" />
+      <file href="HEXCEL/Macros/Consolidado.xls" />
+      <file href="HEXCEL/Macros/determinante.xls" />
+      <file href="HEXCEL/Macros/DigitoControl.xls" />
+      <file href="HEXCEL/Macros/e.xls" />
+      <file href="HEXCEL/Macros/EliminarValores.xls" />
+      <file href="HEXCEL/Macros/Expedientes.xls" />
+      <file href="HEXCEL/Macros/Fechador.xls" />
+      <file href="HEXCEL/Macros/FiltroBD.xls" />
+      <file href="HEXCEL/Macros/Formulario.xls" />
+      <file href="HEXCEL/Macros/FunPerso.xls" />
+      <file href="HEXCEL/Macros/GeneraRND.xls" />
+      <file href="HEXCEL/Macros/glosario.xls" />
+      <file href="HEXCEL/Macros/glosarioALL.xls" />
+      <file href="HEXCEL/Macros/Laborables.xls" />
+      <file href="HEXCEL/Macros/LimpiaFilas.xls" />
+      <file href="HEXCEL/Macros/ListaHojas.xls" />
+      <file href="HEXCEL/Macros/Localiza.xls" />
+      <file href="HEXCEL/Macros/Mac01.xls" />
+      <file href="HEXCEL/Macros/MacroPrestamo.xls" />
+      <file href="HEXCEL/Macros/MinRef.xls" />
+      <file href="HEXCEL/Macros/MuertosyHeridos.xls" />
+      <file href="HEXCEL/Macros/nacimiento.xls" />
+      <file href="HEXCEL/Macros/OnTime.xls" />
+      <file href="HEXCEL/Macros/PasaMatriz.xls" />
+      <file href="HEXCEL/Macros/permuta.xls" />
+      <file href="HEXCEL/Macros/piedras.xls" />
+      <file href="HEXCEL/Macros/primos.xls" />
+      <file href="HEXCEL/Macros/Residencia.xls" />
+      <file href="HEXCEL/Macros/RNDunicos.xls" />
+      <file href="HEXCEL/Macros/sumar.xls" />
+      <file href="HEXCEL/trucos.htm" />
+    </resource>
+    <resource identifier="RES-E4CC8EF85437130159E3BE4106584EA2" type="webcontent" href="HEXCEL/macros.htm">
+      <file href="HEXCEL/macros.htm" />
+      <file href="HEXCEL/default.htm" />
+      <file href="HEXCEL/excel.htm" />
+      <file href="HEXCEL/Excel/3D.xls" />
+      <file href="HEXCEL/Excel/Acumula.xls" />
+      <file href="HEXCEL/Excel/Aeropuertos.xls" />
+      <file href="HEXCEL/Excel/ajuste.xls" />
+      <file href="HEXCEL/Excel/Aritmetica.xls" />
+      <file href="HEXCEL/Excel/busquedas.xls" />
+      <file href="HEXCEL/Excel/calendario.xls" />
+      <file href="HEXCEL/Excel/Coincidencias.xls" />
+      <file href="HEXCEL/Excel/consolidar.xls" />
+      <file href="HEXCEL/Excel/ControlPagos.xls" />
+      <file href="HEXCEL/Excel/Convolucion.xls" />
+      <file href="HEXCEL/Excel/CriteriosYO.xls" />
+      <file href="HEXCEL/Excel/DiasSep.xls" />
+      <file href="HEXCEL/Excel/Distribuciones.xls" />
+      <file href="HEXCEL/Excel/DobleBuscarv.xls" />
+      <file href="HEXCEL/Excel/Dudas.xls" />
+      <file href="HEXCEL/Excel/fechas.xls" />
+      <file href="HEXCEL/Excel/Filtros.xls" />
+      <file href="HEXCEL/Excel/Formulario.xls" />
+      <file href="HEXCEL/Excel/gamma.xls" />
+      <file href="HEXCEL/Excel/HistoricoIBEX.xls" />
+      <file href="HEXCEL/Excel/Intervalos.xls" />
+      <file href="HEXCEL/Excel/jerarquia.xls" />
+      <file href="HEXCEL/Excel/Localiza.xls" />
+      <file href="HEXCEL/Excel/logicas.xls" />
+      <file href="HEXCEL/Excel/Matricial.xls" />
+      <file href="HEXCEL/Excel/MaxB.xls" />
+      <file href="HEXCEL/Excel/MaxMin.xls" />
+      <file href="HEXCEL/Excel/MediaMovil.xls" />
+      <file href="HEXCEL/Excel/mensualidad.xls" />
+      <file href="HEXCEL/Excel/Meses.xls" />
+      <file href="HEXCEL/Excel/minimoref.xls" />
+      <file href="HEXCEL/Excel/MinNo0.xls" />
+      <file href="HEXCEL/Excel/Mixtura.xls" />
+      <file href="HEXCEL/Excel/Montecarlo.xls" />
+      <file href="HEXCEL/Excel/Multiple.xls" />
+      <file href="HEXCEL/Excel/NoRepe.xls" />
+      <file href="HEXCEL/Excel/ordena.xls" />
+      <file href="HEXCEL/Excel/Parejas.xls" />
+      <file href="HEXCEL/Excel/pedidos.xls" />
+      <file href="HEXCEL/Excel/Prorrateo.xls" />
+      <file href="HEXCEL/Excel/RangoDinamico.xls" />
+      <file href="HEXCEL/Excel/Repes.xls" />
+      <file href="HEXCEL/Excel/Residuo.xls" />
+      <file href="HEXCEL/Excel/Residuo.xlsx" />
+      <file href="HEXCEL/Excel/reversion.xls" />
+      <file href="HEXCEL/Excel/RuidoBlanco.xls" />
+      <file href="HEXCEL/Excel/RuidoBlancoBolsa.xls" />
+      <file href="HEXCEL/Excel/selectivo.xls" />
+      <file href="HEXCEL/Excel/Solver.xls" />
+      <file href="HEXCEL/Excel/SumaCondi.xls" />
+      <file href="HEXCEL/Excel/SumarSI.xls" />
+      <file href="HEXCEL/Excel/TextoValor.xls" />
+      <file href="HEXCEL/Excel/TotalBuscarV.xls" />
+      <file href="HEXCEL/Excel/Ultimo.xls" />
+      <file href="HEXCEL/Excel/UnTercio.xls" />
+      <file href="HEXCEL/Excel/VA.xls" />
+      <file href="HEXCEL/Excel/Validacion.xls" />
+      <file href="HEXCEL/Excel/vinculo.xls" />
+      <file href="HEXCEL/financieras.htm" />
+      <file href="HEXCEL/Financieras/Amortiza.xls" />
+      <file href="HEXCEL/Financieras/Bonos.xls" />
+      <file href="HEXCEL/Financieras/CtaCte.xls" />
+      <file href="HEXCEL/Financieras/ECO2005jun.xls" />
+      <file href="HEXCEL/Financieras/ECOjun2006.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2005.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2006.xls" />
+      <file href="HEXCEL/Financieras/EjerciciosVarios.xls" />
+      <file href="HEXCEL/Financieras/ETTI.xls" />
+      <file href="HEXCEL/Financieras/Ex200505.xls" />
+      <file href="HEXCEL/Financieras/FRA.xls" />
+      <file href="HEXCEL/Financieras/FRA_CompVend.xls" />
+      <file href="HEXCEL/Financieras/GeoTotal.xls" />
+      <file href="HEXCEL/Financieras/inmunizacion.xls" />
+      <file href="HEXCEL/Financieras/LADE2005jun.xls" />
+      <file href="HEXCEL/Financieras/LADE21mayo2004.xls" />
+      <file href="HEXCEL/Financieras/LADEjun2006.xls" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.pdf" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.xls" />
+      <file href="HEXCEL/Financieras/LADEmayo2007.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2005.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2007.xls" />
+      <file href="HEXCEL/Financieras/Leasing.xls" />
+      <file href="HEXCEL/Financieras/LetrasTesoro.xls" />
+      <file href="HEXCEL/Financieras/Leyes.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004ECO.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004LADE.xls" />
+      <file href="HEXCEL/Financieras/MF01.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej1.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej2.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej3.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej4.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2004.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2005.xls" />
+      <file href="HEXCEL/Financieras/Opta04P1.xls" />
+      <file href="HEXCEL/Financieras/Opta04P2.xls" />
+      <file href="HEXCEL/Financieras/Opta04P3.xls" />
+      <file href="HEXCEL/Financieras/Opta04P4.xls" />
+      <file href="HEXCEL/Financieras/P01MF.xls" />
+      <file href="HEXCEL/Financieras/P02MF.xls" />
+      <file href="HEXCEL/Financieras/P03MF.xls" />
+      <file href="HEXCEL/Financieras/P04MF.xls" />
+      <file href="HEXCEL/Financieras/PrePos.xls" />
+      <file href="HEXCEL/Financieras/PrestaGeo.xls" />
+      <file href="HEXCEL/Financieras/prestamos.xls" />
+      <file href="HEXCEL/Financieras/Rentas.xls" />
+      <file href="HEXCEL/Financieras/SimpleCompuesta.xls" />
+      <file href="HEXCEL/Financieras/swap.xls" />
+      <file href="HEXCEL/Financieras/TantosEfectivos.xls" />
+      <file href="HEXCEL/Financieras/UCMjun05.xls" />
+      <file href="HEXCEL/Financieras/VanTir.xls" />
+      <file href="HEXCEL/Financieras/VarGeo.xls" />
+      <file href="HEXCEL/Macros/600montecarlo.xls" />
+      <file href="HEXCEL/Macros/Abecedario.xls" />
+      <file href="HEXCEL/Macros/adivina.xls" />
+      <file href="HEXCEL/Macros/aLetras.xls" />
+      <file href="HEXCEL/Macros/Array.xls" />
+      <file href="HEXCEL/Macros/AutoCuadro.xls" />
+      <file href="HEXCEL/Macros/CalculoNIF.xls" />
+      <file href="HEXCEL/Macros/CeldaColor.xls" />
+      <file href="HEXCEL/Macros/CeldasVacias.xls" />
+      <file href="HEXCEL/Macros/ComparaValores.xls" />
+      <file href="HEXCEL/Macros/Compare.xls" />
+      <file href="HEXCEL/Macros/Completar.xls" />
+      <file href="HEXCEL/Macros/CompVtaBolsa.xls" />
+      <file href="HEXCEL/Macros/concilia.xls" />
+      <file href="HEXCEL/Macros/Consolidado.xls" />
+      <file href="HEXCEL/Macros/determinante.xls" />
+      <file href="HEXCEL/Macros/DigitoControl.xls" />
+      <file href="HEXCEL/Macros/e.xls" />
+      <file href="HEXCEL/Macros/EliminarValores.xls" />
+      <file href="HEXCEL/Macros/Expedientes.xls" />
+      <file href="HEXCEL/Macros/Fechador.xls" />
+      <file href="HEXCEL/Macros/FiltroBD.xls" />
+      <file href="HEXCEL/Macros/Formulario.xls" />
+      <file href="HEXCEL/Macros/FunPerso.xls" />
+      <file href="HEXCEL/Macros/GeneraRND.xls" />
+      <file href="HEXCEL/Macros/glosario.xls" />
+      <file href="HEXCEL/Macros/glosarioALL.xls" />
+      <file href="HEXCEL/Macros/Laborables.xls" />
+      <file href="HEXCEL/Macros/LimpiaFilas.xls" />
+      <file href="HEXCEL/Macros/ListaHojas.xls" />
+      <file href="HEXCEL/Macros/Localiza.xls" />
+      <file href="HEXCEL/Macros/Mac01.xls" />
+      <file href="HEXCEL/Macros/MacroPrestamo.xls" />
+      <file href="HEXCEL/Macros/MinRef.xls" />
+      <file href="HEXCEL/Macros/MuertosyHeridos.xls" />
+      <file href="HEXCEL/Macros/nacimiento.xls" />
+      <file href="HEXCEL/Macros/OnTime.xls" />
+      <file href="HEXCEL/Macros/PasaMatriz.xls" />
+      <file href="HEXCEL/Macros/permuta.xls" />
+      <file href="HEXCEL/Macros/piedras.xls" />
+      <file href="HEXCEL/Macros/primos.xls" />
+      <file href="HEXCEL/Macros/Residencia.xls" />
+      <file href="HEXCEL/Macros/RNDunicos.xls" />
+      <file href="HEXCEL/Macros/sumar.xls" />
+      <file href="HEXCEL/trucos.htm" />
+    </resource>
+    <resource identifier="RES-DF3824D5CF4233BEE5472AC391CFA347" type="webcontent" href="HEXCEL/trucos.htm">
+      <file href="HEXCEL/trucos.htm" />
+      <file href="HEXCEL/default.htm" />
+      <file href="HEXCEL/excel.htm" />
+      <file href="HEXCEL/Excel/3D.xls" />
+      <file href="HEXCEL/Excel/Acumula.xls" />
+      <file href="HEXCEL/Excel/Aeropuertos.xls" />
+      <file href="HEXCEL/Excel/ajuste.xls" />
+      <file href="HEXCEL/Excel/Aritmetica.xls" />
+      <file href="HEXCEL/Excel/busquedas.xls" />
+      <file href="HEXCEL/Excel/calendario.xls" />
+      <file href="HEXCEL/Excel/Coincidencias.xls" />
+      <file href="HEXCEL/Excel/consolidar.xls" />
+      <file href="HEXCEL/Excel/ControlPagos.xls" />
+      <file href="HEXCEL/Excel/Convolucion.xls" />
+      <file href="HEXCEL/Excel/CriteriosYO.xls" />
+      <file href="HEXCEL/Excel/DiasSep.xls" />
+      <file href="HEXCEL/Excel/Distribuciones.xls" />
+      <file href="HEXCEL/Excel/DobleBuscarv.xls" />
+      <file href="HEXCEL/Excel/Dudas.xls" />
+      <file href="HEXCEL/Excel/fechas.xls" />
+      <file href="HEXCEL/Excel/Filtros.xls" />
+      <file href="HEXCEL/Excel/Formulario.xls" />
+      <file href="HEXCEL/Excel/gamma.xls" />
+      <file href="HEXCEL/Excel/HistoricoIBEX.xls" />
+      <file href="HEXCEL/Excel/Intervalos.xls" />
+      <file href="HEXCEL/Excel/jerarquia.xls" />
+      <file href="HEXCEL/Excel/Localiza.xls" />
+      <file href="HEXCEL/Excel/logicas.xls" />
+      <file href="HEXCEL/Excel/Matricial.xls" />
+      <file href="HEXCEL/Excel/MaxB.xls" />
+      <file href="HEXCEL/Excel/MaxMin.xls" />
+      <file href="HEXCEL/Excel/MediaMovil.xls" />
+      <file href="HEXCEL/Excel/mensualidad.xls" />
+      <file href="HEXCEL/Excel/Meses.xls" />
+      <file href="HEXCEL/Excel/minimoref.xls" />
+      <file href="HEXCEL/Excel/MinNo0.xls" />
+      <file href="HEXCEL/Excel/Mixtura.xls" />
+      <file href="HEXCEL/Excel/Montecarlo.xls" />
+      <file href="HEXCEL/Excel/Multiple.xls" />
+      <file href="HEXCEL/Excel/NoRepe.xls" />
+      <file href="HEXCEL/Excel/ordena.xls" />
+      <file href="HEXCEL/Excel/Parejas.xls" />
+      <file href="HEXCEL/Excel/pedidos.xls" />
+      <file href="HEXCEL/Excel/Prorrateo.xls" />
+      <file href="HEXCEL/Excel/RangoDinamico.xls" />
+      <file href="HEXCEL/Excel/Repes.xls" />
+      <file href="HEXCEL/Excel/Residuo.xls" />
+      <file href="HEXCEL/Excel/Residuo.xlsx" />
+      <file href="HEXCEL/Excel/reversion.xls" />
+      <file href="HEXCEL/Excel/RuidoBlanco.xls" />
+      <file href="HEXCEL/Excel/RuidoBlancoBolsa.xls" />
+      <file href="HEXCEL/Excel/selectivo.xls" />
+      <file href="HEXCEL/Excel/Solver.xls" />
+      <file href="HEXCEL/Excel/SumaCondi.xls" />
+      <file href="HEXCEL/Excel/SumarSI.xls" />
+      <file href="HEXCEL/Excel/TextoValor.xls" />
+      <file href="HEXCEL/Excel/TotalBuscarV.xls" />
+      <file href="HEXCEL/Excel/Ultimo.xls" />
+      <file href="HEXCEL/Excel/UnTercio.xls" />
+      <file href="HEXCEL/Excel/VA.xls" />
+      <file href="HEXCEL/Excel/Validacion.xls" />
+      <file href="HEXCEL/Excel/vinculo.xls" />
+      <file href="HEXCEL/financieras.htm" />
+      <file href="HEXCEL/Financieras/Amortiza.xls" />
+      <file href="HEXCEL/Financieras/Bonos.xls" />
+      <file href="HEXCEL/Financieras/CtaCte.xls" />
+      <file href="HEXCEL/Financieras/ECO2005jun.xls" />
+      <file href="HEXCEL/Financieras/ECOjun2006.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2005.xls" />
+      <file href="HEXCEL/Financieras/ECOsep2006.xls" />
+      <file href="HEXCEL/Financieras/EjerciciosVarios.xls" />
+      <file href="HEXCEL/Financieras/ETTI.xls" />
+      <file href="HEXCEL/Financieras/Ex200505.xls" />
+      <file href="HEXCEL/Financieras/FRA.xls" />
+      <file href="HEXCEL/Financieras/FRA_CompVend.xls" />
+      <file href="HEXCEL/Financieras/GeoTotal.xls" />
+      <file href="HEXCEL/Financieras/inmunizacion.xls" />
+      <file href="HEXCEL/Financieras/LADE2005jun.xls" />
+      <file href="HEXCEL/Financieras/LADE21mayo2004.xls" />
+      <file href="HEXCEL/Financieras/LADEjun2006.xls" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.pdf" />
+      <file href="HEXCEL/Financieras/LADEjunio2007.xls" />
+      <file href="HEXCEL/Financieras/LADEmayo2007.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2005.xls" />
+      <file href="HEXCEL/Financieras/LADEsep2007.xls" />
+      <file href="HEXCEL/Financieras/Leasing.xls" />
+      <file href="HEXCEL/Financieras/LetrasTesoro.xls" />
+      <file href="HEXCEL/Financieras/Leyes.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004ECO.xls" />
+      <file href="HEXCEL/Financieras/MatFinJunio2004LADE.xls" />
+      <file href="HEXCEL/Financieras/MF01.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej1.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej2.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej3.xls" />
+      <file href="HEXCEL/Financieras/MOF_Ej4.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2004.xls" />
+      <file href="HEXCEL/Financieras/MOFfeb2005.xls" />
+      <file href="HEXCEL/Financieras/Opta04P1.xls" />
+      <file href="HEXCEL/Financieras/Opta04P2.xls" />
+      <file href="HEXCEL/Financieras/Opta04P3.xls" />
+      <file href="HEXCEL/Financieras/Opta04P4.xls" />
+      <file href="HEXCEL/Financieras/P01MF.xls" />
+      <file href="HEXCEL/Financieras/P02MF.xls" />
+      <file href="HEXCEL/Financieras/P03MF.xls" />
+      <file href="HEXCEL/Financieras/P04MF.xls" />
+      <file href="HEXCEL/Financieras/PrePos.xls" />
+      <file href="HEXCEL/Financieras/PrestaGeo.xls" />
+      <file href="HEXCEL/Financieras/prestamos.xls" />
+      <file href="HEXCEL/Financieras/Rentas.xls" />
+      <file href="HEXCEL/Financieras/SimpleCompuesta.xls" />
+      <file href="HEXCEL/Financieras/swap.xls" />
+      <file href="HEXCEL/Financieras/TantosEfectivos.xls" />
+      <file href="HEXCEL/Financieras/UCMjun05.xls" />
+      <file href="HEXCEL/Financieras/VanTir.xls" />
+      <file href="HEXCEL/Financieras/VarGeo.xls" />
+      <file href="HEXCEL/macros.htm" />
+      <file href="HEXCEL/Macros/600montecarlo.xls" />
+      <file href="HEXCEL/Macros/Abecedario.xls" />
+      <file href="HEXCEL/Macros/adivina.xls" />
+      <file href="HEXCEL/Macros/aLetras.xls" />
+      <file href="HEXCEL/Macros/Array.xls" />
+      <file href="HEXCEL/Macros/AutoCuadro.xls" />
+      <file href="HEXCEL/Macros/CalculoNIF.xls" />
+      <file href="HEXCEL/Macros/CeldaColor.xls" />
+      <file href="HEXCEL/Macros/CeldasVacias.xls" />
+      <file href="HEXCEL/Macros/ComparaValores.xls" />
+      <file href="HEXCEL/Macros/Compare.xls" />
+      <file href="HEXCEL/Macros/Completar.xls" />
+      <file href="HEXCEL/Macros/CompVtaBolsa.xls" />
+      <file href="HEXCEL/Macros/concilia.xls" />
+      <file href="HEXCEL/Macros/Consolidado.xls" />
+      <file href="HEXCEL/Macros/determinante.xls" />
+      <file href="HEXCEL/Macros/DigitoControl.xls" />
+      <file href="HEXCEL/Macros/e.xls" />
+      <file href="HEXCEL/Macros/EliminarValores.xls" />
+      <file href="HEXCEL/Macros/Expedientes.xls" />
+      <file href="HEXCEL/Macros/Fechador.xls" />
+      <file href="HEXCEL/Macros/FiltroBD.xls" />
+      <file href="HEXCEL/Macros/Formulario.xls" />
+      <file href="HEXCEL/Macros/FunPerso.xls" />
+      <file href="HEXCEL/Macros/GeneraRND.xls" />
+      <file href="HEXCEL/Macros/glosario.xls" />
+      <file href="HEXCEL/Macros/glosarioALL.xls" />
+      <file href="HEXCEL/Macros/Laborables.xls" />
+      <file href="HEXCEL/Macros/LimpiaFilas.xls" />
+      <file href="HEXCEL/Macros/ListaHojas.xls" />
+      <file href="HEXCEL/Macros/Localiza.xls" />
+      <file href="HEXCEL/Macros/Mac01.xls" />
+      <file href="HEXCEL/Macros/MacroPrestamo.xls" />
+      <file href="HEXCEL/Macros/MinRef.xls" />
+      <file href="HEXCEL/Macros/MuertosyHeridos.xls" />
+      <file href="HEXCEL/Macros/nacimiento.xls" />
+      <file href="HEXCEL/Macros/OnTime.xls" />
+      <file href="HEXCEL/Macros/PasaMatriz.xls" />
+      <file href="HEXCEL/Macros/permuta.xls" />
+      <file href="HEXCEL/Macros/piedras.xls" />
+      <file href="HEXCEL/Macros/primos.xls" />
+      <file href="HEXCEL/Macros/Residencia.xls" />
+      <file href="HEXCEL/Macros/RNDunicos.xls" />
+      <file href="HEXCEL/Macros/sumar.xls" />
+    </resource>
+    <resource identifier="RES-9B434629EE9DEC72ADB950A40B470E93" type="webcontent" href="history/history.css">
+      <file href="history/history.css" />
+    </resource>
+    <resource identifier="RES-F836A3624BC9FC6420699680D9F1F7F4" type="webcontent" href="history/history.js">
+      <file href="history/history.js" />
+    </resource>
+    <resource identifier="RES-EC8573E5D32D47B6FDA58183F92B6AC0" type="webcontent" href="history/historyFrame.html">
+      <file href="history/historyFrame.html" />
+    </resource>
+    <resource identifier="RES-7F76BD1028209ECDC0DC4B4672538183" type="webcontent" href="Scripts/AC_RunActiveContent.js">
+      <file href="Scripts/AC_RunActiveContent.js" />
+    </resource>
+    <resource identifier="RES-A363BAF0A3BA513C0783F0B000E8F842" type="webcontent" href="Scripts/standard.js">
+      <file href="Scripts/standard.js" />
+    </resource>
+    <resource identifier="RES-4EA27E47A34701C9D01DAE4B6754196A" type="webcontent" href="swf/history.swf">
+      <file href="swf/history.swf" />
+    </resource>
+    <resource identifier="RES-87F20C9E3E47A58DA725A408F0FD2534" type="webcontent" href="swf/playerProductInstall.swf">
+      <file href="swf/playerProductInstall.swf" />
+    </resource>
+    <resource identifier="RES-BDB729888E29EC9EE5AF1C90C3FF5E4A" type="webcontent" href="swf/preloader.swf">
+      <file href="swf/preloader.swf" />
+    </resource>
+    <resource identifier="RES-80103B09AA90FD5C1F0CE792150F386B" type="webcontent" href="AC_OETags.js">
+      <file href="AC_OETags.js" />
+    </resource>
+    <resource identifier="RES-23FA40E247DCB15DA3AB650649DB7EE4" type="webcontent" href="adlcp_rootv1p2.xsd">
+      <file href="adlcp_rootv1p2.xsd" />
+    </resource>
+    <resource identifier="RES-3E493375EF85372E8BC5DBB9835CF16C" type="webcontent" href="history.htm">
+      <file href="history.htm" />
+    </resource>
+    <resource identifier="RES-68B71DC5B0DA1590D6EDD19558C93C45" type="webcontent" href="history.js">
+      <file href="history.js" />
+    </resource>
+    <resource identifier="RES-D274F6DE2EFCFF1C68C6A0A473365F50" type="webcontent" href="history.swf">
+      <file href="history.swf" />
+    </resource>
+    <resource identifier="RES-608AE54A64E4C08D0A99ECAC935F52FD" type="webcontent" href="imscp_rootv1p1p2.xsd">
+      <file href="imscp_rootv1p1p2.xsd" />
+    </resource>
+    <resource identifier="RES-24AF81008837FA335C65B3DDFEA9E878" type="webcontent" href="imsmanifest.xml">
+      <file href="imsmanifest.xml" />
+    </resource>
+    <resource identifier="RES-13E64AE55ABDCF343CBA2C5C64B03B87" type="webcontent" href="imsmd_rootv1p2p1.xsd">
+      <file href="imsmd_rootv1p2p1.xsd" />
+    </resource>
+    <resource identifier="RES-6F8331EE0A880761875A9EAEA02304BD" type="webcontent" href="ims_xml.xsd">
+      <file href="ims_xml.xsd" />
+    </resource>
+    <resource identifier="RES-FCE1F8E944D354281422EB3357BA72CD" type="webcontent" href="menu.xml">
+      <file href="menu.xml" />
+    </resource>
+    <resource identifier="RES-1597C05E405B2FA7AC6E8217EAC70FD5" type="webcontent" href="NAVIDAD.swf">
+      <file href="NAVIDAD.swf" />
+    </resource>
+    <resource identifier="RES-BE7D4C32AAC8B89CE1D543CB10DFE2AA" type="webcontent" href="playerProductInstall.swf">
+      <file href="playerProductInstall.swf" />
+    </resource>
+    <resource identifier="RES-2F301FC1918A5CA3B16EEF9F800F18D4" type="webcontent" href="SCORM_API_wrapper.js">
+      <file href="SCORM_API_wrapper.js" />
+    </resource>
+    <resource identifier="RES-F6642CD73851685B6BA3872039B295C2" type="webcontent" href="SkinUnderPlayStopSeekMuteVol.swf">
+      <file href="SkinUnderPlayStopSeekMuteVol.swf" />
+    </resource>
+    <resource identifier="RES-E874D7615295066D44124CD7E2DCE212" type="webcontent" href="styles.css">
+      <file href="styles.css" />
+    </resource>
+    <resource identifier="RES-87750D5E641BE4F616C651D707DE84AE" type="webcontent" href="swfobject.js">
+      <file href="swfobject.js" />
+    </resource>
+  </resources>
+</manifest>
+
