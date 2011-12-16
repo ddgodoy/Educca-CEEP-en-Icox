@@ -1,6 +1,6 @@
 prod:
   .settings:
-    no_script_name:           on
+    no_script_name:         on
 
 dev:
   .settings:
@@ -87,7 +87,7 @@ all:
 #    standard_helpers:       [Partial, Cache, Form]
 #
 #    # Activated modules from plugins or from the symfony core
-    enabled_modules:        [yzAjaxValidation, sfSimpleForum, sfCaptcha]
+    enabled_modules:        [yzAjaxValidation, sfSimpleForum, sfCaptcha, default]
 #
 #    # Charset used for the response
     charset:                utf-8
