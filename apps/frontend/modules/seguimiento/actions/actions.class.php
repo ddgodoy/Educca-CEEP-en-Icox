@@ -125,6 +125,130 @@ class seguimientoActions extends sfActions
            $this->curso = null;
           }
   }
+  /**
+   *
+   */
+  public function executeSeguimientoTiempos()
+  {
+    $c = new Criteria();
+    $this->cursos = CursoPeer::doSelect($c);
+    $this->idcurso = 0;
+
+    $usuarios = new Usuario();
+    
+    if ($this->getRequestParameter('idcurso'))
+    {
+      $this->idcurso = $this->getRequestParameter('idcurso');
+      $this->curso = CursoPeer::retrieveByPk($this->idcurso);
+      $this->forward404Unless($this->curso);
+      
+      $this->getUser()->comprobarPermiso($this->idcurso);
+      
+      if($this->curso->getMateriaId())
+      {
+        $materia = MateriaPeer::retrieveByPk($this->curso->getMateriaId());
+        $this->forward404Unless($this->curso);
+        
+        $this->num = $materia->getNumeroTemas();
+        $c2 = new Criteria();
+        $c2->addAscendingOrderByColumn(TemaPeer::NUMERO_TEMA);
+        $this->temas = $materia->getTemas($c2);
+        $c3 = new Criteria();
+        $c3->add(Sco12Peer::ID_MATERIA, $materia->getId());
+        $this->scos12 = Sco12Peer::doSelect($c3);
+        
+        $c2 = new Criteria();
+        if ($this->getUser()->hasCredential('supervisor') && ($this->getRequestParameter('idusuario')))
+        {
+          $usuario = UsuarioPeer::retrieveByPk($this->getRequestParameter('idusuario'));
+          $this->forward404Unless($usuario);
+          $c2->add(UsuarioPeer::ID,$this->getRequestParameter('idusuario'));
+          $this->idusuario=$this->getRequestParameter('idusuario');
+        }
+        else 
+        {
+          $c2->addAscendingOrderByColumn(UsuarioPeer::APELLIDOS);
+        }
+        $this->alumnos = $usuarios->getAlumnos($this->idcurso,$c2);
+      }
+    }     
+  }
+
+  public function executeEditarTiempos()
+  {
+      $this->usuario = UsuarioPeer::retrieveByPk($this->getRequestParameter('iduser'));
+      $this->materia = MateriaPeer::retrieveByPk($this->getRequestParameter('idmateria'));
+      $this->curso = CursoPeer::retrieveByPk($this->getRequestParameter('idcurso'));
+      $this->array_tiempo_ejercicios = array();
+      
+      /***************************************************Tiempo Tiempo teoria*/
+      
+      $c = new Criteria();
+      $c->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
+      $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->usuario->getId());
+      $c->addJoin(Sco12Peer::ID, Rel_usuario_sco12Peer::ID_SCO12);
+      $this->rel = Rel_usuario_sco12Peer::DoSelectOne($c);
+      
+      /***********************************************Tiempo Tiempo ejercicios*/
+      
+      $tareas = $this->curso->getTareas();
+
+      $tiempo=0;
+      foreach($tareas as $tarea)
+      {
+           
+           $c = new Criteria();
+           $c->add(Rel_usuario_tareaPeer::ID_USUARIO, $this->usuario->getId());
+           $c->add(Rel_usuario_tareaPeer::ID_TAREA, $tarea->getId());
+           $tareas_usuarios = Rel_usuario_tareaPeer::doSelect($c);
+          
+           foreach($tareas_usuarios as $tarea_usuario )
+           {
+             $c1 = new Criteria();
+             $c1->add(Ejercicio_resueltoPeer::ID_AUTOR, $this->usuario->getId());
+             $c1->add(Ejercicio_resueltoPeer::ID, $tarea_usuario->getIdEjercicioResuelto());
+
+             $tareas_resueltas = Ejercicio_resueltoPeer::doSelect($c1);
+
+             foreach($tareas_resueltas as $tarea_resuelta )
+             {
+               $k = $tarea_resuelta->getId();
+               $ejercicios = EjercicioPeer::retrieveByPK($tarea_resuelta->getIdEjercicio());
+               $this->array_tiempo_ejercicios[$k]['ejercicio'] = $ejercicios->getTitulo();
+               $this->array_tiempo_ejercicios[$k]['tiempo'] = $tarea_resuelta->getTiempo();
+               
+               $this->tiempo_total += $tarea_resuelta->getTiempo();
+             }
+           }
+           
+      }
+      if($this->getRequest()->getMethod() == sfRequest::POST)
+      {
+         $rel_session = traducir_scorm12_a_fecha($this->getRequestParameter('rel_session',''));
+         $rel_total_time = traducir_scorm12_a_fecha($this->getRequestParameter('rel_total_time',''));
+         $ejercicios_request = $this->getRequestParameter('ejercicio','');
+
+         if($rel_session!='' && $rel_total_time!='')
+         {
+             $this->rel->setSessionTime($rel_session);
+             $this->rel->setTotalTime($rel_total_time);
+             $this->rel->save();
+         }
+
+         if($ejercicios_request!='')
+         {
+             foreach ($ejercicios_request as $k=>$v)
+             {
+                $new_time=Ejercicio_resueltoPeer::retrieveByPK($k);
+                $new_time->setTiempo($v);
+                $new_time->save();
+             }
+         }
+
+         $this->getUser()->setAttribute('notice', 'Los tiempos fueron actualizados');
+         $this->redirect('/seguimiento/editarTiempos?idcurso='.$this->curso->getId().'&iduser='.$this->usuario->getId().'&idmateria='.$this->curso->getMateriaId());
+      }
+  }
 
   // Nombre del m�todo: executeOrdenar()
   // A�adida por: Jacobo Chaquet
