@@ -31,7 +31,7 @@
 			document.getElementById('contenido_wrap').style.height= 'auto';//tamano_contenido+'px';
 		}
 		if (tamano_pantalla > tamano_contenido ){
-			//el contenido es mas pequeño que la pantalla
+			//el contenido es mas pequeï¿½o que la pantalla
 			alert('op2');
 			document.getElementById('contenido_wrap').style.height= tamano_pantalla+'px';
 		}
@@ -71,6 +71,9 @@
 	                    <?php if (has_slot('columna_derecha')): ?>
 	                    	<?php include_slot('columna_derecha') ?>
 	                    <?php endif; ?>
+                            <?php if($sf_user->hasCredential('administrador') && !$sf_request->getParameter('idusuario') && $sf_request->getParameter('action')=='mostrarPerfil'): ?>
+                                <?php  echo link_to('Control de tiempos >>', '/seguimiento/seguimientoTiempos',array('style'=>'float:none;'))?>
+                            <?php endif; ?>
 	              </div> <!-- fin col3 -->
 	          </div>
           </div>
@@ -84,7 +87,7 @@
     'frequency' => 180,
     'update'    => 'usuarioValido',
     'url'       => 'login/usuarioValido',
-    401 => "alert ('Alguien ha entrado con su usuario desde otro ordenador, y ha finalizado su sesión.');document.location='/';",
+    401 => "alert ('Alguien ha entrado con su usuario desde otro ordenador, y ha finalizado su sesiï¿½n.');document.location='/';",
 )) ?>
 
  <?php include_partial('online/javascript_periodico') ;?>
