@@ -1113,8 +1113,6 @@ class Usuario extends BaseUsuario
     else return 0;
   }
 
-
-
   /**
   *
   * @name         getTiempoTotalTeoria($id_curso)
