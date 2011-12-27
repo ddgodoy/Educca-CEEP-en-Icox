@@ -10,16 +10,19 @@ class myUser extends sfBasicSecurityUser
   {
     if (!$this->hasCredential('supervisor')) 
     {
-      $usuario = UsuarioPeer::retrieveByPk($this->getAnyId());
-      if (!$usuario) 
+      if(!$this->hasCredential('administrador'))
       {
-        $this->getContext()->getController()->forward('login','logout');
-      }
-      
-      $permiso = $usuario->perteneceAcurso($curso);
-      if (!$permiso) 
-      {
-        $this->getContext()->getController()->forward('login','logout');
+          $usuario = UsuarioPeer::retrieveByPk($this->getAnyId());
+          if (!$usuario)
+          {
+            $this->getContext()->getController()->forward('login','logout');
+          }
+
+          $permiso = $usuario->perteneceAcurso($curso);
+          if (!$permiso)
+          {
+            $this->getContext()->getController()->forward('login','logout');
+          }
       }
     }
   }

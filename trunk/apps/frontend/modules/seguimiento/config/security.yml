@@ -10,6 +10,10 @@ seguimientoTemas:
   is_secure:    on
   credentials: [[ profesor, supervisor ]]
 
+seguimientoTiempos:
+  is_secure: on
+  credential: [[administrador]]
+
 all:
   is_secure:    on
-  credentials:  [[ alumno, profesor, supervisor ]]
+  credentials:  [[ alumno, profesor, supervisor, administrador]]
