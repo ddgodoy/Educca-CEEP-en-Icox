@@ -72,7 +72,11 @@
 	                    	<?php include_slot('columna_derecha') ?>
 	                    <?php endif; ?>
                             <?php if($sf_user->hasCredential('administrador') && !$sf_request->getParameter('idusuario') && $sf_request->getParameter('action')=='mostrarPerfil'): ?>
-                                <?php  echo link_to('Control de tiempos >>', '/seguimiento/seguimientoTiempos',array('style'=>'float:none;'))?>
+                              <div style="padding-left: 15px">
+                                <?php  echo link_to('Control de tiempos >>', '/seguimiento/seguimientoTiempos',array('style'=>'float:left;'))?>
+                                <br/>
+                                <?php  echo link_to('Auditoría a "Supervisor SRE" >>', '/seguimiento/seguimientoTiempos',array('style'=>'float:left;'))?>
+                              </div>
                             <?php endif; ?>
 	              </div> <!-- fin col3 -->
 	          </div>
