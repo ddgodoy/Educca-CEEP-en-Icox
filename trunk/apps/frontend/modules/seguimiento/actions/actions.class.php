@@ -14,8 +14,6 @@ class seguimientoActions extends sfActions
    * Executes index action
    *
    */
-
-
   // Nombre del m�todo: executeIndex()
   // A�adida por: Santiago Mart�nez de la Riva
   /* Descripci�n: muestra la pantalla inicial del seguimiento de los alumnos para un curso.
@@ -248,6 +246,11 @@ class seguimientoActions extends sfActions
          $this->getUser()->setAttribute('notice', 'Los tiempos fueron actualizados');
          $this->redirect('/seguimiento/editarTiempos?idcurso='.$this->curso->getId().'&iduser='.$this->usuario->getId().'&idmateria='.$this->curso->getMateriaId());
       }
+  }
+
+  public function executeAuditoriaSRE()
+  {
+      
   }
 
   // Nombre del m�todo: executeOrdenar()
