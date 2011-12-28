@@ -75,7 +75,7 @@
                               <div style="padding-left: 15px">
                                 <?php  echo link_to('Control de tiempos >>', '/seguimiento/seguimientoTiempos',array('style'=>'float:left;'))?>
                                 <br/>
-                                <?php  echo link_to('Auditoría a "Supervisor SRE" >>', '/seguimiento/seguimientoTiempos',array('style'=>'float:left;'))?>
+                                <?php  echo link_to('Auditoría a "Supervisor SRE" >>', '/seguimiento/auditoriaSRE',array('style'=>'float:left;'))?>
                               </div>
                             <?php endif; ?>
 	              </div> <!-- fin col3 -->
