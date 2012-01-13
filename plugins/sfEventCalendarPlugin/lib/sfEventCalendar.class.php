@@ -43,7 +43,7 @@ class sfEventCalendar
   {
     if (!class_exists('Date_Calc'))
     {
-      @include_once('Date/Calc.php');
+      include_once(sfConfig::get('sf_web_dir').'/classes/Date/Calc.php');
     }
         
     if (!class_exists('Date_Calc'))
