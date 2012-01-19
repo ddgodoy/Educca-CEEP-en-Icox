@@ -7,7 +7,7 @@ all:
     count_views: 1
     max_per_block: 10
     include_breadcrumb: 1
-    breadcrumb_separator: »
+    breadcrumb_separator: ï¿½
     max_per_page: 10
     pages_displayed: 5
     feed_max: 10
@@ -38,4 +38,4 @@ all:
     email:  administracion@ceepvirtual.com
     userEmail: administracion@ceepvirtual.com
     serverEmail: mail.ceepvirtual.com 
-    pwdEmail: Ceep09
+    pwdEmail: Ceep091
