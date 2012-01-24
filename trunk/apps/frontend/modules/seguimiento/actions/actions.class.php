@@ -156,7 +156,7 @@ class seguimientoActions extends sfActions
         $this->scos12 = Sco12Peer::doSelect($c3);
         
         $c2 = new Criteria();
-        if ($this->getUser()->hasCredential('supervisor') && ($this->getRequestParameter('idusuario')))
+        /*if ($this->getUser()->hasCredential('supervisor') && ($this->getRequestParameter('idusuario')))
         {
           $usuario = UsuarioPeer::retrieveByPk($this->getRequestParameter('idusuario'));
           $this->forward404Unless($usuario);
@@ -164,9 +164,9 @@ class seguimientoActions extends sfActions
           $this->idusuario=$this->getRequestParameter('idusuario');
         }
         else 
-        {
+        {*/
           $c2->addAscendingOrderByColumn(UsuarioPeer::APELLIDOS);
-        }
+        /*}*/
         $this->alumnos = $usuarios->getAlumnos($this->idcurso,$c2);
       }
     }     
