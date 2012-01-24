@@ -1033,6 +1033,7 @@ class Usuario extends BaseUsuario
     } // switch
 
     $mail->setMailer('smtp');
+    $mail->setPort('587');
 
     $mail->setHostname(sfConfig::get('app_empresa_serverEmail'));
     $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
