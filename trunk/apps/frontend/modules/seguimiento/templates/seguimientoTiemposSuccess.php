@@ -49,7 +49,7 @@
   <div class="listado_tabla_general">
     <?php $col = 0 ?>
     <table class="tablaseg">
-     <?php if ($curso->getMateria()->esCompo()): ?>
+     <?php /*if ($curso->getMateria()->esCompo()):*/ ?>
      <? if ($alumnos) : ?>
       <?php foreach($alumnos as $alumno) : ?>
         <?php $fondo1 = (($col % 2 == 0))? "id=\"filarayada\"" : ""; ?>
@@ -81,7 +81,7 @@
     <?php if (!$alumnos) :?>
       <? echoWarning('Aviso', "No se puede hacer el seguimiento, no hay alumnos en el curso"); ?>
     <?php endif;?>
-    <?php endif; ?>
+    <?php /*endif; */ ?>
   </div>
 
     <br><?php echoNotaInformativa('Ayuda', 'Esta tabla le muestra el tiempo dedicado por los alumnos a cada tema y el estado de avance del alumno en el tema. Tambi&eacute;n <b>podr&aacute; acceder a las <u>gr&aacute;ficas de seguimiento</u> pinchando sobre los nombres de los alumnos</b>.<br/>
