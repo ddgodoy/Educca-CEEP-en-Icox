@@ -15,7 +15,7 @@
     <div class="herramientas_general">
       <br>
         <div>
-            <?php echo form_tag('/seguimiento/editarTiempos?idcurso='.$curso->getId().'&iduser='.$usuario->getId().'&idmateria='.$curso->getMateriaId(),array('method'=>'post')); ?>
+         <?php echo form_tag('/seguimiento/editarTiempos?idcurso='.$curso->getId().'&iduser='.$usuario->getId().'&idmateria='.$curso->getMateriaId(),array('method'=>'post')); ?>
             <table style="text-align: left;">
                   <tr>
                     <td><strong>Nombre del alumno: &nbsp;&nbsp;&nbsp;</strong></td>
@@ -29,9 +29,43 @@
                     <td style="width: 46%">Curso: &nbsp;&nbsp;&nbsp;</td>
                     <td><?php echo $materia->getNombre();?></td>
                   </tr>
+                  <tr>
+                      <td style="height: 10px;  "></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2">
+                          <fieldset style="width: 145%; padding-left: 10px;">
+                              <legend>Relacionar ejercicos con alumno</legend>
+                              <table style="text-align: left; width: 100%" >
+                                  <tr>
+                                      <td style="height: 10px;  "></td>
+                                  </tr>
+                                  <tr>
+                                      <td>Ejercicios por curso:</td>
+                                      <td>
+                                          <select id="filtro" name="id-ejercicio-relacion" class="select_general" >
+                                                <option value="0">--Seleccionar ejercicios--</option>
+                                                <?php foreach($ejercicios_array as $k=>$v):?>
+                                                    <option value="<?php echo $k; ?>" ><?php echo $v['titulo']; ?></option>
+                                                <?php endforeach;?>
+                                          </select>
+                                      </td>
+                                      <td>
+                                          <?php echo sexy_submit_tag('Relacionar con Alumno'); ?>
+                                      </td>
+                                  </tr>
+                                  <tr>
+                                      <td style="height: 10px;  "></td>
+                                  </tr>
+                              </table>
+                        </fieldset>
+                      </td>
+                  </tr>
             </table>
+            </form>
             <?php if($rel): ?>
             <br/>
+            <?php echo form_tag('/seguimiento/editarTiempos?idcurso='.$curso->getId().'&iduser='.$usuario->getId().'&idmateria='.$curso->getMateriaId(),array('method'=>'post')); ?>
             <table style="text-align: left;">
                   <tr>
                       <td><b>Tiempo teor&iacute;a</b></td>
@@ -62,37 +96,8 @@
                       <td style="height: 10px;  "></td>
                   </tr>
                   <tr>
-                      <td colspan="2">
-                          <fieldset style="width: 145%">
-                          <table style="text-align: left; width: 100%" >
-                              <tr>
-                                  <td style="height: 10px;  "></td>
-                              </tr>
-                              <tr>
-                                  <td>Ejercicios por curso:</td>
-                                  <td>
-                                      <select id="filtro" name="idcurso" class="select_general" >
-                                            <option value="0">--Seleccionar ejercicios--</option>
-                                            <?php foreach($ejercicios_array as $k=>$v):?>
-                                                <option value="<?php echo $k; ?>" ><?php echo $v['titulo']; ?></option>
-                                            <?php endforeach;?>
-                                      </select>
-                                  </td>
-                                  <td>
-                                      <?php echo sexy_submit_tag('Relacionar con Alumno'); ?>
-                                  </td>
-                              </tr>
-                              <tr>
-                                  <td style="height: 10px;  "></td>
-                              </tr>
-                          </table>
-                        </fieldset>
-                      </td>
-                  </tr>
-                  
-                  <tr>
                       <td>
-                          
+
                       </td>
                   </tr>
                   <?php if($array_tiempo_ejercicios): ?>
@@ -101,12 +106,12 @@
                           <td style="height: 10px;  "></td>
                       </tr>
                       <tr>
-                          <td style="width: 37%"><?php echo $v['ejercicio'] ?>: </td>
+                          <td style="width: 45%"><?php echo $v['ejercicio'] ?>: </td>
                           <td><input type="text" name="ejercicio[<?php echo $k?>]" value="<?php echo $v['tiempo'] ?>"/></td>
                       </tr>
                     <?php endforeach; ?>
                   <?php endif; ?>
-             </table> 
+             </table>
              <br/>
              <table>
                       <tr>
