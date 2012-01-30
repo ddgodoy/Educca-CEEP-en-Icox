@@ -194,16 +194,17 @@ class seguimientoActions extends sfActions
       $tiempo=0;
       foreach($tareas as $tarea)
       {
-
            $ejercicio = EjercicioPeer::retrieveByPK($tarea->getIdEjercicio());
 
            $this->ejercicios_array[$ejercicio->getId()]['titulo'] = $ejercicio->getTitulo();
-
+      }
+      foreach($tareas as $tarea)
+      {
            $c = new Criteria();
            $c->add(Rel_usuario_tareaPeer::ID_USUARIO, $this->usuario->getId());
            $c->add(Rel_usuario_tareaPeer::ID_TAREA, $tarea->getId());
            $tareas_usuarios = Rel_usuario_tareaPeer::doSelect($c);
-          
+
            foreach($tareas_usuarios as $tarea_usuario )
            {
              $c1 = new Criteria();
@@ -216,40 +217,85 @@ class seguimientoActions extends sfActions
              {
                $k = $tarea_resuelta->getId();
                $ejercicios = EjercicioPeer::retrieveByPK($tarea_resuelta->getIdEjercicio());
-               unset ($this->ejercicios_array[$tarea_resuelta->getIdEjercicio()]);
+               $id_ejer = $tarea_resuelta->getIdEjercicio();
+               if(!empty($this->ejercicios_array[$id_ejer]))
+               {
+                unset($this->ejercicios_array[$id_ejer]);
+               }
                $this->array_tiempo_ejercicios[$k]['ejercicio'] = $ejercicios->getTitulo();
                $this->array_tiempo_ejercicios[$k]['tiempo'] = $tarea_resuelta->getTiempo();
                
                $this->tiempo_total += $tarea_resuelta->getTiempo();
+
              }
            }
+
            
       }
-      
       if($this->getRequest()->getMethod() == sfRequest::POST)
       {
+
          $rel_session = traducir_scorm12_a_fecha($this->getRequestParameter('rel_session',''));
          $rel_total_time = traducir_scorm12_a_fecha($this->getRequestParameter('rel_total_time',''));
-         $ejercicios_request = $this->getRequestParameter('ejercicio','');
 
-         if($rel_session!='' && $rel_total_time!='')
+         if($this->getRequestParameter('id-ejercicio-relacion'))
          {
-             $this->rel->setSessionTime($rel_session);
-             $this->rel->setTotalTime($rel_total_time);
-             $this->rel->save();
-         }
+             $c3 = new Criteria();
+             $c3->add(Rel_usuario_rol_cursoPeer::ID_CURSO,$this->curso->getId());
+             $c3->add(Rel_usuario_rol_cursoPeer::ID_ROL, 2);
+             $profesor = Rel_usuario_rol_cursoPeer::doSelectOne($c3);
 
-         if($ejercicios_request!='')
+
+
+             $ejercicio = EjercicioPeer::retrieveByPK($this->getRequestParameter('id-ejercicio-relacion'));
+
+             $c4 = new Criteria();
+             $c4->add(TareaPeer::ID_EJERCICIO,$ejercicio->getId());
+             $c4->add(TareaPeer::ID_CURSO,$this->curso->getId());
+             $tarea_ejercicio = TareaPeer::doSelectOne($c4);
+
+
+             $ejer_resuelto = new Ejercicio_resuelto();
+             $ejer_resuelto->setIdAutor($this->usuario->getId());
+             $ejer_resuelto->setIdEjercicio($ejercicio->getId());
+             $ejer_resuelto->setIdCorrector($profesor->getIdUsuario());
+             $ejer_resuelto->setIdCurso($this->curso->getId());
+             $ejer_resuelto->save();
+
+             $rel_usuario_tarea = new Rel_usuario_tarea();
+             $rel_usuario_tarea->setIdUsuario($this->usuario->getId());
+             $rel_usuario_tarea->setIdTarea($tarea_ejercicio->getId());
+             $rel_usuario_tarea->setIdEjercicioResuelto($ejer_resuelto->getId());
+             $rel_usuario_tarea->setEntregada(1);
+             $rel_usuario_tarea->setCorregida(1);
+             $rel_usuario_tarea->save();
+
+             $this->getUser()->setAttribute('notice', 'El alumno fue relacionado con el curso');
+
+         }
+         else
          {
-             foreach ($ejercicios_request as $k=>$v)
-             {
-                $new_time=Ejercicio_resueltoPeer::retrieveByPK($k);
-                $new_time->setTiempo($v);
-                $new_time->save();
-             }
-         }
+                 $ejercicios_request = $this->getRequestParameter('ejercicio','');
 
-         $this->getUser()->setAttribute('notice', 'Los tiempos fueron actualizados');
+                 if($rel_session!='' && $rel_total_time!='')
+                 {
+                     $this->rel->setSessionTime($rel_session);
+                     $this->rel->setTotalTime($rel_total_time);
+                     $this->rel->save();
+                 }
+
+                 if($ejercicios_request!='')
+                 {
+                     foreach ($ejercicios_request as $k=>$v)
+                     {
+                        $new_time=Ejercicio_resueltoPeer::retrieveByPK($k);
+                        $new_time->setTiempo($v);
+                        $new_time->save();
+                     }
+                 }
+
+                 $this->getUser()->setAttribute('notice', 'Los tiempos fueron actualizados');      
+         }
          $this->redirect('/seguimiento/editarTiempos?idcurso='.$this->curso->getId().'&iduser='.$this->usuario->getId().'&idmateria='.$this->curso->getMateriaId());
       }
   }
