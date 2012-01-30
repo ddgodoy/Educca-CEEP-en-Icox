@@ -188,13 +188,17 @@ class seguimientoActions extends sfActions
       $this->rel = Rel_usuario_sco12Peer::DoSelectOne($c);
       
       /***********************************************Tiempo Tiempo ejercicios*/
-      
+      $this->ejercicios_array = array();
       $tareas = $this->curso->getTareas();
 
       $tiempo=0;
       foreach($tareas as $tarea)
       {
-           
+
+           $ejercicio = EjercicioPeer::retrieveByPK($tarea->getIdEjercicio());
+
+           $this->ejercicios_array[$ejercicio->getId()]['titulo'] = $ejercicio->getTitulo();
+
            $c = new Criteria();
            $c->add(Rel_usuario_tareaPeer::ID_USUARIO, $this->usuario->getId());
            $c->add(Rel_usuario_tareaPeer::ID_TAREA, $tarea->getId());
@@ -212,6 +216,7 @@ class seguimientoActions extends sfActions
              {
                $k = $tarea_resuelta->getId();
                $ejercicios = EjercicioPeer::retrieveByPK($tarea_resuelta->getIdEjercicio());
+               unset ($this->ejercicios_array[$tarea_resuelta->getIdEjercicio()]);
                $this->array_tiempo_ejercicios[$k]['ejercicio'] = $ejercicios->getTitulo();
                $this->array_tiempo_ejercicios[$k]['tiempo'] = $tarea_resuelta->getTiempo();
                
@@ -220,6 +225,7 @@ class seguimientoActions extends sfActions
            }
            
       }
+      
       if($this->getRequest()->getMethod() == sfRequest::POST)
       {
          $rel_session = traducir_scorm12_a_fecha($this->getRequestParameter('rel_session',''));

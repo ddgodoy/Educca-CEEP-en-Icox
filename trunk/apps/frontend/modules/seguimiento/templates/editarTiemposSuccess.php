@@ -26,7 +26,7 @@
                     <td>&nbsp;</td>
                   </tr>
                   <tr>
-                    <td style="width: 46%">Materia: &nbsp;&nbsp;&nbsp;</td>
+                    <td style="width: 46%">Curso: &nbsp;&nbsp;&nbsp;</td>
                     <td><?php echo $materia->getNombre();?></td>
                   </tr>
             </table>
@@ -52,23 +52,61 @@
                   </tr>
             </table>
             <?php endif; ?>
-            <?php if($array_tiempo_ejercicios): ?>
+            
             <br/>
             <table style="text-align: left;">
                   <tr>
                       <td><b>Tiempo ejercicios</b></td>
                   </tr>
+                  <tr>
+                      <td style="height: 10px;  "></td>
+                  </tr>
+                  <tr>
+                      <td colspan="2">
+                          <fieldset style="width: 145%">
+                          <table style="text-align: left; width: 100%" >
+                              <tr>
+                                  <td style="height: 10px;  "></td>
+                              </tr>
+                              <tr>
+                                  <td>Ejercicios por curso:</td>
+                                  <td>
+                                      <select id="filtro" name="idcurso" class="select_general" >
+                                            <option value="0">--Seleccionar ejercicios--</option>
+                                            <?php foreach($ejercicios_array as $k=>$v):?>
+                                                <option value="<?php echo $k; ?>" ><?php echo $v['titulo']; ?></option>
+                                            <?php endforeach;?>
+                                      </select>
+                                  </td>
+                                  <td>
+                                      <?php echo sexy_submit_tag('Relacionar con Alumno'); ?>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td style="height: 10px;  "></td>
+                              </tr>
+                          </table>
+                        </fieldset>
+                      </td>
+                  </tr>
+                  
+                  <tr>
+                      <td>
+                          
+                      </td>
+                  </tr>
+                  <?php if($array_tiempo_ejercicios): ?>
                     <?php foreach ($array_tiempo_ejercicios as $k=>$v): ?>
                       <tr>
                           <td style="height: 10px;  "></td>
                       </tr>
                       <tr>
-                          <td style="width: 45%"><?php echo $v['ejercicio'] ?>: </td>
+                          <td style="width: 37%"><?php echo $v['ejercicio'] ?>: </td>
                           <td><input type="text" name="ejercicio[<?php echo $k?>]" value="<?php echo $v['tiempo'] ?>"/></td>
                       </tr>
                     <?php endforeach; ?>
-             </table>
-             <?php endif; ?>
+                  <?php endif; ?>
+             </table> 
              <br/>
              <table>
                       <tr>
