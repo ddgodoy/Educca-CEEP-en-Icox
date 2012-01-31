@@ -178,6 +178,7 @@ class seguimientoActions extends sfActions
       $this->materia = MateriaPeer::retrieveByPk($this->getRequestParameter('idmateria'));
       $this->curso = CursoPeer::retrieveByPk($this->getRequestParameter('idcurso'));
       $this->array_tiempo_ejercicios = array();
+      $this->array_tiempos_teoria = array('rel_session'=>'0','rel_total_time'=>'0');
       
       /***************************************************Tiempo Tiempo teoria*/
       
@@ -185,7 +186,13 @@ class seguimientoActions extends sfActions
       $c->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
       $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->usuario->getId());
       $c->addJoin(Sco12Peer::ID, Rel_usuario_sco12Peer::ID_SCO12);
-      $this->rel = Rel_usuario_sco12Peer::DoSelectOne($c);
+      $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
+
+      if($rel)
+      {
+         $this->array_tiempos_teoria['rel_session']=$rel->getSessionTime();
+         $this->array_tiempos_teoria['rel_total_time']=$rel->getTotalTime();
+      }
       
       /***********************************************Tiempo Tiempo ejercicios*/
       $this->ejercicios_array = array();
@@ -277,11 +284,27 @@ class seguimientoActions extends sfActions
          {
                  $ejercicios_request = $this->getRequestParameter('ejercicio','');
 
+                 
+
+                 if(!$rel)
+                 {
+                     $c5 = new Criteria();
+                     $c5->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
+                     $Sco12 = Sco12Peer::doSelectOne($c5);
+
+                     $rel = new Rel_usuario_sco12();
+                     $rel->setIdSco12($Sco12->getId());
+                     $rel->setIdUsuario($this->usuario->getId());
+                     $rel->setLessonStatus('passed');
+                     $rel->setEntry('ab-initio');
+                     $rel->save();
+
+                 }
                  if($rel_session!='' && $rel_total_time!='')
                  {
-                     $this->rel->setSessionTime($rel_session);
-                     $this->rel->setTotalTime($rel_total_time);
-                     $this->rel->save();
+                     $rel->setSessionTime($rel_session);
+                     $rel->setTotalTime($rel_total_time);
+                     $rel->save();
                  }
 
                  if($ejercicios_request!='')
