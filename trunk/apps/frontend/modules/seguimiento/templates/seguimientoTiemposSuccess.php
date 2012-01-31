@@ -60,12 +60,9 @@
             <td style="width: 15%; text-align: center"><?php echoTiempo($alumno->getUsuario()->tiempoTotalTeoriaScorm($curso->getMateriaId()));?></td>
             <td style="width: 15%; text-align: center"><?php echoTiempo($alumno->getUsuario()->tiempoEjercicios($curso->getId())); ?></td>
             <td style="width: 15%; text-align: center"><?php echoTiempo($alumno->getUsuario()->tiempoEjercicios($curso->getId())+$alumno->getUsuario()->tiempoTotalTeoriaScorm($curso->getMateriaId())); ?></td>
-            <td style="width: 5%; text-align: center">
-               <?php if(isEditableTime($alumno->getUsuario()->getId(),$curso->getId())): ?>
-                    <?php echo link_to(image_tag('icon_edit.gif','Alt="Editar/modificar Tiempos" Title="Editar/modificar Tiempos" align="absmiddle"'),'/seguimiento/editarTiempos?idcurso='.$curso->getId().'&iduser='.$alumno->getUsuario()->getId().'&idmateria='.$curso->getMateriaId()) ?>
-               <?php endif; ?>
+            <td style="width: 5%; text-align: center"> 
+              <?php echo link_to(image_tag('icon_edit.gif','Alt="Editar/modificar Tiempos" Title="Editar/modificar Tiempos" align="absmiddle"'),'/seguimiento/editarTiempos?idcurso='.$curso->getId().'&iduser='.$alumno->getUsuario()->getId().'&idmateria='.$curso->getMateriaId()) ?>
             </td>
-            
         </tr>
         <?php $col++; ?>
       <?php endforeach; ?>

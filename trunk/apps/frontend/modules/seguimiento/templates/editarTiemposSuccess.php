@@ -63,7 +63,6 @@
                   </tr>
             </table>
             </form>
-            <?php if($rel): ?>
             <br/>
             <?php echo form_tag('/seguimiento/editarTiempos?idcurso='.$curso->getId().'&iduser='.$usuario->getId().'&idmateria='.$curso->getMateriaId(),array('method'=>'post')); ?>
             <table style="text-align: left;">
@@ -75,18 +74,16 @@
                   </tr>
                   <tr>
                       <td style="width: 45%">Tiempo de sesion: </td>
-                      <td><input type="text" name="rel_session" value="<?php echo traducir_de_fecha_scorm12($rel->getSessionTime()) ?>"/></td>
+                      <td><input type="text" name="rel_session" value="<?php echo traducir_de_fecha_scorm12($array_tiempos_teoria['rel_session']) ?>"/></td>
                   </tr>
                   <tr>
                       <td style="height: 10px;  "></td>
                   </tr>
                   <tr>
                       <td style="width: 45%">Tiempo Total participado: </td>
-                      <td><input type="text" name="rel_total_time" value="<?php echo traducir_de_fecha_scorm12($rel->getTotalTime()) ?>"/></td>
+                      <td><input type="text" name="rel_total_time" value="<?php echo traducir_de_fecha_scorm12($array_tiempos_teoria['rel_total_time']) ?>"/></td>
                   </tr>
             </table>
-            <?php endif; ?>
-            
             <br/>
             <table style="text-align: left;">
                   <tr>
