@@ -1,5 +1,4 @@
 <?php
-
 /**
  * seguimiento actions.
  *
@@ -14,9 +13,9 @@ class seguimientoActions extends sfActions
    * Executes index action
    *
    */
-  // Nombre del m�todo: executeIndex()
-  // A�adida por: Santiago Mart�nez de la Riva
-  /* Descripci�n: muestra la pantalla inicial del seguimiento de los alumnos para un curso.
+  // Nombre del metodo: executeIndex()
+  // Agredado por: Santiago Martinez de la Riva
+  /* Descripcion: muestra la pantalla inicial del seguimiento de los alumnos para un curso.
    */
   public function executeIndex()
   {
@@ -32,7 +31,7 @@ class seguimientoActions extends sfActions
 	          $this->rol = 'profesor';
            } else if ($usuario->hasCredential('supervisor'))
                   {   $this->rol = 'supervisor';
-                   } else {      /*No deber�a llegar aqu� */     }
+                   } else {      /*No deberia llegar aqui */     }
 
     if (!$this->idcurso)
     {
@@ -47,9 +46,9 @@ class seguimientoActions extends sfActions
     $this->idusuario = $usuario->getAnyId();
   }
 
-  // Nombre del m�todo: executeListarAlumnosCurso()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: muestra los alumnos en un curso
+  // Nombre del metodo: executeListarAlumnosCurso()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: muestra los alumnos en un curso
                   NOTA: si no recibe idcurso mostrara todos los alumnos de la base de datos
    */
   public function executeListarAlumnosCurso()
@@ -68,10 +67,10 @@ class seguimientoActions extends sfActions
    else  $this->redirect('login/logout');
   }
 
-  // Nombre del m�todo: executeSeguimientoPorTemas()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: muestra los alumnos en un curso
-                  NOTA: si no recibe idcurso devolver� NULL
+  // Nombre del metodo: executeSeguimientoPorTemas()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: muestra los alumnos en un curso
+                  NOTA: si no recibe idcurso devolvera NULL
    */
   public function executeSeguimientoPorTemas()
   {
@@ -171,158 +170,145 @@ class seguimientoActions extends sfActions
       }
     }     
   }
-
+	//
   public function executeEditarTiempos()
   {
-      $this->usuario = UsuarioPeer::retrieveByPk($this->getRequestParameter('iduser'));
-      $this->materia = MateriaPeer::retrieveByPk($this->getRequestParameter('idmateria'));
-      $this->curso = CursoPeer::retrieveByPk($this->getRequestParameter('idcurso'));
-      $this->array_tiempo_ejercicios = array();
-      $this->array_tiempos_teoria = array('rel_session'=>'0','rel_total_time'=>'0');
+    $this->usuario = UsuarioPeer::retrieveByPk($this->getRequestParameter('iduser'));
+    $this->materia = MateriaPeer::retrieveByPk($this->getRequestParameter('idmateria'));
+    $this->curso   = CursoPeer::retrieveByPk($this->getRequestParameter('idcurso'));
+
+    $this->array_tiempo_ejercicios = array();
+    $this->array_tiempos_teoria = array('rel_session'=>'0','rel_total_time'=>'0');
       
-      /***************************************************Tiempo Tiempo teoria*/
-      
-      $c = new Criteria();
-      $c->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
-      $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->usuario->getId());
-      $c->addJoin(Sco12Peer::ID, Rel_usuario_sco12Peer::ID_SCO12);
-      $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
+    /*************************************************** Tiempo teoria */
+    $c = new Criteria();
+    $c->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
+    $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->usuario->getId());
+    $c->addJoin(Sco12Peer::ID, Rel_usuario_sco12Peer::ID_SCO12);
+    $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
 
-      if($rel)
-      {
-         $this->array_tiempos_teoria['rel_session']=$rel->getSessionTime();
-         $this->array_tiempos_teoria['rel_total_time']=$rel->getTotalTime();
-      }
-      
-      /***********************************************Tiempo Tiempo ejercicios*/
-      $this->ejercicios_array = array();
-      $tareas = $this->curso->getTareas();
+    if ($rel) {
+     $this->array_tiempos_teoria['rel_session']   = $rel->getSessionTime();
+     $this->array_tiempos_teoria['rel_total_time']= $rel->getTotalTime();
+    }
+    /*********************************************** Tiempo ejercicios */
+    $this->ejercicios_array = array();
+    $tareas = $this->curso->getTareas();
+    $tiempo = 0;
 
-      $tiempo=0;
-      foreach($tareas as $tarea)
-      {
-           $ejercicio = EjercicioPeer::retrieveByPK($tarea->getIdEjercicio());
+    foreach($tareas as $tarea) {
+     $ejercicio = EjercicioPeer::retrieveByPK($tarea->getIdEjercicio());
+     $this->ejercicios_array[$ejercicio->getId()]['titulo'] = $ejercicio->getTitulo();
+    }
+    foreach($tareas as $tarea)
+    {
+       $c = new Criteria();
+       $c->add(Rel_usuario_tareaPeer::ID_USUARIO, $this->usuario->getId());
+       $c->add(Rel_usuario_tareaPeer::ID_TAREA, $tarea->getId());
+       $tareas_usuarios = Rel_usuario_tareaPeer::doSelect($c);
 
-           $this->ejercicios_array[$ejercicio->getId()]['titulo'] = $ejercicio->getTitulo();
-      }
-      foreach($tareas as $tarea)
-      {
-           $c = new Criteria();
-           $c->add(Rel_usuario_tareaPeer::ID_USUARIO, $this->usuario->getId());
-           $c->add(Rel_usuario_tareaPeer::ID_TAREA, $tarea->getId());
-           $tareas_usuarios = Rel_usuario_tareaPeer::doSelect($c);
+       foreach($tareas_usuarios as $tarea_usuario )
+       {
+         $c1 = new Criteria();
+         $c1->add(Ejercicio_resueltoPeer::ID_AUTOR, $this->usuario->getId());
+         $c1->add(Ejercicio_resueltoPeer::ID, $tarea_usuario->getIdEjercicioResuelto());
 
-           foreach($tareas_usuarios as $tarea_usuario )
-           {
-             $c1 = new Criteria();
-             $c1->add(Ejercicio_resueltoPeer::ID_AUTOR, $this->usuario->getId());
-             $c1->add(Ejercicio_resueltoPeer::ID, $tarea_usuario->getIdEjercicioResuelto());
+         $tareas_resueltas = Ejercicio_resueltoPeer::doSelect($c1);
 
-             $tareas_resueltas = Ejercicio_resueltoPeer::doSelect($c1);
+         foreach($tareas_resueltas as $tarea_resuelta)
+         {
+           $k = $tarea_resuelta->getId();
+           $ejercicios = EjercicioPeer::retrieveByPK($tarea_resuelta->getIdEjercicio());
+           $id_ejer = $tarea_resuelta->getIdEjercicio();
 
-             foreach($tareas_resueltas as $tarea_resuelta )
-             {
-               $k = $tarea_resuelta->getId();
-               $ejercicios = EjercicioPeer::retrieveByPK($tarea_resuelta->getIdEjercicio());
-               $id_ejer = $tarea_resuelta->getIdEjercicio();
-               if(!empty($this->ejercicios_array[$id_ejer]))
-               {
-                unset($this->ejercicios_array[$id_ejer]);
-               }
-               $this->array_tiempo_ejercicios[$k]['ejercicio'] = $ejercicios->getTitulo();
-               $this->array_tiempo_ejercicios[$k]['tiempo'] = $tarea_resuelta->getTiempo();
-               
-               $this->tiempo_total += $tarea_resuelta->getTiempo();
-
-             }
+           if (!empty($this->ejercicios_array[$id_ejer])) {
+            unset($this->ejercicios_array[$id_ejer]);
            }
-
+           $this->array_tiempo_ejercicios[$k]['ejercicio'] = $ejercicios->getTitulo();
+           $this->array_tiempo_ejercicios[$k]['tiempo'] = $tarea_resuelta->getTiempo();
            
+           $this->tiempo_total += $tarea_resuelta->getTiempo();
+         }
+       }
       }
-      if($this->getRequest()->getMethod() == sfRequest::POST)
+      if ($this->getRequest()->getMethod() == sfRequest::POST)
       {
-
          $rel_session = traducir_scorm12_a_fecha($this->getRequestParameter('rel_session',''));
          $rel_total_time = traducir_scorm12_a_fecha($this->getRequestParameter('rel_total_time',''));
 
-         if($this->getRequestParameter('id-ejercicio-relacion'))
+         if ($this->getRequestParameter('id-ejercicio-relacion'))
          {
-             $c3 = new Criteria();
-             $c3->add(Rel_usuario_rol_cursoPeer::ID_CURSO,$this->curso->getId());
-             $c3->add(Rel_usuario_rol_cursoPeer::ID_ROL, 2);
-             $profesor = Rel_usuario_rol_cursoPeer::doSelectOne($c3);
+           $c3 = new Criteria();
+           $c3->add(Rel_usuario_rol_cursoPeer::ID_CURSO,$this->curso->getId());
+           $c3->add(Rel_usuario_rol_cursoPeer::ID_ROL, 2);
 
+           $profesor = Rel_usuario_rol_cursoPeer::doSelectOne($c3);
+           $ejercicio = EjercicioPeer::retrieveByPK($this->getRequestParameter('id-ejercicio-relacion'));
 
+           $c4 = new Criteria();
+           $c4->add(TareaPeer::ID_EJERCICIO,$ejercicio->getId());
+           $c4->add(TareaPeer::ID_CURSO,$this->curso->getId());
+           $tarea_ejercicio = TareaPeer::doSelectOne($c4);
 
-             $ejercicio = EjercicioPeer::retrieveByPK($this->getRequestParameter('id-ejercicio-relacion'));
+           $ejer_resuelto = new Ejercicio_resuelto();
+           $ejer_resuelto->setIdAutor($this->usuario->getId());
+           $ejer_resuelto->setIdEjercicio($ejercicio->getId());
+           $ejer_resuelto->setIdCorrector($profesor->getIdUsuario());
+           $ejer_resuelto->setIdCurso($this->curso->getId());
+           $ejer_resuelto->save();
 
-             $c4 = new Criteria();
-             $c4->add(TareaPeer::ID_EJERCICIO,$ejercicio->getId());
-             $c4->add(TareaPeer::ID_CURSO,$this->curso->getId());
-             $tarea_ejercicio = TareaPeer::doSelectOne($c4);
+           // comprobar si este usuario_tarea ya se encuentra registrado
+           $aux_c = new Criteria();
+				   $aux_c->add(Rel_usuario_tareaPeer::ID_USUARIO, $this->usuario->getId());
+				   $aux_c->add(Rel_usuario_tareaPeer::ID_TAREA, $tarea_ejercicio->getId());
+				   $rel_usuario_tarea = Rel_usuario_tareaPeer::DoSelectOne($aux_c);
+           
+				   if (!$rel_usuario_tarea) {
+				   	 $rel_usuario_tarea = new Rel_usuario_tarea();
+	           $rel_usuario_tarea->setIdUsuario($this->usuario->getId());
+	           $rel_usuario_tarea->setIdTarea($tarea_ejercicio->getId());	
+				   }
+           $rel_usuario_tarea->setIdEjercicioResuelto($ejer_resuelto->getId());
+           $rel_usuario_tarea->setEntregada(1);
+           $rel_usuario_tarea->setCorregida(1);
+           $rel_usuario_tarea->save();
 
+           $this->getUser()->setAttribute('notice', 'El alumno fue relacionado con el curso');
+         } else {
+           $ejercicios_request = $this->getRequestParameter('ejercicio','');
 
-             $ejer_resuelto = new Ejercicio_resuelto();
-             $ejer_resuelto->setIdAutor($this->usuario->getId());
-             $ejer_resuelto->setIdEjercicio($ejercicio->getId());
-             $ejer_resuelto->setIdCorrector($profesor->getIdUsuario());
-             $ejer_resuelto->setIdCurso($this->curso->getId());
-             $ejer_resuelto->save();
+           if (!$rel) {
+             $c5 = new Criteria();
+             $c5->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
+             $Sco12 = Sco12Peer::doSelectOne($c5);
 
-             $rel_usuario_tarea = new Rel_usuario_tarea();
-             $rel_usuario_tarea->setIdUsuario($this->usuario->getId());
-             $rel_usuario_tarea->setIdTarea($tarea_ejercicio->getId());
-             $rel_usuario_tarea->setIdEjercicioResuelto($ejer_resuelto->getId());
-             $rel_usuario_tarea->setEntregada(1);
-             $rel_usuario_tarea->setCorregida(1);
-             $rel_usuario_tarea->save();
-
-             $this->getUser()->setAttribute('notice', 'El alumno fue relacionado con el curso');
-
-         }
-         else
-         {
-                 $ejercicios_request = $this->getRequestParameter('ejercicio','');
-
-                 
-
-                 if(!$rel)
-                 {
-                     $c5 = new Criteria();
-                     $c5->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
-                     $Sco12 = Sco12Peer::doSelectOne($c5);
-
-                     $rel = new Rel_usuario_sco12();
-                     $rel->setIdSco12($Sco12->getId());
-                     $rel->setIdUsuario($this->usuario->getId());
-                     $rel->setLessonStatus('passed');
-                     $rel->setEntry('ab-initio');
-                     $rel->save();
-
-                 }
-                 if($rel_session!='' && $rel_total_time!='')
-                 {
-                     $rel->setSessionTime($rel_session);
-                     $rel->setTotalTime($rel_total_time);
-                     $rel->save();
-                 }
-
-                 if($ejercicios_request!='')
-                 {
-                     foreach ($ejercicios_request as $k=>$v)
-                     {
-                        $new_time=Ejercicio_resueltoPeer::retrieveByPK($k);
-                        $new_time->setTiempo($v);
-                        $new_time->save();
-                     }
-                 }
-
-                 $this->getUser()->setAttribute('notice', 'Los tiempos fueron actualizados');      
+             $rel = new Rel_usuario_sco12();
+             $rel->setIdSco12($Sco12->getId());
+             $rel->setIdUsuario($this->usuario->getId());
+             $rel->setLessonStatus('passed');
+             $rel->setEntry('ab-initio');
+             $rel->save();
+           }
+           if ($rel_session!='' && $rel_total_time!='')
+           {
+             $rel->setSessionTime($rel_session);
+             $rel->setTotalTime($rel_total_time);
+             $rel->save();
+           }
+           if ($ejercicios_request!='')
+           {
+             foreach ($ejercicios_request as $k=>$v) {
+                $new_time=Ejercicio_resueltoPeer::retrieveByPK($k);
+                $new_time->setTiempo($v);
+                $new_time->save();
+             }
+           }
+           $this->getUser()->setAttribute('notice', 'Los tiempos fueron actualizados');      
          }
          $this->redirect('/seguimiento/editarTiempos?idcurso='.$this->curso->getId().'&iduser='.$this->usuario->getId().'&idmateria='.$this->curso->getMateriaId());
       }
   }
-
+	//
   public function executeAuditoriaSRE()
   {
        $this->usuario = UsuarioPeer::retrieveByPk(329);
@@ -347,9 +333,9 @@ class seguimientoActions extends sfActions
 
   }
 
-  // Nombre del m�todo: executeOrdenar()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n:
+  // Nombre del metodo: executeOrdenar()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion:
    */
   public function executeOrdenar()
   {
@@ -398,9 +384,9 @@ class seguimientoActions extends sfActions
     else	$this->alumnos = $usuarios->getAlumnos();
   }
 
-  // Nombre del m�todo: executeGrafica()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n:
+  // Nombre del metodo: executeGrafica()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion:
    */
   public function executeGrafica()
   {
@@ -447,9 +433,9 @@ class seguimientoActions extends sfActions
     return sfView::SUCCESS;
   }
 
-  // Nombre del m�todo: executeRankingModulo()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: genera el template q contendra la grafica del ranking de un modulo, solo los supervisores podran hacerlo
+  // Nombre del metodo: executeRankingModulo()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: genera el template q contendra la grafica del ranking de un modulo, solo los supervisores podran hacerlo
    */
   public function executeRankingModulo()
   {
@@ -459,9 +445,9 @@ class seguimientoActions extends sfActions
   }
 
 
-  // Nombre del m�todo: executeBuscar()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: Busca alumnos de un curso
+  // Nombre del metodo: executeBuscar()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: Busca alumnos de un curso
    */
   public function executeBuscar()
   {
@@ -633,7 +619,7 @@ class seguimientoActions extends sfActions
 
               if ($materia->getTipo() == 'compo')
               {
-                $arrayTemas[1] = utf8_encode("Teor�a");
+                $arrayTemas[1] = utf8_encode("Teoría");
                 $arrayTemas[2] = "Ejercicios";
 
                 $arrayTiempos[1] =   $alumno->tiempoTotalTeoriaScorm($materia->getId())/ 60;
@@ -695,7 +681,7 @@ class seguimientoActions extends sfActions
      
      if ('tema'==$tipo)
       {
-      //tama�o flash
+      //size flash
       $width = 0;
       $height = 0;
       
@@ -716,7 +702,7 @@ class seguimientoActions extends sfActions
         $arrayTiempos[$i++] = $tema->getDuracionAlumno($alumno->getUsuario()->getId()) / 60;
       }
       
-      $numeroAlumnos = $curso->getNumeroAlumnos();  //para saber el tama�o de la grafica
+      $numeroAlumnos = $curso->getNumeroAlumnos();  //para saber el size de la grafica
       $tamanioEjeY = $numeroAlumnos * 20; // 20 px por alumno*/
       
       //         -----codigo para pruebas con muchos alumnos -----
@@ -766,7 +752,7 @@ class seguimientoActions extends sfActions
          
     if ($tipo == 'sco12')
     {
-       //tama�o flash
+       //size flash
        $width = 0;
        $height = 0;
       
@@ -796,7 +782,7 @@ class seguimientoActions extends sfActions
          }
 	     }
 
-       $numeroAlumnos = $curso->getNumeroAlumnos();  //para saber el tama�o de la grafica
+       $numeroAlumnos = $curso->getNumeroAlumnos();  //para saber el size de la grafica
        $tamanioEjeY = $numeroAlumnos * 20; // 20 px por alumno*/
 
        //         -----codigo para pruebas con muchos alumnos -----
@@ -850,9 +836,9 @@ class seguimientoActions extends sfActions
     return sfView::NONE;
   }
 
-  // Nombre del m�todo: executeSourceHitos()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: - Muestra los hitos logrados por un alumno (comienzo/fin tema)
+  // Nombre del metodo: executeSourceHitos()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: - Muestra los hitos logrados por un alumno (comienzo/fin tema)
                   - si la llamada a este metodo no es por ajax, se carga el template, y se vuelve a llamar al metodo con ajax
                     de este forma aparece un aviso de cargando datos (puede tardar un poco si el curso es muy largo y tiene muchos alumnos)
                   - desde frontend_dev puede haber desbordamiento de memoria (si el curso es muy largo y tiene muchos alumnos)
@@ -1024,9 +1010,9 @@ class seguimientoActions extends sfActions
     return sfView::NONE;
   }
 
-  // Nombre del m�todo: executeSeguimientoMensajes()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: Muestra el porcentaje de los mensajes respondidos
+  // Nombre del metodo: executeSeguimientoMensajes()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: Muestra el porcentaje de los mensajes respondidos
    */
   public function executeMensajes()
   {
@@ -1085,9 +1071,9 @@ class seguimientoActions extends sfActions
      return sfView::NONE;
   }
 
-  // Nombre del m�todo: executeAlumnoVStareas()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: Muestra la grafica Alumno VS tareas
+  // Nombre del metodo: executeAlumnoVStareas()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: Muestra la grafica Alumno VS tareas
    */
   public function executeAlumnoVStareas()
   {
@@ -1153,9 +1139,9 @@ class seguimientoActions extends sfActions
 		}
   }
 
-  // Nombre del m�todo: executeTareaVSalumnos()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: Muestra la grafica Alumno VS tareas
+  // Nombre del metodo: executeTareaVSalumnos()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: Muestra la grafica Alumno VS tareas
    */
   public function executeTareaVSalumnos()
   {
@@ -1222,9 +1208,9 @@ class seguimientoActions extends sfActions
   }
 
 
-  // Nombre del m�todo: executeSeguimientoMensajesTiempos()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: Muestra el porcentaje de los mensajes respondidos
+  // Nombre del metodo: executeSeguimientoMensajesTiempos()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: Muestra el porcentaje de los mensajes respondidos
    */
   public function executeMensajesTiempos()
   {
@@ -1290,9 +1276,9 @@ class seguimientoActions extends sfActions
       return sfView::NONE;
   }
 
-  // Nombre del m�todo: executeNumeroMensajes()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: Muestra el nuemero de mensajes contestados/no contestados
+  // Nombre del metodo: executeNumeroMensajes()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: Muestra el nuemero de mensajes contestados/no contestados
    */
   public function executeNumeroMensajes()
   {
@@ -1347,9 +1333,9 @@ class seguimientoActions extends sfActions
   }
 
 
-  // Nombre del m�todo: executeEstadisticaCalificaciones()
-  // A�adida por: �ngel Mart�n
-  /* Descripci�n: - Muesta la pantalla principal de las estad�sticas por calificaciones
+  // Nombre del metodo: executeEstadisticaCalificaciones()
+  // Agredado por: Angel Martin
+  /* Descripcion: - Muesta la pantalla principal de las estadisticas por calificaciones
    */
   public function executeEstadisticaCalificaciones()
   {
@@ -1391,9 +1377,9 @@ class seguimientoActions extends sfActions
   }
 
 
-  // Nombre del m�todo: executeSeguimientoTareas()
-  // A�adida por: �ngel Mart�n
-  // Descripci�n: Eleccion de las tareas de los cursos
+  // Nombre del metodo: executeSeguimientoTareas()
+  // Agredado por: Angel Martin
+  // Descripcion: Eleccion de las tareas de los cursos
   public function executeSeguimientoTareas()
   {
     if ($this->hasRequestParameter('idcurso'))
@@ -1414,9 +1400,9 @@ class seguimientoActions extends sfActions
   }
 
 
-  // Nombre del m�todo: ListarTareas()
-  // A�adida por: �ngel Mart�n
-  // Descripci�n: Listado de las tareas de los cursos
+  // Nombre del metodo: ListarTareas()
+  // Agredado por: Angel Martin
+  // Descripcion: Listado de las tareas de los cursos
   public function executeListarTareas()
   {
     $id_profesor = $this->getUser()->getAnyId();
@@ -1436,9 +1422,9 @@ class seguimientoActions extends sfActions
     $this->tipos_evento = Tipo_eventoPeer::DoSelect($c);
   }
 
-  // Nombre del m�todo: MostrarTarea()
-  // A�adida por: �ngel Mart�n
-  // Descripci�n: muestra los detalles de una tarea
+  // Nombre del metodo: MostrarTarea()
+  // Agredado por: Angel Martin
+  // Descripcion: muestra los detalles de una tarea
   public function executeMostrarTarea()
   {
     $id_tarea = $this->getRequestParameter('id_tarea');
@@ -1482,9 +1468,9 @@ class seguimientoActions extends sfActions
     else {$this->add_more = false;}
   }
 
-  // Nombre del m�todo: executeSeguimientoTemas()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: mostrara las fechas previstas para terminar los temas, desde aqui se podra modificar las fechas
+  // Nombre del metodo: executeSeguimientoTemas()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: mostrara las fechas previstas para terminar los temas, desde aqui se podra modificar las fechas
   */
   public function executeSeguimientoTemas()
   {
@@ -1507,9 +1493,9 @@ class seguimientoActions extends sfActions
    }else return $this->redirect('login/logout');
  }
 
-  // Nombre del m�todo: validateModificarFechaTema()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: Valida el formulario de nuevo evento
+  // Nombre del metodo: validateModificarFechaTema()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: Valida el formulario de nuevo evento
   				  Se mostrara en capa mediante AJAX*/
   public function validateModificarFechaTema()
   {
@@ -1556,9 +1542,9 @@ class seguimientoActions extends sfActions
   }
 
 
-  // Nombre del m�todo: executeModificarFechaTema()
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: modifica las fechas previstas para terminar los temas
+  // Nombre del metodo: executeModificarFechaTema()
+  // Agredado por: Jacobo Chaquet
+  /* Descripcion: modifica las fechas previstas para terminar los temas
   */
   public function executeModificarFechaTema()
   {
@@ -1622,9 +1608,9 @@ class seguimientoActions extends sfActions
   }
 
 
-  // Nombre del m�todo: FichaEvaluacion()
-  // A�adida por: �ngel Mart�n
-  // Descripci�n: Muestra las calificaciones obtenidas en todos los ejercicios
+  // Nombre del metodo: FichaEvaluacion()
+  // Agredado por: Angel Martin
+  // Descripcion: Muestra las calificaciones obtenidas en todos los ejercicios
   // del mismo curso, tiempo dedicado en ejercicios y revisar temario etc...
   //
   /* Modificado por Jacobo para que se calculo el tiempo total empleado en la teoria
