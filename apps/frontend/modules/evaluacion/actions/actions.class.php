@@ -1,30 +1,20 @@
 <?php
-
 /**
  * evaluacion actions.
  *
  * @package    edoceo
  * @subpackage evaluacion
- * @author     Ángel Martín Latasa
+ * @author     Angel Martin Latasa
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class evaluacionActions extends sfActions
 {
-
-// #############################################################################
-// ##########        página de bienvenida del módulo evaluación      ###########
-// #############################################################################
   public function executeIndex()
   {
     $this->rol = $this->getUser()->obtenerCredenciales();
     $this->redireccion = '?idcurso='.$this->getRequestParameter('idcurso');
   }
-
-
-// #############################################################################
-// #############        Listar ejercicios entregados           #################
-// #############################################################################
-
+	//
   public function executeListarEjerciciosEntregados()
   {
     $id_tarea = $this->getRequestParameter('id_tarea');
@@ -52,12 +42,7 @@ class evaluacionActions extends sfActions
 
     $this->pendientes_correccion = BasePeer::DoSelect($c);
   }
-
-
-// #############################################################################
-// ###############             Guardar evaluación              #################
-// #############################################################################
-
+	//
   public function executeGuardarEvaluacion()
   {
     $id_ejercicio = $this->getRequestParameter('id_ejercicio');
@@ -71,7 +56,7 @@ class evaluacionActions extends sfActions
     $aciertos = 0;
     $fallos = 0;
 
-    // Aquí autocorregimos y evaluamos la parte del test
+    // Aqui autocorregimos y evaluamos la parte del test
     if ($ejercicio->getTipo() == 'test') {
 
       $c = new Criteria();
@@ -86,6 +71,7 @@ class evaluacionActions extends sfActions
       $nota_test = 0;
       $id_comp = 0;
       $contestadas = 0;
+
       foreach ($resumen_test as $elemento_test) {
         if ($elemento_test[2]) {
           $nota_test += (1 / ($elemento_test[0]));
@@ -100,7 +86,6 @@ class evaluacionActions extends sfActions
           $contestadas++; $id_comp = $elemento_test[3];
         }
       }
-
       // Ahora vamos a calcular la nota total del test
       $c = new Criteria();
       $c->add(Cuestion_testPeer::ID_EJERCICIO, $id_ejercicio);
@@ -110,11 +95,9 @@ class evaluacionActions extends sfActions
       $solucion_alumno->setAciertos($aciertos);
       $solucion_alumno->setFallos($fallos);
 
-      // Sumamos la nota obtenida al total (sólo si la nota es positiva)
+      // Sumamos la nota obtenida al total (solo si la nota es positiva)
       if ($nota_test > 0) {$nota_acumulada += $nota_test;}
-
     }
-
     // Aqui el cuestionario
     if ($ejercicio->getTipo() == 'cuestionario') {
       $numero_preguntas = $this->getRequestParameter('total_preguntas_cuestionario');
@@ -133,9 +116,7 @@ class evaluacionActions extends sfActions
         $respuesta->setPuntuacion($puntuacion);
         $respuesta->save();
       }
-
     }
-
     // Aqui el cuestionario
     if ($ejercicio->getTipo() == 'problemas') {
       $numero_preguntas = $this->getRequestParameter('total_preguntas_practicas');
@@ -153,12 +134,8 @@ class evaluacionActions extends sfActions
         $respuesta->setPuntuacion($puntuacion);
         $respuesta->save();
       }
-
     }
-
-
-    // Guardamos la nota, la fecha de correccion y el profesor que realizó
-    // la corrección en el ejercicio del alumno
+    // Guardamos la nota, la fecha de correccion y el profesor que realizo la correccion en el ejercicio del alumno
     $solucion_alumno->setIdCorrector($this->getUser()->getAnyId());
     $solucion_alumno->setFechaCorreccion(time());
     $nota_final = ($nota_acumulada / $nota_total) * 10;
@@ -184,38 +161,24 @@ class evaluacionActions extends sfActions
 
     $this->redirect('evaluacion/mostrarEjercicioEvaluacion?id_respuesta_ejercicio='.$id_solucion_alumno);
   }
-
-
-// #############################################################################
-// ###############            Evaluacion / revision            #################
-// #############################################################################
-
+	//
   public function executeEvaluacionRevision()
   {
-    if ($this->hasRequestParameter('idcurso'))
-    {
+    if ($this->hasRequestParameter('idcurso')) {
       $this->id_curso = $this->getRequestParameter('idcurso');
-    }
-    else
-    {
+    } else {
       $this->id_curso = 0;
     }
-
     $cursos_temp = $this->getUser()->getCursosAny();
     $cursos = array();
     $cursos[0] = 'Todos los cursos';
-    foreach($cursos_temp as $curso_temp)
-    {
+
+    foreach($cursos_temp as $curso_temp) {
       $cursos[$curso_temp->getIdCurso()] = $curso_temp->getCurso()->getNombre();
     }
     $this->cursos = $cursos;
   }
-
-
-// #############################################################################
-// ##########          Listar tareas  para evaluacion              #############
-// #############################################################################
-
+	//
   public function executeListarTareasEvaluacion()
   {
     $id_profesor = $this->getUser()->getAnyId();
@@ -238,14 +201,8 @@ class evaluacionActions extends sfActions
     $this->tareas = TareaPeer::DoSelect($c);
     $this->cursos = CursoPeer::DoSelect($c);
     $this->tipos_evento = Tipo_eventoPeer::DoSelect($c);
-
   }
-
-
-// #############################################################################
-// ##########        Listar tareas  para evaluacion  CORTO         #############
-// #############################################################################
-
+	//
   public function executeListarTareasEvaluacionCorto()
   {
     $id_profesor = $this->getUser()->getAnyId();
@@ -269,14 +226,8 @@ class evaluacionActions extends sfActions
     $this->eventos = EventoPeer::DoSelect($c);
     $this->tareas = TareaPeer::DoSelect($c);
     $this->cursos = CursoPeer::DoSelect($c);
-
   }
-
-
-// #############################################################################
-// ###########            Mostrar tarea para evaluación            #############
-// #############################################################################
-
+	//
   public function executeMostrarTareaEvaluacion()
   {
     $id_tarea = $this->getRequestParameter('id_tarea');
@@ -289,12 +240,14 @@ class evaluacionActions extends sfActions
     $this->tipo_evento = Tipo_eventoPeer::RetrieveByPk($evento->getIdTipoEvento());
 
     $ejercicio = EjercicioPeer::RetrieveByPk($this->id_ejercicio);
+
     if ($ejercicio->getTipo() == 'test')
     {
       $c = new Criteria();
       $c->add(Ejercicio_resueltoPeer::ID_AUTOR, $ejercicio->getIdAutor());
       $c->add(Ejercicio_resueltoPeer::ID_EJERCICIO, $ejercicio->getId());
       $solucion = Ejercicio_resueltoPeer::DoSelectOne($c);
+
       if ($solucion)
       {
         $this->solucion_test = true;
@@ -308,43 +261,29 @@ class evaluacionActions extends sfActions
         $c->setDistinct(Cuestion_testPeer::ID);
         $numero_preguntas_respondidas = Cuestion_testPeer::DoCount($c);
 
-        if ($numero_preguntas > $numero_preguntas_respondidas)
-        {
+        if ($numero_preguntas > $numero_preguntas_respondidas) {
           $this->solucion_incompleta = true;
-        }
-        else
-        {
+        } else {
           $this->solucion_incompleta = false;
         }
-      }
-      else
-      {
+      } else {
         $this->solucion_test = false;
       }
     }
     $this->tipo_ejercicio = $ejercicio->getTipo();
-
   }
-
-
-
-// #############################################################################
-// ###############               Calificaciones                 ################
-// #############################################################################
-
+	//
   public function executeCalificaciones()
   {
-    if ($this->hasRequestParameter('idcurso'))
-    {
+    if ($this->hasRequestParameter('idcurso')) {
       $this->id_curso = $this->getRequestParameter('idcurso');
-    }
-    else
-    {
+    } else {
       $this->id_curso = 0;
     }
     $cursos_temp = $this->getUser()->getCursosAny();
     $cursos = array();
     $cursos[0] = 'Elija un curso';
+
     foreach($cursos_temp as $curso_temp) {
       $cursos[$curso_temp->getIdCurso()] = $curso_temp->getCurso()->getNombre();
     }
@@ -355,14 +294,9 @@ class evaluacionActions extends sfActions
     $modalidad[1] = 'Mostrar calificaciones por ejercicio';
     $this->modalidad = $modalidad;
   }
-
-
-// #############################################################################
-// ###############         Listar Alumnos Evaluacion            ################
-// #############################################################################
-
-  public function executeListarAlumnosEvaluacion() {
-
+	//
+  public function executeListarAlumnosEvaluacion()
+  {
     $id_curso = $this->getRequestParameter('filtro');
     $c = new Criteria();
     $c->add(RolPeer::NOMBRE, 'alumno');
@@ -372,16 +306,10 @@ class evaluacionActions extends sfActions
     $c->addAscendingOrderByColumn(UsuarioPeer::APELLIDOS);
     $this->alumnos = UsuarioPeer::DoSelect($c);
     $this->id_curso = $id_curso;
-
   }
-
-
-// #############################################################################
-// #############           Resumen Evaluacion Alumno            ###############
-// #############################################################################
-
-  public function executeResumenEvaluacionAlumno() {
-
+	//
+  public function executeResumenEvaluacionAlumno()
+  {
     $id_curso = $this->getRequestParameter('id_curso');
     $id_alumno = $this->getRequestParameter('id_alumno');
     $this->alumno = UsuarioPeer::RetrieveByPk($id_alumno);
@@ -425,19 +353,17 @@ class evaluacionActions extends sfActions
     $c->addJoin(EjercicioPeer::ID, Ejercicio_resueltoPeer::ID_EJERCICIO);
     $resultados = Ejercicio_resueltoPeer::DoSelect($c);
     $tiempo_tareas = 0;
-    foreach ($resultados as $resultado)
-    {
+
+    foreach ($resultados as $resultado) {
       $tiempo_tareas += $resultado->getTiempo();
     }
-
     $c->add(Ejercicio_resueltoPeer::REPOSITORIO, 1);
     $resultados = Ejercicio_resueltoPeer::DoSelect($c);
     $tiempo_repositorio = 0;
-    foreach ($resultados as $resultado)
-    {
+
+    foreach ($resultados as $resultado) {
       $tiempo_repositorio += $resultado->getTiempo();
     }
-
     $c = new Criteria();
     $c->add(CursoPeer::ID, $id_curso);
     $c->add(Rel_usuario_temaPeer::ID_USUARIO, $id_alumno);
@@ -445,26 +371,19 @@ class evaluacionActions extends sfActions
     $c->addJoin(TemaPeer::ID, Rel_usuario_temaPeer::ID_TEMA);
     $resultados = Rel_usuario_temaPeer::DoSelect($c);
     $tiempo_estudio = 0;
-    foreach ($resultados as $resultado)
-    {
+
+    foreach ($resultados as $resultado) {
       $tiempo_estudio += $resultado->getTiempo();
     }
-
     $this->tiempo_estudio = $tiempo_estudio;
     $this->tiempo_tareas = $tiempo_tareas;
     $this->tiempo_repositorio = $tiempo_repositorio;
 
     $this->setLayout('PopUpEvaluacion');
-
   }
-
-
-// #############################################################################
-// #############         Resumen Evaluacion Ejercicio            ###############
-// #############################################################################
-
-  public function executeResumenEvaluacionEjercicio() {
-
+	//
+  public function executeResumenEvaluacionEjercicio()
+  {
     $id_curso = $this->getRequestParameter('filtro');
     $c = new Criteria();
     $c->add(TareaPeer::ID_CURSO, $id_curso);
@@ -475,14 +394,8 @@ class evaluacionActions extends sfActions
     $c->addAsColumn('categoria', Tipo_eventoPeer::DESCRIPCION);
     $this->ejercicios = BasePeer::DoSelect($c);
     $this->id_curso = $id_curso;
-
   }
-
-
-// #############################################################################
-// ##########             Mostrar Ejercicio Evaluación              ############
-// #############################################################################
-
+	//
   public function executeMostrarEjercicioEvaluacion()
   {
     $id_respuesta_ejercicio = $this->getRequestParameter('id_respuesta_ejercicio');
@@ -498,28 +411,25 @@ class evaluacionActions extends sfActions
     $c->add(Ejercicio_resueltoPeer::ID_EJERCICIO, $ejercicio->getId());
     $solucion_profe = Ejercicio_resueltoPeer::DoSelectOne($c);
 
-    if ($solucion_profe)
-    {
+    if ($solucion_profe) {
       $cadena_solucion = 'mostrar_solucion=1&id_solucion_ejercicio='.$solucion_profe->getId();
-    }
-    else
-    {
+    } else {
       $cadena_solucion = 'mostrar_solucion=0';
     }
-
     $cadena_respuestas = 'mostrar_respuestas=1&id_respuesta_ejercicio='.$id_respuesta_ejercicio;
     $cadena_edicion = 'mostrar_edicion=0';
+
     if ($relacion->getCorregida()) {
       $cadena_correccion = 'mostrar_correccion=1';
     } else {
       $cadena_correccion = 'mostrar_correccion=0';
     }
-
-
     $this->ejercicio = $ejercicio;
     $this->respuesta_ejercicio = $respuesta_ejercicio;
+
     if (!$relacion->getCorregida()) {$this->nota = '<strong>Pendiente de correci&oacute;n</strong>';}
     else {$this->nota = sprintf( "<strong>%.2f</strong> &nbsp;&nbsp;&nbsp;(sobre 10)", $respuesta_ejercicio->getScore());}
+
     $id_alumno = $respuesta_ejercicio->getIdAutor();
     $alumno = UsuarioPeer::RetrieveByPk($id_alumno);
     $this->nombre_alumno = $alumno->getApellidos().', '.$alumno->getNombre();
@@ -527,12 +437,7 @@ class evaluacionActions extends sfActions
     $this->redireccion = '?id_ejercicio='.$id_ejercicio."&$cadena_respuestas&$cadena_solucion&$cadena_edicion&$cadena_correccion";
     $this->setLayout('popUpEvaltarea');
   }
-
-
-// #############################################################################
-// ##########                 Evaluar un ejercicio                  ############
-// #############################################################################
-
+	//
   public function executeEvaluarEjercicio()
   {
     $id_respuesta_ejercicio = $this->getRequestParameter('id_respuesta_ejercicio');
@@ -548,23 +453,21 @@ class evaluacionActions extends sfActions
     $c->add(Ejercicio_resueltoPeer::ID_EJERCICIO, $ejercicio->getId());
     $solucion_profe = Ejercicio_resueltoPeer::DoSelectOne($c);
 
-    if ($solucion_profe)
-    {
+    if ($solucion_profe) {
       $cadena_solucion = 'mostrar_solucion=1&id_solucion_ejercicio='.$solucion_profe->getId();
-    }
-    else
-    {
+    } else {
       $cadena_solucion = 'mostrar_solucion=0';
     }
-
     $cadena_respuestas = 'mostrar_respuestas=1&id_respuesta_ejercicio='.$id_respuesta_ejercicio;
     $cadena_edicion = 'mostrar_edicion=0';
     $cadena_correccion = 'mostrar_correccion=2';
 
     $this->ejercicio = $ejercicio;
     $this->respuesta_ejercicio = $respuesta_ejercicio;
+
     if (!$relacion->getCorregida()) {$this->nota = '<strong>Pendiente de correci&oacute;n</strong>';}
     else {$this->nota = sprintf( "<strong>%.2f</strong> &nbsp;&nbsp;&nbsp;(sobre 10)", $respuesta_ejercicio->getScore());}
+
     $id_alumno = $respuesta_ejercicio->getIdAutor();
     $alumno = UsuarioPeer::RetrieveByPk($id_alumno);
     $this->nombre_alumno = $alumno->getApellidos().', '.$alumno->getNombre();
@@ -572,12 +475,7 @@ class evaluacionActions extends sfActions
     $this->redireccion = '?id_ejercicio='.$id_ejercicio."&$cadena_respuestas&$cadena_solucion&$cadena_edicion&$cadena_correccion";
     $this->setLayout('popUpEvaltarea');
   }
-
-
-// #############################################################################
-// ##########                Guardar calificación                   ############
-// #############################################################################
-
+	//
   public function executeGuardarCalificacion()
   {
     $id_alumno = $this->getRequestParameter('id_alumno');
@@ -600,16 +498,11 @@ class evaluacionActions extends sfActions
     $cal->save();
     $this->setLayout('PopUpEvaluacion');
   }
-
-
-// #############################################################################
-// ##########                   Corregir Tests                      ############
-// #############################################################################
-
+	//
   public function executeCorregirTests()
   {
-    $id_tarea = $this->getRequestParameter('id_tarea');
-    $tarea = TareaPeer::RetrieveByPk($id_tarea);
+    $id_tarea  = $this->getRequestParameter('id_tarea');
+    $tarea     = TareaPeer::RetrieveByPk($id_tarea);
     $ejercicio = EjercicioPeer::RetrieveByPk($tarea->getIdEjercicio());
 
     $c = new Criteria();
@@ -623,6 +516,9 @@ class evaluacionActions extends sfActions
     $c->addJoin(Rel_usuario_tareaPeer::ID_EJERCICIO_RESUELTO, Ejercicio_resueltoPeer::ID);
     $ejercicios = Ejercicio_resueltoPeer::DoSelect($c);
 
+    
+    exit();
+    
     $c = new Criteria();
     $c->add(Cuestion_testPeer::ID_EJERCICIO, $ejercicio->getId());
     $nota_total = Cuestion_testPeer::DoCount($c);
@@ -631,14 +527,13 @@ class evaluacionActions extends sfActions
 
     foreach ($ejercicios as $solucion_alumno)
     {
-
       $nota_acumulada = 0;
-      $blancos = 0;
-      $aciertos = 0;
-      $fallos = 0;
-      $nota_test = 0;
-      $id_comp = 0;
-      $contestadas = 0;
+      $blancos        = 0;
+      $aciertos       = 0;
+      $fallos         = 0;
+      $nota_test      = 0;
+      $id_comp        = 0;
+      $contestadas    = 0;
 
       $c = new Criteria();
       $c->add(Seleccion_cuestion_testPeer::ID_EJERCICIO_RESUELTO, $solucion_alumno->getId());
@@ -650,7 +545,8 @@ class evaluacionActions extends sfActions
       $c->addAsColumn('id_cuestion', Cuestion_testPeer::ID);
       $resumen_test = BasePeer::DoSelect($c);
 
-      foreach ($resumen_test as $elemento_test) {
+      foreach ($resumen_test as $elemento_test)
+      {
         if ($elemento_test[2]) {
           $nota_test += (1 / ($elemento_test[0]));
           $aciertos++;
@@ -664,18 +560,16 @@ class evaluacionActions extends sfActions
           $contestadas++; $id_comp = $elemento_test[3];
         }
       }
-
       // Ahora vamos a calcular la nota total del test
       $blancos = $nota_total - $contestadas;
       $solucion_alumno->setBlancos($blancos);
       $solucion_alumno->setAciertos($aciertos);
       $solucion_alumno->setFallos($fallos);
 
-      // Sumamos la nota obtenida al total (sólo si la nota es positiva)
+      // Sumamos la nota obtenida al total (solo si la nota es positiva)
       if ($nota_test > 0) {$nota_acumulada += $nota_test;}
 
-      // Guardamos la nota, la fecha de correccion y el profesor que realizó
-      // la corrección en el ejercicio del alumno
+      // Guardamos la nota, la fecha de correccion y el profesor que realizo la correccion en el ejercicio del alumno
       $solucion_alumno->setIdCorrector($this->getUser()->getAnyId());
       $solucion_alumno->setFechaCorreccion(time());
       $nota_final = ($nota_acumulada / $nota_total) * 10;
@@ -697,24 +591,16 @@ class evaluacionActions extends sfActions
       $texto = 'El profesor '.$profesor->getNombre().' '.$profesor->getApellidos().' ha corregido el ejercicio "'.$ejercicio->getTitulo().'". <br><br>'.$texto_nota.'<br><br>Haz click en <a href="/tareas/mostrarEjercicioTarea?id_tarea='.$relacion->getIdTarea().'">este enlace</a> para ver la evaluaci&oacute;n del ejercicio.';
       $notificacion->setContenido($texto);
       $notificacion->save();
-
     }
-
     $this->redirect('evaluacion/mostrarTareaEvaluacion?id_tarea='.$id_tarea);
   }
 
-   // Nombre del método: executeEvaluacionModulo()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: permite seleccionar los ejercicios que evaluaran el modulo
-   */
-
+  // Permite seleccionar los ejercicios que evaluaran el modulo
   public function executeEvaluacionModulo()
   {
-    if ($this->getRequestParameter('save'))
-    {
+    if ($this->getRequestParameter('save')) {
       $this->saveok= true;
     }
-
     $idmodulo = $this->getRequestParameter('idmodulo');
     $this->modulo = PaquetePeer::retrieveByPk($idmodulo);
 	  $this->forward404Unless($this->modulo);
@@ -727,11 +613,11 @@ class evaluacionActions extends sfActions
     $c->addJoin(TareaPeer::ID_EJERCICIO, EjercicioPeer::ID);
     $c->addJoin(TareaPeer::ID_EVENTO, EventoPeer::ID);
     $c->addJoin(Tipo_eventoPeer::ID, EventoPeer::ID_TIPO_EVENTO);
-    $c->addAsColumn('id_tarea', TareaPeer::ID);                                   //0
-    $c->addAsColumn('ejercicio', EventoPeer::DESCRIPCION);                        //1
-    $c->addAsColumn('categoria', Tipo_eventoPeer::DESCRIPCION);                   //2
-    $c->addAsColumn('fecha_fin', EventoPeer::FECHA_FIN);                          //3
-    $c->addAsColumn('curso', CursoPeer::NOMBRE);                                  //4
+		$c->addAsColumn('id_tarea', TareaPeer::ID);                  // 0
+    $c->addAsColumn('ejercicio', EventoPeer::DESCRIPCION);       // 1
+    $c->addAsColumn('categoria', Tipo_eventoPeer::DESCRIPCION);  // 2
+    $c->addAsColumn('fecha_fin', EventoPeer::FECHA_FIN);         // 3
+    $c->addAsColumn('curso', CursoPeer::NOMBRE);                 // 4
     $this->relacion_tests = BasePeer::DoSelect($c);
 
     $c->add(EjercicioPeer::TIPO, 'cuestionario');
@@ -739,55 +625,50 @@ class evaluacionActions extends sfActions
 
     $c->add(EjercicioPeer::TIPO, 'problemas');
     $this->relacion_problemas = BasePeer::DoSelect($c);
-
   }
 
-   // Nombre del método: executeGuardarEvaluacionModulo()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: guarda la seleccion los ejercicios que evaluaran el modulo
-   */
-
+  // Guarda la seleccion los ejercicios que evaluaran el modulo
   public function executeGuardarEvaluacionModulo()
   {
     $idmodulo = $this->getRequestParameter('idmodulo');
     $this->modulo = PaquetePeer::retrieveByPk($idmodulo);
 	  $this->forward404Unless($this->modulo);
 
-
 	  $totalTest = $this->getRequestParameter('totalTest');
 	  $totalCuestionarios = $this->getRequestParameter('totalCuestionarios');
     $totalProblemas = $this->getRequestParameter('totalProblemas');
-
-
     $con = Propel::getConnection();
-   	try
-		{
-           $con->begin();
 
-          $c = new Criteria();
-          $c->add(Evaluacion_paquetePeer::ID_PAQUETE, $idmodulo);
-          $borrar = Evaluacion_paquetePeer::doDelete($c);  /*borramos el anterior criterio de evaluacion, para que no de problemas con las claves*/
+   	try {
+      $con->begin();
 
+      $c = new Criteria();
+      $c->add(Evaluacion_paquetePeer::ID_PAQUETE, $idmodulo);
+      $borrar = Evaluacion_paquetePeer::doDelete($c);  /*borramos el anterior criterio de evaluacion, para que no de problemas con las claves*/
 
            for ($i=0;$i<$totalTest;$i++)
-	         {  if ($this->getRequestParameter('test'.$i))
-              {  if ($this->getRequestParameter('pesoTest'.$i))
-                 {  $tarea = TareaPeer::retrieveByPk($this->getRequestParameter('test'.$i));
-                    $this->forward404Unless($tarea);
-                    $evaluacion = new Evaluacion_paquete();
-                    $evaluacion->setIdPaquete($idmodulo);
-                    //$evaluacion->setIdEjercicio($tarea->getEjercicio()->getId());
-                    $evaluacion->setIdTarea($tarea->getId());
-                    $evaluacion->setPeso($this->getRequestParameter('pesoTest'.$i));
-                    $evaluacion->save();
-                  }
-	             }
+	         {
+	         	if ($this->getRequestParameter('test'.$i))
+	         	{
+              	if ($this->getRequestParameter('pesoTest'.$i))
+              	{
+               		$tarea = TareaPeer::retrieveByPk($this->getRequestParameter('test'.$i));
+                  $this->forward404Unless($tarea);
+                  $evaluacion = new Evaluacion_paquete();
+                  $evaluacion->setIdPaquete($idmodulo);
+                  //$evaluacion->setIdEjercicio($tarea->getEjercicio()->getId());
+                  $evaluacion->setIdTarea($tarea->getId());
+                  $evaluacion->setPeso($this->getRequestParameter('pesoTest'.$i));
+                  $evaluacion->save();
+                }
+              }
             }
         	  for ($i=0;$i<$totalCuestionarios;$i++)
         	  {
         	    if ($this->getRequestParameter('cuestionario'.$i))
-              {  if ($this->getRequestParameter('pesoCuest'.$i))
-                 {
+              {
+              	if ($this->getRequestParameter('pesoCuest'.$i))
+                {
                     $tarea = TareaPeer::retrieveByPk($this->getRequestParameter('cuestionario'.$i));
                     $this->forward404Unless($tarea);
                     $evaluacion = new Evaluacion_paquete();
@@ -800,11 +681,13 @@ class evaluacionActions extends sfActions
                  }
         	    }
             }
-
         	  for ($i=0;$i<$totalProblemas;$i++)
-        	  {  if ($this->getRequestParameter('problema'.$i))
-               {  if ($this->getRequestParameter('pesoProb'.$i))
-                  { $tarea = TareaPeer::retrieveByPk($this->getRequestParameter('problema'.$i));
+        	  {
+        	  	if ($this->getRequestParameter('problema'.$i))
+              {
+              	if ($this->getRequestParameter('pesoProb'.$i))
+                {
+                	  $tarea = TareaPeer::retrieveByPk($this->getRequestParameter('problema'.$i));
                     $this->forward404Unless($tarea);
                     $evaluacion = new Evaluacion_paquete();
                     $evaluacion->setIdPaquete($idmodulo);
@@ -815,21 +698,13 @@ class evaluacionActions extends sfActions
                   }
         	      }
              }
-
             $con->commit();
      }
- 		 catch (Exception $e)
-  		      {	$con->rollback();
-  			      throw $e;
-  		      }
+ 		 catch (Exception $e) {	$con->rollback(); throw $e; }
   	 $this->redirect('evaluacion/evaluacionModulo?idmodulo='.$idmodulo.'&save=ok');
   }
 
-   // Nombre del método: executeEvaluarModulo()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Actualiza las nostas de los alumnos en el modulo segun los criterios de evaluacion del paquete
-   */
-
+  // Actualiza las nostas de los alumnos en el modulo segun los criterios de evaluacion del paquete
   public function executeEvaluarModulo()
   {
     $idmodulo = $this->getRequestParameter('idmodulo');
@@ -840,6 +715,6 @@ class evaluacionActions extends sfActions
 
 	  $datos = $this->modulo->getEvaluacionAlumnos($this->ejercicios_evaluacion,1);
 	  $this->datos = $datos;
-
 	}
-}
+
+} // end class
