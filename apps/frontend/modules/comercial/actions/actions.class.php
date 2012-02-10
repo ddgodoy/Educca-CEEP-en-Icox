@@ -1,36 +1,33 @@
 <?php
-
 /**
  * comercial actions.
  *
  * @package    edoceo
  * @subpackage comercial
- * @authors    Jacobo Chaquet, Todor Todorov, Angel Martín
+ * @authors    Jacobo Chaquet, Todor Todorov, Angel Martin
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class comercialActions extends sfActions
 {
   /**
    * Executes index action
-   *
    */
   public function executeIndex()
   {
     if ($this->getRequestParameter('ft') == 1) {
-  	  // Si es la primera ejecución borramos el módulo setup
+  	  // Si es la primera ejecucion borramos el modulo setup
   	  $directory = SF_ROOT_DIR.'/apps/frontend/modules/setup';
 
   	  $this->recursive_remove_directory($directory,true);
 
-  	  // Configuramos el módulo inicial
-
-	    // Cargamos el fichero de configuración inicial y lo modificamos
+  	  // Configuramos el modulo inicial
+	    // Cargamos el fichero de configuracion inicial y lo modificamos
 
       $config = sfYAML::Load(SF_ROOT_DIR.'/apps/frontend/config/app.yml');
       $config['all']['core']['minicial'] = 'comercial';
   	  $config['all']['core']['ainicial'] = 'index';
 
-  	  // Borramos el fichero de configuración anterior
+  	  // Borramos el fichero de configuracion anterior
   	  unlink(SF_ROOT_DIR.'/apps/frontend/config/app.yml');
 
   	  $fichero = fopen(SF_ROOT_DIR.'/apps/frontend/config/app.yml','w');
@@ -45,7 +42,6 @@ class comercialActions extends sfActions
 
   	  $this->recursive_remove_directory($directory,true);
     }
-
     $this->getUser()->getAttributeHolder()->remove('idcurso');
 
     $c = new Criteria();
@@ -57,8 +53,7 @@ class comercialActions extends sfActions
     $this->cursos = CursoPeer::DoSelect($c);
 
   }
-
-
+	//
   public function executeFicha()
   {
     if ($this->getRequestParameter('idcurso'))
@@ -84,8 +79,7 @@ class comercialActions extends sfActions
   {
     if ($this->getRequest()->getMethod() == sfRequest::POST)
 	  {
-	    // Damos de alta un usuario en un nuevo curso o módulo, puede que sea nuevo o no
-
+	    // Damos de alta un usuario en un nuevo curso o modulo, puede que sea nuevo o no
 	    $usuario = new Usuario();
 	    $usuario->alta($this->getRequest()->getParameterHolder(),true);
 
@@ -165,7 +159,7 @@ class comercialActions extends sfActions
 	}
 
 	/**************************************
-	 **** Confirmación de inscripción *****
+	 **** Confirmacion de inscripcion *****
 	 *************************************/
 
 	 public function executeConfirmacion() {
@@ -217,26 +211,18 @@ class comercialActions extends sfActions
   				{	$con->rollback();
     				throw $e;
   				}
-
-
       }
    }
-
-
+	//
   public function executeInvitados()
   {
-
     if ($this->getRequest()->getMethod() == sfRequest::POST)
 	  {
       //$this->redirect('comercial/confirmacion?idmodulo='.$this->getRequestParameter('idmodulo'));
       $usuario = new Usuario();
       $usuario->nuevoInvitado(); // se genera Password y se le envia email
       return $this->renderText("<html><body><b>Su alta se ha procesado correctamente.<br /><br /> En breve se le enviar&aacute; un correo con los datos de acceso.</b></body></html>");
-
-    }
-    else
-    {
-
+    } else {
       $c = new Criteria();
       $paises = PaisPeer::doselect($c);
 
@@ -251,9 +237,8 @@ class comercialActions extends sfActions
 
     }
   }
-
-  // Función auxiliar para el borrado del modulo setup
   //
+  // Funcion auxiliar para el borrado del modulo setup
   //
   private function recursive_remove_directory($directory, $empty=FALSE)
   {
@@ -262,7 +247,6 @@ class comercialActions extends sfActions
      {
          $directory = substr($directory,0,-1);
      }
-
      // if the path is not valid or is not a directory ...
      if(!file_exists($directory) || !is_dir($directory))
      {
@@ -322,4 +306,4 @@ class comercialActions extends sfActions
      }
   }
 
-}
+} // end class
