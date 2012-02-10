@@ -73,6 +73,7 @@
               </td>
               <td style="text-align:right;">
                 <br /><?= link_to(image_tag('bot_matriculate.gif','Alt=Matr&iacute;cula hspace="10"'),'comercial/matricula?'.$vurl.'='.$idref) ?>
+                <input type="hidden" name="test_pinika" value="<?php echo date('H:i:s') ?>"/>
               </td>
             </tr>
           </table>
