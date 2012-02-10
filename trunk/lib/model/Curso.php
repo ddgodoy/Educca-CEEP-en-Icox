@@ -2,17 +2,13 @@
 
 /**
  * Subclass for representing a row from the 'curso' table.
- *
- *
- *
  * @package lib.model
  */
 class Curso extends BaseCurso
 {
-
-    // Nombre del m�todo: getTotalCursos()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve el numero de cursos totales que hay en la base de datos
+    // Nombre del metodo: getTotalCursos()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve el numero de cursos totales que hay en la base de datos
      */
   public function truncate_text($text, $length = 30, $truncate_string = '...', $truncate_lastspace = false)
   {
@@ -44,8 +40,7 @@ class Curso extends BaseCurso
       return $text;
     }
   }
-
-
+//
     public function getNombre($long=null)
     {
      	if($long==null)
@@ -54,31 +49,27 @@ class Curso extends BaseCurso
       }
       else return $this->truncate_text($this->getNombre(),$long);
     }
-
-
+//
    public function getTotalCursos()
     {
      	$c2 = new Criteria();
       return CursoPeer::doCount($c2);
     }
 
-    // Nombre del m�todo: getTotalCursos()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve los cursos totales que hay en la base de datos
+    // Nombre del metodo: getTotalCursos()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve los cursos totales que hay en la base de datos
      */
-
    public function getCursos()
    {
      	$c2 = new Criteria();
       return CursoPeer::doSelect($c2);
    }
 
-
-    // Nombre del m�todo: getNumeroAlumnos()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve el numero de alumnos en el curso
+    // Nombre del metodo: getNumeroAlumnos()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve el numero de alumnos en el curso
      */
-
    public function getNumeroAlumnos($crit = null)
     {
       $c = new Criteria();
@@ -95,11 +86,10 @@ class Curso extends BaseCurso
      	return Rel_usuario_rol_cursoPeer::doCount($c2);
      	}
 
-    // Nombre del m�todo: getNumeroProfesores()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve el numero de alumnos en el curso
+    // Nombre del metodo: getNumeroProfesores()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve el numero de alumnos en el curso
      */
-
    public function getNumeroProfesores($crit = null)
     {
       $c = new Criteria();
@@ -116,12 +106,10 @@ class Curso extends BaseCurso
      	return Rel_usuario_rol_cursoPeer::doCount($c2);
      	}
 
-
-    // Nombre del m�todo: getAlumnos()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve los alumnos en el curso
+    // Nombre del metodo: getAlumnos()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve los alumnos en el curso
      */
-
    public function getAlumnos($crit = null)
     {
       $c = new Criteria();
@@ -138,11 +126,10 @@ class Curso extends BaseCurso
      	return Rel_usuario_rol_cursoPeer::doSelect($c2);
      	}
 
-    // Nombre del m�todo: getProfesores()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve los profesores en el curso
+    // Nombre del metodo: getProfesores()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve los profesores en el curso
      */
-
    public function getProfesores($crit = null)
     {
       $c = new Criteria();
@@ -166,7 +153,6 @@ class Curso extends BaseCurso
      * @author       Jacobo Chaquet
      * @deprecated   Devuelve true si el usuario es profesor en el curso
      */
-
   public function esProfesor($id_usuario=null)
   {
      	$c = new Criteria();
@@ -185,11 +171,10 @@ class Curso extends BaseCurso
 		else return false;
   }
 
-    // Nombre del m�todo: getTemas()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve los Temas del curso
+    // Nombre del metodo: getTemas()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve los Temas del curso
      */
-
    public function getTemas($crit = null)
      {
        if (null != $crit)
@@ -201,12 +186,10 @@ class Curso extends BaseCurso
        return $materia->getTemasMateria($c2);
      	}
 
-
-    // Nombre del m�todo: getHitosPlanificacion()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve la planificacion de los temas en un curso (Usado para el modulo de seguimiento, grafica de Hitos)
+    // Nombre del metodo: getHitosPlanificacion()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve la planificacion de los temas en un curso (Usado para el modulo de seguimiento, grafica de Hitos)
      */
-
    public function getHitosPlanificacion($crit = null)
      {
        if (null != $crit) {
@@ -218,14 +201,13 @@ class Curso extends BaseCurso
 
      	}
 
-    // Nombre del m�todo: vacio()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: comprueba que un curso esta limpio, esto es:
+    // Nombre del metodo: vacio()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: comprueba que un curso esta limpio, esto es:
                     - sin alumnos
                     - sin profesores
-                    - no esta en ning�n modulo
+                    - no esta en ningun modulo
      */
-
    public function vacio()
    {
      if (0!=$this->getNumeroAlumnos())
@@ -243,11 +225,10 @@ class Curso extends BaseCurso
      return true;
    }
 
-    // Nombre del m�todo: borrarUsuario($id)
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: elimina usuario matriculados en el curso (Rel_usuario_rol_curso)
+    // Nombre del metodo: borrarUsuario($id)
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: elimina usuario matriculados en el curso (Rel_usuario_rol_curso)
      */
-
    public function borrarUsuario($id_usuario)
      {
        $c2 = new Criteria();
@@ -260,11 +241,10 @@ class Curso extends BaseCurso
   	   }
      }
 
-    // Nombre del m�todo: eliminarAlumnos($con=null)
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: elimina alumnos matriculados en el curso (Rel_usuario_rol_curso)
+    // Nombre del metodo: eliminarAlumnos($con=null)
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: elimina alumnos matriculados en el curso (Rel_usuario_rol_curso)
      */
-
    public function eliminarAlumnos($con=null)
      {
         $alumnos = $this->getAlumnos(); //Rel_usuario_rol_curso
@@ -275,11 +255,10 @@ class Curso extends BaseCurso
 		    return;
      }
 
-    // Nombre del m�todo: eliminarProfesores($con=null)
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: elimina los profesores matriculados en el curso (Rel_usuario_rol_curso)
+    // Nombre del metodo: eliminarProfesores($con=null)
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: elimina los profesores matriculados en el curso (Rel_usuario_rol_curso)
      */
-
    public function eliminarProfesores($con=null)
      {
         $profesores = $this->getProfesores(); //Rel_usuario_rol_curso
@@ -290,11 +269,10 @@ class Curso extends BaseCurso
 		    return;
      }
 
-    // Nombre del m�todo: eliminarDeModulo($con=null)
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: elimina los profesores matriculados en el curso (Rel_paquete_cursoPeer)
+    // Nombre del metodo: eliminarDeModulo($con=null)
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: elimina los profesores matriculados en el curso (Rel_paquete_cursoPeer)
      */
-
    public function eliminarDeModulo($con=null,$actualizarModulo)
      {
         $modulos = $this->getEnModulo(); //Rel_paquete_cursoPeer
@@ -311,7 +289,7 @@ class Curso extends BaseCurso
         }
 		    return;
      }
-
+//
     public function eliminarBibliotecaArchivos($con=null)
     {
       
@@ -329,14 +307,13 @@ class Curso extends BaseCurso
       
     }
 
-    // Nombre del m�todo: geteliminarAll()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: elimina todo lo referente a un curso
+    // Nombre del metodo: geteliminarAll()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: elimina todo lo referente a un curso
                     - alumnos matriculados en el
                     - profesores
-                    - Si pertenece alg�n modulo elimina el curso y actualiza el curso
+                    - Si pertenece algun modulo elimina el curso y actualiza el curso
      */
-
    public function eliminarAll($actualizarModulo=true)
      {
          $con = Propel::getConnection();
@@ -359,11 +336,10 @@ class Curso extends BaseCurso
 		    return;
      }
 
-    // Nombre del m�todo: EliminarEjerciciosResueltos($id_usuario)
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: elimina los ejercicios Resueltos como autor de usuario
+    // Nombre del metodo: EliminarEjerciciosResueltos($id_usuario)
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: elimina los ejercicios Resueltos como autor de usuario
      */
-
    public function EliminarEjerciciosResueltos($id_usuario)
    {
        $c2 = new Criteria();
@@ -375,14 +351,12 @@ class Curso extends BaseCurso
   	   {
   	     $ejercio->delete();
   	   }
-
    }
 
-    // Nombre del m�todo: getModulo()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve el/los nombre/s del modulo al que pertenece dicho curso por un usuario que le pasamos como parametro
+    // Nombre del metodo: getModulo()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve el/los nombre/s del modulo al que pertenece dicho curso por un usuario que le pasamos como parametro
      */
-
    public function getModulo($idusuario)
      {
       $c2 = new Criteria();
@@ -392,11 +366,10 @@ class Curso extends BaseCurso
       return Rel_usuario_paquetePeer::doSelect($c2);
      }
 
-    // Nombre del m�todo: getEnModulo($crit = null)
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: Devuelve los modulos/paquetes donde esta al qpertenece el curso
+    // Nombre del metodo: getEnModulo($crit = null)
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: Devuelve los modulos/paquetes donde esta al qpertenece el curso
      */
-
    public function getEnModulo($crit = null)
      {
        if (null != $crit) {
@@ -407,11 +380,10 @@ class Curso extends BaseCurso
       return Rel_paquete_cursoPeer::doSelect($c2);
      }
 
-    // Nombre del m�todo: esModulo()
-    // A�adida por: Jacobo Chaquet
-    /* Descripci�n: indica si un usuario es moroso en el curso
+    // Nombre del metodo: esModulo()
+    // Añadida por: Jacobo Chaquet
+    /* Descripcion: indica si un usuario es moroso en el curso
      */
-
    public function esMoroso($idusuario)
      {
 
@@ -430,11 +402,10 @@ class Curso extends BaseCurso
      }
 
 
-    // Nombre del m�todo: tieneAlumnos()
+    // Nombre del metodo: tieneAlumnos()
     // Autor: Jacobo Chaquet
-    /* Descripci�n: indica si un curso tiene alumnos o esta vacio, necesario para saber si se puede borrar un curso
+    /* Descripciñn: indica si un curso tiene alumnos o esta vacio, necesario para saber si se puede borrar un curso
      */
-
    public function tieneAlumnos()
      {
       $c2 = new Criteria();
@@ -449,7 +420,6 @@ class Curso extends BaseCurso
     ** Alta de usuarios en curso ***
     ** Autor: Todor Todorov      ***
     *******************************/
-
    public function alta($idusuario,$tipo)
    {
       $c = new Criteria();
@@ -478,19 +448,16 @@ class Curso extends BaseCurso
   		return true;
    }
 
-
-  // Nombre del m�todo: numeroDudas($idcurso)
-  // A�adida por: Jacobo Chaquet
-  /* Descripci�n: - devuelve un array con el numero de dudas
+  // Nombre del metodo: numeroDudas($idcurso)
+  // Añadida por: Jacobo Chaquet
+  /* Descripcion: - devuelve un array con el numero de dudas
                     formato array:
                           dudas[0]= duda_teoria
                           dudas[1]= duda_ejercicio
                           dudas[2]= duda_planificacion
                           dudas[3]= tutoria
                           dudas[4]= otros
-
    */
-
    public function numeroDudas()
    {
       $c = new Criteria();
@@ -566,15 +533,10 @@ class Curso extends BaseCurso
     $c = new Criteria();
     $c->add(Usuarios_onlinePeer::ID_CURSO, $this->id);
     $c->add(Usuarios_onlinePeer::TIEMPO, time()-(160), Criteria::GREATER_THAN); //este tiempo tiene qser mayor qel puesto en /online/javascript_periodico
-    /*if ($idUsuario)
-    {
-      $c->add(Usuarios_onlinePeer::ID_USUARIO, $idUsuario, Criteria::NOT_EQUAL );
-    }*/
 
     $usuarios= Usuarios_onlinePeer::doSelect($c);
 
     return $usuarios;
-
   }
 
  /**
@@ -592,12 +554,28 @@ class Curso extends BaseCurso
 
     $usuarios= Usuarios_onlinePeer::doCount($c);
 
-    /*if ($usuarios>0)
-    {
-      $usuarios--;
-    }*/
     return $usuarios;
+  }
+  
+  /**
+   * Verificar el acceso al curso segun sus fechas de inicio y final
+   *
+   * @param string $_fecha_inicio
+   * @param string $_fecha_ending
+   * @return string
+   */
+  public function checkAccesoSegunFechasLimite($_fecha_inicio, $_fecha_ending)
+  {
+  	$_tiene_acceso = 'si';
+  	$_fecha_actual = date('Y-m-d');
 
+  	if (!empty($_fecha_inicio)) {
+			if ($_fecha_inicio > $_fecha_actual) { $_tiene_acceso = 'El curso no ha iniciado todav&iacute;a'; }
+  	}
+  	if (!empty($_fecha_ending)) {
+			if (date('Y-m-d', strtotime("+15 days", strtotime($_fecha_ending))) < $_fecha_actual) { $_tiene_acceso = 'El curso ya se encuentra finalizado'; }
+  	}
+  	return $_tiene_acceso;
   }
 
-}
+} // end class

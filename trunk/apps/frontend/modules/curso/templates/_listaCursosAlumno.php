@@ -17,9 +17,20 @@
         <table class="tablacursos" cellspacing="0">
               <?php $i = 0;?>
               <?php foreach($cursos as $curso): ?>
-                  <?php $fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
+                  <?php
+                  	$fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : "";
+                  	
+                  	// check fechas inicio/fin para acceder
+            				$_acceso_curso = $curso->getCurso()->checkAccesoSegunFechasLimite($curso->getCurso()->getFechaInicio('Y-m-d'), $curso->getCurso()->getFechaFin('Y-m-d'));
+                  ?>
                   <tr class="cont_fil" <?= $fondo1 ?>>
-                    <td class="td1"><?php echo link_to(truncate_text($curso->getCurso()->getNombre(), 40), 'curso/index?idcurso='.$curso->getIdCurso(),(array('id' => 'ln_mi_curso'.$curso->getIdCurso(),'title'=>$curso->getCurso()->getNombre()))) ?></td>
+                    <td class="td1">
+                    	<?php if ($_acceso_curso == 'si'): ?>
+                    		<?php echo link_to(truncate_text($curso->getCurso()->getNombre(), 40), 'curso/index?idcurso='.$curso->getIdCurso(),(array('id' => 'ln_mi_curso'.$curso->getIdCurso(),'title'=>$curso->getCurso()->getNombre()))) ?>
+                    	<?php else: ?>
+			              		<span title="<?php echo $_acceso_curso ?>"><?php echo truncate_text($curso->getCurso()->getNombre(), 40) ?></span>
+			              	<?php endif; ?>
+                    </td>
                     <td class="td2"><?php echo $curso->getCurso()->getFechaInicio($format = 'd-m-Y') ?></td>
                     <td class="td3"><?php echo $curso->getCurso()->getFechaFin($format = 'd-m-Y') ?></td>
                     <td class="td4"><?php echo $curso->getCurso()->getMateria()->getNumeroTemas() ?></td>
