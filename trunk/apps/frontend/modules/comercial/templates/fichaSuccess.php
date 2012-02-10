@@ -52,7 +52,7 @@
                 <strong><?= $tit_des ?></strong><br/><br/>
                 <?= $desglose ?>
                 <br/><strong>Precio: </strong><?= $precio ?> Euros <?php if ($mensual) {echo ' / mes'; }?><br/><br/>
-			  </td>
+			  			</td>
               <td class="tdtemas">
                 <?php echo (file_exists('images/'.$dir_portada))? image_tag($dir_portada,'class=tdimagen Alt=Portada'):image_tag('img_cursos/noimg.gif','class=tdimagen Alt=Portada'); ?>
               </td>
@@ -73,7 +73,6 @@
               </td>
               <td style="text-align:right;">
                 <br /><?= link_to(image_tag('bot_matriculate.gif','Alt=Matr&iacute;cula hspace="10"'),'comercial/matricula?'.$vurl.'='.$idref) ?>
-                <input type="hidden" name="test_pinika" value="<?php echo date('H:i:s') ?>"/>
               </td>
             </tr>
           </table>
