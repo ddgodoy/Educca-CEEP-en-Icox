@@ -515,14 +515,10 @@ class evaluacionActions extends sfActions
     $c->addJoin(TareaPeer::ID_EVENTO, EventoPeer::ID);
     $c->addJoin(Rel_usuario_tareaPeer::ID_EJERCICIO_RESUELTO, Ejercicio_resueltoPeer::ID);
     $ejercicios = Ejercicio_resueltoPeer::DoSelect($c);
-
-    
-    exit();
     
     $c = new Criteria();
     $c->add(Cuestion_testPeer::ID_EJERCICIO, $ejercicio->getId());
     $nota_total = Cuestion_testPeer::DoCount($c);
-
     $profesor = UsuarioPeer::RetrieveByPk($this->getUser()->getAnyId());
 
     foreach ($ejercicios as $solucion_alumno)
@@ -599,7 +595,7 @@ class evaluacionActions extends sfActions
   public function executeEvaluacionModulo()
   {
     if ($this->getRequestParameter('save')) {
-      $this->saveok= true;
+      $this->saveok = true;
     }
     $idmodulo = $this->getRequestParameter('idmodulo');
     $this->modulo = PaquetePeer::retrieveByPk($idmodulo);
