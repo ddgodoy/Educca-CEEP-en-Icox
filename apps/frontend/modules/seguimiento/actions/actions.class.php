@@ -259,15 +259,15 @@ class seguimientoActions extends sfActions
 
            // comprobar si este usuario_tarea ya se encuentra registrado
            $aux_c = new Criteria();
-				   $aux_c->add(Rel_usuario_tareaPeer::ID_USUARIO, $this->usuario->getId());
-				   $aux_c->add(Rel_usuario_tareaPeer::ID_TAREA, $tarea_ejercicio->getId());
-				   $rel_usuario_tarea = Rel_usuario_tareaPeer::DoSelectOne($aux_c);
-           
-				   if (!$rel_usuario_tarea) {
-				   	 $rel_usuario_tarea = new Rel_usuario_tarea();
-	           $rel_usuario_tarea->setIdUsuario($this->usuario->getId());
-	           $rel_usuario_tarea->setIdTarea($tarea_ejercicio->getId());	
-				   }
+           $aux_c->add(Rel_usuario_tareaPeer::ID_USUARIO, $this->usuario->getId());
+           $aux_c->add(Rel_usuario_tareaPeer::ID_TAREA, $tarea->getId());
+           $rel_usuario_tarea = Rel_usuario_tareaPeer::DoSelectOne($aux_c);
+
+            if (!$rel_usuario_tarea) {
+            $rel_usuario_tarea = new Rel_usuario_tarea();
+            $rel_usuario_tarea->setIdUsuario($this->usuario->getId());
+            $rel_usuario_tarea->setIdTarea($tarea_ejercicio->getId());
+            }
            $rel_usuario_tarea->setIdEjercicioResuelto($ejer_resuelto->getId());
            $rel_usuario_tarea->setEntregada(1);
            $rel_usuario_tarea->setCorregida(1);

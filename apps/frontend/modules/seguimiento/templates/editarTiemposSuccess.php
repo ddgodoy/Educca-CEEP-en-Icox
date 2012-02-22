@@ -32,6 +32,7 @@
                   <tr>
                       <td style="height: 10px;  "></td>
                   </tr>
+                  <?php if(count($ejercicios_array)>0): ?>
                   <tr>
                       <td colspan="2">
                           <fieldset style="width: 145%; padding-left: 10px;">
@@ -61,6 +62,7 @@
                         </fieldset>
                       </td>
                   </tr>
+                  <?php endif; ?>
             </table>
             </form>
             <br/>
