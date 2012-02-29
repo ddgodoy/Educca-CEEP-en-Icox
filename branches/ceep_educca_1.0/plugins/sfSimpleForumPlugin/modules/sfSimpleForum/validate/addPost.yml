@@ -1,0 +1,20 @@
+fillin:
+  enabled: true
+  param:
+    name: add_topic
+
+validators:
+  myStringValidator:
+    class: sfStringValidator
+    param:
+      min: 5
+      min_error: Por favor, introduzca al menos cinco caracteres.
+fields:
+  title:
+    required:
+      msg: El t&iacute;tulo no puede estar en blanco. Por favor, introduzca T&iacute;tulo.
+    myStringValidator:
+  body:
+    required:
+      msg: El mensaje no puede estar en blanco. Por favor, introduzca contenido al mensaje.
+    myStringValidator:

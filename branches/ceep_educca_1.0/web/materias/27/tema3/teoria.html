@@ -1,0 +1,201 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Curso RSC</title>
+<script language="javascript" src="../shared/js/estilos.js"></script>
+
+<script type="text/javascript" src="../shared/js/virtualpaginate.js"></script>
+
+<script type="text/javascript" src="../shared/js/BubbleTooltips.js"></script>
+<script type="text/javascript" src="BubbleTooltips.js"></script>
+<script type="text/javascript">
+window.onload=function(){enableTooltips("contenido")};
+</script>
+
+<script type="text/javascript" src="../shared/js/prototype.js"></script>
+<script type="text/javascript" src="../shared/js/bubble.js"></script>
+
+<script language="javascript">
+
+	var tiempo_actual = new Date().getTime();
+	
+	function cerrarVentana() {
+	if (confirm("¿Estás seguro de que quieres abandonar la teoría?")) 
+		window.close();
+	}
+	
+	function completar() {
+	if (confirm("¿Quieres marcar la teoría del tema como Completada?")) {
+		opener.status_completado();
+		window.close();
+		}
+	}	
+		
+</script>
+<link href="../shared/css/bubble.css" rel="stylesheet" type="text/css" />
+
+<link href="../shared/css/curso.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+/*Sample CSS used for the Virtual Pagination Demos. Modify/ remove as desired*/
+
+.virtualpage, .virtualpage2, .virtualpage3{
+/*hide the broken up pieces of contents until script is called. Remove if desired*/
+display: none;
+}
+
+.paginationstyle{ /*Style for demo pagination divs*/
+	width: 250px;
+	padding: 2px 0;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.paginationstyle select{ /*Style for demo pagination divs' select menu*/
+	border: 1px solid navy;
+	margin: 0 15px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+}
+
+.paginationstyle a{ /*Pagination links style*/
+padding: 0 5px;
+text-decoration: none;
+border: 1px solid black;
+color: navy;
+background-color: white;
+}
+
+.paginationstyle a:hover, .paginationstyle a.selected{
+color: #000;
+background-color: #FEE496;
+}
+
+.paginationstyle a.imglinks{ /*Pagination Image links style (class="imglinks") */
+border: 0;
+padding: 0;
+}
+
+.paginationstyle a.imglinks img{
+vertical-align: middle;
+border: 0;
+}
+
+.paginationstyle a.imglinks a:hover{
+background: none;
+}
+
+.paginationstyle .flatview a:hover, .paginationstyle .flatview a.selected{ /*Pagination div "flatview" links style*/
+color: #000;
+background-color: yellow;
+}
+
+#page #listingpaginate {
+	position: absolute;
+	left: 244px;
+	top: 551px;
+	vertical-align: top;
+}
+body {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+</style>
+</head>
+
+<body onunload="javascript: window.opener.setElapsedTime(); window.opener.location.reload();">
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip">This DIV has a tip!!.</div>
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip2">This DIV has a tip!!.</div>
+<div id="page">
+	  <div class="super" id="super"><img src="../shared/imagenes/logo.gif" alt="Responsabilidad Social Corporativa" width="247" height="33"/></div> 
+	 
+	<div id="menusup">
+	  <div align="right"><a href="javascript:cerrarVentana()"><img src="../shared/imagenes/home.jpg" width="25" height="31" hspace="5" border="0" onmouseover="ddrivetip('Volver al Indice'); return false;" onmouseout="hideddrivetip()"/></a>
+	  <script language="javascript">
+	  	var estado = opener.status;
+		if (estado == "completed") {
+			document.writeln("<a href=\"cuestionario.html\"><img src=\"../shared/imagenes/ejercic.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Ir al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" /></a>");
+		} else {
+			document.writeln("<img src=\"../shared/imagenes/ejercic_no.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Aun no tienes acceso al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" />");
+		}
+	  </script>
+	  <a href="javascript:void(0)" onclick="open ('../shared/bibliografia.html','biblio','left=100,top=90,width=760,height=620,scrollbars=1,toolbar=1,resizable=1');"><img src="../shared/imagenes/biblio.jpg" width="25" height="31" hspace="5"  onmouseover="ddrivetip('Bibliografía'); return false;" onmouseout="hideddrivetip()" border="0"/></a></div>
+  </div>
+	<div id="contenido">
+  		<div class="virtualpage">
+			<p class="titulo"><strong>3.- los antecedentes históricos de la responsabilidad social coorporativa</strong>  </p>
+
+	    <p>Los antecedentes hist&oacute;ricos de la RSC de las empresas se  remontan a siglos pasados y se encuentran en los propios or&iacute;genes de las  organizaciones que conjugaron <strong>capital y trabajo para generar riqueza y  beneficio</strong>,<img src="imagenes/tema3.4.jpg" alt="origen" align="right" class="imgint" /> aunque en el camino los abusos sobre los trabajadores hayan sido  notorios. </p>
+	    </br>
+		<p>Todos recordamos las condiciones de explotaci&oacute;n a la que los  trabajadores se vieron sometidos en el per&iacute;odo de la Revoluci&oacute;n Industrial,  por no remontarnos a &eacute;pocas m&aacute;s lejanas en donde la esclavitud fue la base de  la econom&iacute;a de las sociedades <span class="txtcursiva">&quot;modernas&quot;</span>. Pero es precisamente en  tales entornos de dureza extrema en el que surgen l&iacute;deres empresariales que  act&uacute;an para cambiar las cosas favorablemente. Cabr&iacute;a destacar esta actuaci&oacute;n  como un <strong>desaf&iacute;o no conformista</strong> de algunos empresarios y de otros como  forma de obtener el <strong>reconocimiento y  legitimaci&oacute;n</strong> a su <strong>ascenso social</strong>, emprendieron cambios sustanciales  en su quehacer empresarial. </p>
+		</br>
+	    <p>En EEUU <strong>la educaci&oacute;n</strong> constituy&oacute; el <strong>n&uacute;cleo de  intervenci&oacute;n</strong> y fue la principal beneficiada. As&iacute;, en el origen de muchas  grandes <strong>universidades privadas</strong> norteamericanas como Harvard, Yale,  Cornell, Princeton, Duke, Columbia, etc., nos encontramos con las aportaciones  de importantes empresarios del momento. Pero tambi&eacute;n en <strong>las artes y  humanidades</strong>, el apoyo y patrocinio de la industria result&oacute; decisivo,  cre&aacute;ndose grandes centros como el Metropolitan Museum o la Metropolitan Opera  House de Nueva York. Sin embargo, los cr&iacute;ticos a las donaciones empresariales  tanto en EEUU como en Europa suelen afirmar, con raz&oacute;n, que los recursos se  concentran, en general, en <strong>proyectos de prestigio y de gran repercusi&oacute;n  p&uacute;blica</strong>, en perjuicio de sectores locales m&aacute;s necesitados.</p>
+		</div>
+		<div class="virtualpage">
+<p>No obstante, era escaso el componente ut&oacute;pico en estos  fil&aacute;ntropos norteamericanos, motivados totalmente por la ganancia. <a href="http://es.wikipedia.org/wiki/John_D._Rockefeller" target="_blank" title="Quíen es ..."><strong>Rockefeller</strong></a>  o <strong><a href="http://es.wikipedia.org/wiki/Henry_Ford" target="_blank" title="Quíen es...">Ford</a></strong> no tuvieron escr&uacute;pulos en sus actividades comerciales, aunque luego  dedicaran su riqueza a la creaci&oacute;n de <strong>fundaciones caritativas con grandes  activos</strong>.<img src="imagenes/tema3.1.jpg" alt="caridad" width="250" height="165" align="right" class="imgint" /></p>
+    <p>Pero ser&aacute; en EEUU donde surja la expresi&oacute;n de  responsabilidad social corporativa en los a&ntilde;os cincuenta, mucho m&aacute;s tarde sin  embargo se traslada a Europa, ya en la d&eacute;cada de los noventa.</p>
+    <p> El <strong>contexto pol&iacute;tico</strong> del concepto de RSC  da su primer paso en <strong>1993 </strong>cuando el  presidente de la   Comisi&oacute;n Europea, <strong><a href="http://es.wikipedia.org/wiki/Jacques_Delors" target="_blank" title="Quíen es...">Jaques  Delors</a></strong>, invita a los empresarios europeos a implicarse activamente en la  lucha contra la exclusi&oacute;nsocial.
+  &nbsp;</p>
+    <p>En la <strong>Cumbre</strong><strong> de Lisboa en marzo de 2000</strong> se hace un  llamamiento especial a la responsabilidad social de las empresas, forma parte  de la <strong>estrategia de empleo</strong> que tiene  como objetivo hacer de la UE  <span class="txtcursiva">&ldquo; <em>la econom&iacute;a mas competitiva y din&aacute;mica  del mundo, basada en el <strong>conocimiento</strong>,  en el <strong>desarrollo sostenible</strong> con los  mejores <strong>empleos </strong>y la mayor <strong>cohesi&oacute;n social</strong></em>&rdquo;.</span></p>
+    <p>En <strong>enero de 1999</strong> el secretario general de las <strong>Naciones  Unidas </strong>propuso por primera vez la idea de <strong>Global Complact o Pacto Mundial</strong> ante el <strong>Foro Econ&oacute;mico y Mundial de Davos,</strong> con el objetivo de impulsar la <span class="txtcursiva">&ldquo;<strong><em>adopci&oacute;n  de principios y valores compartidos que den un rostro humano al mercado mundial</em></strong>&rdquo;</span> promoviendo la construcci&oacute;n de pospilares sociales y ambientales necesarios para  mantener la nueva econom&iacute;a mundial. </p>
+		</div>
+		<div class="virtualpage">
+	     <p align="center"><strong>Matriz  diferencial entre</strong><br />
+    <strong>&nbsp;Responsabilidad Social y otras situaciones <span class="titulo">&quot;empresariales&quot;</span></strong></p>
+    <p align="center"><img src="imagenes/img3.1.gif" alt="Matriz Diferencial" width="500" height="353" border="1" /></p>
+		</div>
+		<div class="virtualpage">
+		 <p>Despu&eacute;s los esc&aacute;ndalos surgidos alrededor del mundo por  abuso de las empresas sobre todo en el &aacute;mbito laboral y fiscal durante los a&ntilde;os  80, se iniciaron movimientos sobretodo en Estados Unidos, sobre la lucha por  los derechos y el papel de la empresa en la sociedad. Aunque muchas otras  empresas ya segu&iacute;an los principios de la RSE, por ejemplo <strong><em>The Body Shop, Ben and Jerry Ice  Cream Company</em></strong>, etc., otras optaron por implementar el modelo de la  Fundaci&oacute;n, donde la compa&ntilde;&iacute;a aportaba los fondos pero se desentend&iacute;a de evaluar  la gesti&oacute;n interna de la misma.</p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="imagenes/img3.2.gif" width="340" height="59" /></td>
+        <td><img src="imagenes/img3.3.gif" width="340" height="59" /></td>
+      </tr>
+      <tr>
+        <td width="50%" align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300" title="Hechos">
+          <param name="movie" value="imagenes/colorMenu.swf" />
+          <param name="quality" value="high" />
+          <embed src="imagenes/colorMenu.swf" width="300" height="300" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash"></embed>
+        </object></td>
+        <td align="center"><object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300" title="En el futuro">
+          <param name="movie" value="imagenes/colorMenu2.swf" />
+          <param name="quality" value="high" />
+          <embed src="imagenes/colorMenu2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300"></embed>
+        </object></td>
+      </tr>
+    </table>
+		</div>
+		<div class="virtualpage">
+		    <p>Hoy es habitual que al amparo de la <strong>presi&oacute;n social, y  debido a diversas disposiciones legales o normas voluntarias, </strong>que la mayor&iacute;a  de grandes empresas financien y organicen <strong>Fundaciones</strong> <strong>Sociales</strong> para canalizar <strong>medios y recursos de RSC</strong>.<br />
+    </p>
+      <p align="justify"> Detr&aacute;s de cualquier importante  proyecto o actividad cultural o deportiva aparecen sus empresas patrocinadoras  e incluso detr&aacute;s de exitosos programas municipales de rehabilitaci&oacute;n urbana  arquitect&oacute;nica hay empresas que los apoyan. Incluso se puede observar como la  publicidad est&aacute; cambiando sutilmente esquemas tradicionales para destacar las  especiales contribuciones a la sociedad de determinadas empresas.</p>
+    <p align="justify">Aunque <strong>el &aacute;nimo de</strong> <strong>lucro o beneficio</strong> es el eje  fundamental por el que se rigen las empresas en una econom&iacute;a de mercado, su <strong>dimensi&oacute;n  social adquiere un creciente peso diferencial</strong>. Adem&aacute;s, hay que tener en  cuenta que existe una importante <strong>econom&iacute;a social </strong>en donde la finalidad  esencial no es el beneficio sino <strong>la calidad del servicio y las prestaciones  sociales</strong>, asumidas por organizaciones privadas y amparadas en ocasiones por  el propio Estado para cubrir necesidades esenciales.</p>
+    <p align="justify"> Tambi&eacute;n est&aacute;n las  organizaciones, como las Cajas de Ahorro, cuya finalidad social les es exigida.  No obstante, tal finalidad nunca debe ser obst&aacute;culo para que la eficiencia en  la gesti&oacute;n sea pieza clave del servicio y de la pervivencia de las propias  organizaciones.</p>
+    <div id="final">
+      <p align="center"><a href="#" onmouseout="MM_swapImgRestore()" onclick="completar()" title="Marcar 'Tema Completado'" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/completado.gif" alt="Marcar Tema Completado" width="76" height="80" border="0" id="completa"/></a></p>
+      <p align="center" class="txtfinal">&iexcl;Enhorabuena! has llegado al final del Tema 3, para poder realizar la autoevaluaci&oacute;n aseg&uacute;rate de haber<br />
+        revisado bien la teor&iacute;a 
+        y pulsa el bot&oacute;n de Marcar Tema Completado. </p>
+    </div>
+    
+    </ul>
+    </p>
+		</div>
+  </div>
+ 
+	<div id="listingpaginate" class="paginationstyle">
+		<a href="#" rel="previous" class="imglinks"><img src="../shared/imagenes/atras.jpg" align="absmiddle" /></a>
+		<select name="select">
+	  </select>
+  <a href="#" rel="next" class="imglinks"><img src="../shared/imagenes/adelante.jpg" align="absmiddle" /></a>  </div>
+	<script type="text/javascript">
+		//virtualpaginate(className, pieces_to_show_per_page)
+		var pagecontent=new virtualpaginate("virtualpage", 1)
+		pagecontent.buildpagination("listingpaginate")
+	</script>
+  	<div id="arbol">INICIO > TEORIA > ANTECEDENTES HISTORICOS </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.5 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="WORD2007" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+  </metadata>
+  <organizations default="ORG-BEC23C9DEFEAB8CA0E7797D2D0451278">
+    <organization identifier="ORG-BEC23C9DEFEAB8CA0E7797D2D0451278" structure="hierarchical">
+      <title>Organization</title>
+      <item identifier="ITEM-DF828B9C7360BB4B01E42C536FB5AD9E" identifierref="RES-37D8672BF211023AE4B3B2833FEFCBE4" isvisible="true">
+        <title>WORD2007</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="RES-F81D4B0573D96B7911E3E8BC3BFD91A0" type="webcontent" href="Capitulo8/evaulacion81/evaulacion81.htm">
+      <file href="Capitulo8/evaulacion81/evaulacion81.htm" />
+      <file href="Capitulo8/evaulacion81/evaulacion81.swf" />
+      <file href="Capitulo8/evaulacion81/standard.js" />
+    </resource>
+    <resource identifier="RES-D421DC87677DFE0FC4B7572139DE172C" type="webcontent" href="Capitulo8/evaulacion81/standard.js">
+      <file href="Capitulo8/evaulacion81/standard.js" />
+    </resource>
+    <resource identifier="RES-B29CDBF5E649C88384516F075C5CF02C" type="webcontent" href="Capitulo8/CAPITULO0801.flv">
+      <file href="Capitulo8/CAPITULO0801.flv" />
+    </resource>
+    <resource identifier="RES-DEFC010651C25A530A5D8F28AD13F328" type="webcontent" href="Capitulo8/CAPITULO0802.flv">
+      <file href="Capitulo8/CAPITULO0802.flv" />
+    </resource>
+    <resource identifier="RES-44D5CC675530CFA551B21D1B6548CAA7" type="webcontent" href="Capitulo8/CAPITULO0803.flv">
+      <file href="Capitulo8/CAPITULO0803.flv" />
+    </resource>
+    <resource identifier="RES-257398D846041030D164E508517A99BF" type="webcontent" href="Capitulo8/CAPITULO0805.flv">
+      <file href="Capitulo8/CAPITULO0805.flv" />
+    </resource>
+    <resource identifier="RES-AFC56A7A956531A25CFC02AB07CF4C02" type="webcontent" href="Capitulo8/FC08WORD2007.fla">
+      <file href="Capitulo8/FC08WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-A33CF6EB75993535BF664E441C189CB4" type="webcontent" href="Capitulo8/FC08WORD2007.swf">
+      <file href="Capitulo8/FC08WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-8E52F470BA615408748DBDB67483CC76" type="webcontent" href="Capitulo6/evaulacion61/evaulacion61.htm">
+      <file href="Capitulo6/evaulacion61/evaulacion61.htm" />
+      <file href="Capitulo6/evaulacion61/evaulacion61.swf" />
+      <file href="Capitulo6/evaulacion61/standard.js" />
+    </resource>
+    <resource identifier="RES-E1143CFE62AD350A4E03940DDF952BF9" type="webcontent" href="Capitulo6/evaulacion61/evaulacion61.swf">
+      <file href="Capitulo6/evaulacion61/evaulacion61.swf" />
+    </resource>
+    <resource identifier="RES-D803A4DF914017417F004B29F228C3B9" type="webcontent" href="Capitulo6/evaulacion61/evaulacion61_skin.swf">
+      <file href="Capitulo6/evaulacion61/evaulacion61_skin.swf" />
+    </resource>
+    <resource identifier="RES-8F299B576AB36D047385ECCBCCF42568" type="webcontent" href="Capitulo6/evaulacion61/standard.js">
+      <file href="Capitulo6/evaulacion61/standard.js" />
+    </resource>
+    <resource identifier="RES-5A65586326A3FA5B48C9EF991EC77805" type="webcontent" href="Capitulo6/CAPITULO0601.flv">
+      <file href="Capitulo6/CAPITULO0601.flv" />
+    </resource>
+    <resource identifier="RES-D2432852FC7AEBCB6B5FB033CEF234FF" type="webcontent" href="Capitulo6/CAPITULO0602.flv">
+      <file href="Capitulo6/CAPITULO0602.flv" />
+    </resource>
+    <resource identifier="RES-389F452BD64F8B3FED945A7CF9FF9A22" type="webcontent" href="Capitulo6/CAPITULO0603.flv">
+      <file href="Capitulo6/CAPITULO0603.flv" />
+    </resource>
+    <resource identifier="RES-4E87DD6C846E72A83F24345CC5BA517A" type="webcontent" href="Capitulo6/CAPITULO0605.flv">
+      <file href="Capitulo6/CAPITULO0605.flv" />
+    </resource>
+    <resource identifier="RES-2F2C806A4B5B600BA7C18213543064FA" type="webcontent" href="Capitulo6/CAPITULO0606.flv">
+      <file href="Capitulo6/CAPITULO0606.flv" />
+    </resource>
+    <resource identifier="RES-7907A29BB08029D633F1377C0F0DA3E1" type="webcontent" href="Capitulo6/FC06WORD2007.fla">
+      <file href="Capitulo6/FC06WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-93ACF61CFC6EE07059CA3ACB7184F003" type="webcontent" href="Capitulo6/FC06WORD2007.swf">
+      <file href="Capitulo6/FC06WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-549E2E8A962B9C2E29D3F6B407868E30" type="webcontent" href="assets/TreeIcons/Accordion.png">
+      <file href="assets/TreeIcons/Accordion.png" />
+    </resource>
+    <resource identifier="RES-A880C737B4BAC84DF37606EBD9C257F8" type="webcontent" href="assets/TreeIcons/application.png">
+      <file href="assets/TreeIcons/application.png" />
+    </resource>
+    <resource identifier="RES-9676D1734A0481D6B398C98DDBF4CCB1" type="webcontent" href="assets/TreeIcons/ApplicationControlBar.png">
+      <file href="assets/TreeIcons/ApplicationControlBar.png" />
+    </resource>
+    <resource identifier="RES-86FE8C00F6982E3EA0B3EB3054CA1FFA" type="webcontent" href="assets/TreeIcons/Button.png">
+      <file href="assets/TreeIcons/Button.png" />
+    </resource>
+    <resource identifier="RES-E5696277230FF2892A3B667D944C7471" type="webcontent" href="assets/TreeIcons/ButtonBar.png">
+      <file href="assets/TreeIcons/ButtonBar.png" />
+    </resource>
+    <resource identifier="RES-2815CB7148862888DCBC30CA1932DDF7" type="webcontent" href="assets/TreeIcons/CheckBox.png">
+      <file href="assets/TreeIcons/CheckBox.png" />
+    </resource>
+    <resource identifier="RES-96C6CB62A169733A008D93EBBD653A9F" type="webcontent" href="assets/TreeIcons/ColorPicker.png">
+      <file href="assets/TreeIcons/ColorPicker.png" />
+    </resource>
+    <resource identifier="RES-11561D9359EA7BE445DC0AC3C9CAC428" type="webcontent" href="assets/TreeIcons/ComboBox.png">
+      <file href="assets/TreeIcons/ComboBox.png" />
+    </resource>
+    <resource identifier="RES-5CE8647EF21AC13E034AABD1BC8A7D3E" type="webcontent" href="assets/TreeIcons/DataGrid.png">
+      <file href="assets/TreeIcons/DataGrid.png" />
+    </resource>
+    <resource identifier="RES-5D2038D91EC6CC4B00572C9382F11C94" type="webcontent" href="assets/TreeIcons/DateChooser.png">
+      <file href="assets/TreeIcons/DateChooser.png" />
+    </resource>
+    <resource identifier="RES-EA6DA0E7CF2E4E27E865A753CE8535F9" type="webcontent" href="assets/TreeIcons/HDividedBox.png">
+      <file href="assets/TreeIcons/HDividedBox.png" />
+    </resource>
+    <resource identifier="RES-DDE3C48ED97F94871C6BD22004BFB2C8" type="webcontent" href="assets/TreeIcons/HRule.png">
+      <file href="assets/TreeIcons/HRule.png" />
+    </resource>
+    <resource identifier="RES-6CCAEA0DC3199183B400D973CA00BB00" type="webcontent" href="assets/TreeIcons/HScrollBar.png">
+      <file href="assets/TreeIcons/HScrollBar.png" />
+    </resource>
+    <resource identifier="RES-401B9247EEDB412EC680F3BC60BBCB65" type="webcontent" href="assets/TreeIcons/HSlider.png">
+      <file href="assets/TreeIcons/HSlider.png" />
+    </resource>
+    <resource identifier="RES-F6C14E5BFE3A3D3F7D1E49EE056CE141" type="webcontent" href="assets/TreeIcons/LinkBar.png">
+      <file href="assets/TreeIcons/LinkBar.png" />
+    </resource>
+    <resource identifier="RES-56CEE4E6E233C20ADB0DB742C4497D65" type="webcontent" href="assets/TreeIcons/LinkButton.png">
+      <file href="assets/TreeIcons/LinkButton.png" />
+    </resource>
+    <resource identifier="RES-E307BF29887D158ED59D0CCB2DC3859F" type="webcontent" href="assets/TreeIcons/List.png">
+      <file href="assets/TreeIcons/List.png" />
+    </resource>
+    <resource identifier="RES-296AEE2658DE2B455C34A049E61FCB95" type="webcontent" href="assets/TreeIcons/MenuBar.png">
+      <file href="assets/TreeIcons/MenuBar.png" />
+    </resource>
+    <resource identifier="RES-F5AFF751359B54A659DCDC0878E58A01" type="webcontent" href="assets/TreeIcons/NumericStepper.png">
+      <file href="assets/TreeIcons/NumericStepper.png" />
+    </resource>
+    <resource identifier="RES-4C511E15DB2C5CC9886945C580482413" type="webcontent" href="assets/TreeIcons/Panel.png">
+      <file href="assets/TreeIcons/Panel.png" />
+    </resource>
+    <resource identifier="RES-2400E0F4DFC7C74832F17983E3A80505" type="webcontent" href="assets/TreeIcons/ProgressBar.png">
+      <file href="assets/TreeIcons/ProgressBar.png" />
+    </resource>
+    <resource identifier="RES-2FC06CC6A7F0B7C726E5DD81C5F2D83D" type="webcontent" href="assets/TreeIcons/RadioButton.png">
+      <file href="assets/TreeIcons/RadioButton.png" />
+    </resource>
+    <resource identifier="RES-97048B5A695ABA2B34ABD88D6699459E" type="webcontent" href="assets/TreeIcons/TabNavigator.png">
+      <file href="assets/TreeIcons/TabNavigator.png" />
+    </resource>
+    <resource identifier="RES-41D7C6A82B7FFC8F4FBAD1055676ECFC" type="webcontent" href="assets/TreeIcons/TextArea.png">
+      <file href="assets/TreeIcons/TextArea.png" />
+    </resource>
+    <resource identifier="RES-C6722D73681EB41B38CD6D1303CDBD3F" type="webcontent" href="assets/TreeIcons/TextInput.png">
+      <file href="assets/TreeIcons/TextInput.png" />
+    </resource>
+    <resource identifier="RES-1BA886A70D99868F501C9BEE79075878" type="webcontent" href="assets/TreeIcons/ToggleButtonBar.png">
+      <file href="assets/TreeIcons/ToggleButtonBar.png" />
+    </resource>
+    <resource identifier="RES-9601A6EDBF0FEAD216DBBA9DF8E67CA4" type="webcontent" href="assets/TreeIcons/ToolTip.png">
+      <file href="assets/TreeIcons/ToolTip.png" />
+    </resource>
+    <resource identifier="RES-C00FCDF7EDC4DA7706D5B8982D9FF366" type="webcontent" href="assets/TreeIcons/Tree.png">
+      <file href="assets/TreeIcons/Tree.png" />
+    </resource>
+    <resource identifier="RES-248AF5B97196DDEF2BCBA3CE98FD9D4A" type="webcontent" href="assets/TreeIcons/VDividedBox.png">
+      <file href="assets/TreeIcons/VDividedBox.png" />
+    </resource>
+    <resource identifier="RES-3FDA027531AD289C19ADFAFD54F0C9CB" type="webcontent" href="assets/TreeIcons/VRule.png">
+      <file href="assets/TreeIcons/VRule.png" />
+    </resource>
+    <resource identifier="RES-EDCA7213D9F4139619ECE7CDD6D7AA89" type="webcontent" href="assets/TreeIcons/VScrollBar.png">
+      <file href="assets/TreeIcons/VScrollBar.png" />
+    </resource>
+    <resource identifier="RES-F7F19EBBE49567146EFA5184E206844F" type="webcontent" href="assets/TreeIcons/VSlider.png">
+      <file href="assets/TreeIcons/VSlider.png" />
+    </resource>
+    <resource identifier="RES-D0D801D313F9F374CFBA92D5369F4BA0" type="webcontent" href="assets/86.png">
+      <file href="assets/86.png" />
+    </resource>
+    <resource identifier="RES-A045F38DC5C53483235DE01AA24CEABD" type="webcontent" href="assets/alert.png">
+      <file href="assets/alert.png" />
+    </resource>
+    <resource identifier="RES-3EB30E87F006F5A00357849EE619B4DD" type="webcontent" href="assets/alignCenter.png">
+      <file href="assets/alignCenter.png" />
+    </resource>
+    <resource identifier="RES-10145C67056C1F22D4F09ECFAE0A7219" type="webcontent" href="assets/alignLeft.png">
+      <file href="assets/alignLeft.png" />
+    </resource>
+    <resource identifier="RES-F3B562B38E23C75975937F03481FB114" type="webcontent" href="assets/alignRight.png">
+      <file href="assets/alignRight.png" />
+    </resource>
+    <resource identifier="RES-916C3CF16BD0BB680C5A83C7D2818C9A" type="webcontent" href="assets/arial.ttf">
+      <file href="assets/arial.ttf" />
+    </resource>
+    <resource identifier="RES-B1ED4B12CC8C8A954EE214C9543834A6" type="webcontent" href="assets/backgrounds.swf">
+      <file href="assets/backgrounds.swf" />
+    </resource>
+    <resource identifier="RES-79D9748C76157AF4955FBEA2A39D1BF6" type="webcontent" href="assets/borderAppControlDefault.png">
+      <file href="assets/borderAppControlDefault.png" />
+    </resource>
+    <resource identifier="RES-8EA4246778ED54DF77A3D14B57209869" type="webcontent" href="assets/borderInset.png">
+      <file href="assets/borderInset.png" />
+    </resource>
+    <resource identifier="RES-9D2E69B9B8FC9180F602CF2A4F7675C1" type="webcontent" href="assets/borderNone.png">
+      <file href="assets/borderNone.png" />
+    </resource>
+    <resource identifier="RES-310F4E891A725D50031D6C8ACE01A300" type="webcontent" href="assets/borderOutset.png">
+      <file href="assets/borderOutset.png" />
+    </resource>
+    <resource identifier="RES-C33AAC52BE3DE0E344BDCF8CFFA0A0F9" type="webcontent" href="assets/borderPanelDefault.png">
+      <file href="assets/borderPanelDefault.png" />
+    </resource>
+    <resource identifier="RES-AB6F9AD4A9D0C9D43D33B78FBA64239D" type="webcontent" href="assets/borderSolid.png">
+      <file href="assets/borderSolid.png" />
+    </resource>
+    <resource identifier="RES-3077F79019AC452F62449CD80212E133" type="webcontent" href="assets/brushedMetal.jpg">
+      <file href="assets/brushedMetal.jpg" />
+    </resource>
+    <resource identifier="RES-9808F16467B04DF1653A64AE0F947E8F" type="webcontent" href="assets/center.gif">
+      <file href="assets/center.gif" />
+    </resource>
+    <resource identifier="RES-38C6A09DEA5CBFF0611EBEC7842EB4BE" type="webcontent" href="assets/center.png">
+      <file href="assets/center.png" />
+    </resource>
+    <resource identifier="RES-3E2E89E65194477238D6B4FD6FA46AD8" type="webcontent" href="assets/cerrar.png">
+      <file href="assets/cerrar.png" />
+    </resource>
+    <resource identifier="RES-B0B1F92DEC1D4D11190FC5D87146B4B1" type="webcontent" href="assets/checkMark.png">
+      <file href="assets/checkMark.png" />
+    </resource>
+    <resource identifier="RES-6CA5BA4EB46D9FAAA113AFA2B3EA57C2" type="webcontent" href="assets/closeNav.png">
+      <file href="assets/closeNav.png" />
+    </resource>
+    <resource identifier="RES-7473C786C209BBA9601C67362A9B4F4A" type="webcontent" href="assets/colorWheel.png">
+      <file href="assets/colorWheel.png" />
+    </resource>
+    <resource identifier="RES-8310487A6E9F6C9CF5CE4E9CB1F9D2E3" type="webcontent" href="assets/control_pause.png">
+      <file href="assets/control_pause.png" />
+    </resource>
+    <resource identifier="RES-43046CB03A754DFFFC6E663C3748A822" type="webcontent" href="assets/control_pause_blue.png">
+      <file href="assets/control_pause_blue.png" />
+    </resource>
+    <resource identifier="RES-BA9398C00C8119B66D9CA70752AB3C84" type="webcontent" href="assets/control_play.png">
+      <file href="assets/control_play.png" />
+    </resource>
+    <resource identifier="RES-8C61CBC975B22E2A4E9FC50FF526EFE0" type="webcontent" href="assets/control_play_blue.png">
+      <file href="assets/control_play_blue.png" />
+    </resource>
+    <resource identifier="RES-5508454CA30A5B54BD68437ACF93673F" type="webcontent" href="assets/control_stop.png">
+      <file href="assets/control_stop.png" />
+    </resource>
+    <resource identifier="RES-2B0E028F71F99DCB4CD0E591B1DA43F9" type="webcontent" href="assets/control_stop_blue.png">
+      <file href="assets/control_stop_blue.png" />
+    </resource>
+    <resource identifier="RES-57481EE017E6BA4D6771483FFE250C51" type="webcontent" href="assets/disclose_close.png">
+      <file href="assets/disclose_close.png" />
+    </resource>
+    <resource identifier="RES-FF654B1300FB7A6B5F17B8A7C4EA2646" type="webcontent" href="assets/disclose_open.png">
+      <file href="assets/disclose_open.png" />
+    </resource>
+    <resource identifier="RES-6C523BC605C0CCFE2AF86B05A421F410" type="webcontent" href="assets/downArrow.png">
+      <file href="assets/downArrow.png" />
+    </resource>
+    <resource identifier="RES-26628566893EF47C32D181578A77DAC3" type="webcontent" href="assets/downClose.png">
+      <file href="assets/downClose.png" />
+    </resource>
+    <resource identifier="RES-5E970958DAAC47964D0F92D07AC2DDAE" type="webcontent" href="assets/EXCEL.JPG">
+      <file href="assets/EXCEL.JPG" />
+    </resource>
+    <resource identifier="RES-D6B6235CFFA44B224215B5CAB1BC125D" type="webcontent" href="assets/export.png">
+      <file href="assets/export.png" />
+    </resource>
+    <resource identifier="RES-C8EEA29DAF6F82656157A4CD3E0B955F" type="webcontent" href="assets/fseLogo.png">
+      <file href="assets/fseLogo.png" />
+    </resource>
+    <resource identifier="RES-5770A34FF864CE89C2FA9770F113F85B" type="webcontent" href="assets/header.swf">
+      <file href="assets/header.swf" />
+    </resource>
+    <resource identifier="RES-B8C943F35D41202A728D618B239512A0" type="webcontent" href="assets/icono_cerrar.gif">
+      <file href="assets/icono_cerrar.gif" />
+    </resource>
+    <resource identifier="RES-5B28CE683DFDD5A42668DAC330622525" type="webcontent" href="assets/images[1].jpg">
+      <file href="assets/images[1].jpg" />
+    </resource>
+    <resource identifier="RES-74BA2097CF7E7042BD45DA3F08AA9D10" type="webcontent" href="assets/Internet%20Config.png">
+      <file href="assets/Internet%20Config.png" />
+    </resource>
+    <resource identifier="RES-057CE57CB3D3D3EE1DE3847B854750BE" type="webcontent" href="assets/left.gif">
+      <file href="assets/left.gif" />
+    </resource>
+    <resource identifier="RES-06AA8C6015538F980EDBFCEE553F7836" type="webcontent" href="assets/left.png">
+      <file href="assets/left.png" />
+    </resource>
+    <resource identifier="RES-1B0F0C9B33C47DE3B21F4C350FE0BD59" type="webcontent" href="assets/navCategories.png">
+      <file href="assets/navCategories.png" />
+    </resource>
+    <resource identifier="RES-BEAA211E5A99FCB6CAB9654C7B5E8B6E" type="webcontent" href="assets/navIcons.png">
+      <file href="assets/navIcons.png" />
+    </resource>
+    <resource identifier="RES-C44C46C17E582BCC0CB539DD9B91AB6C" type="webcontent" href="assets/navList.png">
+      <file href="assets/navList.png" />
+    </resource>
+    <resource identifier="RES-DFA8D3C4E389CB764F7074002A2994F8" type="webcontent" href="assets/openNav.png">
+      <file href="assets/openNav.png" />
+    </resource>
+    <resource identifier="RES-846A21A6CD9812C6A6FE091D8F858A44" type="webcontent" href="assets/overClose.png">
+      <file href="assets/overClose.png" />
+    </resource>
+    <resource identifier="RES-FB7D872DD947B84E4E0EB49894131DBD" type="webcontent" href="assets/right.gif">
+      <file href="assets/right.gif" />
+    </resource>
+    <resource identifier="RES-6E8CF9DAF6D7FF6854D6D25CFA787917" type="webcontent" href="assets/right.png">
+      <file href="assets/right.png" />
+    </resource>
+    <resource identifier="RES-78E6EC23DB8B9A61B2110B18B54B32C5" type="webcontent" href="assets/salir.jpg">
+      <file href="assets/salir.jpg" />
+    </resource>
+    <resource identifier="RES-29EBD6EB9276030A9BA71A5E4230AE09" type="webcontent" href="assets/scrolltrack.png">
+      <file href="assets/scrolltrack.png" />
+    </resource>
+    <resource identifier="RES-86F6F3FFECC7F77ED37A5E6BCB51E85A" type="webcontent" href="assets/shadowCenter.png">
+      <file href="assets/shadowCenter.png" />
+    </resource>
+    <resource identifier="RES-F34F3576C1BE0FF9C31F82E8E7E1CD7C" type="webcontent" href="assets/shadowLeft.png">
+      <file href="assets/shadowLeft.png" />
+    </resource>
+    <resource identifier="RES-45E379BF88D4C45244FE9DDB18E79748" type="webcontent" href="assets/shadowRight.png">
+      <file href="assets/shadowRight.png" />
+    </resource>
+    <resource identifier="RES-3931BD85CDF891C0BF2236585FC1091F" type="webcontent" href="assets/sliderThumb.png">
+      <file href="assets/sliderThumb.png" />
+    </resource>
+    <resource identifier="RES-7BD292B7549F9B5B833117DB0BCD4CEE" type="webcontent" href="assets/sliderThumb_over.png">
+      <file href="assets/sliderThumb_over.png" />
+    </resource>
+    <resource identifier="RES-E2448B89C2F8BCA8C39937E5C05DF806" type="webcontent" href="assets/thumb.png">
+      <file href="assets/thumb.png" />
+    </resource>
+    <resource identifier="RES-1A532E6F2A90F8CFB7A86D21167F06AE" type="webcontent" href="assets/undo.png">
+      <file href="assets/undo.png" />
+    </resource>
+    <resource identifier="RES-E49C53DF75B5F1ACD51BE28B167C0AEF" type="webcontent" href="assets/upArrow.png">
+      <file href="assets/upArrow.png" />
+    </resource>
+    <resource identifier="RES-8DB42E7CB061BA14AEDEC3B8CE43BF34" type="webcontent" href="assets/upClose.png">
+      <file href="assets/upClose.png" />
+    </resource>
+    <resource identifier="RES-C78ECA9C3789C0694685EC5931844C5F" type="webcontent" href="assets/WORD2007.png">
+      <file href="assets/WORD2007.png" />
+    </resource>
+    <resource identifier="RES-D71558742CE0CB91912869446F77E5BD" type="webcontent" href="Capitulo0/Andaluciamotor.swf">
+      <file href="Capitulo0/Andaluciamotor.swf" />
+    </resource>
+    <resource identifier="RES-9D7DEEDABED798498CFBE7B557653437" type="webcontent" href="Capitulo0/BUSCARV.swf">
+      <file href="Capitulo0/BUSCARV.swf" />
+    </resource>
+    <resource identifier="RES-E76D6C60432020C2DB37FAEC01870BB6" type="webcontent" href="Capitulo0/CalculoNIF.swf">
+      <file href="Capitulo0/CalculoNIF.swf" />
+    </resource>
+    <resource identifier="RES-6011A4A371EB3DF097FC1B825233B3F8" type="webcontent" href="Capitulo0/Evolucionventas.swf">
+      <file href="Capitulo0/Evolucionventas.swf" />
+    </resource>
+    <resource identifier="RES-E17DFA9458F54695E89EACDFF97730C5" type="webcontent" href="Capitulo0/excel.htm">
+      <file href="Capitulo0/excel.htm" />
+    </resource>
+    <resource identifier="RES-ED542E51FEAFE3744051D45370825BF5" type="webcontent" href="Capitulo0/Fichaalmacen.swf">
+      <file href="Capitulo0/Fichaalmacen.swf" />
+    </resource>
+    <resource identifier="RES-7BED1768720D24476CC08FAFAEC03926" type="webcontent" href="Capitulo0/Formatoyseries.swf">
+      <file href="Capitulo0/Formatoyseries.swf" />
+    </resource>
+    <resource identifier="RES-0285A5169F8583F9B069395905C5FB80" type="webcontent" href="Capitulo0/Formulaslargas.swf">
+      <file href="Capitulo0/Formulaslargas.swf" />
+    </resource>
+    <resource identifier="RES-0A075ED086156162AD34D9F7CAEBA953" type="webcontent" href="Capitulo0/Formyfuncs.swf">
+      <file href="Capitulo0/Formyfuncs.swf" />
+    </resource>
+    <resource identifier="RES-5EF657DD2B2F06FC99E7F9A10F1EC977" type="webcontent" href="Capitulo0/FuncionSI.swf">
+      <file href="Capitulo0/FuncionSI.swf" />
+    </resource>
+    <resource identifier="RES-7FFD6C71477BC119E35C342F769726A9" type="webcontent" href="Capitulo0/FuncionSIrep.swf">
+      <file href="Capitulo0/FuncionSIrep.swf" />
+    </resource>
+    <resource identifier="RES-17C30E33E46CC009EA97A7B5ACD4809B" type="webcontent" href="Capitulo0/Graficos.swf">
+      <file href="Capitulo0/Graficos.swf" />
+    </resource>
+    <resource identifier="RES-B11922F8126542396D5D9649D5A8C6A5" type="webcontent" href="Capitulo0/Graficosxy.swf">
+      <file href="Capitulo0/Graficosxy.swf" />
+    </resource>
+    <resource identifier="RES-6DE4F3A4A719873C8FCC25D6D7C4209D" type="webcontent" href="Capitulo0/Habslect.swf">
+      <file href="Capitulo0/Habslect.swf" />
+    </resource>
+    <resource identifier="RES-1FE83E02094009D5C84C91D945BB8D02" type="webcontent" href="Capitulo0/Hojasext.swf">
+      <file href="Capitulo0/Hojasext.swf" />
+    </resource>
+    <resource identifier="RES-8A4CDD852E230F4AF5A30108858CBEFB" type="webcontent" href="Capitulo0/Listaproys.swf">
+      <file href="Capitulo0/Listaproys.swf" />
+    </resource>
+    <resource identifier="RES-13A5D81EA5AB4FFB056759F741B92778" type="webcontent" href="Capitulo0/Regcompras.swf">
+      <file href="Capitulo0/Regcompras.swf" />
+    </resource>
+    <resource identifier="RES-47341F6C9D8D41330F3D72E2161EFE36" type="webcontent" href="Capitulo0/Repasogeneral.swf">
+      <file href="Capitulo0/Repasogeneral.swf" />
+    </resource>
+    <resource identifier="RES-1AF25493A144243755D73B95AA6D6C00" type="webcontent" href="Capitulo0/Repasolistasytablasdin.swf">
+      <file href="Capitulo0/Repasolistasytablasdin.swf" />
+    </resource>
+    <resource identifier="RES-A5641B316FC9B3B85EFE234B990173BD" type="webcontent" href="Capitulo0/Repgraficos.swf">
+      <file href="Capitulo0/Repgraficos.swf" />
+    </resource>
+    <resource identifier="RES-9676EA74C241DE62AE69032C2FCB2EE3" type="webcontent" href="Capitulo0/Repgral.swf">
+      <file href="Capitulo0/Repgral.swf" />
+    </resource>
+    <resource identifier="RES-759534705D10A4C50507C24A0C5C5B4E" type="webcontent" href="Capitulo0/Solver.swf">
+      <file href="Capitulo0/Solver.swf" />
+    </resource>
+    <resource identifier="RES-16C2521C935FDC1B25C78B68019B7A4A" type="webcontent" href="Capitulo0/Solver2.swf">
+      <file href="Capitulo0/Solver2.swf" />
+    </resource>
+    <resource identifier="RES-9BF03C264B30855CCEA07265A18687F7" type="webcontent" href="Capitulo0/Tabladin.swf">
+      <file href="Capitulo0/Tabladin.swf" />
+    </resource>
+    <resource identifier="RES-3D5DA385BEC006961D69906C3EA4F6E2" type="webcontent" href="Capitulo0/Tabladin2.swf">
+      <file href="Capitulo0/Tabladin2.swf" />
+    </resource>
+    <resource identifier="RES-58B65DAF5F8535C4CE22AADC8E8F0E2D" type="webcontent" href="Capitulo0/Tablas1.swf">
+      <file href="Capitulo0/Tablas1.swf" />
+    </resource>
+    <resource identifier="RES-181A207BB60EB2527E4004AF336F3C26" type="webcontent" href="Capitulo0/Tablas2.swf">
+      <file href="Capitulo0/Tablas2.swf" />
+    </resource>
+    <resource identifier="RES-7FCF22EB644EB81B210C4B83A9194ED4" type="webcontent" href="Capitulo0/Tallas.swf">
+      <file href="Capitulo0/Tallas.swf" />
+    </resource>
+    <resource identifier="RES-8EDD32E237C6C007BF9153C43DDE561F" type="webcontent" href="Capitulo0/Temperaturas.swf">
+      <file href="Capitulo0/Temperaturas.swf" />
+    </resource>
+    <resource identifier="RES-8901D009216611BF553AA3751CF7BA32" type="webcontent" href="Capitulo0/toletras.swf">
+      <file href="Capitulo0/toletras.swf" />
+    </resource>
+    <resource identifier="RES-E789BF171A938DAA6F9AAFBCCAC81E99" type="webcontent" href="Capitulo1/CAPITULO0101.flv">
+      <file href="Capitulo1/CAPITULO0101.flv" />
+    </resource>
+    <resource identifier="RES-50BCBA4CDBA9AAA16DC729027DC6F13C" type="webcontent" href="Capitulo1/FC01WORD2007.fla">
+      <file href="Capitulo1/FC01WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-3ABACF1347AC95D4EE5B17CD4F0D97FF" type="webcontent" href="Capitulo1/FC01WORD2007.swf">
+      <file href="Capitulo1/FC01WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-D2203CDB1FCC9787B42EF95BBC26B9A0" type="webcontent" href="Capitulo1/indice.xml">
+      <file href="Capitulo1/indice.xml" />
+    </resource>
+    <resource identifier="RES-5A839FE9BA5B55AF049F75E120D8A82D" type="webcontent" href="Capitulo10/evaulacion101/evaulacion101.htm">
+      <file href="Capitulo10/evaulacion101/evaulacion101.htm" />
+      <file href="Capitulo10/evaulacion101/evaulacion101.swf" />
+      <file href="Capitulo10/evaulacion101/standard.js" />
+    </resource>
+    <resource identifier="RES-16194B40D753FB436DA75E54B48CA022" type="webcontent" href="Capitulo10/evaulacion101/evaulacion101.swf">
+      <file href="Capitulo10/evaulacion101/evaulacion101.swf" />
+    </resource>
+    <resource identifier="RES-93168B7903C2CB274D728A2A740828E3" type="webcontent" href="Capitulo10/evaulacion101/evaulacion101_skin.swf">
+      <file href="Capitulo10/evaulacion101/evaulacion101_skin.swf" />
+    </resource>
+    <resource identifier="RES-9507C6200305E44DC77B26BDA55B1E1F" type="webcontent" href="Capitulo10/evaulacion101/standard.js">
+      <file href="Capitulo10/evaulacion101/standard.js" />
+    </resource>
+    <resource identifier="RES-068A820653F5098896319747C7DAB2F7" type="webcontent" href="Capitulo10/CAPITULO1401.flv">
+      <file href="Capitulo10/CAPITULO1401.flv" />
+    </resource>
+    <resource identifier="RES-2C9EDBE9F7E0BFBE1005FE9F66F87BA0" type="webcontent" href="Capitulo10/CAPITULO1402.flv">
+      <file href="Capitulo10/CAPITULO1402.flv" />
+    </resource>
+    <resource identifier="RES-608759C33CA45390E1E507A051F41688" type="webcontent" href="Capitulo10/FC10WORD2007.swf">
+      <file href="Capitulo10/FC10WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-0D5CCC5C2051C19DBE65CBEBEA88066D" type="webcontent" href="Capitulo10/FC15WORD2007.fla">
+      <file href="Capitulo10/FC15WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-9B25785DFDAD7C7DB9035D0BDFC0EBB6" type="webcontent" href="Capitulo11/evaulacion111/evaulacion111.htm">
+      <file href="Capitulo11/evaulacion111/evaulacion111.htm" />
+      <file href="Capitulo11/evaulacion111/evaulacion111.swf" />
+      <file href="Capitulo11/evaulacion111/standard.js" />
+    </resource>
+    <resource identifier="RES-E1B74F1BBB560DA5A8E8293965E723F5" type="webcontent" href="Capitulo11/evaulacion111/evaulacion111.swf">
+      <file href="Capitulo11/evaulacion111/evaulacion111.swf" />
+    </resource>
+    <resource identifier="RES-64B48314C150276A913CA61A1B0CD680" type="webcontent" href="Capitulo11/evaulacion111/evaulacion111_skin.swf">
+      <file href="Capitulo11/evaulacion111/evaulacion111_skin.swf" />
+    </resource>
+    <resource identifier="RES-F2CBFA56812592E28476F715BE752AA6" type="webcontent" href="Capitulo11/evaulacion111/standard.js">
+      <file href="Capitulo11/evaulacion111/standard.js" />
+    </resource>
+    <resource identifier="RES-8BF3E78ACDDC17F3AB99C24A6E51D368" type="webcontent" href="Capitulo11/CAPITULO0901.flv">
+      <file href="Capitulo11/CAPITULO0901.flv" />
+    </resource>
+    <resource identifier="RES-CFE660D03A49754388E992EE8C341F92" type="webcontent" href="Capitulo11/FC11WORD2007.swf">
+      <file href="Capitulo11/FC11WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-867C01DE8982AAEBD9FC935C369076CC" type="webcontent" href="Capitulo11/FC15WORD2007.fla">
+      <file href="Capitulo11/FC15WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-3C79E02D0119FCAFC23F4160E7617097" type="webcontent" href="Capitulo12/evaulacion121/evaulacion121.htm">
+      <file href="Capitulo12/evaulacion121/evaulacion121.htm" />
+      <file href="Capitulo12/evaulacion121/evaulacion121.swf" />
+      <file href="Capitulo12/evaulacion121/standard.js" />
+    </resource>
+    <resource identifier="RES-B876F08574FE91F214FEE83C3B3E4269" type="webcontent" href="Capitulo12/evaulacion121/evaulacion121.swf">
+      <file href="Capitulo12/evaulacion121/evaulacion121.swf" />
+    </resource>
+    <resource identifier="RES-73244081587D19B3BF178C5AB5261D27" type="webcontent" href="Capitulo12/evaulacion121/evaulacion121_skin.swf">
+      <file href="Capitulo12/evaulacion121/evaulacion121_skin.swf" />
+    </resource>
+    <resource identifier="RES-2B2DE190AB50FAAE84C4AEA1D69070A9" type="webcontent" href="Capitulo12/evaulacion121/standard.js">
+      <file href="Capitulo12/evaulacion121/standard.js" />
+    </resource>
+    <resource identifier="RES-DDDCE21A5D4769CE1FD26400FCAEFE7E" type="webcontent" href="Capitulo12/FC12WORD2007.fla">
+      <file href="Capitulo12/FC12WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-2C4FD48A008369F7A23437B99698FDF6" type="webcontent" href="Capitulo12/FC12WORD2007.swf">
+      <file href="Capitulo12/FC12WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-C580E70E62B9BDA7C486C364AFC7941A" type="webcontent" href="Capitulo12/indice.xml">
+      <file href="Capitulo12/indice.xml" />
+    </resource>
+    <resource identifier="RES-E4248A83F51D98E412D1A2A4C30303A6" type="webcontent" href="Capitulo13/evaulacion131/evaulacion131.htm">
+      <file href="Capitulo13/evaulacion131/evaulacion131.htm" />
+      <file href="Capitulo13/evaulacion131/evaulacion131.swf" />
+      <file href="Capitulo13/evaulacion131/standard.js" />
+    </resource>
+    <resource identifier="RES-B984C98FDE09AC330A5732C3B2DD3653" type="webcontent" href="Capitulo13/evaulacion131/evaulacion131.swf">
+      <file href="Capitulo13/evaulacion131/evaulacion131.swf" />
+    </resource>
+    <resource identifier="RES-0815D164B21BEAC6D4CB801C4515415F" type="webcontent" href="Capitulo13/evaulacion131/evaulacion131_skin.swf">
+      <file href="Capitulo13/evaulacion131/evaulacion131_skin.swf" />
+    </resource>
+    <resource identifier="RES-A7E91910A17B6137E77AAB46509EEAA8" type="webcontent" href="Capitulo13/evaulacion131/standard.js">
+      <file href="Capitulo13/evaulacion131/standard.js" />
+    </resource>
+    <resource identifier="RES-E39F84CF580662F7AA105B0705E71E7D" type="webcontent" href="Capitulo13/CAPITULO1001.flv">
+      <file href="Capitulo13/CAPITULO1001.flv" />
+    </resource>
+    <resource identifier="RES-279B8745983771F9377FCA7CF4A5FF60" type="webcontent" href="Capitulo13/FC13WORD2007.fla">
+      <file href="Capitulo13/FC13WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-2A1945DAED11876C80BD1ADBEFBE6DA8" type="webcontent" href="Capitulo13/FC13WORD2007.swf">
+      <file href="Capitulo13/FC13WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-3676153902F7FE4F38A55E405C389E2D" type="webcontent" href="Capitulo14/evaulacion141/evaulacion141.htm">
+      <file href="Capitulo14/evaulacion141/evaulacion141.htm" />
+      <file href="Capitulo14/evaulacion141/evaulacion141.swf" />
+      <file href="Capitulo14/evaulacion141/standard.js" />
+    </resource>
+    <resource identifier="RES-C0E2D1CBB031A00284F316EAF4A4B498" type="webcontent" href="Capitulo14/evaulacion141/evaulacion141.swf">
+      <file href="Capitulo14/evaulacion141/evaulacion141.swf" />
+    </resource>
+    <resource identifier="RES-6AE6A68E627AD477B1B4DABE1E73F1B5" type="webcontent" href="Capitulo14/evaulacion141/evaulacion141_skin.swf">
+      <file href="Capitulo14/evaulacion141/evaulacion141_skin.swf" />
+    </resource>
+    <resource identifier="RES-90C416181E45BF97B962E8BD1E9D3348" type="webcontent" href="Capitulo14/evaulacion141/standard.js">
+      <file href="Capitulo14/evaulacion141/standard.js" />
+    </resource>
+    <resource identifier="RES-0C3F1EB598248F83F8AB3F6B740A715A" type="webcontent" href="Capitulo14/ArcticOverAll.swf">
+      <file href="Capitulo14/ArcticOverAll.swf" />
+    </resource>
+    <resource identifier="RES-C2EC642C173BB88248C61D7BD4316685" type="webcontent" href="Capitulo14/CAPITULO0801.flv">
+      <file href="Capitulo14/CAPITULO0801.flv" />
+    </resource>
+    <resource identifier="RES-7E85BBD2583BB84600177AFC69FAF65F" type="webcontent" href="Capitulo14/CAPITULO0802.flv">
+      <file href="Capitulo14/CAPITULO0802.flv" />
+    </resource>
+    <resource identifier="RES-14DB457F6377FBCDA02336E4352963E7" type="webcontent" href="Capitulo14/CAPITULO0803.flv">
+      <file href="Capitulo14/CAPITULO0803.flv" />
+    </resource>
+    <resource identifier="RES-ED5B23E2ACE940FF7A4187205AD9C42A" type="webcontent" href="Capitulo14/CAPITULO0804.flv">
+      <file href="Capitulo14/CAPITULO0804.flv" />
+    </resource>
+    <resource identifier="RES-E7EF7257D714714E71FC61D4A26AF55B" type="webcontent" href="Capitulo14/CAPITULO0805.flv">
+      <file href="Capitulo14/CAPITULO0805.flv" />
+    </resource>
+    <resource identifier="RES-1572BFB41DF20A750F3E52A652F37C11" type="webcontent" href="Capitulo14/FC14WORD2007.swf">
+      <file href="Capitulo14/FC14WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-0B1C191AE534587173F3ADB0032E5DA3" type="webcontent" href="Capitulo15/evaulacion151/evaulacion151.htm">
+      <file href="Capitulo15/evaulacion151/evaulacion151.htm" />
+      <file href="Capitulo15/evaulacion151/evaulacion151.swf" />
+      <file href="Capitulo15/evaulacion151/standard.js" />
+    </resource>
+    <resource identifier="RES-B978FDA5910D63B5E81B368673243579" type="webcontent" href="Capitulo15/evaulacion151/evaulacion151.swf">
+      <file href="Capitulo15/evaulacion151/evaulacion151.swf" />
+    </resource>
+    <resource identifier="RES-91949714B31BE59D6BBD11368929B21B" type="webcontent" href="Capitulo15/evaulacion151/evaulacion151_skin.swf">
+      <file href="Capitulo15/evaulacion151/evaulacion151_skin.swf" />
+    </resource>
+    <resource identifier="RES-241A7CC22A3E5D02B84ABE2BF27BD96C" type="webcontent" href="Capitulo15/evaulacion151/standard.js">
+      <file href="Capitulo15/evaulacion151/standard.js" />
+    </resource>
+    <resource identifier="RES-5F3FB660D839FEA9FA6D7BF02C60616C" type="webcontent" href="Capitulo15/CAPITULO1102.flv">
+      <file href="Capitulo15/CAPITULO1102.flv" />
+    </resource>
+    <resource identifier="RES-91DA98FB280D801EF59B237DDF267819" type="webcontent" href="Capitulo15/FC15WORD2007.fla">
+      <file href="Capitulo15/FC15WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-0433F0957321261FC29F8F55A6AAC380" type="webcontent" href="Capitulo15/FC15WORD2007.swf">
+      <file href="Capitulo15/FC15WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-10C0D3E4350CED1BF67DC037186ADD32" type="webcontent" href="Capitulo16/evaulacion161/evaulacion161.htm">
+      <file href="Capitulo16/evaulacion161/evaulacion161.htm" />
+      <file href="Capitulo16/evaulacion161/evaulacion161.swf" />
+      <file href="Capitulo16/evaulacion161/standard.js" />
+    </resource>
+    <resource identifier="RES-6CED0E07B159560D71845D2DB0168945" type="webcontent" href="Capitulo16/evaulacion161/evaulacion161_skin.swf">
+      <file href="Capitulo16/evaulacion161/evaulacion161_skin.swf" />
+    </resource>
+    <resource identifier="RES-413BF0772AD133523CBE9C63BB943AA8" type="webcontent" href="Capitulo16/evaulacion161/standard.js">
+      <file href="Capitulo16/evaulacion161/standard.js" />
+    </resource>
+    <resource identifier="RES-63670056B6149F2F0070D2933EC76D0E" type="webcontent" href="Capitulo16/CAPITULO1103.flv">
+      <file href="Capitulo16/CAPITULO1103.flv" />
+    </resource>
+    <resource identifier="RES-229ABC71FB1074BDBD9FCA3FC65EED19" type="webcontent" href="Capitulo16/FC16WORD2007.swf">
+      <file href="Capitulo16/FC16WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-D55776C488E229DC93466B1CBFB0481B" type="webcontent" href="Capitulo17/evaulacion171/evaulacion171.htm">
+      <file href="Capitulo17/evaulacion171/evaulacion171.htm" />
+      <file href="Capitulo17/evaulacion171/evaulacion171.swf" />
+      <file href="Capitulo17/evaulacion171/standard.js" />
+    </resource>
+    <resource identifier="RES-E63F4E21BD8BE41386B181700F773FA1" type="webcontent" href="Capitulo17/evaulacion171/evaulacion171.swf">
+      <file href="Capitulo17/evaulacion171/evaulacion171.swf" />
+    </resource>
+    <resource identifier="RES-5DB94B8E25C8FF2E1663EFFA946BF9D4" type="webcontent" href="Capitulo17/evaulacion171/evaulacion171_skin.swf">
+      <file href="Capitulo17/evaulacion171/evaulacion171_skin.swf" />
+    </resource>
+    <resource identifier="RES-0E02AF9C27FE00A09BCE000582BF4903" type="webcontent" href="Capitulo17/evaulacion171/standard.js">
+      <file href="Capitulo17/evaulacion171/standard.js" />
+    </resource>
+    <resource identifier="RES-1F22BDDBA11A4296F8DFA0C6815A587D" type="webcontent" href="Capitulo17/ArcticOverAll.swf">
+      <file href="Capitulo17/ArcticOverAll.swf" />
+    </resource>
+    <resource identifier="RES-A9F8F78F7E8B493F3212D3CA943530D0" type="webcontent" href="Capitulo17/CAPITULO0801.flv">
+      <file href="Capitulo17/CAPITULO0801.flv" />
+    </resource>
+    <resource identifier="RES-CFCA66CCCAD1A93EF024C3048C27DB13" type="webcontent" href="Capitulo17/CAPITULO0802.flv">
+      <file href="Capitulo17/CAPITULO0802.flv" />
+    </resource>
+    <resource identifier="RES-5594F5E0A2EF6589BB3E4F4BD6846AE5" type="webcontent" href="Capitulo17/CAPITULO0803.flv">
+      <file href="Capitulo17/CAPITULO0803.flv" />
+    </resource>
+    <resource identifier="RES-8E7A0413722256C2A1A74E37593BAE1D" type="webcontent" href="Capitulo17/CAPITULO0804.flv">
+      <file href="Capitulo17/CAPITULO0804.flv" />
+    </resource>
+    <resource identifier="RES-A527DF9FC7B1191F49956127A904411D" type="webcontent" href="Capitulo17/CAPITULO0805.flv">
+      <file href="Capitulo17/CAPITULO0805.flv" />
+    </resource>
+    <resource identifier="RES-84BE4B2C396368AED1B4C0A506EA7C61" type="webcontent" href="Capitulo17/FC17WORD2007.fla">
+      <file href="Capitulo17/FC17WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-A395C1344BA362098A0FBBD14D7B5863" type="webcontent" href="Capitulo17/FC17WORD2007.swf">
+      <file href="Capitulo17/FC17WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-CB15871376500B6CA4C010399DC65D7C" type="webcontent" href="Capitulo18/evaulacion181/evaulacion181.htm">
+      <file href="Capitulo18/evaulacion181/evaulacion181.htm" />
+      <file href="Capitulo18/evaulacion181/evaulacion181.swf" />
+      <file href="Capitulo18/evaulacion181/standard.js" />
+    </resource>
+    <resource identifier="RES-C4075740F8D95FE018AE0C2FE8E2806F" type="webcontent" href="Capitulo18/evaulacion181/evaulacion181.swf">
+      <file href="Capitulo18/evaulacion181/evaulacion181.swf" />
+    </resource>
+    <resource identifier="RES-208FCD68740BCCF40335AFF17BB5FE56" type="webcontent" href="Capitulo18/evaulacion181/evaulacion181_skin.swf">
+      <file href="Capitulo18/evaulacion181/evaulacion181_skin.swf" />
+    </resource>
+    <resource identifier="RES-16166F46B5E732B0EEC7EB9E5C620E2D" type="webcontent" href="Capitulo18/evaulacion181/standard.js">
+      <file href="Capitulo18/evaulacion181/standard.js" />
+    </resource>
+    <resource identifier="RES-06DCB220B3BA6C0903356EC83301A3F3" type="webcontent" href="Capitulo18/CAPITULO1501.flv">
+      <file href="Capitulo18/CAPITULO1501.flv" />
+    </resource>
+    <resource identifier="RES-F389F89CDFDAF3707370DB8C46DF01A3" type="webcontent" href="Capitulo18/CAPITULO1502.flv">
+      <file href="Capitulo18/CAPITULO1502.flv" />
+    </resource>
+    <resource identifier="RES-C479B971BF9FFCC0A69E26D5118D6541" type="webcontent" href="Capitulo18/FC15WORD2007.fla">
+      <file href="Capitulo18/FC15WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-0B7EE64369B7FFC208C5B01334CDCDF8" type="webcontent" href="Capitulo18/FC18WORD2007.fla">
+      <file href="Capitulo18/FC18WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-6FE4CFCA5C56D0001A0BF97AB2E2B1C5" type="webcontent" href="Capitulo18/FC18WORD2007.swf">
+      <file href="Capitulo18/FC18WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-0D15CEE1A72D913E8914E71A4339E765" type="webcontent" href="Capitulo18/FCapitulo18.htm">
+      <file href="Capitulo18/FCapitulo18.htm" />
+      <file href="Capitulo18/FCapitulo18.swf" />
+      <file href="Capitulo18/standard.js" />
+    </resource>
+    <resource identifier="RES-1D0DD06F8D9A12D4A4BC5F10D94C3CBE" type="webcontent" href="Capitulo18/FCapitulo18.swf">
+      <file href="Capitulo18/FCapitulo18.swf" />
+    </resource>
+    <resource identifier="RES-942B583EB3A717A20951E891D260658D" type="webcontent" href="Capitulo18/standard.js">
+      <file href="Capitulo18/standard.js" />
+    </resource>
+    <resource identifier="RES-D4AD679C377F95A486EAD4E873E2886B" type="webcontent" href="Capitulo2/evaulacion021/evaulacion021.htm">
+      <file href="Capitulo2/evaulacion021/evaulacion021.htm" />
+      <file href="Capitulo2/evaulacion021/evaulacion021.swf" />
+      <file href="Capitulo2/evaulacion021/standard.js" />
+    </resource>
+    <resource identifier="RES-C50DF07B08D952ECFDA2A8C2855883F6" type="webcontent" href="Capitulo2/evaulacion021/evaulacion021.swf">
+      <file href="Capitulo2/evaulacion021/evaulacion021.swf" />
+    </resource>
+    <resource identifier="RES-908D300AADFA240A2A875E94E10D51DA" type="webcontent" href="Capitulo2/evaulacion021/evaulacion021_skin.swf">
+      <file href="Capitulo2/evaulacion021/evaulacion021_skin.swf" />
+    </resource>
+    <resource identifier="RES-A2A7A4E38B664C27112BE9D384EB2B9D" type="webcontent" href="Capitulo2/evaulacion021/standard.js">
+      <file href="Capitulo2/evaulacion021/standard.js" />
+    </resource>
+    <resource identifier="RES-541A94BA4FE3488402947F5F9C94ADDF" type="webcontent" href="Capitulo2/CAPITULO0201.flv">
+      <file href="Capitulo2/CAPITULO0201.flv" />
+    </resource>
+    <resource identifier="RES-4E181BDFB390B668A8E33B792FDAD718" type="webcontent" href="Capitulo2/FC02WORD2007.fla">
+      <file href="Capitulo2/FC02WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-4436DB851BD19B920D61147C18EA675B" type="webcontent" href="Capitulo2/FC02WORD2007.swf">
+      <file href="Capitulo2/FC02WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-0FA3914AE764F37723B33265749FDD80" type="webcontent" href="Capitulo2/indice.xml">
+      <file href="Capitulo2/indice.xml" />
+    </resource>
+    <resource identifier="RES-30083D6057A2EAEE5053484DF31F5F30" type="webcontent" href="Capitulo3/evaulacion31/evaulacion31.htm">
+      <file href="Capitulo3/evaulacion31/evaulacion31.htm" />
+      <file href="Capitulo3/evaulacion31/evaulacion31.swf" />
+      <file href="Capitulo3/evaulacion31/standard.js" />
+    </resource>
+    <resource identifier="RES-770EB60CC710309300C10FCFDD2E503A" type="webcontent" href="Capitulo3/evaulacion31/evaulacion31.swf">
+      <file href="Capitulo3/evaulacion31/evaulacion31.swf" />
+    </resource>
+    <resource identifier="RES-EBF8B7226266E2FCCC5B5EE76BF76CE2" type="webcontent" href="Capitulo3/evaulacion31/evaulacion31_skin.swf">
+      <file href="Capitulo3/evaulacion31/evaulacion31_skin.swf" />
+    </resource>
+    <resource identifier="RES-74C388EB37DC6A36864867A8FFC4CF2D" type="webcontent" href="Capitulo3/evaulacion31/standard.js">
+      <file href="Capitulo3/evaulacion31/standard.js" />
+    </resource>
+    <resource identifier="RES-263FFC6CE9E4E8B35192A768FF08633B" type="webcontent" href="Capitulo3/CAPITULO0301.flv">
+      <file href="Capitulo3/CAPITULO0301.flv" />
+    </resource>
+    <resource identifier="RES-6E2F1F78B6526192604E1DD48DF842B2" type="webcontent" href="Capitulo3/CAPITULO0302.flv">
+      <file href="Capitulo3/CAPITULO0302.flv" />
+    </resource>
+    <resource identifier="RES-AB6AFA276FB4BB7F3213A740D1A6310F" type="webcontent" href="Capitulo3/CAPITULO0303.flv">
+      <file href="Capitulo3/CAPITULO0303.flv" />
+    </resource>
+    <resource identifier="RES-9F040A5602DE52DC389C5A246E45AF2A" type="webcontent" href="Capitulo3/CAPITULO0304.flv">
+      <file href="Capitulo3/CAPITULO0304.flv" />
+    </resource>
+    <resource identifier="RES-AABE9FC43C3D497748BBDC9E6E16AEB7" type="webcontent" href="Capitulo3/FC03WORD2007.fla">
+      <file href="Capitulo3/FC03WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-A9265EC852A5690367CEDC704F1D8EAB" type="webcontent" href="Capitulo3/FC03WORD2007.swf">
+      <file href="Capitulo3/FC03WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-6B884DB07E2B65DD3536E918A8374E70" type="webcontent" href="Capitulo3/FCapitulo3.swf">
+      <file href="Capitulo3/FCapitulo3.swf" />
+    </resource>
+    <resource identifier="RES-99D56104248AB16D86E8EFACCBB9ACA3" type="webcontent" href="Capitulo4/evaulacion41/evaulacion41.htm">
+      <file href="Capitulo4/evaulacion41/evaulacion41.htm" />
+      <file href="Capitulo4/evaulacion41/evaulacion41.swf" />
+      <file href="Capitulo4/evaulacion41/standard.js" />
+    </resource>
+    <resource identifier="RES-3E1FAF1AE4BBC66ACE91DA1685D786E1" type="webcontent" href="Capitulo4/evaulacion41/evaulacion41.swf">
+      <file href="Capitulo4/evaulacion41/evaulacion41.swf" />
+    </resource>
+    <resource identifier="RES-55F7E907C9589ED669B0DAC0BD6B4415" type="webcontent" href="Capitulo4/evaulacion41/evaulacion41_skin.swf">
+      <file href="Capitulo4/evaulacion41/evaulacion41_skin.swf" />
+    </resource>
+    <resource identifier="RES-894645DAD58F1BCC754C6EFDF0C42F40" type="webcontent" href="Capitulo4/evaulacion41/standard.js">
+      <file href="Capitulo4/evaulacion41/standard.js" />
+    </resource>
+    <resource identifier="RES-F3A776D675C7386B790143C63BAE8242" type="webcontent" href="Capitulo4/CAPITULO0401.flv">
+      <file href="Capitulo4/CAPITULO0401.flv" />
+    </resource>
+    <resource identifier="RES-2158DA4F75C9DC26C9D9093A05AB4FA5" type="webcontent" href="Capitulo4/FC04WORD2007.fla">
+      <file href="Capitulo4/FC04WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-4A1CD0437992D46505044A9261350877" type="webcontent" href="Capitulo4/FC04WORD2007.swf">
+      <file href="Capitulo4/FC04WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-0347D609D188207E5A68F8F8AA2E9A94" type="webcontent" href="Capitulo5/evaulacion51/evaulacion51.htm">
+      <file href="Capitulo5/evaulacion51/evaulacion51.htm" />
+      <file href="Capitulo5/evaulacion51/evaulacion51.swf" />
+      <file href="Capitulo5/evaulacion51/standard.js" />
+    </resource>
+    <resource identifier="RES-A5E5AEB3296B55D570FDE617A0A40E6D" type="webcontent" href="Capitulo5/evaulacion51/evaulacion51.swf">
+      <file href="Capitulo5/evaulacion51/evaulacion51.swf" />
+    </resource>
+    <resource identifier="RES-CCDF6C64704B2042A9D1943C2E304C05" type="webcontent" href="Capitulo5/evaulacion51/evaulacion51_skin.swf">
+      <file href="Capitulo5/evaulacion51/evaulacion51_skin.swf" />
+    </resource>
+    <resource identifier="RES-28F1A5371FF6DC2E9000206357B32BCD" type="webcontent" href="Capitulo5/evaulacion51/standard.js">
+      <file href="Capitulo5/evaulacion51/standard.js" />
+    </resource>
+    <resource identifier="RES-E1CE267B626D9F06F688A90A07B89521" type="webcontent" href="Capitulo5/ArcticOverAll.swf">
+      <file href="Capitulo5/ArcticOverAll.swf" />
+    </resource>
+    <resource identifier="RES-96E71A01EAAF8B7920EA48D8809CB427" type="webcontent" href="Capitulo5/CAPITULO0501.flv">
+      <file href="Capitulo5/CAPITULO0501.flv" />
+    </resource>
+    <resource identifier="RES-3270BA95CB34767580BFACA213FCC09E" type="webcontent" href="Capitulo5/CAPITULO0502.flv">
+      <file href="Capitulo5/CAPITULO0502.flv" />
+    </resource>
+    <resource identifier="RES-685F4CD835C36580C35C5591B755053A" type="webcontent" href="Capitulo5/CAPITULO0503.flv">
+      <file href="Capitulo5/CAPITULO0503.flv" />
+    </resource>
+    <resource identifier="RES-9050ADE3D349C1E53F93FDBF066CC3E3" type="webcontent" href="Capitulo5/CAPITULO0504.flv">
+      <file href="Capitulo5/CAPITULO0504.flv" />
+    </resource>
+    <resource identifier="RES-EF374C8498A69A60352E52307A5728A4" type="webcontent" href="Capitulo5/CAPITULO0505.flv">
+      <file href="Capitulo5/CAPITULO0505.flv" />
+    </resource>
+    <resource identifier="RES-6A5D3F1EC57A72F711CEAFCAA83CA557" type="webcontent" href="Capitulo5/CAPITULO0506.flv">
+      <file href="Capitulo5/CAPITULO0506.flv" />
+    </resource>
+    <resource identifier="RES-BD7198AAD1D320107E143F109769FE9D" type="webcontent" href="Capitulo5/FC05WORD2007.fla">
+      <file href="Capitulo5/FC05WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-06B8CB4F8DADB91CF5AB283686F20AA1" type="webcontent" href="Capitulo5/FC05WORD2007.swf">
+      <file href="Capitulo5/FC05WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-CDD44A92B249534F1BCB9648FF67C2CA" type="webcontent" href="Capitulo7/evaulacion71/evaulacion71.htm">
+      <file href="Capitulo7/evaulacion71/evaulacion71.htm" />
+      <file href="Capitulo7/evaulacion71/evaulacion71.swf" />
+      <file href="Capitulo7/evaulacion71/standard.js" />
+    </resource>
+    <resource identifier="RES-8A24B4A64043F5CAF8212E9DBA794593" type="webcontent" href="Capitulo7/evaulacion71/evaulacion71.swf">
+      <file href="Capitulo7/evaulacion71/evaulacion71.swf" />
+    </resource>
+    <resource identifier="RES-E6755F5672D62A5E91DFF2942D3F14EA" type="webcontent" href="Capitulo7/evaulacion71/evaulacion71_skin.swf">
+      <file href="Capitulo7/evaulacion71/evaulacion71_skin.swf" />
+    </resource>
+    <resource identifier="RES-9E3CF57ED721162B51E6DEA7A56140D4" type="webcontent" href="Capitulo7/evaulacion71/standard.js">
+      <file href="Capitulo7/evaulacion71/standard.js" />
+    </resource>
+    <resource identifier="RES-5F83712DE9A7E29E7EF81F34FA0A6FB7" type="webcontent" href="Capitulo7/CAPITULO0701.flv">
+      <file href="Capitulo7/CAPITULO0701.flv" />
+    </resource>
+    <resource identifier="RES-C5A4519CC14BC78AF3F8F0D0880A5E6A" type="webcontent" href="Capitulo7/CAPITULO0702.flv">
+      <file href="Capitulo7/CAPITULO0702.flv" />
+    </resource>
+    <resource identifier="RES-414F74AA4DEC9CBC2B63B7975A9F4E12" type="webcontent" href="Capitulo7/CAPITULO0703.flv">
+      <file href="Capitulo7/CAPITULO0703.flv" />
+    </resource>
+    <resource identifier="RES-DD0042D6E48821688596B1EDA1F9B6E1" type="webcontent" href="Capitulo7/CAPITULO0704.flv">
+      <file href="Capitulo7/CAPITULO0704.flv" />
+    </resource>
+    <resource identifier="RES-DFBF0EC9F3318759EAD83757933274CF" type="webcontent" href="Capitulo7/CAPITULO0705.flv">
+      <file href="Capitulo7/CAPITULO0705.flv" />
+    </resource>
+    <resource identifier="RES-F9DFCAF228D58D6B101E786D6FCF87F4" type="webcontent" href="Capitulo7/FC07WORD2007.fla">
+      <file href="Capitulo7/FC07WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-2329D0332B58B30C282C99F71B7E1BBF" type="webcontent" href="Capitulo7/FC07WORD2007.swf">
+      <file href="Capitulo7/FC07WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-BEADA2611748FBE4378A5A93B6949731" type="webcontent" href="Capitulo7/FC15WORD2007.fla">
+      <file href="Capitulo7/FC15WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-88DB9E3779C7C5136365F3EEDBC6C639" type="webcontent" href="Capitulo8/CAPITULO0804.flv">
+      <file href="Capitulo8/CAPITULO0804.flv" />
+    </resource>
+    <resource identifier="RES-075B99D917A9C5B53BF3B0AB8D9754D7" type="webcontent" href="Capitulo8/FC15WORD2007.fla">
+      <file href="Capitulo8/FC15WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-246257B0B08160E6889E5D1E37E0C73F" type="webcontent" href="Capitulo9/evaulacion91/evaulacion91.htm">
+      <file href="Capitulo9/evaulacion91/evaulacion91.htm" />
+      <file href="Capitulo9/evaulacion91/evaulacion91.swf" />
+      <file href="Capitulo9/evaulacion91/standard.js" />
+    </resource>
+    <resource identifier="RES-9ACCC33FD3F83E4EA4A67B5D19FF74CC" type="webcontent" href="Capitulo9/evaulacion91/evaulacion91.swf">
+      <file href="Capitulo9/evaulacion91/evaulacion91.swf" />
+    </resource>
+    <resource identifier="RES-A89D2914406247548F5E8E8A00B2CF03" type="webcontent" href="Capitulo9/evaulacion91/evaulacion91_skin.swf">
+      <file href="Capitulo9/evaulacion91/evaulacion91_skin.swf" />
+    </resource>
+    <resource identifier="RES-3D954A83CEFDF6F7BACA541DDE4326F6" type="webcontent" href="Capitulo9/evaulacion91/standard.js">
+      <file href="Capitulo9/evaulacion91/standard.js" />
+    </resource>
+    <resource identifier="RES-888C633B58623C9B4FF61471560BC08B" type="webcontent" href="Capitulo9/CAPITULO1301.flv">
+      <file href="Capitulo9/CAPITULO1301.flv" />
+    </resource>
+    <resource identifier="RES-DF572131BA14F0D73C21AF1E031BEE34" type="webcontent" href="Capitulo9/CAPITULO1302.flv">
+      <file href="Capitulo9/CAPITULO1302.flv" />
+    </resource>
+    <resource identifier="RES-C49DD2A74B9D7AFB203C27F0E6D2B285" type="webcontent" href="Capitulo9/FC09WORD2007.swf">
+      <file href="Capitulo9/FC09WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-D02A33829099218FCFA982AB98C01195" type="webcontent" href="Capitulo9/FC15WORD2007.fla">
+      <file href="Capitulo9/FC15WORD2007.fla" />
+    </resource>
+    <resource identifier="RES-BF7E50029DB54539FB785B32D2D82F0D" type="webcontent" href="css/app.css">
+      <file href="css/app.css" />
+    </resource>
+    <resource identifier="RES-3F53DAA775272377C6220E1FAB58F760" type="webcontent" href="css/estilo2.css">
+      <file href="css/estilo2.css" />
+    </resource>
+    <resource identifier="RES-66FBEC6DDD802F922ADC666B6CE5A9C7" type="webcontent" href="css/estilo3.css">
+      <file href="css/estilo3.css" />
+    </resource>
+    <resource identifier="RES-5329C76BBCCB5C33236419A17B6CF63E" type="webcontent" href="css/estilos1.css">
+      <file href="css/estilos1.css" />
+    </resource>
+    <resource identifier="RES-5367C8459D8CCBB8C8E04E1059DFC2CD" type="webcontent" href="assets/sliderThumb_down.png">
+      <file href="assets/sliderThumb_down.png" />
+    </resource>
+    <resource identifier="RES-FE5D5809574283C274762906B548C976" type="webcontent" href="Capitulo16/evaulacion161/evaulacion161.swf">
+      <file href="Capitulo16/evaulacion161/evaulacion161.swf" />
+    </resource>
+    <resource identifier="RES-684671DD2AE55B10949895CA6AEACD6D" type="webcontent" href="Capitulo8/evaulacion81/evaulacion81.swf">
+      <file href="Capitulo8/evaulacion81/evaulacion81.swf" />
+    </resource>
+    <resource identifier="RES-5E969AFAC6FFBFBA0DA5ED89FB42C5F8" type="webcontent" href="Capitulo8/evaulacion81/evaulacion81_skin.swf">
+      <file href="Capitulo8/evaulacion81/evaulacion81_skin.swf" />
+    </resource>
+    <resource identifier="RES-1FE8D29533C872F82261C0E8012EE118" type="webcontent" href="fonts/MyriadWebPro-Bold.ttf">
+      <file href="fonts/MyriadWebPro-Bold.ttf" />
+    </resource>
+    <resource identifier="RES-E81229D3B7F6EB872B4CAD3D12E5D924" type="webcontent" href="fonts/MyriadWebPro.ttf">
+      <file href="fonts/MyriadWebPro.ttf" />
+    </resource>
+    <resource identifier="RES-9E71274F12742E45260309136121B6FF" type="webcontent" href="history/history.css">
+      <file href="history/history.css" />
+    </resource>
+    <resource identifier="RES-5EA529ECEB2F22C3639C02EAA1C12834" type="webcontent" href="history/history.js">
+      <file href="history/history.js" />
+    </resource>
+    <resource identifier="RES-117E2F9BA61F7AB3F1C20F8D0D4AAAC8" type="webcontent" href="history/historyFrame.html">
+      <file href="history/historyFrame.html" />
+    </resource>
+    <resource identifier="RES-1CDFB38D4B02FDBF2DA64F7939E2964A" type="webcontent" href="images/AccordionHeader_disabledSkin.png">
+      <file href="images/AccordionHeader_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-4B772FF8155AE76915329633AED4982E" type="webcontent" href="images/AccordionHeader_downSkin.png">
+      <file href="images/AccordionHeader_downSkin.png" />
+    </resource>
+    <resource identifier="RES-753FD114A9DE93713E5DA1400EB24492" type="webcontent" href="images/AccordionHeader_overSkin.png">
+      <file href="images/AccordionHeader_overSkin.png" />
+    </resource>
+    <resource identifier="RES-FD8BB8D8B23184847DEA12959AFE6CC9" type="webcontent" href="images/AccordionHeader_selectedSkin.png">
+      <file href="images/AccordionHeader_selectedSkin.png" />
+    </resource>
+    <resource identifier="RES-89D3C8234D019F9BB4C8EB9E84D7D908" type="webcontent" href="images/AccordionHeader_upSkin.png">
+      <file href="images/AccordionHeader_upSkin.png" />
+    </resource>
+    <resource identifier="RES-8479F6BB6BBD49D23571B2DE572F75F3" type="webcontent" href="images/ApplicationControlBar.png">
+      <file href="images/ApplicationControlBar.png" />
+    </resource>
+    <resource identifier="RES-F77C4343A80954D62E07A6364953D8C6" type="webcontent" href="images/BusyCursor.png">
+      <file href="images/BusyCursor.png" />
+    </resource>
+    <resource identifier="RES-955B448D6E17EF84FA066ACED95D1BA3" type="webcontent" href="images/ButtonBar_buttonDisabledSkin.png">
+      <file href="images/ButtonBar_buttonDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-51127B01F9E61CD118DF213304E7D54F" type="webcontent" href="images/ButtonBar_buttonDownSkin.png">
+      <file href="images/ButtonBar_buttonDownSkin.png" />
+    </resource>
+    <resource identifier="RES-2AE60629FD502E270E9A36E0131CEA29" type="webcontent" href="images/ButtonBar_buttonOverSkin.png">
+      <file href="images/ButtonBar_buttonOverSkin.png" />
+    </resource>
+    <resource identifier="RES-979EE8C1DB6914B067FBE86798F4430F" type="webcontent" href="images/ButtonBar_buttonSelectedDisabledSkin.png">
+      <file href="images/ButtonBar_buttonSelectedDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-D8EACD749524835B0E7DE685E0C6E07E" type="webcontent" href="images/ButtonBar_buttonSelectedUpSkin.png">
+      <file href="images/ButtonBar_buttonSelectedUpSkin.png" />
+    </resource>
+    <resource identifier="RES-E11AA6B76B41FD655F347DBF2D2A2F73" type="webcontent" href="images/ButtonBar_buttonUpSkin.png">
+      <file href="images/ButtonBar_buttonUpSkin.png" />
+    </resource>
+    <resource identifier="RES-A3B895A00410612119DB5B2AE0A61171" type="webcontent" href="images/ButtonBar_firstDisabledSkin.png">
+      <file href="images/ButtonBar_firstDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-37CE4B5D18AF095F1F3E474DBD4809CC" type="webcontent" href="images/ButtonBar_firstDownSkin.png">
+      <file href="images/ButtonBar_firstDownSkin.png" />
+    </resource>
+    <resource identifier="RES-706611B507068032DE75E3471E2F2940" type="webcontent" href="images/ButtonBar_firstOverSkin.png">
+      <file href="images/ButtonBar_firstOverSkin.png" />
+    </resource>
+    <resource identifier="RES-973F683F5397B07D5E0D136C820BA706" type="webcontent" href="images/ButtonBar_firstSelectedDisabledSkin.png">
+      <file href="images/ButtonBar_firstSelectedDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-AAAA9C5ABB08E0EBB8D7DD34FAD89EB6" type="webcontent" href="images/ButtonBar_firstSelectedUpSkin.png">
+      <file href="images/ButtonBar_firstSelectedUpSkin.png" />
+    </resource>
+    <resource identifier="RES-DDF806B05F7D63C89ABB7EBEF0B2219F" type="webcontent" href="images/ButtonBar_firstUpSkin.png">
+      <file href="images/ButtonBar_firstUpSkin.png" />
+    </resource>
+    <resource identifier="RES-66B1D335EF8D1672BAEF738B40A763BB" type="webcontent" href="images/ButtonBar_lastDisabledSkin.png">
+      <file href="images/ButtonBar_lastDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-25E092E4FC99DE8335AED152ACF56C38" type="webcontent" href="images/ButtonBar_lastDownSkin.png">
+      <file href="images/ButtonBar_lastDownSkin.png" />
+    </resource>
+    <resource identifier="RES-8307E31A0E6DD60A816CAD0B94EB0916" type="webcontent" href="images/ButtonBar_lastOverSkin.png">
+      <file href="images/ButtonBar_lastOverSkin.png" />
+    </resource>
+    <resource identifier="RES-8315BB3D961F3340DFBCF37A7B888606" type="webcontent" href="images/ButtonBar_lastSelectedDisabledSkin.png">
+      <file href="images/ButtonBar_lastSelectedDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-85271CCFCB519AC89094D8C81899974B" type="webcontent" href="images/ButtonBar_lastSelectedUpSkin.png">
+      <file href="images/ButtonBar_lastSelectedUpSkin.png" />
+    </resource>
+    <resource identifier="RES-37B5790DF581387C0C2E4873EBD88F6F" type="webcontent" href="images/ButtonBar_lastUpSkin.png">
+      <file href="images/ButtonBar_lastUpSkin.png" />
+    </resource>
+    <resource identifier="RES-F1604EA08FEB05193358A15FBA17FC91" type="webcontent" href="images/Button_disabledSkin.png">
+      <file href="images/Button_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-CACEB54F1CFEB2C22E507CDAD6CA3807" type="webcontent" href="images/Button_downSkin-08.png">
+      <file href="images/Button_downSkin-08.png" />
+    </resource>
+    <resource identifier="RES-811E9413BA46E74040B7040AF6CC1B09" type="webcontent" href="images/Button_downSkin.png">
+      <file href="images/Button_downSkin.png" />
+    </resource>
+    <resource identifier="RES-18D94CEB8429BAA34DC4ED631B42791C" type="webcontent" href="images/Button_overSkin.png">
+      <file href="images/Button_overSkin.png" />
+    </resource>
+    <resource identifier="RES-B520647C7A5222C8F8A21562525DDA69" type="webcontent" href="images/Button_upSkin.png">
+      <file href="images/Button_upSkin.png" />
+    </resource>
+    <resource identifier="RES-37424548D680FCD774F3F5DABDF51DE3" type="webcontent" href="images/CheckBox_disabledIcon.png">
+      <file href="images/CheckBox_disabledIcon.png" />
+    </resource>
+    <resource identifier="RES-1F96122A812527F7B9BBCC9365A9A020" type="webcontent" href="images/CheckBox_downIcon.png">
+      <file href="images/CheckBox_downIcon.png" />
+    </resource>
+    <resource identifier="RES-CBD6C836BDDD87D349203E10185B8325" type="webcontent" href="images/CheckBox_overIcon.png">
+      <file href="images/CheckBox_overIcon.png" />
+    </resource>
+    <resource identifier="RES-8CC44376E7A5D8A6773447805A6F4D4B" type="webcontent" href="images/CheckBox_selectedDisabledIcon.png">
+      <file href="images/CheckBox_selectedDisabledIcon.png" />
+    </resource>
+    <resource identifier="RES-1F38C1261441784870E3C00CF71C035B" type="webcontent" href="images/CheckBox_selectedDownIcon.png">
+      <file href="images/CheckBox_selectedDownIcon.png" />
+    </resource>
+    <resource identifier="RES-985D0017433E1684236D91F9CA61C0FB" type="webcontent" href="images/CheckBox_selectedOverIcon.png">
+      <file href="images/CheckBox_selectedOverIcon.png" />
+    </resource>
+    <resource identifier="RES-90FFDA6AAC22781D433FE90009B24110" type="webcontent" href="images/CheckBox_selectedUpIcon.png">
+      <file href="images/CheckBox_selectedUpIcon.png" />
+    </resource>
+    <resource identifier="RES-79BA1DCE55DBE570334112F1FDC85C42" type="webcontent" href="images/CheckBox_upIcon.png">
+      <file href="images/CheckBox_upIcon.png" />
+    </resource>
+    <resource identifier="RES-196618670DA68CAE1C0ED2F5AC34325A" type="webcontent" href="images/ColorPicker_disabledSkin.png">
+      <file href="images/ColorPicker_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-B906577FA060190F442DBC0FDB663BF5" type="webcontent" href="images/ColorPicker_downSkin.png">
+      <file href="images/ColorPicker_downSkin.png" />
+    </resource>
+    <resource identifier="RES-E306C5A4AE019BCC21FB140F75D6DB5D" type="webcontent" href="images/ColorPicker_overSkin.png">
+      <file href="images/ColorPicker_overSkin.png" />
+    </resource>
+    <resource identifier="RES-6B3459D8E6EFF39A56E151ECC1AA542F" type="webcontent" href="images/ColorPicker_upSkin.png">
+      <file href="images/ColorPicker_upSkin.png" />
+    </resource>
+    <resource identifier="RES-68B505C33112A3AC1AE923387E184C83" type="webcontent" href="images/ComboBoxArrow_disabledSkin.png">
+      <file href="images/ComboBoxArrow_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-E63B6C3C7FF58507AB14629593BE6483" type="webcontent" href="images/ComboBoxArrow_downSkin.png">
+      <file href="images/ComboBoxArrow_downSkin.png" />
+    </resource>
+    <resource identifier="RES-589D6B680A37565BC6E155CB45916CE2" type="webcontent" href="images/ComboBoxArrow_editableDisabledSkin.png">
+      <file href="images/ComboBoxArrow_editableDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-E22320E0AC418CFCEA21734979E8530B" type="webcontent" href="images/ComboBoxArrow_editableDownSkin.png">
+      <file href="images/ComboBoxArrow_editableDownSkin.png" />
+    </resource>
+    <resource identifier="RES-4275F6CB6B5BF7A8BC41AB31B0429598" type="webcontent" href="images/ComboBoxArrow_editableOverSkin.png">
+      <file href="images/ComboBoxArrow_editableOverSkin.png" />
+    </resource>
+    <resource identifier="RES-1CCC38391E2E3E0C9FD7FD1C6F9632AF" type="webcontent" href="images/ComboBoxArrow_editableUpSkin.png">
+      <file href="images/ComboBoxArrow_editableUpSkin.png" />
+    </resource>
+    <resource identifier="RES-4D98E29C25198132E9AC79702A711D37" type="webcontent" href="images/ComboBoxArrow_overSkin.png">
+      <file href="images/ComboBoxArrow_overSkin.png" />
+    </resource>
+    <resource identifier="RES-82D4B7B9C7B2B9E2300E495AD0D2528C" type="webcontent" href="images/ComboBoxArrow_upSkin.png">
+      <file href="images/ComboBoxArrow_upSkin.png" />
+    </resource>
+    <resource identifier="RES-B6DA4831039AE8E954DA0E5C5300F4EB" type="webcontent" href="images/DataGrid_columnDropIndicatorSkin.png">
+      <file href="images/DataGrid_columnDropIndicatorSkin.png" />
+    </resource>
+    <resource identifier="RES-D1E3BB5D189D5D67D255D8FECB016817" type="webcontent" href="images/DataGrid_columnResizeSkin.png">
+      <file href="images/DataGrid_columnResizeSkin.png" />
+    </resource>
+    <resource identifier="RES-0BBA19FC6D5A2D95C15802AC51B30967" type="webcontent" href="images/DataGrid_headerSeparatorSkin.png">
+      <file href="images/DataGrid_headerSeparatorSkin.png" />
+    </resource>
+    <resource identifier="RES-9C99C679868F1E7B994779B4E6BEF0E4" type="webcontent" href="images/DataGrid_sortArrowSkin.png">
+      <file href="images/DataGrid_sortArrowSkin.png" />
+    </resource>
+    <resource identifier="RES-92D1940A888731278F8CE94369664599" type="webcontent" href="images/DataGrid_stretchCursor.png">
+      <file href="images/DataGrid_stretchCursor.png" />
+    </resource>
+    <resource identifier="RES-C5350F5FD8D5EED02876E31D6C3D3D38" type="webcontent" href="images/DateChooser_nextMonthDisabledSkin.png">
+      <file href="images/DateChooser_nextMonthDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-E6A2406AACBD75B29219C914A0D10287" type="webcontent" href="images/DateChooser_nextMonthDownSkin.png">
+      <file href="images/DateChooser_nextMonthDownSkin.png" />
+    </resource>
+    <resource identifier="RES-EEDD2F7B2DB6FB7661061B7EB1AEE7DA" type="webcontent" href="images/DateChooser_nextMonthOverSkin.png">
+      <file href="images/DateChooser_nextMonthOverSkin.png" />
+    </resource>
+    <resource identifier="RES-E2C6CD0DCCF7806ACA0EEB18D3684160" type="webcontent" href="images/DateChooser_nextMonthUpSkin.png">
+      <file href="images/DateChooser_nextMonthUpSkin.png" />
+    </resource>
+    <resource identifier="RES-0247CE040FBCC002BD862E5EB1449CC5" type="webcontent" href="images/DateChooser_nextYearDisabledSkin.png">
+      <file href="images/DateChooser_nextYearDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-85D43553EA97F7F8D2FE23804CE30CA4" type="webcontent" href="images/DateChooser_nextYearDownSkin.png">
+      <file href="images/DateChooser_nextYearDownSkin.png" />
+    </resource>
+    <resource identifier="RES-450794712C4BB7F398D42848A6164E35" type="webcontent" href="images/DateChooser_nextYearOverSkin.png">
+      <file href="images/DateChooser_nextYearOverSkin.png" />
+    </resource>
+    <resource identifier="RES-8CBEF3E2B996FEC115253678F65921C4" type="webcontent" href="images/DateChooser_nextYearUpSkin.png">
+      <file href="images/DateChooser_nextYearUpSkin.png" />
+    </resource>
+    <resource identifier="RES-0FD1CA01519408EACB28B30A2D831175" type="webcontent" href="images/DateChooser_prevMonthDisabledSkin.png">
+      <file href="images/DateChooser_prevMonthDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-20B0C36D08BC295266D2799993E51609" type="webcontent" href="images/DateChooser_prevMonthDownSkin.png">
+      <file href="images/DateChooser_prevMonthDownSkin.png" />
+    </resource>
+    <resource identifier="RES-E8395ADA9115C5306F14E79FDDF8D915" type="webcontent" href="images/DateChooser_prevMonthOverSkin.png">
+      <file href="images/DateChooser_prevMonthOverSkin.png" />
+    </resource>
+    <resource identifier="RES-71DB3D4B00D34FAB6F50384ACBDA276A" type="webcontent" href="images/DateChooser_prevMonthUpSkin.png">
+      <file href="images/DateChooser_prevMonthUpSkin.png" />
+    </resource>
+    <resource identifier="RES-0E4CF2BAED91D4F34B4370E0D78386DF" type="webcontent" href="images/DateChooser_prevYearDisabledSkin.png">
+      <file href="images/DateChooser_prevYearDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-50B0536C1DAA289ED5593A8C92AFF563" type="webcontent" href="images/DateChooser_prevYearDownSkin.png">
+      <file href="images/DateChooser_prevYearDownSkin.png" />
+    </resource>
+    <resource identifier="RES-2A204E0411FE30BC7CC34211EC79CB81" type="webcontent" href="images/DateChooser_prevYearOverSkin.png">
+      <file href="images/DateChooser_prevYearOverSkin.png" />
+    </resource>
+    <resource identifier="RES-1EACF09C6E3ECD623F95062121BCC9E5" type="webcontent" href="images/DateChooser_prevYearUpSkin.png">
+      <file href="images/DateChooser_prevYearUpSkin.png" />
+    </resource>
+    <resource identifier="RES-4D674446FC3DAEEBC4A7A5253085410F" type="webcontent" href="images/DateChooser_rollOverIndicatorSkin.png">
+      <file href="images/DateChooser_rollOverIndicatorSkin.png" />
+    </resource>
+    <resource identifier="RES-48EE7B1D5C3807DF205C652D429A5208" type="webcontent" href="images/DateChooser_selectionIndicatorSkin.png">
+      <file href="images/DateChooser_selectionIndicatorSkin.png" />
+    </resource>
+    <resource identifier="RES-ADC4F9295E6FB878F4EAD79E59CDCB62" type="webcontent" href="images/DateChooser_todayIndicatorSkin.png">
+      <file href="images/DateChooser_todayIndicatorSkin.png" />
+    </resource>
+    <resource identifier="RES-6D8752F0AF2DC903CEAC6FA5238CE59C" type="webcontent" href="images/DateField_disabledSkin.png">
+      <file href="images/DateField_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-69B0A39FC3A8E7FDFCE5E683FD14797C" type="webcontent" href="images/DateField_downSkin.png">
+      <file href="images/DateField_downSkin.png" />
+    </resource>
+    <resource identifier="RES-F96A24D852570DC2A22358EC264807F8" type="webcontent" href="images/DateField_overSkin.png">
+      <file href="images/DateField_overSkin.png" />
+    </resource>
+    <resource identifier="RES-E6668C03A72196E83EBFAF9DDF4D80C5" type="webcontent" href="images/DateField_upSkin.png">
+      <file href="images/DateField_upSkin.png" />
+    </resource>
+    <resource identifier="RES-B0BD6FD4CDBCD16629838B462579B08C" type="webcontent" href="images/DividedBox_dividerSkin.png">
+      <file href="images/DividedBox_dividerSkin.png" />
+    </resource>
+    <resource identifier="RES-31DA679D48A5F18CF426DD3680B0096B" type="webcontent" href="images/DividedBox_horizontalCursor.png">
+      <file href="images/DividedBox_horizontalCursor.png" />
+    </resource>
+    <resource identifier="RES-BFE07034C3FD25497ED23720D89D3EF6" type="webcontent" href="images/DividedBox_verticalCursor.png">
+      <file href="images/DividedBox_verticalCursor.png" />
+    </resource>
+    <resource identifier="RES-A97635D87159CD90660E60753856AB9A" type="webcontent" href="images/DragManager_copyCursor.png">
+      <file href="images/DragManager_copyCursor.png" />
+    </resource>
+    <resource identifier="RES-F3A20DF18E1AC46AF9FAACB2C4661A9B" type="webcontent" href="images/DragManager_defaultDragImageSkin.png">
+      <file href="images/DragManager_defaultDragImageSkin.png" />
+    </resource>
+    <resource identifier="RES-6D764888E9021CF38C8855CD047D4DF7" type="webcontent" href="images/DragManager_linkCursor.png">
+      <file href="images/DragManager_linkCursor.png" />
+    </resource>
+    <resource identifier="RES-5AE44210A4B7AAB9EAD3907DE5730A42" type="webcontent" href="images/DragManager_moveCursor.png">
+      <file href="images/DragManager_moveCursor.png" />
+    </resource>
+    <resource identifier="RES-63E42F51B0A63166A6A2F52B1E7C5DA8" type="webcontent" href="images/DragManager_rejectCursor.png">
+      <file href="images/DragManager_rejectCursor.png" />
+    </resource>
+    <resource identifier="RES-0AB1CB842102A490F709F76BD9A58CDC" type="webcontent" href="images/FormItem_indicatorSkin.png">
+      <file href="images/FormItem_indicatorSkin.png" />
+    </resource>
+    <resource identifier="RES-F13FCD415F39E816FB10627B56BF8A18" type="webcontent" href="images/LinkButton_disabledSkin.png">
+      <file href="images/LinkButton_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-452DB6041AED9C9292D77A4B4EE2A3F0" type="webcontent" href="images/LinkButton_downSkin.png">
+      <file href="images/LinkButton_downSkin.png" />
+    </resource>
+    <resource identifier="RES-FF56E99130A0F72B0DD703DCD41A2484" type="webcontent" href="images/LinkButton_overSkin.png">
+      <file href="images/LinkButton_overSkin.png" />
+    </resource>
+    <resource identifier="RES-F7451675622854E04E7710BC5E5F5451" type="webcontent" href="images/LinkButton_upSkin.png">
+      <file href="images/LinkButton_upSkin.png" />
+    </resource>
+    <resource identifier="RES-C0379D4223400CA2DAC063C237ECCB05" type="webcontent" href="images/Loader_brokenImageSkin.png">
+      <file href="images/Loader_brokenImageSkin.png" />
+    </resource>
+    <resource identifier="RES-6CF1C87244E6D7B17CE5F49FC2F5AC40" type="webcontent" href="images/MenuBar_backgroundSkin.png">
+      <file href="images/MenuBar_backgroundSkin.png" />
+    </resource>
+    <resource identifier="RES-6DB2A67C46D737B78C6DFA4B6F965D8A" type="webcontent" href="images/MenuBar_itemDownSkin.png">
+      <file href="images/MenuBar_itemDownSkin.png" />
+    </resource>
+    <resource identifier="RES-043A2BC28BF9E38757A5734501FAA599" type="webcontent" href="images/MenuBar_itemOverSkin.png">
+      <file href="images/MenuBar_itemOverSkin.png" />
+    </resource>
+    <resource identifier="RES-1D5EE653C84BF7F8F72B426DC585BD3A" type="webcontent" href="images/MenuBar_itemUpSkin.png">
+      <file href="images/MenuBar_itemUpSkin.png" />
+    </resource>
+    <resource identifier="RES-2A7B15B97D1BD73142516EEC628A2668" type="webcontent" href="images/Menu_branchDisabledIcon.png">
+      <file href="images/Menu_branchDisabledIcon.png" />
+    </resource>
+    <resource identifier="RES-681E148E79BCB84C61C9E71F3EF26D84" type="webcontent" href="images/Menu_branchIcon.png">
+      <file href="images/Menu_branchIcon.png" />
+    </resource>
+    <resource identifier="RES-24553707C0B7EED5882D3CECC0615653" type="webcontent" href="images/Menu_checkDisabledIcon.png">
+      <file href="images/Menu_checkDisabledIcon.png" />
+    </resource>
+    <resource identifier="RES-16ADB0970FE69DABC248412771ABBDA4" type="webcontent" href="images/Menu_checkIcon.png">
+      <file href="images/Menu_checkIcon.png" />
+    </resource>
+    <resource identifier="RES-D52E7908A643DDBCD1286934708C230D" type="webcontent" href="images/Menu_radioDisabledIcon.png">
+      <file href="images/Menu_radioDisabledIcon.png" />
+    </resource>
+    <resource identifier="RES-12CC6256C622F8C87D1213A6085629F6" type="webcontent" href="images/Menu_radioIcon.png">
+      <file href="images/Menu_radioIcon.png" />
+    </resource>
+    <resource identifier="RES-52580C07647AA1E7796677D3ADD5BBD0" type="webcontent" href="images/Menu_separatorSkin.png">
+      <file href="images/Menu_separatorSkin.png" />
+    </resource>
+    <resource identifier="RES-1EA0EC11EB0D5FCFCE06F72D6683FEBD" type="webcontent" href="images/NumericStepperDownArrow_disabledSkin.png">
+      <file href="images/NumericStepperDownArrow_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-58C028A11B3754D7DC8897DD173C93A6" type="webcontent" href="images/NumericStepperDownArrow_downSkin.png">
+      <file href="images/NumericStepperDownArrow_downSkin.png" />
+    </resource>
+    <resource identifier="RES-AF9A738902F7AF4E30238155A221EE1A" type="webcontent" href="images/NumericStepperDownArrow_overSkin.png">
+      <file href="images/NumericStepperDownArrow_overSkin.png" />
+    </resource>
+    <resource identifier="RES-31B9755A612434C97EDBD57FDDD7C21B" type="webcontent" href="images/NumericStepperDownArrow_upSkin.png">
+      <file href="images/NumericStepperDownArrow_upSkin.png" />
+    </resource>
+    <resource identifier="RES-95E27495A30AF6F89FA8FE8146C12392" type="webcontent" href="images/NumericStepperUpArrow_disabledSkin.png">
+      <file href="images/NumericStepperUpArrow_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-6475F5D200AE602A327AB69A5E6F56CD" type="webcontent" href="images/NumericStepperUpArrow_downSkin.png">
+      <file href="images/NumericStepperUpArrow_downSkin.png" />
+    </resource>
+    <resource identifier="RES-D352B7D10C8792E77DCAA6C695DE00B4" type="webcontent" href="images/NumericStepperUpArrow_overSkin.png">
+      <file href="images/NumericStepperUpArrow_overSkin.png" />
+    </resource>
+    <resource identifier="RES-D37D07AB90DA86279B29D468D1A98662" type="webcontent" href="images/NumericStepperUpArrow_upSkin.png">
+      <file href="images/NumericStepperUpArrow_upSkin.png" />
+    </resource>
+    <resource identifier="RES-2C79068AC204CF415BE31D1A5EBF0959" type="webcontent" href="images/panel_01.png">
+      <file href="images/panel_01.png" />
+    </resource>
+    <resource identifier="RES-EB42F39B0F6CEE5A9FE9611A31A0CF38" type="webcontent" href="images/panel_02.png">
+      <file href="images/panel_02.png" />
+    </resource>
+    <resource identifier="RES-A76CA3572CF26F3CCD5DB51A6A7C7A3D" type="webcontent" href="images/panel_04.png">
+      <file href="images/panel_04.png" />
+    </resource>
+    <resource identifier="RES-40295C339B28B4D2435D38ED95636C15" type="webcontent" href="images/panel_06.png">
+      <file href="images/panel_06.png" />
+    </resource>
+    <resource identifier="RES-62D0F7BE3E00A307FA11689FE666268A" type="webcontent" href="images/panel_07.png">
+      <file href="images/panel_07.png" />
+    </resource>
+    <resource identifier="RES-F8B19A6923EFF0DEFE8C73C87DC6F07B" type="webcontent" href="images/panel_08.png">
+      <file href="images/panel_08.png" />
+    </resource>
+    <resource identifier="RES-4D1AC14F1036991F352590664D61F9E4" type="webcontent" href="images/panel_09.png">
+      <file href="images/panel_09.png" />
+    </resource>
+    <resource identifier="RES-77AAE602B76E1F606099B4BE09E1BB2E" type="webcontent" href="images/panel_11.png">
+      <file href="images/panel_11.png" />
+    </resource>
+    <resource identifier="RES-F2C9AB89CB63D687F69313E18174D688" type="webcontent" href="images/panel_13.png">
+      <file href="images/panel_13.png" />
+    </resource>
+    <resource identifier="RES-67ACA99EE1BBA14CDB22260433B3791C" type="webcontent" href="images/panel_15.png">
+      <file href="images/panel_15.png" />
+    </resource>
+    <resource identifier="RES-6A34B7F5707B4E6D05A6408E1A4712AE" type="webcontent" href="images/panel_17.png">
+      <file href="images/panel_17.png" />
+    </resource>
+    <resource identifier="RES-7300A13BC0150BA8318C9E89A10F4DBF" type="webcontent" href="images/panel_18.png">
+      <file href="images/panel_18.png" />
+    </resource>
+    <resource identifier="RES-4CE49026A8581F5F25D8B9E724FC7ABD" type="webcontent" href="images/panel_19.png">
+      <file href="images/panel_19.png" />
+    </resource>
+    <resource identifier="RES-98818C4E2CB7708D3284B99F66EDA9F7" type="webcontent" href="images/panel_20.png">
+      <file href="images/panel_20.png" />
+    </resource>
+    <resource identifier="RES-0A709EA866C20A9EC469F81D78F009B5" type="webcontent" href="images/panel_21.png">
+      <file href="images/panel_21.png" />
+    </resource>
+    <resource identifier="RES-34E56C6CDC92713F209D2632C52112E7" type="webcontent" href="images/Panel_borderSkin.png">
+      <file href="images/Panel_borderSkin.png" />
+    </resource>
+    <resource identifier="RES-356FD211510C056FAEE3DCDCE5B8C8F5" type="webcontent" href="images/Panel_borderSkin2.png">
+      <file href="images/Panel_borderSkin2.png" />
+    </resource>
+    <resource identifier="RES-FD4FDCE5DFAB030EA14EEACFBB477371" type="webcontent" href="images/Panel_closeButtonDisabledSk.png">
+      <file href="images/Panel_closeButtonDisabledSk.png" />
+    </resource>
+    <resource identifier="RES-FA767BE3080661B8F384F36D10538CDC" type="webcontent" href="images/Panel_closeButtonDisabledSkin.png">
+      <file href="images/Panel_closeButtonDisabledSkin.png" />
+    </resource>
+    <resource identifier="RES-0414C34A6DA7C776F6D351B2548AB8A3" type="webcontent" href="images/Panel_closeButtonDownSkin.png">
+      <file href="images/Panel_closeButtonDownSkin.png" />
+    </resource>
+    <resource identifier="RES-674A9E2A8B184654ED7F9F0412F426BD" type="webcontent" href="images/Panel_closeButtonOverSkin.png">
+      <file href="images/Panel_closeButtonOverSkin.png" />
+    </resource>
+    <resource identifier="RES-A8554DE1AA682213EEC2BC55CF52A979" type="webcontent" href="images/Panel_closeButtonUpSkin.png">
+      <file href="images/Panel_closeButtonUpSkin.png" />
+    </resource>
+    <resource identifier="RES-19F35A750C469EE0EC13875DC244D25B" type="webcontent" href="images/PopUpButton_disabledSkin.png">
+      <file href="images/PopUpButton_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-A0C03B5D71A9F40DCD8515604955B93F" type="webcontent" href="images/PopUpButton_downLeftSkin.png">
+      <file href="images/PopUpButton_downLeftSkin.png" />
+    </resource>
+    <resource identifier="RES-64149F54BD1D3A96C47E8AFA2DF0BD59" type="webcontent" href="images/PopUpButton_downRightSkin.png">
+      <file href="images/PopUpButton_downRightSkin.png" />
+    </resource>
+    <resource identifier="RES-150F10FF7E724869269BC85DD3E0B758" type="webcontent" href="images/PopUpButton_overLeftSkin.png">
+      <file href="images/PopUpButton_overLeftSkin.png" />
+    </resource>
+    <resource identifier="RES-0DB95D6371C7A0EC0BDA24809B07318B" type="webcontent" href="images/PopUpButton_overRightSkin.png">
+      <file href="images/PopUpButton_overRightSkin.png" />
+    </resource>
+    <resource identifier="RES-288AFBA2D648CB9975C55FC7C10A7938" type="webcontent" href="images/PopUpButton_upSkin.png">
+      <file href="images/PopUpButton_upSkin.png" />
+    </resource>
+    <resource identifier="RES-0896BD3C2705AF4B8EC934426F36C166" type="webcontent" href="images/ProgressBarSkin.png">
+      <file href="images/ProgressBarSkin.png" />
+    </resource>
+    <resource identifier="RES-595FF93864114700F713D2843D05A5BA" type="webcontent" href="images/ProgressIndeterminateSkin.png">
+      <file href="images/ProgressIndeterminateSkin.png" />
+    </resource>
+    <resource identifier="RES-9DBF0D903F9660A81906375082D4DB16" type="webcontent" href="images/ProgressTrackSkin.png">
+      <file href="images/ProgressTrackSkin.png" />
+    </resource>
+    <resource identifier="RES-2902B83EFDCDE1558F835449347E3A3F" type="webcontent" href="images/RadioButtonSelected_disabledIcon.png">
+      <file href="images/RadioButtonSelected_disabledIcon.png" />
+    </resource>
+    <resource identifier="RES-E7A282110FA60F5F0D0FB116F467C72B" type="webcontent" href="images/RadioButtonSelected_downIcon.png">
+      <file href="images/RadioButtonSelected_downIcon.png" />
+    </resource>
+    <resource identifier="RES-DF2DB5A80D3952BF6F96FF5E7E052EB5" type="webcontent" href="images/RadioButtonSelected_overIcon.png">
+      <file href="images/RadioButtonSelected_overIcon.png" />
+    </resource>
+    <resource identifier="RES-59459FC0E14E648D2A7B8B76C13413D9" type="webcontent" href="images/RadioButtonSelected_upIcon.png">
+      <file href="images/RadioButtonSelected_upIcon.png" />
+    </resource>
+    <resource identifier="RES-2449901632A5DC446E6DA08E32E3486E" type="webcontent" href="images/RadioButton_disabledIcon.png">
+      <file href="images/RadioButton_disabledIcon.png" />
+    </resource>
+    <resource identifier="RES-C5DA14A2A0C06BF5E507EED093C93EC6" type="webcontent" href="images/RadioButton_downIcon.png">
+      <file href="images/RadioButton_downIcon.png" />
+    </resource>
+    <resource identifier="RES-DF053B8E9C2A2EB0B9F918F4FA2635F1" type="webcontent" href="images/RadioButton_overIcon.png">
+      <file href="images/RadioButton_overIcon.png" />
+    </resource>
+    <resource identifier="RES-3BE7C72814D21ED8DAB850B1DC5DDADA" type="webcontent" href="images/RadioButton_upIcon.png">
+      <file href="images/RadioButton_upIcon.png" />
+    </resource>
+    <resource identifier="RES-447BB2B8E901D01C1D17685B91F2FEB6" type="webcontent" href="images/ScrollBar_thumbIcon.png">
+      <file href="images/ScrollBar_thumbIcon.png" />
+    </resource>
+    <resource identifier="RES-D867FE04905F0B7CAFB3839549C5DC76" type="webcontent" href="images/ScrollThumb_downSkin.png">
+      <file href="images/ScrollThumb_downSkin.png" />
+    </resource>
+    <resource identifier="RES-4C22971337183A90D8C12B21F631F85A" type="webcontent" href="images/ScrollThumb_overSkin.png">
+      <file href="images/ScrollThumb_overSkin.png" />
+    </resource>
+    <resource identifier="RES-8B9A96C0FD77FA47FE80992AEA0E6DED" type="webcontent" href="images/ScrollThumb_upSkin.png">
+      <file href="images/ScrollThumb_upSkin.png" />
+    </resource>
+    <resource identifier="RES-019EA585856901F0FA92D8687DC83F02" type="webcontent" href="images/ScrollTrack_disabledSkin.png">
+      <file href="images/ScrollTrack_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-6CB02E9518F5C910D6FB94199C2C6668" type="webcontent" href="images/ScrollTrack_Skin.png">
+      <file href="images/ScrollTrack_Skin.png" />
+    </resource>
+    <resource identifier="RES-A60DE19A175CAC38A9B174C2A330CCEF" type="webcontent" href="images/Slice-03.png">
+      <file href="images/Slice-03.png" />
+    </resource>
+    <resource identifier="RES-4C81809C7E2457665DAD216DB99984F8" type="webcontent" href="images/Slice-04.png">
+      <file href="images/Slice-04.png" />
+    </resource>
+    <resource identifier="RES-8423BF57E462A249779865AB56930910" type="webcontent" href="images/Slice-06.png">
+      <file href="images/Slice-06.png" />
+    </resource>
+    <resource identifier="RES-94E3D30AED01A58B4D737F96A49730D2" type="webcontent" href="images/Slice-07.png">
+      <file href="images/Slice-07.png" />
+    </resource>
+    <resource identifier="RES-00C54C0BB6178362F5D2A8FB4A97DBD3" type="webcontent" href="images/Slice-09.png">
+      <file href="images/Slice-09.png" />
+    </resource>
+    <resource identifier="RES-D6AF1AF49D01C9EB27E9B2C37D3856CA" type="webcontent" href="images/Slice.png">
+      <file href="images/Slice.png" />
+    </resource>
+    <resource identifier="RES-A36B302103E6FE1B3BE78CD264C44BF9" type="webcontent" href="images/SliderHighlight_Skin.png">
+      <file href="images/SliderHighlight_Skin.png" />
+    </resource>
+    <resource identifier="RES-40A8970C0E1E53B57AEFB87747B30CC1" type="webcontent" href="images/SliderThumb_disabledSkin.png">
+      <file href="images/SliderThumb_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-A3E49447EB5093C58AF0618443862C5C" type="webcontent" href="images/SliderThumb_downSkin.png">
+      <file href="images/SliderThumb_downSkin.png" />
+    </resource>
+    <resource identifier="RES-16D72285E4F0A2A6DB6488E36D1E76F0" type="webcontent" href="images/SliderThumb_overSkin.png">
+      <file href="images/SliderThumb_overSkin.png" />
+    </resource>
+    <resource identifier="RES-C6D18EA995060E3497145E3A29899A5C" type="webcontent" href="images/SliderThumb_upSkin.png">
+      <file href="images/SliderThumb_upSkin.png" />
+    </resource>
+    <resource identifier="RES-DDA64F776E60E23F9A4C40EFAFEEDA12" type="webcontent" href="images/SliderTrack_Skin.png">
+      <file href="images/SliderTrack_Skin.png" />
+    </resource>
+    <resource identifier="RES-4EDE72FE7666417975C826FD36FAC0EC" type="webcontent" href="images/TabSelected_disabledSkin.png">
+      <file href="images/TabSelected_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-8FA3680C1A8230B811ED5F69D305D562" type="webcontent" href="images/TabSelected_upSkin.png">
+      <file href="images/TabSelected_upSkin.png" />
+    </resource>
+    <resource identifier="RES-44FA79CAF9EA912ACDA9AF550C40809A" type="webcontent" href="images/Tab_disabledSkin.png">
+      <file href="images/Tab_disabledSkin.png" />
+    </resource>
+    <resource identifier="RES-B4F73A7AC9C7297B18340A6BF462026D" type="webcontent" href="images/Tab_downSkin.png">
+      <file href="images/Tab_downSkin.png" />
+    </resource>
+    <resource identifier="RES-53EF36A4B0AC47A45F76AA578E434494" type="webcontent" href="images/Tab_overSkin.png">
+      <file href="images/Tab_overSkin.png" />
+    </resource>
+    <resource identifier="RES-174C623E6F96E9868B26FD98CA23DAD5" type="webcontent" href="images/Tab_upSkin.png">
+      <file href="images/Tab_upSkin.png" />
+    </resource>
+    <resource identifier="RES-1E573FFFF37EAFA1CDC7CA8244BCD0C5" type="webcontent" href="images/textBox.png">
+      <file href="images/textBox.png" />
+    </resource>
+    <resource identifier="RES-F6CF872CF2230DFF81D26AFEF5642908" type="webcontent" href="images/textBoxFocus.png">
+      <file href="images/textBoxFocus.png" />
+    </resource>
+    <resource identifier="RES-903F3D919D6D59122FD4732E4C37E2A0" type="webcontent" href="images/Thumbs.db">
+      <file href="images/Thumbs.db" />
+    </resource>
+    <resource identifier="RES-19CB98037313A91BDC53ACA0ED72CC6C" type="webcontent" href="images/ToolTip_borderSkin.png">
+      <file href="images/ToolTip_borderSkin.png" />
+    </resource>
+    <resource identifier="RES-BFC6350D20428AF772C5C9B8B4F4DC8C" type="webcontent" href="images/Tree_defaultLeafIcon.png">
+      <file href="images/Tree_defaultLeafIcon.png" />
+    </resource>
+    <resource identifier="RES-713AEAA94673A1560BA27C43CF231E79" type="webcontent" href="images/Tree_disclosureClosedIcon.png">
+      <file href="images/Tree_disclosureClosedIcon.png" />
+    </resource>
+    <resource identifier="RES-7CE3682FD06283EF5D57538883C533A7" type="webcontent" href="images/Tree_disclosureOpenIcon.png">
+      <file href="images/Tree_disclosureOpenIcon.png" />
+    </resource>
+    <resource identifier="RES-050C4E4E469847E081F2B1337CE4E5F3" type="webcontent" href="images/Tree_folderClosedIcon.png">
+      <file href="images/Tree_folderClosedIcon.png" />
+    </resource>
+    <resource identifier="RES-074F05330E43553DA73F1898FE7FB81A" type="webcontent" href="images/Tree_folderOpenIcon.png">
+      <file href="images/Tree_folderOpenIcon.png" />
+    </resource>
+    <resource identifier="RES-6DF70EE1CA3A09BF445DD707EDA749E0" type="webcontent" href="Scripts/AC_RunActiveContent.js">
+      <file href="Scripts/AC_RunActiveContent.js" />
+    </resource>
+    <resource identifier="RES-1E2E37D756BC630EC0E6B4BC84C0D8E7" type="webcontent" href="Scripts/standard.js">
+      <file href="Scripts/standard.js" />
+    </resource>
+    <resource identifier="RES-9DE568F79531ECCB9A8ACA87CA2FE19C" type="webcontent" href="swc/D.eval-1.1/catalog.xml">
+      <file href="swc/D.eval-1.1/catalog.xml" />
+    </resource>
+    <resource identifier="RES-742BAC9F9A6B8F284C5C28004B095CDC" type="webcontent" href="swc/D.eval-1.1/library.swf">
+      <file href="swc/D.eval-1.1/library.swf" />
+    </resource>
+    <resource identifier="RES-0B0AADD9893B01525FA8487042121BA6" type="webcontent" href="swc/EvalES4/catalog.xml">
+      <file href="swc/EvalES4/catalog.xml" />
+    </resource>
+    <resource identifier="RES-BE1AE418155CD77B5CD2507CE9F35A13" type="webcontent" href="swc/EvalES4/library.swf">
+      <file href="swc/EvalES4/library.swf" />
+    </resource>
+    <resource identifier="RES-339A2ECDD142E4C8F20A292B582084D3" type="webcontent" href="swc/library.swf">
+      <file href="swc/library.swf" />
+    </resource>
+    <resource identifier="RES-3370388B3EBC9507A28582FBB4779EBC" type="webcontent" href="swf/history.swf">
+      <file href="swf/history.swf" />
+    </resource>
+    <resource identifier="RES-E4CBA62FA406373C97253C8BCB049C8D" type="webcontent" href="swf/playerProductInstall.swf">
+      <file href="swf/playerProductInstall.swf" />
+    </resource>
+    <resource identifier="RES-57F7D2B58227385BEBC5A3960C0F62FD" type="webcontent" href="swf/preloader.swf">
+      <file href="swf/preloader.swf" />
+    </resource>
+    <resource identifier="RES-83E7EA4B3704870093BE998A28B93788" type="webcontent" href="swf/SkinUnderPlaySeekFullscreen.swf">
+      <file href="swf/SkinUnderPlaySeekFullscreen.swf" />
+    </resource>
+    <resource identifier="RES-D8B1F0260220D1398EC757E1C2899ACC" type="webcontent" href="AC_OETags.js">
+      <file href="AC_OETags.js" />
+    </resource>
+    <resource identifier="RES-7F56E426DBAE91AD55EBA94F62C62669" type="webcontent" href="adlcp_rootv1p2.xsd">
+      <file href="adlcp_rootv1p2.xsd" />
+    </resource>
+    <resource identifier="RES-2AC10FECEFCC4E58947F737EBB690E58" type="webcontent" href="imscp_rootv1p1p2.xsd">
+      <file href="imscp_rootv1p1p2.xsd" />
+    </resource>
+    <resource identifier="RES-85217B0551AC3AF45520AB89773C39D6" type="webcontent" href="imsmanifest.xml">
+      <file href="imsmanifest.xml" />
+    </resource>
+    <resource identifier="RES-1428ACDF4B4CADBCF31FDF377E75BD91" type="webcontent" href="imsmd_rootv1p2p1.xsd">
+      <file href="imsmd_rootv1p2p1.xsd" />
+    </resource>
+    <resource identifier="RES-0F84D12BCAB0385A2A0F8294AE41D594" type="webcontent" href="ims_xml.xsd">
+      <file href="ims_xml.xsd" />
+    </resource>
+    <resource identifier="RES-A6D31D04F843FC09CBFB91F33219A192" type="webcontent" href="leer.fla">
+      <file href="leer.fla" />
+    </resource>
+    <resource identifier="RES-E5E3E91B735D31AA2E6A339EE4A6F3BE" type="webcontent" href="leer.swf">
+      <file href="leer.swf" />
+    </resource>
+    <resource identifier="RES-0D9C12100806B1F3D0455D8DEDE35D82" type="webcontent" href="menu.xml">
+      <file href="menu.xml" />
+    </resource>
+    <resource identifier="RES-2879E8BA271F48EE24DE0AC2B54ABB61" type="webcontent" href="playerProductInstall.swf">
+      <file href="playerProductInstall.swf" />
+    </resource>
+    <resource identifier="RES-9E5E3C116DDAB7C15FE39882C31B734C" type="webcontent" href="SCORM_API_wrapper.js">
+      <file href="SCORM_API_wrapper.js" />
+    </resource>
+    <resource identifier="RES-B903B2361E5B8923810A82884ECCC6D2" type="webcontent" href="SkinUnderPlayStopSeekMuteVol.swf">
+      <file href="SkinUnderPlayStopSeekMuteVol.swf" />
+    </resource>
+    <resource identifier="RES-D0B0C5A4B92E2DAC8814CAD5DCFCEA9F" type="webcontent" href="swfobject.js">
+      <file href="swfobject.js" />
+    </resource>
+    <resource identifier="RES-37D8672BF211023AE4B3B2833FEFCBE4" type="webcontent" href="WORD2007.html">
+      <file href="WORD2007.html" />
+      <file href="AC_OETags.js" />
+      <file href="WORD2007.swf" />
+    </resource>
+    <resource identifier="RES-6E2C7A633F1250CFFB92CC1E6DA915E0" type="webcontent" href="WORD2007.swf">
+      <file href="WORD2007.swf" />
+    </resource>
+  </resources>
+</manifest>
+

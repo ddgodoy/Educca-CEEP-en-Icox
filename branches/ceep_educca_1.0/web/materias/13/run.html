@@ -1,0 +1,46 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"> <html>
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2009.
+-->
+ <head> <link rel="Shortcut Icon" href="Content/Runtime/Images/project.ico"> <meta http-equiv="content-type" content="text/html; charset=utf-8"> <meta http-equiv="imagetoolbar" content="no"> <title>&nbsp;</title> <![if !IE]><script type="text/javascript" src="Content/Runtime/adaptie.js"></script><![endif]> <script type="text/javascript" src="Content/Runtime/project.js"></script> <script type="text/javascript" src="Content/Runtime/common.js"></script> <style>
+* {box-sizing:border-box;-moz-box-sizing:border-box;}
+html { height:100%; }
+body {text-align:center;font-family:verdana;font-size:8pt;margin:0;color:#616b74;background:white url(Content/Runtime/Images/loading.gif) no-repeat center center;height:100%;}
+body.loaded {background:#eeeeee none;}
+a {text-decoration:none;color:#616b74;}
+a:hover {color:#f89b39;text-decoration:underline;}
+.content {display:none;text-align:left;border:1px solid #d9dade;background-color:white;padding:20px;width:500px;_height:240px;min-height:200px;position:absolute;top:50%;left:50%;margin-top:-180px;margin-left:-250px;}
+.loaded .content {display:block;}
+.loginHold input {background-image:url(Content/Runtime/Images/button.png);background-color:transparent;font-family:verdana;font-size:8pt;color:white;font-weight:bold;border:0 none;width:150px;height:22px;margin-top:20px;}
+.start {font-size:9px;color:#b6c0bd;}
+#oBlogsIndexHolder {display:none;}
+#oBlogsIndexHolder iframe {width:80%;height:100px;margin-top:50px;border:1px solid #d9dade;}
+h1 {font-family:palatino linotype;font-size:11pt;color:#879792;font-weight:bold;margin:0;margin-bottom:20px;clear:both;}
+#courseDesc {display:none;}
+.specialLinks {position:absolute;right:0;bottom:0;padding:20px;text-align:left;}
+#oTrack {color:#97a2aa;font-size:9px;text-decoration:underline;cursor:pointer;display:none;margin-top:10px;}
+#oModerate {display:none;}
+#oModerate a {font-size:9px;color:#97a2aa;text-decoration:underline;}
+.trackHolder label {display:block;margin-bottom:6px;}
+#oTrackForm {display:none;}
+.trackHolder input {width:200px;}
+#oTrackLogin{background-image:url(Content/Runtime/Images/button.png);font-family:verdana;font-size:8pt;color:white;font-weight:bold;border:0 none;width:150px;height:22px;margin-left:4px;}
+.loginHold {margin-top:20px;}
+.loginHold button {background-image:url(Content/Runtime/Images/button.png);background-color:transparent;font-family:verdana;font-size:8pt;color:white;font-weight:bold;border:none;width:150px;height:22px;}
+.loginHold button > span {position:relative;top:-2px;}
+</style> <noscript> <style>
+body { background:#eeeeee none; }
+.content { display:block; }
+#loginHolder { display:none; }
+</style> </noscript> </head> <body> <div class="doc"> <div class="content"> <div class="main"> <div id="oMain"> <noscript> <p>Para poder utilizar este curso debe activar Active Scripting en su navegador.</p> </noscript> <div id="loginHolder"> <h1 id="courseTitle">Cargando…</h1> <p id="courseDesc"></p> <div class="start">Pulse el botón &#34;Comenzar Curso&#34; para comenzar el aprendizaje.</div> <div class="loginHold"><button id="loginSubmit"><span>Comenzar Curso</span></button></div> </div> <div id="oBlogsIndexHolder">  </div> <script type="text/javascript">
+window.onerror=function(){return true;}
+if(!(window.execScript&&document.releaseCapture&&window.createPopup||window.Adaptie&&Adaptie.canAdapt)){window.onload=null
+document.body.className="loaded"
+document.getElementById("loginHolder").innerHTML="<p>Lamentablemente, el navegador que está utilizando no está soportado en esta versión.<br>Por favor utilice Windows Internet Explorer 6.0 o superior Firefox 2.0 o superior para ver este curso.</p><p>Gracias.</p>"}
+</script> </div> <form id="oTrackForm" method="POST" action="Content/Runtime/Track/report.asp" onsubmit="return validate(this)" class="trackHolder"> <label>Por favor introduzca contraseña de seguimiento:</label> <input type="password" name="password"> <input type="submit" value="Ver Informe" id="oTrackLogin"> </form> </div> </div> <div class="specialLinks"> <div id="oModerate"> </div> <div id="oTrack"> Seguimiento </div> </div> </div> <script type="text/javascript" src="Content/Runtime/launcher.js"></script> </body> </html>

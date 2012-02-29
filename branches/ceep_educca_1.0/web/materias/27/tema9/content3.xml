@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<content btnText="1" txt="Institucionaliza los valores, normas y criterios de decisi&#243;n que definen el proyecto de empresa y que deben regir toda la actividad de la organizaci&#243;n." color="66cc330099cc"/>
+	<content btnText="2" txt="Crea la cultura de la empresa y un clima &#233;tico que fortalece la identificaci&#243;n de los miembros de la organizaci&#243;n con el proyecto com&#250;n." color="0099cc"/>
+	<content btnText="3" txt="Establece un criterio para la toma de decisiones que elimina las incertidumbres y las divergencias en las soluciones a los dilemas &#233;ticos." color="ff9900"/>
+	<content btnText="4" txt="Define la responsabilidad, los derechos y las obligaciones as&#237; como el compromiso de la empresa en la satisfacci&#243;n de las partes interesadas." color="996699"/>
+	<content btnText="5" txt="Comunica a las partes interesadas el car&#225;cter de la empresa y crear as&#237; una imagen p&#250;blica." color="66cc33"/>
+	<content btnText="6" txt="Explicita las l&#237;neas de actuaci&#243;n a las que la empresa se compromete respecto a sus partes interesadas." color="996699"/>
+	<content btnText="7" txt="Genera credibilidad en la sociedad mediante la definici&#243;n de su compromiso social y ambiental y las medidas a implantar para su cumplimiento." color="ff9900"/>
+
+</root>

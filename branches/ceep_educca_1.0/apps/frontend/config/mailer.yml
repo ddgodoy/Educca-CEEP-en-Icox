@@ -1,0 +1,12 @@
+all:
+  mailer:    smtp
+  hostname:  mail.ceepvirtual.com
+  port:      587
+#  hostname:  mail.adra-online.com
+#  port:      2525
+  charset:   utf-8
+  content_type: text/html
+  username:  administracion@ceepvirtual.com
+  password:  Ceep091
+#  username: adra+adra-online.com
+#  password: Adra2007

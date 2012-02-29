@@ -1,0 +1,301 @@
+﻿<public:component lightweight="true">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2008.
+-->
+ <public:method name="processCommand" /> <public:event name="ongamestart" id="eGameStart" /> <public:event name="ongameend" id="eGameEnd" /> <public:event name="onitemstart" id="eItemStart" /> <public:event name="onitemend" id="eItemEnd" /> <public:attach event="onemulation" for="element" onevent="initEmulation()" /> <public:attach event="ondocumentready" for="element" onevent="initGame()" /> <script language="jscript">var oDoc=element.document,oElem={},oQLayer,oGameRes=oResource,Game
+function initGame(){oDoc.body.attachEvent("onfinishpage",handleFinish)
+var aStages=element.getElementsByTagName("stage"),iStage=0,oStage
+do{if(aStages[iStage].scopeName=="gmgame")oStage=aStages[iStage]
+iStage++}while(!oStage&&aStages[iStage])
+if(oStage){oElem.stage=oStage
+oElem.game=oStage.firstChild}
+try{if(oElem.game&&oElem.game.tagName=="EMBED"&&oElem.game.GetVariable("gm.count")>0){Game.init()}}catch(oErr){}}
+function initEmulation(){var aEmbeds=element.getElementsByTagName("embed")
+for(var i=aEmbeds.length;i--;){var oEmbed=aEmbeds[i]
+if(oEmbed.className=="backLayer")oEmbed.removeNode()}}
+function handleFinish(event){try{if(oQLayer)oQLayer.innerHTML=null
+if(!oGameRes.getAttribute("gameover")){Game.endGame(null,true)}
+oResource=oGameRes}catch(oErr){}}
+Game={layer:null,popup:null,turn:0,players:1,scored:true,continueMode:"always",winFactor:"game",continueBtn:null,init:function(){var moduleName=oElem.stage.parentNode.getAttribute("moduleName")
+if(Game.initiated)return false
+Game.initiated=true
+if(oElem.game&&oElem.game.tagName=="EMBED"){var sGameProps=getGameParams()
+sendCommand(sGameProps)}
+oCurRes=oGameRes
+if(oCurRes.tagName!="test"){alert("El juego no ha sido creado en un elemento de Test")
+return}
+Game.winFactor=element.getAttribute("winFactor")||"game"
+oCurRes.setAttribute("game","true")
+oCurRes.setAttribute("feedbackMode","question")
+oCurRes.setAttribute("skip","false")
+oCurRes.removeAttribute("reviewMode")
+var oSects=oCurRes.selectNodes(".//section")
+for(var iS=0;iS<oSects.length;iS++){var oSc=oSects[iS],oQs=oSc.selectNodes(".//page")
+oSc.setAttribute("skip","hide")
+for(var iQ=0;iQ<oQs.length;iQ++){oQs[iQ].setAttribute("skip","hide")}}
+element.document.body.raiseRehash(oMasterContent)
+element.document.body.raiseRehash(oMenuContent)
+element.document.body.raiseRehash(oDocContent)
+Game.layerHash={}
+var oLayers=element.getElementsByTagName("layer")
+for(var iL=0;iL<oLayers.length;iL++){var oL=oLayers[iL]
+Game.layerHash[oL.name]=oL
+if(oL.name!="Help"){setAreaVisibility(oL)}}
+var oL=Game.layerHash["Help"]
+if(oL){opacityOverlay(oL)
+oL.onclick=function(){hideHelpLayer()}}
+var oL=Game.layerHash["Popup"]
+if(oL){opacityOverlay(oL)}
+Game.players=element.getAttribute("players")=="two"?2:1
+Game.scored=element.getAttribute("showScore")!="false"
+oScore=[]
+try{oScore[0]=element.getElementsByTagName("score1")[0]
+if(oScore[0]){oScore[0].style.display=Game.scored?"block":"None"
+oScore[0]=oScore[0].getElementsByTagName("scorefld")[0]}
+oScore[1]=element.getElementsByTagName("score2")[0]
+if(oScore[1]){oScore[1].style.display=Game.scored&&Game.players==2?"block":"None"
+oScore[1]=oScore[1].getElementsByTagName("scorefld")[0]}}catch(e){}
+oQLayer=element.appendChild(oDoc.createElement("div"))
+oQLayer.id="qlayer"
+var iX=getOffsetLeft(element,oDocContent),iY=getOffsetTop(element,oDocContent)
+oQLayer.style.left=-iX
+oQLayer.style.top=-iY
+oQLayer.style.width=oDocContent.offsetWidth
+oQLayer.style.height=oDocContent.offsetHeight
+function getOffsetTop(oEl,oFinal){for(var iY=0;oEl!=oFinal&&oEl!=null;oEl=oEl.offsetParent){iY+=oEl.offsetTop}
+return iY}
+function getOffsetLeft(oEl,oFinal){for(var iX=0;oEl!=oFinal&&oEl!=null;oEl=oEl.offsetParent){iX+=oEl.offsetLeft}
+return iX}
+var oNew=element.getElementsByTagName("gamenew")[0]
+if(oNew){Game.newBtn=oNew
+oNew.onclick=function(){Game.start()
+if(element.getAttribute("repeat")!="true"){oNew.style.display="none"}}
+initButtonHandlers(oNew)}
+var oSound=element.getElementsByTagName("gamesound")[0]
+if(oSound){oSound.onclick=function(){this.state=!this.state||this.state=="on"?"off":"on"
+soundMode(this,this.state)}
+initButtonHandlers(oSound)
+if(element.getAttribute("sound")=="off"){oSound.state="off"
+soundMode(oSound,"off")}}
+var oHelp=element.getElementsByTagName("gamehelp")[0]
+if(oHelp){oHelp.onclick=function(){this.state=!this.state||this.state=="off"?"on":"off"
+if(Game.popup!="Help"){Game.showLayer("Help",true)}else{hideHelpLayer()}}
+initButtonHandlers(oHelp)}
+function hideHelpLayer(){var oL=Game.layerHash["Help"]
+Game.hideLayer("Help",true)}
+Game.continueMode=element.getAttribute("continueMode")
+var oCont=element.getElementsByTagName("gamecontinue")[0]
+if(oCont){oCont.onclick=function(){if(Game.continueMode=="auto check"){var oFB=oQLayer.getElementsByTagName("feedback")[0]
+if(oFB){oFB.silent=true
+oFB.checkAnswer()
+setTimeout(Game.endItem,100)}}else{Game.endItem()}}
+initButtonHandlers(oCont)
+Game.continueBtn=oCont}
+Game.swapMax=element.getAttribute("swap")
+var oSwap=element.getElementsByTagName("gameswap")[0]
+if(oSwap&&Game.swapMax){oSwap.onclick=function(){Game.swapItem()}
+initButtonHandlers(oSwap)
+Game.swapBtn=oSwap
+Game.swaps=0}
+Game.splitMax=element.getAttribute("split5050")
+var oSp=element.getElementsByTagName("game5050")[0]
+if(oSp&&Game.splitMax){oSp.onclick=function(){Game.splitItem()}
+initButtonHandlers(oSp)
+Game.splitBtn=oSp
+Game.splits=0}
+var oSv=element.getElementsByTagName("gamesolve")[0]
+if(oSv){oSv.onclick=function(){sendCommand("<command name=\"solve\"></command>")}
+initButtonHandlers(oSv)
+Game.solveBtn=oSv}
+function initButtonHandlers(oButton){oButton.onmouseover=function(){buttonState(this,"mouseOver")}
+oButton.onmouseout=function(){if(!this.contains(event.toElement)){buttonState(this,"mouseOut")}}}
+oCurRes.setAttribute("forceOneTry",(element.getAttribute("forceOneTry")=="true"||Game.continueMode=="auto check")?"true":"false")
+var sTL=oCurRes.getAttribute("timeLimit")
+if(sTL=="limited"){element.onitemstart=function(){Game.timers=initLocalTimer(oCurRes,oGameRes)
+if(Game.timers){var oTimer=Game.timers.main
+oTimer.setAttribute("ontimer","none")
+oTimer.setAttribute("showmsg","false")
+oTimer.parentElement.style.display="block"
+oTimer.ontimeout=function(){this.ontimeout=null
+evaluatePage(oCurRes,null,true)}
+element.onitemend=function(){if(Game.timers){var oTimer=Game.timers.main
+oTimer.ontimeout=null
+oTimer.style.visibility="hidden"
+oTimer.parentElement.style.display="none"}}}}}else if(sTL=="global"){element.ongamestart=function(){if(Game.timers){var oGlobalTimer=Game.timers.main,aVisualTimer=Game.timers.visual
+if(oGlobalTimer){oGlobalTimer.invalidateTimer()}
+if(aVisualTimer){for(var iV=0;iV<aVisualTimer.length;iV++){aVisualTimer[iV].invalidateTimer()}}}
+Game.timers=initGlobalTimer(oGameRes,10000,true)
+if(Game.timers){var oGlobalTimer=Game.timers.main,aVisualTimer=Game.timers.visual
+oGlobalTimer.setAttribute("ontimer","none")
+oGlobalTimer.setAttribute("showmsg","false")
+if(aVisualTimer){for(var iV=0;iV<aVisualTimer.length;iV++){aVisualTimer[iV].setAttribute("showmsg","false")}
+var oGameTimer=element.getElementsByTagName("timer")[0]
+if(oGameTimer){oGameTimer.style.display="block"}}
+oGlobalTimer.ontimeout=function(){Game.forceEndGame("timeout")}
+element.ongameend=function(){var oGlobalTimer=Game.timers.main,aVisualTimer=Game.timers.visual
+oGlobalTimer.ontimeout=null
+if(aVisualTimer){for(var iV=0;iV<aVisualTimer.length;iV++){aVisualTimer[iV].style.visibility="hidden"}}}}}}
+if(oGameRes.getAttribute("gameover")){Game.revisit()}},start:function(bNoReinit){if(oGameRes.getAttribute("gameover")||Game.started){Game.hideLayer("Results",true)
+Game.hideLayer("Popup",true)
+oQLayer.innerHTML=""
+oQLayer.style.display="none"
+var oTFB=element.getElementsByTagName("testfeedback")[0]
+if(oTFB){if(!bNoReinit){oTFB.reinitTest(oGameRes);}
+oGameRes.removeAttribute("gameover")}else{return}
+oCurRes=oGameRes
+Game.swaps=0
+Game.splits=0}
+sendCommand("<command name=\"newGame\"></command>")
+Game.started=true
+if(oScore[0])oScore[0].innerText="0"
+if(oScore[1])oScore[1].innerText="0"
+Game.turn=0
+if(Game.newBtn&&element.getAttribute("repeat")!="true"){Game.newBtn.style.display="none"}
+Game.showLayer("Game")
+Game.started=true
+var oEvent=createEventObject()
+eGameStart.fire(oEvent)},revisit:function(){var sState=oGameRes.getAttribute("gameover")
+Game.showLayer(sState)
+if(sState=="Lose"){Game.showReason()}
+sendCommand("<command name=\"setState\"><state>"+sState.toLowerCase()+"</state></command>")
+if(oGameRes.getAttribute("totalscore")===null){setTimeout(Game.start,500)}else{Game.showResults()
+if(Game.newBtn&&element.getAttribute("repeat")=="false"){Game.newBtn.style.display="none"}}},nextItem:function(){oCurRes=getNavNode(oCurRes,"next",false,false,true)
+if(!oCurRes||oCurRes.parentNode.parentNode!=oGameRes){var oAvailRes=oGameRes.selectSingleNode(".//page[@score=\"0\"]")
+if(element.getAttribute("recycle")!="true"||!oAvailRes){Game.forceEndGame("noquestions")
+return}
+oCurRes=oAvailRes}
+if(oCurRes.getAttribute("score")*1||(oCurRes.getAttribute("maxScore")=="0"&&oCurRes.getAttribute("visited")=="true")){Game.nextItem()
+return}
+httpLoader("GET",cacheURL(GET_PROJECT_RESOURCE+"?readonly=1&project="+encodeURIComponent(sProjectId)+"&resource="+encodeURIComponent(oCurRes.getAttribute("id"))),questionLoaded)
+function questionLoaded(oXH){if(oXH.status==200||oXH.status==0){var sText=oXH.responseText.replace(/<!-- (.*) -->\r\n/,"")
+oResource=oCurRes
+oQLayer.style.display="block"
+oQLayer.innerHTML=sText
+setAreaVisibility(oQLayer)
+Game.showLayer("Popup",true)
+Game.continueState()
+if(Game.continueMode=="auto check"){var oValidate=oQLayer.getElementsByTagName("fbvalidate")[0]
+if(oValidate){oValidate.style.visibility="hidden"}}
+initPage(oCurRes,true,Game.questionDone)
+Game.initSpecialButtons()
+if(oCurRes.getAttribute("maxScore")=="0"){Game.itemDone()}
+var oEvent=createEventObject()
+eItemStart.fire(oEvent)}}
+Game.itemOn=true
+Game.answerScore=0},questionDone:function(){activityDone()
+Game.itemDone()},itemDone:function(){var iMax,iScore,iRes
+Game.hideSpecial()
+setTimeout(function(){evaluatePage(oCurRes,null,true)
+if(Game.continueMode=="auto continue"){setTimeout(Game.endItem,1000)}else{if(Game.continueMode=="after answer"){Game.continueState(true)}}
+iMax=oCurRes.getAttribute("maxScore")*1,iScore=oCurRes.getAttribute("score")*1
+iRes=iMax>0?Math.round(iScore/iMax)*1:1
+Game.answerScore=iRes
+Game.setScore(Math.round(iScore)*100)
+oResource=oGameRes
+sendCommand("<command name=\"answer\"><score>"+Game.answerScore+"</score></command>")},100)},endItem:function(){var oTrans
+sendCommand("<command name=\"endItem\"><score>"+Game.answerScore+"</score></command>")
+if(oCurRes.getAttribute("score")===null){oCurRes.setAttribute("score","0")}
+Game.hideSpecial()
+Game.turn=++Game.turn%Game.players
+oDoc.body.detachEvent("onfinishpage",handleFinish)
+oDoc.body.raiseFinishPage()
+oDoc.body.attachEvent("onfinishpage",handleFinish)
+oQLayer.innerHTML=""
+oQLayer.style.display="none"
+Game.hideLayer("Popup",true)
+try{oTransWrap=oDoc.getElementsByTagName("transwrapper")
+for(iT=0;iT<oTransWrap.length;iT++){oTransWrap[iT].removeNode(true)}}catch(oErr){}
+Game.continueBtn.style.visibility="hidden"
+Game.itemOn=false
+var oEvent=createEventObject()
+eItemEnd.fire(oEvent)},validateGame:function(){var bForceEnd
+if(element.getAttribute("recycle")=="true"){var oAvailRes=oGameRes.selectSingleNode(".//page[not(@score)]")||oGameRes.selectSingleNode(".//page[@score=\"0\"]")
+bForceEnd=!oAvailRes}else{var oNextRes=getNavNode(oCurRes,"next",false,false,true)
+bForceEnd=!oNextRes||oNextRes.parentNode.parentNode!=oGameRes}
+if(bForceEnd){Game.forceEndGame("noquestions")
+return}},addPoints:function(oXML){var iPoints=oXML.getElementsByTagName("points")[0].firstChild.data*10
+Game.setScore(iPoints)},setScore:function(iIncScore){if(Game.scored&&oScore[Game.turn]){var oCurScore=oScore[Game.turn]
+iScore=oCurScore.innerText*1+iIncScore
+oCurScore.innerText=iScore
+var oObj=oCurScore.parentElement.getElementsByTagName("embed")[0]
+if(oObj){sendCommand("<command name=\"blink\"></command>",oObj)}}},initSpecialButtons:function(){if(Game.swapMax&&Game.swapBtn&&Game.swaps<Game.swapMax){var oTempRes=getNavNode(oCurRes,"next",false,false,true)
+if(!(!oTempRes||oTempRes.parentNode.parentNode!=oGameRes)){Game.swapBtn.style.display="block"}}
+if(Game.splitMax&&Game.splitBtn&&Game.splits<Game.splitMax){var oMC=oQLayer.getElementsByTagName("multichoice")[0]
+if(oMC){var iAns=0,iCorrect=0,oAns=oMC.getElementsByTagName("mcanswer")
+if(oAns.length){iAns=oAns.length
+for(var iA=0;iA<iAns;iA++){if(oAns[iA].getAttribute("correct")=="true"){iCorrect++}}
+if(iAns/2>iCorrect&&iAns%2==0){Game.splitBtn.style.display="block"}}}}},hideSpecial:function(){if(Game.swapBtn){Game.swapBtn.style.display="none"}
+if(Game.splitBtn){Game.splitBtn.style.display="none"}},swapItem:function(){Game.swaps++
+Game.nextItem()
+Game.swapBtn.style.display="none"},splitItem:function(){Game.splits++
+var oMC=oQLayer.getElementsByTagName("multichoice")[0],oAns=oMC.getElementsByTagName("mcanswer"),iCut=oAns.length/2,aAns=[]
+for(var iA=0;iA<oAns.length;iA++){if(oAns[iA].getAttribute("correct")!="true"){aAns.push(oAns[iA])}}
+for(var iC=0;iC<iCut;iC++){var iR=Math.floor(Math.random()*aAns.length)
+aAns[iR].style.display="none"
+aAns.splice(iR,1)}
+Game.splitBtn.style.display="none"},endGame:function(oXML,bSilent,sReason){var iScore=oXML?+oXML.getElementsByTagName("result")[0].firstChild.data:0,sState,bWaitGameEnd=element.getAttribute("waitGameEnd")=="true",bWinFactor=(!oXML&&Game.winFactor=="score")
+if(!bWaitGameEnd||(bWaitGameEnd&&!Game.endGame.reason)){if(Game.itemOn){Game.endItem()}
+if(!bWinFactor){adjustTest()}
+evaluateTest(oGameRes,true)
+if(bWinFactor||bWaitGameEnd){iScore=oGameRes.getAttribute("status")=="passed"?1:0}
+sState=iScore==1?"Win":"Lose"
+if(Game.started){oGameRes.setAttribute("gameover",sState)}
+Game.started=null
+if(bWaitGameEnd){Game.endGame.reason=sReason}}
+if(!bWaitGameEnd||(bWaitGameEnd&&oXML)){if(!sState){sState=oGameRes.getAttribute("gameover")}
+if(!bSilent){Game.showLayer(sState)
+if(bWaitGameEnd){sReason=sReason||Game.endGame.reason
+Game.endGame.reason=null}
+if(sState=="Lose"&&sReason){Game.showReason(sReason)}
+Game.showResults()}
+if(Game.newBtn&&element.getAttribute("repeat")=="onEnd"){Game.newBtn.style.display="block"}
+var oEvent=createEventObject()
+eGameEnd.fire(oEvent)}
+function adjustTest(){var aQuest=oGameRes.selectNodes(".//page"),aUsedQuest=oGameRes.selectNodes(".//page[@score]"),iTotalScore=0
+if(aUsedQuest.length&&aQuest.length!=aUsedQuest.length){for(var iQ=0;iQ<aUsedQuest.length;iQ++){iTotalScore+=aUsedQuest[iQ].getAttribute("maxScore")*1}
+if(iTotalScore){for(var iQ=0;iQ<aUsedQuest.length;iQ++){var oCurResource=aUsedQuest[iQ],iNewMax=getPrecision(oCurResource.getAttribute("maxScore")*100/iTotalScore)
+oCurResource.setAttribute("maxScore",iNewMax)
+calcResScore(oCurResource)}}}}
+return sState||oGameRes.getAttribute("gameover")},forceEndGame:function(sReason){var iScore=Game.endGame(null,null,sReason)=="Win"?1:0
+sendCommand("<command name=\"endGame\"><score>"+iScore+"</score></command>")},showReason:function(sReason){var oMain=element.getElementsByTagName("fbmain")[0]
+if(oMain){var oFldMain=oMain.getElementsByTagName("txtfld")[0]
+if(oFldMain){if(sReason){var oReason=element.getElementsByTagName("fb"+sReason)[0]
+if(oReason){var oFldOrig=oReason.getElementsByTagName("txtfld")[0]
+if(oFldOrig){oFldMain.innerHTML=oFldOrig.innerHTML}}}else{oFldMain.innerHTML=""}}}},showResults:function(){if(element.getAttribute("showResults")!="false"&&Game.players==1){var oTFB=element.getElementsByTagName("testfeedback")[0]
+if(oTFB){oTFB.init(oGameRes.getAttribute("id"))}
+Game.showLayer("Results",true)}},showLayer:function(sName,bPop){var oL
+if((typeof sName)=="object"&&sName.firstChild){var sName=sName.getElementsByTagName("layer")[0].firstChild.data}
+if(sName){oL=Game.layerHash[sName]
+if(!bPop&&Game.layer){Game.hideLayer(Game.layer)}
+if(oL){oL.style.display="block"
+oL.style.top=0
+bPop?Game.popup=sName:Game.layer=sName}}},hideLayer:function(sName,bPop){var oL=Game.layerHash[sName]
+if(oL){oL.style.display="none"
+bPop?Game.popup=null:Game.layer=null}},continueState:function(bForce){if(Game.continueMode=="always"||Game.continueMode=="auto check"||bForce||oCurRes.getAttribute("maxScore")==0){Game.continueBtn.style.visibility="visible"}},showSolve:function(){if(Game.solveBtn){Game.solveBtn.style.display="block"}},hideSolve:function(){if(Game.solveBtn){Game.solveBtn.style.display="none"}}}
+function processCommand(sXML){var oXML=oDoc.createElement("xml")
+oXML.loadXML(sXML)
+if(oXML.firstChild){var sCommand=oXML.firstChild.getAttribute("name")
+if(Game[sCommand])Game[sCommand](oXML)}}
+function sendCommand(sXML,oObj){oObj=oObj||oElem.game
+if(oObj){oObj.SetVariable("gm.In.call",sXML)}}
+function getGameParams(){var bRevisit=oGameRes.getAttribute("gameover")
+try{var oXML=new ActiveXObject("Msxml2.DOMDocument")}catch(oErr){try{var oXML=new ActiveXObject("Microsoft.XMLDOM")}catch(oErr){}}
+if(oXML){oXML.loadXML("<command name=\"setProps\">"+(bRevisit?"<noIntro />":"")+"</command>")
+var oCommand=oXML.firstChild,oAttribs=element.attributes
+for(var iA=0;iA<oAttribs.length;iA++){var oAttrib=oAttribs[iA]
+if(oAttrib.specified&&oAttrib.expando){var oNode=oCommand.appendChild(oXML.createNode(1,oAttrib.nodeName,""))
+oNode.appendChild(oXML.createTextNode(oAttrib.nodeValue))}}
+var oNode=oCommand.appendChild(oXML.createNode(1,"questions","")),iQuestCount=oGameRes.selectNodes(".//page").length
+oNode.appendChild(oXML.createTextNode(iQuestCount))
+return(oXML.xml)}
+return""}
+function buttonState(oBtn,sState){var oObj=oBtn.getElementsByTagName("embed")[0]
+if(oObj){try{sendCommand("<command name=\"setState\"><state>"+sState+"</state></command>",oObj)}catch(oErr){}}}
+function soundMode(oBtn,sMode){sendCommand("<command name=\""+(sMode=="on"?"soundOn":"soundOff")+"\"></command>")
+buttonState(oBtn,sMode)}</script> </public:component>

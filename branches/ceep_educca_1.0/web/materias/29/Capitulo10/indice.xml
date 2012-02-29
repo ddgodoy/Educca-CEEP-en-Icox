@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+	<boton texto="Utilizar plantillas          " pagina="2"  despy="0" />
+	<boton texto="Modificar estilos            " pagina="4"  despy="0" />
+</menu>

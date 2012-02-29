@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<langstrings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="17">
+<string id="28709">Please close this window.</string>
+<string id="28710">Please close this window after you finish your TELL ME MORE session.</string>
+<string id="28711">TELL ME MORE is loading, please wait. If TELL ME MORE does not load properly, please click here.</string>
+<string id="28712">Please run the Computer Test before beginning a lesson.</string>
+<string id="28713">Loading components...</string>
+<string id="28714">Installing new components...</string>
+<string id="28715">Error: invalid URL.</string>
+<string id="10589">Please wait.</string>
+<string id="28706">Internal error.</string>
+<string id="31574">osttitle</string>
+<string id="31575">ostdesc</string>
+<string id="31580">osetitle</string>
+<string id="31581">osedesc</string>
+<string id="31586">oscanceling</string>
+  <string id="31576">osstep0</string>
+  <string id="31577">osstep1</string>
+  <string id="31578">osstep2</string>
+  <string id="31579">osstep3</string>
+  <string id="17026">Undo</string>
+  <string id="31583">osretry</string>
+  <string id="31582">osignore</string>
+  <string id="31584">oscantdl</string>
+</langstrings>

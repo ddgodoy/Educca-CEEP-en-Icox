@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="lesson">
+		<xs:annotation>
+			<xs:documentation>Course lesson definition</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="title">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="langstring" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="description">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="langstring" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="parameters" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="parameter" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="name" type="xs:string"/>
+									<xs:attribute name="value" type="xs:string"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="page" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="id" type="xs:string" use="required"/>
+						<xs:attribute name="href" type="xs:anyURI"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string" use="required"/>
+			<xs:attribute name="href" type="xs:anyURI" use="required"/>
+			<xs:attribute name="package" type="xs:string" use="required"/>
+			<xs:attribute name="interface" type="xs:string" use="required"/>
+			<xs:attribute name="discipline" type="xs:string" use="required"/>
+			<xs:attribute name="lesson" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="language" type="langstringType"/>
+	<xs:element name="langstring" type="langstringType"/>
+	<xs:complexType name="langstringType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lang" type="xs:language"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

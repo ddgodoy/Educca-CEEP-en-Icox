@@ -1,0 +1,219 @@
+﻿<public:component lightweight="true">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2008.
+-->
+ <public:method name="navigateTo" /> <public:attach event="ondocumentready" for="element" onevent="init();attachHash();" /> <script language="jscript">var oDoc=element.document,oPrj=window.oConfig||element.document.win.Project.config,oConfig,sLocationId,oStyleHash={},oRuleHash={},oCustomHash={},oElemHash={},pInitStyle,sShow=element.getAttribute("show"),bShowMarks=element.getAttribute("showmarks")=="true",bShowStarted=element.getAttribute("showstarted")=="true",bShowCurrent=element.getAttribute("showcurrent")=="true",bShowDone=element.getAttribute("showdone")=="true",oScope=window.oScope||element.document.win.Project
+function attachHash(){oDoc.body.attachRehash(element,hashInit)}
+function init(){var sTag=element.tagName
+oConfig=oPrj.selectSingleNode(".//structure")
+if(typeof(oResource)!="undefined"&&oResource){sLocationId=oResource.getAttribute("id")}
+initMenu()}
+function hashInit(event){try{if(event&&event.srcLayer&&event.srcLayer.contains&&event.srcLayer.contains(element)){if(typeof(oResource)!="undefined"&&oResource){sLocationId=oResource.getAttribute("id")}
+initMenu(true)}}catch(oErr){}}
+function initMenu(bHashMode){var sTag=element.tagName,oStartNode,sRoot=element.getAttribute("root"),bRoot=sRoot=="project",oOverHash={overnavchapter:element.getAttribute("overchapterrule"),overnavpage:element.getAttribute("overpagerule"),overnavsubchapter:element.getAttribute("oversubchapterrule"),overnavsubpage:element.getAttribute("oversubpagerule")}
+if((bRoot||sRoot=="custom")&&bHashMode){softInit()
+return}
+element.detachEvent("onmouseover",setOverRule)
+element.detachEvent("onmouseout",setOutRule)
+element.attachEvent("onmouseover",setOverRule)
+element.attachEvent("onmouseout",setOutRule)
+if(!bHashMode){initStyles(["navchapter","navpage","navsubchapter","navsubpage","navmenulevel","navmenublock","navmarkdone","navmarkstarted","navmarkcurrent"])}
+var oPreserve={}
+preserveMark(["navmarkdone","navmarkstarted","navmarkcurrent"])
+element.innerHTML=""
+restoreMark(["navmarkdone","navmarkstarted","navmarkcurrent"])
+function preserveMark(aTag){for(var iTag=0;iTag<aTag.length;iTag++){var sTag=aTag[iTag],oElems=element.getElementsByTagName(sTag)
+if(oElems.length){oPreserve[sTag]=oElems[0]
+element.document.body.appendChild(oElems[0])}}}
+function restoreMark(aTag){for(var iTag=0;iTag<aTag.length;iTag++){var sTag=aTag[iTag]
+if(oPreserve[sTag]){element.appendChild(oPreserve[sTag])
+oPreserve[sTag].style.display="none"}}}
+oStartNode=oConfig
+if(!bRoot){var sStartMode=element.getAttribute("root")
+oStartNode=oConfig.selectSingleNode(".//*[@id=\""+(sLocationId)+"\"]")
+switch(sStartMode){case"current location":break
+case"parent location":if(oStartNode!=oConfig){oStartNode=oStartNode.parentNode}
+break
+case"mixed":if(oStartNode!=oConfig&&oStartNode.tagName=="page"){oStartNode=oStartNode.parentNode}
+break
+case"custom":var sCustom=element.getAttribute("id")
+if(sCustom){var oCustom=oConfig.selectSingleNode(".//*[@id=\""+(sCustom)+"\"]")
+if(oCustom){oStartNode=oCustom}}
+break
+default:oStartNode=oConfig}}
+if(oStartNode&&oStartNode.hasChildNodes()){if(element.tagName=="navtreemenu"){buildTreeMenu(oStartNode)}else{buildMenu(oStartNode)}
+element.style.visibility="visible"}
+function setOverRule(event){var oElem=event.srcElement
+while(!oElem.isnav&&oElem!=element){oElem=oElem.parentElement}
+if(oElem==element)return false
+var sOverRule=oOverHash["over"+oElem.tagName]
+if(sOverRule){oElem.className=sOverRule}}
+function setOutRule(event){var oElem=event.srcElement
+while(!oElem.isnav&&oElem!=element){oElem=oElem.parentElement}
+if(oElem==element)return false
+var sRule=oRuleHash[oElem.tagName]
+if(oElem.className!=sRule){oElem.className=sRule}}
+oDoc.body.detachEvent("onstatuschange",updateMenuStatus)
+oDoc.body.attachEvent("onstatuschange",updateMenuStatus)}
+function buildTreeMenu(oNode,oLevel,iCurLevel){var oChildren=oNode.childNodes,sLevels=element.getAttribute("levels")||"all",aLevels={one:1,two:2,three:3,four:4,five:5,six:6,all:9999},iMaxLevel=aLevels[sLevels],bCollapsible=element.getAttribute("collapsible")=="true",bNoNav=element.getAttribute("disablenav")=="true"
+iCurLevel=iCurLevel||0
+if(!oLevel){oLevel=element.appendChild(createLevel(true,-1))
+if(oNode!=oConfig){addChild(oNode,true)
+oLevel=oLevel.appendChild(createLevel(true,0))}}
+for(var i=0;i<oChildren.length;i++){var oC=oChildren[i]
+addChild(oC)}
+function addChild(oChild,bNoDrill){var sTitle=oChild.getAttribute("title"),sId=oChild.getAttribute("id")
+if(oChild.getAttribute("skip")!="hide"){if(oChild.tagName=="page"&&sShow=="all"){var oElem=oLevel.appendChild(oDoc.createElement("gm:navpage"))
+oElem.className=element.className
+if(oRuleHash["navpage"]){oElem.className=oRuleHash["navpage"]}
+oElem.isnav=true
+oElem.style.cssText=oStyleHash["navpage"]
+oElem.innerText=sTitle
+addMarker(oElem,oChild,"done")
+addMarker(oElem,oChild,"current")
+oElem.id=sId
+oElem.resId=sId
+if(!bNoNav){oElem.onclick=navigateTo}else{oElem.style.cursor="arrow"}
+opacityOverlay(oElem)}
+if(isChapter(oChild)){var oElem=oLevel.appendChild(oDoc.createElement("gm:navchapter"))
+oElem.innerText=sTitle
+oElem.className=element.className
+if(oRuleHash["navchapter"]){oElem.className=oRuleHash["navchapter"]}
+oElem.isnav=true
+oElem.style.cssText=oStyleHash["navchapter"]
+addMarker(oElem,oChild,"done")
+addMarker(oElem,oChild,"current")
+var oNav=getNavNode(oChild)
+oElem.id=oNav&&oNav.getAttribute("id")
+if(oElem.id!=oChild.getAttribute("id")){oElem.skipCurrent=true}
+oElem.resId=sId
+if(bCollapsible&&iCurLevel+1<iMaxLevel){oElem.onclick=toggleChapter}else{if(!bNoNav){oElem.onclick=navigateTo}else{oElem.style.cursor="arrow"}}
+opacityOverlay(oElem)
+if(iCurLevel+1<iMaxLevel){oElem=oLevel.appendChild(createLevel(null,oLevel.depth))
+if(!bNoDrill){buildTreeMenu(oChild,oElem,iCurLevel+1)}
+if(oElem.children.length==0){oElem.style.display="none"
+oElem.previousSibling.onclick=navigateTo}}}}}}
+function buildMenu(oNode,oLevel){var oChildren=oNode.childNodes,sLevel=oLevel?"sub":"",bFirst=true,bCollapsible=element.getAttribute("collapsible")=="true"||element.getAttribute("layout")=="pop menu"
+for(var i=0;i<oChildren.length;i++){var oChild=oChildren[i],sTitle=oChild.getAttribute("title"),sId=oChild.getAttribute("id")
+if(!sLevel){oLevel=element.appendChild(oDoc.createElement("gm:navmenublock"))
+oLevel.style.cssText=oStyleHash["navmenublock"]
+if(oRuleHash["navmenublock"]){oElem.className=oRuleHash["navmenublock"]}}
+if(oChild.getAttribute("skip")!="hide"){if(oChild.tagName=="page"&&sShow!="chapters"){var sTag="nav"+sLevel+"page",oElem=oLevel.appendChild(oDoc.createElement("gm:"+sTag))
+oElem.isnav=true
+oElem.style.cssText=oStyleHash[sTag]
+if(oRuleHash[sTag]){oElem.className=oRuleHash[sTag]}
+oElem.innerText=sTitle
+addMarker(oElem,oChild,"done")
+addMarker(oElem,oChild,"current")
+oElem.id=sId
+oElem.resId=sId
+oElem.onclick=navigateTo
+opacityOverlay(oElem)}
+if(isChapter(oChild)&&sShow!="pages"){var sTag="nav"+sLevel+"chapter",oElem=oLevel.appendChild(oDoc.createElement("gm:"+sTag))
+oElem.isnav=true
+oElem.style.cssText=oStyleHash[sTag]
+if(oRuleHash[sTag]){oElem.className=oRuleHash[sTag]}
+oElem.innerText=sTitle
+addMarker(oElem,oChild,"done")
+addMarker(oElem,oChild,"current")
+var oNav=getNavNode(oChild)
+oElem.id=oNav&&oNav.getAttribute("id")
+if(bCollapsible&&sLevel==""){oElem.onclick=toggleChapter}else{oElem.onclick=navigateTo}
+oElem.resId=sId
+opacityOverlay(oElem)
+if(!sLevel){oElem=oLevel.appendChild(createLevel(false,1))
+bFirst=false
+buildMenu(oChild,oElem)
+if(oElem.children.length==0){oElem.style.display="none"
+oElem.previousSibling.onclick=navigateTo}}}}
+if(oLevel.children.length==0){oLevel.style.display="none"}}}
+function updateMenuStatus(oEvent){var oResNode=oEvent.resource,sId=oResNode.getAttribute("id"),oElem=oElemHash[sId]
+if(oElem){addMarker(oElem,oResource,"done")}}
+function isChapter(oNode){oNode=oNode.firstChild
+while(oNode&&oNode.nodeType!=1)oNode=oNode.nextSibling
+return oNode!=null}
+function createLevel(bTop,iDepth){var oLevel=oDoc.createElement("gm:navmenulevel"),sState=element.getAttribute("startstate"),bCollapsible=element.getAttribute("collapsible")=="true"||element.getAttribute("layout")=="pop menu"
+oLevel.depth=iDepth*1+1
+oLevel.style.cssText=oStyleHash["navmenulevel"]
+if(oRuleHash["navmenulevel"]){oLevel.className=oRuleHash["navmenulevel"]}
+oLevel.display=oCustomHash["navmenulevel"]||oLevel.style.display
+oLevel.origDisplay=oLevel.display
+if((sState=="expand one level"&&oLevel.depth>1)||(sState=="expand two levels"&&oLevel.depth>2)){sState="collapsed"}
+if(bCollapsible&&(sState=="collapsed"&&!bTop)&&iDepth>-1){oLevel.style.display="none"}
+return oLevel}
+function toggleChapter(bForce,oMenuElem){var oSrc=bForce===true?oMenuElem:event.srcElement
+if(event){event.cancelBubble=true}
+while(!oSrc.isnav&&oSrc!=element){oSrc=oSrc.parentElement}
+if(oSrc==element)return false
+var oLevel=oSrc.nextSibling
+while(oLevel&&oLevel.nodeType!=1){oLevel=oLevel.nextSibling}
+if(oLevel&&oLevel.nodeType==1){var oOpen=element.openlevel,sDisplay=oLevel.style.display,bToggle=element.getAttribute("togglesibling")=="true"
+if(sDisplay=="none"||bForce===true){oLevel.style.display=oLevel.display
+setTimeout(function(){oLevel.style.display="none";oLevel.style.display=oLevel.display;},10)}else{oLevel.style.display="none"}
+if(bToggle&&oOpen&&oOpen!=oLevel){if(element.tagName=="navtreemenu"){while(oOpen&&oLevel.parentElement!=oOpen.parentElement){oOpen=oOpen.parentElement}}
+if(oOpen)oOpen.style.display="none"}
+element.openlevel=oLevel}}
+function initStyles(aTags){var sTag,oElem
+if(!pInitStyle){for(var i=0;i<aTags.length;i++){sTag=aTags[i]
+oElem=element.getElementsByTagName(sTag)[0]
+if(oElem){oStyleHash[sTag]=oElem.style.cssText
+oRuleHash[sTag]=oElem.className
+if(sTag.indexOf("mark")!=-1){oCustomHash[sTag]=oElem.innerHTML}
+if(sTag=="navmenulevel"){oCustomHash[sTag]=oElem.origDisplay||oElem.style.display}}}
+pInitStyle=true}}
+function softInit(){oConfig=oPrj.selectSingleNode(".//structure")
+var aTags=["navchapter","navpage","navsubchapter","navsubpage"]
+oDoc.body.detachEvent("onstatuschange",updateMenuStatus)
+oDoc.body.attachEvent("onstatuschange",updateMenuStatus)
+for(var iT=0;iT<aTags.length;iT++){var oMenuItems=element.getElementsByTagName(aTags[iT])
+if(oMenuItems.length){markAll(oMenuItems)}}}
+function markAll(oMenuItems){for(var iM=0;iM<oMenuItems.length;iM++){var oMenuItem=oMenuItems[iM],sId=oMenuItem.resId
+if(sId){var oMenuNode=oConfig.selectSingleNode(".//*[@id=\""+sId+"\"]")
+if(oMenuNode){var oDone=oMenuItem.getElementsByTagName("navmarkdone"),oCur=oMenuItem.getElementsByTagName("navmarkcurrent")
+if(!oDone.length){addMarker(oMenuItem,oMenuNode,"done")}
+if(oCur.length){oMenuItem.removeChild(oCur[0])}
+if(!oMenuItem.skipCurrent||sShow=="chapters"){addMarker(oMenuItem,oMenuNode,"current")}}}}}
+function addMarker(oElem,oNode,sMark){if(typeof(oResource)!="undefined"&&oResource){var sAutoExpand=element.getAttribute("autoExpand")||"false",applyTest={done:function(){if(bShowDone||bShowMarks){oElemHash[oNode.getAttribute("id")]=oElem
+if(oNode.getAttribute("done")=="true"){return true}else if(bShowStarted&&oNode.tagName!="page"&&(oNode.selectNodes("./*[@visited=\"true\"]").length||(oNode.selectSingleNode(".//*[@id=\""+oResource.getAttribute("id")+"\"]")))){sMark="started"
+return true}else{return false}}else{return false}},current:function(){if(bShowCurrent||bShowMarks){if(sShow=="chapters"){if(oNode==oResource||(oNode==oResource.parentNode&&oResource.tagName=="page"))return true
+return false}else{var bCurrent=oNode==oResource
+if(bCurrent){if(sAutoExpand!="false"){var oPElem=oElem
+while(oPElem&&oPElem!=element){if(oPElem.tagName=="navmenulevel"){oPElem=oPElem.previousSibling
+while(oPElem&&oPElem.nodeType!=1){oPElem=oPElem.previousSibling}
+toggleChapter(true,oPElem)}
+oPElem=oPElem.parentNode}
+if(sAutoExpand=="including"&&oElem.tagName.indexOf("chapter")>0){toggleChapter(true,oElem)}}}
+return(bCurrent)}}else{return false}}}
+if(sMark&&applyTest[sMark]&&applyTest[sMark]()){var oMark=oElem.getElementsByTagName("navmark"+sMark)[0]
+if(!oMark){oMark=oDoc.createElement("gm:navmark"+sMark)
+if(sMark=="done"){oElem.insertBefore(oMark,oElem.getElementsByTagName("navmarkcurrent")[0]||null)}else{oElem.appendChild(oMark)}}
+if(sMark=="done"){var oS=oElem.getElementsByTagName("navmarkstarted")[0]
+if(oS){oElem.removeChild(oS)}}
+oMark.className=oRuleHash["navmark"+sMark]
+oMark.style.cssText=oStyleHash["navmark"+sMark]
+oMark.style.visibility="visible"
+oMark.style.display="block"
+if(oCustomHash["navmark"+sMark]){oMark.innerHTML=oCustomHash["navmark"+sMark]}
+if(sMark=="current"&&element.getAttribute("autoScroll")=="true"&&element.scrollHeight>element.offsetHeight&&element.currentStyle.overflowY!="hidden"){var oScroll=element,iTop=getOffsetTop(oElem,oScroll),iHeight=oElem.offsetHeight,iParentScroll=oScroll.scrollTop
+if(iParentScroll>iTop){oScroll.scrollTop=iTop-5}else if(iParentScroll+oScroll.clientHeight<iHeight+iTop){oScroll.scrollTop=iTop-oScroll.clientHeight+iHeight}}}}}
+function navigateTo(){if(window.loadResource){var sId=event&&event.srcElement.id?event.srcElement.id:null
+if(event){event.cancelBubble=true}
+if(event&&!sId){var oSrc=event.srcElement
+while(!oSrc.id&&!oSrc.isnav&&oSrc!=element){oSrc=oSrc.parentElement}
+sId=oSrc.id}
+var oNewResource=oConfig.selectSingleNode(".//*[@id=\""+sId+"\"]")
+if(oNewResource&&oNewResource!=oResource){if(finishPage()!==false){oHistory.forward.length=0
+oHistory.back.push(oResource)
+if(oResource.getAttribute("testPage")=="true"||oResource.tagName=="test"||oResource.tagName=="section"){evaluatePage(oResource,oNewResource)}else{loadResource(oNewResource)}}}}}
+function toBool(vValue,bDefault){if(bDefault==null)bDefault=false
+if(vValue===""||vValue=="true"||vValue=="1"||vValue===true)return true
+if(vValue=="false"||vValue=="0"||vValue===false)return false
+return bDefault}
+function getOffsetTop(oEl,oFinal){for(var iY=0;oEl!=oFinal&&oEl!=null;oEl=oEl.offsetParent){iY+=oEl.offsetTop}
+return iY}</script> </public:component> 

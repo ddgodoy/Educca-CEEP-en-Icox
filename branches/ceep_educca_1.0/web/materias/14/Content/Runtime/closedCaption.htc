@@ -1,0 +1,29 @@
+﻿<public:component lightweight="true">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2009.
+-->
+ <public:attach event="ondocumentready" for="element" onevent="init()" /> <script language="jscript">
+var oElem=element,oDoc=oElem.document,sActiveRule,bActive=window.ccActive||false
+function init(){var sTag=oElem.tagName.toLowerCase()
+if(sTag=="ccbutton"){sActiveRule=oElem.getAttribute("activerule")
+if(bActive)Classes.add(oElem,sActiveRule)
+oElem.attachEvent("onclick",toggle)
+oElem.attachEvent("ondblclick",toggle)}else if(sTag=="ccbox"){if(bActive)showCC(oElem)
+else hideCC(oElem)}}
+function toggle(){window.ccActive=bActive=!bActive
+if(bActive)Classes.add(oElem,sActiveRule)
+else Classes.remove(oElem,sActiveRule)
+applyCC()}
+function applyCC(){var aBoxes=oDoc.getElementsByTagName("ccbox")
+for(var i=0;i<aBoxes.length;i++){var oBox=aBoxes[i]
+if(bActive)showCC(oBox)
+else hideCC(oBox)}}
+function showCC(oBox){oBox.style.visibility="visible"}
+function hideCC(oBox){oBox.style.visibility="hidden"}
+</script> </public:component>

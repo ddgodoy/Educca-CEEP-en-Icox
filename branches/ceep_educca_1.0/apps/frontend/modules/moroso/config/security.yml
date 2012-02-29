@@ -1,0 +1,7 @@
+index:
+  is_secure:    on
+  credentials:  moroso
+
+all:
+  is_secure:    on
+  credentials:  moroso
