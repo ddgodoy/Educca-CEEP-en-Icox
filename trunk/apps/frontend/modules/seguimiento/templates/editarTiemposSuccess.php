@@ -71,47 +71,51 @@
                   <tr>
                       <td><b>Tiempo teor&iacute;a</b></td>
                   </tr>
+            </table>
+            <br/>
+            <?php if($array_temas): ?>
+            <?php foreach ($array_temas as $k=>$temas): ?>
+            <table style="text-align: left; border-bottom: 1px solid gray">
+                  <tr>
+                      <td colspan="2"><b>Tema: <?php echo $temas['tema'] ?></b></td>
+                  </tr>
                   <tr>
                       <td style="height: 10px;  "></td>
                   </tr>
                   <tr>
                       <td style="width: 45%">Tiempo de sesion: </td>
-                      <td><input type="text" name="rel_session" value="<?php echo traducir_de_fecha_scorm12($array_tiempos_teoria['rel_session']) ?>"/></td>
+                      <td><input type="text" name="time[<?php echo $k?>]['session']" value="<?php echo traducir_de_fecha_scorm12($temas['rel_session']) ?>"/></td>
                   </tr>
                   <tr>
                       <td style="height: 10px;  "></td>
                   </tr>
                   <tr>
                       <td style="width: 45%">Tiempo Total participado: </td>
-                      <td><input type="text" name="rel_total_time" value="<?php echo traducir_de_fecha_scorm12($array_tiempos_teoria['rel_total_time']) ?>"/></td>
+                      <td><input type="text" name="time[<?php echo $k?>]['total']" value="<?php echo traducir_de_fecha_scorm12($temas['rel_total_time']) ?>"/></td>
                   </tr>
             </table>
             <br/>
+            <?php endforeach ?>
+            <?php endif;?>
             <table style="text-align: left;">
                   <tr>
                       <td><b>Tiempo ejercicios</b></td>
                   </tr>
-                  <tr>
-                      <td style="height: 10px;  "></td>
-                  </tr>
-                  <tr>
-                      <td>
-
-                      </td>
-                  </tr>
-                  <?php if($array_tiempo_ejercicios): ?>
-                    <?php foreach ($array_tiempo_ejercicios as $k=>$v): ?>
-                      <tr>
-                          <td style="height: 10px;  "></td>
-                      </tr>
-                      <tr>
-                          <td style="width: 45%"><?php echo $v['ejercicio'] ?>: </td>
-                          <td><input type="text" name="ejercicio[<?php echo $k?>]" value="<?php echo $v['tiempo'] ?>"/></td>
-                      </tr>
-                    <?php endforeach; ?>
-                  <?php endif; ?>
-             </table>
-             <br/>
+            </table>
+            <?php if($array_tiempo_ejercicios): ?>
+                <?php foreach ($array_tiempo_ejercicios as $k=>$v): ?>
+                    <table style="text-align: left; border-bottom: 1px solid gray">
+                        <tr>
+                            <td style="height: 10px;  "></td>
+                        </tr>
+                        <tr style=" border-bottom: 1px solid gray ">
+                            <td style="width: 45%"><?php echo $v['ejercicio'] ?>: </td>
+                            <td><input type="text" name="ejercicio[<?php echo $k?>]" value="<?php echo $v['tiempo'] ?>"/></td>
+                        </tr>
+                    </table>
+                <br/>
+                <?php endforeach; ?>
+            <?php endif; ?>
              <table>
                       <tr>
                           <td style="height: 10px;  "></td>

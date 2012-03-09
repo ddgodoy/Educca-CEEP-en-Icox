@@ -178,18 +178,34 @@ class seguimientoActions extends sfActions
     $this->curso   = CursoPeer::retrieveByPk($this->getRequestParameter('idcurso'));
 
     $this->array_tiempo_ejercicios = array();
-    $this->array_tiempos_teoria = array('rel_session'=>'0','rel_total_time'=>'0');
-      
-    /*************************************************** Tiempo teoria */
-    $c = new Criteria();
-    $c->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
-    $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->usuario->getId());
-    $c->addJoin(Sco12Peer::ID, Rel_usuario_sco12Peer::ID_SCO12);
-    $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
+    $this->array_temas = array();
+    /*************************************************** Temas por materia */
+    $c8 = new Criteria();
+    $c8->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
+    $rel_tema = Sco12Peer::doSelect($c8);
 
-    if ($rel) {
-     $this->array_tiempos_teoria['rel_session']   = $rel->getSessionTime();
-     $this->array_tiempos_teoria['rel_total_time']= $rel->getTotalTime();
+    foreach ($rel_tema as $v)
+    {
+        $id_tema = $v->getId();
+        $this->array_temas[$id_tema]['tema']=$v->getTitle();
+
+        $c9 = new Criteria();
+        $c9->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
+        $c9->add(Rel_usuario_sco12Peer::ID_SCO12, $id_tema);
+        $c9->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->usuario->getId());
+        $c9->addJoin(Sco12Peer::ID, Rel_usuario_sco12Peer::ID_SCO12);
+        $rel_timpo_tema = Rel_usuario_sco12Peer::DoSelectOne($c9);
+        if($rel_timpo_tema)
+        {
+         $this->array_temas[$id_tema]['rel_session']   = $rel_timpo_tema->getSessionTime()?$rel_timpo_tema->getSessionTime():0;
+         $this->array_temas[$id_tema]['rel_total_time']= $rel_timpo_tema->getTotalTime()?$rel_timpo_tema->getTotalTime():0;
+        }
+        else
+        {
+         $this->array_temas[$id_tema]['rel_session']   = 0;
+         $this->array_temas[$id_tema]['rel_total_time']= 0;
+        }
+
     }
     /*********************************************** Tiempo ejercicios */
     $this->ejercicios_array = array();
@@ -233,9 +249,6 @@ class seguimientoActions extends sfActions
       }
       if ($this->getRequest()->getMethod() == sfRequest::POST)
       {
-         $rel_session = traducir_scorm12_a_fecha($this->getRequestParameter('rel_session',''));
-         $rel_total_time = traducir_scorm12_a_fecha($this->getRequestParameter('rel_total_time',''));
-
          if ($this->getRequestParameter('id-ejercicio-relacion'))
          {
            $c3 = new Criteria();
@@ -274,27 +287,60 @@ class seguimientoActions extends sfActions
            $rel_usuario_tarea->save();
 
            $this->getUser()->setAttribute('notice', 'El alumno fue relacionado con el curso');
-         } else {
+         }
+         else
+         {
+           $time_request =   $this->getRequestParameter('time','');
            $ejercicios_request = $this->getRequestParameter('ejercicio','');
 
-           if (!$rel) {
-             $c5 = new Criteria();
-             $c5->add(Sco12Peer::ID_MATERIA, $this->materia->getId());
-             $Sco12 = Sco12Peer::doSelectOne($c5);
-
-             $rel = new Rel_usuario_sco12();
-             $rel->setIdSco12($Sco12->getId());
-             $rel->setIdUsuario($this->usuario->getId());
-             $rel->setLessonStatus('passed');
-             $rel->setEntry('ab-initio');
-             $rel->save();
-           }
-           if ($rel_session!='' && $rel_total_time!='')
+           if($time_request!='')
            {
-             $rel->setSessionTime($rel_session);
-             $rel->setTotalTime($rel_total_time);
-             $rel->save();
+               foreach ($time_request as $k=>$v)
+               {
+                   $rel_session = '';
+                   $rel_total_time = '';
+
+                   foreach ($v as $g=>$t)
+                   {
+                       $g = str_replace("'", "", $g);
+
+                       switch ($g) {
+                           case 'session':
+                               $rel_session = traducir_scorm12_a_fecha($t);
+                               break;
+                           case 'total':
+                               $rel_total_time = traducir_scorm12_a_fecha($t);
+                               break;
+                       }
+                       
+                   }
+                   
+                   $c5 = new Criteria();
+                   $c5->add(Rel_usuario_sco12Peer::ID_SCO12,$k);
+                   $c5->add(Rel_usuario_sco12Peer::ID_USUARIO,$this->usuario->getId());
+                   $rel = Rel_usuario_sco12Peer::doSelectOne($c5);
+
+                   if(!$rel)
+                   {
+                         $rel = new Rel_usuario_sco12();
+                         $rel->setIdSco12($k);
+                         $rel->setIdUsuario($this->usuario->getId());
+                         $rel->setLessonStatus('passed');
+                         $rel->setEntry('ab-initio');
+                         $rel->save();
+                   }   
+
+                   if ($rel_session!='' && $rel_total_time!='')
+                   {
+                     $rel->setSessionTime($rel_session);
+                     $rel->setTotalTime($rel_total_time);
+                     $rel->save();
+                   }
+                   
+               }
+               
            }
+
            if ($ejercicios_request!='')
            {
              foreach ($ejercicios_request as $k=>$v) {
