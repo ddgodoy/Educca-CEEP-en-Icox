@@ -96,6 +96,8 @@ class adminActions extends sfActions
   public function executeListarEjercicios()
   {
     $id_materia = $this->getRequestParameter('filtro');
+    $this->modificar_ejericicio = $this->getRequestParameter('edita-ejercicio',false);
+    $this->idusuario = $this->getRequestParameter('idusuario');
     $c = new Criteria();
     if ($id_materia) {$c->add(EjercicioPeer::ID_MATERIA, $id_materia);}
     $this->ejercicios = EjercicioPeer::DoSelect($c);
@@ -661,6 +663,7 @@ class adminActions extends sfActions
     $c = new Criteria();
     $busqueda = 0;
 
+    $this->modificar_ejericicio = $this->getRequestParameter('edita-ejercicio',false);
     $idcurso = $this->getRequestParameter('idcurso');
     $idmodulo = $this->getRequestParameter('idmodulo');
 
@@ -1396,7 +1399,7 @@ class adminActions extends sfActions
   public function executeListarCursosAlumno()
   {
     $idusuario = $this->getRequestParameter('idusuario');
-
+    $this->modificar_ejericicio = $this->getRequestParameter('edita-ejercicio',false);
     if ($this->hasRequestParameter('moroso')) {
       $usuario = UsuarioPeer::RetrieveByPk($idusuario);
       $moroso = $this->getRequestParameter('moroso');
@@ -2067,6 +2070,7 @@ class adminActions extends sfActions
   public function executeBuscar()
   {
      $this->rol = $this->getRequestParameter('rol');
+     $this->modificar_ejericicio = $this->getRequestParameter('edita-ejercicio',false);
      if ($this->getRequest()->getMethod() == sfRequest::POST) {
         $tipo = $this->getRequestParameter('tipo');
         $c = new Criteria();
@@ -2741,5 +2745,4 @@ function unzip($src_file, $dest_dir=false, $create_zip_name_dir=true, $overwrite
     }
     $this->redirect('admin/index');
   }
-
 } // end class
