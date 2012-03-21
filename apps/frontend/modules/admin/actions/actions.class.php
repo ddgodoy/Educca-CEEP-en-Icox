@@ -98,6 +98,7 @@ class adminActions extends sfActions
     $id_materia = $this->getRequestParameter('filtro');
     $this->modificar_ejericicio = $this->getRequestParameter('edita-ejercicio',false);
     $this->idusuario = $this->getRequestParameter('idusuario');
+    $this->idcurso = $this->getRequestParameter('idcurso');
     $c = new Criteria();
     if ($id_materia) {$c->add(EjercicioPeer::ID_MATERIA, $id_materia);}
     $this->ejercicios = EjercicioPeer::DoSelect($c);
@@ -2745,4 +2746,75 @@ function unzip($src_file, $dest_dir=false, $create_zip_name_dir=true, $overwrite
     }
     $this->redirect('admin/index');
   }
+
+  public function executeEditarEjercicioAlumno()
+  {
+      $id_usuario = $this->getRequestParameter('idusuario');
+      $id_curso = $this->getRequestParameter('idcurso');
+      $id_ejercicio = $this->getRequestParameter('idejercicio');
+      $id_materia = $this->getRequestParameter('filtro');
+
+      if($id_usuario && $id_curso && $id_materia && $id_ejercicio)
+      {
+          $this->usuario = UsuarioPeer::retrieveByPK($id_usuario);
+          $this->curso = CursoPeer::retrieveByPK($id_curso);
+          $this->ejercicio = EjercicioPeer::retrieveByPK($id_ejercicio);
+
+          $this->arrayEstado = array('1'=>'Realizado', 2=>'No Realizado');
+          $this->estado = 2;
+          $this->nota = 0;
+          $this->tiempo = 0;
+
+          $c = new Criteria();
+          $c->add(Ejercicio_resueltoPeer::ID_AUTOR, $id_usuario);
+          $c->add(Ejercicio_resueltoPeer::ID_EJERCICIO, $id_ejercicio);
+          $ejercicio_resuelto = Ejercicio_resueltoPeer::doSelectOne($c);
+
+          if($ejercicio_resuelto)
+          {
+              $this->estado = $ejercicio_resuelto->getIdCorrector()?1:2;
+              $this->nota = $ejercicio_resuelto->getScore();
+              $this->tiempo = $ejercicio_resuelto->getTiempo();
+          }
+
+          if($this->getRequest()->getMethod() == sfRequest::POST)
+          {
+              $this->estado = $this->getRequestParameter('estado');
+              $this->nota = $this->getRequestParameter('nota');
+              $this->tiempo = $this->getRequestParameter('tiempo');
+
+              if(!$ejercicio_resuelto){
+                  
+                    $ejercicio_resuelto = new Ejercicio_resuelto();
+                    $ejercicio_resuelto->setIdAutor($id_usuario);
+                    $ejercicio_resuelto->setIdEjercicio($id_ejercicio);
+                    $ejercicio_resuelto->setAciertos(1);
+                    $ejercicio_resuelto->setIdCurso($id_curso);
+              }
+
+              if($this->estado==1)
+              {
+                $ejercicio_resuelto->setIdCorrector($this->ejercicio->getIdAutor());
+              }
+              elseif($this->estado!=1)
+              {
+                $ejercicio_resuelto->setIdCorrector(null);
+              }
+
+              $ejercicio_resuelto->setScore($this->nota);
+              $ejercicio_resuelto->setTiempo($this->tiempo);
+              $ejercicio_resuelto->save();
+              $this->getUser()->setAttribute('notice', 'El ejercicio fue modificado para el alumno');
+              $this->redirect('admin/editarEjercicioAlumno?idusuario='.$id_usuario.'&filtro='.$id_materia.'&idcurso='.$id_curso.'&idejercicio='.$id_ejercicio);
+          }
+
+
+          
+      }
+      else
+      {
+           $this->redirect('admin/alumnos');
+      }    
+  }
+
 } // end class
