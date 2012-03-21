@@ -14,7 +14,7 @@
     </tr>
   </table>
 </div>
-
+<?php $andismodificar=$modificar_ejericicio?'&edita-ejercicio=1':'' ?>
 <div class="listado_tabla_general">
   <table class="tabla_ejercicios_rep">
     <?php $i = 0; ?>
@@ -39,7 +39,7 @@
           ?>
         </td>
         <?php if($modificar_ejericicio): ?>
-        <?php $estado = Ejercicio_corregido::getEjerciciosCursoEstado($idusuario, $ejercicio->getId(), true )>0?'Realizado':' No Realizado';?>
+        <?php $estado = Ejercicio_corregido::getEjerciciosCursoEstado($idusuario, $ejercicio->getId(), true )>0?'Realizado':'No Realizado';?>
         <td style="text-align: left; width: 25%;"><?php echo $estado; ?></td>
         <?php endif; ?>
         <?php if(!$modificar_ejericicio): ?>
@@ -49,7 +49,7 @@
           <?php echo link_to(image_tag('papelera.gif','Alt=Eliminar este ejercicio Title=Eliminar este ejercicio align=absmiddle'), 'admin/ejercicios?idelete='.$ejercicio->getId(), array('id'=>'ln_eliminar_ejercicio'.$ejercicio->getId(),'onclick' => 'return confirm("Seguro que quiere borrar este ejercicio?")'))?>
         </td>
         <?php else: ?>
-        <td><?php echo link_to(image_tag('icon_edit.gif','Alt=Editar el estado de este ejercicio para el Alumno Title=Editar el estado de este ejercicio para el Alumno'), '')?></td>
+        <td><?php echo link_to(image_tag('icon_edit.gif','Alt=Editar el estado de este ejercicio para el Alumno Title=Editar el estado de este ejercicio para el Alumno'),'admin/editarEjercicioAlumno?idusuario='.$idusuario.'&filtro='.$ejercicio->getIdMateria().$andismodificar.'&idcurso='.$idcurso.'&idejercicio='.$ejercicio->getId())?></td>
         <?php endif; ?>
       </tr>
       <?php $i++; ?>

@@ -76,7 +76,7 @@
               <?php echo link_to(image_tag('ayuda.png', array('alt' => 'Estos cursos pertenecen a un m&oacute;dulo, para gestionar los m&oacute;dulos del alumno haga clic aqu&iacute;', 'title' => 'Estos cursos pertenecen a un m&oacute;dulo, para gestionar los m&oacute;dulos del alumno haga clic aqu&iacute;')), 'admin/listaModulos?idusuario='.$usuario->getId()) ?>
               <?php endif; ?>
              <?php elseif ($modificar_ejericicio && !$curso->getCurso()->esMoroso($usuario->getId())): ?>
-                <?php echo link_to(image_tag('ico_tareas_peq.gif', array('alt' => 'Editar ejercicios del curso para el alumno', 'title' => 'Editar ejercicios del curso para el alumno')),'admin/listarEjercicios?idusuario='.$usuario->getId().'&filtro='.$curso->getCurso()->getMateria()->getId().$andismodificar) ?>
+                <?php echo link_to(image_tag('ico_tareas_peq.gif', array('alt' => 'Editar ejercicios del curso para el alumno', 'title' => 'Editar ejercicios del curso para el alumno')),'admin/listarEjercicios?idusuario='.$usuario->getId().'&filtro='.$curso->getCurso()->getMateria()->getId().$andismodificar.'&idcurso='.$curso->getCurso()->getId()) ?>
              <?php endif; ?>
             </td>
           </tr>
