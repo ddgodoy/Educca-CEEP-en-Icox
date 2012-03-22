@@ -76,6 +76,8 @@
                                 <?php  echo link_to('Control de tiempos >>', '/seguimiento/seguimientoTiempos',array('style'=>'float:left;'))?>
                                 <br/>
                                 <?php  echo link_to('Auditoría a "Supervisor SRE" >>', '/seguimiento/auditoriaSRE',array('style'=>'float:left;'))?>
+                                <br/>
+                                <?php  echo link_to('Editar exámenes >>', '/admin/alumnos?edita-ejercicio=1',array('style'=>'float:left;'))?>
                               </div>
                             <?php endif; ?>
 	              </div> <!-- fin col3 -->

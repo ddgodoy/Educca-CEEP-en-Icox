@@ -8,7 +8,8 @@
   <?php echo form_tag('admin/profesores') ?>
 <?php endif;?>
 <?php if ($rol == 'alumno'):?>
-  <?php echo form_tag('admin/alumnos') ?>
+  <?php $ismodificar=$modificar_ejericicio?'?edita-ejercicio=1':'' ?>
+  <?php echo form_tag('admin/alumnos'.$ismodificar) ?>
 <?php endif;?>
 <?php if ($rol == 'superusuario'):?>
   <?php echo form_tag('admin/usuarios?superUsuario=1') ?>
