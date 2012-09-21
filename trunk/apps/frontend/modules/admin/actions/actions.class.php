@@ -2306,45 +2306,50 @@ function unzip($src_file, $dest_dir=false, $create_zip_name_dir=true, $overwrite
         }
         $id = $materia->getId();
 
-        if ((!$fallo_bbdd) && (is_readable($_FILES['my_file']['tmp_name']))) {
-          // Borramos los temas anteriores
+         ## process zip file (if applicable)
+          $folderTempZip = sfConfig::get('sf_web_dir').DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'tmp'.DIRECTORY_SEPARATOR;
+          $mayProcessZip = is_readable($_FILES['my_file']['tmp_name']) || is_readable($folderTempZip.$ftp_file) ? true : false;
+
+          if ((!$fallo_bbdd) && $mayProcessZip) {
+          // Si la consulta se realizo con exito y se subio un fichero... borramos los temas anteriores
           $c = new Criteria();
           $c->add(TemaPeer::ID_MATERIA, $id);
           TemaPeer::DoDelete($c);
 
           // Borramos los objetos SCO anteriores registrados en la plataforma (cuidado !!)
           if (!$this->hasRequestParameter('conservarcontenido')) {
-            $c = new Criteria();
-            $c->add(Sco12Peer::ID_MATERIA, $materia->getId());
-            Sco12Peer::DoDelete($c);
+          $c = new Criteria();
+          $c->add(Sco12Peer::ID_MATERIA, $materia->getId());
+          Sco12Peer::DoDelete($c);
           }
-          $zipFile = sfConfig::get('sf_web_dir').DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'tmp'.DIRECTORY_SEPARATOR.$materia->getId().'.zip';
           $whereToUnzip = sfConfig::get('sf_web_dir').DIRECTORY_SEPARATOR.'materias'.DIRECTORY_SEPARATOR.$materia->getId().DIRECTORY_SEPARATOR;
-
           $materia->deleteContenido($whereToUnzip);
 
-          if (file_exists($zipFile)) {
-            unlink($zipFile) ;
+          if ($_FILES['my_file']['size'] > 0) { // --------------- upload zip
+          $zipFile = $folderTempZip.$materia->getId().'.zip';
+          if (file_exists($zipFile)) { unlink($zipFile) ; }
+          copy($_FILES['my_file']['tmp_name'], $zipFile);
+          } else { // -------------------------------------------- select from list
+          $zipFile = $folderTempZip.$ftp_file;
           }
-          copy($_FILES['my_file']['tmp_name'] , $zipFile );
           $zip = zip_open($zipFile);
 
           if ($zip) {
-            $result = self::unzip($zipFile, $whereToUnzip, true, true);
-            $scorm = false;
-            $compo = false;
-            $ficheros = array();
+          $result = self::unzip($zipFile, $whereToUnzip, true, true);
+          $scorm = false;
+          $compo = false;
+          $ficheros = array();
 
-            while ($zip_entry = zip_read($zip)) {
-              $entrada = zip_entry_name($zip_entry);
+          while ($zip_entry = zip_read($zip)) {
+          $entrada = zip_entry_name($zip_entry);
 
-              $extension = substr($entrada, -4);
-              if (($extension == '.htm') || ($extension == 'html')) {$ficheros[] = $entrada;}
-              if ($entrada == 'imsmanifest.xml') {$scorm = true;}
-              if ($entrada == 'Content/Projects/Res/project.xml') {$compo = true;}
-            }
-            zip_close($zip);
-            @unlink ($zipFile);
+          $extension = substr($entrada, -4);
+          if (($extension == '.htm') || ($extension == 'html')) {$ficheros[] = $entrada;}
+          if ($entrada == 'imsmanifest.xml') {$scorm = true;}
+          if ($entrada == 'Content/Projects/Res/project.xml') {$compo = true;}
+          }
+          zip_close($zip);
+          @unlink($zipFile);
 
             // Procesamiento de objetos SCO tanto para cursos SCORM como para Composica
             if ($scorm) {
@@ -2373,6 +2378,7 @@ function unzip($src_file, $dest_dir=false, $create_zip_name_dir=true, $overwrite
             }
             // Procesamiento cursos composica
             if ($compo && $scorm) {
+              
               $materia->setTipo('compo');
               $materia->save();
 
@@ -2381,7 +2387,9 @@ function unzip($src_file, $dest_dir=false, $create_zip_name_dir=true, $overwrite
               $capitulos = $xml->structure;
               $indice = 1;
 
-              foreach ($capitulos->chapter as $capitulo) {
+              $chapter = $capitulos->chapter?$capitulos->chapter:$capitulos->page;
+              
+              foreach ($chapter as $capitulo) {
                 $titulo = (string)$capitulo['title'];
                 $tema = new Tema();
                 $tema->setIdMateria($id);
