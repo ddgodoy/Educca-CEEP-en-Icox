@@ -15,7 +15,7 @@
      <?php else :?>
            <?php $cad=''?>
      <?php endif; ?>
-     <?   echo javascript_tag(
+     <?php   echo javascript_tag(
                         			 remote_function(array(
                                          					    'update'  => 'resultado',
                                           						'url'     => 'seguimiento/sourceHitos?idcurso='.$idcurso.$cad,
@@ -25,7 +25,7 @@
                       							            )
                            )
       ?>
-<? else :?>
+<?php else :?>
 
     <div id="divplanificacion">
         <div class="tit_box_mensajes"><h2 class="titbox">Planificaci&oacute;n para el <?php echo $curso->getNombre() ?></h2></div>
@@ -37,25 +37,25 @@
                   <table class="tablaplanificacion" cellspacing="0">
                   <tr>
                   <td><?php echo image_tag('separadorh.gif','Alt=') ?></td>
-                  <? $i=1; ?>
+                  <?php $i=1; ?>
                   <?php foreach ($fechas as $fecha): ?>
                       <td>
 
-                  	      <? echo image_tag('separadorh.gif','Alt=')."<br/><a href=\"javascript:void(0);\"
+                  	      <?php echo image_tag('separadorh.gif','Alt=')."<br/><a href=\"javascript:void(0);\"
                   		   onmouseover=\"return overlib('$fecha[0] al $fecha[1]', CAPTION, 'Fecha')\"
                   		    onmouseout=\"nd()\">$i"."&ordf; $periodo</a>";
                   			$i++ ;?>
                       </td>
-                  <? endforeach; ?>
+                  <?php endforeach; ?>
                   </tr>
 
                   <tr class="filarecomendada">
                       <th>Planificacion recomendada</th>
-                      <? $planificacionHitos = $curso->getHitosPlanificacion() ?>
+                      <?php $planificacionHitos = $curso->getHitosPlanificacion() ?>
                       <?php foreach ($fechas as $fecha): ?>
                       <td>
                           <?php foreach ($planificacionHitos as $planificacionHito): ?>
-                             <?     $fechaHitoFin = $planificacionHito->getFechaCompletado("d-m-Y");
+                             <?php     $fechaHitoFin = $planificacionHito->getFechaCompletado("d-m-Y");
                     			      $diaHitoFin=substr($fechaHitoFin,0,2);
                     			      $mesHitoFin=substr($fechaHitoFin,3,2);
                     			      $anioHitoFin=substr($fechaHitoFin,6,4);
@@ -80,21 +80,21 @@
                   		    				onmouseout=\"nd()\">".image_tag('ico_p_profesor.gif','Alt=')."</a>";
                   				  }
                     			?>
-                    	    <? endforeach; ?>&nbsp;
+                    	    <?php endforeach; ?>&nbsp;
                       </td><?php //echo "fin foreach planificacionHitos 1<br>"?>
-                      <? endforeach; ?><?php //echo "fin foreach fechas 2<br>"?>
+                      <?php endforeach; ?><?php //echo "fin foreach fechas 2<br>"?>
                   </tr>
                   <?php $numalumnos = 0 ?>
                   <?php foreach ($alumnos as $alumno): ?>
                   <?php $numalumnos++; ?>
                   <tr class="filaalumno">
-                    <th><? echo $alumno->getUsuario()->getApellidos().", ".$alumno->getUsuario()->getNombre() ?></th>
+                    <th><?php echo $alumno->getUsuario()->getApellidos().", ".$alumno->getUsuario()->getNombre() ?></th>
 
                     <?php foreach ($fechas as $fecha): ?>
                       <td>
-                           <? $hitos = $alumno->getUsuario()->getHitos($idcurso,$fecha[0],$fecha[1]) ?>
+                           <?php $hitos = $alumno->getUsuario()->getHitos($idcurso,$fecha[0],$fecha[1]) ?>
                            <?php foreach ($hitos as $hito): ?>
-                                  <? //echo $fecha[0]." ".$fecha[1]
+                                  <?php //echo $fecha[0]." ".$fecha[1]
                                 				    $dia1=substr($fecha[0],0,2);
                                   				  $mes1=substr($fecha[0],3,2);
                                   				  $anio1=substr($fecha[0],6,4); //inicio periodo
@@ -158,20 +158,20 @@
                                   					}
                   								unset($hito); //liberar memoria
                                                 ?>
-                           <? endforeach; ?>&nbsp;
+                           <?php endforeach; ?>&nbsp;
                       </td><?php unset($hitos);//echo "fin foreach hitosAlumnos 3<br>"?>
-                  <? endforeach; ?>
+                  <?php endforeach; ?>
                   </tr><?php //echo "fin foreach fechas 4<br>"?>
-                  <? endforeach; ?><?php //echo "fin foreach alumnos 5<br>"?>
+                  <?php endforeach; ?><?php //echo "fin foreach alumnos 5<br>"?>
                   <?php if ($numalumnos > 10) : ?>
 
                   <tr class="filarecomendada">
                       <th>Planificacion recomendada</th>
-                      <? /*$planificacionHitos = $curso->getHitosPlanificacion() */?>
+                      <?php /*$planificacionHitos = $curso->getHitosPlanificacion() */?>
                       <?php foreach ($fechas as $fecha): ?>
                       <td>
                           <?php foreach ($planificacionHitos as $planificacionHito): ?>
-                             <? $fechaHitoFin = $planificacionHito->getFechaCompletado("d-m-Y");
+                             <?php $fechaHitoFin = $planificacionHito->getFechaCompletado("d-m-Y");
                     			      $diaHitoFin=substr($fechaHitoFin,0,2);
                     			      $mesHitoFin=substr($fechaHitoFin,3,2);
                     			      $anioHitoFin=substr($fechaHitoFin,6,4);
@@ -195,26 +195,26 @@
                       		    				onmouseout=\"nd()\">".image_tag('ico_p_profesor.gif','Alt=')."</a>";
                       				  }
                     			?>
-                    	    <? endforeach; ?>&nbsp;
+                    	    <?php endforeach; ?>&nbsp;
                       </td><?php //echo "fin foreach planificacionHitos 6<br>"?>
-                      <? endforeach; ?><?php //echo "fin foreach fechas 7<br>";?>
+                      <?php endforeach; ?><?php //echo "fin foreach fechas 7<br>";?>
                   </tr>
 
                   <tr>
                   <td>&nbsp;</td>
-                  <? $i=1; ?>
+                  <?php $i=1; ?>
                   <?php foreach ($fechas as $fecha): ?>
                       <td>
 
-                  	      <? echo "<a href=\"javascript:void(0);\"
+                  	      <?php echo "<a href=\"javascript:void(0);\"
                   		              onmouseover=\"return overlib('$fecha[0] al $fecha[1]', CAPTION, 'Fecha')\"
                   		              onmouseout=\"nd()\">$i"."&ordf; $periodo</a>";
                   			$i++ ;?>
                       </td>
-                  <? endforeach; ?>
+                  <?php endforeach; ?>
                   </tr><?php //echo "fin foreach ferchas 8<br>"?>
 
-                  <? endif; ?>
+                  <?php endif; ?>
 
                   </table>
             </div>
@@ -230,9 +230,9 @@
     	            </tr>
     	        </table>
     	    </div>
-    	   <? echoNotaInformativa('Ayuda', "Desde este gr&aacute;fica podrá observar la planificaci&oacute;n recomendada por el profesor para el estudio de cada tema.");?>
+    	   <?php echoNotaInformativa('Ayuda', "Desde este gr&aacute;fica podrá observar la planificaci&oacute;n recomendada por el profesor para el estudio de cada tema.");?>
     	   <br>
-         <? use_helper('volver');  echo volver();     ?>
+         <?php use_helper('volver');  echo volver();     ?>
 
         </div>
         <div class="cierre_box_correo" ></div>

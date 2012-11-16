@@ -21,8 +21,6 @@
   </div>  
 <?php end_slot() ?>
 
-
-
 <div id="contenedor_img">
   <?php echo image_tag('foto_comercial.jpg','Title=Tu aprendizaje comienza aqu&iacute;'); ?>
 </div>
@@ -30,7 +28,7 @@
 <div id="contenedor_ecursos">
   <div class="tit_box_ecursos"><h2 class="titbox">Oferta did&aacute;ctica</h2></div>
   <div class="cont_box_ecursos">
-<? if ($paquetes) : ?>
+<?php if ($paquetes) : ?>
 <div class="nombrescol">
   <table class="tablacursos">
     <tr>

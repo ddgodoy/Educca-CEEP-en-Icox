@@ -9,52 +9,52 @@
   <ul class="listamenu">
     <li class="inicio"><?php echo link_to('Inicio', 'curso/index?idcurso='.$sf_user->getCursoMenu(),array('name' => 'ln_inicio')) ?></li>
 
-    <?if ($curso->getMenuInfo()) :?>
+    <?php if ($curso->getMenuInfo()) :?>
         <li class="info_c"><?php echo link_to('Informaci&oacute;n General', 'curso/mostrarNormativa'.$redireccion,array('name' => 'ln_normativa')) ?></li>
-    <? endif; ?>
+    <?php endif; ?>
 
-    <?if ($curso->getMenuTemario()) :?>
+    <?php if ($curso->getMenuTemario()) :?>
         <li class="cursos_c"><?php echo link_to('Revisar Temario', 'curso/mostrarTemas'.$redireccion,array('name' => 'ln_temas')) ?></li>
-    <? endif; ?>
+    <?php endif; ?>
 
-    <?if ($curso->getMenuBibliotecaArchivos()) :?>
+    <?php if ($curso->getMenuBibliotecaArchivos()) :?>
       <li class="archivos_c"><?php echo link_to('Biblioteca Archivos', 'biblioteca_archivos/index'.$redireccion,array('name'=>'ln_biblioteca_archivos')) ?></li>
-    <? endif; ?>
+    <?php endif; ?>
 
-    <?if ($curso->getMenuBiblio()) :?>
+    <?php if ($curso->getMenuBiblio()) :?>
       <li class="biblio_c"><?php echo link_to('Bibliograf&iacute;a', 'curso/mostrarBibliografia'.$redireccion,array('name' => 'ln_bibliografia')) ?></li>
-    <? endif; ?>
+    <?php endif; ?>
 
-    <?if ($curso->getMenuSeguimiento()) :?>
+    <?php if ($curso->getMenuSeguimiento()) :?>
        <li class="seguimiento_c"><?php echo link_to('Seguimiento', 'seguimiento/index'.$redireccion,array('name' => 'ln_seguimiento')) ?></li>
-    <? endif; ?>
+    <?php endif; ?>
 
-    <?if ($curso->getMenuEventos()) :?>
+    <?php if ($curso->getMenuEventos()) :?>
       <li class="calendario_c"><?php echo link_to('Eventos del curso', 'calendario/mostrarCalendario'.$redireccion,array('name' => 'ln_eventos')) ?></li>
-    <? endif; ?>
+    <?php endif; ?>
 
-    <?if ($curso->getMenuChat()) :?>
+    <?php if ($curso->getMenuChat()) :?>
       <li class="chat_c"><?php echo link_to('Chat del curso', 'chat/jquery?id='.$sf_user->getCursoMenu(),array('popup' => array('', 'width=650,height=600,left=320,top=0'),'name'=>'ln_chat')) ?></li>
-    <? endif; ?>
+    <?php endif; ?>
 
-    <?if ($curso->getMenuForo()) :?>
+    <?php if ($curso->getMenuForo()) :?>
         <li class="foros_c"><?php echo link_to('Foros', 'sfSimpleForum/foroCurso'.$redireccion,array('name' => 'ln_foro')) ?></li>
-    <? endif; ?>
+    <?php endif; ?>
 
-	 	<?if ($curso->getMenuEjercicios()) :?>
+	 	<?php if ($curso->getMenuEjercicios()) :?>
         <li class="evalua_c"><?php echo link_to('Evaluaci&oacute;n', 'evaluacion/index'.$redireccion,array('name' => 'ln_evaluacion'))?></li>
         <li class="ejercicios_c"><?php echo link_to('Tareas y ex&aacute;menes', 'tareas/index'.$redireccion,array('name' => 'ln_tareas'))?></li>
-    <? endif; ?>
+    <?php endif; ?>
   </ul>
 
-  <?if ($curso->getMenuEjercicios()) :?>
+  <?php if ($curso->getMenuEjercicios()) :?>
   <div class="tit_box_menu"><h2 class="titbox">Herramientas</h2></div>
   <ul class="listamenu">
     <li class="gejercicios_c"><?php echo link_to('Editor de ejercicios', 'ejercicio/index'.$redireccion,array('name' => 'ln_ejercicios'))?></li>
   </ul>
       
-  <? endif; ?>
-<? endif; ?>
+  <?php endif; ?>
+<?php endif; ?>
 
     <!--div id="submenu"-->
 	     <?php include_component_slot('submenu') ?>
@@ -69,8 +69,8 @@
     <li class="salir"><?php echo link_to('Salir', 'login/logout',array('name' => 'ln_logout')) ?></li>
   </ul>
 
-   <?if ($sf_user->getCursoMenu()) : ?>
+   <?php if ($sf_user->getCursoMenu()) : ?>
        <?php include_partial('online/menu') ;?>
-   <? endif; ?>
+   <?php endif; ?>
 
 

@@ -26,7 +26,7 @@
         <?php if ($curso->getMenuPlanificacionAlumnos()):?>
           <li class="tiemposreloj"><?php echo link_to('Control de planificaci&oacute;n', 'seguimiento/sourceHitos'.$redireccion,array('id' => 'ln_segPlanificacion')) ?></li>
         <?php endif;?>
-    <? endif; ?>
+    <?php endif; ?>
     <li class="nuevacita"><?php echo link_to('Tiempo de estudio', '/seguimiento/seguimientoPorTemas'.$redireccion,array('id' => 'ln_segTemas')) ?></li>
     <li class="enviados"><?php echo link_to('Tareas', '/seguimiento/seguimientoTareas'.$redireccion,array('id' => 'ln_segTareas')) ?></li>
     <li class="ejercicios_c"><?php echo link_to('Calificaciones', '/seguimiento/estadisticaCalificaciones'.$redireccion,array('id' => 'ln_segCalificaciones')) ?></li>
