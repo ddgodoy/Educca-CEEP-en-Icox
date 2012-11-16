@@ -45,7 +45,7 @@
      <?php endif; ?>
 
 
-      <?if ($curso->getMenuBibliotecaArchivos()) :?>
+      <?php if ($curso->getMenuBibliotecaArchivos()) :?>
         <tr>
           <td class="imagen">
             <?php echo link_to(image_tag('book-stack-g.png', 'Title=Biblioteca de archivos'), '/biblioteca_archivos/index?idcurso='.$idcurso,array('id' => 'ln_biblioteca_archivos_ico' )) ?>
@@ -231,5 +231,3 @@
   </div>
   <div class="cierre_box_correo"></div>
 </div>
-
-

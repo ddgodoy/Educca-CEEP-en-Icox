@@ -75,9 +75,7 @@ class seguimientoActions extends sfActions
   public function executeSeguimientoPorTemas()
   {
     $opciones[0] = 'Por nombre';
-    //$opciones[1] = 'Por estado';
     $opciones[2] = 'Por temas';
-    //$opciones[3] = 'Por tiempo y temas';
     
     $this->opciones = $opciones;
     $usuarios = new Usuario();

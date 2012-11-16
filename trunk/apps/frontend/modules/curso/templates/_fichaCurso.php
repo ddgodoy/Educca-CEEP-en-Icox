@@ -2,7 +2,7 @@
 <?php use_helper('informacion') ?>
 
 <div id="mensajes_recibidos">
-  <div class="tit_box_mensajes"><h2 class="titbox">Informaci&oacute;n del <? echo $curso->getNombre(100) ?> </h2></div>
+  <div class="tit_box_mensajes"><h2 class="titbox">Informaci&oacute;n del <?php echo $curso->getNombre(100) ?> </h2></div>
   <div class="cont_box_correo">
     <?php if ('administrador'==$rol) : ?>
       <?php if (1!=$eliminar) : ?>
@@ -16,53 +16,53 @@
           </div>
       <?php endif; ?>
     <?php endif; ?>
-    <? if (!isset($info)) : ?>
+    <?php if (!isset($info)) : ?>
       <div class="detalles_mensaje">
         <div class="detallesLargo">
             <table class="tabladetalles">
               <tr>
                 <td class="titulo">Curso:</td>
-                <td ><? echo $curso->getnombre() ?></td>
+                <td><?php echo $curso->getnombre() ?></td>
               </tr>
 
               <tr>
                 <td class="titulo">Nº Temas:</td>
-                <td><? echo $curso->getMateria()->getNumeroTemas()?></td>
+                <td><?php echo $curso->getMateria()->getNumeroTemas()?></td>
               </tr>
 
               <tr>
                 <td class="titulo">Inicio:</td>
-                <td><? echo $curso->getFechaInicio("d-m-Y") ?></td>
+                <td><?php echo $curso->getFechaInicio("d-m-Y") ?></td>
               </tr>
 
               <tr>
                 <td class="titulo">Fin:</td>
-                <td><? echo $curso->getFechaFin("d-m-Y") ?></td>
+                <td><?php echo $curso->getFechaFin("d-m-Y") ?></td>
               </tr>
 
               <tr>
                 <td class="titulo">Precio:</td>
-                <td><? echo $curso->getPrecio() ?> &euro; <?php if ($curso->getMensual()) {echo '/ mes';} ?></td>
+                <td><?php echo $curso->getPrecio() ?> &euro; <?php if ($curso->getMensual()) {echo '/ mes';} ?></td>
               </tr>
 
               <tr>
                 <td class="titulo">Esc&aacute;ner:</td>
-                <td><? if ($curso->getScan() ) : ?>
+                <td><?php if ($curso->getScan() ) : ?>
                       S&iacute;
-                    <? else :?>
+                    <?php else :?>
                        No
-                    <? endif; ?>
+                    <?php endif; ?>
                 </td>
               </tr>
 
               <tr>
                 <td class="titulo" valign='top'>Informaci&oacute;n:</td>
-                <td><pre class='texto_normal'><? echo wordwrap($curso->getInformacionExtendida()) ?></pre></td>
+                <td><pre class='texto_normal'><?php echo wordwrap($curso->getInformacionExtendida()) ?></pre></td>
               </tr>
             </table>
            </div>
       </div>
-  <? endif; ?>
+  <?php endif; ?>
   <div id="divadmin" style="width: 100%;">
   <?php if ("supervisor"==$rol) : ?>
     <div class="herramientas_general_fixed" >
@@ -79,9 +79,9 @@
               <tr>
                 <th width='50%' style="padding-left: 5px;">Profesores</th>
                 <th >Correo</th>
-                <?if ('supervisor'==$rol) :?>
+                <?php if ('supervisor'==$rol) :?>
                     <th width='20%'></th>
-                <? endif; ?>
+                <?php endif; ?>
               </tr>
         </table>
     </div>
@@ -90,18 +90,18 @@
         <table class="tadmincursos" cellspacing="0" border="0">
         <?php $i = 0; ?>
               <?php if (!$profesores) : ?>
-                  <?echoAvisoVacioCorto("No hay profesores asignados al curso") ?>
-               <? else : ?>
+                  <?php echoAvisoVacioCorto("No hay profesores asignados al curso") ?>
+               <?php else : ?>
                     <?php foreach($profesores as $profesor): ?>
                         <?php $fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
                           <tr class="cont_fil" <?= $fondo1 ?>>
                               <td width="50%" style="padding-left: 5px;"><div class='c_profesor<?php echo $profesor->getIdUsuario()?>'><?php echo $profesor->getUsuario()->getNombre().' '.$profesor->getUsuario()->getApellidos()?></div></td>
                               <td><?php echo $profesor->getUsuario()->getEmail() ?></td>
-                              <?if ('supervisor'==$rol) :?>
+                              <?php if ('supervisor'==$rol) :?>
                               <td width='20%'>
                                 <?php echo link_to(image_tag('ico_mensajes_peq.gif',"Alt=\"Estad&iacute;sticas de mensajes del profesor ".$profesor->getUsuario()->getNombre()." en el curso ".$curso->getNombre()."\" Title=\"Estad&iacute;sticas de mensajes del profesor ".$profesor->getUsuario()->getNombre()." en el curso ".$curso->getNombre()."\" align=absmiddle"),'seguimiento/grafica?tipo=mensajes&idusuario='.$profesor->getUsuario()->getId().'&idcurso='.$curso->getId(),array('id'=>'ln_mensajes_profesor'.$profesor->getUsuario()->getId().'_curso'.$curso->getId())); ?>
                               </td>
-                              <? endif; ?>
+                              <?php endif; ?>
                           </tr>
                           <?php $i++ ?>
                     <?php endforeach;  ?>
@@ -115,17 +115,15 @@
     <?php endif;?>
     <br>
 
-
-
-   <?if (('administrador'==$rol) || ('supervisor'==$rol)):?>
+   <?php if (('administrador'==$rol) || ('supervisor'==$rol)):?>
    	  <div class="nombrescol">
         <table class="tadmincursos" border='0' style="width: 100%; border-top: #CCCCCC 1px solid;">
               <tr>
                 <th width='50%'>&nbsp;Alumnos</th>
                 <th >Correo</th>
-                <?if ('supervisor'==$rol) :?>
+                <?php if ('supervisor'==$rol) :?>
                 <th width='20%'>Opciones</th>
-                <? endif ;?>
+                <?php endif ;?>
               </tr>
         </table>
       </div>
@@ -134,17 +132,17 @@
           <table class="tadmincursos" cellspacing="0" border="0">
           <?php $i = 0;
             $alumnos =  $curso->getAlumnos(); ?>
-                <?if (!$alumnos) : ?>
+                <?php if (!$alumnos) : ?>
                     <?php use_helper('informacion') ?>
-                    <?echoAvisoVacioCorto("No hay alumnos matriculados en el curso") ?>
-                 <? else : ?>
+                    <?php echoAvisoVacioCorto("No hay alumnos matriculados en el curso") ?>
+                 <?php else : ?>
                  <?php ?>
                       <?php foreach($alumnos as $alumno): ?>
                           <?php $fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
                             <tr class="cont_fil" <?= $fondo1 ?>>
                                 <td width='50%' style="padding-left: 5px;"><div class='c_alumno<?php echo $alumno->getIdUsuario()?>'><?php echo $alumno->getUsuario()->getNombre().' '.$alumno->getUsuario()->getApellidos()?></div></td>
                                 <td>&nbsp;<?php echo $alumno->getUsuario()->getEmail() ?></td>
-                                <?if ('supervisor'==$rol) :?>
+                                <?php if ('supervisor'==$rol) :?>
                                   <td width='20%'>
                                    <?php echo link_to(image_tag('incompleto.png', 'title="Gr&aacute;fica de tiempos dedicados al curso por el alumno" alt="Gr&aacute;fica de tiempos dedicados al curso por el alumno" align="absmiddle"'), 'seguimiento/grafica?idusuario='.$alumno->getUsuario()->getId().'&tipo=alumno&idcurso='.$idcurso,array('id'=>'tiempo_alumno'.$alumno->getUsuario()->getId())) ?>
                                     <?php if ($curso->getMateria()->getTipo() != 'compo'):?>
@@ -153,11 +151,11 @@
                                     <?php endif;?>
                                     &nbsp;&nbsp;<?php echo link_to(image_tag('ico_evaluacion_peq.gif', 'title="Ficha de evaluaci&oacute;n del alumno en el curso" alt="Ficha de evaluaci&oacute;n del alumno en el curso" align="absmiddle"'), '/seguimiento/fichaEvaluacion?idcurso='.$idcurso.'&idalumno='.$alumno->getUsuario()->getId(), array('id'=>'evaluacion_alumno'.$alumno->getUsuario()->getId(),'popup' => array('', 'width=765,height=740,toolbar=0,location=0,status=0,menubar=0,resizable=0,top=0,left=200'))) ?>
                                   </td>
-                                <? endif ;?>
+                                <?php endif ;?>
                             </tr>
                             <?php $i++ ?>
                       <?php endforeach;  ?>
-                  <?endif;?>
+                  <?php endif;?>
 
           </table>
        </div>
@@ -181,10 +179,10 @@
           <?php $i = 0;
 
             $modulos =  $curso->getEnModulo(); ?>
-                <?if (!$modulos) : ?>
+                <?php if (!$modulos) : ?>
                     <?php use_helper('informacion') ?>
                     <?echoAvisoVacioCorto("El curso no pertenece a ning&uacute;n m&oacute;dulo") ?>
-                 <? else : ?>
+                 <?php else : ?>
                       <?php foreach($modulos as $modulo): ?>
                           <?php $fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
                             <tr class="cont_fil" <?= $fondo1 ?>>
@@ -192,7 +190,7 @@
                             </tr>
                             <?php $i++ ?>
                       <?php endforeach;  ?>
-                  <?endif;?>
+                  <?php endif;?>
 
           </table>
        </div>
@@ -206,7 +204,7 @@
 
 
 
-    <?endif; ?>
+    <?php endif; ?>
 
      	  <div class="nombrescol" >
         <table class="tadmincursos" border='0' style="width: 100%; border-top: #CCCCCC 1px solid;">
@@ -223,7 +221,7 @@
     <div class="cursos">
         <table class="tadmincursos" cellspacing="0" border="0">
               <?php $i = 0; ?>
-              <?if (!$temas) : ?>
+              <?php if (!$temas) : ?>
                 <?php use_helper('informacion'); ?>
                 <?php echoAvisoVacioCorto("No tiene temas asignados"); ?>
                <?php else : ?>

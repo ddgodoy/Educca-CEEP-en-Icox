@@ -3,7 +3,7 @@
 <div class="tit_box_mensajes">
 
 <?php if (isset($idcurso)) : ?>
-  <? $curso = CursoPeer::retrieveByPk($idcurso); ?>
+  <?php $curso = CursoPeer::retrieveByPk($idcurso); ?>
   <h2 class="titbox"><?php echo $curso->getNombre(100) ?> : Seguimiento </h2></div>
 <?php else : ?>
   <h2 class="titbox"> Seguimiento </h2></div>
@@ -145,7 +145,7 @@ if ($tipo=='alumno')
 */
 ?>
 
-<br><? use_helper('volver'); echo volver(); ?>
+<br><?php use_helper('volver'); echo volver(); ?>
    </div>
     <div class="cierre_box_correo" ></div>
 </div>

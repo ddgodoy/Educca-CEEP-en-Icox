@@ -21,7 +21,7 @@
         <?php $mesAnterior = true; ?>
         <?php $mesSig = false; ?>
         <?php $diaAnterior = 0; ?>
-        <? $tipo_evento= array();?>
+        <?php $tipo_evento= array();?>
         <?php  foreach ($calendar as $week) : ?>
               <tr class="rows">
               <?php  foreach ($week as $day => $events) : ?>
@@ -41,18 +41,18 @@
                                    <!--td class="s22"-->
       							    <?php if ($arrayFechas[$event['fecha']] > 1) :?>
                                         <td class="multiple">
-                                        <? $tipo_evento["multiple"] =1  ;?>
+                                        <?php $tipo_evento["multiple"] =1  ;?>
                         <?php else :?>
                                    	  <?php  echo "<td class=\"".$event['clase']."\">" ?>
-                                   	  <? $tipo_evento[$event['clase']] =1  ;?>
+                                   	  <?php $tipo_evento[$event['clase']] =1  ;?>
       							   <?php endif; ?>
 
       							    <?php $dayFecha = substr($day,8,2)."/".substr($day,5,2)."/".substr($day,0,4);?>
       							    <?php if (isset($idcurso)) : ?>
-      							            <? $url = $event['url']."&idcurso=".$idcurso ?>
+      							            <?php $url = $event['url']."&idcurso=".$idcurso ?>
       							    <?php else : ?>
-      							            <? $url = $event['url'] ?>
-									       <? endif; ?>
+      							            <?php $url = $event['url'] ?>
+									       <?php endif; ?>
 
       							    <?php  echo link_to_remote(date('d', strtotime($day)), array(
             								'update' => 'eventos',

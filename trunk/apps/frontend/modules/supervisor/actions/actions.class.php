@@ -461,13 +461,14 @@ class supervisorActions extends sfActions
     $pdf->SetFont('', '', 7);
     $fill = false;
 
-    foreach($alumnos as $alumno) {
+    foreach($alumnos as $alumno)
+    {
       $nombre_alumno = ' '.$alumno->getApellidos().', '.$alumno->getNombre();
       if (strlen($nombre_alumno) > 60) {$nombre_alumno = substr($nombre_alumno, 0, 57).'...';}
 
       $pdf->Cell(75, 6, $nombre_alumno, 'LR', 0, 'L', $fill);
 
-      $tteoria     = $alumno->getTiempoTotalTeoria($curso->getId());
+      $tteoria     = $alumno->getTiempoTotalTeoria($curso->getId());	
       $tejercicios = $alumno->getTiempoTotalEjercicios($curso->getId());
       $ttotal      = $tteoria + $tejercicios;
 
@@ -480,7 +481,6 @@ class supervisorActions extends sfActions
       $texto_tiempo = sprintf("Teoria: %02dh %02dm       Ejercicios %02dh %0dm         Total: %02dh %02dm", floor($tteoria/3600), (floor($tteoria/60) % 60), floor($tejercicios/3600), (floor($tejercicios/60) % 60), floor($ttotal/3600), (floor($ttotal/60) % 60));
 
       $pdf->Cell(77, 6, $texto_tiempo, 'LR', 0, 'C', $fill);
-//      $pdf->Cell(87, 6, "Cuestionarios: ".$alumno->getNumeroCuestionariosCurso($idcurso)."       Tests: ".$alumno->getNumeroTestsCurso($idcurso)."       Problemas: ".$alumno->getNumeroProblemasCurso($idcurso)."         Total: ".$alumno->getNumeroEjerciciosCurso($idcurso), 'LR', 0, 'C', $fill);
       $pdf->Cell(100, 6, "Propuestos: $_cant_en_total      Realizados: $_cant_realizados       Porcentaje: ".number_format($_val_porcentaje,2)."%       Nota media: ".number_format($_val_notamedia,2), 'LR', 0, 'C', $fill);
 
       $c = new Criteria();

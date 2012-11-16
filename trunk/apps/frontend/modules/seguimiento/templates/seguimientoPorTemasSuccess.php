@@ -4,7 +4,7 @@
   <div class="titulo_principal"><h2 class="titbox">Tiempos invertidos en el curso - Ordenado por alumnos</h2></div>
   <div class="contenido_principal">
 
-<?if ($curso) : ?>
+<?php if ($curso) : ?>
     <div class="herramientas_general_fixed">
         <?php if (!$curso->getMateria()->esCompo()):?>
           <?php use_helper('SexyButton') ?>
@@ -19,7 +19,7 @@
       <?php echo input_hidden_tag('idusuario', $idusuario) ?>
     <?php endif; ?>
     </form>
-<? endif; ?>
+<?php endif; ?>
 
 
 
@@ -27,14 +27,14 @@
     <table class="tablaseg">
       <tr>
         <th class="td1">Alumno</th>
-        <?if ($curso) : ?>
+        <?php if ($curso) : ?>
           <?php if ($curso->getMateria()->esCompo()): ?>
             <th class="td2">Tiempo teor&iacute;a</th>
             <th class="td3">Tiempo ejercicios</th>
           <?php else: ?>
             <th class="td4">&nbsp;</th>
           <?php endif;?>
-       <? endif ; ?>
+       <?php endif ; ?>
 
       </tr>
     </table>
@@ -43,7 +43,7 @@
   <div class="listado_tabla_general">
     <?php $col = 0 ?>
     <table class="tablaseg">
-     <? if ($alumnos) : ?>
+     <?php if ($alumnos) : ?>
       <?php foreach($alumnos as $alumno) : ?>
         <?php $fondo1 = (($col % 2 == 0))? "id=\"filarayada\"" : ""; ?>
         <tr <?=$fondo1?>>
@@ -69,11 +69,14 @@
                         <?php echo link_to(truncate_text($sco->getTitle(), 50) , 'seguimiento/grafica?tipo=sco12&idsco12='.$sco->getId().'&idcurso='.$idcurso) ?>
                       </td>
                       <td style="width: 30%; text-align: center;">
-                        <?php $c = new Criteria(); ?>
-                        <?php $c->add(Rel_usuario_sco12Peer::ID_SCO12, $sco->getId()); ?>
-                        <?php $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $alumno->getIdUsuario()); ?>
-                        <?php $rel = Rel_usuario_sco12Peer::doSelectOne($c); ?>
-                        <?php if ($rel) {echo $rel->showTiempoTotal();} else {echo '00:00';} ?>
+                        <?php
+                        	$c = new Criteria();
+                        	$c->add(Rel_usuario_sco12Peer::ID_SCO12, $sco->getId());
+                        	$c->add(Rel_usuario_sco12Peer::ID_USUARIO, $alumno->getIdUsuario());
+                        	$rel = Rel_usuario_sco12Peer::doSelectOne($c);
+                        	
+                        	if ($rel) {echo $rel->showTiempoTotal();} else {echo '00:00';}
+                        ?>
                       </td>
                       <td style="width: 10%; text-align: center;">
                         <?php
@@ -151,10 +154,10 @@
         </tr>
         <?php $col++; ?>
       <?php endforeach; ?>
-     <? endif ; ?>
+     <?php endif ; ?>
     </table>
     <?php if (!$alumnos) :?>
-      <? echoWarning('Aviso', "No se puede hacer el seguimiento, no hay alumnos en el curso"); ?>
+      <?php echoWarning('Aviso', "No se puede hacer el seguimiento, no hay alumnos en el curso"); ?>
     <?php endif;?>
   </div>
 
@@ -173,7 +176,7 @@
         </table>
       </div>
     <?php endif; ?>
-  <? endif ; ?>
+  <?php endif ; ?>
 
     <br><?php echoNotaInformativa('Ayuda', 'Esta tabla le muestra el tiempo dedicado por los alumnos a cada tema y el estado de avance del alumno en el tema. Tambi&eacute;n <b>podr&aacute; acceder a las <u>gr&aacute;ficas de seguimiento</u> pinchando sobre los nombres de los alumnos</b>.'); ?>
 

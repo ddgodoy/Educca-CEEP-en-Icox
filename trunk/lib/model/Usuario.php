@@ -1109,6 +1109,7 @@ class Usuario extends BaseUsuario
 
     if ($rel) {
       $ttotal = traducir_de_fecha_scorm12($rel->getSessionTime()) + traducir_de_fecha_scorm12($rel->getTotalTime());
+      
       return $ttotal;
     }
     else return 0;
@@ -1130,14 +1131,18 @@ class Usuario extends BaseUsuario
     // En el caso de materias de tipo SCORM
     {
       $c = new Criteria();
+
       $c->add(Sco12Peer::ID_MATERIA, $materia->getId());
       $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->id);
       $c->addJoin(Sco12Peer::ID, Rel_usuario_sco12Peer::ID_SCO12);
-      $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
-      if ($rel)
-      {
-        //require_once("__FILE__/../functions.php");
-        $ttotal = traducir_de_fecha_scorm12($rel->getSessionTime()) + traducir_de_fecha_scorm12($rel->getTotalTime());
+      $rel = Rel_usuario_sco12Peer::DoSelect($c);
+      
+      if ($rel) {
+      	$ttotal = 0;
+
+      	foreach ($rel as $rel_value) {
+      		$ttotal = traducir_de_fecha_scorm12($rel_value->getSessionTime()) + traducir_de_fecha_scorm12($rel_value->getTotalTime());
+      	}
         return $ttotal;
       }
       else return 0;

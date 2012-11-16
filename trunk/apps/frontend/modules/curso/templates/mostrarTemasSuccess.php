@@ -1,5 +1,5 @@
 <?php
-    use_helper('SexyButton','tiempo');
+  use_helper('SexyButton','tiempo');
 ?>
 <div id="mistemas">
   <div class="tit_box_mensajes"><h2 class="titbox"><?= $curso->getNombre(120); ?></h2></div>
@@ -245,17 +245,17 @@
 	        </table>
 	    </div>
 
-      <? use_helper('volver'); ?>
+      <?php use_helper('volver'); ?>
       <br /><br />
 	    <?php if ($materia->getTipo() == 'compo'): ?>
         <center>
         <table border='0' width='100%'>
           <tr>
-             <td width="259"><? echo volver(); ?>             </td>
+             <td width="259"><?php echo volver(); ?>             </td>
           <td>
             <!--div style="display:none;"><?php echo sexy_button_to('', '') ?></div-->
                 <div class="sexy-button-clear">
-                  <? $link = 'curso/mostrarContenido?id='.$materia->getId(); ?>
+                  <?php $link = 'curso/mostrarContenido?id='.$materia->getId(); ?>
                   <a class="sexy-button" onclick="window.open('<?php echo url_for($link) ?>', 'scormbrowser', 'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=0, scrollbars=0, height=<?php echo $materia->getHeight()?>, width=<?php echo $materia->getWidth()?>')" href="javascript:void(0)"><span>Ver contenido del curso</span></a>
                   <div style="display:none">
                     <?php echo link_to("", $link,(array('id' => 'ln_mostrar_tema0'))) ?>
@@ -264,10 +264,9 @@
               </td>
           </tr>
         </table></center>
-      <? else : ?>
-          <? echo volver(); ?>
+      <?php else : ?>
+          <?php echo volver(); ?>
       <?php endif;?>
-
     </div>
     <div class="cierre_box_correo"></div>
 </div>
