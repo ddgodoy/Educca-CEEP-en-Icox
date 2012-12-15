@@ -363,20 +363,9 @@ class evaluacionActions extends sfActions
 
     foreach ($resultados as $resultado) {
       $tiempo_repositorio += $resultado->getTiempo();
-    }
-    $c = new Criteria();
-    $c->add(CursoPeer::ID, $id_curso);
-    $c->add(Rel_usuario_temaPeer::ID_USUARIO, $id_alumno);
-    $c->addJoin(TemaPeer::ID_MATERIA, CursoPeer::MATERIA_ID);
-    $c->addJoin(TemaPeer::ID, Rel_usuario_temaPeer::ID_TEMA);
-    $resultados = Rel_usuario_temaPeer::DoSelect($c);
-    $tiempo_estudio = 0;
-
-    foreach ($resultados as $resultado) {
-      $tiempo_estudio += $resultado->getTiempo();
-    }
-    $this->tiempo_estudio = $tiempo_estudio;
-    $this->tiempo_tareas = $tiempo_tareas;
+    }    
+    $this->tiempo_estudio = $this->alumno->getTiempoTotalTeoria($id_curso);
+    $this->tiempo_tareas  = $tiempo_tareas;
     $this->tiempo_repositorio = $tiempo_repositorio;
 
     $this->setLayout('PopUpEvaluacion');

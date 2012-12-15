@@ -1660,8 +1660,8 @@ class seguimientoActions extends sfActions
   /* Modificado por Jacobo para que se calculo el tiempo total empleado en la teoria
      para cursos composica
   */
-  public function executeFichaEvaluacion() {
-
+  public function executeFichaEvaluacion()
+  {  	
     $id_curso = $this->getRequestParameter('idcurso');
 
     if ($this->getUser()->hasCredential('supervisor'))
@@ -1733,10 +1733,9 @@ class seguimientoActions extends sfActions
           {
             $tiempo_estudio += $resultado->getTiempo();
           }
-       }
-
-    $this->tiempo_estudio = $tiempo_estudio;
-    $this->tiempo_tareas = $tiempo_tareas;
+    }
+    $this->tiempo_estudio     = $tiempo_estudio;
+    $this->tiempo_tareas      = $tiempo_tareas;
     $this->tiempo_repositorio = $tiempo_repositorio;
 
     $c = new Criteria();
