@@ -2,7 +2,7 @@
   use_helper('SexyButton','tiempo');
 ?>
 <div id="mistemas">
-  <div class="tit_box_mensajes"><h2 class="titbox"><?= $curso->getNombre(120); ?></h2></div>
+  <div class="tit_box_mensajes"><h2 class="titbox"><?php echo $curso->getNombre(120); ?></h2></div>
     <div class="cont_box_correo">
       <div class="nombrescol">
           <table class="tablatemas" cellspacing="0">

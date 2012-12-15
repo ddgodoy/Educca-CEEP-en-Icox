@@ -206,7 +206,7 @@
         <?php $minutos = (floor($tiempo_estudio / 60)) % 60;?>
         <?php if ($horas == 1) {echo("1 hora ");}?>
         <?php if ($horas > 1) {echo("$horas horas ");}?>
-        <?php echo ("$minutos minutos");?>
+        <?php echo ("$minutos minutos"); ?>
       </td>
     </tr>
     <tr>

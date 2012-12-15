@@ -94,13 +94,13 @@
         	     <?php else : ?>
         	        <?php if ($sf_user->getAnyId() == $usuario->getId()) : ?>
                           <?php echo sexy_button_to('Modificar', 'usuario/editarPerfil?'.$redireccion) ?>
-                  <? endif; ?>
-        	     <? endif; ?>
+                  <?php endif; ?>
+        	     <?php endif; ?>
 		</td>
 
     </tr>
     </tbody>
     </table>
-    <br /><? use_helper('volver');  echo volver(); ?>
+    <br /><?php use_helper('volver');  echo volver(); ?>
 </div>
 <div class="cierre_box_grande"></div>
