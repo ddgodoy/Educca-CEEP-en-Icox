@@ -59,10 +59,7 @@
     </tr>
     <tr>
     <th>Pa&iacute;s: </th>
-    <td class="tdinfo"><?if ($usuario->getPais()) : ?>
-	                     <?php echo $usuario->getPais()->getNombre() ?>
-					   <? endif; ?>
-					</td>
+    <td class="tdinfo"><?php if ($usuario->getPais()) { echo $usuario->getPais()->getNombre(); } ?></td>
     </tr>
     <tr>
     <th>&Uacute;ltimo acceso: </th>
