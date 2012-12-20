@@ -27,10 +27,10 @@
   </div>
 
   <div class="titulos_tabla_general">
-    <?if (!empty ($curso)) : ?>
+    <?php if (!empty ($curso)) : ?>
     <table class="tablaseg">
       <tr>
-       <?if ($curso) : ?>
+       <?php if ($curso) : ?>
           <?php if ($curso->getMateria()->esCompo()): ?>
             <th style="width: 25%;">Alumno</th>
             <th style="width: 15%; text-align: center">Tiempo teor&iacute;a</th>
@@ -40,7 +40,7 @@
           <?php else: ?>
             <th class="td5">&nbsp;</th>
           <?php endif;?>
-       <? endif ; ?>
+       <?php endif ; ?>
 
       </tr>
     </table>
@@ -50,10 +50,10 @@
     <?php $col = 0 ?>
     <table class="tablaseg">
      <?php /*if ($curso->getMateria()->esCompo()):*/ ?>
-     <? if (!empty($alumnos)) : ?>
+     <?php if (!empty($alumnos)) : ?>
       <?php foreach($alumnos as $alumno) : ?>
         <?php $fondo1 = (($col % 2 == 0))? "id=\"filarayada\"" : ""; ?>
-        <tr <?=$fondo1?>>
+        <tr <?php echo $fondo1 ?>>
           <td style="width: 25%;">
             <?php  echo link_to($alumno->getUsuario()->getApellidos().", ".$alumno->getUsuario()->getNombre() , 'seguimiento/grafica?tipo=alumno&idusuario='.$alumno->getUsuario()->getId()."&idcurso=".$idcurso,array('id'=>'ln_segAlumno'.$col))?>
           </td>
@@ -66,10 +66,10 @@
         </tr>
         <?php $col++; ?>
       <?php endforeach; ?>
-     <? endif ; ?>
+     <?php endif; ?>
     </table>
     <?php if (empty($alumnos)) :?>
-      <? echoWarning('Aviso', "No se puede hacer el seguimiento, no hay alumnos en el curso"); ?>
+      <?php echoWarning('Aviso', "No se puede hacer el seguimiento, no hay alumnos en el curso"); ?>
     <?php endif;?>
     <?php endif; ?>
   </div>
@@ -78,7 +78,5 @@
                                             Solo se podra editar los tiempos de aquellos alumnos que <b>tiene registros en el sistema</b>'); ?>
 
   </div>
-  
-
   <div class="cierre_principal"></div>
 </div>
