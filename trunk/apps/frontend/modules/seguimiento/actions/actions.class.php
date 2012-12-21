@@ -300,7 +300,7 @@ class seguimientoActions extends sfActions
 
                    foreach ($v as $g=>$t)
                    {
-                       $g = str_replace("'", "", $g);
+                       $g = stripslashes(str_replace("'", "", $g));
 
                        switch ($g) {
                            case 'session':
@@ -310,9 +310,7 @@ class seguimientoActions extends sfActions
                                $rel_total_time = traducir_scorm12_a_fecha($t);
                                break;
                        }
-                       
                    }
-                   
                    $c5 = new Criteria();
                    $c5->add(Rel_usuario_sco12Peer::ID_SCO12,$k);
                    $c5->add(Rel_usuario_sco12Peer::ID_USUARIO,$this->usuario->getId());
@@ -329,16 +327,13 @@ class seguimientoActions extends sfActions
                    }   
 
                    if ($rel_session!='' && $rel_total_time!='')
-                   {
+                   {                   	
                      $rel->setSessionTime($rel_session);
                      $rel->setTotalTime($rel_total_time);
                      $rel->save();
                    }
-                   
                }
-               
            }
-
            if ($ejercicios_request!='')
            {
              foreach ($ejercicios_request as $k=>$v) {
