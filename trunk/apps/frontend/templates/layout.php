@@ -40,7 +40,7 @@
 
 </head>
 <body onresize="ajustarTamanoPantalla();">
-
+	<input type="hidden" name="et_test" value="test" />
 	<div id="contenido_wrap">
        <div id="contenido">
        	  <div id="truco"></div>
