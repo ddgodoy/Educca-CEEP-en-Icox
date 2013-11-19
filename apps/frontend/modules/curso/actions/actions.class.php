@@ -579,12 +579,22 @@ class cursoActions extends sfActions
         $rel->save();
       }
     }
+    //$ruta =  SF_ROOT_DIR.DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'materias'.DIRECTORY_SEPARATOR.$id_materia.DIRECTORY_SEPARATOR.$sco12->getFile();
+
     $cmi = new CMI($id_usuario, $id_sco12);
     $user->setAttribute('objeto_cmi', $cmi);
-    $ruta = '/materias/'.$id_materia.'/'.$sco12->getFile();
-    //$ruta =  SF_ROOT_DIR.DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'materias'.DIRECTORY_SEPARATOR.$id_materia.DIRECTORY_SEPARATOR.$sco12->getFile();
-    $this->ruta = $ruta;
-    $this->width = $materia->getWidth();
+
+    $file = $sco12->getFile();
+    
+    if (strpos($file, '/') !== false) {
+    	$auxi = explode('/', $file);
+    	$last = count($auxi) - 1;
+    	$file = $auxi[$last];
+    }
+    $ruta = '/materias/'.$id_materia.'/'.$file;
+
+    $this->ruta   = $ruta;
+    $this->width  = $materia->getWidth();
     $this->height = $materia->getHeight();
   }
 
