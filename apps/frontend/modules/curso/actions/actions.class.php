@@ -586,7 +586,7 @@ class cursoActions extends sfActions
 
     $file = $sco12->getFile();
     
-    if (strpos($file, '/') !== false) {
+    if (strpos($file, '/') !== false && $id_materia == 74) {
     	$auxi = explode('/', $file);
     	$last = count($auxi) - 1;
     	$file = $auxi[$last];

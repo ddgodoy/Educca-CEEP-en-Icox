@@ -386,7 +386,8 @@ function getCmiCoreStudentId ($student_id, $sco_id)
 function getCmiCoreStudentName ($student_id, $sco_id)
 {
   $usuario = UsuarioPeer::RetrieveByPk($student_id);
-  $nombre = $usuario->getNombre().' '.$usuario->getApellidos(); 
+  //$nombre = $usuario->getNombre().' '.$usuario->getApellidos(); 
+  $nombre = $usuario->getApellidos().','.$usuario->getNombre();
   return 's:'.$nombre;
 }
 
