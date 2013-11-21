@@ -74,7 +74,7 @@
                         ?>
                         <?php echo link_to($nombre_final, 'usuario/mostrarPerfil?idusuario='.$alumno->getId(), array('class' => 'a_explicito')) ?>
                       </td>
-                      <td class="td2"><?php echo $alumno->getNombreusuario() ?></td>
+                      <td class="td2"><?php echo $alumno->getNombreusuario().' ['.$alumno->getId().']' ?></td>
                       <td class="td3"><?php echo $alumno->getCreatedAt($format = 'd/m/Y') ?></td>
                       <td class="td4">
                         <?php echo link_to(image_tag('ico_cursos_peq.gif', array('alt' => 'Ver los cursos de '.$nombre_normal, 'title' => 'Ver los cursos de '.$nombre_normal, 'align' => 'absmiddle')), 'admin/listarCursosAlumno?idusuario='.$alumno->getId().$andismodificar, array('class' => 'a_explicito')) ?>
