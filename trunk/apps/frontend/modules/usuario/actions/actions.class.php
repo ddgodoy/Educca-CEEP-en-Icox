@@ -184,7 +184,8 @@ class usuarioActions extends sfActions
         if (! $pwd)
             {   $this->getRequest()->setError('Contrase&ntilde;a original', 'Debe indicar la contrase&ntilde;a');
                 $ok = false ;  }
-        else {   if (!$ValidadorStr->execute(&$pwd,&$error))
+        //else {   if (!$ValidadorStr->execute(&$pwd,&$error))
+        else {   if (!$ValidadorStr->execute($pwd,$error))
 		  	         {   $this->getRequest()->setError('Contrase&ntilde;a original', $error);
 			                $ok = false ;  }
 			           if ($ok)
