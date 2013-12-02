@@ -38,7 +38,7 @@ class loginComponents extends sfComponents
 	       			                       $destino = '/admin/index';
 	    		                        } else{ if ($usuario->hasCredential('moroso')) {
 	       			                                 $destino = '/moroso/index';
-	    		                              } else {  $destino = '/login/login';      //No debería llegar aquí
+	    		                              } else {  $destino = '/login/login';      //No deberï¿½a llegar aquï¿½
                                                     }
                                              }
                                         }
@@ -81,10 +81,10 @@ class loginComponents extends sfComponents
                :
                "unknown" );
 
-      // los proxys van añadiendo al final de esta cabecera
+      // los proxys van aï¿½adiendo al final de esta cabecera
       // las direcciones ip que van "ocultando". Para localizar la ip real
       // del usuario se comienza a mirar por el principio hasta encontrar
-      // una dirección ip que no sea del rango privado. En caso de no
+      // una direcciï¿½n ip que no sea del rango privado. En caso de no
       // encontrarse ninguna se toma como valor el REMOTE_ADDR
 
       $entries = split('[, ]', $_SERVER['HTTP_X_FORWARDED_FOR']);
@@ -178,9 +178,9 @@ class loginComponents extends sfComponents
   }
 
 
-  // Nombre del método: validateClaveolvidada()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Valida el formulario de Clave olvidada
+  // Nombre del mï¿½todo: validateClaveolvidada()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Valida el formulario de Clave olvidada
   				  Se mostrara en capa mediante AJAX
    */
    public function validateClaveolvidada()
@@ -207,7 +207,9 @@ class loginComponents extends sfComponents
      $ok = false ;  }
     else {  $ValidadorEmail = new sfEmailValidator();
             $ValidadorEmail->initialize($this->getContext(), null);
-	        if (!$ValidadorEmail->execute(&$email, &$error))
+            
+	        //if (!$ValidadorEmail->execute(&$email, &$error))
+	        if (!$ValidadorEmail->execute($email, $error))
 			   {   $this->getRequest()->setError('email', 'Direcci&oacute;n de email no es v&aacute;lida');
 			       $ok = false ;}
     	}
@@ -232,23 +234,23 @@ class loginComponents extends sfComponents
    return $ok;
   }
 
-  // Nombre del método: enviarCorreo($usuario,$pwd,$email)
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: enviar un correo al usuario indicandole su loggin y password
+  // Nombre del mï¿½todo: enviarCorreo($usuario,$pwd,$email)
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: enviar un correo al usuario indicandole su loggin y password
    */
 
   private function enviarCorreo($usuario,$pwd,$email)
   {
-    $message = "<html><head></head><body>Bienvenido a la academia¡¡¡¡<br><br><br><b>usuario:</b>".$usuario."<br><b>password:</b>".$pwd."</body></html>";
+    $message = "<html><head></head><body>Bienvenido a la academiaï¿½ï¿½ï¿½ï¿½<br><br><br><b>usuario:</b>".$usuario."<br><b>password:</b>".$pwd."</body></html>";
 
     $cabeceras = "From: adra-online@email.com\r\nContent-type: text/html\r\n";
     mail($email,'Bienvenido a la academia Adra',$message,$cabeceras);
 
   }
 
-  // Nombre del método: Claveolvidada
-  // Añadida por: Jacobo Chaquet
-  /* Descripción:   si el usuario olvida su clave se genera una clave aleatoria y se le envia a su correo, para ello el
+  // Nombre del mï¿½todo: Claveolvidada
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n:   si el usuario olvida su clave se genera una clave aleatoria y se le envia a su correo, para ello el
                     usuario debe indicar su correo y su DNI
    */
 	public function executeClaveolvidada()
@@ -290,9 +292,9 @@ class loginComponents extends sfComponents
          }
 	}
 
-  // Nombre del método: UsuarioValido()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción:   Comprueba que no haya dos o mas usuarios conectados si los hay expulsa a todos menos al último que entro
+  // Nombre del mï¿½todo: UsuarioValido()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n:   Comprueba que no haya dos o mas usuarios conectados si los hay expulsa a todos menos al ï¿½ltimo que entro
    */
 
 	public function executeUsuarioValido()
