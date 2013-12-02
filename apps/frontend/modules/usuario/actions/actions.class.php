@@ -125,7 +125,8 @@ class usuarioActions extends sfActions
       if (! $nombre)
       { $this->getRequest()->setError('nombre', 'Debe indicar el NOMBRE');
         $ok = false ;  }
-      else {   if (!$ValidadorStr->execute(&$nombre,&$error))
+      //else {   if (!$ValidadorStr->execute(&$nombre,&$error))
+      else {   if (!$ValidadorStr->execute($nombre,$error))
   			      {   $this->getRequest()->setError('nombre', $error);
   			         $ok = false ;  }
          	 }
