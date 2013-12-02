@@ -194,7 +194,8 @@ class usuarioActions extends sfActions
                    $nombreUsuario = $usuario->getNombreusuario();
 			             $loginValidator = new myLoginValidator();
 			             $loginValidator->initialize($this->getContext(), null);
-			             if (!$loginValidator->execute2(&$nombreUsuario,&$pwd,&$error))
+			             //if (!$loginValidator->execute2(&$nombreUsuario,&$pwd,&$error))
+			             if (!$loginValidator->execute2($nombreUsuario,$pwd,&$error))
 			             {
                      $this->getRequest()->setError('Contrase&ntilde;a original no v&aacute;lida', $error);
 			               $ok = false ;
