@@ -206,7 +206,8 @@ class usuarioActions extends sfActions
         if (! $pwd1)
             { $this->getRequest()->setError('nueva contrase&ntilde;a', 'Debe indicar la nueva contrase&ntilde;a');
               $ok = false ;  }
-        else {   if (!$ValidadorStr->execute(&$pwd1,&$error))
+        //else {   if (!$ValidadorStr->execute(&$pwd1,&$error))
+        else {   if (!$ValidadorStr->execute($pwd1,$error))
 		      	     {
                      $this->getRequest()->setError('nueva contrase&ntilde;a', $error);
 			               $ok = false ;
@@ -216,7 +217,8 @@ class usuarioActions extends sfActions
         if (! $pwd2)
         {   $this->getRequest()->setError('Repita contrase&ntilde;a', 'Debe indicar repetir la contrase&ntilde;a');
             $ok = false ;  }
-        else {   if (!$ValidadorStr->execute(&$pwd2,&$error))
+        //else {   if (!$ValidadorStr->execute(&$pwd2,&$error))
+        else {   if (!$ValidadorStr->execute($pwd2,$error))
 		      	     {
                      $this->getRequest()->setError('Repita contrase&ntilde;a', $error);
 			               $ok = false ;
