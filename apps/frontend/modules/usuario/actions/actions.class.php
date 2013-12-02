@@ -145,7 +145,8 @@ class usuarioActions extends sfActions
         $ok = false ;  }
       else {  $ValidadorEmail = new sfEmailValidator();
               $ValidadorEmail->initialize($this->getContext(), null);
-  	          if (!$ValidadorEmail->execute(&$email, &$error))
+  	          //if (!$ValidadorEmail->execute(&$email, &$error))
+  	          if (!$ValidadorEmail->execute($email, $error))
   			      {   $this->getRequest()->setError('email', 'Direcci�n de email no es v�lida');
   			          $ok = false ;  }
          	  }
