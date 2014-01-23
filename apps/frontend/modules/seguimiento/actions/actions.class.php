@@ -362,14 +362,16 @@ class seguimientoActions extends sfActions
        {
            $evento = EventoPeer::retrieveByPK($evento_usuario->getIdEvento());
 
-           $this->array_evento[$evento->getId()]['fecha_inicio'] = $evento->getFechaInicio();
-           $this->array_evento[$evento->getId()]['fecha_fin'] = $evento->getFechaFin();
-           $this->array_evento[$evento->getId()]['titulo'] = $evento->getTitulo();
-           $tipo_evento = Tipo_eventoPeer::retrieveByPK($evento->getIdTipoEvento());
-           $this->array_evento[$evento->getId()]['tipo'] = $tipo_evento->getDescripcion();
-           
-       }
+           if ($evento)
+           {
+	           $this->array_evento[$evento->getId()]['fecha_inicio'] = $evento->getFechaInicio();
+	           $this->array_evento[$evento->getId()]['fecha_fin'] = $evento->getFechaFin();
+	           $this->array_evento[$evento->getId()]['titulo'] = $evento->getTitulo();
 
+	           $tipo_evento = Tipo_eventoPeer::retrieveByPK($evento->getIdTipoEvento());
+	           $this->array_evento[$evento->getId()]['tipo'] = $tipo_evento->getDescripcion();	
+           }
+       }
   }
 
   // Nombre del metodo: executeOrdenar()
