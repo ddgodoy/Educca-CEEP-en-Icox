@@ -2,7 +2,7 @@
 <?php use_helper('SexyButton', 'Validation') ?>
 
 <?php if (!isset($mostrarForm)) : ?>
-<div class="tit_box_calendario"><h2 class="titbox">Modificar curso <?echo $curso->getNombre()?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Modificar curso <?php echo $curso->getNombre()?></h2></div>
 <div class="cont_box_grande">
 
 
@@ -14,7 +14,7 @@
     <table class="tablanuevocurso">
       <tr>
         <td class="titulo"><label for="materia">Materia:</label></td>
-        <td><?echo select_tag('materia_id', options_for_select($opciones, $curso->getMateria()->getId()), 'class=select')?></td>
+        <td><?php echo select_tag('materia_id', options_for_select($opciones, $curso->getMateria()->getId()), 'class=select')?></td>
       </tr>
       <tr>
         <td class="titulo"><label for="nombre">Nombre:</label></td>
@@ -71,7 +71,7 @@
     <table><tr><td><?php echo sexy_submit_tag('Guardar cambios'); ?></td></tr></table>
     </center>
     </form>
-<br><? use_helper('volver');  echo volver(); ?>
+<br><?php use_helper('volver');  echo volver(); ?>
     <!-- Capas AJAX -->
     <div id="guardar"></div>
     
@@ -79,9 +79,9 @@
 <div class="cierre_box_grande"></div>
 
 
-<? else : ?>
+<?php else : ?>
 <br><br>
 <?php echo image_tag('ico_p_endok.gif'); ?> Curso Modificado
 <?php use_helper('javascriptAjax') ?>
 <?php echo cargaPagina('admin/fichaCurso','idcurso='.$curso->getId()) ?>
-<? endif; ?>
+<?php endif; ?>

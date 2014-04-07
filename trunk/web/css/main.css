@@ -107,7 +107,7 @@ body
 	width: 100%;
 	height: 13px;
 	background:url(../images/cierre_box_correo.gif);
-	background-repeat: none;
+	background-repeat: 'none';
 }
 
 .herramientas_general {

@@ -1,8 +1,8 @@
 <?php use_helper('SexyButton') ?>
 
 <div id="divadmin">
-<?if (isset($curso)) : ?>
-  <div class="tit_box_mensajes"><h2 class="titbox">Alumnos del Curso: <?echo $curso->getNombre()?> en el <?echo $modulo->getNombre()?></h2></div>
+<?php if (isset($curso)) : ?>
+  <div class="tit_box_mensajes"><h2 class="titbox">Alumnos del Curso: <?php echo $curso->getNombre()?> en el <?php echo $modulo->getNombre()?></h2></div>
   <div class="cont_box_correo">
     <div class="herramientas">
         <table>
@@ -11,7 +11,7 @@
 		       <?php //echo sexy_button_to('Buscar','supervisor/buscar?rol=alumno&idcurso='.$curso->getId()) ?>
 		       </td>
         </tr>
-        <tr><td>Numero de alumnos en el curso: <?echo $modulo->getNumeroAlumnos()?></td></tr>
+        <tr><td>Numero de alumnos en el curso: <?php echo $modulo->getNumeroAlumnos()?></td></tr>
         </table>
     </div>
 
@@ -24,7 +24,7 @@
                 <td class="td3">% teoria</td>
                 <td class="td3">% Ejercicios</td>
                 <td class="td3">Tiempo Total&nbsp;</td>
-                <td class="td4">Opciones&nbsp;&nbsp;&nbsp;&nbsp;<? echo link_to('Estados','seguimiento/sourceHitos?idcurso='.$curso->getId())?>&nbsp;&nbsp;&nbsp;&nbsp;<? echo link_to('Temas','seguimiento/seguimientoPorTemas?idcurso='.$curso->getId())?></td>
+                <td class="td4">Opciones&nbsp;&nbsp;&nbsp;&nbsp;<?php echo link_to('Estados','seguimiento/sourceHitos?idcurso='.$curso->getId())?>&nbsp;&nbsp;&nbsp;&nbsp;<?php echo link_to('Temas','seguimiento/seguimientoPorTemas?idcurso='.$curso->getId())?></td>
               </tr>
         </table>
     </div>
@@ -36,17 +36,17 @@
                   <tr class="cont_fil" <?= $fondo1 ?>>
                       <td class="td1"><?php echo link_to($alumno->getUsuario()->getApellidos().", ".$alumno->getUsuario()->getNombre(), 'usuario/mostrarPerfil?idusuario='.$alumno->getUsuario()->getId()) ?></td>
                       <td class="td2"><?php echo $alumno->getUsuario()->getNombreusuario() ?></td>
-                      <? $tiempos = $alumno->getUsuario()->tiemposDedicados($curso->getId());        ?>
+                      <?php $tiempos = $alumno->getUsuario()->tiemposDedicados($curso->getId());        ?>
                       <?php if ($tiempos[0]+$tiempos[1]!=0) :?>
                       <?php use_helper('tiempo') ?>
                         <td class="td3">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo floor(($tiempos[0]/($tiempos[0]+$tiempos[1]))*100)?>%</center></td>
                         <td class="td3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo floor(($tiempos[1]/($tiempos[0]+$tiempos[1]))*100)?>%</td>
                         <td class="td3">&nbsp;&nbsp;&nbsp;&nbsp;<?php echoTiempo($tiempos[0]+$tiempos[1])?>&nbsp;</td>
-                      <? else :?>
+                      <?php else :?>
                         <td class="td3">&nbsp;&nbsp;&nbsp;&nbsp;0%</td>
                         <td class="td3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;0%</td>
                         <td class="td3">&nbsp;&nbsp;&nbsp;&nbsp;00:00:00&nbsp;</td>
-                      <? endif; ?>
+                      <?php endif; ?>
                       <td class="td4"><?php echo link_to('Tiempos','seguimiento/grafica?idusuario='.$alumno->getUsuario()->getId().'&tipo=alumno&idcurso='.$curso->getId()) ?>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--td class="td4"--><?php echo link_to('Estados','seguimiento/sourceHitos?idusuario='.$alumno->getUsuario()->getId().'&idcurso='.$curso->getId()) ?>
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<!--td class="td4"--><?php echo link_to('Temas','seguimiento/seguimientoPorTemas?idusuario='.$alumno->getUsuario()->getId().'&idcurso='.$curso->getId()) ?></td>
@@ -55,7 +55,7 @@
               <?php endforeach; ?>
         </table>
 
-<? else : ?>
+<?php else : ?>
 <div class="tit_box_mensajes"><h2 class="titbox">Alumnos del la plataforma</h2></div>
   <div class="cont_box_correo">
     <div class="herramientas">
@@ -66,7 +66,7 @@
 		       <?php echo sexy_button_to('Buscar','supervisor/buscar?rol=alumno') ?>
 		   </td>
         </tr>
-        <tr><td>Numero de alumnos : <?echo count($alumnos)?></td></tr>
+        <tr><td>Numero de alumnos : <?php echo count($alumnos)?></td></tr>
         </table>
     </div>
 
@@ -93,12 +93,12 @@
               <?php endforeach; ?>
         </table>
 
-<? endif; ?>
+<?php endif; ?>
 
     </div>
    <br>
    <?php use_helper('informacion') ?>
-   <?echoNotaInformativa('Ayuda', 'Desde este panel podr&aacute; acceder a la informaci&oacute;n de los alumnos, y observar sus progresos')?>
+   <?php echoNotaInformativa('Ayuda', 'Desde este panel podr&aacute; acceder a la informaci&oacute;n de los alumnos, y observar sus progresos')?>
 
   </div>
   <div class="cierre_box_correo"></div>

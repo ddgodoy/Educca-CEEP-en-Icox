@@ -22,7 +22,7 @@
   <?php echo input_hidden_tag('idcurso', $idcurso) ?>
   <?php if (isset($principal)) : ?>
      <?php echo input_hidden_tag('principal', $principal) ?>
-  <? endif; ?>
+  <?php endif; ?>
 
   <tr>
      <td>&nbsp;</td>
@@ -38,6 +38,6 @@
 <div id="guardar"></div>
 <?php use_helper('informacion'); ?>
 <br><br>
-<? echoNotaInformativaCorta('Ayuda', "Seleccione el numero d&iacute;as para mostrar eventos pr&oacute;ximos."); ?>
+<?php echoNotaInformativaCorta('Ayuda', "Seleccione el numero d&iacute;as para mostrar eventos pr&oacute;ximos."); ?>
 </div>
 <div class="cierre_box_grande"></div>

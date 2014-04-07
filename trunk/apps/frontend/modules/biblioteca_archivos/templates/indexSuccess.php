@@ -14,7 +14,7 @@
           </tr>
         </table>
       </div>
-      <? endif ?>
+      <?php endif ?>
       
       <?php include_component('biblioteca_archivos','listarBiblioteca',array('id_curso' => $curso->getId() )); ?>
       
@@ -22,7 +22,7 @@
       <div id="listado_mensajes_recibidos">
       </div>
     </form>
-    <br><? use_helper('volver'); echo volver(); ?>
+    <br><?php use_helper('volver'); echo volver(); ?>
   </div>
  <div class="cierre_box_correo"></div>
 </div>

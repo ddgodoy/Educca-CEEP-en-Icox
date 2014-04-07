@@ -2,7 +2,7 @@
 <?php use_helper('SexyButton') ?>
 
 <?php if (!isset($mostrarForm)) : ?>
-<div class="tit_box_calendario"><h2 class="titbox">Matricular usuario: <?echo $usuario->getNombre()." ".$usuario->getApellidos()?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Matricular usuario: <?php echo $usuario->getNombre()." ".$usuario->getApellidos()?></h2></div>
 <div class="cont_box_grande" style="padding-left: 20px;">
 <br>
     <?php echo form_tag('admin/guardar',array('name' => 'miform' )) ?>
@@ -10,12 +10,12 @@
 
       <tr>
         <td class="titulo"><label for="">Rol:</label></td>
-        <td><?echo select_tag('rol', options_for_select($opciones, 0),array('onchange' => 'cambiaOpcion()', 'name' => 'selectRol', 'style' => 'width: 130px;') )?></td>
+        <td><?php echo select_tag('rol', options_for_select($opciones, 0),array('onchange' => 'cambiaOpcion()', 'name' => 'selectRol', 'style' => 'width: 130px;') )?></td>
       </tr>
 
       <tr>
         <td class="titulo"><label for="">Matricular en:</label></td>
-        <td><?echo select_tag('tipo', options_for_select($opciones2, 0),array( 'name' => 'selectTipo', 'style' => 'width: 130px;' )  )?></td>
+        <td><?php echo select_tag('tipo', options_for_select($opciones2, 0),array( 'name' => 'selectTipo', 'style' => 'width: 130px;' )  )?></td>
       </tr>
       <tr>
         <td></td>
@@ -54,15 +54,15 @@
           }
      }
 ") ?>
-<br><? use_helper('volver');  echo volver(); ?>
+<br><?php use_helper('volver');  echo volver(); ?>
 </div>
 
 
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
 <br><br>
 <?php echo image_tag('ico_p_endok.gif'); ?> Curso Guardado
 
 <?php echo link_to('Volver', 'admin/cursos') ?>
-<? endif; ?>
+<?php endif; ?>

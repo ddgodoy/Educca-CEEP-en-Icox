@@ -52,8 +52,8 @@
 </div>
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
- <? /*$sf_Controller->redirect('admin/listaCursos?idusuario='.$idusuario.'&rol='.$rol);*/?>
+<?php else : ?>
+ <?php /*$sf_Controller->redirect('admin/listaCursos?idusuario='.$idusuario.'&rol='.$rol);*/?>
  <?php echo image_tag('ico_p_endok.gif'); ?> Guardado
- <br><? //echo $pwd ;?>
-<? endif; ?>
+ <br><?php //echo $pwd ;?>
+<?php endif; ?>

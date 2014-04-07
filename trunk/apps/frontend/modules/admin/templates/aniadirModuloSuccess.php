@@ -1,7 +1,7 @@
 <?php use_helper('Javascript') ?>
 
 <?php if (!isset($mostrarForm)) : ?>
-<div class="tit_box_calendario"><h2 class="titbox">Nuevos m&oacute;dulos para el <?echo $rol." ".$usuario->getNombre()." ".$usuario->getApellidos()?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Nuevos m&oacute;dulos para el <?php echo $rol." ".$usuario->getNombre()." ".$usuario->getApellidos()?></h2></div>
 <div class="cont_box_grande"><br>
 <?php use_helper('SexyButton') ?>
     <?php echo form_remote_tag(array(
@@ -62,18 +62,18 @@
 ") ?>
     <!-- Capas AJAX -->
     <div id="guardar"></div>
-<br><? use_helper('volver');  echo volver(); ?>
+<br><?php use_helper('volver');  echo volver(); ?>
 </div>
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
- <? /*$sf_Controller->redirect('admin/listaCursos?idusuario='.$idusuario.'&rol='.$rol);*/?>
- <? if (isset($errores)) : ?>
+<?php else : ?>
+ <?php /*$sf_Controller->redirect('admin/listaCursos?idusuario='.$idusuario.'&rol='.$rol);*/?>
+ <?php if (isset($errores)) : ?>
  	                <?php echo "<b>".$errores."<b><br>";?>
- <? endif; ?>
+ <?php endif; ?>
 
-<? if (empty($errores)) : ?>
+<?php if (empty($errores)) : ?>
   	    <?php use_helper('javascriptAjax') ?>
          <?php echo cargaPagina('admin/listaModulos','idusuario='.$usuario->getId().'&rol='.$rol) ?>
-<? endif; ?>
-<? endif; ?>
+<?php endif; ?>
+<?php endif; ?>

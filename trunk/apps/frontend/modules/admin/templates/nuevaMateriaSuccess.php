@@ -44,8 +44,8 @@
   </div>
   <div class="cierre_box_correo"></div>
 </div>
-<? else : ?>
-<? if (!isset($temasOK)) : ?>
+<?php else : ?>
+<?php if (!isset($temasOK)) : ?>
 <?php use_helper('Javascript') ?>
 <div id="mistemas">
 <div class="tit_box_mensajes"><h2 class="titbox">Alta de una nueva materia</h2></div>
@@ -63,7 +63,7 @@
         <td><?php echo input_tag('tema'.$i, '','class=input') ?></td>
         <td><?php echo select_tag('fichero'.$i, options_for_select($ficheros, 0), '') ?></td>
       </tr>
-    <?endfor; ?>
+    <?php endfor; ?>
         <tr>
         <td>&nbsp;</td>
         <td><div id="trans" class="trans">
@@ -81,10 +81,10 @@
 </div>
 <div class="cierre_box_correo"></div>
 </div>
- <? else : ?>
+ <?php else : ?>
   <?php use_helper('javascriptAjax') ?>
   <?php echo image_tag('ico_p_endok.gif'); ?> Materia Guardada
   <?php echo cargaPagina('admin/materias') ?>
- <? endif; ?>
+ <?php endif; ?>
 
-<?endif;?>
+<?php endif;?>

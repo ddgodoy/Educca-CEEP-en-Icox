@@ -2,7 +2,7 @@
 
 <?php if (!isset($mostrarForm)) : ?>
 <div id="mistemas">
- <div class="tit_box_mensajes"><h2 class="titbox"><? echo truncate_text( $curso->getNombre(), 60) ?> - Biblioteca de archivos - Subir nuevo</h2></div>
+ <div class="tit_box_mensajes"><h2 class="titbox"><?php echo truncate_text( $curso->getNombre(), 60) ?> - Biblioteca de archivos - Subir nuevo</h2></div>
   <div class="cont_box_correo">
 
 <?php echo form_tag('biblioteca_archivos/nuevo', 'multipart=true') ?>
@@ -45,8 +45,8 @@
 
 
 
-<? else : ?>
+<?php else : ?>
 
 
 
-<?endif;?>
+<?php endif;?>

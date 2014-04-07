@@ -12,10 +12,10 @@
 <div id="divforo">
   <div class="tit_box_mensajes"><h2 class="titbox">
         <?php if ($sf_user->getCursoMenu()) : ?>
-               <?echo "Foro - ".CursoPeer::retrieveByPk($sf_user->getCursoMenu())->getNombre()." - ".$topic->getTitle() ?>
-         <? else : ?>
+               <?php echo "Foro - ".CursoPeer::retrieveByPk($sf_user->getCursoMenu())->getNombre()." - ".$topic->getTitle() ?>
+         <?php else : ?>
               Comunidad
-         <? endif; ?>
+         <?php endif; ?>
   </h2></div>
   <div class="cont_box_correo">
     <div class="sfSimpleForum">
@@ -53,7 +53,7 @@
       <?php echo pager_navigation($post_pager, 'sfSimpleForum/topic?id='.$topic->getId().'&stripped_title='.$topic->getStrippedTitle()) ?>
 
     </div>
-    <? use_helper('volver');         echo volver();     ?>
+    <?php use_helper('volver');         echo volver();     ?>
   </div>
   <div class="cierre_box_correo"></div>
 </div>
