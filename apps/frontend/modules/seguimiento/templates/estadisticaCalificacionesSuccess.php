@@ -61,13 +61,13 @@
               <div class='c_tarea<?=$tarea->getId()?>'><?php echo $tarea->getEjercicio()->getTitulo(); ?></div>
             </td>
 
-            <td style="text-align:center;"><? $alumnos = $tarea->getEntregas($id_curso)?>
-              <? if ($alumnos) : ?>
+            <td style="text-align:center;"><?php $alumnos = $tarea->getEntregas($id_curso)?>
+              <?php if ($alumnos) : ?>
               <?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas de los alumnos" title="Gr&aacute;ficas de los alumnos" align="absmiddle"'),'seguimiento/grafica?idtarea='.$tarea->getId().'&tipo=tareaVSalumnos&idcurso='.$id_curso, array('class' => 'a_explicito','id'=>'ln_grafica_tarea'.$tarea->getId())) ?>
               <?php //echo link_to('Gr&aacute;fica de alumnos','seguimiento/grafica?idtarea='.$tarea->getId().'&tipo=tareaVSalumnos&idcurso='.$id_curso, array('class' => 'a_explicito')) ?>
-              <? else : ?>
+              <?php else : ?>
               (No hay entregas de esta tarea)
-              <? endif; ?>
+              <?php endif; ?>
             </td>
 
           </tr>
@@ -99,13 +99,13 @@
         <?php foreach($alumnos as $alumno):?>
           <?php $fondo = (($count % 2 == 0))? " id=\"filarayada\"" : ""; ?>
           <?php echo "<tr $fondo height=\"20\">" ?>
-          <td style="text-align:left; width: 485px; padding-left:3px;"><div class='c_alumno<?=$alumno->getId()?>'><? echo $alumno->getNombre().' '.$alumno->getApellidos()?></div></td>
-          <td style="text-align:center;"><? $tareas = $alumno->getTareasCorregidas($id_curso)?>
-            <? if ($tareas) : ?>
+          <td style="text-align:left; width: 485px; padding-left:3px;"><div class='c_alumno<?=$alumno->getId()?>'><?php echo $alumno->getNombre().' '.$alumno->getApellidos()?></div></td>
+          <td style="text-align:center;"><?php $tareas = $alumno->getTareasCorregidas($id_curso)?>
+            <?php if ($tareas) : ?>
             <?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas de las tareas" title="Gr&aacute;ficas de las tareas" align="absmiddle"'), 'seguimiento/grafica?idusuario='.$alumno->getId().'&tipo=alumnoVStareas&idcurso='.$id_curso, array('class' => 'a_explicito','id'=>'ln_tareas_alumno'.$alumno->getId())) ?>
-            <? else : ?>
+            <?php else : ?>
             (No hay entregas de esta tarea)
-            <? endif; ?>
+            <?php endif; ?>
           </td>
           </tr>
           <?php $count++; ?>
@@ -118,7 +118,7 @@
       </div>
     <?php endif;?>
 
-    <br><? use_helper('volver'); echo volver(); ?>
+    <br><?php use_helper('volver'); echo volver(); ?>
   </div>
 
   <div class="cierre_principal"></div>
