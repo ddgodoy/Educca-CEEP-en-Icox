@@ -8,8 +8,8 @@
 <?php endif; ?>
 
 <?php if (!isset($ajax)) : ?>
-	<div id="indicador" style="background-color:#000000;color:#CCCC00;position:absolute;text-align:center;top:150px;left:470px;padding:65px;font-size:25px;font-weight:bold;width:380px;z-index:0;filter:alpha(opacity=40);float:left;-moz-opacity:.40;opacity:.40;">Cargando informacion de <?echo $curso->getNombre()?>...</div>
-	<div id="resultado" style="z-index:5,display: none";></div>
+	<div id="indicador" style="background-color:#000000;color:#CCCC00;position:absolute;text-align:center;top:150px;left:470px;padding:65px;font-size:25px;font-weight:bold;width:380px;z-index:0;filter:alpha(opacity=40);float:left;-moz-opacity:.40;opacity:.40;">Cargando informacion de <?php echo $curso->getNombre()?>...</div>
+	<div id="resultado" style="z-index:5; display: none;"></div>
      <?php if (isset($idusuario)) : ?>
           <?php $cad='&idusuario='.$idusuario?>
      <?php else :?>

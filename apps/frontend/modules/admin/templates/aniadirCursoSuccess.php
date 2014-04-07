@@ -93,7 +93,7 @@
 </div>
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
   <?php echo image_tag('ico_p_endok.gif'); ?> Guardado
   <?php use_helper('javascriptAjax') ?>
   
@@ -105,4 +105,4 @@
     <?php echo cargaPagina('admin/listarCursosAlumno','idusuario='.$usuario->getId()) ?>
   <?php endif;?>
   
-<? endif; ?>
+<?php endif; ?>

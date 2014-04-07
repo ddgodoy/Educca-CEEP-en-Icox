@@ -124,7 +124,7 @@
                       </td>
 
                       <td class="td5">
-                        <?if ( (!$roles['supervisor']) && (!$roles['administrador']) ):?>
+                        <?php if ( (!$roles['supervisor']) && (!$roles['administrador']) ):?>
                           <?php echo link_to(image_tag('add_icon.gif','Alt="Matricular en nuevo curso" Title="Matricular en nuevo curso" align=absmiddle'),'admin/matricular?idusuario='.$usuario->getId()) ?>
                         <?php endif; ?>
                       </td>
@@ -185,12 +185,12 @@
     </div>
     <br>
       <?php if  (isset($superUsuario))  : ?>
-        <? echoNotaInformativa('Ayuda', "Desde este panel tendr&aacute; acceso a la informaci&oacute;n de los administradores y supervisores de la plataforma, y podr&aacute; dar de alta y baja a estos."); ?>
+        <?php echoNotaInformativa('Ayuda', "Desde este panel tendr&aacute; acceso a la informaci&oacute;n de los administradores y supervisores de la plataforma, y podr&aacute; dar de alta y baja a estos."); ?>
    <?php else  : ?>
-         <? echoNotaInformativa('Ayuda', "Desde este panel tendr&aacute; acceso a la informaci&oacute;n de los usuarios de la plataforma, pudiendo dar de alta en nuevos cursos o eliminarlos."); ?>
+         <?php echoNotaInformativa('Ayuda', "Desde este panel tendr&aacute; acceso a la informaci&oacute;n de los usuarios de la plataforma, pudiendo dar de alta en nuevos cursos o eliminarlos."); ?>
    <?php endif; ?>
 
-<br><? use_helper('volver');  echo volver(); ?>
+<br><?php use_helper('volver');  echo volver(); ?>
   </div>
   <div class="cierre_box_correo"></div>
 </div>

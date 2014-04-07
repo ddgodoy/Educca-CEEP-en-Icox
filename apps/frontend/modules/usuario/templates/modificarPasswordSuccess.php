@@ -1,7 +1,7 @@
 <?php use_helper('Javascript', 'Validation') ?>
 <?php use_helper('SexyButton') ?>
 <?php if (!isset($mostrarForm)) : ?>
-<div class="tit_box_calendario"><h2 class="titbox">Modificacion de contraseña del usuario: <?echo $usuario->getNombre()." ".$usuario->getApellidos()?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Modificacion de contraseña del usuario: <?php echo $usuario->getNombre()." ".$usuario->getApellidos()?></h2></div>
 <div class="cont_box_grande">
     <?php echo form_remote_tag(array(
         'update'   => 'guardar',
@@ -44,7 +44,7 @@
 </div>
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
   <?php echo image_tag('ico_p_endok.gif'); ?> La contrase&ntilde;a ha sido guardada correctamente.
 
   <?php
@@ -52,4 +52,4 @@
      use_helper('javascriptAjax');
      echo cargaPagina('usuario/mostrarPerfil'); ?>
 
-  <? endif; ?>
+  <?php endif; ?>

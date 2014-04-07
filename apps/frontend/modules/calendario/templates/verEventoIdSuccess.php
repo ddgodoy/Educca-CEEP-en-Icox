@@ -1,6 +1,6 @@
 <?php use_helper('Javascript') ?>
 <table class='c_ver_evento'>
-     <tr><td>Evento:</td><td><?echo ($evento->getPrivado()==1)? "PRIVADO" : "PUBLICO"?> </td></tr>
+     <tr><td>Evento:</td><td><?php echo ($evento->getPrivado()==1)? "PRIVADO" : "PUBLICO"?> </td></tr>
       <?php if (null!=$evento->getCurso()) :?>
 	    <tr><td>CURSO:</td><td>
 		    <?php echo $evento->getCurso()->getNombre() ;?>
@@ -18,7 +18,7 @@
 								 <?php endif; ?>
 	   							   </td>
        </tr>
-       <?echo (strlen($evento->getDescripcion())>50) ? "<tr><td>Descripcion :</td><td>".$evento->getDescripcion()."</td></tr>":"" ;?>
+       <?php echo (strlen($evento->getDescripcion())>50) ? "<tr><td>Descripcion :</td><td>".$evento->getDescripcion()."</td></tr>":"" ;?>
        <tr><td><?php echo link_to_remote('Cerrar', array(
                                                                    'update' => $idcapa,
                                                                    'url'    => 'calendario/cerrar',
@@ -27,10 +27,10 @@
 			     ?>
 			     <?php if (null==$evento->getTipo_evento()) :?>
 								            <?php if (isset($idcurso)) : ?>
-					                             <? echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getId().'&idcurso='.$idcurso,'confirm=&iquest;Esta seguro que desea eliminar la cita '.$evento->getTitulo().' ?') ?>
+					                             <?php echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getId().'&idcurso='.$idcurso,'confirm=&iquest;Esta seguro que desea eliminar la cita '.$evento->getTitulo().' ?') ?>
                                              <?php else : ?>
-												 <? echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getId().'&principal=1','confirm=&iquest;Esta seguro que desea eliminar la cita '.$evento->getTitulo().' ?') ?>
-									         <? endif; ?>
+												 <?php echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getId().'&principal=1','confirm=&iquest;Esta seguro que desea eliminar la cita '.$evento->getTitulo().' ?') ?>
+									         <?php endif; ?>
 				 <?php endif; ?>
        </td></tr>
 </table>

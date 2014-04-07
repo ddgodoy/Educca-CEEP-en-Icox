@@ -34,7 +34,7 @@
                     <?php echo link_to(image_tag('icon_edit.gif'),'curso/modificarLibro?idlibro='.$libro->getId()) ?>
                     | <?php echo link_to(image_tag('papelera.gif'),'curso/eliminarLibro?idlibro='.$libro->getId(),'confirm=&iquest;Esta seguro que desea eliminar el libro '.$libro->getNombre().' ?') ?>
                    	</td>
-                   	<?endif; ?>
+                   	<?php endif; ?>
                   </tr>
                   <?php $i++; ?>
                 <?php endforeach; ?>
@@ -46,7 +46,7 @@
           </table>
       </div>
       <br />
-      <? use_helper('volver'); ?>
+      <?php use_helper('volver'); ?>
 
         <?php if ($rol == 'profesor') : ?>
                 <?php if (isset($idcurso)) : ?>
@@ -57,12 +57,12 @@
         <center>
         <table border='0' width='100%'>
           <tr>
-             <td style="width: 300px;"><? echo volver(); ?></td>
+             <td style="width: 300px;"><?php echo volver(); ?></td>
              <td><?php echo sexy_button_to('Nuevo libro', 'curso/nuevoLibro'.$redireccion); ?></td>
           </tr>
         </table>
-        <? else : ?>
-          <? echo volver(); ?>
+        <?php else : ?>
+          <?php echo volver(); ?>
         <?php endif;?>
     </div>
     <div class="cierre_box_correo"></div>

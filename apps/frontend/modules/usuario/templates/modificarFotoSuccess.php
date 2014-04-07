@@ -1,7 +1,7 @@
 <?php use_helper('Javascript', 'Validation') ?>
 <?php use_helper('SexyButton') ?>
 <?php if (!isset($mostrarForm)) : ?>
-<div class="tit_box_calendario"><h2 class="titbox">Modificacion de foto usuario: <?echo $usuario->getNombre()." ".$usuario->getApellidos()?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Modificacion de foto usuario: <?php echo $usuario->getNombre()." ".$usuario->getApellidos()?></h2></div>
 
 
 <div class="cont_box_grande">
@@ -10,7 +10,7 @@
         	 <?php echo form_tag('usuario/modificarFoto?idusuario='.$usuario->getId(), 'multipart=true') ?>
 	     <?php else : ?>
 	         <?php echo form_tag('usuario/modificarFoto', 'multipart=true') ?>
- <? endif; ?>
+ <?php endif; ?>
 
 
     <table class="tablanuevocurso">
@@ -42,11 +42,11 @@
 </div>
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
   <?php echo image_tag('ico_p_endok.gif'); ?> Foto Guardada.
       <?php echo javascript_tag("
       //window.opener.location.reload();
       window.opener.document.cambio_info.submit();
       window.close();
           ") ?>
-<? endif; ?>
+<?php endif; ?>

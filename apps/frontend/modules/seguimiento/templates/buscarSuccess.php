@@ -3,7 +3,7 @@
 
 
 <?php if (!isset($mostrarForm)) : ?>
-<div class="tit_box_calendario"><h2 class="titbox">Buscar Alumno en curso <?echo $curso->getNombre(90)?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Buscar Alumno en curso <?php echo $curso->getNombre(90)?></h2></div>
 <div class="cont_box_grande">
 <?php echo form_tag('seguimiento/buscar?idcurso='.$curso->getId()) ?>
 
@@ -65,15 +65,15 @@
 ") ?>
     <!-- Capas AJAX -->
     <div id="buscar"></div>
-<br><? use_helper('volver'); echo volver(); ?>
+<br><?php use_helper('volver'); echo volver(); ?>
 </div>
     <div id="trans" class="trans" style="background-color:#000000;color:#CCCC00;position:absolute;text-align:center;top:150px;left:350px;padding:65px;font-size:25px;font-weight:bold;width:350px;height:50px;z-index:0;filter:alpha(opacity=50);float:left;-moz-opacity:.50;opacity:.50;display: none">
     <p></p>
    </div>
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
   <?php if (isset($curso)) : ?>
     <?php $search = true; ?>
     <?php include_component('seguimiento', 'listaAlumnos', array ('alumnos' => $alumnos , 'idcurso' => $curso->getId(), 'search' => true) ) ?>
-  <? endif; ?>
-<? endif; ?>
+  <?php endif; ?>
+<?php endif; ?>

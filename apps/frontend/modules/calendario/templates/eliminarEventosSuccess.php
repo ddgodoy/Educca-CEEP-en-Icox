@@ -35,10 +35,10 @@
                               }
                        ?></td>
                       <td class="td7"><?php if (isset($principal)) : ?>
-					                             <? echo link_to('Eliminar','calendario/eliminarEventoId?idevento='.$evento->getId().'&principal='.$principal,'confirm=&iquest;Esta seguro que desea eliminar el evento '.$evento->getTitulo().' ? id=ln_eliminar_evento'.$evento->getId()) ?>
+					                             <?php echo link_to('Eliminar','calendario/eliminarEventoId?idevento='.$evento->getId().'&principal='.$principal,'confirm=&iquest;Esta seguro que desea eliminar el evento '.$evento->getTitulo().' ? id=ln_eliminar_evento'.$evento->getId()) ?>
                                       <?php else : ?>
 									             <? echo link_to('Eliminar','calendario/eliminarEventoId?idevento='.$evento->getId().'&idcurso='.$idcurso,'confirm=&iquest;Esta seguro que desea eliminar el evento '.$evento->getTitulo().' ? id=ln_eliminar_evento'.$evento->getId()) ?>
-									  <? endif; ?>
+									  <?php endif; ?>
 					  </td>
                   </tr>
                   <?php $i++; ?>

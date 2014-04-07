@@ -1,7 +1,7 @@
 <?php use_helper('Javascript','Validation') ?>
 <?php if (!isset($mostrarForm)) : ?>
 <?php use_helper('SexyButton') ?>
-<div class="tit_box_calendario"><h2 class="titbox">Modificar informaci&oacute; de la materia <?echo $materia->getNombre()?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Modificar informaci&oacute; de la materia <?php echo $materia->getNombre()?></h2></div>
 <div class="cont_box_grande">
 
     <?php echo yzValidatorHelper::form_remote_tag(array( 'update'=> 'guardar',
@@ -42,7 +42,7 @@
              <table>
              <tr>
                <td><?php echo sexy_submit_tag('Modificar'); ?></td>
-               <td><?echo sexy_button_to('Modificar Contenidos', 'admin/modificarContenidosMateria?idmateria='.$materia->getId(), 'nodiv=true'); ?></td>
+               <td><?php echo sexy_button_to('Modificar Contenidos', 'admin/modificarContenidosMateria?idmateria='.$materia->getId(), 'nodiv=true'); ?></td>
               </tr> </table>
             </div>
 
@@ -58,10 +58,10 @@
 <div class="cierre_box_grande"></div>
 
 
-<? else : ?>
+<?php else : ?>
 <br><br>
 <?php echo image_tag('ico_p_endok.gif'); ?> Materia Modificada.
 <?php use_helper('javascriptAjax') ?>
 <?php echo cargaPagina('materia/fichaMateria',"idmateria=".$materia->getId()) ?>
 
-<? endif; ?>
+<?php endif; ?>

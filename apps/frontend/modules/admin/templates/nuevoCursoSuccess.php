@@ -33,7 +33,7 @@
       </tr>
       <tr>
         <td class="titulo"><label for="scan">Esc&aacute;ner:</label></td>
-        <td><?echo select_tag('scan', options_for_select($opcionesScan, 0), 'class=select')?></td>
+        <td><?php echo select_tag('scan', options_for_select($opcionesScan, 0), 'class=select')?></td>
       </tr>
       <tr>
         <td class="titulo"><label for="precio">Precio:</label></td>
@@ -85,15 +85,15 @@
   }
 
 ") ?>
-<br><? use_helper('volver');  echo volver(); ?>
+<br><?php use_helper('volver');  echo volver(); ?>
 </div>
 
 
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
 <br><br>
-<?php echo image_tag('ico_p_endok.gif'); ?> Curso <?echo $curso->getNombre() ?> Guardado
+<?php echo image_tag('ico_p_endok.gif'); ?> Curso <?php echo $curso->getNombre() ?> Guardado
 <?php use_helper('javascriptAjax') ?>
 <?php echo cargaPagina('admin/cursos') ?>
-<? endif; ?>
+<?php endif; ?>

@@ -15,10 +15,10 @@
 		</ul>
 	</div>
 	<div class="highslide-body">
-      <div style='padding-left:0px;align:left' id='tabla_leyenda'>
+      <div style='padding-left:0px; text-align: left' id='tabla_leyenda'>
               <div align='left'><b> &nbsp;Leyenda:</b><br><br></div></td>
                       <table border='0' width='280' >
-                      <? $c = new Criteria();
+                      <?php $c = new Criteria();
                          $events = Tipo_eventoPeer::doSelect($c) ?>
                       <tr>
                           <td style="border-color: #000000; border-width:1px; border-style: solid; font-size:10px" class='s21 today'><div class='s21 today'>&nbsp;&nbsp;</div></td>
@@ -28,26 +28,26 @@
                           <td style="border-color: #000000; border-width:1px; border-style: solid; font-size:10px" class='multiple'><div class='multiple'>&nbsp;&nbsp;</div></td>
                           <td>&nbsp;</td>
                           <td align='left' style="font-size:10px">Multiple</td>
-                      <?$i=2;?>
-                      <?foreach ($events as $evento ) :?>
-                        <?if ($i%3==0) :?>
+                      <?php $i=2;?>
+                      <?php foreach ($events as $evento ) :?>
+                        <?php if ($i%3==0) :?>
                          <tr>
-                        <? else : ?>
+                        <?php else : ?>
                           <td>&nbsp;</td>
-                        <?endif;?>
+                        <?php endif;?>
                           <td style="border-color: #000000; border-width:1px; border-style: solid; font-size:10px" class='<?= $evento->getClase()?>'><div class='<?= $evento->getClase()?>'>&nbsp;&nbsp;</div></td>
                           <td>&nbsp;</td>
                           <td align='left' style="font-size:10px">
-                                         <?
+                                         <?php
                                                echo $evento->getDescripcion();
                                          ?>
                           </td>
 
-                         <?if ($i%3==2) :?>
+                         <?php if ($i%3==2) :?>
                           </tr>
-                        <?endif;?>
-                         <? $i++;?>
-                      <? endforeach; ?>
+                        <?php endif;?>
+                         <?php $i++;?>
+                      <?php endforeach; ?>
                       </table>
 
         </div>

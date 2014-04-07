@@ -2,7 +2,7 @@
 <?php use_helper('informacion'); ?>
 
 <?php if (!isset($mostrarForm)) : ?>
-<div class="tit_box_calendario"><h2 class="titbox">Modificar modulo <?echo $modulo->getNombre()?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Modificar modulo <?php echo $modulo->getNombre()?></h2></div>
 <div class="cont_box_grande">
 <?php use_helper('SexyButton','Validation') ?>
 
@@ -47,20 +47,20 @@
 
 	  <tr>
         <td class="titulo"><label for="precio">webcam:</label></td>
-        <td><? if ($modulo->getWebcam() ) : ?>
+        <td><?php if ($modulo->getWebcam() ) : ?>
                       S&iacute;
-                    <? else :?>
+                    <?php else :?>
                        No
-                    <? endif; ?></td>
+                    <?php endif; ?></td>
       </tr>
 
 	  <tr>
         <td class="titulo"><label for="precio">scaner:</label></td>
-        <td><? if ($modulo->getScan() ) : ?>
+        <td><?php if ($modulo->getScan() ) : ?>
                       S&iacute;
-                    <? else :?>
+                    <?php else :?>
                        No
-                    <? endif; ?>
+                    <?php endif; ?>
               </td>
       </tr>
     </table>
@@ -150,9 +150,9 @@
 </div>
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
   	<?php use_helper('javascriptAjax') ?>
     <?php echo cargaPagina('admin/fichaModulo','idmodulo='.$modulo->getId()) ?>
-<? endif; ?>
+<?php endif; ?>
 
 

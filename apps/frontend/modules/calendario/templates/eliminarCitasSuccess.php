@@ -26,10 +26,10 @@
                       <td class="td5"><?php echo $evento->getEvento()->getTipo_cita()->getDescripcion()?></td>
                       <td class="td6"><?php echo $evento->getEvento()->getDescripcion() ?></td>
                       <td class="td7"><?php if (isset($idcurso)) : ?>
-                                                 <? echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getEvento()->getId().'&idcurso='.$idcurso,'confirm=¿Esta seguro que desea eliminar la cita '.$evento->getEvento()->getTitulo().' ?') ?>
+                                                 <?php echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getEvento()->getId().'&idcurso='.$idcurso,'confirm=ï¿½Esta seguro que desea eliminar la cita '.$evento->getEvento()->getTitulo().' ?') ?>
                                       <?php else : ?>
-												<? echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getEvento()->getId().'&principal='.$principal,'confirm=¿Esta seguro que desea eliminar la cita '.$evento->getEvento()->getTitulo().' ?') ?>
-									  <? endif; ?>
+												<?php echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getEvento()->getId().'&principal='.$principal,'confirm=ï¿½Esta seguro que desea eliminar la cita '.$evento->getEvento()->getTitulo().' ?') ?>
+									  <?php endif; ?>
 					  </td>
                   </tr>
                   <?php $i++ ?>

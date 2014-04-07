@@ -89,16 +89,16 @@
     <!-- Capas AJAX -->
     <div id="guardar"></div>
 
-<br><? use_helper('volver');  echo volver(); ?>
+<br><?php use_helper('volver');  echo volver(); ?>
 </div>
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
-  	<? /*echo "fecha inicio modulo: ".$fechaInicio."<br>"
+<?php else : ?>
+  	<?php /*echo "fecha inicio modulo: ".$fechaInicio."<br>"
   	   echo "fecha fin modulo: ".$fechaFin."<br>"
   	 echo "Necesita webcam: ".$webcam."<br>"
   	 echo "Necesita scan: ".$scan."<br>"*/
   	?>
   	<?php use_helper('javascriptAjax') ?>
     <?php echo cargaPagina('admin/modulos') ?>
-<? endif; ?>
+<?php endif; ?>

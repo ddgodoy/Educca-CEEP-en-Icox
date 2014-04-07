@@ -16,7 +16,7 @@
         	<?php $url = '?idusuario='.$usuario->getId() ?>
 	     <?php else : ?>
 	        <?php $url = '?' ?>
-	     <? endif; ?>
+	     <?php endif; ?>
 
 
     <?php echo form_remote_tag(array(
@@ -50,7 +50,7 @@
                             <td>*************</td>
                             <?php if ($sf_user->getAnyId() == $usuario->getId()) : ?>
                              <td><?php echo link_to(image_tag('b_modificar.gif'), 'usuario/modificarPassword?'.$redireccion) ?></td>
-                            <? endif; ?>
+                            <?php endif; ?>
                           </tr>
                         </table>
 
@@ -150,7 +150,7 @@
                     	<?php echo link_to(image_tag('b_modificar.gif'), 'usuario/modificarFoto?idusuario='.$usuario->getId(), array('popup' => array('', 'width=510,height=100,left=550,top=650'))) ?>
             	     <?php else : ?>
             	        <?php echo link_to(image_tag('b_modificar.gif'), 'usuario/modificarFoto', array('popup' => array('', 'width=510,height=100,left=550,top=650'))) ?>
-            	     <? endif; ?>
+            	     <?php endif; ?>
               </td>
             </tr>
           </table>
@@ -169,7 +169,7 @@
               	<?php echo sexy_button_to('Cancelar', 'usuario/mostrarPerfil?'.$redireccion.'&idusuario='.$usuario->getId()) ?>
       	     <?php else : ?>
       	        <?php echo sexy_button_to('Cancelar', 'usuario/mostrarPerfil?'.$redireccion) ?>
-      	     <? endif; ?>
+      	     <?php endif; ?>
 
               <div id="trans" class="trans">
                <?php echo sexy_submit_tag('Guardar',array('onmouseup'=>"bloqueaCapa('trans')")) ?>
@@ -187,10 +187,10 @@
     <div id="indicador" style="display: none">Procesando su petici&oacute;n...</div>
 </div>
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
 <?php use_helper('javascriptAjax') ?>
 <?php echo image_tag('ico_p_endok.gif'); ?> Los datos se han guardado correctamente
 <?php echo cargaPagina('usuario/mostrarPerfil',"idusuario=".$usuario->getId()) ?>
-<? endif; ?>
+<?php endif; ?>
 
 

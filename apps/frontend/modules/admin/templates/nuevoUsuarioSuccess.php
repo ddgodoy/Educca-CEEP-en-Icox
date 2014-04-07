@@ -2,7 +2,7 @@
 
 <?php if (!isset($mostrarForm)) : ?>
 <?php use_helper('SexyButton', 'Validation') ?>
-<div class="tit_box_calendario"><h2 class="titbox">Alta de un nuevo <?echo $rol?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Alta de un nuevo <?php echo $rol?></h2></div>
 <div class="cont_box_grande">
 
     <?php echo yzValidatorHelper::form_remote_tag(array( 'update'=> 'guardar',
@@ -187,26 +187,24 @@ function pulsadoCheckboxPaquetes(chk)
 </div>
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
   <br><br>
   <?php echo image_tag('ico_p_endok.gif'); ?> Guardado nuevo usuario
    <?php use_helper('javascriptAjax') ?>
 
-   <?if ("profesor"==$rol) : ?>
+   <?phpif ("profesor"==$rol) : ?>
         <?php echo cargaPagina('admin/profesores') ?>
-   <?endif;?>
+   <?php endif;?>
 
-   <?if ("alumno"==$rol) : ?>
+   <?php if ("alumno"==$rol) : ?>
         <?php echo cargaPagina('admin/alumnos') ?>
-   <?endif;?>
+   <?php endif;?>
 
-   <?if ("administrador"==$rol) : ?>
+   <?php if ("administrador"==$rol) : ?>
         <?php echo cargaPagina('admin/usuarios','superUsuario=1') ?>
-   <?endif;?>
+   <?php endif;?>
 
-   <?if ("supervisor"==$rol) : ?>
+   <?php if ("supervisor"==$rol) : ?>
         <?php echo cargaPagina('admin/usuarios','superUsuario=1') ?>
-   <?endif;?>
+   <?php endif;?>
 
-
-  <? endif; ?>

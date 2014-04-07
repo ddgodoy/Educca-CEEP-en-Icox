@@ -43,10 +43,10 @@
     <div id="guardar"></div>
 </div>
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
 <?php use_helper('javascriptAjax') ?>
 <?php echo image_tag('ico_p_endok.gif'); ?> Libro Guardado
 <?php echo cargaPagina('curso/mostrarBibliografia',"idcurso=".$sf_request->getParameter('idcurso')) ?>
-<? endif; ?>
+<?php endif; ?>
 
 

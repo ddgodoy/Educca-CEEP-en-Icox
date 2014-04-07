@@ -1,7 +1,7 @@
 <?php use_helper('Javascript', 'Validation','SexyButton','javascriptAjax') ?>
 <?php if (!isset($mostrarForm)) : ?>
 <div id="mensajes_recibidos">
-  <div class="tit_box_mensajes"><h2 class="titbox">Planificar el estudio de la teor&iacute;a del tema <?echo $tema->getNombre() ?> </h2></div>
+  <div class="tit_box_mensajes"><h2 class="titbox">Planificar el estudio de la teor&iacute;a del tema <?php echo $tema->getNombre() ?> </h2></div>
   <div class="cont_box_correo">
 
     <div class="detalles_mensaje">
@@ -9,17 +9,17 @@
             <table class="tabladetalles">
               <tr>
                 <td class="titulo">Curso:</td>
-                <td><? echo $curso->getnombre(90) ?></td>
+                <td><?php echo $curso->getnombre(90) ?></td>
               </tr>
 
                <tr>
                 <td class="titulo"> Fecha Inicio:</td>
-                <td><? echo $curso->getFechaInicio("d-m-Y") ?></td>
+                <td><?php echo $curso->getFechaInicio("d-m-Y") ?></td>
               </tr>
 
                <tr>
                 <td class="titulo">Fecha Fin:</td>
-                <td><? echo $curso->getFechaFin("d-m-Y") ?></td>
+                <td><?php echo $curso->getFechaFin("d-m-Y") ?></td>
               </tr>
 
               <tr>
@@ -28,7 +28,7 @@
                           <?php echo $temaCurso->getFechaCompletado("d-m-Y")?>
                      <?php else : ?>
 		                  Sin fecha asignada
-		              <? endif; ?>
+		              <?php endif; ?>
                 </td>
               </tr>
             </table>
@@ -42,12 +42,12 @@
         'script' => true)) ?>
     <table class="tabla_show_perfil2">
       <tr>
-        <td class="description"><?echo $tema->getNombre()?>:</td>
+        <td class="description"><?php echo $tema->getNombre()?>:</td>
         <td class="date"> <?php if (!$temaCurso) : ?>
                  <?php echo input_date_tag('fechaFin', '',array('rich' =>true, 'calendar_options' => 'ifFormat: "%d-%m-%Y",daFormat: "Y-%m-%d", date:'.date("Y-m-d"), 'class' => 'inputpeq')) ?>
              <?php else : ?>
 		          <?php echo input_date_tag('fechaFin', '',array('rich' =>true, 'calendar_options' => 'ifFormat: "%d-%m-%Y",daFormat: "Y-%m-%d", date:'.$temaCurso->getFechaCompletado("Y-m-d"), 'class' => 'inputpeq')) ?>
-		     <? endif; ?>
+		     <?php endif; ?>
 	    </td>
       </tr>
       <tr>
@@ -69,7 +69,7 @@
 </div>
 
 
-<? else : ?>
+<?php else : ?>
   <?php echo image_tag('ico_p_endok.gif'); ?> Fecha Guardada
   <?php echo cargaPagina('seguimiento/seguimientoTemas',"idcurso=".$sf_user->getCursoMenu()) ?>
-<? endif; ?>
+<?php endif; ?>

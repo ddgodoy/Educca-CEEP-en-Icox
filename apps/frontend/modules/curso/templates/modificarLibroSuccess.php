@@ -2,7 +2,7 @@
 <?php use_helper('SexyButton') ?>
 <?php use_helper('javascriptAjax') ?>
 <?php if (!isset($mostrarForm)) : ?>
-<div class="tit_box_calendario"><h2 class="titbox">Modificar Libro <?echo $libro->getNombre(100)?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Modificar Libro <?php echo $libro->getNombre(100)?></h2></div>
 <div class="cont_box_grande">
     <?php echo form_remote_tag(array(
         'update'   => 'guardar',
@@ -51,9 +51,9 @@
 </div>
 
 <div class="cierre_box_grande"></div>
-<? else : ?>
+<?php else : ?>
 <?php echo image_tag('ico_p_endok.gif'); ?> Libro modificado
 <?php echo cargaPagina('curso/mostrarBibliografia',"idcurso=".$sf_user->getCursoMenu()) ?>
-<? endif; ?>
+<?php endif; ?>
 
 

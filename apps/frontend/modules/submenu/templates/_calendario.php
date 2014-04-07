@@ -5,7 +5,7 @@
    <?php endif; ?>
 
 
-<div class="tit_box_submenu"><h2 class="titbox">Men&uacute; Calendario <?echo ($principal==1)? "Principal" : "Curso"?></h2></div>
+<div class="tit_box_submenu"><h2 class="titbox">Men&uacute; Calendario <?php echo ($principal==1)? "Principal" : "Curso"?></h2></div>
 <ul class="listamenu">
     <?php if ($principal==1) : ?>
     <li class="nuevacita"><?php echo link_to('Nueva cita', 'calendario/nuevoEventoCita?principal=1') ?></li>
@@ -17,7 +17,7 @@
     	<?php endif; ?>
     <li class="configuracion"><?php echo link_to('Configurar', 'calendario/configuracion?principal=1') ?></li>
     <?php else : ?>
-      <? /*<li class="nuevacita"><?php echo link_to('Nueva cita', 'calendario/nuevoEventoCita'.$redireccion) ?></li>
+      <?php /*<li class="nuevacita"><?php echo link_to('Nueva cita', 'calendario/nuevoEventoCita'.$redireccion) ?></li>
       <li class="nuevacita"><?php echo link_to('Eliminar cita', 'calendario/eliminarCitas'.$redireccion) ?></li>*/?>
       <li class="ultimoseventos"><?php echo link_to('&Uacute;ltimos eventos', 'calendario/mostrarCalendario'.$redireccion,array('id' => 'ln_ultimosEventos')) ?></li>
     	<?php if ($rol == 'profesor') : ?>
@@ -25,7 +25,7 @@
       	<li class="borrarevento"><?php echo link_to('Eliminar evento', 'calendario/eliminarEventos'.$redireccion,array('id' => 'ln_eliminarEventos')) ?></li>
     	<?php endif; ?>
     <li class="configuracion"><?php echo link_to('Configurar', 'calendario/configuracion'.$redireccion,array('id' => 'ln_confEventos')) ?></li>
-    <? endif; ?>
+    <?php endif; ?>
 
 </ul>
 

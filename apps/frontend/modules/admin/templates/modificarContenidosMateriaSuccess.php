@@ -3,7 +3,7 @@
 
 <?php if (!isset($mostrarForm)) : ?>
 <div id="mistemas">
-<div class="tit_box_calendario"><h2 class="titbox">Modificar contenidos materia <? echo $materia->getNombre() ?> </h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Modificar contenidos materia <?php echo $materia->getNombre() ?> </h2></div>
 <div class="cont_box_grande">
 
 <?php echo form_tag('admin/modificarContenidosMateria', 'multipart=true') ?>
@@ -34,10 +34,10 @@
 
 <div class="cierre_box_grande"></div>
 </div>
-<? else : ?>
-<? if (!isset($temasOK)) : ?>
+<?php else : ?>
+<?php if (!isset($temasOK)) : ?>
 <div id="mistemas">
-<div class="tit_box_mensajes"><h2 class="titbox">Modificar contenidos materia <? echo $materia->getNombre() ?> </h2></div>
+<div class="tit_box_mensajes"><h2 class="titbox">Modificar contenidos materia <?php echo $materia->getNombre() ?> </h2></div>
 <div class="cont_box_correo">
     <?php echo form_remote_tag(array(
         'update'   => 'guardar',
@@ -53,11 +53,11 @@
 
     <?php for($i=1;$i<=$numeroTemas;$i++) : ?>
       <tr>
-        <td class="titulo_largo"><label for="horaFin">tema<?echo $i;?>:</label></td>
+        <td class="titulo_largo"><label for="horaFin">tema<?php echo $i;?>:</label></td>
         <td><?php echo input_tag('tema'.$i, '','class=input') ?></td>
         <td><?php echo select_tag('fichero'.$i, options_for_select($ficheros, 0), '') ?></td>
       </tr>
-    <?endfor; ?>
+    <?php endfor; ?>
         <tr>
         <td>&nbsp;</td>
         <td><div id="trans" class="trans">
@@ -75,10 +75,10 @@
 </div>
 <div class="cierre_box_correo"></div>
 </div>
- <? else : ?>
+ <?php else : ?>
   <?php echo image_tag('ico_p_endok.gif'); ?> Materia Guardada
   <?php use_helper('javascriptAjax') ?>
   <?php echo cargaPagina('materia/fichaMateria',"idmateria=".$materia->getId()) ?>
- <? endif; ?>
+ <?php endif; ?>
 
-<?endif;?>
+<?php endif;?>

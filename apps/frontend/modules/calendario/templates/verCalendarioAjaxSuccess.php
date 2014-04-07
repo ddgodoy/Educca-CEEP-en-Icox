@@ -9,4 +9,4 @@
 																      'calendar' => $calendar
 																)
 							 ) ?>
-<? endif; ?>
+<?php endif; ?>

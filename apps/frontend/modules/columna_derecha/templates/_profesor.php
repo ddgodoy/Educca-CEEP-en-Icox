@@ -19,7 +19,7 @@
                     <td class="datosperfil">&nbsp;</td>
                 </tr>
 				<tr>
-                    <td class="datosperfil">Fecha Alta: <? echo $profesor->getCreatedAt("d / m / Y")?></td>
+                    <td class="datosperfil">Fecha Alta: <?php echo $profesor->getCreatedAt("d / m / Y")?></td>
                 </tr>
              </table>
           </td>

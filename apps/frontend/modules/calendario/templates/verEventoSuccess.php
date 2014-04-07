@@ -30,10 +30,10 @@
                           <td> 	
                             <?php if (null==$evento->getTipo_evento()) :?>
     								            <?php if (isset($idcurso)) : ?>
-    					                             <? echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getId().'&idcurso='.$idcurso,'confirm=&iquest;Esta seguro que desea eliminar la cita '.$evento->getTitulo().' ?') ?>
+    					                             <?php echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getId().'&idcurso='.$idcurso,'confirm=&iquest;Esta seguro que desea eliminar la cita '.$evento->getTitulo().' ?') ?>
                                 <?php else : ?>
-    												              <? echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getId().'&principal=1','confirm=&iquest;Esta seguro que desea eliminar la cita '.$evento->getTitulo().' ?') ?>
-    									          <? endif; ?>
+    												              <?php echo link_to('Eliminar','calendario/eliminarCitaId?idevento='.$evento->getId().'&principal=1','confirm=&iquest;Esta seguro que desea eliminar la cita '.$evento->getTitulo().' ?') ?>
+    									          <?php endif; ?>
     								        <?php endif; ?>
 							            </td>
        </tr>
