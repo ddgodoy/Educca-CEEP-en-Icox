@@ -39,7 +39,7 @@ class supervisorActions extends sfActions
       }
       $this->idcurso = $this->getRequestParameter('idcurso');
       $this->curso = CursoPeer::retrieveByPk($this->idcurso);
-	    $this->forward404Unless($this->curso);
+      $this->forward404Unless($this->curso);
   }
 
   // Nombre del metodo: executeModulos()

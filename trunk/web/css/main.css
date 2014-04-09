@@ -5928,3 +5928,49 @@ span.texto_azul_oscuro
   font-size: 11px;
   color: #016498;
 }
+
+.paginado a {
+	float: left;
+	height: 12px;
+	width: 12px;
+	margin-right: 4px;
+	font-size: 12px;
+	color: #666;
+}
+.paginado span {
+	float: left;
+	height: 12px;
+	width: 12px;
+	margin-right: 4px;
+	font-size: 12px;
+	color: #000;
+}
+.paginado a:hover {
+	color:#50AEC8;
+	text-decoration:underline;	
+}
+.paginado .flecha {
+	text-indent: -1000px;
+	background-repeat: no-repeat;
+	margin-right: 4px;
+	margin-left: 4px;
+}
+.paginado {
+	margin-bottom: 15px;
+}
+.paginado .flecha:hover {
+	background-position: left -12px;
+	text-decoration: none;
+}
+.paginado .l {
+	background-image: url(/images/l.gif); outline: none;
+}
+.paginado .l_all {
+	background-image: url(/images/l_all.gif);	outline: none;
+}
+.paginado .r {
+	background-image: url(/images/r.gif);	outline: none;
+}
+.paginado .r_all {
+	background-image: url(/images/r_all.gif); outline: none;
+}
