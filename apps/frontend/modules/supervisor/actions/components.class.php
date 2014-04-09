@@ -25,9 +25,21 @@ class supervisorComponents extends sfComponents
 
   public function executeMostrarCursos()
   {
-     $c = new Criteria();
-	   $this->cursos = CursoPeer::doSelect($c);
-     return;
+    $this->iPage      =$this->getRequestParameter('page',1);  
+    $this->str_module = $this->getModuleName();
+    $this->str_action = $this->getActionName();
+    $this->index_url  = $this->str_module.'/'.$this->str_action;
+    $this->head_link  = $this->index_url.'?page='.$this->iPage;
+    
+    $c = new Criteria();
+    $c->add(CursoPeer::NOMBRE, 'vacio', Criteria::ALT_NOT_EQUAL);
+    //$this->cursos = CursoPeer::doSelect($c);
+    $pager = new sfPropelPager('Curso',20); //nombre de la classepeer y numero de registro por pagina
+    $pager->setCriteria($c);
+    $pager->setPage($this->iPage);
+    $pager->init();
+    $this->cursos = $pager;
+    return;
   }
 
   public function executeMostrarModulos()

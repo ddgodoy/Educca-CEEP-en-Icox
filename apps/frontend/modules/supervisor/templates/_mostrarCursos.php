@@ -1,6 +1,7 @@
 <?php use_helper('SexyButton') ?>
 <?php use_helper('Text') ?>
 <?php use_helper('informacion') ?>
+<?php use_helper('PagerNavigation') ?>
 <div id="mensajes_recibidos">
   <div class="tit_box_mensajes"><h2 class="titbox">Cursos instalados en la plataforma</h2></div>
   <div class="cont_box_correo">
@@ -19,7 +20,7 @@
     <div class="listado_tabla_general_fixed">
         <table class="tmostrarCursos">
               <?php $i = 0; ?>
-              <?php foreach($cursos as $curso): ?>
+              <?php foreach($cursos->getResults() as $curso): ?>
                 <?php $nombrecurso = $curso->getNombre(); ?>
                 <?php if ($nombrecurso != "vacio") :?>
                   <?php $fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
@@ -28,7 +29,8 @@
                       <td class="td2"><?php echo $curso->getFechaInicio($format = 'd/m/Y') ?></td>
                       <td class="td3"><?php echo $curso->getFechaFin($format = 'd/m/Y') ?></td>
                       <td class="td4">
-                          <?php echo link_to(image_tag('ico_cursos_peq.gif',"Alt=\"Ficha completa del curso $nombrecurso\" Title=\"Ficha completa del curso $nombrecurso\" align=absmiddle"), 'supervisor/fichaCurso?idcurso='.$curso->getId().'&info=1',array('id'=>'ln_ficha_curso'.$curso->getId()) )?>
+                          <?php echo link_to(image_tag('ico_seguimiento_peq.gif',"Alt=\"Informe de seguimiento del curso $nombrecurso\" Title=\"Informe de seguimiento del curso $nombrecurso\" align=absmiddle"), 'supervisor/fichaCurso?idcurso='.$curso->getId().'&info=1',array('id'=>'ln_ficha_curso'.$curso->getId()) )?>
+                          &nbsp;&nbsp;&nbsp;<?php echo link_to(image_tag('ico_cursos_peq.gif',"Alt=\"Ficha completa del curso $nombrecurso\" Title=\"Ficha completa del curso $nombrecurso\" align=absmiddle"), 'supervisor/fichaCurso?idcurso='.$curso->getId().'&info=1',array('id'=>'ln_ficha_curso'.$curso->getId()) )?>
                           &nbsp;&nbsp;&nbsp;<?php echo link_to(image_tag('ico_tareas_peq.gif',"Alt=\"Ver tareas del curso $nombrecurso\" Title=\"Ver tareas del curso $nombrecurso\" align=absmiddle"), '/seguimiento/estadisticaCalificaciones?idcurso='.$curso->getId(),array('id'=>'ln_tareas_curso'.$curso->getId()) )?>
                           &nbsp;&nbsp;&nbsp;<?php echo link_to(image_tag('ico_dudas_peq.gif',"Alt=\"Ver dudas del curso $nombrecurso\" Title=\"Ver dudas del curso $nombrecurso\" align=absmiddle"),'seguimiento/grafica?&tipo=dudas&idcurso='.$curso->getId(),array('id'=>'ln_dudas_curso'.$curso->getId())) ?>
                           &nbsp;&nbsp;&nbsp;<?php echo link_to(image_tag('ico_alumnos_peq.gif',"Alt=\"Ver alumnos del curso $nombrecurso\" Title=\"Ver alumnos del curso $nombrecurso\" align=absmiddle"), 'supervisor/listaAlumnos?idcurso='.$curso->getId(),array('id'=>'ln_alumnos_curso'.$curso->getId())) ?>
@@ -47,13 +49,19 @@
      </div>
      <?php if ($i):?>
        <div class="totales_tabla">
-         Total: &nbsp;<?php echo $i; ?> curso(s)
+         <?php include_partial('menu/pager', array('pager'=>$cursos, 'url'=>$index_url, 'params'=>'', 'oCant'=>$cursos->getNbResults())) ?>
        </div>
      <?php endif;?>
      <div style="width: 100%; border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; border-bottom: 1px solid #cccccc; border-top: 0px none; text-align: left; padding-top: 3px; padding-bottom: 3px; background-color:#F8FFF8;">
       <table>
         <tr>
           <td style="padding-left: 4px;">
+            <?php echo image_tag('ico_seguimiento_peq.gif','Alt="Informe de seguimiento" Title="Informes de seguimiento"'); ?>
+          </td> 
+          <td>
+            Informe de seguimiento
+          </td>
+          <td style="padding-left: 20px;">
             <?php echo image_tag('ico_cursos_peq.gif','Alt="Ficha completa del curso" Title="Ficha completa del curso"'); ?>
           </td>
           <td>
@@ -94,7 +102,7 @@
     </div>
       <br>
 
-      <?echoNotaInformativa('Ayuda', 'Desde este panel podr&aacute; acceder a toda la informaci&oacute;n de un curso.')?>
+      <?php echoNotaInformativa('Ayuda', 'Desde este panel podr&aacute; acceder a toda la informaci&oacute;n de un curso.')?>
 
    </div> <!-- cont_box_correo-->
   <div class="cierre_box_correo"></div>

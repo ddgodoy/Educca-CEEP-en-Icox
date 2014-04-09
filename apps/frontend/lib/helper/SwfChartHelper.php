@@ -25,12 +25,14 @@
     $transparent_html = ($transparent) ? '<param name="wmode" value="transparent" />' : '' ;
     $movie = $flash_file.$u.'library_path='.$library_path.'&amp;php_source='.$xml_source.$license_query;
 
-  	return '<object type="application/x-shockwave-flash" data="'.$movie.'" width="'.$width.'" height="'.$height.'" id="chart">
+    
+  	echo  '<object type="application/x-shockwave-flash" data="'.$movie.'" width="'.$width.'" height="'.$height.'" id="chart">
   	         <param name="movie" value="'.$movie.'" />
   	         <param name="quality value="high" />
   	         <param name="bgcolor" value="'.$bg_color.'" />'
   	         . $transparent_html.
   	        '</object>';
+        exit();
 
   }
 
