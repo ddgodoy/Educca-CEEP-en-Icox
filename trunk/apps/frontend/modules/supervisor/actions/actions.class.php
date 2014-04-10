@@ -22,6 +22,34 @@ class supervisorActions extends sfActions
      else{ $this->tipo = $this->getRequestParameter('tipo');       }
   }
 
+  /**
+   * informe seguimiento
+   */
+  public function executeInformeSeguimiento()
+  {
+      if ($this->getRequestParameter('info')) {
+        $this->info =  '0';
+      }
+      $this->idcurso = $this->getRequestParameter('idcurso');
+      $this->curso = CursoPeer::retrieveByPk($this->idcurso);
+      $this->forward404Unless($this->curso);
+  }        
+  
+  /**
+   * informe seguimiento modulo
+   */
+  public function executeInformeSeguimientoModulo()
+  {
+      if ($this->getRequestParameter('info'))
+      {
+        $this->info =  '0';
+      }
+      $this->idmodulo = $this->getRequestParameter('idmodulo');
+      $this->modulo = PaquetePeer::retrieveByPk($this->idmodulo);
+      $this->forward404Unless($this->modulo);
+  }  
+  
+  
   // Nombre del metodo: executeCursos()
   // Añadida por: Jacobo Chaquet
   /* Descripcion: muestra la lista de cursos

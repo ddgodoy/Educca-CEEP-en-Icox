@@ -50,24 +50,24 @@
     <?php foreach ($relacion_tests as $elemento):?>
     <?php $fondo = (($count % 2 == 0))? " id=\"filarayada_verde\"" : ""; ?>
     <?php echo("<tr$fondo>"); ?>
-      <?$tarea = TareaPeer::retrieveByPk($elemento[0])?>
-      <? if ($modulo->evaluacionTarea($tarea->getId())) : ?>
+      <?php $tarea = TareaPeer::retrieveByPk($elemento[0])?>
+      <?php if ($modulo->evaluacionTarea($tarea->getId())) : ?>
            <td class="tdselect"><input type="checkbox" name="<?php echo "test$count" ?>" id="<?php echo "test$count" ?>" value="<?php echo $elemento[0]?>" checked ></td>
-           <? $ok = true; ?>
-      <? else : ?>
+           <?php $ok = true; ?>
+      <?php else : ?>
            <td class="tdselect"><input type="checkbox" name="<?php echo "test$count" ?>" id="<?php echo "test$count" ?>" value="<?php echo $elemento[0]?>"></td>
-           <? $ok = false; ?>
-      <? endif; ?>
+           <?php $ok = false; ?>
+      <?php endif; ?>
 
 
       <td class="tds1"><?php echo truncate_text($elemento[1], 36); ?></td>
       <td class="tds2"><?php echo $elemento[2]?></td>
       <td class="tds3"><?php echo truncate_text($elemento[4], 36); ?></td>
-      <? if ($ok) : ?>
+      <?php if ($ok) : ?>
           <td class="tds4"><?php echo input_tag('pesoTest'.$count, $modulo->evaluacionPesoTarea($tarea->getId()), array('maxlength'=>'4','size'=>'4')) ?></td>
-      <? else : ?>
+      <?php else : ?>
           <td class="tds4"><?php echo input_tag('pesoTest'.$count, '', array('maxlength'=>'4','size'=>'4')) ?></td>
-      <? endif; ?>
+      <?php endif; ?>
 
 
     <?php $count++;?>
@@ -99,23 +99,23 @@
     <?php $fondo = (($count % 2 == 0))? " id=\"filarayada_verde\"" : ""; ?>
     <?php echo("<tr$fondo>"); ?>
 
-        <?$tarea = TareaPeer::retrieveByPk($elemento[0])?>
-        <? if ($modulo->evaluacionTarea($tarea->getId())) : ?>
+        <?php $tarea = TareaPeer::retrieveByPk($elemento[0])?>
+        <?php if ($modulo->evaluacionTarea($tarea->getId())) : ?>
            <td class="tdselect"><input type="checkbox" name="<?php echo "cuestionario$count" ?>" id="<?php echo "cuestionario$count" ?>" value="<?php echo $elemento[0]?>" checked></td>
-           <? $ok = true; ?>
-        <? else : ?>
+           <?php $ok = true; ?>
+        <?php else : ?>
            <td class="tdselect"><input type="checkbox" name="<?php echo "cuestionario$count" ?>" id="<?php echo "cuestionario$count" ?>" value="<?php echo $elemento[0]?>"></td>
-           <? $ok = false; ?>
-        <? endif; ?>
+           <?php $ok = false; ?>
+        <?php endif; ?>
 
         <td class="tds1"><?php echo truncate_text($elemento[1], 36); ?></td>
         <td class="tds2"><?php echo $elemento[2]?></td>
         <td class="tds3"><?php echo truncate_text($elemento[4], 36); ?></td>
-        <? if ($ok) : ?>
+        <?php if ($ok) : ?>
           <td class="tds4"><?php echo input_tag('pesoCuest'.$count, $modulo->evaluacionPesoTarea($tarea->getId()), array('maxlength'=>'4','size'=>'4')) ?></td>
-        <? else : ?>
+        <?php else : ?>
           <td class="tds4"><?php echo input_tag('pesoCuest'.$count, '', array('maxlength'=>'4','size'=>'4')) ?></td>
-        <? endif; ?>
+        <?php endif; ?>
 
     <?php $count++;?>
     </tr>
@@ -147,23 +147,23 @@
     <?php $fondo = (($count % 2 == 0))? " id=\"filarayada_verde\"" : ""; ?>
     <?php echo("<tr$fondo>"); ?>
 
-        <?$tarea = TareaPeer::retrieveByPk($elemento[0])?>
-        <? if ($modulo->evaluacionTarea($tarea->getId())) : ?>
+        <?php $tarea = TareaPeer::retrieveByPk($elemento[0])?>
+        <?php if ($modulo->evaluacionTarea($tarea->getId())) : ?>
            <td class="tdselect"><input type="checkbox" name="<?php echo "problema$count" ?>" id="<?php echo "problema$count" ?>" value="<?php echo $elemento[0]?>" checked></td>
-           <? $ok = true; ?>
-        <? else : ?>
+           <?php $ok = true; ?>
+        <?php else : ?>
            <td class="tdselect"><input type="checkbox" name="<?php echo "problema$count" ?>" id="<?php echo "problema$count" ?>" value="<?php echo $elemento[0]?>"></td>
-           <? $ok = false; ?>
-        <? endif; ?>
+           <?php $ok = false; ?>
+        <?php endif; ?>
 
         <td class="tds1"><?php echo truncate_text($elemento[1], 36); ?></td>
         <td class="tds2"><?php echo $elemento[2]?></td>
         <td class="tds3"><?php echo truncate_text($elemento[4], 36); ?></td>
-        <? if ($ok) : ?>
+        <?php if ($ok) : ?>
           <td class="tds4"><?php echo input_tag('pesoProb'.$count, $modulo->evaluacionPesoTarea($tarea->getId()), array('maxlength'=>'4','size'=>'4')) ?></td>
-        <? else : ?>
+        <?php else : ?>
           <td class="tds4"><?php echo input_tag('pesoProb'.$count, '', array('maxlength'=>'4','size'=>'4')) ?></td>
-        <? endif; ?>
+        <?php endif; ?>
 
 
     <?php $count++;?>
@@ -180,9 +180,9 @@
 
 <br>
 <div id="guardar">
-<? if (isset($saveok)): ?>
+<?php if (isset($saveok)): ?>
 <br><?php echoNotaInformativa('', 'Los datos de la evaluaci&oacute;n han sido guardados.'); ?>
-<? endif; ?>
+<?php endif; ?>
 </div>
 
 <br><?php echoNotaInformativa('Ayuda', 'En esta panel podr&aacute; establecer los criterios de evaluaci&oacute;n para el m&oacute;dulo, guardarlos y evaluar a los alumnos y obtener un ranking de puntuaciones seg&uacute;n estos criterios. <br><br>Si quiere que un ejercicio punt&uacute;e en la evaluaci&oacute;n del m&oacute;dulo, marque la casilla correspondiente a dicho ejercicio y establezca el peso num&eacute;rico con el que se contabilizar&aacute; ese ejercicio. Cuando haya decidido que ejercicios se tendr&aacute;n en cuenta para la evaluaci&oacute;n haga clic en el bot&oacute;n "Guardar estos criterios de evaluaci&oacute;n".<br><br>El peso debe ser un n&uacute;mero. Por ejemplo 30 significa que ese ejercicio supondr&aacute; un 30% de la nota final del m&oacute;dulo.'); ?>

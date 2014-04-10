@@ -10,9 +10,9 @@
 class Paquete extends BasePaquete
 {
 
-// Nombre del método: getTotalPaquetes()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Devuelve el numero de modulos totales que hay en la base de datos
+// Nombre del mï¿½todo: getTotalPaquetes()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Devuelve el numero de modulos totales que hay en la base de datos
    */
 
  public function getTotalPaquetes()
@@ -22,9 +22,9 @@ class Paquete extends BasePaquete
   }
 
 
-// Nombre del método: getTodosPaquetes()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: evuelve los modulos totales que hay en la base de datos
+// Nombre del mï¿½todo: getTodosPaquetes()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: evuelve los modulos totales que hay en la base de datos
    */
 
  public function getTodosPaquetes()
@@ -34,9 +34,9 @@ class Paquete extends BasePaquete
   }
 
 
-  // Nombre del método: getCursos()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Devuelve el los cursos que  hay en un paquete
+  // Nombre del mï¿½todo: getCursos()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Devuelve el los cursos que  hay en un paquete
    */
 
  public function getCursos()
@@ -46,9 +46,9 @@ class Paquete extends BasePaquete
     return Rel_paquete_cursoPeer::doSelect($c2);
   }
 
-    // Nombre del método: estaVacio()
-    // Añadida por: Jacobo Chaquet
-    /* Descripción: comprueba que un curso esta limpio, esto es, si usuarios
+    // Nombre del mï¿½todo: estaVacio()
+    // Aï¿½adida por: Jacobo Chaquet
+    /* Descripciï¿½n: comprueba que un curso esta limpio, esto es, si usuarios
      */
 
    public function estaVacio()
@@ -60,9 +60,9 @@ class Paquete extends BasePaquete
      return true;
     }
 
-    // Nombre del método: geteliminarAll()
-    // Añadida por: Jacobo Chaquet
-    /* Descripción: elimina todo lo referente a un modulos
+    // Nombre del mï¿½todo: geteliminarAll()
+    // Aï¿½adida por: Jacobo Chaquet
+    /* Descripciï¿½n: elimina todo lo referente a un modulos
                     - cursos
                     - alumnos matriculados en el
                     - profesores
@@ -105,9 +105,9 @@ class Paquete extends BasePaquete
      }
 
 
-  // Nombre del método: actualiza($con=null)
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: actualiza la informacion de un paquete (fechas inicio, fecha fin, scan)
+  // Nombre del mï¿½todo: actualiza($con=null)
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: actualiza la informacion de un paquete (fechas inicio, fecha fin, scan)
    */
 
  public function actualiza($con=null)
@@ -173,9 +173,9 @@ class Paquete extends BasePaquete
   }
 
 
-  // Nombre del método: getRel_Alumnos()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: devuelve los alumnos del paquete //Rel_usuario_paquetePeer
+  // Nombre del mï¿½todo: getRel_Alumnos()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: devuelve los alumnos del paquete //Rel_usuario_paquetePeer
    */
 
  public function getRel_Alumnos()
@@ -186,9 +186,9 @@ class Paquete extends BasePaquete
     return Rel_usuario_paquetePeer::doSelect($c2);
    }
 
-  // Nombre del método: tieneAlumnos()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: indica si un paquete tiene alumnos o esta vacio, necesario para saber si se puede borrar un modulo
+  // Nombre del mï¿½todo: tieneAlumnos()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: indica si un paquete tiene alumnos o esta vacio, necesario para saber si se puede borrar un modulo
    */
 
  public function tieneAlumnos()
@@ -201,9 +201,9 @@ class Paquete extends BasePaquete
     } else return false;
    }
 
-  // Nombre del método: esModulo()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: indica si un usuario es moroso en el modulo
+  // Nombre del mï¿½todo: esModulo()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: indica si un usuario es moroso en el modulo
    */
 
  public function esMoroso($idusuario)
@@ -231,9 +231,9 @@ class Paquete extends BasePaquete
 
    }
 
-  // Nombre del método: esModulo()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: indica si un usuario esta esta en inscrito en paquete
+  // Nombre del mï¿½todo: esModulo()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: indica si un usuario esta esta en inscrito en paquete
    */
 
  public function perteneceUsuario($idusuario)
@@ -249,9 +249,9 @@ class Paquete extends BasePaquete
 	       }
    }
 
-  // Nombre del método: evaluacionPesoTarea($idtarea)
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: devuelve el peso de un ejercicio en la evaluacion
+  // Nombre del mï¿½todo: evaluacionPesoTarea($idtarea)
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: devuelve el peso de un ejercicio en la evaluacion
    */
 
 
@@ -261,13 +261,13 @@ class Paquete extends BasePaquete
      $c->add(Evaluacion_paquetePeer::ID_PAQUETE, $this->id);
      $c->add(Evaluacion_paquetePeer::ID_TAREA, $idtarea);
      $rel = Evaluacion_paquetePeer::doSelectOne($c);
-     return $rel->getPeso();
+     return $rel?$rel->getPeso():'';
    }
 
 
-  // Nombre del método: evaluacionEjercico($idejercicio)
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: devuelve true si el ejercicio pertencece a la evaluacion del modulo. tabla evaluacion_paquete
+  // Nombre del mï¿½todo: evaluacionEjercico($idejercicio)
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: devuelve true si el ejercicio pertencece a la evaluacion del modulo. tabla evaluacion_paquete
    */
 
  public function evaluacionTarea($idtarea)
@@ -283,9 +283,9 @@ class Paquete extends BasePaquete
   	         }
    }
 
-  // Nombre del método: getEvaluacion()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: devuelve los ejercicios que evaluan y sus peso, es decir la tabla evaluacion_paquete
+  // Nombre del mï¿½todo: getEvaluacion()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: devuelve los ejercicios que evaluan y sus peso, es decir la tabla evaluacion_paquete
    */
 
  public function getEvaluacion()
@@ -295,9 +295,9 @@ class Paquete extends BasePaquete
      return Evaluacion_paquetePeer::doSelect($c);
    }
 
-  // Nombre del método: getAlumnos()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: devuelve los alumnos matriculados en el paquete
+  // Nombre del mï¿½todo: getAlumnos()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: devuelve los alumnos matriculados en el paquete
    */
 
  public function getAlumnos($crit = null)
@@ -310,9 +310,9 @@ class Paquete extends BasePaquete
      return Rel_usuario_paquetePeer::doSelect($c);
    }
 
-  // Nombre del método: getNumeroAlumnos($crit = null)
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: devuelve el numero de alumnos matriculados en el paquete
+  // Nombre del mï¿½todo: getNumeroAlumnos($crit = null)
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: devuelve el numero de alumnos matriculados en el paquete
    */
 
  public function getNumeroAlumnos($crit = null)
@@ -325,9 +325,9 @@ class Paquete extends BasePaquete
      return Rel_usuario_paquetePeer::doCount($c);
    }
 
-  // Nombre del método: getEvaluacionAlumnos()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: devuelve un array con la evaluacion de los alumnos
+  // Nombre del mï¿½todo: getEvaluacionAlumnos()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: devuelve un array con la evaluacion de los alumnos
                    Si parametro $guardar == 1 guarda las notas en la tabla
                    formato array
                    datos[alumno]=arrayNotas[];
@@ -394,9 +394,9 @@ class Paquete extends BasePaquete
 	  return $datos;
    }
 
-  // Nombre del método: getNotasAlumno()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: devuelve un array con la evaluacion de un alumno
+  // Nombre del mï¿½todo: getNotasAlumno()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: devuelve un array con la evaluacion de un alumno
                    formato array:  result[]=(arrayNotas[],notaFinal);
                       arrayNotas=en cada indice esta la nota del ejercicio correspondiente al indice del array $ejerciciosEvaluacion,
                                 la ultima posicion es la nota total teniendo en cuenta los pesos
@@ -446,9 +446,9 @@ class Paquete extends BasePaquete
 
 
 
-  // Nombre del método: getRankingAlumnos
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: devuelve un array ordenado
+  // Nombre del mï¿½todo: getRankingAlumnos
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: devuelve un array ordenado
                   $modo = indica tipo de ordenacion
                   $modo = 1 de menor a mayor
                           e.o.c. de mayor a menor
@@ -481,7 +481,7 @@ class Paquete extends BasePaquete
    }
 
    /************************************
-    ** Alta de usuarios en módulo     **
+    ** Alta de usuarios en mï¿½dulo     **
     ** Autor: Todor Todorov           **
     ** Modificado por: Jacobo Chaquet **
     ***********************************/
