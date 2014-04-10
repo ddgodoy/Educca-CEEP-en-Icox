@@ -6,7 +6,7 @@
 
   <div class="tit_box_mensajes"><h2 class="titbox">
     <?php if (isset($curso)):?>
-      Profesores del Curso: <?echo $curso->getNombre()?>
+      Profesores del Curso: <?php echo $curso->getNombre()?>
     <?php else:?>
       Profesores de la plataforma
     <?php endif;?>

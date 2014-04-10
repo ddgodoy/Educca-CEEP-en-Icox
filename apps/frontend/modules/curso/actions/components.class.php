@@ -3,9 +3,9 @@
  class cursoComponents extends sfComponents
   {
 
-  // Nombre del método: ListaCursosAlumno()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Devuelve los paquetes en los que esta matriculado un alumno, y los cursos que esta matriculado qno pertenezcan a un paquete
+  // Nombre del mï¿½todo: ListaCursosAlumno()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Devuelve los paquetes en los que esta matriculado un alumno, y los cursos que esta matriculado qno pertenezcan a un paquete
   */
   public function executeListaCursosAlumno()
   {
@@ -50,9 +50,9 @@
    }
 
 
-  // Nombre del método: executeFichaCurso()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Muestra la informacion de un curso
+  // Nombre del mï¿½todo: executeFichaCurso()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Muestra la informacion de un curso
    */
 
 
@@ -83,5 +83,21 @@
       $this->rol = $usuario->obtenerCredenciales();
   }
 
+  public function executeSeguimientoCurso()
+  {
+      if (!isset($this->idcurso))
+      { echo "entra";
+        $this->idcurso = $this->getRequestParameter('idcurso');
+      }
+	    $this->curso = CursoPeer::retrieveByPk($this->idcurso);
 
+      $this->profesores = $this->curso->getProfesores();
+
+      $c2 = new Criteria();
+      $c2->addAscendingOrderByColumn(TemaPeer::ID);
+      $this->temas = $this->curso->getMateria()->getTemas($c2);
+
+      $usuario = $this->getUser();
+      $this->rol = $usuario->obtenerCredenciales();
+  }        
 }

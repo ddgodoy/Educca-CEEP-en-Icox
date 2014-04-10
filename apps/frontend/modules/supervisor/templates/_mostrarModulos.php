@@ -27,7 +27,8 @@
                       <td class="td2"><?php echo $modulo->getFechaInicio($format = 'd/m/Y') ?></td>
                       <td class="td3"><?php echo $modulo->getFechaFin($format = 'd/m/Y') ?></td>
                       <td class="td4" style="text-align: center;">
-                          <?php echo link_to(image_tag('ico_cursos_peq.gif',"Alt=\"Ver cursos del m&oacute;dulo $nombrecurso\" Title=\"Ver cursos del m&oacute;dulo $nombrecurso\" align=absmiddle"), 'supervisor/fichaModulo?idmodulo='.$modulo->getId().'&info=1',array('id'=>'ln_ficha_modulo'.$modulo->getId()) )?>
+                          <?php echo link_to(image_tag('ico_seguimiento_peq.gif',"Alt=\"Informe de seguimiento del m&oacute;dulo $nombrecurso\" Title=\"Informe de seguimiento del m&oacute;dulo $nombrecurso\" align=absmiddle"), 'supervisor/informeSeguimientoModulo?idmodulo='.$modulo->getId(),array('id'=>'ln_seguimiento_modulo'.$modulo->getId()) )?>
+                          &nbsp;&nbsp;&nbsp;<?php echo link_to(image_tag('ico_cursos_peq.gif',"Alt=\"Ver cursos del m&oacute;dulo $nombrecurso\" Title=\"Ver cursos del m&oacute;dulo $nombrecurso\" align=absmiddle"), 'supervisor/fichaModulo?idmodulo='.$modulo->getId().'&info=1',array('id'=>'ln_ficha_modulo'.$modulo->getId()) )?>
                           &nbsp;&nbsp;&nbsp;<?php echo link_to(image_tag('ico_evaluacion_peq.gif',"Alt=\"Ver evaluaci&oacute;n del m&oacute;dulo $nombrecurso\" Title=\"Ver evaluaci&oacute;n del m&oacute;dulo $nombrecurso\" align=absmiddle"), '/evaluacion/evaluacionModulo?idmodulo='.$modulo->getId(),array('id'=>'ln_tareas_modulo'.$modulo->getId()) )?>
                           &nbsp;&nbsp;&nbsp;<?php echo link_to(image_tag('ico_alumnos_peq.gif',"Alt=\"Ver alumnos del m&oacute;dulo $nombrecurso\" Title=\"Ver alumnos del m&oacute;dulo $nombrecurso\" align=absmiddle"), 'supervisor/listaAlumnosModulo?idmodulo='.$modulo->getId(),array('id'=>'ln_modulo'.$modulo->getId().'_alumnos')) ?>
                           &nbsp;&nbsp;&nbsp;<?php echo link_to(image_tag('ico_profesores_peq.gif',"Alt=\"Ver profesores del m&oacute;dulo $nombrecurso\" Title=\"Ver profesores del m&oacute;dulo $nombrecurso\" align=absmiddle"), 'supervisor/listaProfesoresModulo?idmodulo='.$modulo->getId()) ?>
@@ -51,6 +52,12 @@
       <table>
         <tr>
           <td style="padding-left: 4px;">
+            <?php echo image_tag('ico_seguimiento_peq.gif','Alt="Informe de seguimiento" Title="Informes de seguimiento"'); ?>
+          </td> 
+          <td>
+            Informe de seguimiento
+          </td>
+          <td style="padding-left: 20px;">
             <?php echo image_tag('ico_cursos_peq.gif','Alt="Ver cursos del m&oacute;dulo" Title="Ver cursos del m&oacute;dulo"'); ?>
           </td>
           <td>
