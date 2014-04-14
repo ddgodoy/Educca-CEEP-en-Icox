@@ -1,6 +1,6 @@
 <?php use_helper('SexyButton') ?>
 <div id="divadmin">
-  <div class="tit_box_mensajes"><h2 class="titbox">Lista de modulos para el <?echo $rol." ".$usuario->getNombre()." ".$usuario->getApellidos()?> </h2></div>
+  <div class="tit_box_mensajes"><h2 class="titbox">Lista de modulos para el <?php echo $rol." ".$usuario->getNombre()." ".$usuario->getApellidos()?> </h2></div>
   <div class="cont_box_correo" id="admin">
     <div class="herramientas_general_fixed">
        <table cellpadding="0" cellspacing="0">
@@ -25,10 +25,10 @@
     <div class="listado_tabla_general">
         <table class="tadmin_modulos_alumno">
         <?php $i = 0; ?>
-        <?if (!$usuario) : ?>
+        <?php if (!$usuario) : ?>
               <?php use_helper('informacion') ?>
-              <?echoAvisoVacioCorto("No hay modulos asignados") ?>
-        <? else : ?>
+              <?php echoAvisoVacioCorto("No hay modulos asignados") ?>
+        <?php else : ?>
               <?php foreach($modulos as $modulo): ?>
 
                   <?php $fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
@@ -44,18 +44,22 @@
                           ACTIVO
                         <?php endif; ?>
                       </td>
-					            <td class="td6">---</td>
+                      <td class="td6">
+                       <?php if ('supervisor'== $sf_user->obtenerCredenciales()) :?>    
+                        <?php echo link_to(image_tag('ico_seguimiento_peq.gif',"Alt=\"Informe de seguimiento del m&oacute;dulo ".$modulo->getPaquete()->getNombre()."\" Title=\"Informe de seguimiento del m&oacute;dulo ".$modulo->getPaquete()->getNombre()."\" align=absmiddle"), 'supervisor/informeSeguimientoModulo?idmodulo='.$modulo->getPaquete()->getId(),array('id'=>'ln_seguimiento_modulo'.$modulo->getPaquete()->getId()) )?>
+                       <?php endif; ?>   
+                      </td>
                     </tr>
                   <?php $i++ ?>
               <?php endforeach; ?>
-          <? endif; ?>
+          <?php endif; ?>
         </table>
     </div>
     <br>
     <?php use_helper('informacion'); ?>
     <?php echoNotaInformativa('',  "Un alumno <b>ACTIVO</b> tiene pleno acceso a todas las opciones de un curso o m&oacute;dulo
                                     <br><br>Un alumno aparece como <b>MOROSO</b> cuando tiene pendiente alguno de los pagos mensuales. El alumno no podr&aacute; acceder al curso o m&oacute;dulo correspondiente hasta que haya realizado sus pagos y la administraci&oacute;n le marque de nuevo como <b>ACTIVO</b>."); ?>
-    <br><? use_helper('volver');  echo volver(); ?>
+    <br><?php use_helper('volver');  echo volver(); ?>
   </div>
   <div class="cierre_box_correo"></div>
 </div>

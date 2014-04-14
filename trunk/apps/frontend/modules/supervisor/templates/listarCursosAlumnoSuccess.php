@@ -4,7 +4,7 @@
 
 <div class="capa_principal" id="admin">
 
-  <div class="titulo_principal"><h2 class="titbox">Lista de cursos del alumno <?echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></h2></div>
+  <div class="titulo_principal"><h2 class="titbox">Lista de cursos del alumno <?php echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></h2></div>
 
   <div class="contenido_principal">
 
@@ -62,7 +62,9 @@
               <?php if ($rels) : ?>
                 <?php echo link_to(image_tag('ayuda.png', array('alt' => 'Estos cursos pertenecen a un m&oacute;dulo, para gestionar los m&oacute;dulos del alumno haga clic aqu&iacute;', 'title' => 'Estos cursos pertenecen a un m&oacute;dulo, para gestionar los m&oacute;dulos del alumno haga clic aqu&iacute;')), 'supervisor/listaModulos?idusuario='.$usuario->getId()) ?>
               <?php else: ?>
-                ---
+                <?php if ('supervisor'== $sf_user->obtenerCredenciales()) :?> 
+                    <?php echo link_to(image_tag('ico_seguimiento_peq.gif',"Alt=\"Informe de seguimiento del curso ".truncate_text($curso->getCurso()->getNombre(), 50)."\" Title=\"Informe de seguimiento del curso ".truncate_text($curso->getCurso()->getNombre(), 50)."\" align=absmiddle"), 'supervisor/informeSeguimiento?idcurso='.$curso->getCurso()->getId(),array('id'=>'ln_seguimiento_curso'.$curso->getCurso()->getId()) )?>
+                <?php endif; ?>
               <?php endif; ?>
             </td>
           </tr>

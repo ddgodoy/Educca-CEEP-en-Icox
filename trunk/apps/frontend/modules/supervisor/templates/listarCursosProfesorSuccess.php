@@ -4,7 +4,7 @@
 
 <div class="capa_principal" id="admin">
 
-  <div class="titulo_principal"><h2 class="titbox">Lista de cursos impartidos por <?echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></h2></div>
+  <div class="titulo_principal"><h2 class="titbox">Lista de cursos impartidos por <?php echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></h2></div>
 
   <div class="contenido_principal">
 
@@ -32,7 +32,9 @@
             <td class="td3"><?php echo $curso->getCurso()->getFechaFin($format = 'd/m/Y') ?></td>
             <td class="td4"><?php echo $curso->getCurso()->getMateria()->getNumeroTemas()  ?></td>
             <td class="td5">
-              ---
+              <?php if ('supervisor'== $sf_user->obtenerCredenciales()) :?>   
+                <?php echo link_to(image_tag('ico_seguimiento_peq.gif',"Alt=\"Informe de seguimiento del curso ".truncate_text($curso->getCurso()->getNombre(), 50)."\" Title=\"Informe de seguimiento del curso ".truncate_text($curso->getCurso()->getNombre(), 50)."\" align=absmiddle"), 'supervisor/informeSeguimiento?idcurso='.$curso->getCurso()->getId(),array('id'=>'ln_seguimiento_curso'.$curso->getCurso()->getId()) )?>
+              <?php endif; ?>   
             </td>
           </tr>
           <?php $i++ ?>

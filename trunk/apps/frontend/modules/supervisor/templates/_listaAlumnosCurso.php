@@ -62,7 +62,9 @@
                   <td class="td4">
                     <?php echo link_to(image_tag('incompleto.png', 'title="Gr&aacute;fica de tiempos dedicados al curso por el alumno" alt="Gr&aacute;fica de tiempos dedicados al curso por el alumno" align="absmiddle"'), 'seguimiento/grafica?idusuario='.$alumno->getId().'&tipo=alumno&idcurso='.$idcurso,array('id'=>'tiempo_alumno'.$alumno->getId())) ?>
                     <?php if ($curso->getMateria()->getTipo() != 'compo'):?>
+                    <?php if ('supervisor'== $sf_user->obtenerCredenciales()) :?>  
                     &nbsp;&nbsp;<?php echo link_to(image_tag('ico_seguimiento_peq.gif', 'title="Gr&aacute;fica de planificaci&oacute;n. Permite ver si el alumno ha cumplido con la planificaci&oacute;n establecida para el curso." alt="Gr&aacute;fica de seguimiento. Permite ver si el alumno ha cumplido con la planificaci&oacute;n establecida para el curso." align="absmiddle"'), 'seguimiento/sourceHitos?idusuario='.$alumno->getId().'&idcurso='.$idcurso) ?>
+                    <?php endif; ?>
                     &nbsp;&nbsp;<?php echo link_to(image_tag('ico_cursos_peq.gif', 'title="Gr&aacute;fica de tiempos dedicados por tema" alt="Gr&aacute;fica de tiempos dedicados por tema" align="absmiddle"'), 'seguimiento/seguimientoPorTemas?idusuario='.$alumno->getId().'&idcurso='.$idcurso,array('id'=>'tiempo_alumno'.$alumno->getId())) ?>
                     <?php endif;?>
                     &nbsp;&nbsp;<?php echo link_to(image_tag('ico_evaluacion_peq.gif', 'title="Ficha de evaluaci&oacute;n del alumno en el curso" alt="Ficha de evaluaci&oacute;n del alumno en el curso" align="absmiddle"'), '/seguimiento/fichaEvaluacion?idcurso='.$idcurso.'&idalumno='.$alumno->getId(), array('id'=>'evaluacion_alumno'.$alumno->getId(),'popup' => array('', 'width=765,height=740,toolbar=0,location=0,status=0,menubar=0,resizable=0,top=0,left=200'))) ?>
