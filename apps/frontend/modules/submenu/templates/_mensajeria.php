@@ -13,4 +13,3 @@
     <li class="enviados"><?php echo link_to('Mensajes enviados', 'mensaje/mensajesEnviados'.$redireccion,array('name' => 'ln_enviados')) ?></li>
     <li class="papelera"><?php echo link_to('Papelera', 'mensaje/mensajesPapelera'.$redireccion,array('name' => 'ln_papelera')) ?></li>
 </ul>
-

@@ -11,5 +11,6 @@
     <li class="profesores"><?php echo link_to('Profesores', 'admin/profesores',array('name' => 'ln_profesores')) ?></li>
     <li class="alumnos"><?php echo link_to('Alumnos', 'admin/alumnos',array('name' => 'ln_alumnos')) ?></li>
     <li class="morosos"><?php echo link_to('Morosos', 'admin/morosos',array('name' => 'ln_morosos')) ?></li>
+    <li class="ticket"><?php echo link_to('Tickets', 'ticket/ticketsAdmin',array('name' => 'ln_ticket')) ?></li>
     <li class="salir"><?php echo link_to('Salir', 'login/logout',array('name' => 'ln_logout')) ?></li>
   </ul>

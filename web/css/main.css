@@ -821,6 +821,14 @@ ul.listamenu li.correo {
 	width:100%;
 }
 
+ul.listamenu li.ticket {
+	background:transparent url(../images/bot_archivos.gif) no-repeat scroll 0%;
+	float:left;
+	height:25px;
+	margin:0pt;
+	width:100%;
+}
+
 ul.listamenu li.chat {
 	background:transparent url(../images/bot_chat.gif) no-repeat scroll 0%;
 	float:left;
@@ -5973,4 +5981,18 @@ span.texto_azul_oscuro
 }
 .paginado .r_all {
 	background-image: url(/images/r_all.gif); outline: none;
+}
+.btn_et_submit {
+	border: 1px solid #CCCCCC;
+	background-color: #e7e7e7;
+	padding: 4px;
+	cursor: pointer;
+}
+.txt_et_form {
+	border: 1px solid #CCCCCC;
+	padding: 3px;
+}
+.txt_et_form2 {
+	border: 1px solid #CCCCCC;
+	padding: 4px;
 }

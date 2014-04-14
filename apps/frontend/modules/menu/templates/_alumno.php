@@ -56,6 +56,7 @@
     <ul class="listamenu">
       <li class="cursos"><?php echo link_to('Mis Cursos', 'alumno/misCursos',array('name' => 'ln_mis_cursos')) ?></li>
       <li class="correo"><?php echo link_to('Correo', 'mensaje/mensajesRecibidos',array('name' => 'ln_correo')) ?></li>
+      <li class="ticket"><?php echo link_to('Tickets', 'ticket/ticketsAlumno',array('name' => 'ln_ticket')) ?></li>
       <!--li class="calendario"><?php echo link_to('Agenda personal', 'calendario/mostrarCalendario?principal=1',array('name' => 'ln_calendario_principal')) ?></li-->
       <li class="infopersonal"><?php echo link_to('Informacion Personal', 'usuario/mostrarPerfil',array('name' => 'ln_perfil')) ?></li>
       <li class="salir"><?php echo link_to('Salir', 'login/logout',array('name' => 'ln_logout')) ?></li>
