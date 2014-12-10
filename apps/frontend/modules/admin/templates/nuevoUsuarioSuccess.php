@@ -207,4 +207,4 @@ function pulsadoCheckboxPaquetes(chk)
    <?php if ("supervisor"==$rol) : ?>
         <?php echo cargaPagina('admin/usuarios','superUsuario=1') ?>
    <?php endif;?>
-
+<?php endif;?>
