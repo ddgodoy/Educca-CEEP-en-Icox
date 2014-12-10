@@ -881,7 +881,8 @@ class adminActions extends sfActions
 
  	    $pwd = ""; substr($nombre,0,3).substr($apellidos,0,3).rand(100,999);
       $this->pwd = $pwd;
-
+        echo $nombreusuario;
+        exit();
       $con = Propel::getConnection();
       try {
         $con->begin();
