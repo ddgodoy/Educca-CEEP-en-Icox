@@ -93,7 +93,7 @@
     'frequency' => 180,
     'update'    => 'usuarioValido',
     'url'       => 'login/usuarioValido',
-    401 => "alert ('Alguien ha entrado con su usuario desde otro ordenador, y ha finalizado su sesi�n.');document.location='/';",
+    401 => "alert ('Alguien ha entrado con su usuario desde otro ordenador, y ha finalizado su sesión.');document.location='/';",
 )) ?>
 
  <?php include_partial('online/javascript_periodico') ;?>
