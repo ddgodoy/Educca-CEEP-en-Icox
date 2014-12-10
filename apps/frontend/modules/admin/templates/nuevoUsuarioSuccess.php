@@ -192,7 +192,7 @@ function pulsadoCheckboxPaquetes(chk)
   <?php echo image_tag('ico_p_endok.gif'); ?> Guardado nuevo usuario
    <?php use_helper('javascriptAjax') ?>
 
-   <?phpif ("profesor"==$rol) : ?>
+   <?php if ("profesor"==$rol) : ?>
         <?php echo cargaPagina('admin/profesores') ?>
    <?php endif;?>
 
