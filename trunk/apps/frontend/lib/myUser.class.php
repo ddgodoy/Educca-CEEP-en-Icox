@@ -230,6 +230,7 @@ class myUser extends sfBasicSecurityUser
 
     $criteria = new Criteria();
     $criteria->add(Rel_usuario_rol_cursoPeer::ID_ROL, $role_id);
+    $criteria->addDescendingOrderByColumn(CursoPeer::FECHA_INICIO);;
 
     $courses = $user->getRel_usuario_rol_cursosJoinCurso($criteria, $con = null);
     return $courses;

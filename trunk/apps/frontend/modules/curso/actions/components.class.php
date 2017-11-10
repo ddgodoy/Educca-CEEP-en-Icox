@@ -31,7 +31,9 @@
 	    $criteria->add(Rel_usuario_rol_cursoPeer::ID_ROL, $id_rol->getId());
 	    $criteria->add(Rel_usuario_rol_cursoPeer::ID_USUARIO, $idusario);
 	    $criteria->add(Rel_usuario_rol_cursoPeer::ID_CURSO,$cursosEnPaquete, Criteria::NOT_IN);
-      $this->cursos = Rel_usuario_rol_cursoPeer::doSelect($criteria);
+      $criteria->addDescendingOrderByColumn(CursoPeer::FECHA_INICIO);
+            //$this->cursos = Rel_usuario_rol_cursoPeer::doSelect($criteria);
+            $this->cursos = Rel_usuario_rol_cursoPeer::doSelectJoinAll($criteria);
 
       return;
      }

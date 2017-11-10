@@ -24,9 +24,9 @@ class chatActions extends sfActions
 	  $this->opciones = $opciones;
   }
 
-  // Nombre del método: UsuariosConectados()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: -Este metodo sera invocado de manera periodica (AJAX) para saber que usuarios estan conectados al chat
+  // Nombre del mï¿½todo: UsuariosConectados()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: -Este metodo sera invocado de manera periodica (AJAX) para saber que usuarios estan conectados al chat
                   de un determinado curso.
                   -Actualiza la hora de la base de datos (Rel_conectado_chat) del propio usuario
 				  -Para que muestre los usuarios realmente conectados (puede haber usuarios que hayan salido mal=cerrando ventana),
@@ -91,13 +91,15 @@ class chatActions extends sfActions
   				$response.= "\t</usuarios>\n";
   	   }
   	   $response.= "</response>";
+           echo $response;
+           exit();
   	   return $this->renderText($response);
    }
 
 
-  // Nombre del método: SalirUsuario()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Elimina de la base de datos (Rel_conectado_chat) al usuario de la sala del chat
+  // Nombre del mï¿½todo: SalirUsuario()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Elimina de la base de datos (Rel_conectado_chat) al usuario de la sala del chat
                   para que no siga saliendo conectado
    */
   public function executeSalirUsuario()

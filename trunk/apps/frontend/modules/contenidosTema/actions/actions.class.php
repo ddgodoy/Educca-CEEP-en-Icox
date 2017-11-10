@@ -54,9 +54,9 @@ class contenidosTemaActions extends sfActions
    }
 
 
-  // Nombre del método: executeControlTiempo()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Controla el tiempo que un usuario esta en un tema, funciona mediante ajax
+  // Nombre del mï¿½todo: executeControlTiempo()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Controla el tiempo que un usuario esta en un tema, funciona mediante ajax
    */
   public function executeControlTiempo()
   {
@@ -98,9 +98,9 @@ class contenidosTemaActions extends sfActions
    return sfView::NONE;
   }
 
-  // Nombre del método: executeInitialize()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Cuando un usuario se introduce en ese tema por primera vez guardamos la fecha
+  // Nombre del mï¿½todo: executeInitialize()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Cuando un usuario se introduce en ese tema por primera vez guardamos la fecha
    */
   public function executeInitialize()
   {
@@ -131,14 +131,17 @@ class contenidosTemaActions extends sfActions
    return sfView::NONE;
  }
 
-  // Nombre del método: executeFinish()
-  // Añadida por: Jacobo Chaquet
-  /* Descripción: Cuando un usuario finaliza tema guardamos la fecha
+  // Nombre del mï¿½todo: executeFinish()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Cuando un usuario finaliza tema guardamos la fecha
    */
   public function executeFinish()
   {
         $id = $this->getRequestParameter('id');   //id tiene el id de materia y tema concatenado cn el nombre del fichero
 
+        $type = $this->getRequestParameter('type','');
+        $idcurso = $this->getRequestParameter('idcurso','');
+        
          if ($this->getUser()->hasCredential('alumno'))
          {
            $idtema = $this->getRequestParameter('idtema');
@@ -163,8 +166,43 @@ class contenidosTemaActions extends sfActions
 				       }
 				   $RelTiempos->save();
 	       }
-   return sfView::NONE;
+               
+        if($type == 1){
+            $this->redirect('curso/mostrarTemas?idcurso='.$idcurso);
+        }else{
+            return sfView::NONE;
+        }
+               
+        
  }
 
+ // Nombre del mï¿½todo: executeFinish()
+  // Aï¿½adida por: Jacobo Chaquet
+  /* Descripciï¿½n: Cuando un usuario finaliza tema guardamos la fecha
+   */
+  public function executeFinishScorm()
+  {
+      $idcurso = $this->getRequestParameter('idcurso','');
+      $type = $this->getRequestParameter('type','');
+      if ($this->getUser()->hasCredential('alumno'))
+      {
+          $idscorm = $this->getRequestParameter('idscorm');
+          $c = new Criteria();
+          $c->add(Rel_usuario_sco12Peer::ID_SCO12, $idscorm);
+          $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->getUser()->getAnyId());
+          $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
+          
+          if ($rel){
+              $rel->setLessonStatus('completed');
+              $rel->save();
+          }
+      }
+      
+      if($type == 1){
+            $this->redirect('curso/mostrarTemas?idcurso='.$idcurso);
+        }else{
+            return sfView::NONE;
+        }
+  }
  
 }

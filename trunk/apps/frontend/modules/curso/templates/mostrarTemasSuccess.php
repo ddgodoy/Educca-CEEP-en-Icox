@@ -7,23 +7,13 @@
       <div class="nombrescol">
           <table class="tablatemas" cellspacing="0">
                 <tr>
-                  <?php if ($materia->getTipo() == 'segmentada'): ?>
-                    <th style="text-align: left; width: 70%; padding-left: 4px;"><div class='temario'>Temario</div></th>
-                    <th style="text-align: center; width: 20%;">Tiempo empleado</th>
-                    <th style="text-align: center; width: 10%;">Estado</th>
-                  <?php endif; ?>
-
-                  <?php if ($materia->getTipo() == 'compo'): ?>
-                    <th style="text-align: left; width: 70%; padding-left: 4px;"><div class='temario'>Temario</div></th>
-                    <th style="text-align: center; width: 20%;">&nbsp;</th>
-                    <th style="text-align: center; width: 10%;">&nbsp;</th>
-                  <?php endif; ?>
-
-                  <?php if ($materia->getTipo() == 'scorm1.2'): ?>
-                    <th style="text-align: left; width: 70%; padding-left: 4px;"><div class='temario'>Temario</div></th>
-                    <th style="text-align: center; width: 20%;">Tiempo empleado</th>
-                    <th style="text-align: center; width: 10%;">Estado</th>
-                  <?php endif; ?>
+                    <th style="text-align: left; width: 50%; padding-left: 4px;"><div class='temario'>Temario</div></th>
+                    <th style="text-align: center; width: 20%;">Fecha Finalización</th>
+                    <th style="text-align: center; width: 20%;"><?php if ($materia->getTipo() == 'compo'): ?>&nbsp;<?php else: ?>Tiempo empleado<?php endif; ?></th>
+                    <th style="text-align: center; width: 10%;"><?php if ($materia->getTipo() == 'compo'): ?>&nbsp;<?php else: ?>Estado<?php endif; ?></th>  
+                    <?php if($is_alumno): ?>
+                    <th style="text-align: center; width: 10%;"><?php if ($materia->getTipo() == 'compo'): ?>&nbsp;<?php else: ?>Opciones<?php endif; ?></th>  
+                    <?php endif; ?>
                 </tr>
           </table>
       </div>
@@ -42,9 +32,17 @@
             <?php $fondo = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
 
             <tr class="cont_fil" <?= $fondo ?>>
-              <td style="text-align: left; width: 70%; padding-left: 4px;">
+              <td style="text-align: left; width: 50%; padding-left: 4px;">
                 <?php echo link_to($tema->getNumeroTema().'. '.$tema->getNombre(), '/contenidosTema/verFichero?id='.$tema->getId().'&idmateria='.$tema->getIdMateria(), array( 'popup' => array('', "width=$width,height=$height,left=0,top=0,scrollbars=yes,resizable=yes"))); ?>
               </td>
+              <?php 
+                      $cct = new Criteria();
+                      $cct->add(Rel_curso_temaPeer::ID_CURSO, $idcurso);
+                      $cct->add(Rel_curso_temaPeer::ID_TEMA, $tema->getId());
+                      
+                      $curso_temas = Rel_curso_temaPeer::doSelectOne($cct);
+              ?>
+              <td style="text-align: center; width: 20%;"><?php echo $curso_temas->getFechaCompletado('d/m/Y') ?></td>
 
               <?php
                 $c = new Criteria();
@@ -76,6 +74,15 @@
                   <?php echo image_tag('nointentado.png','title=No intentado'); ?>
                 <?php endif; ?>
               </td>
+              <?php if($is_alumno): ?>
+              <td>
+                  <?php if($RelTiempos->getEstado() != 2):?>
+                    <?php echo link_to('Finalizar', 'contenidosTema/finish?type=1&idcurso='.$curso->getId().'&idtema='.$tema->getId()) ?>
+                  <?php else: ?>
+                    &nbsp;
+                  <?php endif ?>
+              </td>      
+              <?php endif; ?>
             </tr>
             <?php $i++; ?>
             <?php endforeach;?>
@@ -96,13 +103,22 @@
 
             <tr class="cont_fil" <?= $fondo ?>>
 
-              <td style="text-align: left; width: 70%; padding-left: 4px;">
+              <td style="text-align: left; width: 50%; padding-left: 4px;">
                 <?php echo $tema->getNombre(); ?>
               </td>
+              <?php 
+                      $cct = new Criteria();
+                      $cct->add(Rel_curso_temaPeer::ID_CURSO, $idcurso);
+                      $cct->add(Rel_curso_temaPeer::ID_TEMA, $tema->getId());
+                      
+                      $curso_temas = Rel_curso_temaPeer::doSelectOne($cct);
+              ?>
+              <td style="text-align: center; width: 20%;"><?php echo $curso_temas->getFechaCompletado('d/m/Y') ?></td>
               <td style="text-align: center; width: 20%;">&nbsp;</td>
-              <td style="text-align: center; width: 10%;">&nbsp;
-
-              </td>
+              <td style="text-align: center; width: 10%;">&nbsp;</td>
+              <?php if($is_alumno): ?>
+              <td style="text-align: center; width: 10%;">&nbsp;</td>
+              <?php endif; ?>
             </tr>
             <?php $i++; ?>
             <?php endforeach;?>
@@ -123,10 +139,24 @@
 
             <tr class="cont_fil" <?= $fondo ?>>
 
-              <td style="text-align: left; width: 65%; padding-left: 4px;">
-                <a style="color:#003399;" href="javascript:void(0)" onclick="window.open('<?php echo url_for('curso/mostrarContenido?sco12id='.$sco->getId()) ?>', 'scormbrowser', 'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=0, scrollbars=0, height=<?php echo $materia->getHeight()?>, width=<?php echo $materia->getWidth()?>')"><?php echo $sco->getTitle(); ?></a>
+              <td style="text-align: left; width: 45%; padding-left: 4px;">
+                <a style="color:#003399;" href="javascript:void(0)" onclick="window.open('<?php echo url_for('curso/mostrarContenido?sco12id='.$sco->getId().'&id_curso='.$idcurso) ?>', 'scormbrowser', 'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=0, scrollbars=0, height=<?php echo $materia->getHeight()?>, width=<?php echo $materia->getWidth()?>')"><?php echo $sco->getTitle(); ?></a>
               </td>
-
+              <?php 
+              
+                      $ct  = new Criteria();
+                      $ct->add(TemaPeer::NOMBRE, $sco->getTitle());
+                      $ct->add(TemaPeer::ID_MATERIA, $idmateria);
+                      $tema_sc = TemaPeer::doSelectOne($ct);
+                      
+                      
+                      $cct = new Criteria();
+                      $cct->add(Rel_curso_temaPeer::ID_CURSO, $idcurso);
+                      $cct->add(Rel_curso_temaPeer::ID_TEMA, $tema_sc->getId());
+                      
+                      $curso_temas = Rel_curso_temaPeer::doSelectOne($cct);
+              ?>
+              <td style="text-align: right; width: 15%;"><?php echo $curso_temas->getFechaCompletado('d/m/Y'); ?></td>
                 <?php $c = new Criteria();?>
                 <?php $c->add(Rel_usuario_sco12Peer::ID_SCO12, $sco->getId());?>
                 <?php $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $id_usuario);?>
@@ -135,9 +165,9 @@
                 <td style="text-align: right; padding-right: 24px; width: 25%;">
                   <?php $tt = $rel->getTiempoTotal(); $total += $tt;?>
                   <?php $horas = floor($tt/3600); ?>
-                  <?php $minutos = (floor($tt/60) % 60); ?>
-                  <?php if ($horas) {$texto_horas = sprintf("<strong>%02d</strong> horas &nbsp;", $horas);} else {$texto_horas = '';} ?>
-                  <?php if ($minutos) {$texto_minutos = sprintf("<strong>%02d</strong> minutos", $minutos);} else {$texto_minutos = '00 minutos';} ?>
+                  <?php $minutos = number_format(($tt/60),2); ?> 
+                  <?php if ($horas) {$texto_horas = "<strong>$horas</strong> horas &nbsp;";} else {$texto_horas = '';} ?>
+                  <?php if ($minutos) {$texto_minutos = "<strong>$minutos</strong> minutos";} else {$texto_minutos = '00 minutos';} ?>
                   <?php echo $texto_horas.$texto_minutos;?>
                 </td>
                 <?php else: ?>
@@ -152,16 +182,27 @@
                 {
                   case 'nointentado': echo image_tag('nointentado.png','title=No intentado');  break;
                   case 'completed': echo image_tag('finalizado.png','title=Finalizado');  break;
+                  case 'passed': echo image_tag('finalizado.png','title=Finalizado');  break;
                   default: echo image_tag('incompleto.png','title=Incompleto');  break;
                 } // switch
               ?>
               </td>
+              <?php if($is_alumno): ?>
+              <td>
+                  <?php if($rel->getLessonStatus() != 'completed' && $rel->getLessonStatus() != 'passed'):?>
+                    <?php echo link_to('Finalizar', 'contenidosTema/finishScorm?type=1&idcurso='.$curso->getId().'&idscorm='.$sco->getId()) ?>
+                  <?php else: ?>
+                    &nbsp;
+                  <?php endif ?> 
+              </td>
+              <?php endif ?> 
             </tr>
             <?php $i++; ?>
             <?php endforeach;?>
             <?php $horas = floor($total/3600); ?>
-            <?php $minutos = (floor($total/60) % 60); ?>
-          <?php endif; ?>
+            <?php $minutos = number_format(($total/60),2); ?>
+          
+        <?php endif; ?>
         </table>
       </div>
 
@@ -184,7 +225,7 @@
                       {
                         $ttotal = $rel->getTiempoTotal();
                         $horas = floor($ttotal / 3600);
-                        $minutos = (floor($ttotal / 60) % 60);
+                        $minutos = number_format(($ttotal / 60),2);
                         echo "$horas horas y $minutos minutos";
                       }
                       else
@@ -239,7 +280,7 @@
 	                <?php endif; ?>
 					      </td>
 					      <td style="width: 50%; text-align: right; padding-right: 5px;">
-					        <?php if ($materia->getTipo() == 'scorm1.2') {printf("Tiempo total invertido en el curso: <strong>%02d</strong> horas &nbsp; <strong>%02d</strong> minutos", $horas, $minutos);} ?>
+					        <?php if ($materia->getTipo() == 'scorm1.2') {echo "Tiempo total invertido en el curso: <strong>$horas</strong> horas &nbsp; <strong>$minutos</strong> minutos";} ?>
 					      </td>
 	            </tr>
 	        </table>

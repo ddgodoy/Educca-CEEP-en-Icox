@@ -20,7 +20,8 @@ class onlineActions extends sfActions
   }
 
   public function executeActualizaTiempo()
-  { //return;echo "1<br>";
+  { //echo "1<br>";
+    //exit();
     $id_usuario = $this->getUser()->getAnyId();
     $usuario = UsuarioPeer::retrieveByPk($id_usuario);
     //$this->forward404Unless($usuario);
@@ -32,6 +33,7 @@ class onlineActions extends sfActions
           return sfView::NONE;
        }
        //echo "3<br>";
+       //exit();
        $id_curso = $this->getUser()->getCursoMenu();
        if ($id_curso)
        { $curso = CursoPeer::retrieveByPk($id_curso);

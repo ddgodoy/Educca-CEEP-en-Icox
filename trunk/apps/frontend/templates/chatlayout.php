@@ -7,7 +7,7 @@
 
 <?php echo include_title() ?>
 <?php echo use_helper('rollover') ?>
-
+<script type="text/javascript" src="/js/chat/jquery-3.1.1.min.js"></script>
 <link rel="shortcut icon" href="/favicon.ico" >
 <link rel="icon" href="/icoanim.gif" type="image/gif" >
 
