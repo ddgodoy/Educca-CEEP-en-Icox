@@ -294,7 +294,9 @@ class Usuario extends BaseUsuario
    	$c2 = new Criteria();
    	$c2->add(Rel_usuario_rol_cursoPeer::ID_ROL, $id_rol);
    	$c2->add(Rel_usuario_rol_cursoPeer::ID_USUARIO, $this->id);
-    return Rel_usuario_rol_cursoPeer::doSelect($c2);
+        $c2->addDescendingOrderByColumn(CursoPeer::FECHA_INICIO);
+    //return Rel_usuario_rol_cursoPeer::doSelect($c2);
+    return Rel_usuario_rol_cursoPeer::doSelectJoinAll($c2);    
   }
 
 
@@ -1088,7 +1090,7 @@ class Usuario extends BaseUsuario
 
         $usuario_online->setIdRol(  $id_rol );
     }
-    $usuario_online->setTiempo(  time() );
+    $usuario_online->setTiempo(time());
     $usuario_online->save();
    }
 

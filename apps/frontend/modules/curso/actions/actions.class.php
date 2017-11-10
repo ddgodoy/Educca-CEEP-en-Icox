@@ -34,7 +34,10 @@ class cursoActions extends sfActions
 
   public function executeList()
   {
-    $this->cursos = CursoPeer::doSelect(new Criteria());
+    $c = new Criteria();
+    $c->addAscendingOrderByColumn(CursoPeer::ID);
+    
+    $this->cursos = CursoPeer::doSelect($c);
     $this->forward404Unless($this->cursos);
   }
 
@@ -269,24 +272,25 @@ class cursoActions extends sfActions
   {
      $this->idcurso = $this->getRequestParameter('idcurso');
      $this->getUser()->comprobarPermiso($this->idcurso);
+     $this->is_alumno = $this->getUser()->hasCredential('alumno');
 
      $c = new Criteria();
-	   $c->add(CursoPeer::ID, $this->idcurso);
-	   $this->curso = CursoPeer::doSelectOne($c);
+     $c->add(CursoPeer::ID, $this->idcurso);
+     $this->curso = CursoPeer::doSelectOne($c);
 
-	   $this->idmateria = $this->curso->getMateriaId();
-	   $this->nombrecurso = $this->curso->getNombre();
+     $this->idmateria = $this->curso->getMateriaId();
+     $this->nombrecurso = $this->curso->getNombre();
 
 
      $materia = MateriaPeer::retrieveByPk($this->idmateria);
      $this->forward404Unless($materia);
 
-	  $this->height = $materia->getHeight();
-    $this->width = $materia->getWidth();
-    if (!$this->height) { $this->height=580;}
-    if (!$this->width) { $this->width=737;}
-    $this->materia = $materia;
-    $this->id_usuario = $this->getUser()->getAnyId();
+     $this->height = $materia->getHeight();
+     $this->width = $materia->getWidth();
+     if (!$this->height) { $this->height=580;}
+     if (!$this->width) { $this->width=737;}
+     $this->materia = $materia;
+     $this->id_usuario = $this->getUser()->getAnyId();
   }
 	//
 	public function executeMostrarBibliografia()
@@ -520,6 +524,8 @@ class cursoActions extends sfActions
     if ($this->hasRequestParameter('sco12id'))
     {
       $id_sco12 = $this->getRequestParameter('sco12id');
+      $this->sco = $id_sco12;
+      $this->curso_id = $this->getRequestParameter('id_curso');
       $sco12 = Sco12Peer::RetrieveByPk($id_sco12);
 
       $id_materia = $sco12->getIdMateria();

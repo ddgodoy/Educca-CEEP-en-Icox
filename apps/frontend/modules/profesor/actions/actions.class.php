@@ -5,7 +5,7 @@
  *
  * @package    edoceo
  * @subpackage profesor
- * @author     Ángel Martín Latasa y Santiago Martínez de la Riva
+ * @author     ï¿½ngel Martï¿½n Latasa y Santiago Martï¿½nez de la Riva
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class profesorActions extends sfActions

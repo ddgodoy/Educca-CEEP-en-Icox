@@ -22,7 +22,7 @@
 
     <div id='conectados'></div>
 </div>
- <script type="text/JavaScript">
+ <script>
 
   function pulsar(e) {
     tecla = (document.all) ? e.keyCode :e.which;
