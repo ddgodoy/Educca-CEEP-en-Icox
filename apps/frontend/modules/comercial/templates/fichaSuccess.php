@@ -61,7 +61,7 @@
         </td>
       </tr>
       <tr>
-        <td class="tddesc"><pre class="texto_normal"><? echo wordwrap($descripcion, 93, "\n", 1); ?></pre>
+        <td class="tddesc"><pre class="texto_normal"><?php echo wordwrap($descripcion, 93, "\n", 1); ?></pre>
         </td>
       </tr>
       <tr>
