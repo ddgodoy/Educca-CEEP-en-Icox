@@ -1532,8 +1532,14 @@ class seguimientoActions extends sfActions
 	  	if ($profesor->esProfesor($this->idcurso))
       {
 		    $this->curso = CursoPeer::retrieveByPk($this->idcurso);
-			  $this->forward404Unless($this->curso);
-		    $this->temas = $this->curso->getTemas();
+                    $this->forward404Unless($this->curso);
+                    
+                    $c = new Criteria();
+                    $c->add(TemaPeer::ID_MATERIA, $this->curso->getMateria()->getId());
+                    $c->addAscendingOrderByColumn(TemaPeer::ID);
+
+                    $this->temas = TemaPeer::doSelect($c);
+                    
 		  }else return $this->redirect('login/logout');
    }else return $this->redirect('login/logout');
  }

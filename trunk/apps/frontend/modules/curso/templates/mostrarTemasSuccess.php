@@ -156,7 +156,7 @@
                       
                       $curso_temas = Rel_curso_temaPeer::doSelectOne($cct);
               ?>
-              <td style="text-align: right; width: 15%;"><?php echo $curso_temas->getFechaCompletado('d/m/Y'); ?></td>
+              <td style="text-align: right; width: 15%;"><?php echo $curso_temas?$curso_temas->getFechaCompletado('d/m/Y'):""; ?></td>
                 <?php $c = new Criteria();?>
                 <?php $c->add(Rel_usuario_sco12Peer::ID_SCO12, $sco->getId());?>
                 <?php $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $id_usuario);?>
@@ -189,11 +189,13 @@
               </td>
               <?php if($is_alumno): ?>
               <td>
-                  <?php if($rel->getLessonStatus() != 'completed' && $rel->getLessonStatus() != 'passed'):?>
-                    <?php echo link_to('Finalizar', 'contenidosTema/finishScorm?type=1&idcurso='.$curso->getId().'&idscorm='.$sco->getId()) ?>
-                  <?php else: ?>
-                    &nbsp;
-                  <?php endif ?> 
+                  <?php if($rel): ?> 
+                    <?php if($rel->getLessonStatus() != 'completed' && $rel->getLessonStatus() != 'passed'):?>
+                      <?php echo link_to('Finalizar', 'contenidosTema/finishScorm?type=1&idcurso='.$curso->getId().'&idscorm='.$sco->getId()) ?>
+                    <?php else: ?>
+                      &nbsp;
+                    <?php endif ?> 
+                  <?php endif; ?>    
               </td>
               <?php endif ?> 
             </tr>

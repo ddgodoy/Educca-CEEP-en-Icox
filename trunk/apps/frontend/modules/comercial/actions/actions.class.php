@@ -63,6 +63,7 @@ class comercialActions extends sfActions
 
   	  $c = new Criteria();
   	  $c->add(TemaPeer::ID_MATERIA, $this->curso->getMateria()->getId());
+          $c->addAscendingOrderByColumn(TemaPeer::ID);
 
   	  $this->temas = TemaPeer::doSelect($c);
     }
