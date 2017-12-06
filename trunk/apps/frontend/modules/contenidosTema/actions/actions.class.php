@@ -183,7 +183,6 @@ class contenidosTemaActions extends sfActions
   public function executeFinishScorm()
   {
       $idcurso = $this->getRequestParameter('idcurso','');
-      $type = $this->getRequestParameter('type','');
       if ($this->getUser()->hasCredential('alumno'))
       {
           $idscorm = $this->getRequestParameter('idscorm');
@@ -197,12 +196,7 @@ class contenidosTemaActions extends sfActions
               $rel->save();
           }
       }
-      
-      if($type == 1){
-            $this->redirect('curso/mostrarTemas?idcurso='.$idcurso);
-        }else{
-            return sfView::NONE;
-        }
+      $this->redirect('curso/mostrarTemas?idcurso='.$idcurso);
   }
  
 }

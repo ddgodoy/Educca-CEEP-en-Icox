@@ -862,7 +862,7 @@ class adminActions extends sfActions
   public function executeNuevoUsuario()
   {
     $rol = $this->getRequestParameter('rol');
-
+    $inspector = $this->getRequestParameter('inspector',0);            
     if ($this->getRequest()->getMethod() == sfRequest::POST) {
       $nombreusuario= $this->getRequestParameter('usuario');
       $dni= $this->getRequestParameter('dni');
@@ -901,6 +901,7 @@ class adminActions extends sfActions
         $usuario->setCiudad($ciudad);
         $usuario->setPaisId($pais);
         $usuario->setPresencial(0);
+        $usuario->setInspector($inspector);
         $usuario->emailUsuario(null,3,'confirmacion'); //genera tb el password
         $usuario->setConfirmado(1);
         $usuario->save($con);
@@ -1006,6 +1007,7 @@ class adminActions extends sfActions
       $this->opcionesPais = $opcionesPais;
     }
     $this->rol = $rol;
+    $this->inspector = $inspector;
   }
 
   // Nombre del metodo: executeNuevoModulo()

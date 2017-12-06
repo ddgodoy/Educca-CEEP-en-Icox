@@ -4,9 +4,9 @@
 <?php use_helper('SexyButton', 'Validation') ?>
 <div class="tit_box_calendario"><h2 class="titbox">Alta de un nuevo <?php echo $rol?></h2></div>
 <div class="cont_box_grande">
-
+<?php $url = $inspector == 1?'admin/nuevoUsuario?rol='.$rol.'&inspector=1':'admin/nuevoUsuario?rol='.$rol; ?>
     <?php echo yzValidatorHelper::form_remote_tag(array( 'update'=> 'guardar',
-                                                         'url'      =>'admin/nuevoUsuario?rol='.$rol,
+                                                         'url'      =>$url,
                                                          'script'      =>true));
             ?>
   
@@ -151,6 +151,7 @@
     <?php endif;?>
 
     <?php echo input_hidden_tag('rol', $rol) ?>
+    <?php echo input_hidden_tag('inspector', $inspector) ?>    
     <br>
     <table><tr><td><?php echo sexy_submit_tag('Dar de alta'); ?></td></tr></table>
     </center>

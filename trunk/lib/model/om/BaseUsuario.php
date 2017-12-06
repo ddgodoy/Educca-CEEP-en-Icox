@@ -122,7 +122,9 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 
 	
 	protected $presencial;
-
+        
+        
+        protected $inspector;
 
 	
 	protected $created_at;
@@ -544,6 +546,12 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 	{
 
 		return $this->presencial;
+	}
+        
+        public function getInspector()
+	{
+
+		return $this->inspector;
 	}
 
 	
@@ -1031,6 +1039,19 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 		}
 
 	} 
+        
+        public function setInspector($in)
+	{
+		if ($in !== null && !is_int($in) && is_numeric($in)) {
+			$in = (int) $in;
+		}
+
+		if ($this->inspector !== $in) {
+			$this->inspector = $in;
+			$this->modifiedColumns[] = UsuarioPeer::INSPECTOR;
+		}
+
+	} 
 	
 	public function setCreatedAt($v)
 	{
@@ -1110,14 +1131,16 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 			$this->mat_ip = $rs->getString($startcol + 27);
 
 			$this->presencial = $rs->getInt($startcol + 28);
-
-			$this->created_at = $rs->getTimestamp($startcol + 29, null);
-
+                        
+                        $this->inspector = $rs->getInt($startcol + 29);
+                        
+			$this->created_at = $rs->getTimestamp($startcol + 30, null);
+                        
 			$this->resetModified();
 
 			$this->setNew(false);
 
-						return $startcol + 30; 
+						return $startcol + 31; 
 		} catch (Exception $e) {
 			throw new PropelException("Error populating Usuario object", $e);
 		}
@@ -1868,6 +1891,9 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 			case 29:
 				return $this->getCreatedAt();
 				break;
+                        case 30:
+				return $this->getInspector();
+				break;    
 			default:
 				return null;
 				break;
@@ -1907,7 +1933,8 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 			$keys[26] => $this->getMatOnline(),
 			$keys[27] => $this->getMatIp(),
 			$keys[28] => $this->getPresencial(),
-			$keys[29] => $this->getCreatedAt(),
+                        $keys[29] => $this->getInspector(),
+			$keys[30] => $this->getCreatedAt(),
 		);
 		return $result;
 	}
@@ -2010,9 +2037,12 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 			case 28:
 				$this->setPresencial($value);
 				break;
-			case 29:
+                        case 29:
+				$this->setInspector($value);
+				break;      
+			case 30:
 				$this->setCreatedAt($value);
-				break;
+				break;  
 		} 	}
 
 	
@@ -2049,7 +2079,8 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 		if (array_key_exists($keys[26], $arr)) $this->setMatOnline($arr[$keys[26]]);
 		if (array_key_exists($keys[27], $arr)) $this->setMatIp($arr[$keys[27]]);
 		if (array_key_exists($keys[28], $arr)) $this->setPresencial($arr[$keys[28]]);
-		if (array_key_exists($keys[29], $arr)) $this->setCreatedAt($arr[$keys[29]]);
+                if (array_key_exists($keys[29], $arr)) $this->setInspector($arr[$keys[29]]);
+		if (array_key_exists($keys[30], $arr)) $this->setCreatedAt($arr[$keys[30]]);
 	}
 
 	
@@ -2086,6 +2117,7 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 		if ($this->isColumnModified(UsuarioPeer::MAT_ONLINE)) $criteria->add(UsuarioPeer::MAT_ONLINE, $this->mat_online);
 		if ($this->isColumnModified(UsuarioPeer::MAT_IP)) $criteria->add(UsuarioPeer::MAT_IP, $this->mat_ip);
 		if ($this->isColumnModified(UsuarioPeer::PRESENCIAL)) $criteria->add(UsuarioPeer::PRESENCIAL, $this->presencial);
+                if ($this->isColumnModified(UsuarioPeer::INSPECTOR)) $criteria->add(UsuarioPeer::INSPECTOR, $this->inspector);
 		if ($this->isColumnModified(UsuarioPeer::CREATED_AT)) $criteria->add(UsuarioPeer::CREATED_AT, $this->created_at);
 
 		return $criteria;
@@ -2172,6 +2204,8 @@ abstract class BaseUsuario extends BaseObject  implements Persistent {
 		$copyObj->setMatIp($this->mat_ip);
 
 		$copyObj->setPresencial($this->presencial);
+                
+                $copyObj->setInspector($this->inspector);
 
 		$copyObj->setCreatedAt($this->created_at);
 

@@ -33,6 +33,7 @@
              <td style="padding-left: 11px;"><?php echo sexy_button_to('Nuevo Administrador','admin/nuevoUsuario?rol=administrador') ?></td>
              <td style="padding-left: 11px;"><?php echo sexy_button_to('Nuevo Supervisor','admin/nuevoUsuario?rol=supervisor') ?></td>
              <td style="padding-left: 11px;"><?php echo sexy_button_to('Supervisor Tripartita', 'tripartita/index') ?></td>
+             <td style="padding-left: 11px;"><?php echo sexy_button_to('Inspector Educativo', 'admin/nuevoUsuario?rol=profesor&inspector=1') ?></td>
            <?php endif; ?>
             <?php if ($busqueda): ?>
               <?php if (isset($superUsuario)): ?>

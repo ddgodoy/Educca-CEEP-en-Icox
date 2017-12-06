@@ -450,16 +450,25 @@ function setCmiCoreLessonStatus ($student_id, $sco_id, $value)
   {
     return 1;
   }
-  if (!(($value == 'passed') || ($value == 'completed') || ($value == 'failed') || ($value == 'incomplete') || ($value == 'browsed') || ($value == 'not attempted')))
+  if (!(($value == 'passed') || ($value == 'completed') || ($value == 'completedtrue') || ($value == 'failed') || ($value == 'incomplete') || ($value == 'browsed') || ($value == 'not attempted')))
   {
     return 1;
   }
-      
+  
   $c = new Criteria();
   $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $student_id);
   $c->add(Rel_usuario_sco12Peer::ID_SCO12, $sco_id);
   $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
+  
+  if($rel->getLessonStatus()== 'completed'){
+    return 1;  
+  }
+  
+  if($value == 'completed'){$value = 'incomplete';}
+  if($value == 'completedtrue'){$value = 'completed';}
+  
   $rel->setLessonStatus($value);
+  
   /*
   if ((($value == 'passed') || ($value == 'completed')) && ($rel->getFinishedDate() == null))
   {
