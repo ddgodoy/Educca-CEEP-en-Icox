@@ -105,6 +105,9 @@ abstract class BaseUsuarioPeer {
 
 	
 	const PRESENCIAL = 'usuario.PRESENCIAL';
+        
+        
+        const INSPECTOR = 'usuario.INSPECTOR';
 
 	
 	const CREATED_AT = 'usuario.CREATED_AT';
@@ -115,17 +118,17 @@ abstract class BaseUsuarioPeer {
 
 	
 	private static $fieldNames = array (
-		BasePeer::TYPE_PHPNAME => array ('Id', 'Confirmado', 'Borrado', 'Nombreusuario', 'Sha1Password', 'Salt', 'Dni', 'Nombre', 'Apellidos', 'Email', 'Emailstop', 'Telefono1', 'Telefono2', 'Institucion', 'Departamento', 'Direccion', 'Cp', 'Ciudad', 'PaisId', 'Ultimoacceso', 'Ultimaip', 'Secreto', 'Conectado', 'Foto', 'Moroso', 'Numconexion', 'MatOnline', 'MatIp', 'Presencial', 'CreatedAt', ),
-		BasePeer::TYPE_COLNAME => array (UsuarioPeer::ID, UsuarioPeer::CONFIRMADO, UsuarioPeer::BORRADO, UsuarioPeer::NOMBREUSUARIO, UsuarioPeer::SHA1_PASSWORD, UsuarioPeer::SALT, UsuarioPeer::DNI, UsuarioPeer::NOMBRE, UsuarioPeer::APELLIDOS, UsuarioPeer::EMAIL, UsuarioPeer::EMAILSTOP, UsuarioPeer::TELEFONO1, UsuarioPeer::TELEFONO2, UsuarioPeer::INSTITUCION, UsuarioPeer::DEPARTAMENTO, UsuarioPeer::DIRECCION, UsuarioPeer::CP, UsuarioPeer::CIUDAD, UsuarioPeer::PAIS_ID, UsuarioPeer::ULTIMOACCESO, UsuarioPeer::ULTIMAIP, UsuarioPeer::SECRETO, UsuarioPeer::CONECTADO, UsuarioPeer::FOTO, UsuarioPeer::MOROSO, UsuarioPeer::NUMCONEXION, UsuarioPeer::MAT_ONLINE, UsuarioPeer::MAT_IP, UsuarioPeer::PRESENCIAL, UsuarioPeer::CREATED_AT, ),
-		BasePeer::TYPE_FIELDNAME => array ('id', 'confirmado', 'borrado', 'nombreusuario', 'sha1_password', 'salt', 'dni', 'nombre', 'apellidos', 'email', 'emailstop', 'telefono1', 'telefono2', 'institucion', 'departamento', 'direccion', 'cp', 'ciudad', 'pais_id', 'ultimoacceso', 'ultimaip', 'secreto', 'conectado', 'foto', 'moroso', 'numconexion', 'mat_online', 'mat_ip', 'presencial', 'created_at', ),
-		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, )
+		BasePeer::TYPE_PHPNAME => array ('Id', 'Confirmado', 'Borrado', 'Nombreusuario', 'Sha1Password', 'Salt', 'Dni', 'Nombre', 'Apellidos', 'Email', 'Emailstop', 'Telefono1', 'Telefono2', 'Institucion', 'Departamento', 'Direccion', 'Cp', 'Ciudad', 'PaisId', 'Ultimoacceso', 'Ultimaip', 'Secreto', 'Conectado', 'Foto', 'Moroso', 'Numconexion', 'MatOnline', 'MatIp', 'Presencial', 'Inspector', 'CreatedAt', ),
+		BasePeer::TYPE_COLNAME => array (UsuarioPeer::ID, UsuarioPeer::CONFIRMADO, UsuarioPeer::BORRADO, UsuarioPeer::NOMBREUSUARIO, UsuarioPeer::SHA1_PASSWORD, UsuarioPeer::SALT, UsuarioPeer::DNI, UsuarioPeer::NOMBRE, UsuarioPeer::APELLIDOS, UsuarioPeer::EMAIL, UsuarioPeer::EMAILSTOP, UsuarioPeer::TELEFONO1, UsuarioPeer::TELEFONO2, UsuarioPeer::INSTITUCION, UsuarioPeer::DEPARTAMENTO, UsuarioPeer::DIRECCION, UsuarioPeer::CP, UsuarioPeer::CIUDAD, UsuarioPeer::PAIS_ID, UsuarioPeer::ULTIMOACCESO, UsuarioPeer::ULTIMAIP, UsuarioPeer::SECRETO, UsuarioPeer::CONECTADO, UsuarioPeer::FOTO, UsuarioPeer::MOROSO, UsuarioPeer::NUMCONEXION, UsuarioPeer::MAT_ONLINE, UsuarioPeer::MAT_IP, UsuarioPeer::PRESENCIAL, UsuarioPeer::INSPECTOR, UsuarioPeer::CREATED_AT, ),
+		BasePeer::TYPE_FIELDNAME => array ('id', 'confirmado', 'borrado', 'nombreusuario', 'sha1_password', 'salt', 'dni', 'nombre', 'apellidos', 'email', 'emailstop', 'telefono1', 'telefono2', 'institucion', 'departamento', 'direccion', 'cp', 'ciudad', 'pais_id', 'ultimoacceso', 'ultimaip', 'secreto', 'conectado', 'foto', 'moroso', 'numconexion', 'mat_online', 'mat_ip', 'presencial', 'inspector', 'created_at', ),
+		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30)
 	);
 
 	
 	private static $fieldKeys = array (
-		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Confirmado' => 1, 'Borrado' => 2, 'Nombreusuario' => 3, 'Sha1Password' => 4, 'Salt' => 5, 'Dni' => 6, 'Nombre' => 7, 'Apellidos' => 8, 'Email' => 9, 'Emailstop' => 10, 'Telefono1' => 11, 'Telefono2' => 12, 'Institucion' => 13, 'Departamento' => 14, 'Direccion' => 15, 'Cp' => 16, 'Ciudad' => 17, 'PaisId' => 18, 'Ultimoacceso' => 19, 'Ultimaip' => 20, 'Secreto' => 21, 'Conectado' => 22, 'Foto' => 23, 'Moroso' => 24, 'Numconexion' => 25, 'MatOnline' => 26, 'MatIp' => 27, 'Presencial' => 28, 'CreatedAt' => 29, ),
-		BasePeer::TYPE_COLNAME => array (UsuarioPeer::ID => 0, UsuarioPeer::CONFIRMADO => 1, UsuarioPeer::BORRADO => 2, UsuarioPeer::NOMBREUSUARIO => 3, UsuarioPeer::SHA1_PASSWORD => 4, UsuarioPeer::SALT => 5, UsuarioPeer::DNI => 6, UsuarioPeer::NOMBRE => 7, UsuarioPeer::APELLIDOS => 8, UsuarioPeer::EMAIL => 9, UsuarioPeer::EMAILSTOP => 10, UsuarioPeer::TELEFONO1 => 11, UsuarioPeer::TELEFONO2 => 12, UsuarioPeer::INSTITUCION => 13, UsuarioPeer::DEPARTAMENTO => 14, UsuarioPeer::DIRECCION => 15, UsuarioPeer::CP => 16, UsuarioPeer::CIUDAD => 17, UsuarioPeer::PAIS_ID => 18, UsuarioPeer::ULTIMOACCESO => 19, UsuarioPeer::ULTIMAIP => 20, UsuarioPeer::SECRETO => 21, UsuarioPeer::CONECTADO => 22, UsuarioPeer::FOTO => 23, UsuarioPeer::MOROSO => 24, UsuarioPeer::NUMCONEXION => 25, UsuarioPeer::MAT_ONLINE => 26, UsuarioPeer::MAT_IP => 27, UsuarioPeer::PRESENCIAL => 28, UsuarioPeer::CREATED_AT => 29, ),
-		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'confirmado' => 1, 'borrado' => 2, 'nombreusuario' => 3, 'sha1_password' => 4, 'salt' => 5, 'dni' => 6, 'nombre' => 7, 'apellidos' => 8, 'email' => 9, 'emailstop' => 10, 'telefono1' => 11, 'telefono2' => 12, 'institucion' => 13, 'departamento' => 14, 'direccion' => 15, 'cp' => 16, 'ciudad' => 17, 'pais_id' => 18, 'ultimoacceso' => 19, 'ultimaip' => 20, 'secreto' => 21, 'conectado' => 22, 'foto' => 23, 'moroso' => 24, 'numconexion' => 25, 'mat_online' => 26, 'mat_ip' => 27, 'presencial' => 28, 'created_at' => 29, ),
+		BasePeer::TYPE_PHPNAME => array ('Id' => 0, 'Confirmado' => 1, 'Borrado' => 2, 'Nombreusuario' => 3, 'Sha1Password' => 4, 'Salt' => 5, 'Dni' => 6, 'Nombre' => 7, 'Apellidos' => 8, 'Email' => 9, 'Emailstop' => 10, 'Telefono1' => 11, 'Telefono2' => 12, 'Institucion' => 13, 'Departamento' => 14, 'Direccion' => 15, 'Cp' => 16, 'Ciudad' => 17, 'PaisId' => 18, 'Ultimoacceso' => 19, 'Ultimaip' => 20, 'Secreto' => 21, 'Conectado' => 22, 'Foto' => 23, 'Moroso' => 24, 'Numconexion' => 25, 'MatOnline' => 26, 'MatIp' => 27, 'Presencial' => 28, 'Inspector' => 29, 'CreatedAt' => 30, ),
+		BasePeer::TYPE_COLNAME => array (UsuarioPeer::ID => 0, UsuarioPeer::CONFIRMADO => 1, UsuarioPeer::BORRADO => 2, UsuarioPeer::NOMBREUSUARIO => 3, UsuarioPeer::SHA1_PASSWORD => 4, UsuarioPeer::SALT => 5, UsuarioPeer::DNI => 6, UsuarioPeer::NOMBRE => 7, UsuarioPeer::APELLIDOS => 8, UsuarioPeer::EMAIL => 9, UsuarioPeer::EMAILSTOP => 10, UsuarioPeer::TELEFONO1 => 11, UsuarioPeer::TELEFONO2 => 12, UsuarioPeer::INSTITUCION => 13, UsuarioPeer::DEPARTAMENTO => 14, UsuarioPeer::DIRECCION => 15, UsuarioPeer::CP => 16, UsuarioPeer::CIUDAD => 17, UsuarioPeer::PAIS_ID => 18, UsuarioPeer::ULTIMOACCESO => 19, UsuarioPeer::ULTIMAIP => 20, UsuarioPeer::SECRETO => 21, UsuarioPeer::CONECTADO => 22, UsuarioPeer::FOTO => 23, UsuarioPeer::MOROSO => 24, UsuarioPeer::NUMCONEXION => 25, UsuarioPeer::MAT_ONLINE => 26, UsuarioPeer::MAT_IP => 27, UsuarioPeer::PRESENCIAL => 28, UsuarioPeer::INSPECTOR => 29, UsuarioPeer::CREATED_AT => 30, ),
+		BasePeer::TYPE_FIELDNAME => array ('id' => 0, 'confirmado' => 1, 'borrado' => 2, 'nombreusuario' => 3, 'sha1_password' => 4, 'salt' => 5, 'dni' => 6, 'nombre' => 7, 'apellidos' => 8, 'email' => 9, 'emailstop' => 10, 'telefono1' => 11, 'telefono2' => 12, 'institucion' => 13, 'departamento' => 14, 'direccion' => 15, 'cp' => 16, 'ciudad' => 17, 'pais_id' => 18, 'ultimoacceso' => 19, 'ultimaip' => 20, 'secreto' => 21, 'conectado' => 22, 'foto' => 23, 'moroso' => 24, 'numconexion' => 25, 'mat_online' => 26, 'mat_ip' => 27, 'presencial' => 28, 'inspector' => 29, 'created_at' => 30, ),
 		BasePeer::TYPE_NUM => array (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, )
 	);
 
@@ -237,6 +240,8 @@ abstract class BaseUsuarioPeer {
 		$criteria->addSelectColumn(UsuarioPeer::MAT_IP);
 
 		$criteria->addSelectColumn(UsuarioPeer::PRESENCIAL);
+                
+                $criteria->addSelectColumn(UsuarioPeer::INSPECTOR);
 
 		$criteria->addSelectColumn(UsuarioPeer::CREATED_AT);
 

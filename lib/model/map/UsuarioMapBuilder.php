@@ -89,6 +89,8 @@ class UsuarioMapBuilder {
 		$tMap->addColumn('MAT_IP', 'MatIp', 'string', CreoleTypes::VARCHAR, false, 15);
 
 		$tMap->addColumn('PRESENCIAL', 'Presencial', 'int', CreoleTypes::TINYINT, false, 1);
+                
+                $tMap->addColumn('INSPECTOR', 'Inspector', 'int', CreoleTypes::TINYINT, false, 1);
 
 		$tMap->addColumn('CREATED_AT', 'CreatedAt', 'int', CreoleTypes::TIMESTAMP, false, null);
 
