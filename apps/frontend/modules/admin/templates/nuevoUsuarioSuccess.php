@@ -2,7 +2,8 @@
 
 <?php if (!isset($mostrarForm)) : ?>
 <?php use_helper('SexyButton', 'Validation') ?>
-<div class="tit_box_calendario"><h2 class="titbox">Alta de un nuevo <?php echo $rol?></h2></div>
+<?php $title = $inspector == 1?' (Inspector Educativo)':''; ?>
+<div class="tit_box_calendario"><h2 class="titbox">Alta de un nuevo <?php echo $rol?><?php echo $title ?></h2></div>
 <div class="cont_box_grande">
 <?php $url = $inspector == 1?'admin/nuevoUsuario?rol='.$rol.'&inspector=1':'admin/nuevoUsuario?rol='.$rol; ?>
     <?php echo yzValidatorHelper::form_remote_tag(array( 'update'=> 'guardar',

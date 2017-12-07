@@ -16,9 +16,7 @@
   </div>
 
   <div class="cierre_menu"></div>
-  <div>
-    <?php echo image_tag('logo_mad_excelente.jpg')?>
-  </div>  
+  
 <?php end_slot() ?>
 
 <div id="contenedor_img">
