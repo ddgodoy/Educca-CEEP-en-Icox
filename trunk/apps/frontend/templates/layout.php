@@ -47,7 +47,7 @@
 		  <div style="float:right;">
 	          <div id="header" style="background: #<?php echo $colortop; ?>"><table class="tablalogo" cellpadding="0" cellspacing="0">
 			  						<tr>
-									  <td width="185"><?php echo link_to(image_tag('logo.jpg', 'alt='.$nombrelms), '@homepage') ?></td>
+									  <td width="185"><?php echo link_to(image_tag('logo-1.png', 'alt='.$nombrelms), '@homepage') ?></td>
                                       <td width="337">&nbsp;</td>
                                       <td width="428"><?php echo image_tag('header_right.jpg', 'alt='.$nombrelms) ?></td>
 									</tr>
@@ -63,7 +63,7 @@
 	                    <?php endif; ?>
                    </div>
 	          </div> <!-- fin col1 -->
-	          <div id="wrapper">
+                  <div id="wrapper" style="margin-bottom: 20px;">
 	              <div id="col2">
 	                  <?php echo $sf_data->getRaw('sf_content') ?>
 	              </div> <!-- fin col2 -->
@@ -82,6 +82,9 @@
                             <?php endif; ?>
 	              </div> <!-- fin col3 -->
 	          </div>
+                  <div style="margin-top: 10px; margin-bottom: 10px">
+                    <?php echo image_tag('footer.png') ?>
+                  </div>
           </div>
        </div>
     </div>

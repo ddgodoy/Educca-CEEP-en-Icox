@@ -62,6 +62,7 @@
                           {
                             $nombre_final = truncate_text($nombre, $max_length);
                           }
+                          $nombre_final.= $profesor->getInspector()?' (Inspector Educativo)':'';
                         ?>
                         <?php echo link_to($nombre_final, 'usuario/mostrarPerfil?idusuario='.$profesor->getId()) ?>
                       </td>

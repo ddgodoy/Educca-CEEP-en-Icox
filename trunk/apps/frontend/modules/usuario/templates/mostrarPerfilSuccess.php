@@ -1,6 +1,6 @@
 <?php use_helper('SexyButton') ?>
-
-<div class="tit_box_calendario"><h2 class="titbox">Perfil de usuario</h2></div>
+<?php $title = $usuario->getInspector() == 1?' (Inspector Educativo)':''; ?>
+<div class="tit_box_calendario"><h2 class="titbox">Perfil de usuario<?php echo $title ?></h2></div>
 <div class="cont_box_grande">
     <table class="tabla_show_perfil">
     <tbody>
