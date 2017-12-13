@@ -22,11 +22,11 @@
                       <?php echo $archivo->getIcoTipo();?>
                     </td>
                     <td style="width:20%;padding-left:2px;" valign='middle'>  
-                      <font 'id'="'ln_biblioteca_archivo<?=$archivo->getIdCurso()?>"><?php echo truncate_text($archivo->getNombreFichero(), 35)?></font>
+                      <font id ="ln_biblioteca_archivo<?php echo $archivo->getIdCurso()?>"><?php echo truncate_text($archivo->getNombreFichero(), 35)?></font>
                     </td>
                     
                     <td style="width:50%;" valign='middle'>
-                      <font <? echo $archivo->overlib() ?> >
+                      <font <?php echo $archivo->overlib() ?> >
                       <?php echo truncate_text($archivo->getDescripcion(), 210) ?>
                       </font>
                     </td>
@@ -36,8 +36,10 @@
                     <td style="width:10%;" valign='middle'>
                             <?php echo $archivo->linkDonwnload(false); ?>   
                           <?php if ($user->hasCredential('profesor')) : ?>
-                            <?php echo link_to(image_tag('corregir.png'),'biblioteca_archivos/modificar?id='.$archivo->getId(),array( 'id'=>'modificar_biblioteca_archivos'.$archivo->getId(), 'title' => 'Modificar' ) ) ?>
-                            <?php echo link_to(image_tag('papelera.gif'),'biblioteca_archivos/eliminar?id='.$archivo->getId(),array('confirm' =>'&iquest;Esta seguro que desea eliminar el '.$archivo->getNombre().' ?', 'id'=>'delete_biblioteca_archivos'.$archivo->getId(), 'title' => 'Eliminar' ) ) ?>
+                            <?php if(!$usuario->getInspector()): ?>
+                                <?php echo link_to(image_tag('corregir.png'),'biblioteca_archivos/modificar?id='.$archivo->getId(),array( 'id'=>'modificar_biblioteca_archivos'.$archivo->getId(), 'title' => 'Modificar' ) ) ?>
+                                <?php echo link_to(image_tag('papelera.gif'),'biblioteca_archivos/eliminar?id='.$archivo->getId(),array('confirm' =>'&iquest;Esta seguro que desea eliminar el '.$archivo->getNombre().' ?', 'id'=>'delete_biblioteca_archivos'.$archivo->getId(), 'title' => 'Eliminar' ) ) ?>
+                            <?php endif; ?>     
                           <?php endif ?>
                     </td>
                   </tr>

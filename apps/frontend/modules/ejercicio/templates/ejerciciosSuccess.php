@@ -19,7 +19,7 @@
       <div id="listado_ejercicios_creados"></div>
       <?php echo javascript_tag(remote_function(array('update' => 'listado_ejercicios_creados', 'url' => 'ejercicio/listarEjercicios?filtro='.$id_curso)))?>
     </form>
-    <? use_helper('volver'); echo volver();  ?>
+    <?php use_helper('volver'); echo volver();  ?>
   </div>
   <div class="cierre_principal"></div>
 </div>

@@ -20,9 +20,13 @@
       <div id="container" class="gtab">
       	<ul class="gtab-controllers">
       		<li><a href="#tab1">Mensajes  <?php echo("($mensajes_nuevos)");?></a></li>
+                <?php if(!$usuario->getInspector()): ?>
       		<li><a href="notificaciones/mostrarNotificaciones/#tab2">Notificaciones <?php echo("($notificaciones)");?></a></li>
+                <?php endif; ?>
       		<li><a href="calendario/mostrarCalendarioAvisos/#tab3">Eventos</a></li>
+                <?php if(!$usuario->getInspector()): ?>
       		<li><a href="evaluacion/listarTareasEvaluacionCorto/#tab4">Entregas <?php echo("($correcciones)");?></a></li>
+                <?php endif; ?>
       	</ul>
         <div id="tab1">&nbsp;</div>
         <div id="tab2">&nbsp;</div>

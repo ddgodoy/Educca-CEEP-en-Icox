@@ -243,6 +243,7 @@
   </table>
   </div>
 </td>
+<?php if(!$usuario->getInspector()): ?>
 <td class="td2">&nbsp;</td>
 <td class="td3">
   <div class="resumen_trabajo_alumno">
@@ -277,6 +278,7 @@
   </form>
   </div>
 </td>
+<?php endif; ?>
 </tr>
 </table>
 </div>

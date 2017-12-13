@@ -13,7 +13,9 @@
                   <th class="td4">A&ntilde;o</th>
                   <th class="td5">ISBN</th>
                   <?php if ($rol == 'profesor') : ?>
-      				          <th class="td6">Opciones</th>
+                    <?php if(!$usuario->getInspector()): ?>
+                            <th class="td6">Opciones</th>
+                    <?php endif; ?>                      
                   <?php endif;?>
                 </tr>
           </table>
@@ -30,11 +32,13 @@
                     <td class="td4"><?php echo $libro->getAnioPublicacion()?></td>
                     <td class="td5"><?php echo $libro->getIsbn()?></td>
                      <?php if ($rol == 'profesor') : ?>
+                    <?php if(!$usuario->getInspector()): ?>
                     <td class="td6">
                     <?php echo link_to(image_tag('icon_edit.gif'),'curso/modificarLibro?idlibro='.$libro->getId()) ?>
                     | <?php echo link_to(image_tag('papelera.gif'),'curso/eliminarLibro?idlibro='.$libro->getId(),'confirm=&iquest;Esta seguro que desea eliminar el libro '.$libro->getNombre().' ?') ?>
                    	</td>
                    	<?php endif; ?>
+                    <?php endif; ?>    
                   </tr>
                   <?php $i++; ?>
                 <?php endforeach; ?>
@@ -58,7 +62,9 @@
         <table border='0' width='100%'>
           <tr>
              <td style="width: 300px;"><?php echo volver(); ?></td>
+             <?php if(!$usuario->getInspector()): ?>
              <td><?php echo sexy_button_to('Nuevo libro', 'curso/nuevoLibro'.$redireccion); ?></td>
+             <?php endif; ?>   
           </tr>
         </table>
         <?php else : ?>

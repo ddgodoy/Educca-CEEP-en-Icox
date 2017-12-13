@@ -31,7 +31,9 @@
         <div class="tit_box_mensajes"><h2 class="titbox">Planificaci&oacute;n para el <?php echo $curso->getNombre() ?></h2></div>
           <div class="cont_box_correo">
                   <?php if ($sf_user -> hasCredential('profesor')) : ?>
-                    <div class="herramientas_general_fixed"><?php echo link_to(image_tag('cambiar_planificacion.gif'),'seguimiento/seguimientoTemas'.$redireccion) ?></div><br>
+                        <?php if(!$usuario->getInspector()): ?>
+                            <div class="herramientas_general_fixed"><?php echo link_to(image_tag('cambiar_planificacion.gif'),'seguimiento/seguimientoTemas'.$redireccion) ?></div><br>
+                        <?php endif; ?>    
                   <?php endif; ?>
                   <div id="scrolldiv">
                   <table class="tablaplanificacion" cellspacing="0">

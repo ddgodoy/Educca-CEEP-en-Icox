@@ -63,6 +63,7 @@ class seguimientoActions extends sfActions
       	$this->curso = CursoPeer::retrieveByPk($this->idcurso);
       	$this->forward404Unless($this->curso);
      }
+     $this->usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
    }
    else  $this->redirect('login/logout');
   }
@@ -492,6 +493,7 @@ class seguimientoActions extends sfActions
    */
   public function executeBuscar()
   {
+   $this->usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());   
    if ($this->getRequest()->getMethod() == sfRequest::POST)
    {
       $tipo = $this->getRequestParameter('tipo');
@@ -1010,7 +1012,7 @@ class seguimientoActions extends sfActions
 
   	}
 
-
+   $this->usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());     
    $this->fechas = $arrayFechas;
    $this->c = $c;
   }

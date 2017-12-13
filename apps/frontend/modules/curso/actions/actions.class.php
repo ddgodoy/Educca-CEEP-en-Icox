@@ -14,7 +14,7 @@ class cursoActions extends sfActions
     $this->idcurso = $this->getRequestParameter('idcurso');
 
     $this->getUser()->comprobarPermiso($this->idcurso);
-
+    
     $this->getUser()->setCursoMenu($this->idcurso);
 	  $c = new Criteria();
 	  $c->add(CursoPeer::ID, $this->idcurso);
@@ -29,7 +29,7 @@ class cursoActions extends sfActions
 	  	if ($this->curso->checkAccesoSegunFechasLimite($this->curso->getFechaInicio('Y-m-d'), $this->curso->getFechaFin('Y-m-d')) != 'si') {
 		  	$this->redirect('alumno/index');
 		  }
-  	}
+  	}   
   }
 
   public function executeList()
@@ -322,6 +322,8 @@ class cursoActions extends sfActions
      $c = new Criteria();
 	   $c->add(LibroPeer::ID_MATERIA, $this->idmateria);
 	   $this->libros = LibroPeer::doSelect($c);
+           
+     $this->usuario =  UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());       
   }
 
    // Nombre del metodo: NuevoLibro()

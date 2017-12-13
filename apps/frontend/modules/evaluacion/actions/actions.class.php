@@ -13,6 +13,7 @@ class evaluacionActions extends sfActions
   {
     $this->rol = $this->getUser()->obtenerCredenciales();
     $this->redireccion = '?idcurso='.$this->getRequestParameter('idcurso');
+    $this->usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
   }
 	//
   public function executeListarEjerciciosEntregados()
@@ -367,7 +368,8 @@ class evaluacionActions extends sfActions
     $this->tiempo_estudio = $this->alumno->getTiempoTotalTeoria($id_curso);
     $this->tiempo_tareas  = $tiempo_tareas;
     $this->tiempo_repositorio = $tiempo_repositorio;
-
+    $this->usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
+    
     $this->setLayout('PopUpEvaluacion');
   }
 	//

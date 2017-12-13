@@ -3,7 +3,7 @@
   <div class="contenido_principal">
       <table class="tablaopciones">
 
-
+        <?php if(!$usuario->getInspector()): ?>  
         <tr>
           <td class="imagen">
             <?php echo link_to(image_tag('bot_ej_crear.gif'), "/ejercicio/crearEjercicio$redireccion",array('id'=>'ln_crear_ejercicio_ico')) ?>
@@ -17,6 +17,7 @@
            <td colspan="2" class="separador">
            </td>
         </tr>
+        <?php endif; ?>
         <tr>
           <td class="imagen">
             <?php echo link_to(image_tag('bot_ej_editar.gif'), "/ejercicio/ejercicios$redireccion",array('id'=>'ln_editar_ejercicio_ico')) ?>

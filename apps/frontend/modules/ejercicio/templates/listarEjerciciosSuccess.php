@@ -9,10 +9,12 @@
       <?php if ($rol == 'profesor'):?>
         <th class="td4">Publicado</th>
       <?php endif; ?>
+      <?php if(!$usuario->getInspector()): ?>  
       <th class="td5">Publicada soluci&oacute;n</th>
       <?php if ($rol == 'alumno'):?>
         <th class="relleno_alumno">&nbsp;</th>
       <?php endif; ?>
+      <?php endif; ?>  
     </tr>
   </table>
 </div>
@@ -29,23 +31,31 @@
         <?php if ($rol == 'profesor'):?>
           <td class="td4">
             <?php if ($ejercicio->getPublicadoCurso($id_curso)):?>
-              <div class='d_publicado_<?echo $ejercicio->getId()?>'>
-                S&iacute;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo url_for('ejercicio/ejercicios?idcurso='.$id_curso.'&quitar='.$ejercicio->getId()); ?>" id='ln_despublicar_<?echo $ejercicio->getId()?>'><?php echo image_tag('bot_despublicar.gif', array('alt' => 'Retirar este ejercicio del repositorio', 'title' => 'Retirar este ejercicio del repositorio')); ?></a>
+              <div class='d_publicado_<?php echo $ejercicio->getId()?>'>
+                S&iacute;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php if(!$usuario->getInspector()): ?>
+                <a href="<?php echo url_for('ejercicio/ejercicios?idcurso='.$id_curso.'&quitar='.$ejercicio->getId()); ?>" id='ln_despublicar_<?echo $ejercicio->getId()?>'><?php echo image_tag('bot_despublicar.gif', array('alt' => 'Retirar este ejercicio del repositorio', 'title' => 'Retirar este ejercicio del repositorio')); ?></a>
+                <?php endif; ?>
               </div>
             <?php else:?>
-              <div class='d_no_publicado_<?echo $ejercicio->getId()?>'>
-                No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo url_for('ejercicio/ejercicios?idcurso='.$id_curso.'&publicar='.$ejercicio->getId()); ?>" id='ln_publicar_<?echo $ejercicio->getId()?>'><?php echo image_tag('bot_publicar.gif', array('alt' => 'Publicar este ejercicio en el repositorio', 'title' => 'Publicar este ejercicio en el repositorio')); ?></a>
+              <div class='d_no_publicado_<?php echo $ejercicio->getId()?>'>
+                No&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <?php if(!$usuario->getInspector()): ?> 
+                <a href="<?php echo url_for('ejercicio/ejercicios?idcurso='.$id_curso.'&publicar='.$ejercicio->getId()); ?>" id='ln_publicar_<?echo $ejercicio->getId()?>'><?php echo image_tag('bot_publicar.gif', array('alt' => 'Publicar este ejercicio en el repositorio', 'title' => 'Publicar este ejercicio en el repositorio')); ?></a>
+                <?php endif; ?>
               </div>
             <?php endif;?>
           </td>
         <?php endif; ?>
-        <td class="td5">
+        <?php if(!$usuario->getInspector()): ?>   
+        <td class="td5">  
           <?php if ($ejercicio->getPublicadaSolucionCurso($id_curso)):?>
-              <div class='d_publicada_solucion_<?echo $ejercicio->getId()?>'>S&iacute;<?php if ($rol == 'profesor'):?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo url_for('ejercicio/ejercicios?idcurso='.$id_curso.'&quitarsol='.$ejercicio->getId()); ?>" id='ln_despublicar_solucion_<?echo $ejercicio->getId()?>'><?php echo image_tag('bot_despublicar.gif', array('alt' => 'Oculta la soluci&oacute;n si el ejercicio estaba en el repositorio', 'title' => 'Oculta la soluci&oacute;n si el ejercicio estaba en el repositorio')); ?></a><?php endif;?></div>
+              <div class='d_publicada_solucion_<?php echo $ejercicio->getId()?>'>S&iacute;<?php if ($rol == 'profesor'):?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo url_for('ejercicio/ejercicios?idcurso='.$id_curso.'&quitarsol='.$ejercicio->getId()); ?>" id='ln_despublicar_solucion_<?php echo $ejercicio->getId()?>'><?php echo image_tag('bot_despublicar.gif', array('alt' => 'Oculta la soluci&oacute;n si el ejercicio estaba en el repositorio', 'title' => 'Oculta la soluci&oacute;n si el ejercicio estaba en el repositorio')); ?></a><?php endif;?></div>
             <?php else:?>
-              <div class='d_no_publicada_solucion_<?echo $ejercicio->getId()?>'>No&nbsp;<?php if ($rol == 'profesor'):?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo url_for('ejercicio/ejercicios?idcurso='.$id_curso.'&publicarsol='.$ejercicio->getId()); ?>" id='ln_publicar_solucion_<?echo $ejercicio->getId()?>'><?php echo image_tag('bot_publicar.gif', array('alt' => 'Publicar la soluci&oacute;n del ejercicio. Si el ejercicio est&aacute; publicado en el repositorio los alumnos podr&aacute;n ver su soluci&oacute;n', 'title' => 'Publicar la soluci&oacute;n del ejercicio. Si el ejercicio est&aacute; publicado en el repositorio los alumnos podr&aacute;n ver su soluci&oacute;n')); ?></a><?php endif;?></div>
-            <?php endif;?>
+              <div class='d_no_publicada_solucion_<?php echo $ejercicio->getId()?>'>No&nbsp;<?php if ($rol == 'profesor'):?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="<?php echo url_for('ejercicio/ejercicios?idcurso='.$id_curso.'&publicarsol='.$ejercicio->getId()); ?>" id='ln_publicar_solucion_<?php echo $ejercicio->getId()?>'><?php echo image_tag('bot_publicar.gif', array('alt' => 'Publicar la soluci&oacute;n del ejercicio. Si el ejercicio est&aacute; publicado en el repositorio los alumnos podr&aacute;n ver su soluci&oacute;n', 'title' => 'Publicar la soluci&oacute;n del ejercicio. Si el ejercicio est&aacute; publicado en el repositorio los alumnos podr&aacute;n ver su soluci&oacute;n')); ?></a><?php endif;?></div>
+            <?php endif;?>   
         </td>
+        <?php endif;?>
         <?php if ($rol == 'alumno'):?>
           <td class="relleno_alumno">&nbsp;</td>
         <?php endif; ?>
