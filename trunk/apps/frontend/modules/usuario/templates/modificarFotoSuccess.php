@@ -43,10 +43,19 @@
 
 <div class="cierre_box_grande"></div>
 <?php else : ?>
-  <?php echo image_tag('ico_p_endok.gif'); ?> Foto Guardada.
-      <?php echo javascript_tag("
-      //window.opener.location.reload();
-      window.opener.document.cambio_info.submit();
-      window.close();
-          ") ?>
+  <?php if(!$usuario->getInspector()): ?>  
+    <?php echo image_tag('ico_p_endok.gif'); ?> Foto Guardada.
+        <?php echo javascript_tag("
+        //window.opener.location.reload();
+        window.opener.document.cambio_info.submit();
+        window.close();
+            ") ?>
+  <?php else: ?>
+        <?php echo image_tag('ico_p_endok.gif'); ?> Foto Guardada.
+        <?php echo javascript_tag("
+        window.opener.location.reload();
+        //window.opener.document.cambio_info.submit();
+        window.close();
+            ") ?>
+  <?php endif; ?>  
 <?php endif; ?>

@@ -32,6 +32,8 @@ class biblioteca_archivosActions extends sfActions
     if (!$usuario->permisoBibliotecaArchivos($this->curso->getId()))
     { $this->redirect('login/redireccionar');}
     
+    $this->usuario = $usuario;
+    
   }
   
   public function executeNuevo()

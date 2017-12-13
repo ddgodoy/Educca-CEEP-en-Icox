@@ -4,10 +4,12 @@
 <div class="cont_box_grande">
     <table class="tabla_show_perfil">
     <tbody>
+    <?php if(!$usuario->getInspector()): ?>    
     <tr>
     <th>DNI: </th>
     <td class="tdinfo"><?php echo $usuario->getDni() ?></td>
     </tr>
+    <?php endif; ?>
     <tr>
     <th>Usuario: </th>
     <td class="tdinfo"><?php echo $usuario->getNombreusuario() ?></td>

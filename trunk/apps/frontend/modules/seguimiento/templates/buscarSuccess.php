@@ -74,6 +74,6 @@
 <?php else : ?>
   <?php if (isset($curso)) : ?>
     <?php $search = true; ?>
-    <?php include_component('seguimiento', 'listaAlumnos', array ('alumnos' => $alumnos , 'idcurso' => $curso->getId(), 'search' => true) ) ?>
+    <?php include_component('seguimiento', 'listaAlumnos', array ('alumnos' => $alumnos , 'idcurso' => $curso->getId(), 'search' => true, 'usuario'=>$usuario) ) ?>
   <?php endif; ?>
 <?php endif; ?>

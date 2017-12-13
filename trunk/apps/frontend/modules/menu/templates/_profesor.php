@@ -5,6 +5,7 @@
    <?php endif; ?>
   <?php if ($sf_user->getCursoMenu()) : ?>
   <?php $curso = CursoPeer::retrieveByPk($idcurso); ?>
+  <?php $usuario = UsuarioPeer::retrieveByPk($sf_user->getAnyId()); ?>  
   <div class="tit_box_menu"><h2 class="titbox">Opciones del curso</h2></div>
   <ul class="listamenu">
     <li class="inicio"><?php echo link_to('Inicio', 'curso/index?idcurso='.$sf_user->getCursoMenu(),array('name' => 'ln_inicio')) ?></li>
@@ -41,9 +42,11 @@
         <li class="foros_c"><?php echo link_to('Foros', 'sfSimpleForum/foroCurso'.$redireccion,array('name' => 'ln_foro')) ?></li>
     <?php endif; ?>
 
-	 	<?php if ($curso->getMenuEjercicios()) :?>
+    <?php if ($curso->getMenuEjercicios()) :?>
         <li class="evalua_c"><?php echo link_to('Evaluaci&oacute;n', 'evaluacion/index'.$redireccion,array('name' => 'ln_evaluacion'))?></li>
-        <li class="ejercicios_c"><?php echo link_to('Tareas y ex&aacute;menes', 'tareas/index'.$redireccion,array('name' => 'ln_tareas'))?></li>
+        <?php if(!$usuario->getInspector()): ?>
+            <li class="ejercicios_c"><?php echo link_to('Tareas y ex&aacute;menes', 'tareas/index'.$redireccion,array('name' => 'ln_tareas'))?></li>
+        <?php endif; ?>
     <?php endif; ?>
   </ul>
 

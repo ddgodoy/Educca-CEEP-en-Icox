@@ -1,6 +1,6 @@
 <?php use_helper('SexyButton') ?>
 <div id="miperfil">
-    <div class="tit_box_perfil"><h2 class="titbox">Perfil de Profesor</h2></div>
+    <div class="tit_box_perfil"><h2 class="titbox"><?php if(!$profesor->getInspector()): ?> Perfil de Profesor <?php else: ?> Perfil del Inspector <?php endif; ?></h2></div>
     <div class="cont_box_pequeno">
       <table class="cont_peq_tabl">
         <tr class="cont_fil">
@@ -12,6 +12,7 @@
                 <tr>
                     <td class="datosperfil"><?php echo $profesor->getNombre() .' '.$profesor->getApellidos() ?></td>
                 </tr>
+                <?php if(!$profesor->getInspector()): ?>
                 <tr>
                     <td class="datosperfil">DNI: <?php echo $profesor->getDni() ?></td>
                 </tr>
@@ -21,6 +22,7 @@
 				<tr>
                     <td class="datosperfil">Fecha Alta: <?php echo $profesor->getCreatedAt("d / m / Y")?></td>
                 </tr>
+                <?php endif; ?>
              </table>
           </td>
           <td class="celda_perfil_der">

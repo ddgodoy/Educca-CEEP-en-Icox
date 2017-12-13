@@ -16,6 +16,7 @@ class profesorActions extends sfActions
   {
         $this->getUser()->getAttributeHolder()->remove('idcurso','profesor');
         $this->user = $this->getUser();
+        $this->usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
         return ;
   }
 

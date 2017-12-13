@@ -35,13 +35,14 @@
 
     <table class="tabla_show_perfil">
     <tbody>
-
+    <?php if(!$usuario->getInspector()): ?>
     <tr>
       <th>DNI:</th>
       <td><?php echo object_input_tag($usuario, 'getDni', array (
       'class' => 'inputperfil'
     )) ?></td>
     </tr>
+    <?php endif; ?>
     <tr>
       <th>Contrase&ntilde;a:</th>
       <td valign="middle">
@@ -60,6 +61,7 @@
 
 	  </td>
     </tr>
+    <?php if(!$usuario->getInspector()): ?>
     <tr>
       <th>Nombre:</th>
       <td><?php echo object_input_tag($usuario, 'getNombre', array (
@@ -138,7 +140,7 @@
 	<?php echo select_tag('pais', options_for_select($opcionesPais, $usuario->getPaisId())) ?>
 	</td>
     </tr>
-
+    <?php endif; ?>
     <tr>
       <th>Foto:</th>
       <td>
@@ -170,10 +172,11 @@
       	     <?php else : ?>
       	        <?php echo sexy_button_to('Cancelar', 'usuario/mostrarPerfil?'.$redireccion) ?>
       	     <?php endif; ?>
-
-              <div id="trans" class="trans">
-               <?php echo sexy_submit_tag('Guardar',array('onmouseup'=>"bloqueaCapa('trans')")) ?>
-              </div>
+             <?php if(!$usuario->getInspector()): ?>  
+                <div id="trans" class="trans">
+                 <?php echo sexy_submit_tag('Guardar',array('onmouseup'=>"bloqueaCapa('trans')")) ?>
+                </div>
+            <?php endif; ?>   
     	     </center>
     </td>
     </tr>

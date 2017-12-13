@@ -4,19 +4,21 @@
   <div class="cont_box_correo">
     <?php echo form_tag('mensaje/mensajesRecibidos') ?>
       <?php if ($sf_user->hasCredential('profesor')) : ?>
-      <div class="herramientas_general">
-        <table style="width: 100%;">
-          <tr>
-            <td>
-              <input class="boton_gris_herramientas1" style="width:100px;" onclick="window.location='<?=url_for('biblioteca_archivos/nuevo?idcurso='.$curso->getId())?>'"  name="add" value="Subir fichero" type="button">
-            </td>
-            <td></td>
-          </tr>
-        </table>
-      </div>
+        <?php if(!$usuario->getInspector()): ?>
+            <div class="herramientas_general">
+              <table style="width: 100%;">
+                <tr>
+                  <td>
+                    <input class="boton_gris_herramientas1" style="width:100px;" onclick="window.location='<?=url_for('biblioteca_archivos/nuevo?idcurso='.$curso->getId())?>'"  name="add" value="Subir fichero" type="button">
+                  </td>
+                  <td></td>
+                </tr>
+              </table>
+            </div>
+        <?php endif;?>    
       <?php endif ?>
       
-      <?php include_component('biblioteca_archivos','listarBiblioteca',array('id_curso' => $curso->getId() )); ?>
+      <?php include_component('biblioteca_archivos','listarBiblioteca',array('id_curso' => $curso->getId(), 'usuario'=>$usuario )); ?>
       
       
       <div id="listado_mensajes_recibidos">

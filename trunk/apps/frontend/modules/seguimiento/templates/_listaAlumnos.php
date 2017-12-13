@@ -21,7 +21,9 @@
             <th class="td3">Email</th>
             <th class="td4">Tel. fijo</th>
             <th class="td5">M&oacute;vil</th>
+            <?php if(!$usuario->getInspector()): ?>
             <th class="td6">Opciones</th>
+            <?php endif; ?> 
           </tr>
         </table>
       </div>
@@ -36,10 +38,12 @@
               <td class="td3"><?php echo $alumno->getUsuario()->getEmail() ?></td>
               <td class="td4"><?php echo $alumno->getUsuario()->getTelefono1() ?></td>
               <td class="td5"><?php echo $alumno->getUsuario()->getTelefono2() ?></td>
+              <?php if(!$usuario->getInspector()): ?>
               <td class="td6"><?php echo link_to(image_tag('nuevoevento.gif','Title=Nuevo evento'), 'calendario/nuevoEvento'.$redireccion."&idalumno=".$alumno->getUsuario()->getId()."&popUp=1",array(
         														'popup' => array('', 'width=510,height=560,left=320,top=0'))) ?>
                               <?php echo link_to(image_tag('sendmail.gif','Title=Enviar mensaje'), 'mensaje/redactarMensaje') ?>
                               <?php echo link_to(image_tag('nuevatarea.gif','Title=Asignar ejercicio'), 'tareas/tareasExamenes') ?>
+              <?php endif; ?>     
             </tr>
             <?php $i++; ?>
           <?php endforeach; ?>
@@ -66,7 +70,7 @@
 	        </table>
 	    </div>
     </form>
-    <br><? use_helper('volver'); echo volver(); ?>
+    <br><?php use_helper('volver'); echo volver(); ?>
  </div>
  <div class="cierre_box_correo"></div>
 </div>

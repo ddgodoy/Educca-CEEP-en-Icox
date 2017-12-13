@@ -5,25 +5,26 @@
  *
  * @package    edoceo
  * @subpackage ejercicio
- * @author     Ángel Martín Latasa
+ * @author     ï¿½ngel Martï¿½n Latasa
  * @version    SVN: $Id: actions.class.php 2692 2006-11-15 21:03:55Z fabien $
  */
 class ejercicioActions extends sfActions
 {
 
 // #############################################################################
-// ##########      página de bienvenida del módulo de ejercicios     ###########
+// ##########      pï¿½gina de bienvenida del mï¿½dulo de ejercicios     ###########
 // #############################################################################
 
   public function executeIndex()
   {
     $this->rol = $this->getUser()->obtenerCredenciales();
     $this->redireccion = '?idcurso='.$this->getRequestParameter('idcurso');
+    $this->usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
   }
 
 
 // #############################################################################
-// ##########       página principal de la edición de ejercicios     ###########
+// ##########       pï¿½gina principal de la ediciï¿½n de ejercicios     ###########
 // #############################################################################
 
   public function executeEjercicios()
@@ -112,6 +113,7 @@ class ejercicioActions extends sfActions
     $this->cursos = $cursos;
 
     $this->rol = $rol;
+    
   }
 
 
@@ -174,11 +176,12 @@ class ejercicioActions extends sfActions
       if ($id_materia) {$c->add(EjercicioPeer::ID_MATERIA, $id_materia);}
       $this->ejercicios = EjercicioPeer::DoSelect($c);
     }
+    $this->usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
   }
 
 
 // #############################################################################
-// #################       creación de un ejercicio       ######################
+// #################       creaciï¿½n de un ejercicio       ######################
 // #############################################################################
 
   public function executeCrearEjercicio()
@@ -608,7 +611,7 @@ class ejercicioActions extends sfActions
 
 
 // #############################################################################
-// ###############       edición de una pregunta de test        ################
+// ###############       ediciï¿½n de una pregunta de test        ################
 // #############################################################################
 
   public function executeEditarCuestionTest()
@@ -644,7 +647,7 @@ class ejercicioActions extends sfActions
 
 
 // #############################################################################
-// ###############        edición de una pregunta corta         ################
+// ###############        ediciï¿½n de una pregunta corta         ################
 // #############################################################################
 
   public function executeEditarCuestionCorta()
@@ -672,7 +675,7 @@ class ejercicioActions extends sfActions
 
 
 // #############################################################################
-// ###############           edición de un problema             ################
+// ###############           ediciï¿½n de un problema             ################
 // #############################################################################
 
   public function executeEditarCuestionPractica()
@@ -795,7 +798,7 @@ class ejercicioActions extends sfActions
     $rol = $this->getUser()->obtenerCredenciales();
 
 
-      // Aquí guardamos el resultado del test
+      // Aquï¿½ guardamos el resultado del test
       if ($this->hasRequestParameter('total_preguntas_test'))
       {
         $test_multiple = $ejercicio->getTestMultiple();
@@ -825,8 +828,8 @@ class ejercicioActions extends sfActions
           $marcados = array();
           $nomarcados = array();
 
-          // Comprobamos para cada checkbox de las respuestas que tenía la cuestión
-          // de test que estamos explorando en esta iteración si estaba activo.
+          // Comprobamos para cada checkbox de las respuestas que tenï¿½a la cuestiï¿½n
+          // de test que estamos explorando en esta iteraciï¿½n si estaba activo.
           // Si estaba activo guardamos el identificador de la respuesta correspondiente
           // en el array $pendientes_crear.
           $index = 0;
@@ -1072,7 +1075,7 @@ class ejercicioActions extends sfActions
 
 
 // #############################################################################
-// ################               guardar fórmula               ################
+// ################               guardar fï¿½rmula               ################
 // #############################################################################
 
 
@@ -1132,7 +1135,7 @@ class ejercicioActions extends sfActions
   }
 
 // #############################################################################
-// ################              editor matemático              ################
+// ################              editor matemï¿½tico              ################
 // #############################################################################
 
 

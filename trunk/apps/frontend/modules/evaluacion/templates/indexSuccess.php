@@ -3,7 +3,7 @@
   <div class="contenido_principal">
 
       <table class="tablaopciones">
-      
+      <?php if(!$usuario->getInspector()): ?>
         <tr>
           <td class="imagen">
             <?php echo link_to(image_tag('bot_ej_pendientes.gif'), "/evaluacion/evaluacionRevision$redireccion") ?>
@@ -13,12 +13,12 @@
             <div class="explicacion">Este apartado est&aacute; dedicado a la evaluaci&oacute;n de ejercicios o ex&aacute;menes entregados por los alumnos y a la revisi&oacute;n de los mismos. Se le mostrar&aacute; una lista de las tareas y ex&aacute;menes que tienen ejercicios pendientes de correcci&oacute;n o ejercicios ya corregidos que podr&aacute;n ser revisados y reevaluados.</div>
           </td>
         </tr>
-        
+       
         <tr>
            <td colspan="2" class="separador">
            </td>
         </tr>
-        
+      <?php endif; ?>   
         
         <tr>
           <td class="imagen">
