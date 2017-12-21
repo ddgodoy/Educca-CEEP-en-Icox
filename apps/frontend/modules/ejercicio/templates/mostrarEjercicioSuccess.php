@@ -17,7 +17,7 @@
       <?php echoWarning('', "La soluci&oacute;n del ejercicio es incompleta! Hay $warning pregunta(s) sin respuesta. Al editar la soluci&oacute;n de un problema es importante que resuelva todas las preguntas ya que esto le permitir&aacute; usar la correcci&oacute;n autom&aacute;tica en los tests."); ?>
     <?php endif; ?>
     <?php include_partial('contenidoEjercicio', array('ejercicio' => $ejercicio, 'redireccion' => $redireccion)) ?>
-    <? use_helper('volver'); echo volver();  ?>
+    <?php use_helper('volver'); echo volver();  ?>
   </div>
   <div class="cierre_principal"></div>
 </div>

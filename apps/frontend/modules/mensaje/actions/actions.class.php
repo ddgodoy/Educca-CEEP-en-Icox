@@ -238,11 +238,13 @@ class mensajeActions extends sfActions
   	  $id_queja = $asunto_queja->getId();
 
       if ($id_queja == $id_asunto) {
-//        $this->profesores = $this->getUser()->getSupervisores();
-        $this->profesores = $this->getUser()->getAdministradores();
+        $this->profesores = $this->getUser()->getSupervisores();
+        //$this->admins = $this->getUser()->getAdministradores();
+        $this->admins = array();
         $this->alumnos = array();
       } else {
         $curso = CursoPeer::RetrieveByPk($id_curso);
+        $this->admins = array(); 
         $this->profesores = $this->getUser()->getProfesoresCurso($id_curso);
         $this->alumnos = $this->getUser()->getAlumnosCurso($id_curso);
       }

@@ -291,6 +291,7 @@ class cursoActions extends sfActions
      if (!$this->width) { $this->width=737;}
      $this->materia = $materia;
      $this->id_usuario = $this->getUser()->getAnyId();
+     $this->url_libro = $this->getUrlBlinkBook('9788448607111','9315U411');
   }
 	//
 	public function executeMostrarBibliografia()
@@ -605,5 +606,67 @@ class cursoActions extends sfActions
     $this->width  = $materia->getWidth();
     $this->height = $materia->getHeight();
   }
+  
+  /*
+   * getUrlBlinkBook
+   * @books string
+   * @license string
+   * @return url
+   */
+  private function getUrlBlinkBook($books, $license){
+      $curl = curl_init();
+
+          curl_setopt_array($curl, array(
+          CURLOPT_URL => "https://blinkwpre.blinklearning.com/ws/WsSSO/wsSSO.php",
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => "",
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 30,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => "POST",
+          CURLOPT_POSTFIELDS => '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sso="http://www.blinklearning.com/sso/">
+                                <soapenv:Header>
+                                        <sso:WSEAuthenticateHeader>
+                                                <sso:User>ceepvirtual</sso:User>
+                                                <sso:Password>QX4b9QNB</sso:Password>
+                                        </sso:WSEAuthenticateHeader>
+                                </soapenv:Header>
+                                <soapenv:Body>
+                                        <sso:RequestAccess>
+                                                <sso:Id>123456</sso:Id>
+                                                <sso:Name>Test1</sso:Name>
+                                                <sso:Surname>Blink1</sso:Surname>
+                                                <sso:Email>test1blink1@testblink.com</sso:Email>
+                                                <sso:Books>
+                                                        <sso:Book>'.$books.'</sso:Book>
+                                                </sso:Books>
+                                                <sso:Licenses>
+                                                        <sso:License>'.$license.'</sso:License>
+                                                </sso:Licenses>
+                                                <sso:operationCode>viewbook</sso:operationCode>
+                                                <sso:activityId>'.$books.'</sso:activityId>
+                                                <sso:userType>S</sso:userType>
+                                        </sso:RequestAccess>
+                                </soapenv:Body>
+                        </soapenv:Envelope>',
+          CURLOPT_HTTPHEADER => array(
+            "accept-encoding: gzip,deflate",
+            "cache-control: no-cache",
+            "content-type: text/xml;charset=UTF-8",
+            "host: blinkwpre.blinklearning.com",
+            "soapaction: https://www.blinklearning.com/sso/RequestAccess"
+          ),
+        ));
+
+        $response = curl_exec($curl);
+        $err = curl_error($curl);
+
+        curl_close($curl);
+
+        $clean_xml = str_ireplace(['SOAP-ENV:', 'SOAP:', 'ns1:', 'soap-env:envelope:'], '', $response);
+        $xml = simplexml_load_string($clean_xml);
+            
+        return $xml->Body->RequestAccessResponse->RequestAccessResult->URL;
+  } 
 
 } // end class

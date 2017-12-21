@@ -1,11 +1,11 @@
-  <?php if ($sf_user->getCursoMenu()) : ?>
+<?php $usuario = UsuarioPeer::retrieveByPk($sf_user->getAnyId()); ?>    
+   <?php if ($sf_user->getCursoMenu()) : ?>
         <?php $idcurso = $sf_user->getCursoMenu(); $redireccion = "?idcurso=".$idcurso; ?>
    <?php else  : ?>
          <?php $redireccion = "?" ;?>
    <?php endif; ?>
   <?php if ($sf_user->getCursoMenu()) : ?>
-  <?php $curso = CursoPeer::retrieveByPk($idcurso); ?>
-  <?php $usuario = UsuarioPeer::retrieveByPk($sf_user->getAnyId()); ?>  
+  <?php $curso = CursoPeer::retrieveByPk($idcurso); ?>  
   <div class="tit_box_menu"><h2 class="titbox">Opciones del curso</h2></div>
   <ul class="listamenu">
     <li class="inicio"><?php echo link_to('Inicio', 'curso/index?idcurso='.$sf_user->getCursoMenu(),array('name' => 'ln_inicio')) ?></li>
@@ -58,10 +58,11 @@
       
   <?php endif; ?>
 <?php endif; ?>
-
+<?php if(!$usuario->getInspector()): ?>
     <!--div id="submenu"-->
-	     <?php include_component_slot('submenu') ?>
-	  <!--/div-->
+        <?php include_component_slot('submenu') ?>
+    <!--/div-->
+<?php endif; ?>    
 
   <div class="tit_box_menu"><h2 class="titbox">Men&uacute; principal</h2></div>
   <ul class="listamenu">

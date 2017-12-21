@@ -10,6 +10,33 @@
 
       <?php $i = 0; ?>
         <?php $max_length = 33; ?>
+        <?php foreach ($admins as $admin) : ?>
+          <tr class="trprofesor">
+            <td class="tdcheck">
+              <?php echo checkbox_tag("usuario$i", $admin->getId()); ?>
+            </td>
+            <td class="tdnombredest">
+              <?php echo image_tag('profesor.png','Title=Profesor class=ico_profesor'); ?>
+              <?php 
+              $nombre = $admin->getNombre();
+              $length_nombre = strlen($nombre);
+              if (($length_nombre + 2) < $max_length)
+              {
+                $pendientes = $max_length - $length_nombre - 2;
+                $apellidos = truncate_text($admin->getApellidos(), $pendientes);
+                $nombre_final = $apellidos.', '.$nombre;
+              }
+              else
+              {
+                $nombre_final = truncate_text($nombre, $max_length);
+              }
+              echo $nombre_final
+            ?>
+            </td>
+          </tr>
+          <?php $i++; ?>
+        <?php endforeach; ?>
+          
         <?php foreach ($profesores as $profesor) : ?>
           <tr class="trprofesor">
             <td class="tdcheck">

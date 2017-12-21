@@ -45,7 +45,7 @@
       <br>
       <table border='0' width='100%'>
 			   <tr>
-			      <td style="width:20%;"><? echo volver();     ?></td>
+			      <td style="width:20%;"><?php echo volver();     ?></td>
 			      <td style="width:80%;">&nbsp;</td>
          </tr>
        </table>

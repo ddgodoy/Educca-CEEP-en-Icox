@@ -201,6 +201,17 @@
             </tr>
             <?php $i++; ?>
             <?php endforeach;?>
+            
+            <?php if($idcurso == 197 && $id_usuario == 562): ?>
+            <tr class="cont_fil" id="filarayada">
+                <td style="text-align: left; width: 45%; padding-left: 4px;">
+                <a style="color:#003399;" href="javascript:void(0)" onclick="window.open('<?php echo $url_libro ?>', 'scormbrowser', 'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=0, scrollbars=0, height=700, width=1000')">Libro (Técnicas básicas de enfermería)</a>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <?php endif; ?>
             <?php $horas = floor($total/3600); ?>
             <?php $minutos = number_format(($total/60),2); ?>
           

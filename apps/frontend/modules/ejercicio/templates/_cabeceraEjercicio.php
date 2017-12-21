@@ -118,11 +118,11 @@
     <?php if ($modo == 'tarea'):?>
       <tr>
         <td>Estado de la tarea: &nbsp;&nbsp;&nbsp;</td>
-        <? if (isset($tarea))  : ?>
-           <td class='estado<?echo $tarea->getId()?>'><?php echo $estado_tarea ?></td>
-        <? else : ?>
+        <?php if (isset($tarea))  : ?>
+           <td class='estado<?php echo $tarea->getId()?>'><?php echo $estado_tarea ?></td>
+        <?php else : ?>
            <td class='estado'><?php echo $estado_tarea ?></td>
-        <? endif; ?>
+        <?php endif; ?>
       </tr>
       <?php if ($estado_tarea == 'Entregada'):?>
         <tr>
