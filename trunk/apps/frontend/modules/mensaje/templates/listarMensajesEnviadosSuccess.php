@@ -5,9 +5,10 @@
     <tr class="filatitulo">
       <td class="td1"><input name="selectall" id="selectall" type="checkbox" onClick="checkAll()"></td>
       <th class="td3">De</th>
-      <th class="td4">Asunto</th>
-      <th class="td5">Curso</th>
-      <th class="td6">Fecha</th>
+      <th class="td4">Para</th>
+      <th class="td5">Asunto</th>
+      <th class="td6">Curso</th>
+      <th class="td7">Fecha</th>
     </tr>
   </table>
 </div>
@@ -19,9 +20,10 @@
       <tr class="leido" <?php echo $fondo;?>>
         <td class="td1"><?php echo checkbox_tag("mensaje$i", $mensaje->getId(), false) ?></td>
         <td class="td3"><?php $user = UsuarioPeer::RetrieveByPk($mensaje->getIdEmisor()); echo truncate_text($user->getNombre()." ".$user->getApellidos(), 35); ?></td>
-        <td class="td4"><?php echo link_to(truncate_text($mensaje->getAsunto_mensaje()->getDescripcion(), 30), 'mensaje/mostrarMensajeEnviado?id_mensaje='.$mensaje->getId()) ?></td>
-        <td class="td5"><?php $curso = CursoPeer::RetrieveByPk($mensaje->getIdCurso()); echo truncate_text($curso->getNombre(), 30) ?></td>
-        <td class="td6"><?php echo $mensaje->getCreatedAt('H:i d/m/Y') ?></td>
+        <td class="td4"><?php echo $mensaje->getListaDestinatarios() ?></td>
+        <td class="td5"><?php echo link_to(truncate_text($mensaje->getAsunto_mensaje()->getDescripcion(), 30), 'mensaje/mostrarMensajeEnviado?id_mensaje='.$mensaje->getId()) ?></td>
+        <td class="td6"><?php $curso = CursoPeer::RetrieveByPk($mensaje->getIdCurso()); echo truncate_text($curso->getNombre(), 30) ?></td>
+        <td class="td7"><?php echo $mensaje->getCreatedAt('H:i d/m/Y') ?></td>
       </tr>
       <?php $i++; ?>
     <?php endforeach; ?>

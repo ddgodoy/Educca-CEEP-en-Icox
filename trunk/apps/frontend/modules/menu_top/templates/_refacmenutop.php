@@ -1,28 +1,28 @@
 <?php 
-    if (($moduloActual == $rol) && ($accionActual == 'index')){//Compruebo que estoy en el módulo de alumno y voy a ejecutar la
-                                  //acción index, para dejar estático el gif de Mi escritorio
+    if (($moduloActual == $rol) && ($accionActual == 'index')){//Compruebo que estoy en el mï¿½dulo de alumno y voy a ejecutar la
+                                  //acciï¿½n index, para dejar estï¿½tico el gif de Mi escritorio
 
       echo image_tag('bots_miescritorioh.gif', array('alt' => 'Mi escritorio', 'title' => 'Mi escritorio'));
       echo rollover('comercial/index', 'bots_ecursos.gif', 'bots_ecursosh.gif', 'ecursos', 'Oferta de cursos online');
 	    if ($rol != 'moroso') 
       {
         echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
-	      echo rollover('usuario/ayuda', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
+	      echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
 	    }
 
-    } else if (($moduloActual == 'comercial') && ($accionActual == 'index')) {//Compruebo que estoy en el módulo de alumno y voy a ejecutar la
-                                                                                //acción mostrarCursos, para dejar estático el gif de ecursos
+    } else if (($moduloActual == 'comercial') && ($accionActual == 'index')) {//Compruebo que estoy en el mï¿½dulo de alumno y voy a ejecutar la
+                                                                                //acciï¿½n mostrarCursos, para dejar estï¿½tico el gif de ecursos
 
         echo rollover($rol.'/index', 'bots_miescritorio.gif', 'bots_miescritorioh.gif', 'escritorio', 'Volver a mi escritorio');
         echo image_tag('bots_ecursosh.gif', array('alt' => 'Oferta cursos online', 'title' => 'Oferta de cursos online'));
         if ($rol != 'moroso') 
         {
           echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
-	        echo rollover('usuario/ayuda', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
+	        echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
 	      }
 
-    } else if ($accionActual == 'ayuda') {//Compruebo que estoy en el módulo de alumno y voy a ejecutar la
-                                          //acción ayuda, para dejar estático el gif de ayuda
+    } else if ($accionActual == 'ayuda') {//Compruebo que estoy en el mï¿½dulo de alumno y voy a ejecutar la
+                                          //acciï¿½n ayuda, para dejar estï¿½tico el gif de ayuda
 
           echo rollover($rol.'/index', 'bots_miescritorio.gif', 'bots_miescritorioh.gif', 'escritorio', 'Volver a mi escritorio');
           echo rollover('comercial/index', 'bots_ecursos.gif', 'bots_ecursosh.gif', 'ecursos', 'Oferta de cursos online');
@@ -32,7 +32,7 @@
             echo image_tag('bots_ayudah.gif',array('alt' => 'Ayuda', 'title' => 'Ayuda'));
           }
 
-    } else if ($sf_params->get('forum_name') == 'comunidad') {//Compruebo que estoy en el módulo de foro para dejar su gif estático
+    } else if ($sf_params->get('forum_name') == 'comunidad') {//Compruebo que estoy en el mï¿½dulo de foro para dejar su gif estï¿½tico
 
 
           echo rollover($rol.'/index', 'bots_miescritorio.gif', 'bots_miescritorioh.gif', 'escritorio', 'Volver a mi escritorio');
@@ -40,7 +40,7 @@
           if ($rol != 'moroso') 
           {
             echo image_tag('bots_comunidadh.gif',array('alt' => 'Comunidad', 'title' => 'Comunidad'));
-            echo rollover('usuario/ayuda', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
+            echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
           }
     
     } else {
@@ -49,7 +49,7 @@
           if ($rol != 'moroso') 
           {
             echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
-            echo rollover('usuario/ayuda', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
+            echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
           }
     }
 

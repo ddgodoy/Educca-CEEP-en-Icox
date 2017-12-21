@@ -89,7 +89,7 @@ function checkNinguno()
               </td>
             </tr>
           </table>
-          <?php echo textarea_tag('contenidomsj', '', 'rich=true size=85x20 tinymce_options=language:"es", height:"435px", width:"510px", theme:"simple"') ?></td>
+          <?php echo textarea_tag('contenidomsj', '', 'rich=true size=85x20 tinymce_options=language:"es", height:"435px", width:"510px", theme:"advanced"') ?></td>
          <td><div class="separadiv"><strong>&nbsp;Destinatarios:</strong></div>
             <div id="destinatarios" style="width: 100%;">
             <?php if ($es_respuesta) {

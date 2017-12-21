@@ -13,7 +13,7 @@ abstract class BaseUsuarioPeer {
 	const CLASS_DEFAULT = 'lib.model.Usuario';
 
 	
-	const NUM_COLUMNS = 30;
+	const NUM_COLUMNS = 31;
 
 	
 	const NUM_LAZY_LOAD_COLUMNS = 0;

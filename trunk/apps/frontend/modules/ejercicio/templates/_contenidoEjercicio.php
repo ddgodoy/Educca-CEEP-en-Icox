@@ -14,13 +14,13 @@
 
 
 <?php if ($ejercicio->getTipo() == 'problemas'):?>
-  <? if ( false !== stripos($redireccion,'mostrar_respuestas=2') ): ?>
+  <?php if ( false !== stripos($redireccion,'mostrar_respuestas=2') ): ?>
      <?php
      $cad=substr($redireccion, stripos($redireccion,'id_respuesta_ejercicio'));
      $cad=substr($cad, 0,strpos($cad,'&'));
      $id_respuesta_ejercicio=(int)substr($cad, strpos($cad, '=')+1);
      include_partial('ejercicio/respuestasProblemas', array('ejercicio' => $ejercicio, 'redireccion' => $redireccion,'id_respuesta_ejercicio'=>$id_respuesta_ejercicio)) ;?>
-  <? endif; ?>
+  <?php endif; ?>
   <div id="cuestiones_practicas"></div>
 <?php echo javascript_tag(remote_function(array('update' => "cuestiones_practicas", 'url' => "ejercicio/mostrarProblemas$redireccion")))?>
 <?php endif;?>

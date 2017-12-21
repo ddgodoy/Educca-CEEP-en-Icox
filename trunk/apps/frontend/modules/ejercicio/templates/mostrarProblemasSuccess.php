@@ -44,7 +44,42 @@
           </th>
         </tr>
 
-      <?php $max_hojas_respuesta = $ejercicio->getNumeroHojas(); ?>
+      <?php $max_hojas_respuesta = $ejercicio->getNumeroHojas(); ?>   
+      <?php if(is_dir($ruta.'/'.$id_solucion_ejercicio.'/')): ?>  
+          <?php 
+                $var_ind = 0;
+                $files = [];
+                // Creamos un puntero al directorio y obtenemos el listado de archivos
+                chdir($ruta.'/'.$id_solucion_ejercicio.'/');
+                array_multisort(array_map('filemtime', ($files = glob("*.*"))), SORT_DESC, $files);
+                foreach($files as $archivo){
+                    // Obviamos los archivos ocultos
+                    if($archivo[0] == ".") continue;
+                    if(!is_dir($directorio . $archivo)) {
+                        if($var_ind != $archivo[0]){
+                            $var_ind = $archivo[0]; 
+                            $res[$archivo[0]] = array(
+                               $archivo[0] => $directorio . $archivo,
+                            );
+                        }    
+                    }
+                }
+          ?>
+          <?php for($i_hojas = 1; $i_hojas <= $max_hojas_respuesta; $i_hojas++):?>
+              <tr height="25">
+                <?php if (!file_exists($ruta.'/'.$id_solucion_ejercicio.'/'.$res[$i_hojas][$i_hojas]) || !key_exists($i_hojas, $res)):?>
+                  <th style="width: 100%; text-align: center;">
+                  (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n)
+                  </th>
+                <?php else:?>
+                  <th style="width: 100%; text-align: center;">
+                    <?php $link_archivo = '/uploads/problemas/'.$id_solucion_ejercicio.'/'.$res[$i_hojas][$i_hojas]; ?>  
+                    <u><a href="<?php echo $link_archivo; ?>" target="_blanck">Haga click aqu&iacute; para ver la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n</a></u>  
+                  </th>
+                <?php endif;?>
+              </tr>
+          <?php endfor; ?>
+      <?php else: ?>      
       <?php for($i_hojas = 1; $i_hojas <= $max_hojas_respuesta; $i_hojas++):?>
 
         <tr height="25">
@@ -60,6 +95,7 @@
         </tr>
 
       <?php endfor;?>
+      <?php endif;?>  
 
       </table>
       <br>
@@ -86,21 +122,56 @@
         </tr>
 
         <?php $max_hojas_respuesta = $ejercicio->getNumeroHojas(); ?>
+        <?php if(file_exists($ruta.'/'.$id_respuesta_ejercicio.'/')): ?> 
+        <?php 
+                $var_ind = 0;
+                // Creamos un puntero al directorio y obtenemos el listado de archivos
+                chdir($ruta.'/'.$id_respuesta_ejercicio.'/');
+                array_multisort(array_map('filemtime', ($files = glob("*.*"))), SORT_DESC, $files);
+                foreach($files as $archivo){
+                    // Obviamos los archivos ocultos
+                    if($archivo[0] == ".") continue;
+                    if(!is_dir($directorio . $archivo)) {
+                        if($var_ind != $archivo[0]){
+                            $var_ind = $archivo[0]; 
+                            $res[$archivo[0]] = array(
+                               $archivo[0] => $directorio . $archivo,
+                            );
+                        }    
+                    }
+                }
+        ?>
         <?php for($i_hojas = 1; $i_hojas <= $max_hojas_respuesta; $i_hojas++):?>
-
-        <tr height="25">
-          <?php if (file_exists($ruta.'respuesta_'.$id_respuesta_ejercicio.'_'.$i_hojas.'.jpg')):?>
-            <th style="width: 100%; text-align: center;">
-              <u><?php echo link_to('Haga click aqu&iacute; para ver la hoja #'.$i_hojas.' de respuestas', 'ejercicio/mostrarImagen?ruta=respuesta_'.$id_respuesta_ejercicio.'_'.$i_hojas, array('popup' => array('', 'toolbar=0,location=0,status=0,menubar=0,resizable=1,top=0,left=200'))) ?></u>
-            </th>
-          <?php else:?>
-            <th style="width: 100%; text-align: center;">
-            (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?> de respuestas)
-            </th>
-          <?php endif;?>
-        </tr>
-
+            <tr height="25">
+              <?php if (!file_exists($ruta.'/'.$id_respuesta_ejercicio.'/'.$res[$i_hojas][$i_hojas]) || !key_exists($i_hojas, $res)):?>
+                <th style="width: 100%; text-align: center;">
+                (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n)
+                </th>
+              <?php else:?>
+                <th style="width: 100%; text-align: center;">
+                  <?php $link_archivo = '/uploads/problemas/'.$id_respuesta_ejercicio.'/'.$res[$i_hojas][$i_hojas]; ?>  
+                  <u><a href="<?php echo $link_archivo; ?>" target="_blanck">Haga click aqu&iacute; para ver la hoja #<?php echo $i_hojas ?> de respuestas</a></u>  
+                </th>
+              <?php endif;?>
+            </tr>
         <?php endfor; ?>
+        <?php else: ?>
+            <?php for($i_hojas = 1; $i_hojas <= $max_hojas_respuesta; $i_hojas++):?>
+
+            <tr height="25">
+              <?php if (file_exists($ruta.'respuesta_'.$id_respuesta_ejercicio.'_'.$i_hojas.'.jpg')):?>
+                <th style="width: 100%; text-align: center;">
+                  <u><?php echo link_to('Haga click aqu&iacute; para ver la hoja #'.$i_hojas.' de respuestas', 'ejercicio/mostrarImagen?ruta=respuesta_'.$id_respuesta_ejercicio.'_'.$i_hojas, array('popup' => array('', 'toolbar=0,location=0,status=0,menubar=0,resizable=1,top=0,left=200'))) ?></u>
+                </th>
+              <?php else:?>
+                <th style="width: 100%; text-align: center;">
+                (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?> de respuestas)
+                </th>
+              <?php endif;?>
+            </tr>
+
+            <?php endfor; ?>
+        <?php endif; ?>    
 
       </table>
       <br>

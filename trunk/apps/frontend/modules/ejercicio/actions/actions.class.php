@@ -977,9 +977,13 @@ class ejercicioActions extends sfActions
           $indice++;
         }
 
-        $ruta = SF_ROOT_DIR.'/web/uploads/problemas/';
+        $ruta = SF_ROOT_DIR.'/web/uploads/problemas/'.$id_respuesta_ejercicio.'/';
         $error_log = '';
-
+        
+        if(!file_exists($ruta)){
+            mkdir($ruta, 0777);
+        }
+        
         $max_hojas_respuesta = $ejercicio->getNumeroHojas();
         $rutas = array();
         for ($i_hojas = 1; $i_hojas <= $max_hojas_respuesta; $i_hojas++)
@@ -989,15 +993,15 @@ class ejercicioActions extends sfActions
 
           if ($_FILES['upfile'.$i_hojas]['name'] != '')
           {
-            if ($_FILES['upfile'.$i_hojas]['size'] > 300000)
+            if ($_FILES['upfile'.$i_hojas]['size'] > 2000000)
             {
-              $error_log.= 'El fichero enviado como hoja de respuestas #'.$i_hojas.' es demasiado grande, supera los 300Kb.<br>';
+              $error_log.= 'El fichero enviado como hoja de respuestas #'.$i_hojas.' es demasiado grande, supera los 2mb.<br>';
               $nerrores++;
             }
 
-            if (!(($_FILES['upfile'.$i_hojas]['type'] == 'image/jpg') || ($_FILES['upfile'.$i_hojas]['type'] == 'image/jpeg') || ($_FILES['upfile'.$i_hojas]['type'] == 'image/pjpeg')))
+            if (!(($_FILES['upfile'.$i_hojas]['type'] == 'image/jpg') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/msword') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/pdf')))
             {
-              $error_log.= 'El formato de la hoja de respuestas #'.$i_hojas.' no es compatible. Se requiere JPG o equivalente.<br>';
+              $error_log.= 'El formato de la hoja de respuestas #'.$i_hojas.' no es compatible. Se requiere JPG, DOC, PDF o equivalente.<br>';
               $nerrores++;
             }
 
@@ -1006,13 +1010,13 @@ class ejercicioActions extends sfActions
               $error_log.= 'No se acepto el fichero enviado como hoja de respuestas #'.$i_hojas.' .<br>';
             }
             else
-            { $rutas[]=$ruta.'respuesta_'.$id_respuesta_ejercicio.'_'.$i_hojas.'.jpg';
-              if (file_exists($ruta.'respuesta_'.$id_respuesta_ejercicio.'_'.$i_hojas.'.jpg'))
+            { $rutas[]=$ruta.$i_hojas.'_respuesta_'.$id_respuesta_ejercicio.'_'.$_FILES['upfile'.$i_hojas]['name'];
+              if (file_exists($ruta.$i_hojas.'_respuesta_'.$id_respuesta_ejercicio.'_'.$_FILES['upfile'.$i_hojas]['name']))
               {
-                unlink($ruta.'respuesta_'.$id_respuesta_ejercicio.'_'.$i_hojas.'.jpg');
+                unlink($ruta.$i_hojas.'_respuesta_'.$id_respuesta_ejercicio.'_'.$_FILES['upfile'.$i_hojas]['name']);
               }
               //move_uploaded_file($_FILES['upfile'.$i_hojas]['tmp_name'], $ruta.'respuesta_'.$id_respuesta_ejercicio.'_'.$i_hojas.'.jpg');
-              copy($_FILES['upfile'.$i_hojas]['tmp_name'] ,$ruta.'respuesta_'.$id_respuesta_ejercicio.'_'.$i_hojas.'.jpg' );
+              copy($_FILES['upfile'.$i_hojas]['tmp_name'] ,$ruta.$i_hojas.'_respuesta_'.$id_respuesta_ejercicio.'_'.$_FILES['upfile'.$i_hojas]['name'] );
             }
           }
 
@@ -1050,7 +1054,7 @@ class ejercicioActions extends sfActions
 		$url = $latex->getFormulaURL($latex_formula);
 
 		$pic = $picture_name.'.png';
-    $url = SF_ROOT_DIR.'/web/images/ecuaciones/'.$pic;
+        $url = SF_ROOT_DIR.'/web/images/ecuaciones/'.$pic;
 
 
 		if ($url != false)

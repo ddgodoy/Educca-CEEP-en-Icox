@@ -136,7 +136,7 @@ abstract class BaseRol extends BaseObject  implements Persistent {
 			$this->id = $rs->getString($startcol + 0);
 
 			$this->nombre = $rs->getString($startcol + 1);
-
+                        
 			$this->created_at = $rs->getTimestamp($startcol + 2, null);
 
 			$this->resetModified();
