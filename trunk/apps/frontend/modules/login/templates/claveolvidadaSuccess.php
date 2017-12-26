@@ -25,6 +25,7 @@
 		</td>
       </tr>
       <tr>
+        <td>&nbsp;</td>  
         <td class="tdmatricula">
           <table width="100%">
             <tr>
@@ -34,7 +35,7 @@
               <td style="text-align:right;">
                 <div id="trans" class="trans">
                  <?php echo sexy_submit_tag('Reestablecer',array('onmouseup'=>'bloqueaCapa()')); ?>
-                </div>
+            </div>
               </td>
             </tr>
           </table>
