@@ -544,7 +544,7 @@ class Paquete extends BasePaquete
     }
     $c->add($criterion);
 
-    $c->addGroupByColumn(Usuarios_onlinePeer::ID_USUARIO);
+    //$c->addGroupByColumn(Usuarios_onlinePeer::ID_USUARIO);
 
     $usuarios= Usuarios_onlinePeer::doSelect($c);
 
