@@ -42,7 +42,7 @@
           <?php $solucion_alumno = Ejercicio_resueltoPeer::RetrieveByPk($elemento[3]);?>
           <td class="td3"><?php printf('%.2f', $solucion_alumno->getScore());?></td>
           <td class="td4"><?php //echo button_to('Revisar', 'evaluacion/mostrarEjercicioEvaluacion?id_respuesta_ejercicio='.$elemento[3], array ('popup' => array('', 'width=780,height=740,toolbar=0,location=0,status=0,menubar=0,resizable=0,scrollbars=1,top=0,left=200')))?>
-                          <?echo link_to(image_tag('lupa.png', array('alt' => 'Revisar Tarea', 'title' => 'Revisar Tarea')),
+                          <?php echo link_to(image_tag('lupa.png', array('alt' => 'Revisar Tarea', 'title' => 'Revisar Tarea')),
                                          'evaluacion/mostrarEjercicioEvaluacion?id_respuesta_ejercicio='.$elemento[3],
                                          array( 'id' => 'ln_revisar_ejercicio'.$elemento[3],
                                                 'popup' => array('', 'width=780,height=740,toolbar=0,location=0,status=0,menubar=0,resizable=0,scrollbars=1,top=0,left=200') )
@@ -51,7 +51,7 @@
         <?php else:?>
           <th class="td3">Pendiente de correcci&oacute;n</th>
           <td class="td4"><?php //echo button_to('Corregir', 'evaluacion/mostrarEjercicioEvaluacion?id_respuesta_ejercicio='.$elemento[3], array ('popup' => array('', 'width=780,height=740,toolbar=0,location=0,status=0,menubar=0,resizable=0,scrollbars=1,top=0,left=200')))?>
-                          <?echo link_to(image_tag('corregir.png', array('alt' => 'Corregir Tarea', 'title' => 'Corregir Tarea')),
+                          <?php echo link_to(image_tag('corregir.png', array('alt' => 'Corregir Tarea', 'title' => 'Corregir Tarea')),
                                          'evaluacion/mostrarEjercicioEvaluacion?id_respuesta_ejercicio='.$elemento[3],
                                          array( 'id' => 'ln_corregir_ejercicio'.$elemento[3],
                                                 'popup' => array('', 'width=780,height=740,toolbar=0,location=0,status=0,menubar=0,resizable=0,scrollbars=1,top=0,left=200') )
