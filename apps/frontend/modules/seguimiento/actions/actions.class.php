@@ -608,12 +608,8 @@ class seguimientoActions extends sfActions
           $parametrosAux = explode("=", $parametro);
 		      ${$parametrosAux[0]} = $parametrosAux[1];
         }
-		}
-
-    echo '<pre>';
-    print_r($parametrosAux);
-    echo '</pre>';
-    exit();            
+    }
+     
     if ( $this->getUser()->hasCredential('alumno') )
     {
       // para que los alumnos solo puedan ver sus tiempos
