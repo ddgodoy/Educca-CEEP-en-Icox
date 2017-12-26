@@ -21,6 +21,7 @@
                      <div style='text-align:left;padding:5px;padding-left:40px;'>
                   <?php endif; ?>
                      <?php echo $usuario->getUsuario()->getNombreusuario()?>
+                     <?php echo $usuario->getUsuario()->getId()?>    
                 </div>
             </li>
           <?php endforeach;?>
