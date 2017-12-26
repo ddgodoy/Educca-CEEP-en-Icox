@@ -39,7 +39,7 @@
             <?php else:?>
               <br><br>
               <?php //echoNotaInformativa('Para corregir de forma autom&aacute;tica todos los tests haga click en este bot&oacute;n', ' '.button_to('Corregir todos los test', 'evaluacion/corregirTests?id_tarea='.$tarea->getId())); ?>
-              <?echo echoNotaInformativa('
+              <?php echo echoNotaInformativa('
                                           <table border=\'0\'>
                                           <tr>
                                             <td valign=\'middle\'>
