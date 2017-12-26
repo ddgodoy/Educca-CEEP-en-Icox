@@ -566,10 +566,10 @@ class Paquete extends BasePaquete
     $c = new Criteria();
     $c->add(Usuarios_onlinePeer::TIEMPO, time()-(160), Criteria::GREATER_THAN); //este tiempo tiene qser mayor qel puesto en /online/javascript_periodico
 
-    /*if ($idUsuario)
+    if ($idUsuario)
     {
       $c->add(Usuarios_onlinePeer::ID_USUARIO, $idUsuario, Criteria::NOT_EQUAL );
-    }*/
+    }
 
     foreach($cursos as $curso)
     {
@@ -585,7 +585,7 @@ class Paquete extends BasePaquete
     }
     $c->add($criterion);
 
-    //$c->addGroupByColumn(Usuarios_onlinePeer::ID_USUARIO);
+    $c->addGroupByColumn(Usuarios_onlinePeer::ID_USUARIO);
 
     $usuarios= Usuarios_onlinePeer::doSelect($c);
     $num = count($usuarios);
