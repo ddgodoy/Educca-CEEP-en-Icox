@@ -577,11 +577,15 @@ class Paquete extends BasePaquete
       {
         $criterion2 = $c->getNewCriterion(Usuarios_onlinePeer::ID_CURSO,$curso->getCurso()->getId());
         $criterion->addOr($criterion2);
-      } else $criterion = $c->getNewCriterion(Usuarios_onlinePeer::ID_CURSO,$curso->getCurso()->getId());
+      } 
+      else
+      {    
+          $criterion = $c->getNewCriterion(Usuarios_onlinePeer::ID_CURSO,$curso->getCurso()->getId());
+      }    
     }
     $c->add($criterion);
 
-    $c->addGroupByColumn(Usuarios_onlinePeer::ID_USUARIO);
+    //$c->addGroupByColumn(Usuarios_onlinePeer::ID_USUARIO);
 
     $usuarios= Usuarios_onlinePeer::doSelect($c);
     $num = count($usuarios);
