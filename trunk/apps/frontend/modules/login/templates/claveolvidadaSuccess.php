@@ -24,13 +24,21 @@
             <?php echo input_tag('dni', '') ?>
 		</td>
       </tr>
-
       <tr>
-        <td>&nbsp;</td>
-        <td><div id="trans" class="trans">
+        <td class="tdmatricula">
+          <table width="100%">
+            <tr>
+              <td style="text-align:left; vertical-align:bottom;">
+                 <?php echo link_to(image_tag('bot_volver.gif','Alt=Volver'),'/') ?>
+              </td>
+              <td style="text-align:right;">
+                <div id="trans" class="trans">
                  <?php echo sexy_submit_tag('Reestablecer',array('onmouseup'=>'bloqueaCapa()')); ?>
-            </div>
-		</td>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </td>
       </tr>
     </table>
     </form>
