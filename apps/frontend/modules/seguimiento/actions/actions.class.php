@@ -609,7 +609,9 @@ class seguimientoActions extends sfActions
 		      ${$parametrosAux[0]} = $parametrosAux[1];
         }
     }
-       
+
+    $idcurso = $parametrosAux[1];
+
     if ( $this->getUser()->hasCredential('alumno') )
     {
         // para que los alumnos solo puedan ver sus tiempos
