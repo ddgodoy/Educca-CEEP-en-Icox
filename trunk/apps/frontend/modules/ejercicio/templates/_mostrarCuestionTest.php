@@ -38,7 +38,6 @@
 
         <?php $fondo=""; ?>
         <?php if ($mostrar_solucion == 1):?>
-          <?php echo $id_respuesta_ejercicio ?>  
           <?php if ($respuesta->getSeleccionEjercicio($id_respuesta_ejercicio)):?>
             <?php if ($respuesta->getCorrecta()):?>
               <?php $fondo=" id=\"filarayada_verdefuerte\""; ?>
