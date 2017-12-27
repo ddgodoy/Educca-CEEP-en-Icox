@@ -476,7 +476,7 @@ class evaluacionActions extends sfActions
     echo $nota;
     echo $id_curso;
     echo $id_alumno;
-    exit();
+    
     
     $c = new Criteria();
     $c->add(CalificacionesPeer::ID_USUARIO, $id_alumno);
@@ -492,6 +492,9 @@ class evaluacionActions extends sfActions
       $cal->setScore($nota);
     }
     $cal->save();
+    $cal->getScore();
+    exit();
+    
     $this->setLayout('PopUpEvaluacion');
   }
 	//
