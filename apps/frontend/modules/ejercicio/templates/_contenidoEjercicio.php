@@ -1,7 +1,6 @@
 
 <?php if ($ejercicio->getTipo() == 'test'):?>
   <div id="cuestiones_test"></div>
-  <?php echo $redireccion; ?>
   <?php echo javascript_tag(remote_function(array('update' => "cuestiones_test", 'url' => "ejercicio/mostrarTest$redireccion")))?>
 <?php endif;?>
 
