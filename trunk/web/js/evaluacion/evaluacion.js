@@ -168,9 +168,9 @@ function submitNotaFinal() {
   else {
     if (confirm('Desea cambiar la nota anterior '+nota_anterior+' por la nueva nota '+target.value)) {
       document.getElementById('form_eval').submit();
-      alert('Nota guardada con \u00e9xito');
-      window.opener.location.reload();
-      window.close();
+      //alert('Nota guardada con \u00e9xito');
+      //window.opener.location.reload();
+      //window.close();
     }
   }
 
