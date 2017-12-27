@@ -35,7 +35,7 @@
     </div>
     <div class="listado_tabla_general_150">
       <table style="width: 715px;" >
-      <?if ($alumnos) :?>
+      <?php if ($alumnos) :?>
               <?php $i = 0; ?>
                 <?php foreach($alumnos as $alumno): ?>
                   <?php $fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
@@ -51,14 +51,14 @@
                   </tr>
                   <?php $i++ ?>
                 <?php endforeach; ?>
-      <? else : ?>
+      <?php else : ?>
           <tr><td class="tdnoaviso">
                   <br /><br /><br /><br />
                   <?php echo image_tag('info.gif', 'Title=Info', 'class=imginfo') ?>
                   <span class="txtinfo">No hay alumnos por confirmar</span>
               </td>
           </tr>
-      <? endif; ?>
+      <?php endif; ?>
       </table>
     </div>
     <div style="width: 100%; border-left: 1px solid #cccccc; border-right: 1px solid #cccccc; border-bottom: 1px solid #cccccc; border-top: 0px none; text-align: left; padding-top: 3px; padding-bottom: 3px; background-color:#F8FFF8;">

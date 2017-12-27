@@ -19,7 +19,7 @@
           <?php if ($notificaciones) :?>
                 <?php foreach($notificaciones as $notificacion): ?>
                   <?php $fondo = (($i % 2) == 0)? "id=\"filarayada\"" : ''; ?>
-                  <tr <?echo $fondo;?> height="18">
+                  <tr <?php echo $fondo;?> height="18">
                     <td style="width: 4%; text-align: center;"><input type="checkbox" id="checknt1" name="checkn<?php echo $i?>" value="<?php echo $notificacion->getId(); ?>"></td>
                     <td style="padding-left: 3px; width: 31%; text-align: left;"><?php echo link_to(truncate_text(html_entity_decode($notificacion->getTitulo(), ENT_NOQUOTES, 'UTF-8'), 40), 'notificaciones/mostrarNotificacion?id_notificacion='.$notificacion->getId()) ?></td>
                     <td style="width: 40%; text-align: left;"><?php echo truncate_text(html_entity_decode($notificacion->getContenido(), ENT_NOQUOTES, 'UTF-8'), 50) ?></td>
