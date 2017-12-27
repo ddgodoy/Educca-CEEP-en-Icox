@@ -33,6 +33,7 @@
       <table class="tabla_respuestas_test">
       <?php $indicerespuesta = 'a';?>
       <?php $index = 0;?>
+      <?php print_r($respuestas); ?>    
       <?php foreach($respuestas as $respuesta): ?>
         <tr<?php echo $trstyle ?>>
 
