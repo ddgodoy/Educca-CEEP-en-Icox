@@ -159,13 +159,14 @@ function submitNotaFinal() {
   var nota_anterior = document.getElementById('ultima_nota').value;
 
   if ((nota_anterior == null) || (nota_anterior == '')) {
-    document.form_eval.submit();
-    alert('Nota guardada con \u00e9xito')
+    document.getElementById('form_eval').submit();
+    alert('Nota guardada con \u00e9xito');
+    window.opener.location.reload();
     window.close();
   }
   else {
     if (confirm('Desea cambiar la nota anterior '+nota_anterior+' por la nueva nota '+target.value)) {
-      document.form_eval.submit();
+      document.getElementById('form_eval').submit();
       alert('Nota guardada con \u00e9xito');
       window.opener.location.reload();
       window.close();
