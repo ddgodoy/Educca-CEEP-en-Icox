@@ -162,15 +162,15 @@ function submitNotaFinal() {
   if ((nota_anterior == null) || (nota_anterior == '')) {
     document.getElementById('form_eval').submit();
     alert('Nota guardada con \u00e9xito');
-    window.opener.location.reload();
-    window.close();
+    //window.opener.location.reload();
+    //window.close();
   }
   else {
     if (confirm('Desea cambiar la nota anterior '+nota_anterior+' por la nueva nota '+target.value)) {
       document.getElementById('form_eval').submit();
       alert('Nota guardada con \u00e9xito');
-      window.opener.location.reload();
-      window.close();
+      //window.opener.location.reload();
+      //window.close();
     }
   }
 
