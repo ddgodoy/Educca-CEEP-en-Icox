@@ -126,6 +126,7 @@ function calcularMedias() {
   var target = document.getElementById('nota_final');
 
   if (count2 > 0) {
+    target.value = "";  
     target.value = (sum_nota2 / count2);
     target.value = target.value.substring(0,4);
   }
