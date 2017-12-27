@@ -506,7 +506,7 @@ class ejercicioActions extends sfActions
     if ($this->hasRequestParameter('id_respuesta_ejercicio')) {$this->id_respuesta_ejercicio = $this->getRequestParameter('id_respuesta_ejercicio');}
     else {$this->id_respuesta_ejercicio = 0;}
 
-    if ($this->hasRequestParameter('id_solucion_ejercicio')) {$this->id_respuesta_ejercicio = $this->getRequestParameter('id_solucion_ejercicio');}
+    if ($this->hasRequestParameter('id_solucion_ejercicio')) {$this->id_solucion_ejercicio = $this->getRequestParameter('id_solucion_ejercicio');}
     else {$this->id_solucion_ejercicio = 0;}
 
     $this->mostrar_edicion = $this->getRequestParameter('mostrar_edicion');
