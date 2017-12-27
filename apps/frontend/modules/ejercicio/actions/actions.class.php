@@ -510,7 +510,6 @@ class ejercicioActions extends sfActions
     else {$this->id_solucion_ejercicio = 0;}
 
     $this->mostrar_edicion = $this->getRequestParameter('mostrar_edicion');
-    echo $this->id_respuesta_ejercicio;
     $c = new Criteria();
     $c->add(Cuestion_testPeer::ID_EJERCICIO, $id_ejercicio);
     $cuestiones_test = Cuestion_testPeer::DoSelect($c);
