@@ -27,7 +27,7 @@
                   <tr class="cont_fil" <?= $fondo1 ?>>
                       <td style="text-align: left; width: 70%; padding-left: 4px;"><?php echo link_to($materia->getNombre(), 'admin/editMateria?idmateria='.$materia->getId()) ?></td>
                       <td style="text-align: center; width: 15%;"><?php echo $materia->getNumeroTemas() ?></td>
-                      <td style="text-align: center; width: 15%;"><?php echo link_to(image_tag('icon_edit.gif','Alt=Editar/Modificar esta materia Title=Editar/Modificar esta materia align=absmiddle'), 'admin/editMateria?idmateria='.$materia->getId(),array('id'=>'ln_edit_materia'.$materia->getId())) ?>&nbsp;&nbsp;&nbsp;<? echo link_to(image_tag('papelera.gif','Alt=Eliminar materia Title=Eliminar materia align=absmiddle'),'admin/eliminarMateria?idmateria='.$materia->getId(),'confirm=&iquest;Esta seguro que desea eliminar la materia '.$materia->getNombre().' ? id=ln_borrar_materia'.$materia->getId()) ?></td>
+                      <td style="text-align: center; width: 15%;"><?php echo link_to(image_tag('icon_edit.gif','Alt=Editar/Modificar esta materia Title=Editar/Modificar esta materia align=absmiddle'), 'admin/editMateria?idmateria='.$materia->getId(),array('id'=>'ln_edit_materia'.$materia->getId())) ?>&nbsp;&nbsp;&nbsp;<?php echo link_to(image_tag('papelera.gif','Alt=Eliminar materia Title=Eliminar materia align=absmiddle'),'admin/eliminarMateria?idmateria='.$materia->getId(),'confirm=&iquest;Esta seguro que desea eliminar la materia '.$materia->getNombre().' ? id=ln_borrar_materia'.$materia->getId()) ?></td>
                   </tr>
                   <?php $i++ ?>
 
@@ -62,7 +62,7 @@
     </div>
        <br>
 
-    <? echoNotaInformativa('Ayuda', "Desde este panel tendr&aacute; acceso a la informaci&oacute;n de las materias y podr&aacute; eliminar y crear materias."); ?>
+    <?php echoNotaInformativa('Ayuda', "Desde este panel tendr&aacute; acceso a la informaci&oacute;n de las materias y podr&aacute; eliminar y crear materias."); ?>
     <br><? use_helper('volver');  echo volver(); ?>
   </div>
   <div class="cierre_box_correo"></div>
