@@ -33,13 +33,13 @@
       <table class="tabla_respuestas_test">
       <?php $indicerespuesta = 'a';?>
       <?php $index = 0;?>
-      <?php print_r($respuestas); ?>    
       <?php foreach($respuestas as $respuesta): ?>
         <tr<?php echo $trstyle ?>>
 
         <?php $fondo=""; ?>
         <?php if ($mostrar_solucion == 1):?>
           <?php if ($respuesta->getSeleccionEjercicio($id_respuesta_ejercicio)):?>
+            <?php echo $respuesta->getCorrecta(); ?>
             <?php if ($respuesta->getCorrecta()):?>
               <?php $fondo=" id=\"filarayada_verdefuerte\""; ?>
             <?php else:?>
