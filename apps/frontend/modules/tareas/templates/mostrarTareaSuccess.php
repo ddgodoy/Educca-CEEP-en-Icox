@@ -52,7 +52,7 @@
       </tr>
       <tr>
         <td class="td1">&nbsp;</td>
-        <td><?echo link_to(image_tag('papelera.gif', array('alt' => 'Cancelar Tarea', 'title' => 'Cancelar Tarea'))
+        <td><?php echo link_to(image_tag('papelera.gif', array('alt' => 'Cancelar Tarea', 'title' => 'Cancelar Tarea'))
                            , 'tareas/cancelarTarea?id_evento='.$evento->getId(),
                            array( 'id' => 'ln_eliminar_tarea'.$tarea->getId(),
                                   'confirm' => '¿Estás seguro que desea elimnar la tarea?' )
@@ -67,7 +67,7 @@
           </tr>
           <tr>
             <td class="td1">&nbsp;</td>
-            <td><?echo link_to(image_tag('papelera.gif', array('alt' => 'Cancelar Tarea', 'title' => 'Cancelar Tarea'))
+            <td><?php echo link_to(image_tag('papelera.gif', array('alt' => 'Cancelar Tarea', 'title' => 'Cancelar Tarea'))
                                , 'tareas/cancelarTarea?id_evento='.$evento->getId(),
                                array( 'id' => 'ln_eliminar_tarea'.$tarea->getId(),
                                       'confirm' => '¿Estás seguro que desea elimnar la tarea?' )
