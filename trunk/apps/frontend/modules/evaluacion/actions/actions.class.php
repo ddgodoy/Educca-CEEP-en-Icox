@@ -473,11 +473,6 @@ class evaluacionActions extends sfActions
     $id_curso = $this->getRequestParameter('id_curso');
     $nota = $this->getRequestParameter('nota_final');
 
-    echo $nota;
-    echo $id_curso;
-    echo $id_alumno;
-    
-    
     $c = new Criteria();
     $c->add(CalificacionesPeer::ID_USUARIO, $id_alumno);
     $c->add(CalificacionesPeer::ID_CURSO, $id_curso);
