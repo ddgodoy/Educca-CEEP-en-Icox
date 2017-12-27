@@ -484,6 +484,8 @@ class evaluacionActions extends sfActions
     $cal = CalificacionesPeer::DoSelectOne($c);
 
     if ($cal) {
+      $cal->getScore();
+      exit();  
       $cal->setScore($nota);
     } else {
       $cal = new calificaciones();
@@ -492,9 +494,6 @@ class evaluacionActions extends sfActions
       $cal->setScore($nota);
     }
     $cal->save();
-    $cal->getScore();
-    exit();
-    
     $this->setLayout('PopUpEvaluacion');
   }
 	//
