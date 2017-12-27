@@ -483,9 +483,7 @@ class evaluacionActions extends sfActions
     $c->add(CalificacionesPeer::ID_CURSO, $id_curso);
     $cal = CalificacionesPeer::DoSelectOne($c);
 
-    if ($cal) {
-      echo $cal->getScore();
-      exit();  
+    if ($cal) {  
       $cal->setScore($nota);
     } else {
       $cal = new calificaciones();
