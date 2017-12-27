@@ -32,7 +32,7 @@
     <tr><td>
       <?php if ($mostrar_edicion == 0):?>
         <?php echo("<div id=\"cuestion_test$indice\" class=\"div_cuestion_test\">");?>
-        <?php print_r($cuestion_test); ?>    
+        <?php echo $mostrar_respuestas; ?>    
         <?php include_partial('mostrarCuestionTest', array('cuestion_test' => $cuestion_test, 'indice' => $indice, 'mostrar_edicion' => 0, 'mostrar_solucion' => $mostrar_solucion, 'mostrar_respuestas' => $mostrar_respuestas, 'id_respuesta_ejercicio' => $id_respuesta_ejercicio, 'test_resta' => $ejercicio->getTestResta(), 'expresiones_matematicas' => $ejercicio->getExpresionesMatematicas())) ?>
         </div>
       <?php else:?>
