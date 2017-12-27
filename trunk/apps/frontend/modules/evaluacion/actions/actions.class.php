@@ -474,6 +474,8 @@ class evaluacionActions extends sfActions
     $nota = $this->getRequestParameter('nota_final');
 
     echo $nota;
+    echo $id_curso;
+    echo $id_alumno;
     exit();
     
     $c = new Criteria();
