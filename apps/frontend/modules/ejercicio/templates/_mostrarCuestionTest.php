@@ -95,7 +95,7 @@
           <?php if ($mostrar_solucion == 1):?>
             <?php if ($respuesta->getCorrecta()):?>
               <?php echo image_tag('right.png', 'title=Es correcta'); ?>
-              <div class='correcta' style='display:none;'>correcta<?echo $respuesta->getId()?></div>
+              <div class='correcta' style='display:none;'>correcta<?php echo $respuesta->getId()?></div>
             <?php else:?>
               <?php if ($respuesta->getSeleccionEjercicio($id_respuesta_ejercicio)):?>
                 <?php echo image_tag('wrong.png', 'title=Incorrecta'); ?>
