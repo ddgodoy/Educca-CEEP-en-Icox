@@ -249,7 +249,7 @@
   <div class="resumen_trabajo_alumno">
   <center><strong><u>Notas medias obtenidas por el alumno</u></strong></center>
   <br>
-  <?php echo form_tag('evaluacion/guardarCalificacion?id_alumno='.$alumno->getId().'&id_curso='.$curso->getId(), array('name' => 'form_eval'))?>
+  <?php echo form_tag('evaluacion/guardarCalificacion?id_alumno='.$alumno->getId().'&id_curso='.$curso->getId(), array('name' => 'form_eval', 'id'=>'form_eval'))?>
   <table class="tabla_trabajo_alumno">
     <tr>
       <th class="td3">Tests:</th>
