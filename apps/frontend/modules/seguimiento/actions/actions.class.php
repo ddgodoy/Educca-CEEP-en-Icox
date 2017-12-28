@@ -702,7 +702,7 @@ class seguimientoActions extends sfActions
               }
 
 			     }
-           $chart[ 'axis_category' ] = array ( 'size'=>12, 'color'=>"000000", 'alpha'=>50, 'font'=>"arial", 'bold'=>true, 'skip'=>0 ,'orientation'=>"horizontal" );
+                 $chart[ 'axis_category' ] = array ( 'size'=>12, 'color'=>"000000", 'alpha'=>50, 'font'=>"arial", 'bold'=>true, 'skip'=>0 ,'orientation'=>"horizontal" );
         	 $chart[ 'axis_ticks' ] = array ( 'value_ticks'=>false, 'category_ticks'=>false );
         	 $chart[ 'axis_value' ] = array ( 'alpha'=>0 );
 

@@ -32,7 +32,6 @@
   	         <param name="bgcolor" value="'.$bg_color.'" />'
   	         . $transparent_html.
   	        '</object>';
-        exit();
 
   }
 
