@@ -9,22 +9,22 @@
             <table class="tabladetalles">
               <tr>
                 <td class="titulo">Curso:</td>
-                <td><? echo $curso->getnombre(90) ?></td>
+                <td><?php echo $curso->getnombre(90) ?></td>
               </tr>
 
               <tr>
                 <td class="titulo">Numero Temas:</td>
-                <td><? echo $curso->getMateria()->countTemas()?></td>
+                <td><?php echo $curso->getMateria()->countTemas()?></td>
               </tr>
 
                <tr>
                 <td class="titulo"> Fecha Inicio:</td>
-                <td><? echo $curso->getFechaInicio("d-m-Y") ?></td>
+                <td><?php echo $curso->getFechaInicio("d-m-Y") ?></td>
               </tr>
 
                <tr>
                 <td class="titulo">Fecha Fin:</td>
-                <td><? echo $curso->getFechaFin("d-m-Y") ?></td>
+                <td><?php echo $curso->getFechaFin("d-m-Y") ?></td>
               </tr>
             </table>
         </div>
