@@ -1,6 +1,6 @@
 <?php use_helper('SexyButton') ?>
 <div id="mensajes_recibidos">
-  <div class="tit_box_mensajes"><h2 class="titbox">Planificar el estudio de la teor&iacute;a del <? echo $curso->getnombre() ?> </h2></div>
+  <div class="tit_box_mensajes"><h2 class="titbox">Planificar el estudio de la teor&iacute;a del <?php echo $curso->getnombre() ?> </h2></div>
   <div class="cont_box_correo">
 
 
