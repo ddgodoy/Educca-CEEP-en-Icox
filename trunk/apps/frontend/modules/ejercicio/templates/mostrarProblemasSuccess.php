@@ -55,7 +55,7 @@
                 foreach($files as $archivo){
                     // Obviamos los archivos ocultos
                     if($archivo[0] == ".") continue;
-                    if(!is_dir($ruta.'/'.$id_respuesta_ejercicio.'/'.$archivo)) {
+                    if(!is_dir($ruta.'/'.$id_solucion_ejercicio.'/'.$archivo)) {
                         if($var_ind != $archivo[0]){
                             $var_ind = $archivo[0]; 
                             $res[$archivo[0]] = array(
