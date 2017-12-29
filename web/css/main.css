@@ -2714,8 +2714,8 @@ Abajo se definen las clases que dan aspecto al fondo de las distintas celdas.
 /* Mark Start Cell Background (usually a slashed graphic to show availability or solid for events) */
 
 .s21 {
-	background-image:    url("../images/cdef2.gif");
-	background-color: #F5E0D8;
+	background-image:    url("../images/cdef2_n.gif");
+	background-color: #3b5998;
 	}
 /* Mark Solid Cell Background (solid marked event date background) */
 .s22 {
