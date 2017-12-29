@@ -54,7 +54,7 @@
                           <input type="file" name="upfile<?php echo $i_hojas ?>" id="upfile<?php echo $i_hojas ?>" class="file_input">
                         </td>
                         <td class="tdespacio">
-                          <a href="javascript:void(0)" onclick="borrar_upload('<?php echo $id_respuesta_ejercicio?>_<?php echo $i_hojas?>')"><?php echo image_tag('ico_borrar.gif','title=Borrar hoja de respuestas '.$i_hojas); ?></a>
+                          <a href="javascript:void(0)" onclick="borrar_upload('<?php echo '/web/uploads/problemas/'.$id_respuesta_ejercicio.'/'.$res[$i_hojas][$i_hojas] ?>')"><?php echo image_tag('ico_borrar.gif','title=Borrar hoja de respuestas '.$i_hojas); ?></a>
                         </td>
                 <?php endif;?>    
           <?php endfor; ?>
