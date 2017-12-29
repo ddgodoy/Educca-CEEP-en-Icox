@@ -1219,7 +1219,7 @@ class ejercicioActions extends sfActions
   public function executeDeleteUpload()
   {
     $clave = $this->getRequestParameter('clave');
-    unlink(SF_ROOT_DIR.'/web/uploads/problemas/respuesta_'.$clave.'.jpg');
+    unlink(SF_ROOT_DIR.$clave);
   }
 
 
