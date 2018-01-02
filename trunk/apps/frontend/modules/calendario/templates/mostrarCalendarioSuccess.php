@@ -6,7 +6,7 @@
 	<?php endif; ?>
 <?php end_slot() ?>
 
-<div class="tit_box_calendario"><h2 class="titbox">Eventos pr&oacute;ximos <?echo (isset($idcurso))? $curso->getNombre() : "Calendario Principal"?></h2></div>
+<div class="tit_box_calendario"><h2 class="titbox">Eventos pr&oacute;ximos <?php echo (isset($idcurso))? $curso->getNombre() : "Calendario Principal"?></h2></div>
 <div class="cont_box_grande">
 <?php use_helper('Javascript') ?>
   <div id="indicador" style="display: none">Procesando sus eventos...</div>
@@ -25,23 +25,23 @@
     <?php endif; ?>
     <tr class="filafecha">
       <td>
-        <? if ((isset($idcurso))) :  ?>
-           <? $result = $sf_user->getDiasConfCalendario($idcurso); ?>
-        <? else : ?>
-           <? $result = $sf_user->getDiasConfCalendario(); ?>
-		<? endif; ?>
+        <?php if ((isset($idcurso))) :  ?>
+           <?php $result = $sf_user->getDiasConfCalendario($idcurso); ?>
+        <?php else : ?>
+           <?php $result = $sf_user->getDiasConfCalendario(); ?>
+		<?php endif; ?>
         <?php  $c = new sfEventCalendar('month', date("Y-m-d"));
 		       $numDias = $c->getCalendar()->dateDiff( $evento->getFechaInicio("d"),$evento->getFechaInicio("m"), $evento->getFechaInicio("Y"),
 		                                               date("d"),date("m"),date("Y"));
                $compFechas = $c->getCalendar()->compareDates($evento->getFechaInicio("d"),$evento->getFechaInicio("m"), $evento->getFechaInicio("Y"),
 		                                               date("d"),date("m"),date("Y"));
     		   //Return: 0 on equality, 1 if date 1 is greater, -1 if smaller?>
-    		   <? if ((-1==$compFechas) && ($numDias > $result[0]) ) : ?>
-    		       <? echo $evento->getFechaFin("d-m-Y");
+    		   <?php if ((-1==$compFechas) && ($numDias > $result[0]) ) : ?>
+    		       <?php echo $evento->getFechaFin("d-m-Y");
 				      $evento->setTitulo($evento->getTitulo()." (FINALIZACION)");?>
-    		   <? else : ?>
-    		       <? echo $evento->getFechaInicio("d-m-Y"); ?>
-    		   <? endif; ?>
+    		   <?php else : ?>
+    		       <?php echo $evento->getFechaInicio("d-m-Y"); ?>
+    		   <?php endif; ?>
       </td>
     </tr>
     <tr>
@@ -61,8 +61,8 @@
                 </tr>
                 <tr class="filint">
                   <td>
-                    <?php echo substr($evento->getDescripcion(), 0, 50);?><?echo (strlen($evento->getDescripcion())>50) ? "...":"" ;?>
-                    <div id="eventos<?echo $i?>" style="display: none"></div>
+                    <?php echo substr($evento->getDescripcion(), 0, 50);?><?php echo (strlen($evento->getDescripcion())>50) ? "...":"" ;?>
+                    <div id="eventos<?php echo $i?>" style="display: none"></div>
                   </td>
                 </tr>
               </table>
