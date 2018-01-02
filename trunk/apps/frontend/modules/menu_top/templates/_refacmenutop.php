@@ -7,7 +7,7 @@
             {
                 echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
                 echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_new.gif', 'bots_newh.gif', 'noticias', 'Noticias');
-                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
+                echo rollover('usuario/ayuda', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
 	    }
 
     } else if (($moduloActual == 'comercial') && ($accionActual == 'index')) {//Compruebo que estoy en el m�dulo de alumno y voy a ejecutar la
@@ -18,7 +18,7 @@
             {
                 echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
                 echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_new.gif', 'bots_newh.gif', 'noticias', 'Noticias');
-                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
+                echo rollover('usuario/ayuda', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
             }
 
     } else if ($accionActual == 'ayuda') {//Compruebo que estoy en el m�dulo de alumno y voy a ejecutar la
@@ -40,7 +40,7 @@
           {
                 echo image_tag('bots_comunidadh.gif',array('alt' => 'Comunidad', 'title' => 'Comunidad'));
                 echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_new.gif', 'bots_newh.gif', 'noticias', 'Noticias');
-                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
+                echo rollover('usuario/ayuda', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
           }
     
     } else {
@@ -50,7 +50,7 @@
           {
                 echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
                 echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_new.gif', 'bots_newh.gif', 'noticias', 'Noticias');
-                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
+                echo rollover('usuario/ayuda', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
           }
     }
 
