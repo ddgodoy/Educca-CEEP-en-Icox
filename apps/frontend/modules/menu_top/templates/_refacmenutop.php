@@ -6,7 +6,7 @@
 	    if ($rol != 'moroso') 
             {
                 echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
-                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
+                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_new.gif', 'bots_newh.gif', 'noticias', 'Noticias');
                 echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
 	    }
 
@@ -17,7 +17,7 @@
             if ($rol != 'moroso') 
             {
                 echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
-                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
+                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_new.gif', 'bots_newh.gif', 'noticias', 'Noticias');
                 echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
             }
 
@@ -28,7 +28,7 @@
           if ($rol != 'moroso') 
           {
                 echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
-                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
+                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_new.gif', 'bots_newh.gif', 'noticias', 'Noticias');
                 echo image_tag('bots_ayudah.gif',array('alt' => 'Ayuda', 'title' => 'Ayuda'));
           }
 
@@ -39,7 +39,7 @@
           if ($rol != 'moroso') 
           {
                 echo image_tag('bots_comunidadh.gif',array('alt' => 'Comunidad', 'title' => 'Comunidad'));
-                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
+                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_new.gif', 'bots_newh.gif', 'noticias', 'Noticias');
                 echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
           }
     
@@ -49,7 +49,7 @@
           if ($rol != 'moroso') 
           {
                 echo rollover('sfSimpleForum/forum?forum_name=comunidad&submenu=off', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
-                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_comunidad.gif', 'bots_comunidadh.gif', 'comunidad', 'Comunidad');
+                echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_new.gif', 'bots_newh.gif', 'noticias', 'Noticias');
                 echo rollover('https://www.grupoceep.com/noticias-y-eventos/', 'bots_ayuda.gif', 'bots_ayudah.gif', 'ayuda', 'Ayuda');
           }
     }
