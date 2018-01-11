@@ -8,7 +8,6 @@
         });
     }
 </script>   
-<?php echo $ruta; exit(); ?> 
 <iframe id="frame_scorm" src="<?php echo $ruta ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" border="0">
 </iframe>
 <div style="position: fixed; top: 0px; margin: 0px auto; width: 100%; background-color: blue;">
