@@ -4,7 +4,7 @@
     <br>
     <div class="div_cuestion_practica" style="background: url(/images/fondofila_azul.gif) repeat;"><center>
       <br>
-      <?php echoNotaInformativaAjustada('', 'Para responder a este examen debe adjuntar las im&aacute;genes resultantes de escanear las hojas con los problemas resueltos a mano. El tama&ntilde;o m&aacute;ximo permitido por cada imagen es de <strong>300 kilobytes</strong> y s&oacute;lo se admitir&aacute;n im&aacute;genes en <strong>formato JPG</strong>. Para no subir ficheros demasiado grandes se recomienda tomar las im&aacute;genes en blanco y negro y utilizando un muestreo de <strong>150 ppp</strong>.'); ?>
+      <?php echoNotaInformativaAjustada('', 'Para responder a este examen debe adjuntar fichero de <strong>Word, Excel, PowerPoint, PDF o Imágenes JPG</strong>. El tamaño máximo permitido del fichero es de <strong>2 Mb</strong>. Puede adjuntar un segundo fichero si el primero no es suficiente..'); ?>
       <div id="deletion_div" style="display: none;"></div>
       <?php $ruta = SF_ROOT_DIR.'/web/uploads/problemas/'; ?>
       <br>

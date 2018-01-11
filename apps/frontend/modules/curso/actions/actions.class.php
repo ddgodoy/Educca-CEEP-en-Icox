@@ -264,35 +264,39 @@ class cursoActions extends sfActions
       return $total;
     }
 
-	 // Nombre del metodo: executeMostrarTemas()
-	  // Añadida por: Todor Blajev
-	  /* Descripcion: Accion para mostrar los temas correspondientes a la materia de un curso
-	   */
-	public function executeMostrarTemas()
-  {
-     $this->idcurso = $this->getRequestParameter('idcurso');
-     $this->getUser()->comprobarPermiso($this->idcurso);
-     $this->is_alumno = $this->getUser()->hasCredential('alumno');
+    // Nombre del metodo: executeMostrarTemas()
+    // Añadida por: Todor Blajev
+    /* Descripcion: Accion para mostrar los temas correspondientes a la materia de un curso
+     */
+    public function executeMostrarTemas()
+    {
+       $this->idcurso = $this->getRequestParameter('idcurso');
+       $this->getUser()->comprobarPermiso($this->idcurso);
+       $this->is_alumno = $this->getUser()->hasCredential('alumno');
 
-     $c = new Criteria();
-     $c->add(CursoPeer::ID, $this->idcurso);
-     $this->curso = CursoPeer::doSelectOne($c);
+       $c = new Criteria();
+       $c->add(CursoPeer::ID, $this->idcurso);
+       $this->curso = CursoPeer::doSelectOne($c);
 
-     $this->idmateria = $this->curso->getMateriaId();
-     $this->nombrecurso = $this->curso->getNombre();
+       $this->idmateria = $this->curso->getMateriaId();
+       $this->nombrecurso = $this->curso->getNombre();
 
 
-     $materia = MateriaPeer::retrieveByPk($this->idmateria);
-     $this->forward404Unless($materia);
+       $materia = MateriaPeer::retrieveByPk($this->idmateria);
+       $this->forward404Unless($materia);
 
-     $this->height = $materia->getHeight();
-     $this->width = $materia->getWidth();
-     if (!$this->height) { $this->height=580;}
-     if (!$this->width) { $this->width=737;}
-     $this->materia = $materia;
-     $this->id_usuario = $this->getUser()->getAnyId();
-     $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39');
-  }
+       $this->height = $materia->getHeight();
+       $this->width = $materia->getWidth();
+       if (!$this->height) { $this->height=580;}
+       if (!$this->width) { $this->width=737;}
+       $this->materia = $materia;
+       $this->id_usuario = $this->getUser()->getAnyId();
+       if($this->is_alumno){
+          $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39'); 
+       }else{
+          $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39');
+       }   
+    }
 	//
 	public function executeMostrarBibliografia()
   {
