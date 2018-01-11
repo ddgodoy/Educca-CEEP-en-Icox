@@ -999,9 +999,9 @@ class ejercicioActions extends sfActions
               $nerrores++;
             }
 
-            if (!(($_FILES['upfile'.$i_hojas]['type'] == 'image/jpg') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/msword') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/pdf')))
+            if (!(($_FILES['upfile'.$i_hojas]['type'] == 'image/jpg') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/msword') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/vnd.openxmlformats-officedocument.wordprocessingml.document') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/pdf') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/vnd.ms-excel') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/vnd.ms-powerpoint') || ($_FILES['upfile'.$i_hojas]['type'] == 'application/vnd.openxmlformats-officedocument.presentationml.presentation')))
             {
-              $error_log.= 'El formato de la hoja de respuestas #'.$i_hojas.' no es compatible. Se requiere JPG, DOC, PDF o equivalente.<br>';
+              $error_log.= 'El formato de la hoja de respuestas #'.$i_hojas.' no es compatible. Se requiere <strong>Word, Excel, PowerPoint, PDF o Imágenes JPG</strong><br>';
               $nerrores++;
             }
 
