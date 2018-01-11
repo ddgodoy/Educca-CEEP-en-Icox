@@ -600,8 +600,13 @@ class cursoActions extends sfActions
     	$last = count($auxi) - 1;
     	$file = $auxi[$last];
     }*/
+    
     $ruta = '/materias/'.$id_materia.'/'.$file;
-
+    
+    if($this->hasRequestParameter('ruta')){
+        $ruta = $this->getRequestParameter('ruta');
+    }
+    
     $this->ruta   = $ruta;
     $this->width  = $materia->getWidth();
     $this->height = $materia->getHeight();
