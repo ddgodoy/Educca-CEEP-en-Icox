@@ -67,7 +67,7 @@
           ?>
           <?php for($i_hojas = 1; $i_hojas <= $max_hojas_respuesta; $i_hojas++):?>
               <tr height="25">
-                <?php if($res): ?>  
+                <?php if(!empty($res)): ?>  
                     <?php if (!file_exists($ruta.'/'.$id_solucion_ejercicio.'/'.$res[$i_hojas][$i_hojas]) || !key_exists($i_hojas, $res)):?>
                       <th style="width: 100%; text-align: center;">
                       (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n)
