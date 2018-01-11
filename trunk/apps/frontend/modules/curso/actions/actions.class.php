@@ -291,7 +291,7 @@ class cursoActions extends sfActions
      if (!$this->width) { $this->width=737;}
      $this->materia = $materia;
      $this->id_usuario = $this->getUser()->getAnyId();
-     $this->url_libro = $this->getUrlBlinkBook('9788448607111','9315U411');
+     $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39');
   }
 	//
 	public function executeMostrarBibliografia()
@@ -622,7 +622,7 @@ class cursoActions extends sfActions
       $curl = curl_init();
 
           curl_setopt_array($curl, array(
-          CURLOPT_URL => "https://blinkwpre.blinklearning.com/ws/WsSSO/wsSSO.php",
+          CURLOPT_URL => "https://www.blinklearning.com/ws/WsSSO/wsSSO.php",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
@@ -632,8 +632,8 @@ class cursoActions extends sfActions
           CURLOPT_POSTFIELDS => '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sso="http://www.blinklearning.com/sso/">
                                 <soapenv:Header>
                                         <sso:WSEAuthenticateHeader>
-                                                <sso:User>ceepvirtual</sso:User>
-                                                <sso:Password>QX4b9QNB</sso:Password>
+                                                <sso:User>nhY66IdY</sso:User>
+                                                <sso:Password>GRfBp6Gq</sso:Password>
                                         </sso:WSEAuthenticateHeader>
                                 </soapenv:Header>
                                 <soapenv:Body>
