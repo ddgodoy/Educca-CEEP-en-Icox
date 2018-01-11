@@ -67,16 +67,18 @@
           ?>
           <?php for($i_hojas = 1; $i_hojas <= $max_hojas_respuesta; $i_hojas++):?>
               <tr height="25">
-                <?php if (!file_exists($ruta.'/'.$id_solucion_ejercicio.'/'.$res[$i_hojas][$i_hojas]) || !key_exists($i_hojas, $res)):?>
-                  <th style="width: 100%; text-align: center;">
-                  (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n)
-                  </th>
-                <?php else:?>
-                  <th style="width: 100%; text-align: center;">
-                    <?php $link_archivo = '/uploads/problemas/'.$id_solucion_ejercicio.'/'.$res[$i_hojas][$i_hojas]; ?>  
-                    <u><a href="<?php echo $link_archivo; ?>" target="_blanck">Haga click aqu&iacute; para ver la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n</a></u>  
-                  </th>
-                <?php endif;?>
+                <?php if($res): ?>  
+                    <?php if (!file_exists($ruta.'/'.$id_solucion_ejercicio.'/'.$res[$i_hojas][$i_hojas]) || !key_exists($i_hojas, $res)):?>
+                      <th style="width: 100%; text-align: center;">
+                      (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n)
+                      </th>
+                    <?php else:?>
+                      <th style="width: 100%; text-align: center;">
+                        <?php $link_archivo = '/uploads/problemas/'.$id_solucion_ejercicio.'/'.$res[$i_hojas][$i_hojas]; ?>  
+                        <u><a href="<?php echo $link_archivo; ?>" target="_blanck">Haga click aqu&iacute; para ver la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n</a></u>  
+                      </th>
+                    <?php endif;?>
+                <?php endif;?>  
               </tr>
           <?php endfor; ?>
       <?php else: ?>      
