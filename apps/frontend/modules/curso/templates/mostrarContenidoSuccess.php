@@ -10,6 +10,6 @@
 </script>   
 <iframe id="frame_scorm" src="<?php echo $ruta ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" border="0">
 </iframe>
-<div style="position: fixed; top: 0px; margin: 0px auto; width: 100%; background-color: blue;">
-    <button onclick="TemaFinish()" style="cursor: pointer">Finalizar Tema</button>
+<div style="position: fixed; margin: 0px auto; width: 100%; background-color: blue; bottom: 0px; height: 10%;">
+    <button onclick="TemaFinish()" style="cursor: pointer; padding: 5px;">Finalizar Tema</button>
 </div>
