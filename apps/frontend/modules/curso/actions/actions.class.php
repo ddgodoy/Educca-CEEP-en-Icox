@@ -607,9 +607,9 @@ class cursoActions extends sfActions
     
     $ruta = '/materias/'.$id_materia.'/'.$file;
     
-    if($this->hasRequestParameter('ruta')){
+    /*if($this->hasRequestParameter('ruta')){
         $ruta = urldecode($this->getRequestParameter('ruta'));
-    }
+    }*/
     
     $this->ruta   = $ruta;
     $this->width  = $materia->getWidth();
