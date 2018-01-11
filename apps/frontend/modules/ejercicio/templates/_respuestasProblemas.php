@@ -31,7 +31,7 @@
           ?>
           <?php for($i_hojas = 1; $i_hojas <= $max_hojas_respuesta; $i_hojas++):?>
             <tr>
-              
+            <?php if(!empty($res)): ?>    
                 <?php if (!file_exists($ruta.'/'.$id_respuesta_ejercicio.'/'.$res[$i_hojas][$i_hojas]) || !key_exists($i_hojas, $res)):?>
                         <td class="td1">
                           (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?>)
@@ -58,7 +58,18 @@
                           <a href="javascript:void(0)" onclick="borrar_upload('<?php echo '/web/uploads/problemas/'.$id_respuesta_ejercicio.'/'.$res[$i_hojas][$i_hojas] ?>')"><?php echo image_tag('ico_borrar.gif','title=Borrar hoja de respuestas '.$i_hojas); ?></a>
                         </td>
                 <?php endif;?> 
-                      
+            <?php else: ?>
+                  <td class="td1">
+                    (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?>)
+                  </td>
+                  <th class="td2">
+                    Adjuntar hoja de respuestas #<?php echo $i_hojas ?>
+                  </th>
+                  <td class="td3">
+                    <input type="file" name="upfile<?php echo $i_hojas ?>" id="upfile<?php echo $i_hojas ?>" class="file_input">
+                  </td>
+                  <td class="tdespacio">&nbsp;</td>        
+            <?php endif;?>             
           <?php endfor; ?>
       <?php else: ?>    
         <?php for($i_hojas = 1; $i_hojas <= $max_hojas_respuesta; $i_hojas++):?>
