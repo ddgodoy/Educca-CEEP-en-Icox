@@ -44,7 +44,7 @@
     <?php include_partial('contenidoEjercicio', array('redireccion' => $redireccion,
                                                       'ejercicio'=> $ejercicio )); ?>
     </form>
-    <? use_helper('volver'); echo volver();  ?>
+    <?php use_helper('volver'); echo volver();  ?>
   </div>
   </form>
   <div class="cierre_principal"></div>
