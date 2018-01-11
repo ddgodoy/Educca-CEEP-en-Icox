@@ -291,11 +291,19 @@ class cursoActions extends sfActions
        if (!$this->width) { $this->width=737;}
        $this->materia = $materia;
        $this->id_usuario = $this->getUser()->getAnyId();
-       if($this->is_alumno){
-          $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39'); 
-       }else{
-          $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39');
-       }   
+       if($this->idcurso == 197){
+            if($this->is_alumno){
+               $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39'); 
+            }else{
+               $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39');
+            }
+       }else if($this->idcurso == 198){
+            if($this->is_alumno){
+               $this->url_libro = $this->getUrlBlinkBook('9788448612092','G6B2QWB9'); 
+            }else{
+               $this->url_libro = $this->getUrlBlinkBook('9788448612092','G6B2QWB9');
+            }
+       }     
     }
 	//
 	public function executeMostrarBibliografia()

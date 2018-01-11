@@ -139,7 +139,7 @@
 
             <tr class="cont_fil" <?= $fondo ?>>
               <?php $ruta_libro = ''; ?>
-              <?php if($idcurso == 197 && $id_usuario == 562): ?>  
+              <?php if(($idcurso == 197 || $idcurso == 198) && $id_usuario == 562): ?>  
                     <?php if($sco->getTitle() === 'LIBRO'): 
                             $ruta_libro = '&ruta='.urlencode($url_libro);
                         endif; ?> 
