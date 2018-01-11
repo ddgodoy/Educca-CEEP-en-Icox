@@ -78,6 +78,10 @@
                         <u><a href="<?php echo $link_archivo; ?>" target="_blanck">Haga click aqu&iacute; para ver la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n</a></u>  
                       </th>
                     <?php endif;?>
+                <?php else: ?>
+                    <th style="width: 100%; text-align: center;">
+                    (No se adjunt&oacute; la hoja #<?php echo $i_hojas ?> de la soluci&oacute;n)
+                    </th>  
                 <?php endif;?>  
               </tr>
           <?php endfor; ?>
