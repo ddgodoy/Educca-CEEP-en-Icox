@@ -141,7 +141,7 @@
               <?php $ruta_libro = ''; ?>
               <?php if($idcurso == 197 && $id_usuario == 562): ?>  
                     <?php if($sco->getTitle() === 'LIBRO'): 
-                            $ruta_libro = '&ruta='.$url_libro;
+                            $ruta_libro = '&ruta='.urlencode($url_libro);
                         endif; ?> 
               <?php endif; ?>  
               <td style="text-align: left; width: 45%; padding-left: 4px;">
