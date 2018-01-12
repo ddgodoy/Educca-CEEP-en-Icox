@@ -139,11 +139,9 @@
 
             <tr class="cont_fil" <?= $fondo ?>>
               <?php $ruta_libro = ''; ?>
-              <?php if(($idcurso == 197 || $idcurso == 198) && $id_usuario == 562): ?>  
-                    <?php if($sco->getTitle() === 'LIBRO'): 
-                            $ruta_libro = '&ruta='.urlencode($url_libro);
-                        endif; ?> 
-              <?php endif; ?>  
+                <?php if($sco->getTitle() === 'LIBRO' && $url_libro): 
+                    $ruta_libro = '&ruta='.urlencode($url_libro);
+                endif; ?> 
               <td style="text-align: left; width: 45%; padding-left: 4px;">
                 <a style="color:#003399;" href="javascript:void(0)" onclick="window.open('<?php echo url_for('curso/mostrarContenido?sco12id='.$sco->getId().'&id_curso='.$idcurso.$ruta_libro) ?>', 'scormbrowser', 'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=0, scrollbars=0, height=<?php echo $materia->getHeight()?>, width=<?php echo $materia->getWidth()?>')"><?php echo $sco->getTitle(); ?></a>
               </td>

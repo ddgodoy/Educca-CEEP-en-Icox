@@ -291,19 +291,14 @@ class cursoActions extends sfActions
        if (!$this->width) { $this->width=737;}
        $this->materia = $materia;
        $this->id_usuario = $this->getUser()->getAnyId();
-       if($this->idcurso == 197){
-            if($this->is_alumno){
-               $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39'); 
-            }else{
-               $this->url_libro = $this->getUrlBlinkBook('9788448612191','RUJ62M39');
-            }
-       }else if($this->idcurso == 198){
-            if($this->is_alumno){
-               $this->url_libro = $this->getUrlBlinkBook('9788448612092','G6B2QWB9'); 
-            }else{
-               $this->url_libro = $this->getUrlBlinkBook('9788448612092','G6B2QWB9');
-            }
-       }     
+       
+       $array_book = $this->getBookAndLicense($this->id_usuario, $this->idcurso);
+       
+       $this->url_libro = NULL;
+       
+       if($array_book){
+           $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license']); 
+       }
     }
 	//
 	public function executeMostrarBibliografia()
@@ -685,5 +680,32 @@ class cursoActions extends sfActions
             
         return $xml->Body->RequestAccessResponse->RequestAccessResult->URL;
   } 
+  
+  /**
+   * 
+   * @param int $id_user
+   * @param int $id_curso
+   * @return array
+   */
+  private function getBookAndLicense($id_user, $id_curso){
+      
+      $array_return = array(197=>array(562=>array('book'=>'9788448612191', 'license'=>'RUJ62M39'),
+                                       635=>array('book'=>'9788448612191', 'license'=>'DYJVCN39')), 
+                            198=>array(562=>array('book'=>'9788448612092', 'license'=>'G6B2QWB9'),
+                                       635=>array('book'=>'9788448612092', 'license'=>'73R9ST59')),
+                            199=>array(562=>array('book'=>'9788448609665', 'license'=>'XRZCGFH9'),
+                                       635=>array('book'=>'9788448609665', 'license'=>'BSJMAMQ9')),
+                            200=>array(562=>array('book'=>'9788448612030', 'license'=>'G386SXA9'),
+                                       635=>array('book'=>'9788448612030', 'license'=>'L96UPW99')), 
+                            201=>array(562=>array('book'=>'9788448612054', 'license'=>'4LALG1A9'),
+                                       635=>array('book'=>'9788448612054', 'license'=>'UHM9L959')),           
+                            202=>array(562=>array('book'=>'9788448612078', 'license'=>'CB11B8M9'),
+                                       635=>array('book'=>'9788448612078', 'license'=>'VZRYZKA9')), 
+                            203=>array(562=>array('book'=>'9788448608569', 'license'=>'7DTV1Z69'),
+                                       635=>array('book'=>'9788448608569', 'license'=>'UEH9EV59')),           
+      );
+      
+      return !empty($array_return[$id_curso][$id_user])?$array_return[$id_curso][$id_user]:false;
+  }
 
 } // end class
