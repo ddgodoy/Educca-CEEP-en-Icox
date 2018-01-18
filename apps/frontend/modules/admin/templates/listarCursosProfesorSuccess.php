@@ -4,7 +4,7 @@
 
 <div class="capa_principal" id="admin">
 
-  <div class="titulo_principal"><h2 class="titbox">Lista de cursos impartidos por <?echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></h2></div>
+  <div class="titulo_principal"><h2 class="titbox">Lista de cursos impartidos por <?php echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></h2></div>
   
   <div class="contenido_principal">
   
