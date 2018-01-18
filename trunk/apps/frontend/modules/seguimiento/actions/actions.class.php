@@ -1452,6 +1452,10 @@ class seguimientoActions extends sfActions
   {
     $id_profesor = $this->getUser()->getAnyId();
     $id_curso = $this->getRequestParameter('idcurso');
+    
+    echo $id_curso;
+    exit();
+    
     $c = new Criteria();
 
     if ($id_curso) {$c->add(EventoPeer::ID_CURSO, $id_curso);}
