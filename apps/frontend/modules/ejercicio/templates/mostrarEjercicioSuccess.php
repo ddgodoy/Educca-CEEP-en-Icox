@@ -1,4 +1,3 @@
-<?php $usuario = UsuarioPeer::retrieveByPk($sf_user->getAnyId()); ?>    
 <?php use_helper('Javascript') ?>
 <?php use_helper('informacion') ?>
 
@@ -9,9 +8,7 @@
 
 
     <div class="herramientas_general">
-      <?php if(!$usuario->getInspector()): ?>  
       <?php include_partial('opcionesEjercicio', array('ejercicio' => $ejercicio, 'modo' => 'mostrar', 'rol' => $rol, 'eliminar_restringido' => $eliminar_restringido)) ?>
-      <?php endif; ?>  
       <?php include_partial('cabeceraEjercicio', array('ejercicio' => $ejercicio, 'rol' => $rol, 'modo' => 'mostrar')) ?>
     </div>
 
