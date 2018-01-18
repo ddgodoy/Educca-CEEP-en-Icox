@@ -39,20 +39,22 @@
      $("#conectados").html("<div class='divconectados'><strong>USUARIOS CONECTADOS</strong></div>");
 
      var xmlDoc = $.parseXML( xml ); 
-     var $xml = $(xmlDoc);
-     var $usuarios = $xml.find("usuarios");
+     var xml = $(xmlDoc);
+     var usuarios = $xml.find("usuarios");
      
-     $usuarios.each(function(){
-        var $tipo = $(this).find('tipo').text(),
-        var $name = $(this).find('nombre').text(),   
-        var $imagen = ''; 
+     usuarios.each(function(){
+        var tipo = $(this).find('tipo').text();
+        var name = $(this).find('nombre').text();   
+        var imagen = ''; 
         
-        if ($tipo === "profesor")
-            $imagen = "<img src='/images/profesor.png' width='12' height='12' Title='Profesor'>";
+        alert(tipo);
+        
+        if (tipo === "profesor")
+            imagen = "<img src='/images/profesor.png' width='12' height='12' Title='Profesor'>";
         else
-            $imagen = "<img src='/images/alumno.png' width='12' height='12' Title='Alumno'>";
+            imagen = "<img src='/images/alumno.png' width='12' height='12' Title='Alumno'>";
 
-         $("#conectados").append("<p align='left'>"+$imagen+" "+$name+"</p>");
+         $("#conectados").append("<p align='left'>"+imagen+" "+name+"</p>");
            
     });
 
