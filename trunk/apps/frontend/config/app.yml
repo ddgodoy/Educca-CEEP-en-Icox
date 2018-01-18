@@ -35,7 +35,7 @@ all:
   empresa: 
     nombre: Centro Europeo de Estudios Profesionales
     cuenta: 0034 4323 89 3000423456
-    email:  info@grupoceep.com
+    email:  informacion@grupoceep.com
     userEmail: administracion@ceepvirtual.com
     serverEmail: mail.ceepvirtual.com 
     pwdEmail: Ceep091
