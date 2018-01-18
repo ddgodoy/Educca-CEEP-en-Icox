@@ -1,10 +1,11 @@
+<?php $usuario = UsuarioPeer::retrieveByPk($sf_user->getAnyId()); ?>  
 <?php use_helper('Javascript') ?>
 <?php use_helper('SexyButton') ?>
 
 <table>
 <tr>
   
-<?php if ($rol == 'profesor'):?>
+<?php if ($rol == 'profesor' && !$usuario->getInspector()):?>
 
 
   <?php if ($modo == 'mostrar'): ?>
@@ -46,7 +47,7 @@
 <?php endif; ?>
 
 
-<?php if ($rol == 'administrador'):?>
+<?php if ($rol == 'administrador' || $usuario->getInspector()):?>
 
     <td>&nbsp;</td>
 
