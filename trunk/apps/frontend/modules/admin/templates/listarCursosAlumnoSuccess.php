@@ -4,7 +4,7 @@
 
 <div class="capa_principal" id="admin">
 
-  <div class="titulo_principal"><h2 class="titbox">Lista de cursos del alumno <?echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></h2></div>
+  <div class="titulo_principal"><h2 class="titbox">Lista de cursos del alumno <?php echo $usuario->getNombre()." ".$usuario->getApellidos(); ?></h2></div>
   
   <div class="contenido_principal">
   <?php if(!$modificar_ejericicio): ?>
