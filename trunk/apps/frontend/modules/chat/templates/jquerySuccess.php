@@ -38,10 +38,12 @@
 
      $("#conectados").html("<div class='divconectados'><strong>USUARIOS CONECTADOS</strong></div>");
 
+     alert(xml);
+
      $("usuarios",xml).each(function(id) {
        usuario = $("usuarios",xml).get(id);
 
-alert($("tipo",usuario).text());
+         alert($("tipo",usuario).text());
 
         if ($("tipo",usuario).text() == "profesor")
             imagen = "<img src='/images/profesor.png' width='12' height='12' Title='Profesor'>";
