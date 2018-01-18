@@ -16,7 +16,7 @@
 
   <?php echo javascript_tag(remote_function(array('update' => 'listado_tareas', 'url' => 'seguimiento/listarTareas?filtro='.$id_curso))) ?>
 
-    <br><? use_helper('volver'); echo volver(); ?>
+    <br><?php use_helper('volver'); echo volver(); ?>
   </div>
   
   <div class="cierre_principal"></div>
