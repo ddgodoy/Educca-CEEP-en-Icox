@@ -58,6 +58,7 @@
       idcurso = $("#id").val();
       $.post("/chat/usuariosConectados",{  id: idcurso }, function(xml) {
        $("#loading").remove();
+       alert(xml);
        addUsuarios(xml);
      });
      setTimeout('updateUsuarios()', 9000);
@@ -82,7 +83,7 @@
                     document.formchat.ultimo.value=$("idmessage",message).text();
                   })
 
-         		//Movemos el scroll hasta abajo para que muestre el último mensaje
+         		//Movemos el scroll hasta abajo para que muestre el ï¿½ltimo mensaje
          		//document.getElementById('scroll').scrollTop = document.getElementById('scroll').scrollHeight - document.getElementById('scroll').offsetHeight;
          		var objDiv = document.getElementById("scroll");
                 objDiv.scrollTop = objDiv.scrollHeight;
@@ -96,7 +97,7 @@
 
     setTimeout('updateMensajes()', 1500);
 
-//Añadimos en el evento onclik del boton de envio la llamada a la funcion envio()
+//Aï¿½adimos en el evento onclik del boton de envio la llamada a la funcion envio()
 $(document).ready
 (
   function()
@@ -108,7 +109,7 @@ $(document).ready
   }
 );
 
-//Esta función se lanza cuando hacemos click en el botón de envio
+//Esta funciï¿½n se lanza cuando hacemos click en el botï¿½n de envio
 function envio()
 {
   //Comprobamos que haya escrito algo en el campo mensaje
@@ -138,7 +139,7 @@ function envio()
                     document.formchat.ultimo.value=$("idmessage",message).text();
                  })
 
-         		//Movemos el scroll hasta abajo para que muestre el último mensaje
+         		//Movemos el scroll hasta abajo para que muestre el ï¿½ltimo mensaje
          		//document.getElementById('scroll').scrollTop = document.getElementById('scroll').scrollHeight - document.getElementById('scroll').offsetHeight;
          		var objDiv = document.getElementById("scroll");
                 objDiv.scrollTop = objDiv.scrollHeight;
