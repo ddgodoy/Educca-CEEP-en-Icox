@@ -1453,11 +1453,15 @@ class seguimientoActions extends sfActions
     $id_profesor = $this->getUser()->getAnyId();
     $id_curso = $this->getRequestParameter('filtro');
     
+    $usuario = UsuarioPeer::retrieveByPk($id_profesor);
+    
     $c = new Criteria();
 
     if ($id_curso) {$c->add(EventoPeer::ID_CURSO, $id_curso);}
-
-    //$c->add(TareaPeer::ID_AUTOR, $id_profesor);
+    
+    if(!$usuario->getInspector()){
+    $c->add(TareaPeer::ID_AUTOR, $id_profesor);
+    }
     $c->addJoin(TareaPeer::ID_EVENTO, EventoPeer::ID);
     $c->addJoin(EventoPeer::ID_CURSO, CursoPeer::ID);
     $c->addJoin(EventoPeer::ID_TIPO_EVENTO, Tipo_eventoPeer::ID);
