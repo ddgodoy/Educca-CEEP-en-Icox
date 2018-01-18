@@ -1451,7 +1451,7 @@ class seguimientoActions extends sfActions
   public function executeListarTareas()
   {
     $id_profesor = $this->getUser()->getAnyId();
-    $id_curso = $this->getRequestParameter('idcurso');
+    $id_curso = $this->getRequestParameter('filtro');
     
     echo $id_curso;
     exit();
