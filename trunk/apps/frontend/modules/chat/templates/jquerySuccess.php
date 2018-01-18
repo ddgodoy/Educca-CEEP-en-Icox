@@ -41,6 +41,8 @@
      $("usuarios",xml).each(function(id) {
        usuario = $("usuarios",xml).get(id);
 
+alert($("tipo",usuario).text());
+
         if ($("tipo",usuario).text() == "profesor")
             imagen = "<img src='/images/profesor.png' width='12' height='12' Title='Profesor'>";
         else
@@ -58,7 +60,6 @@
       idcurso = $("#id").val();
       $.post("/chat/usuariosConectados",{  id: idcurso }, function(xml) {
        $("#loading").remove();
-       alert(xml);
        addUsuarios(xml);
      });
      setTimeout('updateUsuarios()', 9000);
