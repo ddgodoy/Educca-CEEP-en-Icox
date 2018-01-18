@@ -38,14 +38,30 @@
 
      $("#conectados").html("<div class='divconectados'><strong>USUARIOS CONECTADOS</strong></div>");
 
-     alert(xml);
+     var xmlDoc = $.parseXML( xml ); 
+     var $xml = $(xmlDoc);
+     var $usuarios = $xml.find("usuarios");
+     
+     $usuarios.each(function(){
+        var $tipo = $(this).find('tipo').text(),
+        var $name = $(this).find('nombre').text(),   
+        var $imagen = ''; 
+        
+        if ($tipo === "profesor")
+            $imagen = "<img src='/images/profesor.png' width='12' height='12' Title='Profesor'>";
+        else
+            $imagen = "<img src='/images/alumno.png' width='12' height='12' Title='Alumno'>";
 
-     $("usuarios",xml).each(function(id) {
+         $("#conectados").append("<p align='left'>"+$imagen+" "+$name+"</p>");
+           
+    });
+
+     /*$("usuarios",xml).each(function(id) {
        usuario = $("usuarios",xml).get(id);
 
          alert($("tipo",usuario).text());
 
-        if ($("tipo",usuario).text() == "profesor")
+        if ($("tipo",usuario).text() === "profesor")
             imagen = "<img src='/images/profesor.png' width='12' height='12' Title='Profesor'>";
         else
             imagen = "<img src='/images/alumno.png' width='12' height='12' Title='Alumno'>";
@@ -54,7 +70,7 @@
                      "</p>");
 
 
-     });
+     });*/
    }
 
 
