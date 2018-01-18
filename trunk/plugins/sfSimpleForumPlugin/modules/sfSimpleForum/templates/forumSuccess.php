@@ -12,11 +12,11 @@
 <div id="divforo">
   <div class="tit_box_mensajes"><h2 class="titbox">
     <div class='foro_nombre'>
-  <? if ($sf_user->getCursoMenu()) :?>
+  <?php if ($sf_user->getCursoMenu()) :?>
     <?php echo "Foro - ".CursoPeer::retrieveByPk($sf_user->getCursoMenu())->getNombre() ?>
-  <? else : ?>
+  <?php else : ?>
       <?php echo "Foro - General" ?>
-  <? endif; ?>
+  <?php endif; ?>
      </div>
   </h2></div>
   <div class="cont_box_correo">
@@ -46,7 +46,7 @@
           <?php endif; ?>
           <th class="thread_recent"><?php echo __('Ultimo mensaje') ?></th>
         </tr>
-        <?$i = 0;?>
+        <?php $i = 0;?>
         <?php foreach ($topics->getResults() as $topic): ?>
           <?php include_partial('sfSimpleForum/topic', array('topic' => $topic));
                 $i++; ?>
@@ -56,7 +56,7 @@
       <?php echo pager_navigation($topics, 'sfSimpleForum/forum?forum_name='.$forum->getStrippedName()) ?>
 
     </div>
-  <? use_helper('volver');         echo volver();     ?>
+  <?php use_helper('volver');         echo volver();     ?>
 </div>
   <div class="cierre_box_correo"></div>
 </div>
