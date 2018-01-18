@@ -46,9 +46,6 @@
         var tipo = $(this).find('tipo').text();
         var name = $(this).find('nombre').text();   
         var imagen = ''; 
-        
-        alert(tipo);
-        
         if (tipo === "profesor")
             imagen = "<img src='/images/profesor.png' width='12' height='12' Title='Profesor'>";
         else
