@@ -2,7 +2,7 @@
 <?php use_helper('Javascript') ?>
 <?php use_helper('SexyButton') ?>
 
-<table>
+<table style="margin-bottom: 10px;">
 <tr>
   
 <?php if ($rol == 'profesor' && !$usuario->getInspector()):?>
