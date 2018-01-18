@@ -38,9 +38,9 @@
 
      $("#conectados").html("<div class='divconectados'><strong>USUARIOS CONECTADOS</strong></div>");
 
-     var xmlDoc = $.parseXML( xml ); 
-     var xml = $(xmlDoc);
-     var usuarios = $xml.find("usuarios");
+     var xmlDoc = $.parseXML(xml); 
+     var xml_p = $(xmlDoc);
+     var usuarios = xml_p.find("usuarios");
      
      usuarios.each(function(){
         var tipo = $(this).find('tipo').text();
