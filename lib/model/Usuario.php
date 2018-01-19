@@ -1049,6 +1049,7 @@ class Usuario extends BaseUsuario
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
     $mail->setBody($message);
+    $mail->setPriority(1);
     $mail->send();
     //echo $message;
 
