@@ -1050,7 +1050,7 @@ class Usuario extends BaseUsuario
     $mail->setBody($message);
     $mail->send();*/
     
-    $para      = 'mauro@icox.com';
+    $para      = 'mauro0812@gmail.com';
     $titulo    = 'El título';
     $mensaje   = 'Hola';
     $cabeceras = 'From: webmaster@example.com' . "\r\n" .
