@@ -1053,7 +1053,7 @@ class Usuario extends BaseUsuario
     $para      = 'mauro0812@gmail.com';
     $titulo    = 'El título';
     $mensaje   = 'Hola';
-    $cabeceras = 'From: webmaster@example.com' . "\r\n" .
+    $cabeceras = 'From: administracion@ceepvirtual.com' . "\r\n" .
         'Reply-To: webmaster@example.com' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
