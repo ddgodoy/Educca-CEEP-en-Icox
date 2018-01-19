@@ -297,7 +297,7 @@ class cursoActions extends sfActions
        $this->url_libro = NULL;
        
        if($array_book){
-           $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license']); 
+           $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license'], $this->id_usuario); 
        }
     }
 	//
@@ -625,9 +625,9 @@ class cursoActions extends sfActions
    * @license string
    * @return url
    */
-  private function getUrlBlinkBook($books, $license){
+  private function getUrlBlinkBook($books, $license, $id_user){
       
-          $usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
+          $usuario = UsuarioPeer::retrieveByPk($id_user);
           
           $curl = curl_init();
 
