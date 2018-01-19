@@ -1,5 +1,6 @@
 <?php use_helper('Text') ?>
 <?php $idcurso = $curso->getId(); ?>
+<?php $usuario = UsuarioPeer::retrieveByPk($sf_user->getAnyId()); ?>  
 <?php if ($sf_user->getCursoMenu()) : ?>
         <?php $redireccion = "?idcurso=".$sf_user->getCursoMenu(); ?>
    <?php else  : ?>
@@ -213,7 +214,8 @@
            <td colspan="2" class="separador">
            </td>
         </tr>
-
+        
+        <?php if(!$usuario->getInspector()): ?>
         <tr>
           <td class="imagen">
             <?php echo link_to(image_tag('bot_ej_asignar.gif', 'Title=Tareas y ex&aacute;menes'), '/tareas/index',array('id' => 'ln_tarea_ico' )) ?>
@@ -223,6 +225,7 @@
             <div class="explicacion">Desde este apartado se puede acceder a las tareas y ex&aacute;menes pendientes, as&iacute; como al historial de entregas.</div>
           </td>
         </tr>
+        <?php endif; ?>
 
      <?php endif; ?>
   <?php endif; ?>
