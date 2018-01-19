@@ -1034,39 +1034,21 @@ class Usuario extends BaseUsuario
         ;
     } // switch
 
-   /* $mail->setMailer('smtp');
+    $mail->setMailer('smtp');
     $mail->setPort('587');
 
     $mail->setHostname(sfConfig::get('app_empresa_serverEmail'));
     $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
     $mail->setPassword(sfConfig::get('app_empresa_pwdEmail'));
 
-    $mail->setSender($direccionde, $nombrede);
+    //$mail->setSender($direccionde, $nombrede);
     $mail->setFrom($direccionde, $nombrede);
     $mail->addAddress($direccionpara, $nombrepara);
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
     $mail->setBody($message);
-    $mail->send();*/
-    
-    $mail->setMailer('smtp');
-    $mail->setPort('587');
-
-    $mail->setHostname('smtp.gmail.com');
-    $mail->setUsername('coinyam.test@gmail.com');
-    $mail->setPassword('coinyam515');
-    //$mail->setEncoding('tls');
-
-    //$mail->setSender($direccionde, $nombrede);
-    $mail->setFrom('administracion@ceepvirtual.com', $nombrede);
-    $mail->addAddress('mauro@icox.com', $nombrepara);
-    $mail->setSubject($asunto);
-    $mail->setContentType('text/html');
-    $mail->setCharset('utf8');
-    $mail->setBody($message);
     $mail->send();
-    //echo $message;
 
   }
 
