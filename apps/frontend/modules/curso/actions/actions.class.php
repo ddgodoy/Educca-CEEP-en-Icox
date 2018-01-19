@@ -646,6 +646,10 @@ class cursoActions extends sfActions
                                 </soapenv:Header>
                                 <soapenv:Body>
                                         <sso:RequestAccess>
+                                                <sso:Id>123456</sso:Id>
+                                                <sso:Name>Test1</sso:Name>
+                                                <sso:Surname>Blink1</sso:Surname>
+                                                <sso:Email>test1blink1@testblink.com</sso:Email>
                                                 <sso:Books>
                                                         <sso:Book>'.$books.'</sso:Book>
                                                 </sso:Books>
