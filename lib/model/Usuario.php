@@ -1041,23 +1041,14 @@ class Usuario extends BaseUsuario
     $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
     $mail->setPassword(sfConfig::get('app_empresa_pwdEmail'));
 
-    $mail->setSender('mauro@icox.com', $nombrede);
-    $mail->setFrom('mauro@icox.com', $nombrede);
-    $mail->addAddress('mauro@icox.com', $nombrepara);
+    //$mail->setSender($direccionde, $nombrede);
+    $mail->setFrom($direccionde, $nombrede);
+    $mail->addAddress($direccionpara, $nombrepara);
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
     $mail->setBody($message);
     $mail->send();
-    
-    /*$para      = 'mauro0812@gmail.com';
-    $titulo    = 'El título';
-    $mensaje   = 'Hola';
-    $cabeceras = 'From: administracion@ceepvirtual.com' . "\r\n" .
-        'Reply-To: webmaster@example.com' . "\r\n" .
-        'X-Mailer: PHP/' . phpversion();
-
-    mail($para, $titulo, $mensaje, $cabeceras);*/
 
   }
 
