@@ -1035,8 +1035,8 @@ class Usuario extends BaseUsuario
     } // switch
 
     $mail->initialize();
-    $mail->setMailer('sendmail');
-    $mail->setPort('587');
+    //$mail->setMailer('smtp');
+    //$mail->setPort('587');
 
     $mail->setHostname(sfConfig::get('app_empresa_serverEmail'));
     $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
@@ -1049,7 +1049,6 @@ class Usuario extends BaseUsuario
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
     $mail->setBody($message);
-    $mail->setPriority(1);
     $mail->send();
     //echo $message;
 
