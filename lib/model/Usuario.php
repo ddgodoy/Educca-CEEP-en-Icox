@@ -1059,7 +1059,7 @@ class Usuario extends BaseUsuario
     //$mail->setEncoding('tls');
 
     //$mail->setSender($direccionde, $nombrede);
-    $mail->setFrom('coinyam.test@gmail.com', $nombrede);
+    $mail->setFrom('administracion@ceepvirtual.com', $nombrede);
     $mail->addAddress('mauro@icox.com', $nombrepara);
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
