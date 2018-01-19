@@ -297,7 +297,7 @@ class cursoActions extends sfActions
        $this->url_libro = NULL;
        
        if($array_book){
-           $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license'], $this->id_usuario); 
+           $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license']); 
        }
     }
 	//
@@ -625,10 +625,10 @@ class cursoActions extends sfActions
    * @license string
    * @return url
    */
-  private function getUrlBlinkBook($books, $license, $id_user){
+  private function getUrlBlinkBook($books, $license){
+            
+          $usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());  
       
-          $usuario = UsuarioPeer::retrieveByPk($id_user);
-          
           $curl = curl_init();
 
           curl_setopt_array($curl, array(
@@ -639,7 +639,7 @@ class cursoActions extends sfActions
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => "<soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/' xmlns:sso='http://www.blinklearning.com/sso/'>
+          CURLOPT_POSTFIELDS => '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sso="http://www.blinklearning.com/sso/">
                                 <soapenv:Header>
                                         <sso:WSEAuthenticateHeader>
                                                 <sso:User>nhY66IdY</sso:User>
@@ -648,22 +648,22 @@ class cursoActions extends sfActions
                                 </soapenv:Header>
                                 <soapenv:Body>
                                         <sso:RequestAccess>
-                                                <sso:Id>'".$usuario->getId()."'</sso:Id>
-                                                <sso:Name>'".$usuario->getNombre()."'</sso:Name>
-                                                <sso:Surname>'".$usuario->getApellidos()."'</sso:Surname>
-                                                <sso:Email>".$usuario->getEmail()."</sso:Email>
+                                                <sso:Id>'.$usuario->getId().'</sso:Id>
+                                                <sso:Name>'.$usuario->getNombre().'</sso:Name>
+                                                <sso:Surname>'.$usuario->getApellidos().'</sso:Surname>
+                                                <sso:Email>'.$usuario->getEmail().'</sso:Email>
                                                 <sso:Books>
-                                                        <sso:Book>$books</sso:Book>
+                                                        <sso:Book>'.$books.'</sso:Book>
                                                 </sso:Books>
                                                 <sso:Licenses>
-                                                        <sso:License>$license</sso:License>
+                                                        <sso:License>'.$license.'</sso:License>
                                                 </sso:Licenses>
                                                 <sso:operationCode>viewbook</sso:operationCode>
-                                                <sso:activityId>$books</sso:activityId>
+                                                <sso:activityId>'.$books.'</sso:activityId>
                                                 <sso:userType>S</sso:userType>
                                         </sso:RequestAccess>
                                 </soapenv:Body>
-                        </soapenv:Envelope>",
+                        </soapenv:Envelope>',
           CURLOPT_HTTPHEADER => array(
             "accept-encoding: gzip,deflate",
             "cache-control: no-cache",
@@ -674,6 +674,10 @@ class cursoActions extends sfActions
         ));
 
         $response = curl_exec($curl);
+        
+        echo $response;
+        exit();
+        
         $err = curl_error($curl);
 
         curl_close($curl);
