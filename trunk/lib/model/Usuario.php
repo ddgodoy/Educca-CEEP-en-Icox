@@ -1038,7 +1038,7 @@ class Usuario extends BaseUsuario
     $mail->setMailer('smtp');
     $mail->setPort('2525');
 
-    $mail->setHostname(sfConfig::get('app_empresa_serverEmail'));
+    $mail->setHostname('mail.adra-online.com');
     $mail->setUsername('adra+adra-online.com');
     $mail->setPassword('Adra2007');
 
