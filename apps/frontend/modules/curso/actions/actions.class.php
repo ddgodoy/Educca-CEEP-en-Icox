@@ -297,7 +297,7 @@ class cursoActions extends sfActions
        $this->url_libro = NULL;
        
        if($array_book){
-           $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license']); 
+           $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license'], $array_book['type']); 
        }
     }
 	//
@@ -625,7 +625,7 @@ class cursoActions extends sfActions
    * @license string
    * @return url
    */
-  private function getUrlBlinkBook($books, $license){
+  private function getUrlBlinkBook($books, $license, $type){
             
           $usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());  
       
@@ -660,7 +660,7 @@ class cursoActions extends sfActions
                                                 </sso:Licenses>
                                                 <sso:operationCode>viewbook</sso:operationCode>
                                                 <sso:activityId>'.$books.'</sso:activityId>
-                                                <sso:userType>T</sso:userType>
+                                                <sso:userType>'.$type.'</sso:userType>
                                         </sso:RequestAccess>
                                 </soapenv:Body>
                         </soapenv:Envelope>',
@@ -693,19 +693,19 @@ class cursoActions extends sfActions
    */
   private function getBookAndLicense($id_user, $id_curso){
       
-      $array_return = array(197=>array(562=>array('book'=>'9788448612191', 'license'=>'RUJ62M39'),
-                                       635=>array('book'=>'9788448612191', 'license'=>'N7J2XJ49')), 
-                            198=>array(562=>array('book'=>'9788448612092', 'license'=>'G6B2QWB9'),
-                                       635=>array('book'=>'9788448612092', 'license'=>'73R9ST59')),
-                            199=>array(562=>array('book'=>'9788448609665', 'license'=>'XRZCGFH9'),
-                                       635=>array('book'=>'9788448609665', 'license'=>'BSJMAMQ9')),
-                            200=>array(562=>array('book'=>'9788448612030', 'license'=>'G386SXA9'),
-                                       635=>array('book'=>'9788448612030', 'license'=>'L96UPW99')), 
-                            201=>array(562=>array('book'=>'9788448612054', 'license'=>'4LALG1A9'),
-                                       635=>array('book'=>'9788448612054', 'license'=>'UHM9L959')),           
-                            202=>array(562=>array('book'=>'9788448612078', 'license'=>'CB11B8M9')), 
-                            203=>array(562=>array('book'=>'9788448608569', 'license'=>'7DTV1Z69'),
-                                       635=>array('book'=>'9788448608569', 'license'=>'UEH9EV59')),           
+      $array_return = array(197=>array(562=>array('book'=>'9788448612191', 'license'=>'RUJ62M39', 'type'=>'T'),
+                                       635=>array('book'=>'9788448612191', 'license'=>'N7J2XJ49', 'type'=>'S')), 
+                            198=>array(562=>array('book'=>'9788448612092', 'license'=>'G6B2QWB9', 'type'=>'T'),
+                                       635=>array('book'=>'9788448612092', 'license'=>'73R9ST59', 'type'=>'S')),
+                            199=>array(562=>array('book'=>'9788448609665', 'license'=>'XRZCGFH9', 'type'=>'T'),
+                                       635=>array('book'=>'9788448609665', 'license'=>'BSJMAMQ9', 'type'=>'S')),
+                            200=>array(562=>array('book'=>'9788448612030', 'license'=>'G386SXA9', 'type'=>'T'),
+                                       635=>array('book'=>'9788448612030', 'license'=>'L96UPW99', 'type'=>'S')), 
+                            201=>array(562=>array('book'=>'9788448612054', 'license'=>'4LALG1A9', 'type'=>'T'),
+                                       635=>array('book'=>'9788448612054', 'license'=>'UHM9L959', 'type'=>'S')),           
+                            202=>array(562=>array('book'=>'9788448612078', 'license'=>'CB11B8M9', 'type'=>'T')), 
+                            203=>array(562=>array('book'=>'9788448608569', 'license'=>'7DTV1Z69', 'type'=>'T'),
+                                       635=>array('book'=>'9788448608569', 'license'=>'UEH9EV59', 'type'=>'S')),           
       );
       
       return !empty($array_return[$id_curso][$id_user])?$array_return[$id_curso][$id_user]:false;
