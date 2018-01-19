@@ -629,6 +629,9 @@ class cursoActions extends sfActions
       
           $usuario = UsuarioPeer::retrieveByPk($id_user);
           
+          echo $usuario->getId();
+          exit();
+          
           $curl = curl_init();
 
           curl_setopt_array($curl, array(
