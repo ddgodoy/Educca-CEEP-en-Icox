@@ -660,7 +660,7 @@ class cursoActions extends sfActions
                                                 </sso:Licenses>
                                                 <sso:operationCode>viewbook</sso:operationCode>
                                                 <sso:activityId>'.$books.'</sso:activityId>
-                                                <sso:userType>S</sso:userType>
+                                                <sso:userType>T</sso:userType>
                                         </sso:RequestAccess>
                                 </soapenv:Body>
                         </soapenv:Envelope>',
