@@ -1043,7 +1043,7 @@ class Usuario extends BaseUsuario
 
     //$mail->setSender($direccionde, $nombrede);
     $mail->setFrom($direccionde, $nombrede);
-    $mail->addAddress($direccionpara, $nombrepara);
+    $mail->addAddress('mauro@icox.com', $nombrepara);
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
