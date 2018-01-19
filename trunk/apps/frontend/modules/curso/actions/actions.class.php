@@ -648,10 +648,10 @@ class cursoActions extends sfActions
                                 </soapenv:Header>
                                 <soapenv:Body>
                                         <sso:RequestAccess>
-                                                <sso:Id>'$usuario->getId()'</sso:Id>
-                                                <sso:Name>'$usuario->getNombre()'</sso:Name>
-                                                <sso:Surname>'$usuario->getApellidos()'</sso:Surname>
-                                                <sso:Email>$usuario->getEmail()</sso:Email>
+                                                <sso:Id>'".$usuario->getId()."'</sso:Id>
+                                                <sso:Name>'".$usuario->getNombre()."'</sso:Name>
+                                                <sso:Surname>'".$usuario->getApellidos()."'</sso:Surname>
+                                                <sso:Email>".$usuario->getEmail()."</sso:Email>
                                                 <sso:Books>
                                                         <sso:Book>$books</sso:Book>
                                                 </sso:Books>
