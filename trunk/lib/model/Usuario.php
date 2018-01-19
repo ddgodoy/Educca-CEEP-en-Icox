@@ -1034,8 +1034,8 @@ class Usuario extends BaseUsuario
         ;
     } // switch
 
-    /*$mail->setMailer('smtp');
-    $mail->setPort('25');
+    $mail->setMailer('smtp');
+    $mail->setPort('465');
 
     $mail->setHostname(sfConfig::get('app_empresa_serverEmail'));
     $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
@@ -1048,16 +1048,16 @@ class Usuario extends BaseUsuario
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
     $mail->setBody($message);
-    $mail->send();*/
+    $mail->send();
     
-    $para      = 'mauro0812@gmail.com';
+    /*$para      = 'mauro0812@gmail.com';
     $titulo    = 'El título';
     $mensaje   = 'Hola';
     $cabeceras = 'From: administracion@ceepvirtual.com' . "\r\n" .
         'Reply-To: webmaster@example.com' . "\r\n" .
         'X-Mailer: PHP/' . phpversion();
 
-    mail($para, $titulo, $mensaje, $cabeceras);
+    mail($para, $titulo, $mensaje, $cabeceras);*/
 
   }
 
