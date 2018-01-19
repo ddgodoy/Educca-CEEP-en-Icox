@@ -296,6 +296,13 @@ class cursoActions extends sfActions
        
        $this->url_libro = NULL;
        
+       echo $this->id_usuario.'<br/>';
+       echo $this->idcurso.'<br/>';
+       echo $array_book['book'].'<br/>';
+       echo $array_book['license'].'<br/>';
+       exit();
+       
+       
        if($array_book){
            $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license']); 
        }
