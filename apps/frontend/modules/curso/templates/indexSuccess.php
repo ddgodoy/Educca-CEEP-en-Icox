@@ -186,7 +186,7 @@
            </td>
         </tr>
 
-
+        <?php if(!$usuario->getInspector()): ?>
         <tr>
           <td class="imagen">
             <?php echo link_to(image_tag('bot_ej_asignar.gif', 'Title=Tareas y ex&aacute;menes'), '/tareas/index',array('id' => 'ln_tarea_ico' )) ?>
@@ -196,6 +196,7 @@
             <div class="explicacion">Desde este apartado se pueden poner tareas o un examen para los alumnos del curso, modificar las fechas o los plazos de entrega de estos.</div>
           </td>
         </tr>
+        <?php endif; ?>
 		<?php endif; ?>
 
   <?php else : ?>
