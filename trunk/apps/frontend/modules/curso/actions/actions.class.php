@@ -627,7 +627,9 @@ class cursoActions extends sfActions
    */
   private function getUrlBlinkBook($books, $license){
       
-      $curl = curl_init();
+          $usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
+          
+          $curl = curl_init();
 
           curl_setopt_array($curl, array(
           CURLOPT_URL => "https://www.blinklearning.com/ws/WsSSO/wsSSO.php",
@@ -646,10 +648,10 @@ class cursoActions extends sfActions
                                 </soapenv:Header>
                                 <soapenv:Body>
                                         <sso:RequestAccess>
-                                                <sso:Id>123456</sso:Id>
-                                                <sso:Name>Test1</sso:Name>
-                                                <sso:Surname>Blink1</sso:Surname>
-                                                <sso:Email>test1blink1@testblink.com</sso:Email>
+                                                <sso:Id>'.$usuario->getId().'</sso:Id>
+                                                <sso:Name>'.$usuario->getNombre().'</sso:Name>
+                                                <sso:Surname>'.$usuario->getApellidos().'</sso:Surname>
+                                                <sso:Email>'.$usuario->getEmail().'</sso:Email>
                                                 <sso:Books>
                                                         <sso:Book>'.$books.'</sso:Book>
                                                 </sso:Books>
