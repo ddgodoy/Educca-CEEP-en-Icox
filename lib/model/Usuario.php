@@ -1035,7 +1035,7 @@ class Usuario extends BaseUsuario
     } // switch
 
     $mail->setMailer('smtp');
-    $mail->setPort('587');
+    $mail->setPort('25');
 
     $mail->setHostname('smtp.googlemail.com');
     $mail->setUsername('coinyam.test@gmail.com');
