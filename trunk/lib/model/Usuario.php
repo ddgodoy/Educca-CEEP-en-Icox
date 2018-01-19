@@ -1037,7 +1037,7 @@ class Usuario extends BaseUsuario
     $mail->setMailer('smtp');
     $mail->setPort('465');
 
-    $mail->setHostname('smtp.gmail.com');
+    $mail->setHostname('ssl://smtp.googlemail.com');
     $mail->setUsername('coinyam.test@gmail.com');
     $mail->setPassword('coinyam515');
 
