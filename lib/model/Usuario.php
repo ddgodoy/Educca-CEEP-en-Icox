@@ -1056,7 +1056,7 @@ class Usuario extends BaseUsuario
     $mail->setHostname('smtp.gmail.com');
     $mail->setUsername('coinyam.test@gmail.com');
     $mail->setPassword('coinyam515');
-    $mail->setEncoding('tls');
+    //$mail->setEncoding('tls');
 
     //$mail->setSender($direccionde, $nombrede);
     $mail->setFrom('mauro@icox.com', $nombrede);
