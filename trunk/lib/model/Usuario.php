@@ -1041,8 +1041,8 @@ class Usuario extends BaseUsuario
     $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
     $mail->setPassword(sfConfig::get('app_empresa_pwdEmail'));
 
-    //$mail->setSender($direccionde, $nombrede);
-    $mail->setFrom($direccionde, $nombrede);
+    $mail->setSender('mauro@icox.com', $nombrede);
+    $mail->setFrom('mauro@icox.com', $nombrede);
     $mail->addAddress('mauro@icox.com', $nombrepara);
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
