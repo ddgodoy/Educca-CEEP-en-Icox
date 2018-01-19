@@ -1059,7 +1059,7 @@ class Usuario extends BaseUsuario
     //$mail->setEncoding('tls');
 
     //$mail->setSender($direccionde, $nombrede);
-    $mail->setFrom('mauro@icox.com', $nombrede);
+   // $mail->setFrom('mauro@icox.com', $nombrede);
     $mail->addAddress('mauro@icox.com', $nombrepara);
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
