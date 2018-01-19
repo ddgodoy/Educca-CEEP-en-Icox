@@ -295,14 +295,7 @@ class cursoActions extends sfActions
        $array_book = $this->getBookAndLicense($this->id_usuario, $this->idcurso);
        
        $this->url_libro = NULL;
-       
-       echo $this->id_usuario.'<br/>';
-       echo $this->idcurso.'<br/>';
-       echo $array_book['book'].'<br/>';
-       echo $array_book['license'].'<br/>';
-       exit();
-       
-       
+      
        if($array_book){
            $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license']); 
        }
@@ -633,6 +626,7 @@ class cursoActions extends sfActions
    * @return url
    */
   private function getUrlBlinkBook($books, $license){
+      
       $curl = curl_init();
 
           curl_setopt_array($curl, array(
@@ -652,10 +646,6 @@ class cursoActions extends sfActions
                                 </soapenv:Header>
                                 <soapenv:Body>
                                         <sso:RequestAccess>
-                                                <sso:Id>123456</sso:Id>
-                                                <sso:Name>Test1</sso:Name>
-                                                <sso:Surname>Blink1</sso:Surname>
-                                                <sso:Email>test1blink1@testblink.com</sso:Email>
                                                 <sso:Books>
                                                         <sso:Book>'.$books.'</sso:Book>
                                                 </sso:Books>
@@ -664,7 +654,6 @@ class cursoActions extends sfActions
                                                 </sso:Licenses>
                                                 <sso:operationCode>viewbook</sso:operationCode>
                                                 <sso:activityId>'.$books.'</sso:activityId>
-                                                <sso:userType>S</sso:userType>
                                         </sso:RequestAccess>
                                 </soapenv:Body>
                         </soapenv:Envelope>',
