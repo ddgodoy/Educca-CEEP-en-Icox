@@ -675,9 +675,6 @@ class cursoActions extends sfActions
 
         $response = curl_exec($curl);
         
-        echo $response;
-        exit();
-        
         $err = curl_error($curl);
 
         curl_close($curl);
