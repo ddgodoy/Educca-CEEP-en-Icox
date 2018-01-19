@@ -1035,15 +1035,15 @@ class Usuario extends BaseUsuario
     } // switch
 
     $mail->setMailer('smtp');
-    $mail->setPort('587');
+    $mail->setPort('465');
 
-    $mail->setHostname(sfConfig::get('app_empresa_serverEmail'));
-    $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
-    $mail->setPassword(sfConfig::get('app_empresa_pwdEmail'));
+    $mail->setHostname('smtp.gmail.com');
+    $mail->setUsername('coinyam.test@gmail.com');
+    $mail->setPassword('coinyam515');
 
-    $mail->setSender($direccionde, $nombrede);
-    $mail->setFrom($direccionde, $nombrede);
-    $mail->addAddress($direccionpara, $nombrepara);
+    //$mail->setSender('mauro@icox.com', $nombrede);
+    $mail->setFrom('mauro@icox.com', $nombrede);
+    $mail->addAddress('mauro@icox.com', $nombrepara);
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
