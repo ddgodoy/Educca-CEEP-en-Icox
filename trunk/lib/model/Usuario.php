@@ -1035,12 +1035,12 @@ class Usuario extends BaseUsuario
     } // switch
 
     $mail->initialize();
-    //$mail->setMailer('smtp');
-    //$mail->setPort('587');
+    $mail->setMailer('smtp');
+    $mail->setPort('2525');
 
     $mail->setHostname(sfConfig::get('app_empresa_serverEmail'));
-    $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
-    $mail->setPassword(sfConfig::get('app_empresa_pwdEmail'));
+    $mail->setUsername('adra+adra-online.com');
+    $mail->setPassword('Adra2007');
 
     //$mail->setSender($direccionde, $nombrede);
     $mail->setFrom('mauro@icox.com', $nombrede);
