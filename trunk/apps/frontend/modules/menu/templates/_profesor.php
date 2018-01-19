@@ -50,12 +50,14 @@
     <?php endif; ?>
   </ul>
 
-  <?php if ($curso->getMenuEjercicios()) :?>
-  <div class="tit_box_menu"><h2 class="titbox">Herramientas</h2></div>
-  <ul class="listamenu">
-    <li class="gejercicios_c"><?php echo link_to('Editor de ejercicios', 'ejercicio/index'.$redireccion,array('name' => 'ln_ejercicios'))?></li>
-  </ul>
-      
+  <?php if(!$usuario->getInspector()): ?>
+    <?php if ($curso->getMenuEjercicios()) :?>
+    <div class="tit_box_menu"><h2 class="titbox">Herramientas</h2></div>
+    <ul class="listamenu">
+      <li class="gejercicios_c"><?php echo link_to('Editor de ejercicios', 'ejercicio/index'.$redireccion,array('name' => 'ln_ejercicios'))?></li>
+    </ul>
+
+    <?php endif; ?>
   <?php endif; ?>
 <?php endif; ?>
 <?php if(!$usuario->getInspector()): ?>
