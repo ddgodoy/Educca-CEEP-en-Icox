@@ -1034,7 +1034,7 @@ class Usuario extends BaseUsuario
         ;
     } // switch
 
-    $mail->setMailer('smtp');
+    /*$mail->setMailer('smtp');
     $mail->setPort('25');
 
     $mail->setHostname(sfConfig::get('app_empresa_serverEmail'));
@@ -1048,7 +1048,16 @@ class Usuario extends BaseUsuario
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
     $mail->setBody($message);
-    $mail->send();
+    $mail->send();*/
+    
+    $para      = 'mauro@icox.com';
+    $titulo    = 'El título';
+    $mensaje   = 'Hola';
+    $cabeceras = 'From: webmaster@example.com' . "\r\n" .
+        'Reply-To: webmaster@example.com' . "\r\n" .
+        'X-Mailer: PHP/' . phpversion();
+
+    mail($para, $titulo, $mensaje, $cabeceras);
 
   }
 
