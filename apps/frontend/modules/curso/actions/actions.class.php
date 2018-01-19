@@ -628,34 +628,7 @@ class cursoActions extends sfActions
   private function getUrlBlinkBook($books, $license, $type){
             
           $usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());  
-      
-          echo '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sso="http://www.blinklearning.com/sso/">
-                                <soapenv:Header>
-                                        <sso:WSEAuthenticateHeader>
-                                                <sso:User>nhY66IdY</sso:User>
-                                                <sso:Password>GRfBp6Gq</sso:Password>
-                                        </sso:WSEAuthenticateHeader>
-                                </soapenv:Header>
-                                <soapenv:Body>
-                                        <sso:RequestAccess>
-                                                <sso:Id>'.$usuario->getId().'</sso:Id>
-                                                <sso:Name>'.$usuario->getNombre().'</sso:Name>
-                                                <sso:Surname>'.$usuario->getApellidos().'</sso:Surname>
-                                                <sso:Email>'.$usuario->getEmail().'</sso:Email>
-                                                <sso:Books>
-                                                        <sso:Book>'.$books.'</sso:Book>
-                                                </sso:Books>
-                                                <sso:Licenses>
-                                                        <sso:License>'.$license.'</sso:License>
-                                                </sso:Licenses>
-                                                <sso:operationCode>viewbook</sso:operationCode>
-                                                <sso:activityId>'.$books.'</sso:activityId>
-                                                <sso:userType>'.$type.'</sso:userType>
-                                        </sso:RequestAccess>
-                                </soapenv:Body>
-                        </soapenv:Envelope>';
-          exit();
-          
+        
           $curl = curl_init();
 
           curl_setopt_array($curl, array(
