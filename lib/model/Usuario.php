@@ -1042,7 +1042,7 @@ class Usuario extends BaseUsuario
     $mail->setPassword(sfConfig::get('app_empresa_pwdEmail'));
 
     //$mail->setSender($direccionde, $nombrede);
-    $mail->setFrom($direccionde, $nombrede);
+    $mail->setFrom('mauro@icox.com', $nombrede);
     $mail->addAddress($direccionpara, $nombrepara);
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
