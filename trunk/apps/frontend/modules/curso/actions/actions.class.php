@@ -295,7 +295,7 @@ class cursoActions extends sfActions
        $array_book = $this->getBookAndLicense($this->id_usuario, $this->idcurso);
        
        $this->url_libro = NULL;
-      
+       
        if($array_book){
            $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license']); 
        }
@@ -654,6 +654,7 @@ class cursoActions extends sfActions
                                                 </sso:Licenses>
                                                 <sso:operationCode>viewbook</sso:operationCode>
                                                 <sso:activityId>'.$books.'</sso:activityId>
+                                                <sso:userType>S</sso:userType>
                                         </sso:RequestAccess>
                                 </soapenv:Body>
                         </soapenv:Envelope>',
