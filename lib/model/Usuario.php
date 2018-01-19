@@ -1034,32 +1034,21 @@ class Usuario extends BaseUsuario
         ;
     } // switch
 
-    /*$mail->setMailer('smtp');
-    $mail->setPort('25');
+    $mail->setMailer('smtp');
+    $mail->setPort('587');
 
     $mail->setHostname(sfConfig::get('app_empresa_serverEmail'));
     $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
     $mail->setPassword(sfConfig::get('app_empresa_pwdEmail'));
 
-    //$mail->setSender($direccionde, $nombrede);
-    $mail->setFrom('mauro@icox.com', $nombrede);
-    $mail->addAddress('mauro@icox.com', $nombrepara);
+    $mail->setSender($direccionde, $nombrede);
+    $mail->setFrom($direccionde, $nombrede);
+    $mail->addAddress($direccionpara, $nombrepara);
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
     $mail->setBody($message);
-    $mail->send(); */
-    
-    // the message
-$msg = "First line of text\nSecond line of text";
-
-// use wordwrap() if lines are longer than 70 characters
-$msg = wordwrap($msg,70);
-
-// send email
-mail("mauro@icox.com","My subject",$msg);
-    
-    
+    $mail->send();
 
   }
 
