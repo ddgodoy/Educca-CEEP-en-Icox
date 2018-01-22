@@ -18,4 +18,4 @@
 <div class="cierre_menu"></div>
 
 <?php use_helper('submitEnter') ?>
-<? echo  echoSubmitEnter()?>
+<?php echo  echoSubmitEnter()?>

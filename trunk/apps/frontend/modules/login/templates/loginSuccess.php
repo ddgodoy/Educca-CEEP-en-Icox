@@ -21,7 +21,7 @@
                     <!--form action="login/claveolvidada" method="post" id="changepassword">
                       <div class="form-submit"><?php echo submit_tag('S&iacute;, ay&uacute;deme a entrar') ?></div>
                     </form-->
-                    <div class="form-submit"><? echo link_to('S&iacute;, ay&uacute;deme a entrar', 'login/claveolvidada') ?></div>
+                    <div class="form-submit"><?php echo link_to('S&iacute;, ay&uacute;deme a entrar', 'login/claveolvidada') ?></div>
               </div><!-- forgotsub -->
      		  <div class="signuppanel">
                  <h2>Registrarse como alumno</h2>
