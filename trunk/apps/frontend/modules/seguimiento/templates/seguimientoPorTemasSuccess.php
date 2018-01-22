@@ -66,7 +66,7 @@
                   <?php foreach($scos12 as $sco) : ?>
                     <tr>
                       <td style="width: 60%; text-align: left;">
-                        <?php echo 'hola'.link_to(truncate_text($sco->getTitle(), 50) , 'seguimiento/grafica?tipo=sco12&idsco12='.$sco->getId().'&idcurso='.$idcurso) ?>
+                        <?php echo link_to(truncate_text($sco->getTitle(), 50) , 'seguimiento/grafica?tipo=sco12&idsco12='.$sco->getId().'&idcurso='.$idcurso) ?>
                       </td>
                       <td style="width: 30%; text-align: center;">
                         <?php
