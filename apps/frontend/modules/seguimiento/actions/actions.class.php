@@ -676,6 +676,7 @@ class seguimientoActions extends sfActions
               {
                 $c2 = new Criteria();
                 $c2->add(Sco12Peer::ID_MATERIA, $materia->getId());
+                $c2->addAscendingOrderByColumn(Sco12Peer::ID);
                 $sco12_list = Sco12Peer::DoSelect($c2);
                 $c3 = new Criteria();
 
