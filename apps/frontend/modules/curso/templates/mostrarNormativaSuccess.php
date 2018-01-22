@@ -31,7 +31,7 @@
     	</table>
 	  </div><br/>
 
-     <? use_helper('volver'); ?>
+     <?php use_helper('volver'); ?>
      <?php if ($rol == 'profesor') : ?>
                 <?php if (isset($idcurso)) : ?>
 					         <?php $redireccion = "?idcurso=".$idcurso; ?>
