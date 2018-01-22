@@ -7,12 +7,10 @@
             window.close();  
         });
     }
-    function RefreshParent() {
-        if (window.opener != null && !window.opener.closed) {
-            window.opener.location.reload();
-        }
+    window.onunload = refreshParent;
+    function refreshParent() {
+        window.opener.location.reload();
     }
-    window.onbeforeunload = RefreshParent();
 </script>   
 <iframe id="frame_scorm" src="<?php echo $ruta ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" border="0">
 </iframe>
