@@ -1,6 +1,6 @@
   <?php echo use_helper('Javascript') ?>
   	<?php echo periodically_call_remote(array(
-      'frequency' => 45,
+      'frequency' => 10,
       'update'    => 'usuarios_conectados_popup',
       'url'       => 'online/conectados',
   )) ?>
