@@ -55,23 +55,25 @@
       <table border='0' width='100%'>
         <?php $count = 0; ?>
         <?php foreach($tareas as $tarea):?>
-          <?php $fondo = (($count % 2 == 0))? " id=\"filarayada\"" : ""; ?>
-          <?php echo "<tr $fondo>" ?>
-            <td style="text-align:left; width: 485px; padding-left:3px;">
-              <div class='c_tarea<?=$tarea->getId()?>'><?php echo $tarea->getEjercicio()->getTitulo(); ?></div>
-            </td>
+          <?php if($tarea->getId() != 354): ?>
+            <?php $fondo = (($count % 2 == 0))? " id=\"filarayada\"" : ""; ?>
+            <?php echo "<tr $fondo>" ?>
+              <td style="text-align:left; width: 485px; padding-left:3px;">
+                <div class='c_tarea<?=$tarea->getId()?>'><?php echo $tarea->getEjercicio()->getTitulo(); ?></div>
+              </td>
 
-            <td style="text-align:center;"><?php $alumnos = $tarea->getEntregas($id_curso)?>
-              <?php if ($alumnos) : ?>
-              <?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas de los alumnos" title="Gr&aacute;ficas de los alumnos" align="absmiddle"'),'seguimiento/grafica?idtarea='.$tarea->getId().'&tipo=tareaVSalumnos&idcurso='.$id_curso, array('class' => 'a_explicito','id'=>'ln_grafica_tarea'.$tarea->getId())) ?>
-              <?php //echo link_to('Gr&aacute;fica de alumnos','seguimiento/grafica?idtarea='.$tarea->getId().'&tipo=tareaVSalumnos&idcurso='.$id_curso, array('class' => 'a_explicito')) ?>
-              <?php else : ?>
-              (No hay entregas de esta tarea)
-              <?php endif; ?>
-            </td>
+              <td style="text-align:center;"><?php $alumnos = $tarea->getEntregas($id_curso)?>
+                <?php if ($alumnos) : ?>
+                <?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas de los alumnos" title="Gr&aacute;ficas de los alumnos" align="absmiddle"'),'seguimiento/grafica?idtarea='.$tarea->getId().'&tipo=tareaVSalumnos&idcurso='.$id_curso, array('class' => 'a_explicito','id'=>'ln_grafica_tarea'.$tarea->getId())) ?>
+                <?php //echo link_to('Gr&aacute;fica de alumnos','seguimiento/grafica?idtarea='.$tarea->getId().'&tipo=tareaVSalumnos&idcurso='.$id_curso, array('class' => 'a_explicito')) ?>
+                <?php else : ?>
+                (No hay entregas de esta tarea)
+                <?php endif; ?>
+              </td>
 
-          </tr>
-          <?php $count++; ?>
+            </tr>
+            <?php $count++; ?>
+          <?php endif; ?>  
         <?php endforeach;?>
       </table>
       <?php if (!$count):?>
