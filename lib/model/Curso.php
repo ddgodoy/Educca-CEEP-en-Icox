@@ -532,7 +532,7 @@ class Curso extends BaseCurso
   {
     $c = new Criteria();
     $c->add(Usuarios_onlinePeer::ID_CURSO, $this->id);
-    $c->add(Usuarios_onlinePeer::TIEMPO, time()-(6), Criteria::GREATER_THAN); //este tiempo tiene qser mayor qel puesto en /online/javascript_periodico
+    $c->add(Usuarios_onlinePeer::TIEMPO, time()-(3), Criteria::GREATER_THAN); //este tiempo tiene qser mayor qel puesto en /online/javascript_periodico
 
     $usuarios= Usuarios_onlinePeer::doSelect($c);
 
@@ -550,7 +550,7 @@ class Curso extends BaseCurso
   {
     $c = new Criteria();
     $c->add(Usuarios_onlinePeer::ID_CURSO, $this->id);
-    $c->add(Usuarios_onlinePeer::TIEMPO, time()-(6), Criteria::GREATER_THAN); //este tiempo tiene qser mayor qel puesto en /online/javascript_periodico
+    $c->add(Usuarios_onlinePeer::TIEMPO, time()-(3), Criteria::GREATER_THAN); //este tiempo tiene qser mayor qel puesto en /online/javascript_periodico
 
     $usuarios= Usuarios_onlinePeer::doCount($c);
 
