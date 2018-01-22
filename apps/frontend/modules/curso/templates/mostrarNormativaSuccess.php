@@ -1,4 +1,5 @@
 <?php use_helper('SexyButton') ?>
+<?php $usuario = UsuarioPeer::retrieveByPk($sf_user->getAnyId()); ?>  
 <div id="miscursos_g">
   <div class="tit_box_mensajes">
       <h2 class="titbox"><?= $curso->getNombre(90) ?> : Informaci&oacute;n General y Normativa</h2></td>
@@ -40,14 +41,18 @@
 
 			   <table border='0' width='100%'>
 				   <tr>
-				      <td style="width:20%;"><? echo volver();     ?></td>
+				      <td style="width:20%;"><?php echo volver();     ?></td>
 				      <td style="width:17%;">&nbsp;</td>
-				      <td style="width:63%;"><?php echo sexy_button_to('Modificar informaci&oacute;n', 'curso/modificarNormativa'.$redireccion); ?></td>
+				      <td style="width:63%;">
+                                          <?php if(!$usuario->getInspector()): ?>
+                                            <?php echo sexy_button_to('Modificar informaci&oacute;n', 'curso/modificarNormativa'.$redireccion); ?>
+                                          <?php endif; ?>
+                                      </td>
            </tr>
          </table>
 
         <?php else  : ?>
-             <? echo volver();     ?>
+             <?php echo volver();     ?>
         <?php endif;?>
 
 
