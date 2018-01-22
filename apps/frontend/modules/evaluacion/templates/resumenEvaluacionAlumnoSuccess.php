@@ -243,12 +243,12 @@
   </table>
   </div>
 </td>
-<?php if(!$usuario->getInspector()): ?>
 <td class="td2">&nbsp;</td>
 <td class="td3">
   <div class="resumen_trabajo_alumno">
   <center><strong><u>Notas medias obtenidas por el alumno</u></strong></center>
   <br>
+  <?php if(!$usuario->getInspector()): ?>
   <?php echo form_tag('evaluacion/guardarCalificacion?id_alumno='.$alumno->getId().'&id_curso='.$curso->getId(), array('name' => 'form_eval', 'id'=>'form_eval'))?>
   <table class="tabla_trabajo_alumno">
     <tr>
@@ -266,19 +266,21 @@
       <td class="td4"><input class="input_nota" id="input_problemas" type="text" value="" readonly></td>
       <td class="td5"><input class="boton_azulito_evaluacion" type="button" value="Calcular medias" onClick="calcularMedias()"></td>
     </tr>
+    <?php endif; ?>
     <tr>
       <th class="td3">Nota final:</th>
       <td class="td4">
         <input name="nota_final" class="input_nota_final" id="nota_final" type="text" value="<?php echo $ultima_nota?>" maxlength="5">
         <input type="hidden" id="ultima_nota" value="<?php echo $ultima_nota?>">  
       </td>
+      <?php if(!$usuario->getInspector()): ?>
       <td class="td5"><input class="boton_marroncito_evaluacion" type="button" value="Guardar nota" onClick="submitNotaFinal()"></td>
+      <?php endif; ?>
     </tr>
   </table>
   </form>
   </div>
 </td>
-<?php endif; ?>
 </tr>
 </table>
 </div>
