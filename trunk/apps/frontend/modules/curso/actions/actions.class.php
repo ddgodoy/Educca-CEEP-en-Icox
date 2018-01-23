@@ -629,7 +629,7 @@ class cursoActions extends sfActions
             
           $usuario = UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());  
           
-          echo '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sso="http://www.blinklearning.com/sso/">
+          /*echo '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sso="http://www.blinklearning.com/sso/">
                                 <soapenv:Header>
                                         <sso:WSEAuthenticateHeader>
                                                 <sso:User>nhY66IdY</sso:User>
@@ -653,7 +653,7 @@ class cursoActions extends sfActions
                                                 <sso:userType>'.$type.'</sso:userType>
                                         </sso:RequestAccess>
                                 </soapenv:Body>
-                        </soapenv:Envelope>';
+                        </soapenv:Envelope>'; */
           
           $curl = curl_init();
 
@@ -701,8 +701,8 @@ class cursoActions extends sfActions
 
         $response = curl_exec($curl);
         
-        echo $response;
-        exit();
+       /* echo $response;
+        exit();*/
         
         $err = curl_error($curl);
 
