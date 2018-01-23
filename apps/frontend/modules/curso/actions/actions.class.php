@@ -722,7 +722,7 @@ class cursoActions extends sfActions
    */
   private function getBookAndLicense($id_user, $id_curso){
       
-      $array_return = array(197=>array(562=>array('book'=>'9788448612191', 'license'=>'RUJ62M39', 'type'=>'T'),
+      $array_return = array(197=>array(562=>array('book'=>'9788448194468', 'license'=>'JBNU9PK9', 'type'=>'T'),
                                        634=>array('book'=>'9788448612191', 'license'=>'S36XSAQ9', 'type'=>'T'), 
                                        635=>array('book'=>'9788448612191', 'license'=>'DYJVCN39', 'type'=>'S'),
                                        638=>array('book'=>'9788448612191', 'license'=>'N7J2XJ49', 'type'=>'S')),
