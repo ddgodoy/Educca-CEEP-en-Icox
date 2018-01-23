@@ -648,9 +648,9 @@ class cursoActions extends sfActions
                                                 <sso:Licenses>
                                                         <sso:License>'.$license.'</sso:License>
                                                 </sso:Licenses>
-                                                <sso:operationCode>viewbook</sso:operationCode>
-                                                <sso:activityId>'.$books.'</sso:activityId>
-                                                <sso:userType>'.$type.'</sso:userType>
+                                                <sso:OperationCode>viewbook</sso:OperationCode>
+                                                <sso:ActivityId>'.$books.'</sso:ActivityId>
+                                                <sso:UserType>'.$type.'</sso:UserType>
                                         </sso:RequestAccess>
                                 </soapenv:Body>
                         </soapenv:Envelope>'; */
@@ -684,9 +684,9 @@ class cursoActions extends sfActions
                                                 <sso:Licenses>
                                                         <sso:License>'.$license.'</sso:License>
                                                 </sso:Licenses>
-                                                <sso:operationCode>viewbook</sso:operationCode>
-                                                <sso:activityId>'.$books.'</sso:activityId>
-                                                <sso:userType>'.$type.'</sso:userType>
+                                                <sso:OperationCode>viewbook</sso:OperationCode>
+                                                <sso:ActivityId>'.$books.'</sso:ActivityId>
+                                                <sso:UserType>'.$type.'</sso:UserType>
                                         </sso:RequestAccess>
                                 </soapenv:Body>
                         </soapenv:Envelope>',
