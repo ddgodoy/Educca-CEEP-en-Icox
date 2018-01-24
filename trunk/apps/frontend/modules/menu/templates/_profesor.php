@@ -64,6 +64,10 @@
     <!--div id="submenu"-->
         <?php include_component_slot('submenu') ?>
     <!--/div-->
+<?php else: ?>
+    <?php echo $sf_context->getModuleName(); ?>
+    <?php if($sf_context->getModuleName()): ?>
+    <?php endif; ?>
 <?php endif; ?>    
 
   <div class="tit_box_menu"><h2 class="titbox">Men&uacute; principal</h2></div>
