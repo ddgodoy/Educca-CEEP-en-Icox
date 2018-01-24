@@ -159,7 +159,7 @@
           </td>
           <td class="explica">
 
-            <div class="titulo"><?php echo link_to('Editor de ejercicios', '/ejercicio/index',array('id' => 'ln_ejercicios_texto' )) ?></div>
+            <div class="titulo"><?php echo link_to('Editor de ejercicios', '/ejercicio/index?idcurso='.$idcurso,array('id' => 'ln_ejercicios_texto' )) ?></div>
             <div class="explicacion">El editor permite crear y editar ejercicios del curso para que los alumnos practiquen o para enviarlos como tareas o ex&aacute;menes.</div>
 
           </td>
