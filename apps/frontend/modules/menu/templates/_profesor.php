@@ -65,8 +65,8 @@
         <?php include_component_slot('submenu') ?>
     <!--/div-->
 <?php else: ?>
-    <?php echo $sf_context->getModuleName(); ?>
-    <?php if($sf_context->getModuleName()): ?>
+    <?php if($sf_context->getModuleName() === 'mensaje'): ?>
+        <?php include_component_slot('submenu') ?>
     <?php endif; ?>
 <?php endif; ?>    
 
