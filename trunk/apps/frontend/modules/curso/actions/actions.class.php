@@ -722,7 +722,9 @@ class cursoActions extends sfActions
    */
   private function getBookAndLicense($id_user, $id_curso){
       
-      $array_return = array(197=>array(562=>array('book'=>'9788448612191', 'license'=>'RUJ62M39', 'type'=>'T'),
+      $array_return = array(
+                            /*TECNICO CUIDADOS AUXILIARES ENFERMERIA*/    
+                            197=>array(562=>array('book'=>'9788448612191', 'license'=>'RUJ62M39', 'type'=>'T'),
                                        634=>array('book'=>'9788448612191', 'license'=>'S36XSAQ9', 'type'=>'T'), 
                                        635=>array('book'=>'9788448612191', 'license'=>'DYJVCN39', 'type'=>'S'),
                                        638=>array('book'=>'9788448612191', 'license'=>'N7J2XJ49', 'type'=>'S')),
@@ -768,7 +770,7 @@ class cursoActions extends sfActions
                                        635=>array('book'=>'9788448608569', 'license'=>'UEH9EV59', 'type'=>'S'),
                                        638=>array('book'=>'9788448608569', 'license'=>'Q2PEJX69', 'type'=>'S')),
                             
-          
+                            /*1º T. S. EN ADMINISTRACIÓN Y FINANZAS*/           
                             207=>array(562=>array('book'=>'9788448609740', 'license'=>'ZZQVJRN9', 'type'=>'T'),
                                        636=>array('book'=>'9788448609740', 'license'=>'S78GHYE9', 'type'=>'T'),
                                        639=>array('book'=>'9788448609740', 'license'=>'JR7T75S9', 'type'=>'S'),
@@ -802,7 +804,43 @@ class cursoActions extends sfActions
                             212=>array(562=>array('book'=>'9788448609726', 'license'=>'Q6LFAB39', 'type'=>'T'),
                                        636=>array('book'=>'9788448609726', 'license'=>'XTYFHQF9', 'type'=>'T'),
                                        639=>array('book'=>'9788448609726', 'license'=>'MWUFN2X9', 'type'=>'S'),
-                                       640=>array('book'=>'9788448609726', 'license'=>'JUEYPPG9', 'type'=>'S')),           
+                                       640=>array('book'=>'9788448609726', 'license'=>'JUEYPPG9', 'type'=>'S')),  
+          
+                            /*2º T. S. EN ADMINISTRACIÓN Y FINANZAS*/           
+                            213=>array(562=>array('book'=>'9788448612252', 'license'=>'7G1Q8V99', 'type'=>'T'),
+                                       637=>array('book'=>'9788448612252', 'license'=>'P4U9V869', 'type'=>'T'),
+                                       641=>array('book'=>'9788448612252', 'license'=>'8RJFEPS9', 'type'=>'S'),
+                                       642=>array('book'=>'9788448612252', 'license'=>'JMWXXN79', 'type'=>'S')),
+          
+          
+                            214=>array(562=>array('book'=>'9788448612078', 'license'=>'CB11B8M9', 'type'=>'T'),
+                                       637=>array('book'=>'9788448612078', 'license'=>'85USL9Z9', 'type'=>'T'),
+                                       641=>array('book'=>'9788448612078', 'license'=>'VZRYZKA9', 'type'=>'S'),
+                                       642=>array('book'=>'9788448612078', 'license'=>'DSUJAZP9', 'type'=>'S')), 
+          
+          
+                            215=>array(562=>array('book'=>'9788448612153', 'license'=>'4SJL7CJ9', 'type'=>'T'),
+                                       637=>array('book'=>'9788448612153', 'license'=>'V1TY66S9', 'type'=>'T'),
+                                       641=>array('book'=>'9788448612153', 'license'=>'WLQVEE39', 'type'=>'S'),
+                                       642=>array('book'=>'9788448612153', 'license'=>'U1DHEY69', 'type'=>'S')),
+          
+          
+                            216=>array(562=>array('book'=>'9788448612238', 'license'=>'W11WZUC9', 'type'=>'T'),
+                                       637=>array('book'=>'9788448612238', 'license'=>'MQDRNEV9', 'type'=>'T'),
+                                       641=>array('book'=>'9788448612238', 'license'=>'G35VH929', 'type'=>'S'),
+                                       642=>array('book'=>'9788448612238', 'license'=>'R96XK229', 'type'=>'S')), 
+          
+                            
+                            217=>array(562=>array('book'=>'9788448194468', 'license'=>'JBNU9PK9', 'type'=>'T'),
+                                       637=>array('book'=>'9788448194468', 'license'=>'YMFQN789', 'type'=>'T'),
+                                       641=>array('book'=>'9788448194468', 'license'=>'UGSMBKB9', 'type'=>'S'),
+                                       642=>array('book'=>'9788448194468', 'license'=>'ME1YT8T9', 'type'=>'S')),   
+          
+          
+                            218=>array(562=>array('book'=>'9788448611972', 'license'=>'CXDF5RP9', 'type'=>'T'),
+                                       637=>array('book'=>'9788448611972', 'license'=>'35SRVUN9', 'type'=>'T'),
+                                       641=>array('book'=>'9788448611972', 'license'=>'Z1L6UN79', 'type'=>'S'),
+                                       642=>array('book'=>'9788448611972', 'license'=>'T6FK68Z9', 'type'=>'S')), 
       );
       
       return !empty($array_return[$id_curso][$id_user])?$array_return[$id_curso][$id_user]:false;
