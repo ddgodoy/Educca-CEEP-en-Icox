@@ -10,6 +10,7 @@
     window.onunload = refreshParent;
     function refreshParent() {
         window.opener.location.reload();
+        window.opener.location.reload();
     }
 </script> 
 <?php if($true_iframe): ?>
