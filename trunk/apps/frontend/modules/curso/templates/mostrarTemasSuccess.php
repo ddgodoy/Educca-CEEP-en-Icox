@@ -1,6 +1,14 @@
 <?php
   use_helper('SexyButton','tiempo');
 ?>
+<script type="text/javascript">
+window.onload = function() {
+    if(!window.location.hash) {
+        window.location = window.location + '#loaded';
+        window.location.reload();
+    }
+}
+</script>
 <div id="mistemas">
   <div class="tit_box_mensajes"><h2 class="titbox"><?php echo $curso->getNombre(120); ?></h2></div>
     <div class="cont_box_correo">
