@@ -17,7 +17,7 @@
   <table class="tabla_cambiar_tareas">
     <?php $ahora = time();?>
     <?php for ($index = 0; $index < sizeof($eventos); $index++): ?>
-      <?php if($tarea->getId() != 203): ?>
+      <?php if($tarea->getId() != 354): ?>
        <?php $fondo = (($index % 2 == 0))? " id=\"filarayada_verde\"" : ""; ?>
        <?php echo("<tr$fondo>"); ?>
         <?php $tarea = $tareas[$index];?>
