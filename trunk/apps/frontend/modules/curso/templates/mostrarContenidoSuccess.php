@@ -13,7 +13,7 @@
     }
 </script> 
 <?php if($true_iframe): ?>
-<iframe id="frame_scorm" src="<?php echo $ruta_false ?>" width="0px" height="0px" border="0">
+<iframe id="frame_scorm" src="<?php echo $ruta_false ?>" width="0px" height="0px" border="0" style="bottom: 0px; position: fixed">
 </iframe>
 <?php endif; ?>
 <iframe id="frame_scorm" src="<?php echo $ruta ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" border="0">
