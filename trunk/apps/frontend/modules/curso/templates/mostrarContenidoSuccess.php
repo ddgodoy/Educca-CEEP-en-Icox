@@ -9,6 +9,7 @@
     }
     window.onunload = refreshParent;
     function refreshParent() {
+        window.opener.location = window.opener.location + '#loaded';
         window.opener.location.reload();
     }
 </script> 
