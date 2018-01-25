@@ -65,7 +65,7 @@
         <?php include_component_slot('submenu') ?>
     <!--/div-->
 <?php else: ?>
-    <?php if($sf_context->getModuleName() === 'mensaje'): ?>
+    <?php if($sf_context->getModuleName() === 'mensaje' || $sf_context->getModuleName() === 'ejercicio'): ?>
         <?php include_component_slot('submenu') ?>
     <?php endif; ?>
 <?php endif; ?>    
