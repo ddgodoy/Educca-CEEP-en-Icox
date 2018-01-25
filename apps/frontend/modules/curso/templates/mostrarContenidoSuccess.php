@@ -3,7 +3,7 @@
 <script type="text/javascript">
     function TemaFinish(){
         $.post( "/contenidosTema/finishScorm?type=1&idcurso=<?php echo $curso_id ?>&idscorm=<?php echo $sco ?>", function( data ) {
-            window.opener.location.reload();
+            refreshParent();
             window.close();  
         });
     }
