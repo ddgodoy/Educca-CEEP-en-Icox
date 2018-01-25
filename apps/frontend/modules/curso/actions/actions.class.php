@@ -725,14 +725,14 @@ class cursoActions extends sfActions
       $array_return = array(
                             /*TECNICO CUIDADOS AUXILIARES ENFERMERIA*/    
                             197=>array(562=>array('book'=>'9788448612191', 'license'=>'RUJ62M39', 'type'=>'T'),
-                                       634=>array('book'=>'9788448612191', 'license'=>'S36XSAQ9', 'type'=>'T'), 
+                                       634=>array('book'=>'9788448612191', 'license'=>'SU4WB4A9', 'type'=>'T'), 
                                        635=>array('book'=>'9788448612191', 'license'=>'DYJVCN39', 'type'=>'S'),
                                        638=>array('book'=>'9788448612191', 'license'=>'N7J2XJ49', 'type'=>'S')),
           
           
           
                             198=>array(562=>array('book'=>'9788448612092', 'license'=>'G6B2QWB9', 'type'=>'T'),
-                                       634=>array('book'=>'9788448612092', 'license'=>'J8YKXKJ9', 'type'=>'T'), 
+                                       634=>array('book'=>'9788448612092', 'license'=>'4ZFT7MS9', 'type'=>'T'), 
                                        635=>array('book'=>'9788448612092', 'license'=>'73R9ST59', 'type'=>'S'),
                                        638=>array('book'=>'9788448612092', 'license'=>'ULS2JPV9', 'type'=>'S')),
           
@@ -772,7 +772,7 @@ class cursoActions extends sfActions
                             
                             /*1º T. S. EN ADMINISTRACIÓN Y FINANZAS*/           
                             207=>array(562=>array('book'=>'9788448609740', 'license'=>'ZZQVJRN9', 'type'=>'T'),
-                                       636=>array('book'=>'9788448609740', 'license'=>'S78GHYE9', 'type'=>'T'),
+                                       636=>array('book'=>'9788448609740', 'license'=>'65U3EFU9', 'type'=>'T'),
                                        639=>array('book'=>'9788448609740', 'license'=>'JR7T75S9', 'type'=>'S'),
                                        640=>array('book'=>'9788448609740', 'license'=>'FHEHW719', 'type'=>'S')),
           
