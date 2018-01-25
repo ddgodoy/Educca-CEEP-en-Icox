@@ -7,8 +7,7 @@ window.onload = function() {
         var url =  new String(window.location);
         var new_url = url.replace("#loaded","");
         alert(new_url);
-        window.location = new_url;
-        window.location.reload();
+        window.location.replace(new_url);
     }
 }
 </script>
