@@ -4,6 +4,7 @@
 <script type="text/javascript">
 window.onload = function() {
     if(window.location.hash) {
+        window.location = window.location.split("#loaded");
         window.location.reload();
     }
 }
