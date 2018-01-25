@@ -5,9 +5,8 @@
 window.onload = function() {
     if(window.location.hash) {
         var url =  new String(window.location);
-        alert(url.split("#loaded"));
-        /*window.location = url.split("#loaded");
-        window.location.reload();*/
+        window.location = url.split("#loaded");
+        window.location.reload();
     }
 }
 </script>
