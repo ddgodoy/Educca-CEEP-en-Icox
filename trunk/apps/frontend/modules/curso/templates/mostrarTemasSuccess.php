@@ -4,7 +4,7 @@
 <script type="text/javascript">
 window.onload = function() {
     if(window.location.hash) {
-        var url =  window.location;
+        var url =  new String(window.location);
         alert(url);
         window.location = url.split("#loaded");
         window.location.reload();
