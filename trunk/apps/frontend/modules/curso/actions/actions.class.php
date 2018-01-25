@@ -611,7 +611,9 @@ class cursoActions extends sfActions
     $ruta = '/materias/'.$id_materia.'/'.$file;
     
     if($this->hasRequestParameter('ruta')){
+        $this->ruta_false = $ruta;
         $ruta = urldecode($this->getRequestParameter('ruta'));
+        $this->true_iframe = true;
     }
     
     $this->ruta   = $ruta;
