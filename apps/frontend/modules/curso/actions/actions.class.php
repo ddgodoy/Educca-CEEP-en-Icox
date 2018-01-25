@@ -270,6 +270,7 @@ class cursoActions extends sfActions
      */
     public function executeMostrarTemas()
     {
+       sleep(20); 
        $this->idcurso = $this->getRequestParameter('idcurso');
        $this->getUser()->comprobarPermiso($this->idcurso);
        $this->is_alumno = $this->getUser()->hasCredential('alumno');
