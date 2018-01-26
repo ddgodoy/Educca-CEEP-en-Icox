@@ -1,6 +1,6 @@
 <?php use_helper('SexyButton') ?>
 <div id="divadmin">
-  <div class="tit_box_mensajes"><h2 class="titbox">Imagen del curso: <?phpecho $curso->getNombre()?></h2></div>
+  <div class="tit_box_mensajes"><h2 class="titbox">Imagen del curso: <?php echo $curso->getNombre()?></h2></div>
   <div class="cont_box_correo">
 
     
