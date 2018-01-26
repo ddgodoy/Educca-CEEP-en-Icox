@@ -833,6 +833,7 @@ class adminActions extends sfActions
     }
     $curso = null;
     $c->add(RolPeer::NOMBRE, 'profesor');
+    $c->add(UsuarioPeer::INSPECTOR, '0');
     $c->addJoin(RolPeer::ID, Rel_usuario_rol_cursoPeer::ID_ROL);
     $c->addJoin(UsuarioPeer::ID, Rel_usuario_rol_cursoPeer::ID_USUARIO);
     $c->addAscendingOrderByColumn(UsuarioPeer::APELLIDOS);
