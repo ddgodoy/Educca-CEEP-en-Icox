@@ -40,6 +40,7 @@ class usuarioActions extends sfActions
  */
   public function executeEditarPerfil()
   {
+    $this->is_admin = false;
     if ( $this->getUser()->hasCredential('administrador') )
     {
       $this->is_admin = true;  
