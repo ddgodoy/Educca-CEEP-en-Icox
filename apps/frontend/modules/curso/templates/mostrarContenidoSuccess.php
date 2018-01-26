@@ -19,6 +19,8 @@
 <?php endif; ?>
 <iframe id="frame_scorm" src="<?php echo $ruta ?>" width="<?php echo $width ?>" height="<?php echo $height ?>" border="0">
 </iframe>
+<?php if(!$true_iframe): ?>
 <div style="position: fixed; margin: 0px auto; width: 100%; background-color: blue; bottom: 0px; height: 10%;">
     <button onclick="TemaFinish()" style="cursor: pointer; padding: 5px; margin-top: 15px;">Finalizar Tema</button>
 </div>
+<?php endif; ?>
