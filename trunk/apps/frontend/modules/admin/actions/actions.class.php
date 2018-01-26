@@ -855,7 +855,9 @@ class adminActions extends sfActions
    */
   public function executeModulos()
   {
-    $c = new Criteria(); $this->modulos = PaquetePeer::doSelect($c); return;
+    $c = new Criteria(); 
+    $c->addDescendingOrderByColumn(PaquetePeer::FECHA_INICIO);
+    $this->modulos = PaquetePeer::doSelect($c); return;
   }
 
   // Nombre del metodo: executeNuevoUsuario()
