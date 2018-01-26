@@ -49,7 +49,7 @@
                         <table>
                           <tr>
                             <td>*************</td>
-                            <?php if ($sf_user->getAnyId() == $usuario->getId()) : ?>
+                            <?php if ($sf_user->getAnyId() == $usuario->getId() || $is_admin) : ?>
                              <td><?php echo link_to(image_tag('b_modificar.gif'), 'usuario/modificarPassword?'.$redireccion) ?></td>
                             <?php endif; ?>
                           </tr>
