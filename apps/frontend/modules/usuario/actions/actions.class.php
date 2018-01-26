@@ -42,6 +42,7 @@ class usuarioActions extends sfActions
   {
     if ( $this->getUser()->hasCredential('administrador') )
     {
+      $this->is_admin = true;  
       if( $this->getRequestParameter('idusuario'))
         { $this->usuario = UsuarioPeer::retrieveByPk($this->getRequestParameter('idusuario'));
 		    }
