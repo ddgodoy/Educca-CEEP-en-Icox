@@ -61,7 +61,7 @@
 
 	  </td>
     </tr>
-    <?php if(!$usuario->getInspector()): ?>
+    <?php if(!$usuario->getInspector() || $is_admin): ?>
     <tr>
       <th>Nombre:</th>
       <td><?php echo object_input_tag($usuario, 'getNombre', array (
