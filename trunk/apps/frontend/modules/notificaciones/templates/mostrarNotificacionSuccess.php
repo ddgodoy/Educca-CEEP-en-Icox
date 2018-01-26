@@ -31,9 +31,9 @@
               </tr>
               <tr>
                 <td class="titulo">Curso:</td>
-                <td><? if ($notificacion->getCurso()) : ?>
+                <td><?php if ($notificacion->getCurso()) : ?>
                                 <?php echo $notificacion->getCurso()->getNombre() ?>
-                    <?endif; ?>
+                    <?php endif; ?>
                     </td>
               </tr>
               <tr>
@@ -46,7 +46,7 @@
             <?php echo $notificacion->getContenido()?>
         </div>
       </div>
-     <br><? use_helper('volver');  echo volver(); ?>
+     <br><?php use_helper('volver');  echo volver(); ?>
   </div>
   <div class="cierre_box_correo"></div>
 </div>
