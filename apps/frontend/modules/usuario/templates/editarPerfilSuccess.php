@@ -35,7 +35,7 @@
 
     <table class="tabla_show_perfil">
     <tbody>
-    <?php if(!$usuario->getInspector()): ?>
+    <?php if(!$usuario->getInspector() || $is_admin): ?>
     <tr>
       <th>DNI:</th>
       <td><?php echo object_input_tag($usuario, 'getDni', array (
