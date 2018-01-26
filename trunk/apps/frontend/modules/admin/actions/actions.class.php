@@ -432,10 +432,11 @@ class adminActions extends sfActions
       $this->superUsuario = '1';
       $criterion1 = $c->getNewCriterion(RolPeer::NOMBRE, 'administrador');
       $criterion2 = $c->getNewCriterion(RolPeer::NOMBRE, 'supervisor');
+      $criterion3 = $c->getNewCriterion(UsuarioPeer::INSPECTOR,'1');
       $criterion1->addOr($criterion2);
+      $criterion1->addOr($criterion3);
       $c->add($criterion1);  
       $c->addJoin(Rel_usuario_rol_cursoPeer::ID_ROL, RolPeer::ID);
-      $c->addOr(UsuarioPeer::INSPECTOR,'1');
     }
     // Si venimos de una busqueda...
     if ($this->getRequest()->getMethod() == sfRequest::POST) {
