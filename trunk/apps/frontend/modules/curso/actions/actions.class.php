@@ -805,7 +805,7 @@ class cursoActions extends sfActions
                             
                             212=>array(562=>array('book'=>'9788448609726', 'license'=>'Q6LFAB39', 'type'=>'T'),
                                        636=>array('book'=>'9788448609726', 'license'=>'XTYFHQF9', 'type'=>'T'),
-                                       639=>array('book'=>'9788448609726', 'license'=>'MWUFN2X9', 'type'=>'S'),
+                                       639=>array('book'=>'9788448609726', 'license'=>'NAC8XQM9', 'type'=>'S'),
                                        640=>array('book'=>'9788448609726', 'license'=>'JUEYPPG9', 'type'=>'S')),  
           
                             /*2º T. S. EN ADMINISTRACIÓN Y FINANZAS*/           
