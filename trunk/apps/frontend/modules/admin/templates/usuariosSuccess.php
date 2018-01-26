@@ -63,6 +63,7 @@
               <?php $max_length = 38; ?>
               <?php foreach($usuarios as $usuario): ?>
                   <?php $roles = $usuario->roles(); ?>
+                  <?php $inspector = $usuario->getInspector() ?>
                   <?php if ($roles['moroso']) {continue;}?>
                   <?php $fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
                   <tr class="cont_fil" <?= $fondo1 ?>>
@@ -108,7 +109,8 @@
                             </td>
                             <td style="width: 38px; text-align:center; border-right: solid #F2F2F2 1px;">
                               <?php if ($roles['profesor']) :?>
-                                <?php echo image_tag('icouser_profesor.gif','Alt=Profesor Title=Profesor'); ?>
+                                <?php $title = $inspector?'Inspector Educativo':'Profesor';?>
+                                <?php echo image_tag('icouser_profesor.gif','Alt=Profesor Title='.$title); ?>
                               <?php else:?>
                                 &nbsp;
                               <?php endif; ?>
