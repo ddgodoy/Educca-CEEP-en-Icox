@@ -492,7 +492,8 @@ class adminActions extends sfActions
   public function executeCursos()
   {
       $c = new Criteria();
-	    $this->cursos = CursoPeer::doSelect($c);
+      $c->addAscendingOrderByColumn(CursoPeer::ID);
+      $this->cursos = CursoPeer::doSelect($c);
       return;
   }
 
