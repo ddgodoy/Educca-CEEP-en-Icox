@@ -70,8 +70,8 @@ class ticketActions extends sfActions
 
   	$c->add(TicketPeer::AUTOR, 'alumno');
   	$c->add(TicketPeer::ORIGEN, 'si');
-  	$c->add(TicketPeer::ESTADO, 'CERRADO', Criteria::NOT_EQUAL);
-    $c->addDescendingOrderByColumn(TicketPeer::ABIERTO);
+  	//$c->add(TicketPeer::ESTADO, 'CERRADO', Criteria::NOT_EQUAL);
+        $c->addDescendingOrderByColumn(TicketPeer::ABIERTO);
 
     $this->tickets = TicketPeer::doSelect($c);
   }
