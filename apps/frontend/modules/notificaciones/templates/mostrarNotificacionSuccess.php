@@ -29,13 +29,14 @@
                 <td class="titulo">Asunto:</td>
                 <td><?php echo $notificacion->getTitulo()?></td>
               </tr>
+              <?php if ($notificacion->getCurso()) : ?>
               <tr>
                 <td class="titulo">Curso:</td>
-                <td><?php if ($notificacion->getCurso()) : ?>
-                                <?php echo $notificacion->getCurso()->getNombre() ?>
-                    <?php endif; ?>
-                    </td>
+                <td>
+                    <?php echo $notificacion->getCurso()->getNombre() ?>
+                </td>
               </tr>
+              <?php endif; ?>
               <tr>
                 <td class="titulo">Fecha:</td>
                 <td><?php echo $notificacion->getCreatedAt("d-m-Y  H:i")?></td>
