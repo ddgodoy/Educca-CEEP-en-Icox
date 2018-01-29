@@ -174,15 +174,16 @@ window.onload = function() {
                 <?php $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $id_usuario);?>
                 <?php $rel = Rel_usuario_sco12Peer::DoSelectOne($c);?>
                 <?php if ($rel): ?>
-                <td style="text-align: right; padding-right: 24px; width: 25%;">
-                  <?php echo $rel->getTiempoTotal().'<br/>'; ?>
-                  <?php echo segundos_tiempo($rel->getTiempoTotal());?>  
+                <td style="text-align: right; padding-right: 24px; width: 25%;"> 
                   <?php $tt = $rel->getTiempoTotal(); $total += $tt;?>
-                  <?php $horas = floor($tt/3600); ?>
-                  <?php $minutos = number_format(($tt/60),2); ?> 
-                  <?php if ($horas) {$texto_horas = "<strong>$horas</strong> horas &nbsp;";} else {$texto_horas = '';} ?>
-                  <?php if ($minutos) {$texto_minutos = "<strong>$minutos</strong> minutos";} else {$texto_minutos = '00 minutos';} ?>
-                  <?php echo $texto_horas.$texto_minutos;?>
+                  <?php $for_tt = segundos_tiempo($rel->getTiempoTotal());?>   
+                  <?php $fot_tt_arr= explode(':', $for_tt); ?>  
+                  <?php //$horas = floor($tt/3600); ?>
+                  <?php //$minutos = number_format(($tt/60),2); ?> 
+                  <?php if ($fot_tt_arr[0]!='00') {$texto_horas = "<strong>$fot_tt_arr[0]</strong> horas &nbsp;";} else {$texto_horas = '';} ?>
+                  <?php if ($fot_tt_arr[1]!='00') {$texto_minutos = "<strong>$fot_tt_arr[1]</strong> minutos";} else {$texto_minutos = '';} ?>
+                    <?php if ($fot_tt_arr[2]!='00') {$texto_segundos = "<strong>$fot_tt_arr[2]</strong> minutos";} else {$texto_segundos = '00 segundos';} ?>
+                  <?php echo $texto_horas.$texto_minutos.$texto_segundos;?>
                 </td>
                 <?php else: ?>
                 <td style="text-align: center; width: 25%;">
