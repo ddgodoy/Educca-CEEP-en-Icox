@@ -175,6 +175,8 @@ window.onload = function() {
                 <?php $rel = Rel_usuario_sco12Peer::DoSelectOne($c);?>
                 <?php if ($rel): ?>
                 <td style="text-align: right; padding-right: 24px; width: 25%;">
+                  <?php echo $rel->getTiempoTotal().'<br/>'; ?>
+                  <?php echo segundos_tiempo($rel->getTiempoTotal());?>  
                   <?php $tt = $rel->getTiempoTotal(); $total += $tt;?>
                   <?php $horas = floor($tt/3600); ?>
                   <?php $minutos = number_format(($tt/60),2); ?> 
