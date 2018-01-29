@@ -176,7 +176,7 @@ window.onload = function() {
                 <?php if ($rel): ?>
                 <td style="text-align: right; padding-right: 24px; width: 25%;"> 
                   <?php $tt = $rel->getTiempoTotal(); $total += $tt;?>
-                  <?php $for_tt = segundos_tiempo($rel->getTiempoTotal());?>   
+                  <?php $for_tt = segundos_tiempo($tt);?>   
                   <?php $fot_tt_arr= explode(':', $for_tt); ?>  
                   <?php //$horas = floor($tt/3600); ?>
                   <?php //$minutos = number_format(($tt/60),2); ?> 
@@ -216,8 +216,11 @@ window.onload = function() {
             </tr>
             <?php $i++; ?>
             <?php endforeach;?>
-            <?php $horas = floor($total/3600); ?>
-            <?php $minutos = number_format(($total/60),2); ?>
+            <?php $for_ttt = segundos_tiempo($total);?>
+            <?php $fot_ttt_arr= explode(':', $for_ttt); ?> 
+            <?php $horas_t = $fot_ttt_arr[0]; ?>
+            <?php $minutos_t = $fot_ttt_arr[1]; ?>
+            <?php $segundos_t = $fot_ttt_arr[2]; ?>
           
         <?php endif; ?>
         </table>
@@ -241,9 +244,12 @@ window.onload = function() {
                       if ($rel)
                       {
                         $ttotal = $rel->getTiempoTotal();
-                        $horas = floor($ttotal / 3600);
-                        $minutos = number_format(($ttotal / 60),2);
-                        echo "$horas horas y $minutos minutos";
+                        $for_tttt = segundos_tiempo($ttotal);
+                        $fot_tttt_arr= explode(':', $for_ttt);
+                        $horas = $fot_tttt_arr[0];
+                        $minutos = $fot_tttt_arr[1];
+                        $segundos = $fot_tttt_arr[2];
+                        echo "$horas horas, $minutos minutos y $segundos segundos";
                       }
                       else
                       {
