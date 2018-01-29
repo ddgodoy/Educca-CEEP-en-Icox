@@ -182,7 +182,7 @@ window.onload = function() {
                   <?php //$minutos = number_format(($tt/60),2); ?> 
                   <?php if ($fot_tt_arr[0]!='00') {$texto_horas = "<strong>$fot_tt_arr[0]</strong> horas &nbsp;";} else {$texto_horas = '';} ?>
                   <?php if ($fot_tt_arr[1]!='00') {$texto_minutos = "<strong>$fot_tt_arr[1]</strong> minutos";} else {$texto_minutos = '';} ?>
-                    <?php if ($fot_tt_arr[2]!='00') {$texto_segundos = "<strong>$fot_tt_arr[2]</strong> minutos";} else {$texto_segundos = '00 segundos';} ?>
+                    <?php if ($fot_tt_arr[2]!='00') {$texto_segundos = "<strong>$fot_tt_arr[2]</strong> segundos";} else {$texto_segundos = '00 segundos';} ?>
                   <?php echo $texto_horas.$texto_minutos.$texto_segundos;?>
                 </td>
                 <?php else: ?>
