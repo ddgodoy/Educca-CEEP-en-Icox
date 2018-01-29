@@ -301,10 +301,10 @@ window.onload = function() {
         					 	<?php echo image_tag('incompleto.png'); ?> Tema incompleto.
         						<?php echo image_tag('finalizado.png'); ?> Tema finalizado.
 	                <?php endif; ?>
-					      </td>
-					      <td style="width: 50%; text-align: right; padding-right: 5px;">
-					        <?php if ($materia->getTipo() == 'scorm1.2') {echo "Tiempo total invertido en el curso: <strong>$horas</strong> horas &nbsp; <strong>$minutos</strong> minutos";} ?>
-					      </td>
+                        </td>
+                        <td style="width: 50%; text-align: right; padding-right: 5px;">
+                          <?php if ($materia->getTipo() == 'scorm1.2') {echo "Tiempo total invertido en el curso: <strong>$horas_t</strong> horas &nbsp; <strong>$minutos_t</strong> minutos &nbsp; <strong>$segundos_t</strong> segundos ";} ?>
+                        </td>
 	            </tr>
 	        </table>
 	    </div>
