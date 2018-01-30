@@ -92,8 +92,8 @@ Calendar._TT["INFO"] = "このカレンダーについて";
 Calendar._TT["ABOUT"] =
 "DHTML Date/Time Selector\n" +
 "(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" + // don't translate this this ;-)
-"最新版の情報: http://www.dynarch.com/projects/calendar/\n" +
-"GNU LGPL で配布されています。 詳細は http://gnu.org/licenses/lgpl.html をご覧ください。" +
+"最新版の情報: https://www.dynarch.com/projects/calendar/\n" +
+"GNU LGPL で配布されています。 詳細は https://gnu.org/licenses/lgpl.html をご覧ください。" +
 "\n\n" +
 "日付の選択:\n" +
 "- ボタン \xab, \xbb で年を選択します\n" +

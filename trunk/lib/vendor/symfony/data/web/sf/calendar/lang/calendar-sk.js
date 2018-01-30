@@ -84,8 +84,8 @@ Calendar._TT["INFO"] = "O kalendári";
 Calendar._TT["ABOUT"] =
 "DHTML Date/Time Selector\n" +
 "(c) dynarch.com 2002-2005 / Autor: Mihai Bazon\n" + // don't translate this this ;-)
-"Poslednú verziu nájdete na: http://www.dynarch.com/projects/calendar/\n" +
-"Distribuované pod licenciou GNU LGPL /http://gnu.org/licenses/lgpl.html/" +
+"Poslednú verziu nájdete na: https://www.dynarch.com/projects/calendar/\n" +
+"Distribuované pod licenciou GNU LGPL /https://gnu.org/licenses/lgpl.html/" +
 "\n\n" +
 "Výber dátumu:\n" +
 "- Použite tlačidlá \xab, \xbb pre výber roku\n" +

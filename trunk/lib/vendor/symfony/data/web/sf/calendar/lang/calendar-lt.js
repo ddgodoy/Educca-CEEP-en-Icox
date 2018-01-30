@@ -84,8 +84,8 @@ Calendar._TT["INFO"] = "Apie kalendorių";
 Calendar._TT["ABOUT"] =
 "DHTML Date/Time Selector\n" +
 "(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" + // don't translate this this ;-)
-"Naujausią versiją rasite: http://www.dynarch.com/projects/calendar/\n" +
-"Platinamas pagal GNU LGPL licenciją. Aplankykite http://gnu.org/licenses/lgpl.html" +
+"Naujausią versiją rasite: https://www.dynarch.com/projects/calendar/\n" +
+"Platinamas pagal GNU LGPL licenciją. Aplankykite https://gnu.org/licenses/lgpl.html" +
 "\n\n" +
 "Datos pasirinkimas:\n" +
 "- Metų pasirinkimas: \xab, \xbb\n" +

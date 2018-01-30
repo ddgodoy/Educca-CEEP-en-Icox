@@ -87,8 +87,8 @@ Calendar._TT["INFO"] = "Om kalendern";
 Calendar._TT["ABOUT"] =
 "DHTML Datum/tid-väljare\n" +
 "(c) dynarch.com 2002-2005 / Author: Mihai Bazon\n" + // don't translate this this ;-)
-"För senaste version gå till: http://www.dynarch.com/projects/calendar/\n" +
-"Distribueras under GNU LGPL.  Se http://gnu.org/licenses/lgpl.html för detaljer." +
+"För senaste version gå till: https://www.dynarch.com/projects/calendar/\n" +
+"Distribueras under GNU LGPL.  Se https://gnu.org/licenses/lgpl.html för detaljer." +
 "\n\n" +
 "Val av datum:\n" +
 "- Använd knapparna \xab, \xbb för att välja år\n" +
