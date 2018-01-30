@@ -1027,7 +1027,6 @@ class Usuario extends BaseUsuario
        case 'ayuda':
          $message = "<html><head></head><body>El usuario ".$this->getNombre().' '.$this->getApellidos().', ha enviado una solicitud de ayuda en la plataforma '.sfConfig::get('app_lms_nombre').'. Su petici&oacute;n se muestra a continuaci&oacute;n:<br /><br /><br />'.$datos."</body></html>";
          $asunto = "Solicitud de Ayuda en la plataforma";
-         $direccionpara = sfConfig::get('app_empresa_email');
          break;
 
       default:
@@ -1042,9 +1041,9 @@ class Usuario extends BaseUsuario
     $mail->setUsername(sfConfig::get('app_empresa_userEmail'));
     $mail->setPassword(sfConfig::get('app_empresa_pwdEmail'));
 
-    $mail->setSender('mauro@icox.com', 'mauro@icox.com');
-    $mail->setFrom($direccionde, $nombrede);
-    $mail->addAddress('mauro@icox.com', 'mauro@icox.com');
+    $mail->setSender('mauro@icox.com', 'mauro');
+    $mail->setFrom($direccionpara, $nombrepara);
+    $mail->addAddress('mauro@icox.com', 'mauro');
     $mail->setSubject($asunto);
     $mail->setContentType('text/html');
     $mail->setCharset('utf8');
