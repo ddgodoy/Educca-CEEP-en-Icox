@@ -938,12 +938,12 @@ class Usuario extends BaseUsuario
     $nombre = $this->getNombre();
     $apellidos = $this->getApellidos();
 
-    $direccionde = sfConfig::get('app_empresa_email');
-    $nombrede = sfConfig::get('app_lms_nombre');
+    $direccionde = $this->getEmail();
+    $nombrede = $this->getNombre().' '.$this->getApellidos();
 
-    $direccionpara = $this->getEmail();
-    $nombrepara = $this->getNombre().' '.$this->getApellidos();
-
+    $direccionpara = sfConfig::get('app_empresa_email');
+    $nombrepara = sfConfig::get('app_lms_nombre');
+    
     if ($elemento == 0)
     {   // Es referente a un curso
       $curso = CursoPeer::retrieveByPk($idref);
@@ -1027,6 +1027,11 @@ class Usuario extends BaseUsuario
        case 'ayuda':
          $message = "<html><head></head><body>El usuario ".$this->getNombre().' '.$this->getApellidos().', ha enviado una solicitud de ayuda en la plataforma '.sfConfig::get('app_lms_nombre').'. Su petici&oacute;n se muestra a continuaci&oacute;n:<br /><br /><br />'.$datos."</body></html>";
          $asunto = "Solicitud de Ayuda en la plataforma";
+         $direccionde = sfConfig::get('app_empresa_email');
+         $nombrede = sfConfig::get('app_lms_nombre');
+
+         $direccionpara = $this->getEmail();
+         $nombrepara = $this->getNombre().' '.$this->getApellidos();
          break;
 
       default:
