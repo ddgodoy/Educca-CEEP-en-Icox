@@ -4,7 +4,7 @@
 <?php $idcurso = $curso->getId(); ?>
 
 <div class="capa_principal">
-  <div class="titulo_principal"><h2 class="titbox">Alumnos del Curso: <?echo $curso->getNombre()?></h2></div>
+  <div class="titulo_principal"><h2 class="titbox">Alumnos del Curso: <?php echo $curso->getNombre()?></h2></div>
   <div class="contenido_principal">
     <div class="herramientas_general_fixed">
       <table cellpadding="0" cellspacing="0">
@@ -114,7 +114,7 @@
     </div>
    <br>
    <?php use_helper('informacion') ?>
-   <?echoNotaInformativa('Ayuda', 'Desde este panel podr&aacute; acceder a la informaci&oacute;n de los alumnos, y observar sus progresos')?>
+   <?php echoNotaInformativa('Ayuda', 'Desde este panel podr&aacute; acceder a la informaci&oacute;n de los alumnos, y observar sus progresos')?>
    <br><?php use_helper('volver');  echo volver(); ?>
   </div>
   <div class="cierre_principal"></div>
