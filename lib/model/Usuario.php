@@ -1028,6 +1028,8 @@ class Usuario extends BaseUsuario
          $message = "<html><head></head><body>El usuario ".$this->getNombre().' '.$this->getApellidos().', ha enviado una solicitud de ayuda en la plataforma '.sfConfig::get('app_lms_nombre').'. Su petici&oacute;n se muestra a continuaci&oacute;n:<br /><br /><br />'.$datos."</body></html>";
          $asunto = "Solicitud de Ayuda en la plataforma";
          $direccionpara = sfConfig::get('app_empresa_email');
+         echo $message.$asunto.$direccionpara;
+         exit();
          break;
 
       default:
