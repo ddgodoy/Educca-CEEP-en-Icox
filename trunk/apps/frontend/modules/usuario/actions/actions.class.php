@@ -365,11 +365,13 @@ class usuarioActions extends sfActions
     if ($this->getRequest()->getMethod() == sfRequest::POST)
     // 
     {
-      $asunto = $this->getRequestParameter('asunto');
-      $comentario = $this->getRequestParameter('comentario');
-      $mensaje = "<strong>Asunto:</strong> $asunto<br><br><strong>Comentario:</strong> $comentario";
       $id = $this->getUser()->getAnyId();
       $usuario = UsuarioPeer::RetrieveByPk($id);
+      $asunto = $this->getRequestParameter('asunto');
+      $comentario = $this->getRequestParameter('comentario');
+      $mensaje = "<strong>Nombre:</strong>: ".$usuario->getNombre().' '.$usuario->getApellidos().'<br/><br/>'
+               . "<strong>Email:</strong>: ".$usuario->getEmail().'<br/><br/>'
+               . "<strong>Asunto:</strong> $asunto<br><br><strong>Comentario:</strong> $comentario";
       $usuario->emailUsuario(0, 2, 'ayuda', $mensaje);
     }
     $this->mensaje = $mensaje;
