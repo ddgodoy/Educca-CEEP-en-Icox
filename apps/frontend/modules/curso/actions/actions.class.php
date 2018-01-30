@@ -660,14 +660,14 @@ class cursoActions extends sfActions
           $curl = curl_init();
 
           curl_setopt_array($curl, array(
-          CURLOPT_URL => "https://www.blinklearning.com/ws/WsSSO/wsSSO.php",
+          CURLOPT_URL => "http://www.blinklearning.com/ws/WsSSO/wsSSO.php",
           CURLOPT_RETURNTRANSFER => true,
           CURLOPT_ENCODING => "",
           CURLOPT_MAXREDIRS => 10,
           CURLOPT_TIMEOUT => 30,
           CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
           CURLOPT_CUSTOMREQUEST => "POST",
-          CURLOPT_POSTFIELDS => '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sso="https://www.blinklearning.com/sso/">
+          CURLOPT_POSTFIELDS => '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sso="http://www.blinklearning.com/sso/">
                                 <soapenv:Header>
                                         <sso:WSEAuthenticateHeader>
                                                 <sso:User>nhY66IdY</sso:User>
@@ -697,7 +697,7 @@ class cursoActions extends sfActions
             "cache-control: no-cache",
             "content-type: text/xml;charset=UTF-8",
             "host: blinkwpre.blinklearning.com",
-            "soapaction: https://www.blinklearning.com/sso/RequestAccess"
+            "soapaction: http://www.blinklearning.com/sso/RequestAccess"
           ),
         ));
 
