@@ -685,7 +685,7 @@ class Usuario extends BaseUsuario
   public function tiempoTeoria($id_curso)
   {  $curso = CursoPeer::retrieveByPk($id_curso);
      $temas = $curso->getTemas();
-
+     $tiempo=0;
 
      if ($curso->getMateria()->esCompo())
      {
@@ -702,11 +702,10 @@ class Usuario extends BaseUsuario
             $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->id);
             $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
          
-            $tiempo +=$rel->getTiempoTotal();
+            $tiempo += $rel->getTiempoTotal()?$rel->getTiempoTotal():0;
          }    
          
      }else{
-             $tiempo=0;
              //tiempo dedicado a los temas
              foreach($temas as $tema)
              {
