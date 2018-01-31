@@ -1287,9 +1287,6 @@ class myUser extends sfBasicSecurityUser
      {
         $id_curso=$this->getCursoMenu();
      }
-
-     echo $id_curso;
-     exit();
      
      $tot = 0;
      if ($id_curso)
