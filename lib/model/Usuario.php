@@ -690,6 +690,8 @@ class Usuario extends BaseUsuario
      if ($curso->getMateria()->esCompo())
      {
         $tiempo = $this->tiempoTotalTeoriaScorm($curso->getMateriaId());
+     }else if($curso->getMateria()->getTipo() == 'scorm1.2'){
+         $tiempo = 10000;
      }else{
              $tiempo=0;
              //tiempo dedicado a los temas
@@ -703,7 +705,6 @@ class Usuario extends BaseUsuario
                { $tiempo += $rel->getTiempo();
                }
              }
-             echo $tiempo;
           }
      return $tiempo;
    }
