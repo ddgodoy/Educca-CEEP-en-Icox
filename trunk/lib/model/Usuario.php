@@ -702,7 +702,7 @@ class Usuario extends BaseUsuario
             $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->id);
             $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
          
-            $tiempo += $rel->getTiempoTotal()?$rel->getTiempoTotal():0;
+            $tiempo += $rel?$rel->getTiempoTotal():0;
          }    
          
      }else{
