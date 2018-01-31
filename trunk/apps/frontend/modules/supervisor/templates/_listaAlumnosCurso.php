@@ -49,6 +49,7 @@
               <tr class="cont_fil" <?= $fondo1 ?>>
                   <td class="td1"><?php echo link_to($alumno->getApellidos().", ".$alumno->getNombre(), 'usuario/mostrarPerfil?idusuario='.$alumno->getId(), array('class'=>'a_explicito','id'=>'ln_usuario'.$alumno->getId())) ?></td>
                   <?php $tiempos = $alumno->tiemposDedicados($idcurso);        ?>
+                  <?php print_r($tiempos); ?>  
                   <?php if ($tiempos[0] + $tiempos[1] != 0) :?>
                     <?php use_helper('tiempo') ?>
                     <td class="td2"><?php echoTiempo($tiempos[0]+$tiempos[1])?></td>
