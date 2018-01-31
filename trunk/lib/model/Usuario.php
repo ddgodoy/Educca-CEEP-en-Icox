@@ -691,7 +691,20 @@ class Usuario extends BaseUsuario
      {
         $tiempo = $this->tiempoTotalTeoriaScorm($curso->getMateriaId());
      }else if($curso->getMateria()->getTipo() == 'scorm1.2'){
-         $tiempo = 10000;
+         
+         $c1 = new Criteria();
+         $c1->add(Sco12Peer::ID_MATERIA, $curso->getMateriaId());
+         $c1->addAscendingOrderByColumn(Sco12Peer::ID);
+         $scos = Sco12Peer::DoSelect($c1);
+         foreach($scos as $sco){
+            $c = new Criteria();
+            $c->add(Rel_usuario_sco12Peer::ID_SCO12, $sco->getId());
+            $c->add(Rel_usuario_sco12Peer::ID_USUARIO, $this->id);
+            $rel = Rel_usuario_sco12Peer::DoSelectOne($c);
+         
+            $tiempo +=$rel->getTiempoTotal();
+         }    
+         
      }else{
              $tiempo=0;
              //tiempo dedicado a los temas
