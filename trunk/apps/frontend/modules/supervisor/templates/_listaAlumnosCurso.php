@@ -55,7 +55,7 @@
                     <td class="td3"><?php echo floor(100-($tiempos[1]/($tiempos[0]+$tiempos[1]))*100)?>%</td>
                     <td class="td3"><?php echo floor(($tiempos[1]/($tiempos[0]+$tiempos[1]))*100)?>%</td>
                   <?php else :?>
-                    <td class="td2">00:00:00</td>
+                    <td class="td2">00:00</td>
                     <td class="td3">0%</td>
                     <td class="td3">0%</td>
                   <?php endif; ?>
