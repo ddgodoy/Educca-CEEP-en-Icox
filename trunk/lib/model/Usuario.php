@@ -703,6 +703,7 @@ class Usuario extends BaseUsuario
                { $tiempo += $rel->getTiempo();
                }
              }
+             echo $tiempo;
           }
      return $tiempo;
    }
