@@ -76,10 +76,12 @@
                                       // echo "com1=".$compFechas."  com2=".$compFechas2."<br><br>" ;
                     				  if ( (  (-1==$compFechas ) || (0==$compFechas )) && ( (1==$compFechas2 ) || (0==$compFechas2 ) ) )
                   				  { // inicio periodo <= fechaHitoIni => fin periodo
+                                                    if($planificacionHito->getTema()){  
                   				    $cadena1="Tema ".$planificacionHito->getTema()->getNumeroTema().": ".$planificacionHito->getTema()->getNombre()."<br>Fecha fin deseable= ".$planificacionHito->getFechaCompletado("d-m-Y");
                   				     echo "<a href=\"javascript:void(0);\"
                   		   					onmouseover=\"return overlib('$cadena1', CAPTION, 'HITO')\"
                   		    				onmouseout=\"nd()\">".image_tag('ico_p_profesor.gif','Alt=')."</a>";
+                                                    } 
                   				  }
                     			?>
                     	    <?php endforeach; ?>&nbsp;
