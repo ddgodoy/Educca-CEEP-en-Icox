@@ -359,9 +359,6 @@ class supervisorActions extends sfActions
     $pdf->Cell(130, 7, ' '.$curso->getNombre(), 1, 0, 'L', 0);
     $pdf->Ln();
 
-    $pdf->Output("evaluacion_tripartita.pdf", "I");
-    exit();
-    
     $pdf->SetFont('','B');
     $pdf->Cell(50, 7, html_entity_decode(" Duraci&oacute;n:", ENT_NOQUOTES, 'UTF-8'), 1, 0, 'L', 1);
     $pdf->SetFont('');
@@ -528,8 +525,9 @@ class supervisorActions extends sfActions
     $pdf->Cell(267,0,'','T');
     $pdf->Ln();
     $pdf->Output("evaluacion_tripartita.pdf", "I");
-
-    $this->setLayout(false); return;
+    exit(); 
+    $this->setLayout(false); 
+    return;
   }
 
 
