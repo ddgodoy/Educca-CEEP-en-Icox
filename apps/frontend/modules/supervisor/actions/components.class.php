@@ -33,6 +33,7 @@ class supervisorComponents extends sfComponents
     
     $c = new Criteria();
     $c->add(CursoPeer::NOMBRE, 'vacio', Criteria::ALT_NOT_EQUAL);
+    $c->addAscendingOrderByColumn(CursoPeer::ID);
     //$this->cursos = CursoPeer::doSelect($c);
     $pager = new sfPropelPager('Curso',20); //nombre de la classepeer y numero de registro por pagina
     $pager->setCriteria($c);
