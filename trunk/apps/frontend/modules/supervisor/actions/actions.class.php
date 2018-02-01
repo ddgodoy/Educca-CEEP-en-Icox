@@ -526,8 +526,6 @@ class supervisorActions extends sfActions
     $pdf->Ln();
     $pdf->Output("evaluacion_tripartita.pdf", "I");
     exit(); 
-    $this->setLayout(false); 
-    return;
   }
 
 
