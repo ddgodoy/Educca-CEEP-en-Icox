@@ -46,7 +46,8 @@ class supervisorComponents extends sfComponents
   public function executeMostrarModulos()
   {
     $c = new Criteria();
-	  $this->modulos = PaquetePeer::doSelect($c);
+    $c->addDescendingOrderByColumn(PaquetePeer::FECHA_INICIO);
+    $this->modulos = PaquetePeer::doSelect($c);
     return;
   }
 
