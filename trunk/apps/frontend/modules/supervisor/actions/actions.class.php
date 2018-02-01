@@ -313,9 +313,6 @@ class supervisorActions extends sfActions
     require_once(SF_ROOT_DIR.DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'tcpdf'.DIRECTORY_SEPARATOR.'tcpdf.php');
     require_once(SF_ROOT_DIR.DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'tcpdf'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'lang'.DIRECTORY_SEPARATOR.'eng.php');
 
-    echo 'hola';
-    exit();
-    
     $idcurso = $this->getRequestParameter('idcurso');
     $curso   = CursoPeer::RetrieveByPk($idcurso);
     $materia = MateriaPeer::RetrieveByPk($curso->getMateriaId());
@@ -362,6 +359,9 @@ class supervisorActions extends sfActions
     $pdf->Cell(130, 7, ' '.$curso->getNombre(), 1, 0, 'L', 0);
     $pdf->Ln();
 
+    $pdf->Output("evaluacion_tripartita.pdf", "I");
+    exit();
+    
     $pdf->SetFont('','B');
     $pdf->Cell(50, 7, html_entity_decode(" Duraci&oacute;n:", ENT_NOQUOTES, 'UTF-8'), 1, 0, 'L', 1);
     $pdf->SetFont('');
