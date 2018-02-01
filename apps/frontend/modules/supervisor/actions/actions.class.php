@@ -313,6 +313,9 @@ class supervisorActions extends sfActions
     require_once(SF_ROOT_DIR.DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'tcpdf'.DIRECTORY_SEPARATOR.'tcpdf.php');
     require_once(SF_ROOT_DIR.DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'tcpdf'.DIRECTORY_SEPARATOR.'config'.DIRECTORY_SEPARATOR.'lang'.DIRECTORY_SEPARATOR.'eng.php');
 
+    echo 'hola';
+    exit();
+    
     $idcurso = $this->getRequestParameter('idcurso');
     $curso   = CursoPeer::RetrieveByPk($idcurso);
     $materia = MateriaPeer::RetrieveByPk($curso->getMateriaId());
