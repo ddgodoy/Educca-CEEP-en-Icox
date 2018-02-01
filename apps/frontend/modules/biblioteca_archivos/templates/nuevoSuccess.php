@@ -16,7 +16,7 @@
 
       <tr>
         <td class="titulo_largo"><label for="nombre">Fichero:&nbsp;</label></td>
-        <td>  <?php echo input_file_tag('fichero') ?> <font color='red'> Tamaño m&aacute;ximo 10Mb</font> </td>
+        <td>  <?php echo input_file_tag('fichero') ?> <font color='red'> Tamaño m&aacute;ximo 2GB</font> </td>
       </tr>
 
       <tr>
