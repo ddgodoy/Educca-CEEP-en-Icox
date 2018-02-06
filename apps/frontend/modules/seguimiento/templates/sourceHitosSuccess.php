@@ -98,70 +98,70 @@
                       <td>
                            <?php $hitos = $alumno->getUsuario()->getHitos($idcurso,$fecha[0],$fecha[1]) ?>
                            <?php foreach ($hitos as $hito): ?>
-                                  <?php //echo $fecha[0]." ".$fecha[1];
-                                				  $dia1=substr($fecha[0],0,2);
-                                  				  $mes1=substr($fecha[0],3,2);
-                                  				  $anio1=substr($fecha[0],6,4); //inicio periodo
+                                <?php //echo $fecha[0]." ".$fecha[1];
+                                                $dia1=substr($fecha[0],0,2);
+                                                $mes1=substr($fecha[0],3,2);
+                                                $anio1=substr($fecha[0],6,4); //inicio periodo
 
-                                  				  $dia2=substr($fecha[1],0,2);
-                                  				  $mes2=substr($fecha[1],3,2);
-                                  				  $anio2=substr($fecha[1],6,4); //fin periodo
+                                                $dia2=substr($fecha[1],0,2);
+                                                $mes2=substr($fecha[1],3,2);
+                                                $anio2=substr($fecha[1],6,4); //fin periodo
 
-                                  				  $diaHitoIni=$hito->getFechaInicio("d");
-                                  				  $mesHitoIni=$hito->getFechaInicio("m");
-                                  				  $anioHitoIni=$hito->getFechaInicio("Y");
+                                                $diaHitoIni=$hito->getFechaInicio("d");
+                                                $mesHitoIni=$hito->getFechaInicio("m");
+                                                $anioHitoIni=$hito->getFechaInicio("Y");
 
-                                  				  $diaHitoFin=$hito->getFechaCompletado("d");
-                                  				  $mesHitoFin=$hito->getFechaCompletado("m");
-                                  				  $anioHitoFin=$hito->getFechaCompletado("Y");
+                                                $diaHitoFin=$hito->getFechaCompletado("d");
+                                                $mesHitoFin=$hito->getFechaCompletado("m");
+                                                $anioHitoFin=$hito->getFechaCompletado("Y");
 
-                                  				  $compFechas = $c->getCalendar()->compareDates($dia1,$mes1,$anio1,$diaHitoIni,$mesHitoIni,$anioHitoIni);
-                                  				  $compFechas2 = $c->getCalendar()->compareDates($dia2,$mes2,$anio2,$diaHitoIni,$mesHitoIni,$anioHitoIni);
+                                                $compFechas = $c->getCalendar()->compareDates($dia1,$mes1,$anio1,$diaHitoIni,$mesHitoIni,$anioHitoIni);
+                                                $compFechas2 = $c->getCalendar()->compareDates($dia2,$mes2,$anio2,$diaHitoIni,$mesHitoIni,$anioHitoIni);
 
-                                  				  $compFechas3 = $c->getCalendar()->compareDates($dia1,$mes1,$anio1,$diaHitoFin,$mesHitoFin,$anioHitoFin);
-                                  				  $compFechas4 = $c->getCalendar()->compareDates($dia2,$mes2,$anio2,$diaHitoFin,$mesHitoFin,$anioHitoFin);
+                                                $compFechas3 = $c->getCalendar()->compareDates($dia1,$mes1,$anio1,$diaHitoFin,$mesHitoFin,$anioHitoFin);
+                                                $compFechas4 = $c->getCalendar()->compareDates($dia2,$mes2,$anio2,$diaHitoFin,$mesHitoFin,$anioHitoFin);
 
-                                  				  $cadena = $hito->getTema()->getNombre()."<br>";
-                                  				  if ( (  (-1==$compFechas ) || (0==$compFechas )) && ( (1==$compFechas2 ) || (0==$compFechas2 ) ) )
-                                  				  { // inicio periodo <= fechaHitoIni => fin periodo
-                                  				    $cadena1=$cadena."Estado= Iniciado<br>Fecha:".$hito->getFechaInicio("d-m-Y");
-                                  				     echo "<a href=\"javascript:void(0);\"
-                                  		   					onmouseover=\"return overlib('$cadena1', CAPTION, 'HITO')\"
-                                  		    				onmouseout=\"nd()\">".image_tag('ico_p_start.gif','Alt=')."</a>";
-                                  				  }
-                                  				  if(2==$hito->getEstado())
-                                  				    {  if ( (  (-1==$compFechas3 ) || (0==$compFechas3 )) && ( (1==$compFechas4 ) || (0==$compFechas4 ) ) )
-                                  				          { // inicio periodo <= fechaHitoFin => fin periodo
+                                                $cadena = $hito->getTema()->getNombre()."<br>";
+                                                if ( (  (-1==$compFechas ) || (0==$compFechas )) && ( (1==$compFechas2 ) || (0==$compFechas2 ) ) )
+                                                { // inicio periodo <= fechaHitoIni => fin periodo
+                                                  $cadena1=$cadena."Estado= Iniciado<br>Fecha:".$hito->getFechaInicio("d-m-Y");
+                                                   echo "<a href=\"javascript:void(0);\"
+                                                                      onmouseover=\"return overlib('$cadena1', CAPTION, 'HITO')\"
+                                                              onmouseout=\"nd()\">".image_tag('ico_p_start.gif','Alt=')."</a>";
+                                                }
+                                                if(2==$hito->getEstado())
+                                                  {  if ( (  (-1==$compFechas3 ) || (0==$compFechas3 )) && ( (1==$compFechas4 ) || (0==$compFechas4 ) ) )
+                                                        { // inicio periodo <= fechaHitoFin => fin periodo
 
-                                  					       		$c2 = new Criteria();
-                                  				            $c2->add(Rel_curso_temaPeer::ID_TEMA, $hito->getTema()->getId());
-                                  				            $planificacion = $curso->getHitosPlanificacion($c2);
-                                  				            $cadena2=$cadena."Estado= Finalizado<br>Fecha:".$hito->getFechaCompletado("d-m-Y")."<br>";
-                                  				            if ($planificacion)
-                                                      {
-                                  				               	   	$diaHitoDeseable=$planificacion[0]->getFechaCompletado("d");
-                                    				           		   	$mesHitoDeseable=$planificacion[0]->getFechaCompletado("m");
-                                    				           				$anioHitoDeseable=$planificacion[0]->getFechaCompletado("Y");
+                                                                      $c2 = new Criteria();
+                                                          $c2->add(Rel_curso_temaPeer::ID_TEMA, $hito->getTema()->getId());
+                                                          $planificacion = $curso->getHitosPlanificacion($c2);
+                                                          $cadena2=$cadena."Estado= Finalizado<br>Fecha:".$hito->getFechaCompletado("d-m-Y")."<br>";
+                                                          if ($planificacion)
+                                    {
+                                                                      $diaHitoDeseable=$planificacion[0]->getFechaCompletado("d");
+                                                                              $mesHitoDeseable=$planificacion[0]->getFechaCompletado("m");
+                                                                                      $anioHitoDeseable=$planificacion[0]->getFechaCompletado("Y");
 
-                                                              $compFechas5 = $c->getCalendar()->compareDates($diaHitoFin,$mesHitoFin,$anioHitoFin,$diaHitoDeseable,$mesHitoDeseable,$anioHitoDeseable);
-                                                              if ( (-1==$compFechas5) || (0==$compFechas5))
-                                                              {
-                                    				           	   			 $cadena2 .=  "Completado: en Fecha";
-                                    				           	   			 $icono = 'ico_p_endok.gif';
-                                    				            			} else {
-                                                                 					$cadena2 .=  "Completado: fuera de tiempo";
-                                                                 					$icono = 'ico_p_endfuera.gif';
-                                                                      }
-                                  				  	          }
-                                  				  	         else {$icono = 'ico_p_endok.gif';}
+                                            $compFechas5 = $c->getCalendar()->compareDates($diaHitoFin,$mesHitoFin,$anioHitoFin,$diaHitoDeseable,$mesHitoDeseable,$anioHitoDeseable);
+                                            if ( (-1==$compFechas5) || (0==$compFechas5))
+                                            {
+                                                                                       $cadena2 .=  "Completado: en Fecha";
+                                                                                       $icono = 'ico_p_endok.gif';
+                                                                              } else {
+                                                                                      $cadena2 .=  "Completado: fuera de tiempo";
+                                                                                      $icono = 'ico_p_endfuera.gif';
+                                                    }
+                                                                }
+                                                               else {$icono = 'ico_p_endok.gif';}
 
-                                  				  	        echo "<a href=\"javascript:void(0);\"
-                                  		   					          onmouseover=\"return overlib('$cadena2', CAPTION, 'HITO')\"
-                                  		    				          onmouseout=\"nd()\">".image_tag($icono,'Alt=')."</a>";
-                                  				          }
-                                  					}
-                  								unset($hito); //liberar memoria
-                                                ?>
+                                                              echo "<a href=\"javascript:void(0);\"
+                                                                                onmouseover=\"return overlib('$cadena2', CAPTION, 'HITO')\"
+                                                                        onmouseout=\"nd()\">".image_tag($icono,'Alt=')."</a>";
+                                                        }
+                                                      }
+                                                              unset($hito); //liberar memoria
+                                ?>
                            <?php endforeach; ?>&nbsp;
                       </td><?php unset($hitos);//echo "fin foreach hitosAlumnos 3<br>"?>
                   <?php endforeach; ?>
