@@ -98,8 +98,8 @@
                       <td>
                            <?php $hitos = $alumno->getUsuario()->getHitos($idcurso,$fecha[0],$fecha[1]) ?>
                            <?php foreach ($hitos as $hito): ?>
-                                  <?php //echo $fecha[0]." ".$fecha[1]
-                                				    $dia1=substr($fecha[0],0,2);
+                                  <?php echo $fecha[0]." ".$fecha[1];
+                                				  $dia1=substr($fecha[0],0,2);
                                   				  $mes1=substr($fecha[0],3,2);
                                   				  $anio1=substr($fecha[0],6,4); //inicio periodo
 
