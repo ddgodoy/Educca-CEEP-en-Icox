@@ -150,16 +150,15 @@ window.onload = function() {
               <?php $ruta_libro = ''; ?>
                 <?php if($sco->getTitle() === 'LIBRO' && $url_libro): 
                     $ruta_libro = '&ruta='.urlencode($url_libro);
-                endif; ?> 
-              <td style="text-align: left; width: 45%; padding-left: 4px;">
-                <a style="color:#003399;" href="javascript:void(0)" onclick="window.open('<?php echo url_for('curso/mostrarContenido?sco12id='.$sco->getId().'&id_curso='.$idcurso.$ruta_libro) ?>', 'scormbrowser', 'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=0, scrollbars=0, height=<?php echo $materia->getHeight()?>, width=<?php echo $materia->getWidth()?>')"><?php echo $sco->getTitle(); ?></a>
-              </td>
-              <?php 
+                endif; ?>
+                <?php 
               
                       $ct  = new Criteria();
                       $ct->add(TemaPeer::NOMBRE, $sco->getTitle());
                       $ct->add(TemaPeer::ID_MATERIA, $idmateria);
                       $tema_sc = TemaPeer::doSelectOne($ct);
+                      
+                      echo $tema_sc->getId();
                       
                       
                       $cct = new Criteria();
@@ -168,6 +167,9 @@ window.onload = function() {
                       
                       $curso_temas = Rel_curso_temaPeer::doSelectOne($cct);
               ?>
+              <td style="text-align: left; width: 45%; padding-left: 4px;">
+                <a style="color:#003399;" href="javascript:void(0)" onclick="window.open('<?php echo url_for('curso/mostrarContenido?sco12id='.$sco->getId().'&id_curso='.$idcurso.$ruta_libro) ?>', 'scormbrowser', 'status=0, toolbar=0, location=0, menubar=0, directories=0, resizable=0, scrollbars=0, height=<?php echo $materia->getHeight()?>, width=<?php echo $materia->getWidth()?>')"><?php echo $sco->getTitle(); ?></a>
+              </td>
               <td style="text-align: right; width: 15%;"><?php echo $curso_temas?$curso_temas->getFechaCompletado('d/m/Y'):""; ?></td>
                 <?php $c = new Criteria();?>
                 <?php $c->add(Rel_usuario_sco12Peer::ID_SCO12, $sco->getId());?>
