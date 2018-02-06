@@ -207,9 +207,7 @@ class Biblioteca_archivos extends BaseBiblioteca_archivos
   {
      if (file_exists($this->pathFile()))
      {  
-        $size=(int)(filesize($this->pathFile()) / 3000);
-        echo $size;
-        exit();
+        $size=(int)(filesize($this->pathFile()) / 2000);
         if (0==$size)
         { return 1;}
         else return  $size ;
