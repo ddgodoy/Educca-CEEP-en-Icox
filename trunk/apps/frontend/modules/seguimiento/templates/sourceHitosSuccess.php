@@ -98,7 +98,7 @@
                       <td>
                            <?php $hitos = $alumno->getUsuario()->getHitos($idcurso,$fecha[0],$fecha[1]) ?>
                            <?php foreach ($hitos as $hito): ?>
-                                  <?php echo $fecha[0]." ".$fecha[1];
+                                  <?php //echo $fecha[0]." ".$fecha[1];
                                 				  $dia1=substr($fecha[0],0,2);
                                   				  $mes1=substr($fecha[0],3,2);
                                   				  $anio1=substr($fecha[0],6,4); //inicio periodo
@@ -163,10 +163,10 @@
                   								unset($hito); //liberar memoria
                                                 ?>
                            <?php endforeach; ?>&nbsp;
-                      </td><?php unset($hitos);echo "fin foreach hitosAlumnos 3<br>"?>
+                      </td><?php unset($hitos);//echo "fin foreach hitosAlumnos 3<br>"?>
                   <?php endforeach; ?>
-                  </tr><?php echo "fin foreach fechas 4<br>"?>
-                  <?php endforeach; ?><?php echo "fin foreach alumnos 5<br>"?>
+                  </tr><?php //echo "fin foreach fechas 4<br>"?>
+                  <?php endforeach; ?><?php //echo "fin foreach alumnos 5<br>"?>
                   <?php if ($numalumnos > 10) : ?>
 
                   <tr class="filarecomendada">
