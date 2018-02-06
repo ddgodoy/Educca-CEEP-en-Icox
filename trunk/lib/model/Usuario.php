@@ -186,7 +186,6 @@ class Usuario extends BaseUsuario
      echo $idcurso;
      echo $fechaIni;
      echo $fechaFin;
-     exit();
      
   $c = new sfEventCalendar('month', date("Y/m/d"));
 
