@@ -2,7 +2,7 @@
 <script type="text/javascript" src="/js/chat/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
     function TemaFinish(){
-        $.post( "/contenidosTema/finishScorm?type=1&idcurso=<?php echo $curso_id ?>&idscorm=<?php echo $sco ?>'&idscorm=<?php echo $id_tema ?>", function(){
+        $.post( "/contenidosTema/finishScorm?type=1&idcurso=<?php echo $curso_id ?>&idscorm=<?php echo $sco ?>'&idtema=<?php echo $id_tema ?>", function(){
             window.close();  
         });
     }
