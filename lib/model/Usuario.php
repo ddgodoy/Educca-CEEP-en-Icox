@@ -196,8 +196,8 @@ class Usuario extends BaseUsuario
         $anioFin=substr($fechaFin,6,4);
         $fechaFin = $anioFin."-".$mesFin."-".$diaFin; //formato sql
 
-        echo $fecha.'<br/>';
-        echo $fechaFin.'<br/>';
+        //echo $fecha.'<br/>';
+        //echo $fechaFin.'<br/>';
         
         $c = new Criteria();
         $date1Criterion = $c->getNewCriterion(Rel_usuario_temaPeer::FECHA_INICIO, $fecha, Criteria::GREATER_EQUAL);
