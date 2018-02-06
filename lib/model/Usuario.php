@@ -231,11 +231,11 @@ class Usuario extends BaseUsuario
      $crit->add(Rel_usuario_temaPeer::ID_USUARIO, $this->id );
      $crit->add(Rel_usuario_temaPeer::ID_TEMA, $tema->getId());
      $hitos2 = Rel_usuario_temaPeer::doSelect($crit);
-     $hitos_merge = array_merge($hitos, $hitos2);
+     $hitos = array_merge($hitos, $hitos2);
 
    }
 
-   print_r($hitos_merge).'<br/>';
+   print_r($hitos).'<br/>';
    
    return $hitos;
   }
