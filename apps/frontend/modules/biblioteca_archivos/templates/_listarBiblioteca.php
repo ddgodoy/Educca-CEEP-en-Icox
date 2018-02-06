@@ -17,7 +17,7 @@
               <?php $i = 0;?>
               <?php foreach($archivos as $archivo): ?>
                   <?php $fondo1 = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
-                  <tr class="cont_fil" <?= $fondo1 ?> valign='top'>
+                  <tr class="cont_fil" <?php echo $fondo1 ?> valign='top'>
                     <td style="width:10%;padding-left:2px;">
                       <?php echo $archivo->getIcoTipo();?>
                     </td>
@@ -55,6 +55,6 @@
         </table>
     </div>
 
-<? else : ?>
+<?php else : ?>
     <?php echoAvisoVacio("No hay ficheros en este curso");?>
 <?php endif; ?>
