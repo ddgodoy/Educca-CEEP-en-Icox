@@ -183,9 +183,9 @@ class Usuario extends BaseUsuario
  public function getHitos($idcurso,$fechaIni,$fechaFin)
   {
 
-     echo $idcurso;
-     echo $fechaIni;
-     echo $fechaFin;
+     echo $idcurso.'</br>';
+     echo $fechaIni.'</br>';
+     echo $fechaFin.'</br>';
      
   $c = new sfEventCalendar('month', date("Y/m/d"));
 
