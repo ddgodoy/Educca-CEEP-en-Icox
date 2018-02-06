@@ -535,6 +535,7 @@ class cursoActions extends sfActions
     if ($this->hasRequestParameter('sco12id'))
     {
       $id_sco12 = $this->getRequestParameter('sco12id');
+      $this->id_tema = $this->getRequestParameter('id_tema');
       $this->sco = $id_sco12;
       $this->curso_id = $this->getRequestParameter('id_curso');
       $sco12 = Sco12Peer::RetrieveByPk($id_sco12);
