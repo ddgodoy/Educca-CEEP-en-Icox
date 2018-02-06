@@ -163,10 +163,10 @@
                   								unset($hito); //liberar memoria
                                                 ?>
                            <?php endforeach; ?>&nbsp;
-                      </td><?php unset($hitos);//echo "fin foreach hitosAlumnos 3<br>"?>
+                      </td><?php unset($hitos);echo "fin foreach hitosAlumnos 3<br>"?>
                   <?php endforeach; ?>
-                  </tr><?php //echo "fin foreach fechas 4<br>"?>
-                  <?php endforeach; ?><?php //echo "fin foreach alumnos 5<br>"?>
+                  </tr><?php echo "fin foreach fechas 4<br>"?>
+                  <?php endforeach; ?><?php echo "fin foreach alumnos 5<br>"?>
                   <?php if ($numalumnos > 10) : ?>
 
                   <tr class="filarecomendada">
