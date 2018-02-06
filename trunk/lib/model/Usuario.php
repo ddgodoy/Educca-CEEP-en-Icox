@@ -190,27 +190,29 @@ class Usuario extends BaseUsuario
   $c = new sfEventCalendar('month', date("Y/m/d"));
 
   if ($fechaIni!=null) {
-  		$dia=substr($fechaIni,0,2);
-  		$mes=substr($fechaIni,3,2);
-  		$anio=substr($fechaIni,6,4);
+        $dia=substr($fechaIni,0,2);
+        $mes=substr($fechaIni,3,2);
+        $anio=substr($fechaIni,6,4);
         $fecha = $anio."-".$mes."-".$dia; //formato sql
 
-		if ($fechaFin==null) {
-		    return null; }
+        if ($fechaFin==null) {return null; }
         $diaFin=substr($fechaFin,0,2);
-  		$mesFin=substr($fechaFin,3,2);
-  		$anioFin=substr($fechaFin,6,4);
-		$fechaFin = $anioFin."-".$mesFin."-".$diaFin; //formato sql
+        $mesFin=substr($fechaFin,3,2);
+        $anioFin=substr($fechaFin,6,4);
+        $fechaFin = $anioFin."-".$mesFin."-".$diaFin; //formato sql
 
-           $c = new Criteria();
-   		   $date1Criterion = $c->getNewCriterion(Rel_usuario_temaPeer::FECHA_INICIO, $fecha, Criteria::GREATER_EQUAL);
-           $date1Criterion->addAnd($c->getNewCriterion(Rel_usuario_temaPeer::FECHA_INICIO, $fechaFin, Criteria::LESS_EQUAL));
+        echo $fecha.'<br/>';
+        echo $fechaFin.'<br/>';
+        
+        $c = new Criteria();
+        $date1Criterion = $c->getNewCriterion(Rel_usuario_temaPeer::FECHA_INICIO, $fecha, Criteria::GREATER_EQUAL);
+        $date1Criterion->addAnd($c->getNewCriterion(Rel_usuario_temaPeer::FECHA_INICIO, $fechaFin, Criteria::LESS_EQUAL));
 
-           $date2Criterion = $c->getNewCriterion(Rel_usuario_temaPeer::FECHA_COMPLETADO, $fecha, Criteria::GREATER_EQUAL);
-           $date2Criterion->addAnd($c->getNewCriterion(Rel_usuario_temaPeer::FECHA_COMPLETADO, $fechaFin, Criteria::LESS_EQUAL));
-           $date2Criterion->addAnd($c->getNewCriterion(Rel_usuario_temaPeer::ESTADO, 2)); //completado
+        $date2Criterion = $c->getNewCriterion(Rel_usuario_temaPeer::FECHA_COMPLETADO, $fecha, Criteria::GREATER_EQUAL);
+        $date2Criterion->addAnd($c->getNewCriterion(Rel_usuario_temaPeer::FECHA_COMPLETADO, $fechaFin, Criteria::LESS_EQUAL));
+        $date2Criterion->addAnd($c->getNewCriterion(Rel_usuario_temaPeer::ESTADO, 2)); //completado
 
-         $date1Criterion->addOr($date2Criterion);
+        $date1Criterion->addOr($date2Criterion);
   }
 
   $curso = CursoPeer::retrieveByPk($idcurso);
