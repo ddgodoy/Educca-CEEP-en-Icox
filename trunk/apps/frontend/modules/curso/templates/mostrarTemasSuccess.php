@@ -205,7 +205,7 @@ window.onload = function() {
               <td>
                   <?php if($rel): ?> 
                     <?php if($rel->getLessonStatus() != 'completed' && $rel->getLessonStatus() != 'passed'):?>
-                      <?php echo link_to('Finalizar', 'contenidosTema/finishScorm?type=1&idcurso='.$curso->getId().'&idscorm='.$sco->getId()) ?>
+                      <?php echo link_to('Finalizar', 'contenidosTema/finishScorm?type=1&idcurso='.$curso->getId().'&idscorm='.$sco->getId().'&id_tema='.$tema_sc->getId()) ?>
                     <?php else: ?>
                       &nbsp;
                     <?php endif ?> 
