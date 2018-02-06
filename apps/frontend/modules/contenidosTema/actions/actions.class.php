@@ -195,6 +195,30 @@ class contenidosTemaActions extends sfActions
               $rel->setLessonStatus('completed');
               $rel->save();
           }
+          
+            $idtema = $this->getRequestParameter('idtema');
+            $c = new Criteria();
+            $c->add(Rel_usuario_temaPeer::ID_TEMA, $idtema);
+            $c->add(Rel_usuario_temaPeer::ID_USUARIO, $this->getUser()->getAnyId());
+            $RelTiempos = Rel_usuario_temaPeer::doSelectOne($c);
+            if ($RelTiempos)
+            { 
+                if (2!=$RelTiempos->getEstado())
+                {
+                    $RelTiempos->setEstado(2);
+                    $RelTiempos->setFechaCompletado(date("Y-m-d"));
+                }
+            }
+            else{  
+                    $RelTiempos = new Rel_usuario_tema();              /* Si es la primera vez que pincha que se cree la relacion en la BD*/
+                    $RelTiempos->setIdUsuario($this->getUser()->getAnyId());
+                    $RelTiempos->setIdTema($idtema);
+                    $RelTiempos->setTiempo(0);
+                    $RelTiempos->setEstado(2);
+                    $RelTiempos->setFechaInicio(date("Y-m-d"));
+                    $RelTiempos->setFechaCompletado(date("Y-m-d"));
+            }
+                    $RelTiempos->save();
       }
       $this->redirect('curso/mostrarTemas?idcurso='.$idcurso);
   }
