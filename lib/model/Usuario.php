@@ -181,12 +181,7 @@ class Usuario extends BaseUsuario
  */
 
  public function getHitos($idcurso,$fechaIni,$fechaFin)
-  {
-
-     echo $idcurso.'</br>';
-     echo $fechaIni.'</br>';
-     echo $fechaFin.'</br>';
-     
+ {
   $c = new sfEventCalendar('month', date("Y/m/d"));
 
   if ($fechaIni!=null) {
@@ -234,8 +229,6 @@ class Usuario extends BaseUsuario
      $hitos = array_merge($hitos, $hitos2);
 
    }
-
-   print_r($hitos).'<br/>';
    
    return $hitos;
   }
