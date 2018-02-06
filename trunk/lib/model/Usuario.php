@@ -221,18 +221,22 @@ class Usuario extends BaseUsuario
   $hitos = array();
   //echo "fechaIni:".$fecha."  fechaFin:".$fechaFin."<br>";
 
-  foreach ($temas as $tema)
-   { $crit = new Criteria();
-     if ($fechaIni!=null)
-	    {$crit->add($date1Criterion);}
+  foreach ($temas as $tema){ 
+      $crit = new Criteria();
+      
+      if ($fechaIni!=null){
+          $crit->add($date1Criterion);
+      }
 
      $crit->add(Rel_usuario_temaPeer::ID_USUARIO, $this->id );
      $crit->add(Rel_usuario_temaPeer::ID_TEMA, $tema->getId());
-	 $hitos2 = Rel_usuario_temaPeer::doSelect($crit);
-	 $hitos = array_merge($hitos, $hitos2);
+     $hitos2 = Rel_usuario_temaPeer::doSelect($crit);
+     $hitos = array_merge($hitos, $hitos2);
 
    }
 
+   print_r($hitos).'<br/>';
+   
    return $hitos;
   }
 
