@@ -1,6 +1,11 @@
 <?php echo use_helper('Javascript') ?>
 <script type="text/javascript" src="/js/chat/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
+    $(document).ready(function() {
+       $.post( "/contenidosTema/initialize?idtema=<?php echo $id_tema ?>", function(){
+        }); 
+    });
+    
     function TemaFinish(){
         $.post( "/contenidosTema/finishScorm?type=1&idcurso=<?php echo $curso_id ?>&idscorm=<?php echo $sco ?>'&idtema=<?php echo $id_tema ?>", function(){
             window.close();  
