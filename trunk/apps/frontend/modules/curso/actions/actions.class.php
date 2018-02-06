@@ -506,6 +506,7 @@ class cursoActions extends sfActions
 
     $user = $this->getUser();
     $id_usuario = $user->getAnyId();
+    $this->true_iframe = FALSE;
 
     if ($this->hasRequestParameter('id'))
     {
