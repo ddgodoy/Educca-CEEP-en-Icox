@@ -17,10 +17,10 @@
   <table class="tabla_cambiar_tareas">
     <?php $ahora = time();?>
     <?php for ($index = 0; $index < sizeof($eventos); $index++): ?>
+      <?php $tarea = $tareas[$index];?>
       <?php if($tarea->getId() != 354): ?>
        <?php $fondo = (($index % 2 == 0))? " id=\"filarayada_verde\"" : ""; ?>
        <?php echo("<tr$fondo>"); ?>
-        <?php $tarea = $tareas[$index];?>
         <?php $evento = $eventos[$index];?>
         <?php $curso = $cursos[$index];?>
         <?php $tipo_evento = $tipos_evento[$index];?>
