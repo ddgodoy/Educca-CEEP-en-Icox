@@ -615,7 +615,8 @@ class seguimientoActions extends sfActions
     print_r($data_val);
     exit();
     
-    $idcurso = $parametrosAux[1];
+    $idcurso = $data_val['idcurso'];
+    $tipo    = $data_val['tipo'];                       
 
     if ( $this->getUser()->hasCredential('alumno') )
     {
