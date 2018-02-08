@@ -611,7 +611,8 @@ class seguimientoActions extends sfActions
         }
     }
 
-    $tipo = 'sco12';
+    print_r($parametros);
+    exit()
     $idcurso = $parametrosAux[1];
 
     if ( $this->getUser()->hasCredential('alumno') )
