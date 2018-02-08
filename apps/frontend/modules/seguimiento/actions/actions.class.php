@@ -612,9 +612,7 @@ class seguimientoActions extends sfActions
         }
     }
 
-    print_r($data_val);
-    exit();
-    
+   
     $idcurso = $data_val['idcurso'];
     $tipo    = $data_val['tipo'];                       
 
