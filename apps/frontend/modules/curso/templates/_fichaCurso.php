@@ -244,7 +244,6 @@
                       <?php endif; ?>
                     </td>
                     <?php if (('supervisor'==$rol)) :?>
-                        <?php echo $curso->getMateria()->getTipo()?> 
                         <?php if($curso->getMateria()->getTipo() != 'scorm1.2'): ?>
                             <td style="width: 23%; text-align: center;"><?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas" title="Gr&aacute;ficas" align="absmiddle"'),'seguimiento/grafica?idtema='.$tema->getId().'&tipo=tema&idcurso='.$curso->getId()) ?></td>
                         <?php else: ?>
