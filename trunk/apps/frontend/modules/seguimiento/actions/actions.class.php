@@ -600,21 +600,19 @@ class seguimientoActions extends sfActions
    */
   public function executeSource()
   {
+    $data_val = array();  
     if ($this->getRequestParameter('datos'))
     {
         $datos = $this->getRequestParameter('datos');
         $parametros = explode("@", $datos);
         foreach ($parametros as $parametro)
-          {
+        {
             $parametrosAux = explode("=", $parametro);
-            
-            print_r($parametrosAux);
-            
-            ${$parametrosAux[0]} = $parametrosAux[1];
-         }
+            $data_val[$parametrosAux[0]] = $parametrosAux[1];
+        }
     }
 
-    print_r($parametro);
+    print_r($data_val);
     exit();
     
     $idcurso = $parametrosAux[1];
