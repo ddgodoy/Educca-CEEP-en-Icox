@@ -396,35 +396,37 @@ class seguimientoActions extends sfActions
       		$this->curso = $curso;
       		$this->forward404Unless($curso);
 
-          $this->getUser()->comprobarPermiso($this->idcurso);
+                $this->getUser()->comprobarPermiso($this->idcurso);
 
   	     	if($curso->getMateriaId())
         	{
                    $materia = MateriaPeer::retrieveByPk($curso->getMateriaId());
-        	     		 $this->forward404Unless($materia);
+                   $this->forward404Unless($materia);
 
-        	            $this->num = $materia->getNumeroTemas();
-        	            $c2 = new Criteria();
-        	            $c2->addAscendingOrderByColumn(TemaPeer::NUMERO_TEMA);
-        	            $this->temas = $materia->getTemas($c2);
-        	            $c3 = new Criteria();
-                      $c3->add(Sco12Peer::ID_MATERIA, $materia->getId());
-                      $this->scos12 = Sco12Peer::doSelect($c3);
+                    $this->num = $materia->getNumeroTemas();
+                    $c2 = new Criteria();
+                    $c2->addAscendingOrderByColumn(TemaPeer::ID);
+                    $this->temas = $materia->getTemas($c2);
+                    $c3 = new Criteria();
+                    $c3->add(Sco12Peer::ID_MATERIA, $materia->getId());
+                    $this->scos12 = Sco12Peer::doSelect($c3);
 
-        	            $c2 = new Criteria();
-        	            $c2->addAscendingOrderByColumn(UsuarioPeer::APELLIDOS);
-        	            if ($this->getRequestParameter('idusuario'))
+                    $c2 = new Criteria();
+                    $c2->addAscendingOrderByColumn(UsuarioPeer::APELLIDOS);
+                    if ($this->getRequestParameter('idusuario'))
                       {
-        	                $this->idusuario = $this->getRequestParameter('idusuario');
-                          $usuario = UsuarioPeer::retrieveByPk($this->getRequestParameter('idusuario'));
-        	     		        $this->forward404Unless($usuario);
-        	     		        $c2->add(UsuarioPeer::ID,$this->getRequestParameter('idusuario'));
-        	     		        $this->idusuario= $this->getRequestParameter('idusuario');
+                        $this->idusuario = $this->getRequestParameter('idusuario');
+                        $usuario = UsuarioPeer::retrieveByPk($this->getRequestParameter('idusuario'));
+                        $this->forward404Unless($usuario);
+                        $c2->add(UsuarioPeer::ID,$this->getRequestParameter('idusuario'));
+                        $this->idusuario= $this->getRequestParameter('idusuario');
                       }
      	                $this->alumnos = $usuarios->getAlumnos($this->idcurso,$c2);
-  			   }
+                }
   	}
-    else	$this->alumnos = $usuarios->getAlumnos();
+        else{
+            $this->alumnos = $usuarios->getAlumnos();
+        }
   }
 
   // Nombre del metodo: executeGrafica()
