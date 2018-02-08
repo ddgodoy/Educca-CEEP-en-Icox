@@ -612,7 +612,8 @@ class seguimientoActions extends sfActions
     }
 
     print_r($parametros);
-    exit();
+    
+    
     $idcurso = $parametrosAux[1];
 
     if ( $this->getUser()->hasCredential('alumno') )
