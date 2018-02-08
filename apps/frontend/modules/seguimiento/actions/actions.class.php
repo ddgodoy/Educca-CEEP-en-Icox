@@ -802,7 +802,7 @@ class seguimientoActions extends sfActions
       }
          
          
-    if ($tipo == 'scorm1.2')
+    if ($tipo == 'sco12')
     {
        //size flash
        $width = 0;

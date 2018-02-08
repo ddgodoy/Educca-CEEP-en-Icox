@@ -45,7 +45,7 @@ switch($tipo)
           echoNotaInformativa('Ayuda', "Esta gr&aacute;fica le muestra el tiempo dedicado al tema <b>".$tema->getNombre()."</b> por parte de todos los alumnos del curso");
           break;
 
-  case 'scorm1.2':
+  case 'sco12':
           $numAlumnos = $curso->getNumeroAlumnos();
           echo swf_chart("/seguimiento/source?datos=idsco12=$idsco12@tipo=$tipo@idcurso=$idcurso", 700, ($numAlumnos*20)+15);
 
