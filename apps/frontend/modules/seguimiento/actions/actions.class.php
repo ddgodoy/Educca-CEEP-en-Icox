@@ -613,8 +613,10 @@ class seguimientoActions extends sfActions
     }
 
    
-    $idcurso = $data_val['idcurso'];
-    $tipo    = $data_val['tipo'];                       
+    $idcurso = $data_val['idcurso']?$data_val['idcurso']:'';
+    $tipo    = $data_val['tipo']?$data_val['tipo']:'';   
+    $idtema  = $data_val['idtema']?$data_val['idtema']:''; 
+    $idsco12  = $data_val['idsco12']?$data_val['idsco12']:''; 
 
     if ( $this->getUser()->hasCredential('alumno') )
     {
