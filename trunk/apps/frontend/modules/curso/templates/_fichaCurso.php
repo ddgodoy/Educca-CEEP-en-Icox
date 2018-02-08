@@ -254,7 +254,7 @@
                                     $c->addAscendingOrderByColumn(Sco12Peer::ID);
                                     $scos = Sco12Peer::doSelectOne($c);
                              ?>       
-                            <td style="width: 23%; text-align: center;"><?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas" title="Gr&aacute;ficas" align="absmiddle"'),'seguimiento/grafica?idsco12='.$scos->getId().'&tipo=tema&idcurso='.$curso->getId()) ?></td>
+                            <td style="width: 23%; text-align: center;"><?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas" title="Gr&aacute;ficas" align="absmiddle"'),'seguimiento/grafica?idsco12='.$scos->getId().'&tipo=sco12&idcurso='.$curso->getId()) ?></td>
                         <?php endif; ?>    
                     <?php endif; ?>
                   </tr>
