@@ -249,7 +249,7 @@
                         <?php else: ?>
                             <?php  $c = new Criteria();
                                     $c->add(Sco12Peer::ID_MATERIA, $curso->getMateria()->getId());
-                                    $c->add(Sco12Peer::TITLE, $tema->getTitle());
+                                    $c->add(Sco12Peer::TITLE, $tema->getNombre());
                                     $c->addAscendingOrderByColumn(Sco12Peer::ID);
                                     $c->getLimit(1);
                                     $scos = Sco12Peer::DoSelect($c);
