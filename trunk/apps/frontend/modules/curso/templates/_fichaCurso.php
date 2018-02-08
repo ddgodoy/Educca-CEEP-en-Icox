@@ -242,9 +242,20 @@
                       <?php else : ?>
                         Sin fecha.
                       <?php endif; ?>
-										</td>
-										<?php if (('supervisor'==$rol) && ($curso->getMateria()->getTipo() != 'compo')) :?>
-										  <td style="width: 23%; text-align: center;"><?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas" title="Gr&aacute;ficas" align="absmiddle"'),'seguimiento/grafica?idtema='.$tema->getId().'&tipo=tema&idcurso='.$curso->getId()) ?></td>
+                    </td>
+                    <?php if (('supervisor'==$rol)) :?>
+                        <?php if($curso->getMateria()->getTipo() != 'sco12'): ?>
+                            <td style="width: 23%; text-align: center;"><?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas" title="Gr&aacute;ficas" align="absmiddle"'),'seguimiento/grafica?idtema='.$tema->getId().'&tipo=tema&idcurso='.$curso->getId()) ?></td>
+                        <?php else: ?>
+                            <?php  $c = new Criteria();
+                                    $c->add(Sco12Peer::ID_MATERIA, $curso->getMateria()->getId());
+                                    $c->add(Sco12Peer::TITLE, $tema->getTitle());
+                                    $c->addAscendingOrderByColumn(Sco12Peer::ID);
+                                    $c->getLimit(1);
+                                    $scos = Sco12Peer::DoSelect($c);
+                             ?>       
+                            <td style="width: 23%; text-align: center;"><?php echo link_to(image_tag('ico_graficas_peq.gif', 'alt="Gr&aacute;ficas" title="Gr&aacute;ficas" align="absmiddle"'),'seguimiento/grafica?idsco12='.$scos->getId().'&tipo=tema&idcurso='.$curso->getId()) ?></td>
+                        <?php endif; ?>    
                     <?php endif; ?>
                   </tr>
                   <?php $i++; ?>
