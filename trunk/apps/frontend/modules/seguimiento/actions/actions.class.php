@@ -602,17 +602,20 @@ class seguimientoActions extends sfActions
   {
     if ($this->getRequestParameter('datos'))
     {
-      $datos = $this->getRequestParameter('datos');
-		  $parametros = explode("@", $datos);
-		  foreach ($parametros as $parametro)
-		    {
-          $parametrosAux = explode("=", $parametro);
-		      ${$parametrosAux[0]} = $parametrosAux[1];
-        }
+        $datos = $this->getRequestParameter('datos');
+        $parametros = explode("@", $datos);
+        foreach ($parametros as $parametro)
+          {
+            $parametrosAux = explode("=", $parametro);
+            
+            print_r($parametrosAux);
+            
+            ${$parametrosAux[0]} = $parametrosAux[1];
+         }
     }
 
-    print_r($parametros);
-    
+    print_r($parametro);
+    exit();
     
     $idcurso = $parametrosAux[1];
 
