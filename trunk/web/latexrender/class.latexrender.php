@@ -147,6 +147,9 @@ class LatexRender {
 
         $filename = $this->_picture_name.".".$this->_image_format;
         $full_path_filename = $this->getPicturePath()."/".$filename;
+        
+        echo $full_path_filename;
+        exit();
 
         if (file_exists($full_path_filename))
 				{
