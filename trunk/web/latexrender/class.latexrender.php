@@ -245,14 +245,14 @@ class LatexRender {
      */
     function renderLatex($latex_formula) {
         $latex_document = $this->wrap_formula($latex_formula);
-
-        echo $latex_document;
-        exit();
         
         $current_dir = getcwd();
 
         chdir($this->_tmp_dir);
 
+        echo $this->_tmp_dir."/".$this->_tmp_filename.".tex";
+        exit();
+        
         // create temporary latex file
         $fp = fopen($this->_tmp_dir."/".$this->_tmp_filename.".tex","a+");
 
