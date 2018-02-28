@@ -147,9 +147,6 @@ class LatexRender {
 
         $filename = $this->_picture_name.".".$this->_image_format;
         $full_path_filename = $this->getPicturePath()."/".$filename;
-        
-        echo $full_path_filename;
-        exit();
 
         if (file_exists($full_path_filename))
 				{
@@ -301,7 +298,7 @@ class LatexRender {
 
         $filename = $this->getPicturePath()."/".$this->_picture_name.".".$this->_image_format;
         
-        //die ($filename);
+        die ($filename);
 		    $status_code = copy($this->_tmp_filename.".".$this->_image_format,$filename);
 
         $this->cleanTemporaryDirectory();
