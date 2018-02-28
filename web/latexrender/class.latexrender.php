@@ -298,7 +298,9 @@ class LatexRender {
 
         $filename = $this->getPicturePath()."/".$this->_picture_name.".".$this->_image_format;
         
-        die ($filename);
+        echo $this->_tmp_filename.".".$this->_image_format.'<br>';
+        echo $filename;
+        exit();
 		    $status_code = copy($this->_tmp_filename.".".$this->_image_format,$filename);
 
         $this->cleanTemporaryDirectory();
