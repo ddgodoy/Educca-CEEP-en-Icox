@@ -1055,9 +1055,6 @@ class ejercicioActions extends sfActions
 
 		$pic = $picture_name.'.png';
                 
-                echo $pic;
-                exit();
-                
         $url = SF_ROOT_DIR.'/web/images/ecuaciones/'.$pic;
 
 
