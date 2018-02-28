@@ -153,14 +153,13 @@ class LatexRender {
            unlink($full_path_filename);
         }
 
-        echo '1';
         // security filter: reject too long formulas
         if (strlen($latex_formula) > $this->_string_length_limit) {
         	$this->_errorcode = 1;
 
             return false;
         }
-echo '2';
+
         // security filter: try to match against LaTeX-Tags Blacklist
         for ($i=0;$i<sizeof($this->_latex_tags_blacklist);$i++) {
             if (stristr($latex_formula,$this->_latex_tags_blacklist[$i])) {
@@ -169,15 +168,17 @@ echo '2';
                 return false;
             }
         }
-echo '3';
-exit();
+
         // security checks assume correct formula, let's render it
         if ($this->renderLatex($latex_formula)) {
+            echo '1';
+            exit();
             return $this->getPicturePathHTTPD()."/".$filename;
         } else {
             // uncomment if required
             //$this->_errorcode = 3;
-
+            echo '2';
+            exit();
             return false;
         }
 
