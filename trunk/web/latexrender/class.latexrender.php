@@ -171,14 +171,10 @@ class LatexRender {
 
         // security checks assume correct formula, let's render it
         if ($this->renderLatex($latex_formula)) {
-            echo '1';
-            exit();
             return $this->getPicturePathHTTPD()."/".$filename;
         } else {
             // uncomment if required
             //$this->_errorcode = 3;
-            echo '2';
-            exit();
             return false;
         }
 
@@ -269,12 +265,14 @@ class LatexRender {
         $status_code = is_file($this->_tmp_filename.".dvi");
 
         if ($status_code!=TRUE)
-				{
-				  //$this->cleanTemporaryDirectory();
-					chdir($current_dir);
-					$this->_errorcode = 4;
-				  return false;
-				}
+        {
+            echo '1';
+            exit();
+          //$this->cleanTemporaryDirectory();
+            chdir($current_dir);
+            $this->_errorcode = 4;
+          return false;
+        }
         
         // convert dvi file to postscript using dvips
         $command = $this->_dvips_path." -E ".$this->_tmp_filename.".dvi"." -o ".$this->_tmp_filename.".ps";
@@ -296,6 +294,8 @@ class LatexRender {
             chdir($current_dir);
             $this->_errorcode = 5;
             $this->_errorextra = "Image too big: " . $dim["x"] . "x" . number_format($dim["y"],0,"",""). ' (max 700x1000)';
+            echo '2';
+            exit();
             return false;
         }
 
