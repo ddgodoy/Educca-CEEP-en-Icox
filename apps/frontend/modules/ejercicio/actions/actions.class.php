@@ -1054,6 +1054,10 @@ class ejercicioActions extends sfActions
 		$url = $latex->getFormulaURL($latex_formula);
 
 		$pic = $picture_name.'.png';
+                
+                echo $pic;
+                exit();
+                
         $url = SF_ROOT_DIR.'/web/images/ecuaciones/'.$pic;
 
 
@@ -1131,8 +1135,8 @@ class ejercicioActions extends sfActions
   	{
   	  if (file_exists($new_file_path))
   	  {
-        unlink($new_file_path);
-      }
+                unlink($new_file_path);
+          }
       copy($temp_path, $new_file_path);
     }
 
