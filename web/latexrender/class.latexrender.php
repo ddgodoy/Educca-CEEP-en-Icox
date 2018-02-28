@@ -249,12 +249,9 @@ class LatexRender {
         $current_dir = getcwd();
 
         chdir($this->_tmp_dir);
-
-        echo $this->_tmp_dir."/".$this->_tmp_filename.".tex";
-        exit();
         
         // create temporary latex file
-        $fp = fopen($this->_tmp_dir."/".$this->_tmp_filename.".tex","a+");
+        $fp = fopen($this->_tmp_dir."/".$this->_tmp_filename."1.tex","a+");
 
         fputs($fp,$latex_document);
         fclose($fp);
