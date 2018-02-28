@@ -246,6 +246,9 @@ class LatexRender {
     function renderLatex($latex_formula) {
         $latex_document = $this->wrap_formula($latex_formula);
 
+        echo $latex_document;
+        exit();
+        
         $current_dir = getcwd();
 
         chdir($this->_tmp_dir);
@@ -266,8 +269,6 @@ class LatexRender {
 
         if ($status_code!=TRUE)
         {
-            echo '1';
-            exit();
           //$this->cleanTemporaryDirectory();
             chdir($current_dir);
             $this->_errorcode = 4;
@@ -294,8 +295,6 @@ class LatexRender {
             chdir($current_dir);
             $this->_errorcode = 5;
             $this->_errorextra = "Image too big: " . $dim["x"] . "x" . number_format($dim["y"],0,"",""). ' (max 700x1000)';
-            echo '2';
-            exit();
             return false;
         }
 
