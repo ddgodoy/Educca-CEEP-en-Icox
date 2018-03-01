@@ -262,16 +262,14 @@ class LatexRender {
         
         chmod($this->_tmp_dir."/".$this->_tmp_filename.".tex", 0777);
         
-        /*$command = "sudo ".$this->_latex_path." --interaction=nonstopmode ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
-        $var = exec($command);
-        echo "Length: ".strlen($var)."\n";
-        echo $var."\n";
-        exit();*/
+        $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
         
-        $output = array();
-        exec('ls -l', $output);
-        print_r($output);
+        echo $command;
         exit();
+        
+        exec($command);
+        
+        
         
         $status_code = is_file($this->_tmp_filename.".dvi");
 
