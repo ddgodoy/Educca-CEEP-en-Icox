@@ -262,7 +262,7 @@ class LatexRender {
         
         chmod($this->_tmp_dir."/".$this->_tmp_filename.".tex", 0777);
         
-        $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
+        $command = "sudo ".$this->_latex_path." --interaction=nonstopmode ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
         $var = exec($command);
         echo "Length: ".strlen($var)."\n";
         echo $var."\n";
