@@ -262,15 +262,16 @@ class LatexRender {
         
         chmod($this->_tmp_dir."/".$this->_tmp_filename.".tex", 0777);
         
-        $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
+        $command = $this->_latex_path." ---interaction=nonstopmode --halt-on-error ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
         
-        echo $command;
-        exit();
+        chdir( $this->_tmp_dir );
         
-        exec($command);
+        //exec($command);
         
-        
-        
+        if ($this->execute($command, NULL)) { // It allways False on Windows
+//                return false;
+        }
+                
         $status_code = is_file($this->_tmp_filename.".dvi");
 
         if ($status_code!=TRUE)
@@ -335,6 +336,26 @@ class LatexRender {
 
         chdir($current_dir);
     }
+    
+    /**
+    * execute an external command, with optional logging
+    * @param string $command command to execute
+    * @param file $log valid open file handle - log info will be written to this file
+    * @return return code from execution of command
+    */
+    function execute( $command, $log=null ) {
+        $output = array();
+        exec( $command, $output, $return_code );
+        if ($log) {
+            fwrite( $log, "COMMAND: $command \n" );
+            $outputs = implode( "\n", $output );
+            fwrite( $log, "OUTPUT: $outputs \n" );
+            fwrite( $log, "RETURN_CODE: $return_code\n " );
+        }
+        return $return_code;
+    }
+
+    
 }
 
 ?>
