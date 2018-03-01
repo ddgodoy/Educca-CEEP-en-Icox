@@ -261,6 +261,7 @@ class LatexRender {
         // create temporary dvi file
         
         chmod($this->_tmp_dir."/".$this->_tmp_filename.".tex", 0777);
+        chown($this->_tmp_dir."/".$this->_tmp_filename.".tex", "www-data:www-data");
         
         $command = $this->_latex_path." ---interaction=nonstopmode --halt-on-error ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
         chdir($this->_tmp_dir);
