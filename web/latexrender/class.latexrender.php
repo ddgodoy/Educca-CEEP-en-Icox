@@ -264,8 +264,8 @@ class LatexRender {
         
         $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
         $var = exec($command);
-        
-        echo $var;
+        echo "Length: ".strlen($var)."\n";
+        echo $var."\n";
         exit();
         
         $status_code = is_file($this->_tmp_filename.".dvi");
