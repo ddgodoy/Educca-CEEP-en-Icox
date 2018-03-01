@@ -251,14 +251,17 @@ class LatexRender {
         chdir($this->_tmp_dir);
         
         // create temporary latex file
-        $fp = fopen($this->_tmp_dir."/".$this->_tmp_filename."1.tex","a+");
+        $fp = fopen($this->_tmp_dir."/".$this->_tmp_filename.".tex","a+");
 
         fputs($fp,$latex_document);
         fclose($fp);
         
         
-        
+        // aca estoy 
         // create temporary dvi file
+        echo $this->_latex_path;
+        echo $this->_tmp_filename;
+        exit();
         $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_filename.".tex";
         exec($command);
 
