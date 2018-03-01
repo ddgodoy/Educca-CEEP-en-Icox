@@ -259,11 +259,12 @@ class LatexRender {
         
         // aca estoy 
         // create temporary dvi file
-        echo $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_filename.".tex";
-        exit();
-        $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_filename.".tex";
+        $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
         exec($command);
-
+        
+        echo '1';
+        exit();
+        
         $status_code = is_file($this->_tmp_filename.".dvi");
 
         if ($status_code!=TRUE)
