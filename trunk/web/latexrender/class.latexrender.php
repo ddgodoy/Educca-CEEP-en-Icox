@@ -260,7 +260,7 @@ class LatexRender {
         // aca estoy 
         // create temporary dvi file
         
-        chmod($this->_tmp_dir."/".$this->_tmp_filename.".tex", 777);
+        chmod($this->_tmp_dir."/".$this->_tmp_filename.".tex", 0777);
         
         $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
         exec($command);
