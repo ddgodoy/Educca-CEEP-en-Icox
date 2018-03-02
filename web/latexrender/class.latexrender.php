@@ -262,9 +262,9 @@ class LatexRender {
         
         chmod($this->_tmp_dir."/".$this->_tmp_filename.".tex", 0777);
         
-        $command = $this->_latex_path." ---interaction=nonstopmode --halt-on-error ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
+        $command = "echo . |".$this->_latex_path." ---interaction=nonstopmode --halt-on-error ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
         chdir($this->_tmp_dir);
-        passthru($command);
+        exec($command);
                 
         $status_code = is_file($this->_tmp_filename.".dvi");
 
