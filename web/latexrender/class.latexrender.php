@@ -34,10 +34,10 @@ class LatexRender {
     var $_tmp_dir = "tmp";
     // i was too lazy to write mutator functions for every single program used
     // just access it outside the class or change it here if nescessary
-    var $_latex_path = "latex"; 
-    var $_dvips_path = "dvips";
-    var $_convert_path = "convert";
-    var $_identify_path="identify";
+    var $_latex_path = "/usr/bin/latex"; 
+    var $_dvips_path = "/usr/bin/dvips";
+    var $_convert_path = "/usr/bin/convert";
+    var $_identify_path="/usr/bin/identify";
     var $_formula_density = 100;   // originally 110
     var $_xsize_limit = 700;
     var $_ysize_limit = 3000;
