@@ -264,8 +264,7 @@ class LatexRender {
         
         $command = "echo . |".$this->_latex_path." ---interaction=nonstopmode --halt-on-error ".$this->_tmp_dir."/".$this->_tmp_filename.".tex";
         chdir($this->_tmp_dir);
-        exec($command);
-        $array = exec('ls -l', $array);
+        $array = exec($command, $array);
         echo '<pre>';
         print_r($array);
         echo '</pre>';
