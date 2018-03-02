@@ -260,7 +260,7 @@ class LatexRender {
         
         
         // create temporary dvi file
-        $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_filename.".tex";
+        $command = $this->_latex_path." --interaction=nonstopmode -output-format dvi ".$this->_tmp_filename.".tex";
         exec($command);
 
         $status_code = is_file($this->_tmp_filename.".dvi");
