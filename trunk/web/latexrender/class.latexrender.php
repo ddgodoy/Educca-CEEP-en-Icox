@@ -264,6 +264,7 @@ class LatexRender {
         
         $command = $this->_latex_path." ---interaction=nonstopmode --halt-on-error ".$this->_tmp_dir."/temp84.tex";
         chdir($this->_tmp_dir);
+        echo $command.'<br/>';
         $array = exec($command, $output, $return);
         echo '<pre>';
         print_r($output);
