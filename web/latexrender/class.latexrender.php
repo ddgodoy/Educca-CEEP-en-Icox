@@ -194,16 +194,14 @@ class LatexRender {
      * @returns minimalistic LaTeX document containing the given formula
      */
     function wrap_formula($latex_formula) {
-        /*$string  = "\documentclass[".$this->_font_size."pt]{".$this->_latexclass."}\n";
+        $string  = "\documentclass[".$this->_font_size."pt]{".$this->_latexclass."}\n";
         $string .= "\usepackage[latin1]{inputenc}\n";
         $string .= "\usepackage{amsmath}\n";
         $string .= "\usepackage{amsfonts}\n";
         $string .= "\usepackage{amssymb}\n";
         $string .= "\usepackage{color}\n";
-        $string .= "\usepackage{graphicx}\n";  
+        $string .= "\usepackage[dvipdfm]{graphicx}\n";  
         $string .= "\usepackage{epsfig}\n"; 
-        $string .= "\usepackage[pdftex]{graphicx}\n"; 
-        $string .= "\usepackage{ifpdf}\n";
         $string .= "\usepackage{epsf}\n";
         $string .= "\pagestyle{empty}\n";
 	$string .= "\\newsavebox{\formulabox}\n";
@@ -227,39 +225,7 @@ class LatexRender {
 	$string .= "\closeout\foo\n";
         $string .= "\begin{document}\n";
 	$string .= "\usebox{\formulabox}\n";
-        $string .= "\end{document}\n";*/
-        $string = "%& --translate-file=utf-8
-\documentclass{article}
-
-\usepackage{setspace}
-\usepackage[polish]{babel}
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-
-\setlength{\parindent}{0pt}
-
-\pagestyle{plain}
-
-\begin{document}
-
-\section[A]{Ab}
-
-\subsection{B}
-
-\textsc{F}: x \\*
-\textsc{D}: xx\\*
-\textsc{S}: xxx \\*
-
-\vspace{1mm}
-
-blablabla.
-\vspace{2mm}
-
-\emph{N?} \\*
-śląź żań 
-\vspace{2mm} 
-
-\end{document}";
+        $string .= "\end{document}\n";
         return $string;
     }
 
