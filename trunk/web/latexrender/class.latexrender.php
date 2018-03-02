@@ -262,7 +262,7 @@ class LatexRender {
         
         chmod($this->_tmp_dir."/".$this->_tmp_filename.".tex", 0777);
         
-        $command = "cd ".$this->_tmp_dir." && ".$this->_latex_path." ---interaction=nonstopmode --halt-on-error ".$this->_tmp_dir."/temp84.tex -cover";
+        $command = "cd ".$this->_tmp_dir." && ".$this->_latex_path." ---interaction=nonstopmode --halt-on-error ".$this->_tmp_dir."/".$this->_tmp_filename.".tex -cover";
         chdir($this->_tmp_dir);
         echo $command.'<br/>';
         $array = exec($command, $output, $return);
