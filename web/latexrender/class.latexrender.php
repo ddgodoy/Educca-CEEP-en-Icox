@@ -194,7 +194,7 @@ class LatexRender {
      * @returns minimalistic LaTeX document containing the given formula
      */
     function wrap_formula($latex_formula) {
-        $string  = "\documentclass[".$this->_font_size."pt]{".$this->_latexclass."}\n";
+        /*$string  = "\documentclass[".$this->_font_size."pt]{".$this->_latexclass."}\n";
         $string .= '\renewcommand{\rmdefault}{ptm}'."\n";
         $string .= '\usepackage{palatino}'."\n";
         $string .= '\usepackage[T1]{fontenc}'."\n";
@@ -205,8 +205,18 @@ class LatexRender {
         
         $string .= "\begin{document}\n";
         $string .= $latex_formula;
-        $string .= "\end{document}\n";
+        $string .= "\end{document}\n";*/
 
+        $string = '\documentclass{article}
+\usepackage[active]{preview}
+\begin{document}
+\begin{preview}
+\[
+\pi = \sqrt{12}\sum^\infty_{k=0} \frac{ (-3)^{-k} }{ 2k+1 }
+\]
+\end{preview}
+\end{document}';
+        
         return $string;
     }
 
