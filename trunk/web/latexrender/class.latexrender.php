@@ -200,6 +200,7 @@ class LatexRender {
         $string .= "\usepackage{amsfonts}\n";
         $string .= "\usepackage{amssymb}\n";
         $string .= "\usepackage{color}\n";
+        $string .= "\usepackage{graphicx}\n";  
         $string .= "\pagestyle{empty}\n";
 	$string .= "\\newsavebox{\formulabox}\n";
 	$string .= "\\newlength{\formulawidth}\n";
@@ -277,7 +278,7 @@ class LatexRender {
         
         
         // create temporary dvi file
-        $command = $this->_latex_path." --interaction=nonstopmode -dvi ".$this->_tmp_filename.".tex";
+        $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_filename.".tex";
         exec($command);
 
         $status_code = is_file($this->_tmp_filename.".dvi");
