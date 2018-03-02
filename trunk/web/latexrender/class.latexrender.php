@@ -185,7 +185,7 @@ class LatexRender {
     // private functions
     // ====================================================================================
 
-    /**
+        /**
      * wraps a minimalistic LaTeX document around the formula and returns a string
      * containing the whole document as string. Customize if you want other fonts for
      * example.
@@ -195,20 +195,37 @@ class LatexRender {
      */
     function wrap_formula($latex_formula) {
         $string  = "\documentclass[".$this->_font_size."pt]{".$this->_latexclass."}\n";
-        $string .= '\renewcommand{\rmdefault}{ptm}'."\n";
-        $string .= '\usepackage{palatino}'."\n";
-        $string .= '\usepackage[T1]{fontenc}'."\n";
-
+        $string .= "\usepackage[latin1]{inputenc}\n";
+        $string .= "\usepackage{amsmath}\n";
+        $string .= "\usepackage{amsfonts}\n";
+        $string .= "\usepackage{amssymb}\n";
+        $string .= "\usepackage{color}\n";
         $string .= "\pagestyle{empty}\n";
-        $string .= '\setlength{\textwidth}{14cm}'."\n";
-        $string .= '\setlength{\parindent}{0cm}'."\n";
-        
+	$string .= "\\newsavebox{\formulabox}\n";
+	$string .= "\\newlength{\formulawidth}\n";
+	$string .= "\\newlength{\formulaheight}\n";
+	$string .= "\\newlength{\formuladepth}\n";
+	$string .= "\setlength{\\topskip}{0pt}\n";
+	$string .= "\setlength{\parindent}{0pt}\n";
+	$string .= "\setlength{\abovedisplayskip}{0pt}\n";
+	$string .= "\setlength{\belowdisplayskip}{0pt}\n";
+	$string .= "\begin{lrbox}{\formulabox}\n";
+	$string .= "$\\ ".$latex_formula."$\n";
+	$string .= "\end{lrbox}\n";
+	$string .= "\settowidth {\formulawidth}  {\usebox{\formulabox}}\n";
+	$string .= "\settoheight{\formulaheight} {\usebox{\formulabox}}\n";
+	$string .= "\settodepth {\formuladepth}  {\usebox{\formulabox}}\n";
+	$string .= "\\newwrite\foo\n";
+	$string .= "\immediate\openout\foo=\jobname.depth\n";
+ 	$string .= "    \addtolength{\formuladepth} {1pt}\n";
+	$string .= "    \immediate\write\foo{\\the\formuladepth}\n";
+	$string .= "\closeout\foo\n";
         $string .= "\begin{document}\n";
-        $string .= $latex_formula;
+	$string .= "\usebox{\formulabox}\n";
         $string .= "\end{document}\n";
-
         return $string;
     }
+
 
     /**
      * returns the dimensions of a picture file using 'identify' of the
