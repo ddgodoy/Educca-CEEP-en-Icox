@@ -211,9 +211,7 @@ class LatexRender {
 \usepackage[active]{preview}
 \begin{document}
 \begin{preview}
-\[
-\pi = \sqrt{12}\sum^\infty_{k=0} \frac{ (-3)^{-k} }{ 2k+1 }
-\]
+'.$latex_formula.'
 \end{preview}
 \end{document}';
         
