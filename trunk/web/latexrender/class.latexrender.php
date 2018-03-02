@@ -207,13 +207,13 @@ class LatexRender {
         $string .= $latex_formula;
         $string .= "\end{document}\n";*/
 
-        $string = '\documentclass{article}
-\usepackage[active]{preview}
-\begin{document}
-\begin{preview}
-'.$latex_formula.'
-\end{preview}
-\end{document}';
+        $string =  '\documentclass{article}
+                    \usepackage[active]{preview}
+                    \begin{document}
+                    \begin{preview}
+                    '.$latex_formula.'
+                    \end{preview}
+                    \end{document}';
         
         return $string;
     }
