@@ -204,6 +204,7 @@ class LatexRender {
         $string .= "\usepackage{epsfig}\n"; 
         $string .= "\usepackage[pdftex]{graphicx}\n"; 
         $string .= "\usepackage{ifpdf}\n";
+        $string .= "\usepackage{epsf,psfig}\n";
         $string .= "\pagestyle{empty}\n";
 	$string .= "\\newsavebox{\formulabox}\n";
 	$string .= "\\newlength{\formulawidth}\n";
