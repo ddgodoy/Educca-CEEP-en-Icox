@@ -266,7 +266,7 @@ class LatexRender {
         chdir($this->_tmp_dir);
         $array = exec($command, $output, $return);
         echo '<pre>';
-        print_r($array);
+        print_r($output);
         echo '</pre>';
         exit();
         
