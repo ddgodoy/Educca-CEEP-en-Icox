@@ -21,6 +21,7 @@
  * @version v0.8
  * @package latexrender
  *
+ * This version includes Mike Boyle's modifications to allow vertical offset of LaTeX formulae
  */
 
 class LatexRender {
@@ -28,27 +29,27 @@ class LatexRender {
     // ====================================================================================
     // Variable Definitions
     // ====================================================================================
-    var $_picture_name; 
-    var $_picture_path = "pictures";
-    var $_picture_path_httpd = "pictures";
-    var $_tmp_dir = "tmp";
+    var $_picture_path = "";
+    var $_picture_path_httpd = "";
+    var $_tmp_dir = "";
     // i was too lazy to write mutator functions for every single program used
     // just access it outside the class or change it here if nescessary
-    var $_latex_path = "latex"; 
-    var $_dvips_path = "dvips";
-    var $_convert_path = "convert";
-    var $_identify_path="identify";
-    var $_formula_density = 100;   // originally 110
-    var $_xsize_limit = 700;
-    var $_ysize_limit = 3000;
-    var $_string_length_limit = 1500;
-	  var $_font_size = 11;
-	  var $_latexclass = "article"; //install extarticle class if you wish to have smaller font sizes
+    var $_latex_path = "/usr/bin/latex";
+    var $_dvips_path = "/usr/bin/dvips";
+    var $_convert_path = "/usr/bin/convert";
+    var $_identify_path="/usr/bin/identify";
+    var $_formula_density = 120;
+    var $_xsize_limit = 800;
+    var $_ysize_limit = 600;
+    var $_string_length_limit = 10000;
+	var $_font_size = 10;
+	var $_latexclass = "article"; //install extarticle class if you wish to have smaller font sizes
     var $_tmp_filename;
-	  var $_image_format = "png"; //change to png if you prefer
+	var $_image_format = "gif"; //change to png if you prefer
     // this most certainly needs to be extended. in the long term it is planned to use
     // a positive list for more security. this is hopefully enough for now. i'd be glad
     // to receive more bad tags !
+
     var $_latex_tags_blacklist = array(
         "include","def","command","loop","repeat","open","toks","output","input",
         "catcode","name","^^",
@@ -57,7 +58,7 @@ class LatexRender {
         "\\afterassignment","\\expandafter","\\noexpand","\\special"
         );
     var $_errorcode = 0;
-	  var $_errorextra = "";
+	var $_errorextra = "";
 
 
     // ====================================================================================
@@ -70,26 +71,16 @@ class LatexRender {
      * @param string path where the rendered pictures should be stored
      * @param string same path, but from the httpd chroot
      */
-    function LatexRender($picture_name, $picture_path, $picture_path_httpd, $tmp_dir) {
-        $this->_picture_name = $picture_name;
+    function LatexRender($picture_path,$picture_path_httpd,$tmp_dir) {
         $this->_picture_path = $picture_path;
         $this->_picture_path_httpd = $picture_path_httpd;
         $this->_tmp_dir = $tmp_dir;
-        $this->_tmp_filename = $picture_name;
+        $this->_tmp_filename = md5(rand());
     }
 
     // ====================================================================================
     // public functions
     // ====================================================================================
-
-    function setFontSize($size)
-		{
-		  $this->_font_size= $size;
-			if($size<10 || $size>12)
-			  $this->_latexclass='extarticle';
-			else
-			  $this->_latexclass='article';
-		}
 
     /**
      * Picture path Mutator function
@@ -137,47 +128,60 @@ class LatexRender {
      * requested LaTeX formula. If anything fails, the resultvalue is false.
      */
     function getFormulaURL($latex_formula) {
+        // circumvent certain security functions of web-software which
+        // is pretty pointless right here
+        $latex_formula = preg_replace("/&gt;/i", ">", $latex_formula);
+        $latex_formula = preg_replace("/&lt;/i", "<", $latex_formula);
 
-        $latex_formula = htmlentities($latex_formula, ENT_COMPAT, "UTF-8");
-        $bad_characters = array("&aacute;", "&eacute;", "&iacute;", "&oacute;", "&uacute;", "&Aacute;", "&Eacute;", "&Iacute;", "&Oacute;", "&Uacute;", "&ntilde;", "&Ntilde;", "&iquest;", "&gt;", "&lt;", "&amp;", "&quot;");
-        $replacement = array("\\'a", "\\'e", "\\'i", "\\'o", "\\'u", "\\'A", "\\'E", "\\'I", "\\'O", "\\'U", '\~n', '\~N', '\textquestiondown{}', '>', '<', "&", '"');
-        $latex_formula = str_replace($bad_characters, $replacement, $latex_formula);
+        $formula_hash = md5($latex_formula);
 
+        $filename = $formula_hash.".".$this->_image_format;
+        //offset: look for extended file name
+        $full_path_filename = $this->getPicturePath()."/".$this->FindFile($filename);
 
+        if (is_file($full_path_filename)) {
+            return $this->getPicturePathHTTPD()."/".$this->FindFile($filename);
+        } else {
+            // security filter: reject too long formulas
+            if (strlen($latex_formula) > $this->_string_length_limit) {
+            	$this->_errorcode = 1;
+                $this->_errorextra = ": ".strlen($latex_formula)." > ".$this->_string_length_limit;
+                return false;
+            }
 
-        $filename = $this->_picture_name.".".$this->_image_format;
-        $full_path_filename = $this->getPicturePath()."/".$filename;
+            // security filter: try to match against LaTeX-Tags Blacklist
+            for ($i=0;$i<sizeof($this->_latex_tags_blacklist);$i++) {
+                if (stristr($latex_formula,$this->_latex_tags_blacklist[$i])) {
+                	$this->_errorcode = 2;
+                    $this->_errorextra = ": ".$this->_latex_tags_blacklist[$i];
+                    return false;
+                }
+            }
 
-        if (file_exists($full_path_filename))
-				{
-           unlink($full_path_filename);
-        }
-
-        // security filter: reject too long formulas
-        if (strlen($latex_formula) > $this->_string_length_limit) {
-        	$this->_errorcode = 1;
-
-            return false;
-        }
-
-        // security filter: try to match against LaTeX-Tags Blacklist
-        for ($i=0;$i<sizeof($this->_latex_tags_blacklist);$i++) {
-            if (stristr($latex_formula,$this->_latex_tags_blacklist[$i])) {
-            	$this->_errorcode = 2;
-
+            // security checks assume correct formula, let's render it
+            if ($this->renderLatex($latex_formula)) {
+            	//offset: look for extended file name
+                return $this->getPicturePathHTTPD()."/".$this->FindFile($filename);
+            } else {
+                // uncomment if required
+                $this->_errorcode = 3;
                 return false;
             }
         }
+    }
 
-        // security checks assume correct formula, let's render it
-        if ($this->renderLatex($latex_formula)) {
-            return $this->getPicturePathHTTPD()."/".$filename;
-        } else {
-            // uncomment if required
-            //$this->_errorcode = 3;
-            return false;
-        }
-
+    //offset: find the file whose name starts with $formula_hash
+    function FindFile($lookforfile) {
+    	$lookforfile = str_replace(".".$this->_image_format,"",$lookforfile);
+	$dp=opendir($this->getPicturePath());
+	$filenametofind = "";
+	while($file=readdir($dp) AND $filenametofind=="") {
+	  if (substr($file,0,strlen($lookforfile))==$lookforfile) {
+		$filenametofind = $file;
+	    }
+	  }
+	closedir($dp);
+	return $filenametofind;
     }
 
     // ====================================================================================
@@ -194,16 +198,33 @@ class LatexRender {
      */
     function wrap_formula($latex_formula) {
         $string  = "\documentclass[".$this->_font_size."pt]{".$this->_latexclass."}\n";
-        $string .= '\renewcommand{\rmdefault}{ptm}'."\n";
-        $string .= '\usepackage{palatino}'."\n";
-        $string .= '\usepackage[T1]{fontenc}'."\n";
-
+        $string .= "\usepackage[latin1]{inputenc}\n";
+        $string .= "\usepackage{amsmath}\n";
+        $string .= "\usepackage{amsfonts}\n";
+        $string .= "\usepackage{amssymb}\n";
+        $string .= "\usepackage{color}\n";
         $string .= "\pagestyle{empty}\n";
-        $string .= '\setlength{\textwidth}{14cm}'."\n";
-        $string .= '\setlength{\parindent}{0cm}'."\n";
-        
+	$string .= "\\newsavebox{\formulabox}\n";
+	$string .= "\\newlength{\formulawidth}\n";
+	$string .= "\\newlength{\formulaheight}\n";
+	$string .= "\\newlength{\formuladepth}\n";
+	$string .= "\setlength{\\topskip}{0pt}\n";
+	$string .= "\setlength{\parindent}{0pt}\n";
+	$string .= "\setlength{\abovedisplayskip}{0pt}\n";
+	$string .= "\setlength{\belowdisplayskip}{0pt}\n";
+	$string .= "\begin{lrbox}{\formulabox}\n";
+	$string .= "$\\ ".$latex_formula."$\n";
+	$string .= "\end{lrbox}\n";
+	$string .= "\settowidth {\formulawidth}  {\usebox{\formulabox}}\n";
+	$string .= "\settoheight{\formulaheight} {\usebox{\formulabox}}\n";
+	$string .= "\settodepth {\formuladepth}  {\usebox{\formulabox}}\n";
+	$string .= "\\newwrite\foo\n";
+	$string .= "\immediate\openout\foo=\jobname.depth\n";
+ 	$string .= "    \addtolength{\formuladepth} {1pt}\n";
+	$string .= "    \immediate\write\foo{\\the\formuladepth}\n";
+	$string .= "\closeout\foo\n";
         $string .= "\begin{document}\n";
-        $string .= $latex_formula;
+	$string .= "\usebox{\formulabox}\n";
         $string .= "\end{document}\n";
 
         return $string;
@@ -245,54 +266,33 @@ class LatexRender {
      */
     function renderLatex($latex_formula) {
         $latex_document = $this->wrap_formula($latex_formula);
-        
+
         $current_dir = getcwd();
 
         chdir($this->_tmp_dir);
-        
+
         // create temporary latex file
         $fp = fopen($this->_tmp_dir."/".$this->_tmp_filename.".tex","a+");
-
         fputs($fp,$latex_document);
         fclose($fp);
-        
-        
-        // aca estoy 
-        // create temporary dvi file
-        
-        chmod($this->_tmp_dir."/".$this->_tmp_filename.".tex", 0777);
-        
-        $command = "cd ".$this->_tmp_dir." && ".$this->_latex_path." ---interaction=nonstopmode --halt-on-error ".$this->_tmp_dir."/".$this->_tmp_filename.".tex -cover";
-        chdir($this->_tmp_dir);
-        echo $command.'<br/>';
-        $array = exec($command, $output, $return);
-        echo '<pre>';
-        print_r($output);
-        echo '</pre>';
-        exit();
-        
-        $status_code = is_file($this->_tmp_filename.".dvi");
 
-        if ($status_code!=TRUE)
-        {
-          //$this->cleanTemporaryDirectory();
-            chdir($current_dir);
-            $this->_errorcode = 4;
-          return false;
-        }
-        
+        // create temporary dvi file
+        $command = $this->_latex_path." --interaction=nonstopmode ".$this->_tmp_filename.".tex";
+        $status_code = exec($command);
+
+        if (!$status_code) { $this->cleanTemporaryDirectory(); chdir($current_dir); $this->_errorcode = 4; return false; }
+
         // convert dvi file to postscript using dvips
         $command = $this->_dvips_path." -E ".$this->_tmp_filename.".dvi"." -o ".$this->_tmp_filename.".ps";
         $status_code = exec($command);
 
         // imagemagick convert ps to image and trim picture
         $command = $this->_convert_path." -density ".$this->_formula_density.
-                    " -trim ".$this->_tmp_filename.".ps ".
+                    " -trim -transparent \"#FFFFFF\" ".$this->_tmp_filename.".ps ".
                     $this->_tmp_filename.".".$this->_image_format;
 
         $status_code = exec($command);
 
-        //die ($command);
         // test picture for correct dimensions
         $dim = $this->getDimensions($this->_tmp_filename.".".$this->_image_format);
 
@@ -300,17 +300,23 @@ class LatexRender {
             $this->cleanTemporaryDirectory();
             chdir($current_dir);
             $this->_errorcode = 5;
-            $this->_errorextra = "Image too big: " . $dim["x"] . "x" . number_format($dim["y"],0,"",""). ' (max 700x1000)';
+            $this->_errorextra = ": " . $dim["x"] . "x" . number_format($dim["y"],0,"","");
             return false;
         }
 
-        $filename = $this->getPicturePath()."/".$this->_picture_name.".".$this->_image_format;
+        // copy temporary formula file to cahed formula directory
+        $latex_hash = md5($latex_formula);
+	// offset: change file name to include depth information
+	$depthfile = $this->_tmp_filename.".depth";
+	if(is_readable($depthfile)) {
+		$offset = file($depthfile);
+		$filename = $this->getPicturePath()."/".$latex_hash."_".rtrim($offset[0]).".".$this->_image_format;
+	} else {
+		$filename = $this->getPicturePath()."/".$latex_hash.".".$this->_image_format;
+	}
+	
+        $status_code = copy($this->_tmp_filename.".".$this->_image_format,$filename);
         
-        echo $this->_tmp_filename.".".$this->_image_format.'<br>';
-        echo $filename;
-        exit();
-		    $status_code = copy($this->_tmp_filename.".".$this->_image_format,$filename);
-
         $this->cleanTemporaryDirectory();
 
         if (!$status_code) { chdir($current_dir); $this->_errorcode = 6; return false; }
@@ -326,15 +332,18 @@ class LatexRender {
         $current_dir = getcwd();
         chdir($this->_tmp_dir);
 
-        if(is_file($ff=$this->_tmp_dir."/".$this->_tmp_filename.".tex")) unlink($ff);
-        if(is_file($ff=$this->_tmp_dir."/".$this->_tmp_filename.".aux")) unlink($ff);
-        if(is_file($ff=$this->_tmp_dir."/".$this->_tmp_filename.".log")) unlink($ff);
-        if(is_file($ff=$this->_tmp_dir."/".$this->_tmp_filename.".dvi")) unlink($ff);
-        if(is_file($ff=$this->_tmp_dir."/".$this->_tmp_filename.".ps")) unlink($ff);
-        if(is_file($ff=$this->_tmp_dir."/".$this->_tmp_filename.".".$this->_image_format)) unlink($ff);
+        unlink($this->_tmp_dir."/".$this->_tmp_filename.".tex");
+        unlink($this->_tmp_dir."/".$this->_tmp_filename.".aux");
+        unlink($this->_tmp_dir."/".$this->_tmp_filename.".log");
+        unlink($this->_tmp_dir."/".$this->_tmp_filename.".dvi");
+        unlink($this->_tmp_dir."/".$this->_tmp_filename.".ps");
+        // offset: delete new .depth file
+        unlink($this->_tmp_dir."/".$this->_tmp_filename.".depth");
+        unlink($this->_tmp_dir."/".$this->_tmp_filename.".".$this->_image_format);
 
         chdir($current_dir);
     }
+
 }
 
 ?>
