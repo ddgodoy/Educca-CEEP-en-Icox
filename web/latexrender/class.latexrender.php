@@ -200,7 +200,6 @@ class LatexRender {
         $string .= "\usepackage{amsfonts}\n";
         $string .= "\usepackage{amssymb}\n";
         $string .= "\usepackage{color}\n";
-        $string .= "\usepackage[dvipdfm]{graphicx}\n";  
         $string .= "\usepackage{epsfig}\n"; 
         $string .= "\usepackage[pdftex]{graphicx}\n"; 
         $string .= "\usepackage{ifpdf}\n";
