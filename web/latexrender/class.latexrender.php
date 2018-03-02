@@ -201,6 +201,8 @@ class LatexRender {
         $string .= "\usepackage{amssymb}\n";
         $string .= "\usepackage{color}\n";
         $string .= "\usepackage{graphicx}\n";  
+        $string .= "\usepackage{epsfig}\n"; 
+        $string .= "\usepackage[pdftex]{graphicx}\n"; 
         $string .= "\pagestyle{empty}\n";
 	$string .= "\\newsavebox{\formulabox}\n";
 	$string .= "\\newlength{\formulawidth}\n";
