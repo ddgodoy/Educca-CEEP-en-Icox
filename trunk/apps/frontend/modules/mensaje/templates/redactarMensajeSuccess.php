@@ -90,7 +90,8 @@ function checkNinguno()
             </tr>
             <tr>
                 <td>Adjuntos</td>
-                <td><input type="file" name="upfile" id="upfile" class="file_input"></td>
+                <td><input type="file1" name="upfile1" id="upfile1" class="file_input"></td>
+                <td><strong>+</strong></td>
             </tr>
           </table>
           <?php echo textarea_tag('contenidomsj', '', 'rich=true size=85x20 tinymce_options=language:"es", height:"435px", width:"510px", theme:"advanced"') ?></td>
