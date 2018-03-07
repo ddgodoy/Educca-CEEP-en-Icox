@@ -90,7 +90,7 @@ function checkNinguno()
             </tr>
             <tr>
                 <td>Adjuntos</td>
-                <td><input type="file1" name="upfile1" id="upfile1" class="file_input"></td>
+                <td><input type="file" name="upfile1" id="upfile1" class="file_input"></td>
                 <td><strong>+</strong></td>
             </tr>
           </table>
