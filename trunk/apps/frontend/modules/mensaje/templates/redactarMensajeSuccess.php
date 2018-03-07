@@ -91,7 +91,7 @@ function checkNinguno()
             <tr>
                 <td>Adjuntos</td>
                 <td><input type="file" name="upfile1" id="upfile1" class="file_input"></td>
-                <td><strong>+</strong></td>
+                <td><strong><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong></td>
             </tr>
           </table>
           <?php echo textarea_tag('contenidomsj', '', 'rich=true size=85x20 tinymce_options=language:"es", height:"435px", width:"510px", theme:"advanced"') ?></td>
