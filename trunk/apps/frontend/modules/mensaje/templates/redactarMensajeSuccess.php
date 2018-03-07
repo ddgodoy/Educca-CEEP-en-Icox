@@ -88,6 +88,10 @@ function checkNinguno()
                 } ?>
               </td>
             </tr>
+            <tr>
+                <td>Adjuntos</td>
+                <td><input type="file" name="upfile" id="upfile" class="file_input"></td>
+            </tr>
           </table>
           <?php echo textarea_tag('contenidomsj', '', 'rich=true size=85x20 tinymce_options=language:"es", height:"435px", width:"510px", theme:"advanced"') ?></td>
          <td><div class="separadiv"><strong>&nbsp;Destinatarios:</strong></div>
@@ -111,9 +115,6 @@ function checkNinguno()
       <?php if ($es_respuesta) {
         echo ("<INPUT TYPE=hidden NAME=\"numero_destinatarios\" VALUE=\"1\">");
       } ?>
-          </td>
-        </tr>
-      </table>
       <table border="0" width="100%"">
 			   <tr>
 			      <td style="width:20%;"><?php echo volver(); ?></td>
