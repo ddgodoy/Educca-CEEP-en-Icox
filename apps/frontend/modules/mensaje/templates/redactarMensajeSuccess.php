@@ -50,7 +50,9 @@ function checkNinguno()
 
 function addFile()
 {
+    var count_li = document.getElementById("ul-file").getElementsByTagName("li").length;
     
+    alert(count_li); 
 }
 </script>
 <div id="redactar_mensaje">
@@ -100,7 +102,6 @@ function addFile()
                           <td class="param">Adjuntos</td>  
                           <td>
                               <ul id="ul-file" style="list-style-type: none">
-                                  <li><input type="file" name="upfile1" id="upfile1" class="file_input"></li>
                                   <li><input type="file" name="upfile1" id="upfile1" class="file_input"></li>
                               </ul>
                           </td>
