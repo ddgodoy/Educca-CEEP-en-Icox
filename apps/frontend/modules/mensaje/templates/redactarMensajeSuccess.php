@@ -52,7 +52,12 @@ function addFile()
 {
     var count_li = document.getElementById("ul-file").getElementsByTagName("li").length;
     
-    alert(count_li); 
+    var new_li = count_li + 1;
+    
+    var node = document.createElement("li");                 // Create a <li> node
+    var textnode = document.createTextNode('<input type="file" name="upfile'+new_li+'" id="upfile'+new_li+'" class="file_input">');         // Create a text node
+    node.appendChild(textnode);                              // Append the text to <li>
+    document.getElementById("ul-file").appendChild(node);
 }
 </script>
 <div id="redactar_mensaje">
