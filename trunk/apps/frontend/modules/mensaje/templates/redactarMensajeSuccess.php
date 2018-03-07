@@ -97,16 +97,14 @@ function addFile()
                 <td colspan="3">
                     <table>
                         <tr>
-                          <td>Adjuntos</td>  
+                          <td class="param">Adjuntos</td>  
                           <td>
                               <ul id="ul-file" style="list-style-type: none">
                                   <li><input type="file" name="upfile1" id="upfile1" class="file_input"></li>
                                   <li><input type="file" name="upfile1" id="upfile1" class="file_input"></li>
                               </ul>
                           </td>
-                        </tr>
-                        <tr>
-                           <td><strong><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong></td> 
+                          <td><strong><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong></td> 
                         </tr>
                     </table>
                 </td>
