@@ -94,7 +94,7 @@ function addFile()
               </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="3">
                     <table>
                         <tr>
                           <td>Adjuntos</td>  
