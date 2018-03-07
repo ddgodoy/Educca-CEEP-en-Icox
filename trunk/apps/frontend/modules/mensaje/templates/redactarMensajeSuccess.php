@@ -101,7 +101,7 @@ function addFile()
                         </tr>
                         <tr id="tr-file">
                           <td>
-                              <ul>
+                              <ul style="list-style-type: none">
                                   <li><input type="file" name="upfile1" id="upfile1" class="file_input"></li>
                                   <li><input type="file" name="upfile1" id="upfile1" class="file_input"></li>
                               </ul>
