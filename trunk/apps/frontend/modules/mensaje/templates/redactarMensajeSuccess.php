@@ -47,6 +47,11 @@ function checkNinguno()
     if (inputs[i].type == 'checkbox') { inputs[i].checked = false; }
   }
 }
+
+function addFile()
+{
+    
+}
 </script>
 <div id="redactar_mensaje">
   <div class="tit_box_mensajes">
@@ -89,9 +94,17 @@ function checkNinguno()
               </td>
             </tr>
             <tr>
-                <td>Adjuntos</td>
-                <td><input type="file" name="upfile1" id="upfile1" class="file_input"></td>
-                <td><strong><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong></td>
+                <td>
+                    <table>
+                        <tr>
+                          <td>Adjuntos</td>  
+                          <td><input type="file" name="upfile1" id="upfile1" class="file_input"></td>
+                        </tr>
+                        <tr>
+                           <td><strong><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong></td> 
+                        </tr>
+                    </table>
+                </td>
             </tr>
           </table>
           <?php echo textarea_tag('contenidomsj', '', 'rich=true size=85x20 tinymce_options=language:"es", height:"435px", width:"510px", theme:"advanced"') ?></td>
