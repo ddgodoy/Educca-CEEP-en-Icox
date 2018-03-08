@@ -267,15 +267,6 @@ class mensajeActions extends sfActions
     $contenido = $this->getRequestParameter('contenidomsj');
     $couint_file = $this->getRequestParameter('count_file');
     
-    if($couint_file>=1){
-          
-          for($i=1; $i<=$couint_file; $i++){
-              echo $i;
-          }
-          
-      }
-      exit();
-
     $errores = array();
     $destinatarios = array();
 
@@ -376,10 +367,27 @@ class mensajeActions extends sfActions
 
       $mensaje->save();
       
+      $ruta = SF_ROOT_DIR.'/web/uploads/correo/'.$mensaje->getId().'/';
+      
+      if(!file_exists($ruta)){
+         mkdir($ruta, 0777);
+      }
+      
       if($couint_file>=1){
           
-          for($i=0; $i<=$couint_file; $i++){
-              echo $i;
+          for($i=1; $i<=$couint_file; $i++){
+              if ($_FILES['upfile'.$i]['name'] != '')
+              {
+                    if ($_FILES['upfile'.$i]['size'] > 2000000){
+                      array_push($errores, 'El fichero enviado '.$_FILES['upfile'.$i]['name'].' es demasiado grande, supera los 2mb.<br>');  
+                    }else{
+                        if (file_exists($ruta.$_FILES['upfile'.$i]['name']))
+                        {
+                          unlink($ruta.$_FILES['upfile'.$i]['name']);
+                        }
+                        copy($_FILES['upfile'.$i]['tmp_name'] ,$ruta.$_FILES['upfile'.$i]['name']);
+                    }
+              }
           }
           
       }
