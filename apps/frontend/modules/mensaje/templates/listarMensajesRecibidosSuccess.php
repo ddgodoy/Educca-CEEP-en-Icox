@@ -18,7 +18,7 @@
       <?php $fondo = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
       <tr<?php echo ($mensaje->getLeido())? " class=\"leido\"":" class=\"noleido\""; echo $fondo;?>>
         <td class="td1"><?php echo checkbox_tag("mensaje$i", $mensaje->getId(), false) ?></td>
-        <td class="td3"><?php $user = UsuarioPeer::RetrieveByPk($mensaje->getIdEmisor()); echo truncate_text($user->getNombre()." ".$user->getApellidos(), 35); ?></td>
+        <td class="td3"><?php $user = UsuarioPeer::RetrieveByPk($mensaje->getIdEmisor()); if($user){echo truncate_text($user->getNombre()." ".$user->getApellidos(), 35);} ?></td>
         <td class="td4"><?php echo link_to(truncate_text($mensaje->getAsunto_mensaje()->getDescripcion(), 30), 'mensaje/mostrarMensajeRecibido?id_mensaje='.$mensaje->getId(),array('name' => 'ln_mensaje'.$mensaje->getId())) ?></td>
         <td class="td5"><?php $curso = CursoPeer::RetrieveByPk($mensaje->getIdCurso()); echo truncate_text($curso->getNombre(), 30) ?></td>
         <td class="td6"><?php echo $mensaje->getCreatedAt('H:i d/m/Y') ?></td>

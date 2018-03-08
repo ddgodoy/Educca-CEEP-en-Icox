@@ -391,7 +391,6 @@ class mensajeActions extends sfActions
           }
           
       }
-      exit();
       
       $this->mensaje = $mensaje;
       $this->redirect('mensaje/mensajesEnviados');
