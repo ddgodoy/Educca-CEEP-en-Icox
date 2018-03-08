@@ -66,7 +66,7 @@ function addFile()
   	<h2 class="titbox"><?php if ($es_respuesta){echo("Responder");} else {echo("Redactar Mensaje");}?></h2>
   </div>
   <div class="cont_box_correo">
-    <?php echo form_tag('mensaje/enviarMensaje',array('name'=>'fredactar')) ?>
+    <?php echo form_tag('mensaje/enviarMensaje',array('name'=>'fredactar', 'enctype' => 'multipart/form-data',)) ?>
     <div class="cuerpo_mensaje">
         <table width="100%">
          <tr>
