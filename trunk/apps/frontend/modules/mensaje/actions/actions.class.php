@@ -269,7 +269,7 @@ class mensajeActions extends sfActions
     
     if($couint_file>=1){
           
-          for($i=0; $i<=$couint_file; $i++){
+          for($i=1; $i<=$couint_file; $i++){
               echo $i;
           }
           
