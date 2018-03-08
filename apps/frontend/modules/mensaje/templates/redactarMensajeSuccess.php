@@ -58,6 +58,7 @@ function addFile()
     node.innerHTML = '<input type="file" name="upfile'+new_li+'" id="upfile'+new_li+'" class="file_input">'
                                  // Append the text to <li>
     document.getElementById("ul-file").appendChild(node);
+    document.getElementById("count_file").value = new_li;
 }
 </script>
 <div id="redactar_mensaje">
@@ -110,7 +111,10 @@ function addFile()
                                   <li><input type="file" name="upfile1" id="upfile1" class="file_input"></li>
                               </ul>
                           </td>
-                          <td><strong onclick="addFile()" style="cursor: pointer"><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong></td> 
+                          <td>
+                              <strong onclick="addFile()" style="cursor: pointer"><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong>
+                              <input name="count_file" id="count_file" value="1"/>
+                          </td> 
                         </tr>
                     </table>
                 </td>
