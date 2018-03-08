@@ -113,7 +113,7 @@ function addFile()
                           </td>
                           <td>
                               <strong onclick="addFile()" style="cursor: pointer"><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong>
-                              <input name="count_file" id="count_file" value="1"/>
+                              <input name="count_file" id="count_file" type="hidden" value="1"/>
                           </td> 
                         </tr>
                     </table>
