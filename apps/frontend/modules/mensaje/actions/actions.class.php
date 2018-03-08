@@ -265,6 +265,16 @@ class mensajeActions extends sfActions
     $curso = $this->getRequestParameter('curso');
     $asunto = $this->getRequestParameter('asunto');
     $contenido = $this->getRequestParameter('contenidomsj');
+    $couint_file = $this->getRequestParameter('count_file');
+    
+    if($couint_file>=1){
+          
+          for($i=0; $i<=$couint_file; $i++){
+              echo $i;
+          }
+          
+      }
+      exit();
 
     $errores = array();
     $destinatarios = array();
@@ -365,6 +375,16 @@ class mensajeActions extends sfActions
       }
 
       $mensaje->save();
+      
+      if($couint_file>=1){
+          
+          for($i=0; $i<=$couint_file; $i++){
+              echo $i;
+          }
+          
+      }
+      exit();
+      
       $this->mensaje = $mensaje;
       $this->redirect('mensaje/mensajesEnviados');
     }
