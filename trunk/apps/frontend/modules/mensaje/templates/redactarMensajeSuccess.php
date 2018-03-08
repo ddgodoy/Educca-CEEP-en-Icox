@@ -110,7 +110,7 @@ function addFile()
                                   <li><input type="file" name="upfile1" id="upfile1" class="file_input"></li>
                               </ul>
                           </td>
-                          <td><strong onclick="addFile()"><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong></td> 
+                          <td><strong onclick="addFile()" style="cursor: pointer"><?php echo image_tag('add_icon.gif','Title=Agregar Archivo class=ico_profesor'); ?></strong></td> 
                         </tr>
                     </table>
                 </td>
