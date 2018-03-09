@@ -437,7 +437,18 @@ class mensajeActions extends sfActions
   {
     self::comprobarPermisoMensaje($this->getRequestParameter('id_mensaje'));
     $mensaje = MensajePeer::RetrieveByPk($this->getRequestParameter('id_mensaje'));
+    $this->files = array();
 
+    $ruta = SF_ROOT_DIR.'/web/uploads/correo/'.$mensaje->getId().'/';
+    if(file_exists($ruta)){
+        $this->files = scandir($ruta);
+        $this->files = array_diff(scandir($ruta), array('.', '..'));
+        echo '<pre>';
+        print_r($this->files);
+        echo '</pre>';
+        exit();
+    }    
+    
     if ($this->hasRequestParameter('opcion')) {
       $opcion = $this->getRequestParameter('opcion');
 
