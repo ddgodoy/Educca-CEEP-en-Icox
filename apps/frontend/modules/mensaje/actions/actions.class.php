@@ -410,7 +410,9 @@ class mensajeActions extends sfActions
 
     $this->files = array();
     
-    $ruta = SF_ROOT_DIR.'/web/uploads/correo/'.$mensaje->getId().'/';
+    $folder = $mensaje->getId()+1;
+    
+    $ruta = SF_ROOT_DIR.'/web/uploads/correo/'.$folder.'/';
     if(file_exists($ruta)){
         $this->files = scandir($ruta);
         $this->files = array_diff(scandir($ruta), array('.', '..'));
