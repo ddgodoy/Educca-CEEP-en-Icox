@@ -36,6 +36,14 @@
                 <td class="titulo">Curso:</td>
                 <td><?php $curso = CursoPeer::RetrieveByPk($mensaje->getIdCurso()); echo $curso->getNombre() ?></td>
               </tr>
+              <tr>
+                  <td class="titulo">Adjuntos:</td>
+                  <?php if(count($files)>0): ?>
+                    <?php foreach ($files as $file): ?>
+                        <td></td>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+              </tr>
             </table>
         </div>
         <div class="cont_mensaje">
