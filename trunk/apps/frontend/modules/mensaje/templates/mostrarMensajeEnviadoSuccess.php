@@ -38,8 +38,8 @@
               </tr>
             </table>
         </div>
-        <div>
-            <table>
+        <div class="detalles" style="background-repeat: round;">
+            <table class="tabladetalles">
               <tr>
                   <td class="titulo">Adjuntos:</td>
                   <?php if(count($files)>0): ?>
