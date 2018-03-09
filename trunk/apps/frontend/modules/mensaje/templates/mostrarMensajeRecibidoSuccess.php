@@ -57,6 +57,25 @@
               </tr>
             </table>
         </div>
+        <div class="detalles" style="background-repeat: round;">
+            <table class="tabladetalles">
+              <tr>
+                  <td class="titulo">Adjuntos:</td>
+                  <?php if(count($files)>0): ?>
+                   <td> 
+                       <ul style="list-style-type: none ">
+                    <?php foreach ($files as $K=>$file): ?>
+                           <li>
+                               <?php echo image_tag('books-stack.png','title="Archivo Adjunto" class=ico_profesor'); ?> &nbsp;&nbsp;&nbsp;
+                               <a href="<?php echo "/uploads/correo/".$mensaje->getId()."/".$file ?>" target="_blanck"><?php echo $file ?></a>
+                           </li>
+                    <?php endforeach; ?>
+                       </ul> 
+                   </td>   
+                  <?php endif; ?>
+              </tr>
+            </table>
+        </div>    
         <div class="cont_mensaje">
             <?php echo $mensaje->getContenido()?>
         </div>
