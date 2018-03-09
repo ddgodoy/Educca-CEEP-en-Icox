@@ -48,7 +48,7 @@
                     <?php foreach ($files as $K=>$file): ?>
                            <li>
                                <?php echo image_tag('books-stack.png','title="Archivo Adjunto" class=ico_profesor'); ?> &nbsp;&nbsp;&nbsp;
-                               <a href="<?php echo "uploads/correo/".$mensaje->getId()."/".$file ?>" target="_blanck"><?php echo $file ?></a>
+                               <a href="<?php echo "/uploads/correo/".$mensaje->getId()."/".$file ?>" target="_blanck"><?php echo $file ?></a>
                            </li>
                     <?php endforeach; ?>
                        </ul> 
