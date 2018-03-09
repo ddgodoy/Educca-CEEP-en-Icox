@@ -14,7 +14,7 @@
 
       </div>
       <div class="detalles_mensaje">
-        <div class="detalles">
+          <div class="detalles" style="background-repeat: round;">
             <table class="tabladetalles">
               <tr>
                 <td class="titulo">De:</td>
@@ -39,9 +39,13 @@
               <tr>
                   <td class="titulo">Adjuntos:</td>
                   <?php if(count($files)>0): ?>
+                   <td> 
+                       <ul style="list-style-type: none ">
                     <?php foreach ($files as $K=>$file): ?>
-                       <td><a href="<?php echo "uploads/correo/".$mensaje->getId()."/'".$file ?>" target="_blanck"><?php echo $file ?></a></td>
+                           <li><a href="<?php echo "uploads/correo/".$mensaje->getId()."/".$file ?>" target="_blanck"><?php echo $file ?></a></li>
                     <?php endforeach; ?>
+                       </ul> 
+                   </td>   
                   <?php endif; ?>
               </tr>
             </table>
