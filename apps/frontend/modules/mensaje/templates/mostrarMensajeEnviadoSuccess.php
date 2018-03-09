@@ -42,7 +42,10 @@
                    <td> 
                        <ul style="list-style-type: none ">
                     <?php foreach ($files as $K=>$file): ?>
-                           <li><a href="<?php echo "uploads/correo/".$mensaje->getId()."/".$file ?>" target="_blanck"><?php echo $file ?></a></li>
+                           <li>
+                               <?php echo image_tag('bot_ej_examen.gif','title="Archivo Adjunto" class=ico_profesor'); ?> &nbsp;&nbsp;&nbsp;
+                               <a href="<?php echo "uploads/correo/".$mensaje->getId()."/".$file ?>" target="_blanck"><?php echo $file ?></a>
+                           </li>
                     <?php endforeach; ?>
                        </ul> 
                    </td>   
