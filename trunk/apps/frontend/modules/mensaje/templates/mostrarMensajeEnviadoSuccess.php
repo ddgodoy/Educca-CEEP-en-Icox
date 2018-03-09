@@ -39,8 +39,8 @@
               <tr>
                   <td class="titulo">Adjuntos:</td>
                   <?php if(count($files)>0): ?>
-                    <?php foreach ($files as $file): ?>
-                        <td></td>
+                    <?php foreach ($files as $K=>$file): ?>
+                       <td><a href="<?php echo "uploads/correo/".$mensaje->getId()."/'".$file ?>" target="_blanck"><?php echo $file ?></a></td>
                     <?php endforeach; ?>
                   <?php endif; ?>
               </tr>
