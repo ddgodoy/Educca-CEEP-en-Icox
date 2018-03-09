@@ -36,6 +36,10 @@
                 <td class="titulo">Curso:</td>
                 <td><?php $curso = CursoPeer::RetrieveByPk($mensaje->getIdCurso()); echo $curso->getNombre() ?></td>
               </tr>
+            </table>
+        </div>
+        <div>
+            <table>
               <tr>
                   <td class="titulo">Adjuntos:</td>
                   <?php if(count($files)>0): ?>
@@ -52,7 +56,7 @@
                   <?php endif; ?>
               </tr>
             </table>
-        </div>
+        </div>  
         <div class="cont_mensaje">
             <?php echo $mensaje->getContenido()?>
         </div>
