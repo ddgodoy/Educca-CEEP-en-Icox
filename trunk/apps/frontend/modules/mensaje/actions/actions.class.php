@@ -408,6 +408,8 @@ class mensajeActions extends sfActions
 
     $mensaje = MensajePeer::RetrieveByPk($this->getRequestParameter('id_mensaje'));
 
+    $this->files = array();
+    
     $ruta = SF_ROOT_DIR.'/web/uploads/correo/'.$mensaje->getId().'/';
     if(file_exists($ruta)){
         $this->files = scandir($ruta);
