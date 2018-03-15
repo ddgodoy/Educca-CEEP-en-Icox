@@ -44,8 +44,7 @@
 </table>
 
 <?php else:?>
-    <?php echo $reload ?>
-    <?php if($reload): echo 'hola'?>
+    <?php if($reload):?>
     <script type="text/javascript">
         window.location.reload(true);
     </script>
