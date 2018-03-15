@@ -685,6 +685,7 @@ class ejercicioActions extends sfActions
     $cuestion_practica = Cuestion_practicaPeer::RetrieveByPk($id_cuestion_practica);
     $ejercicio = EjercicioPeer::RetrieveByPk($cuestion_practica->getIdEjercicio());
     $this->modificar = false;
+    $this->reload = 0;
 
     if ($this->hasRequestParameter('modificar')) {$this->modificar = true;}
 
@@ -692,7 +693,7 @@ class ejercicioActions extends sfActions
     {
       $cuestion_practica->setPuntuacion($this->getRequestParameter('puntuacion'));
       $cuestion_practica->save();
-      $this->redirect('ejercicio/editarEjercicio?id_ejercicio='.$cuestion_practica->getIdEjercicio());
+      $this->reload = 1;
     }
 
     $this->mostrar_edicion = $this->getRequestParameter('mostrar_edicion');

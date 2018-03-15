@@ -1,5 +1,9 @@
 <?php use_helper('Javascript') ?>
-
+<?php if($reload == 1):?>
+<script>
+    location.reload();
+</script>
+<?php endif; ?>
 <?php if ($modificar):?>
 <table class="tabla_cuestion_practica">
   <tr>
