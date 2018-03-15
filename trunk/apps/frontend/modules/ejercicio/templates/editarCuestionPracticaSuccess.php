@@ -1,11 +1,5 @@
 <?php use_helper('Javascript') ?>
 <?php if ($modificar):?>
-<?php echo $reload ?>
-<?php if($reload): echo 'hola'?>
-<script type="text/javascript">
-    window.location.reload(true);
-</script>
-<?php endif; ?>
 <table class="tabla_cuestion_practica">
   <tr>
     <th class="td1">
@@ -50,6 +44,12 @@
 </table>
 
 <?php else:?>
+    <?php echo $reload ?>
+    <?php if($reload): echo 'hola'?>
+    <script type="text/javascript">
+        window.location.reload(true);
+    </script>
+    <?php endif; ?>
   <?php include_partial('mostrarCuestionPractica', array('cuestion_practica' => $cuestion_practica, 'indice' => $indice, 'mostrar_edicion' => $mostrar_edicion, 'mostrar_solucion' => 0, 'mostrar_respuestas' => 0, 'mostrar_correccion' => 0)) ?>
 <?php endif;?>
 
