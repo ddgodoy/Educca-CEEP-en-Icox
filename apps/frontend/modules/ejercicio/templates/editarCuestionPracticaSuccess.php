@@ -1,6 +1,6 @@
 <?php use_helper('Javascript') ?>
 <?php echo $reload ?>
-<?php if($reload == 1):?>
+<?php if($reload):?>
 <script>
     window.location.reload(true);
 </script>
