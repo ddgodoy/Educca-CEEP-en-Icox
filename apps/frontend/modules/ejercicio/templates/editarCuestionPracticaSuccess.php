@@ -1,4 +1,5 @@
 <?php use_helper('Javascript') ?>
+<?php echo $reload ?>
 <?php if($reload == 1):?>
 <script>
     location.reload();
