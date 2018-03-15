@@ -692,6 +692,7 @@ class ejercicioActions extends sfActions
     {
       $cuestion_practica->setPuntuacion($this->getRequestParameter('puntuacion'));
       $cuestion_practica->save();
+      $this->redirect('ejercicio/editarEjercicio?id_ejercicio='.$cuestion_practica->getIdEjercicio());
     }
 
     $this->mostrar_edicion = $this->getRequestParameter('mostrar_edicion');
