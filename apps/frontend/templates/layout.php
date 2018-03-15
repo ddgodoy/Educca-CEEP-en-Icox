@@ -7,6 +7,7 @@
 
 <?php echo include_http_metas() ?>
 <?php echo include_metas() ?>
+<meta http-equiv="cache-control" content="no-cache" />
 
 <?php echo include_title() ?>
 <?php echo use_helper('rollover') ?>
