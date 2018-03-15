@@ -2,7 +2,7 @@
 <?php echo $reload ?>
 <?php if($reload == 1):?>
 <script>
-    location.reload();
+    window.location.reload(true);
 </script>
 <?php endif; ?>
 <?php if ($modificar):?>
