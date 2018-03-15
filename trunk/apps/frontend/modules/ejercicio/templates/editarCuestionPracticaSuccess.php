@@ -1,9 +1,7 @@
 <?php use_helper('Javascript') ?>
-<?php echo $reload ?>
 <?php if($reload): echo 'hola'?>
-<script>
-    window.location.reload(true);
-</script>
+<!-- Capas AJAX -->
+<?php echo javascript_tag("window.location.reload(true);"); ?>
 <?php endif; ?>
 <?php if ($modificar):?>
 <table class="tabla_cuestion_practica">
