@@ -1,6 +1,0 @@
-default:
-  http_metas:
-    content-type: text/html; charset=utf-8
-
-  has_layout:     on
-  layout: chatlayout

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<menu>
-	<boton texto="Revisión ortográfica            " pagina="1"  despy="373" />
-	<boton texto="Revisión gramatical             " pagina="5"  despy="62" />
-	<boton texto="Autocorrección                  " pagina="8"  despy="316" />
-</menu>

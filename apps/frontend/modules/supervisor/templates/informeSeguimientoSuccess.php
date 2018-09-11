@@ -1,1 +1,0 @@
-<?php include_component('curso', 'seguimientoCurso',array('idcurso' => $idcurso)) ?>

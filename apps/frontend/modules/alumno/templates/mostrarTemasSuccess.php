@@ -1,1 +1,0 @@
-<?php include_component('materia', 'mostrarTemas',array('id' => $id)) ?>

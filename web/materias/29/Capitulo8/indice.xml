@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<menu>
-	<boton texto="Crear Tablas             " pagina="1"  despy="354" />
-	<boton texto="Manipulando tablas       " pagina="3"  despy="0" />
-	<boton texto="Ajustar tabla al texto   " pagina="4"  despy="0" />
-	<boton texto="Ajustar imagen de celda  " pagina="5"  despy="0" />
-	<boton texto="Convertir texto en tabla " pagina="8"  despy="776" />
-</menu>

@@ -1,4 +1,0 @@
-all:
-  components:
-    menu: [menu, administrador]
-    menu_top: [menu_top, administrador]

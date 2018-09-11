@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<menu>
-	<boton texto="Crear índice                 " pagina="1" despy="500" />
-	<boton texto="Crear tabla de contenido     " pagina="6" despy="0" />
-	<boton texto="Crear tabla de ilustraciones " pagina="10" despy="237" />
-</menu>

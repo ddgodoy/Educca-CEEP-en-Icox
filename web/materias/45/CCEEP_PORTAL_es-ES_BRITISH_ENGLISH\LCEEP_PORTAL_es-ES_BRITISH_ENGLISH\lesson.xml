@@ -1,9 +1,0 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<lesson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../lesson_v1.xsd" id="LCEEP_PORTAL_es-ES_BRITISH_ENGLISH" href="http://he4.tellmemorecampus.com/" package="CEEP" interface="es-ES" discipline="BRITISH_ENGLISH" lesson="PORTAL">
-  <title>
-    <langstring lang="en">Portal de formación TELL ME MORE Online</langstring>
-  </title>
-  <description>
-    <langstring lang="en">El portal de formación TELL ME MORE Online contiene el conjunto de los componentes para la formación de idiomas del método TELL ME MORE: la selección del programa de formación, el acceso a los programas de formación y la documentación.</langstring>
-  </description>
-</lesson>

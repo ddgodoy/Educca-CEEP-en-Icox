@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<menu>
-	<boton texto="Crear un esquema antes de redactar el texto  " pagina="1" despy="560" />
-	<boton texto="Crear un esquema después de redactar el texto" pagina="2" despy="0" />
-	<boton texto="Pestaña de esquema                           " pagina="3" despy="150" />
-	<boton texto="Botones especiales de la pestaña             " pagina="4" despy="450" />
-	<boton texto="Diferencia entre Mapa de documento y esquema " pagina="6" despy="350" />
-</menu>

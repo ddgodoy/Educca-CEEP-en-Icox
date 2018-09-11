@@ -1,7 +1,0 @@
-index:
-  is_secure:   on                # Sólo para usuarios autenticados
-  credentials: examinandose
-
-all:
-  is_secure:    on
-  credentials:  examinandose

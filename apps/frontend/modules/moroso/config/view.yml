@@ -1,4 +1,0 @@
-all:
-  components:
-    menu: [menu, moroso]
-    menu_top: [menu_top, moroso]

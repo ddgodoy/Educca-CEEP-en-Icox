@@ -1,7 +1,0 @@
-index:
-  is_secure:   on
-  credentials: [[ alumno, profesor, moroso, supervisor, administrador ]]
-
-all:
-  is_secure:    on
-  credentials:  [[ alumno, profesor, moroso, supervisor, administrador ]]

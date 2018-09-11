@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<menu>
-	<boton texto="Guardar.Guardar como  " pagina="1" despy="0" />
-	<boton texto="Abrir documentos      " pagina="5" despy="0" />
-	<boton texto="Recuperar archivos    " pagina="6" despy="92" />
-</menu>

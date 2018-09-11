@@ -1,4 +1,0 @@
-all:
-  components:
-    menu: [menu, supervisor]
-    menu_top: [menu_top, supervisor]

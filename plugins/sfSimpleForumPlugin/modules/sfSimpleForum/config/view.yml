@@ -1,5 +1,0 @@
-all:
-  stylesheets: [/sfSimpleForumPlugin/css/default.css]
-  components:
-    menu: [menu, variable]
-    menu_top: [menu_top, variable]

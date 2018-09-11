@@ -1,5 +1,0 @@
-all:
-#  javascripts: [ highslide.js ]
-  components:
-    menu: [menu, alumno]
-    menu_top: [menu_top, alumno]

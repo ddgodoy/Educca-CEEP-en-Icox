@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<menu>
-	<boton texto="Trabajar con una página HTML              " pagina="1" despy="339" />
-	<boton texto="Insertar un hiperenlace en una página HTML" pagina="1" despy="709" />
-	<boton texto="Modificar un hiperenlace                  " pagina="5" despy="0" />
-	<boton texto="Convertir a HTML                          " pagina="6" despy="0" />
-</menu>

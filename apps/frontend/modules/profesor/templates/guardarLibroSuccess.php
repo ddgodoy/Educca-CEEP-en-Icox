@@ -1,1 +1,0 @@
-<?php echo image_tag('ico_p_endok.gif'); ?>Libro Guardado

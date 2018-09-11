@@ -1,7 +1,0 @@
-index:
-  is_secure:    on
-  credentials:  supervisor
-
-all:
-  is_secure:    on
-  credentials:  supervisor

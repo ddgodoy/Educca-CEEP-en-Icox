@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<menu>
-	<boton texto="Arrancar Word2007                    " pagina="1" despy="150" />
-	<boton texto="El primer texto                      " pagina="1" despy="794" />
-	<boton texto="Guardar un documento                 " pagina="3" despy="375" />  
-	<boton texto="Cerrar documento                     " pagina="4" despy="226" />
-	<boton texto="Abrir un documento                   " pagina="4" despy="950" />
-	<boton texto="Cerrar Word2007                      " pagina="5" despy="550" />  
-</menu>

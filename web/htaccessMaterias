@@ -1,4 +1,0 @@
-#RewriteEngine on
-#RewriteBase /
-#RewriteCond %{HTTP_REFERER} !^http://www\.adra-online\.com/ [NC]
-#RewriteRule ^.*$ http://adra-online.com/error.html [R=301,L]

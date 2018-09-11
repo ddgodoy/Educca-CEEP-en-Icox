@@ -1,1 +1,0 @@
-<?php include_component('contenidosTema', 'verFichero',array('id' => $idcurso)) ?>
