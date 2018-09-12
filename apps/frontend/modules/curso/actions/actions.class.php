@@ -846,7 +846,17 @@ class cursoActions extends sfActions
                                        641=>array('book'=>'9788448611972', 'license'=>'Z1L6UN79', 'type'=>'S'),
                                        642=>array('book'=>'9788448611972', 'license'=>'T6FK68Z9', 'type'=>'S')),
 
-                            224=>array(651=>array('book'=>'9788448191917', 'license'=>'2SXZA8K10', 'type'=>'T')),            
+                            220=>array(45=>array('book'=>'9788448609740', 'license'=>'GYQS51710', 'type'=>'T')),
+
+                            221=>array(626=>array('book'=>'9788448609702', 'license'=>'1ZDHC2D10', 'type'=>'T')),
+
+                            222=>array(617=>array('book'=>'9788448187354', 'license'=>'3CRBGXY10', 'type'=>'T')),
+
+                            223=>array(626=>array('book'=>'9788448609689', 'license'=>'47ENEEC10', 'type'=>'T')),
+
+                            224=>array(651=>array('book'=>'9788448191917', 'license'=>'2SXZA8K10', 'type'=>'T')),  
+
+                            225=>array(626=>array('book'=>'9788448609726', 'license'=>'3CWLQWA10', 'type'=>'T')),          
       );
       
       return !empty($array_return[$id_curso][$id_user])?$array_return[$id_curso][$id_user]:false;
