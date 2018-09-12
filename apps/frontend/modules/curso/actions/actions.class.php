@@ -846,8 +846,7 @@ class cursoActions extends sfActions
                                        641=>array('book'=>'9788448611972', 'license'=>'Z1L6UN79', 'type'=>'S'),
                                        642=>array('book'=>'9788448611972', 'license'=>'T6FK68Z9', 'type'=>'S')),
 
-                            224=>array(651=>array('book'=>'9788448191917', 'license'=>'2SXZA8K1', 'type'=>'T'), 
-                                       651=>array('book'=>'9788448191917', 'license'=>'LZVQ54T9', 'type'=>'T')),            
+                            224=>array(651=>array('book'=>'9788448191917', 'license'=>'2SXZA8K10', 'type'=>'T')),            
       );
       
       return !empty($array_return[$id_curso][$id_user])?$array_return[$id_curso][$id_user]:false;
