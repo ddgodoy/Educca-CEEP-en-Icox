@@ -866,7 +866,8 @@ class cursoActions extends sfActions
 
                             228=>array(626=>array('book'=>'9788448611996', 'license'=>'5H3YM8410', 'type'=>'T')), 
 
-                            229=>array(629=>array('book'=>'9788448612092', 'license'=>'US1YHLY10', 'type'=>'T')),
+                            229=>array(629=>array('book'=>'9788448612092', 'license'=>'US1YHLY10', 'type'=>'T'),
+                                       634=>array('book'=>'9788448612092', 'license'=>'GG3N7YS10', 'type'=>'T')),
 
                             230=>array(649=>array('book'=>'9788448612054', 'license'=>'L13JMTB10', 'type'=>'T')),
 
