@@ -856,7 +856,24 @@ class cursoActions extends sfActions
 
                             224=>array(651=>array('book'=>'9788448191917', 'license'=>'2SXZA8K10', 'type'=>'T')),  
 
-                            225=>array(626=>array('book'=>'9788448609726', 'license'=>'3CWLQWA10', 'type'=>'T')),          
+                            225=>array(626=>array('book'=>'9788448609726', 'license'=>'3CWLQWA10', 'type'=>'T')), 
+
+                            226=>array(629=>array('book'=>'9788448612191', 'license'=>'SU4WB4A9', 'type'=>'T'),
+                                       652=>array('book'=>'9788448612191', 'license'=>'RUJ62M39', 'type'=>'T')), //Prueba con licencia 197
+
+                            227=>array(631=>array('book'=>'9788448609665', 'license'=>'X4HW21U10', 'type'=>'T'),
+                                       653=>array('book'=>'9788448609665', 'license'=>'RVM5XGX10', 'type'=>'T')),
+
+                            228=>array(626=>array('book'=>'9788448611996', 'license'=>'5H3YM8410', 'type'=>'T')), 
+
+                            229=>array(629=>array('book'=>'9788448612092', 'license'=>'US1YHLY10', 'type'=>'T'),
+                                       654=>array('book'=>'9788448612092', 'license'=>'GG3N7YS10', 'type'=>'T')),
+
+                            230=>array(649=>array('book'=>'9788448612054', 'license'=>'L13JMTB10', 'type'=>'T')),
+
+                            231=>array(649=>array('book'=>'9788448612030', 'license'=>'764T9ST10', 'type'=>'T')),
+
+                            232=>array(45=>array('book'=>'9788448608569', 'license'=>'TDFPJ2K10', 'type'=>'T')),         
       );
       
       return !empty($array_return[$id_curso][$id_user])?$array_return[$id_curso][$id_user]:false;
