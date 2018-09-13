@@ -858,8 +858,8 @@ class cursoActions extends sfActions
 
                             225=>array(626=>array('book'=>'9788448609726', 'license'=>'3CWLQWA10', 'type'=>'T')), 
 
-                            226=>array(629=>array('book'=>'9788448612191', 'license'=>'SU4WB4A9', 'type'=>'T'),
-                                       652=>array('book'=>'9788448612191', 'license'=>'RUJ62M39', 'type'=>'T')), //Prueba con licencia 197
+                            226=>array(629=>array('book'=>'9788448612191', 'license'=>'QE5VG6110', 'type'=>'T'),
+                                       652=>array('book'=>'9788448612191', 'license'=>'LSWSPQ510', 'type'=>'T')), //Prueba con licencia ant
 
                             227=>array(631=>array('book'=>'9788448609665', 'license'=>'X4HW21U10', 'type'=>'T'),
                                        653=>array('book'=>'9788448609665', 'license'=>'RVM5XGX10', 'type'=>'T')),
