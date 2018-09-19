@@ -846,25 +846,31 @@ class cursoActions extends sfActions
                                        641=>array('book'=>'9788448611972', 'license'=>'Z1L6UN79', 'type'=>'S'),
                                        642=>array('book'=>'9788448611972', 'license'=>'T6FK68Z9', 'type'=>'S')),
 
-                            220=>array(45=>array('book'=>'9788448609740', 'license'=>'GYQS51710', 'type'=>'T')),
+                            220=>array(45=>array('book'=>'9788448609740', 'license'=>'GYQS51710', 'type'=>'T'),
+                                      636=>array('book'=>'9788448609740', 'license'=>'PYSE5QT6', 'type'=>'T')),
 
-                            221=>array(626=>array('book'=>'9788448609702', 'license'=>'1ZDHC2D10', 'type'=>'T')),
+                            221=>array(626=>array('book'=>'9788448609702', 'license'=>'1ZDHC2D10', 'type'=>'T'),
+                                       636=>array('book'=>'9788448609702', 'license'=>'54K9W7N6', 'type'=>'T')),
 
                             222=>array(617=>array('book'=>'9788448187354', 'license'=>'3CRBGXY10', 'type'=>'T'),
                                        636=>array('book'=>'9788448187354', 'license'=>'LEGZ1FH10', 'type'=>'T')),
 
-                            223=>array(626=>array('book'=>'9788448609689', 'license'=>'47ENEEC10', 'type'=>'T')),
+                            223=>array(626=>array('book'=>'9788448609689', 'license'=>'47ENEEC10', 'type'=>'T'),
+                                       636=>array('book'=>'9788448609689', 'license'=>'M3ZNTFQ6', 'type'=>'T')),
 
-                            224=>array(651=>array('book'=>'9788448191917', 'license'=>'2SXZA8K10', 'type'=>'T')),  
+                            224=>array(651=>array('book'=>'9788448191917', 'license'=>'2SXZA8K10', 'type'=>'T'),
+                                       636=>array('book'=>'9788448191917', 'license'=>'RFFJM3W6', 'type'=>'T')),  
 
-                            225=>array(626=>array('book'=>'9788448609726', 'license'=>'3CWLQWA10', 'type'=>'T')), 
+                            225=>array(626=>array('book'=>'9788448609726', 'license'=>'3CWLQWA10', 'type'=>'T'),
+                                       636=>array('book'=>'9788448609726', 'license'=>'APZ3WXC6', 'type'=>'T')), 
 
                             226=>array(629=>array('book'=>'9788448612191', 'license'=>'QE5VG6110', 'type'=>'T'),
                                        652=>array('book'=>'9788448612191', 'license'=>'LSWSPQ510', 'type'=>'T'),
                                        634=>array('book'=>'9788448612191', 'license'=>'VD3UF6910', 'type'=>'T')), 
 
                             227=>array(631=>array('book'=>'9788448609665', 'license'=>'X4HW21U10', 'type'=>'T'),
-                                       653=>array('book'=>'9788448609665', 'license'=>'RVM5XGX10', 'type'=>'T')),
+                                       653=>array('book'=>'9788448609665', 'license'=>'RVM5XGX10', 'type'=>'T'),
+                                       634=>array('book'=>'9788448609665', 'license'=>'U1MWCR96', 'type'=>'T')),
 
                             228=>array(626=>array('book'=>'9788448611996', 'license'=>'5H3YM8410', 'type'=>'T'),
                                        634=>array('book'=>'9788448611996', 'license'=>'61666Q210', 'type'=>'T')), 
@@ -878,7 +884,8 @@ class cursoActions extends sfActions
                             231=>array(649=>array('book'=>'9788448612030', 'license'=>'764T9ST10', 'type'=>'T'),
                                        634=>array('book'=>'9788448612030', 'license'=>'FW3FSSX10', 'type'=>'T')),
 
-                            232=>array(45=>array('book'=>'9788448608569', 'license'=>'TDFPJ2K10', 'type'=>'T')),         
+                            232=>array(45=>array('book'=>'9788448608569', 'license'=>'TDFPJ2K10', 'type'=>'T'),
+                                      634=>array('book'=>'9788448608569', 'license'=>'U61EWY96', 'type'=>'T')),         
       );
       
       return !empty($array_return[$id_curso][$id_user])?$array_return[$id_curso][$id_user]:false;
