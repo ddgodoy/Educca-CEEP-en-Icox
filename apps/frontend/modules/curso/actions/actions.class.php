@@ -29,7 +29,48 @@ class cursoActions extends sfActions
 	  	if ($this->curso->checkAccesoSegunFechasLimite($this->curso->getFechaInicio('Y-m-d'), $this->curso->getFechaFin('Y-m-d')) != 'si') {
 		  	$this->redirect('alumno/index');
 		  }
-  	}   
+  	}
+
+      //Consulta fecha primer y ultima conexion al curso
+       $c = new Criteria();
+       $c->add(Rel_usuario_rol_cursoPeer::ID_USUARIO, $this->getUser()->getAnyId());
+       $c->add(Rel_usuario_rol_cursoPeer::ID_CURSO, $this->idcurso);
+       $handler = Rel_usuario_rol_cursoPeer::doSelectOne($c);
+       $fechaPrimerConex = $handler->getFechaPrimerConex();
+       $fechaUltimaConex = $handler->getFechaUltimaConex();
+       $hoy = date("Y-m-d H:i:s");
+
+       if ($handler)
+            {
+              if($fechaPrimerConex == NULL && $fechaUltimaConex == NULL){
+
+                $fechaPrimerConex = $hoy;
+                $fechaUltimaConex = $hoy;
+
+              }elseif ($fechaPrimerConex=! NULL) {
+                # code...
+                $fechaPrimerConex = $handler->getFechaPrimerConex();
+                $fechaUltimaConex = $hoy;                
+              }
+            }
+
+            //actualizar fecha primer y ultima conexion al curso
+            $con = Propel::getConnection();
+            $c1 = new Criteria();
+            $c1->add(Rel_usuario_rol_cursoPeer::ID_USUARIO, $this->getUser()->getAnyId());
+            $c1->add(Rel_usuario_rol_cursoPeer::ID_CURSO, $this->idcurso);
+
+            $c2 = new Criteria();
+            $c2->add(Rel_usuario_rol_cursoPeer::FECHA_PRIMER_CONEX, $fechaPrimerConex);
+            $c2->add(Rel_usuario_rol_cursoPeer::FECHA_ULTIMA_CONEX, $fechaUltimaConex);
+            BasePeer::doUpdate($c1, $c2, $con);
+
+       $this-> fecha_primer_conex = $fechaPrimerConex;
+       $this-> fecha_ultima_conex = $fechaUltimaConex;
+//FIN DE MI CAMBIO RK
+
+
+
   }
 
   public function executeList()
