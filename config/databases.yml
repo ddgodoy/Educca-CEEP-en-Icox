@@ -1,0 +1,10 @@
+all:
+  propel:
+    class:      sfPropelDatabase
+    param:
+      phptype:  mysql
+      host:     localhost
+      database: ceep_ceep
+      username: ceep_ceep
+      password: Adra1000
+      encoding: utf8

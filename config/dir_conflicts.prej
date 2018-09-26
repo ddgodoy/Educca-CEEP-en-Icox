@@ -1,0 +1,9 @@
+Intentando cambiar la propiedad 'svn:ignore' de 'log
+' a 'log
+databases.yml
+',
+pero la propiedad ya existe con valor 'properties.ini
+config.php
+databases.yml
+logging.yml
+'.
