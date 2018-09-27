@@ -1,0 +1,13 @@
+createTopic:
+  is_secure:   on
+
+addPost:
+  is_secure:   on
+
+deletePost:
+  is_secure:   on
+  credentials: [[ profesor, supervisor, alumno ]]
+
+stickPost:
+  is_secure:   on
+  credentials: [[ profesor, supervisor ]]

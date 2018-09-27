@@ -1,0 +1,131 @@
+sfGuardPermission:
+  moderator:
+    name: moderator
+
+sfGuardUser:
+  johndoe:
+    username:       johndoe
+    password:       johndoe
+  tarzanman:
+    username:       tarzanman
+    password:       tarzanman
+  testuser:
+    username:       testuser
+    password:       testuser
+    
+sfGuardUserPermission:
+  testuser_is_moderator:
+    user_id:        testuser
+    permission_id:  moderator
+    
+sfSimpleForumCategory:
+  c1:
+    name:        Public Boards
+    description: We talk about stuff here.
+    rank:        1
+  c2:
+    name:        Miscellaneous
+    description: Secret matters
+    rank:        2
+
+sfSimpleForumForum:
+  f1:
+    name:        Foo discussion
+    description: Everybody is foo here
+    category_id: c1
+    rank:        1
+  f2:
+    name:        Bar discussion
+    description: If you want a bar, this is where you will find it
+    category_id: c1
+    rank:        2
+  f3:
+    name: General discussion
+    description: "If you don't know where to write, try here"
+    category_id: c2
+
+sfSimpleForumPost:
+  post_1:
+    title:       Installing foo
+    content: |
+      When I install foo, it just <b>doesn't work</b>.<br />What did I do wrong?
+    user_id:     tarzanman
+    forum_id:    f1
+  post_2:
+    title:       'Re: Installing foo'
+    content: |
+      Did you clear the cache? I don't know what that means, but it often helps...<br/>Or so they say!
+    parent_id:   post_1
+    user_id:     johndoe
+    forum_id:    f1
+  post_3:
+    title:       'Re: Installing foo'
+    content: |
+      Yes, I did that. Something else?
+    parent_id:  post_1
+    user_id:    tarzanman
+    forum_id:   f1
+  post_4:
+    title:       'Re: Installing foo'
+    content: |
+      No, you're hopeless
+    parent_id:  post_1
+    user_id:    johndoe
+    forum_id:   f1
+  post_5:
+    title:      'Bringing foo along'
+    content: |
+      I often go out, and I'd like to take my foo with me.<br/>
+      Would you advise against it?<br/>
+      Some say a foo should not be let outside...
+    user_id:    tarzanman
+    forum_id:   f1
+  post_6:
+    title:      'Foo forever'
+    content: |
+      Everybody wants kung foo fighting
+    user_id:    johndoe
+    forum_id:   f1
+  post_7:
+    title:      'Re: Foo forever'
+    content: |
+      Man, I was about to say it
+    user_id:    tarzanman
+    parent_id:  post_6
+    forum_id:   f1
+  post_8:
+    title:      'Chocolate bar'
+    content: |
+      Isn't the chocolate bar the best of all bars?
+    user_id:    tarzanman
+    forum_id:   f2
+  post_9:
+    title:      'Energy bar'
+    content: |
+      I need some energy...
+    user_id:    tarzanman
+    forum_id:   f2
+  post_10:
+    title:      'Stick Moo'
+    content: |
+      This is a sample sticked topic. It should be on top of the topic list, 
+      even though more recent topics exist. 
+      Only users with moderator privilege can stick or unstick it (testuser is a moderator).
+    is_sticked: true
+    user_id:    testuser
+    parent_id:  
+    forum_id:   f2
+  post_11:
+    title:      'Re: Energy bar'
+    content: |
+      I forgot to say: I need a bar
+    user_id:    tarzanman
+    parent_id:  post_9
+    forum_id:   f2
+  post_12:
+    title:      'Output escaping'
+    content: |
+      If you see no alert, it means that your output escaping is turned on<br>
+      <script>alert('you should turn output escaping on to prevent XSS attacks')</script>
+    user_id:    tarzanman
+    forum_id:   f3

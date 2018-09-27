@@ -1,0 +1,4 @@
+all:
+  components:
+    menu: [menu, profesor]
+    menu_top: [menu_top, profesor]

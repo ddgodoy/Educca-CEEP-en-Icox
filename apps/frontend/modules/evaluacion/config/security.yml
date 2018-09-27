@@ -1,0 +1,15 @@
+index:
+  is_secure:   on                # Sólo para usuarios autenticados
+  credentials: [[ profesor, supervisor ]]
+
+crearEjercicio:
+  is_secure:   on
+  credentials: [[ profesor, supervisor ]]
+
+evaluacionModulo:
+  is_secure:   on
+  credentials: supervisor
+
+all:
+  is_secure:    on
+  credentials:  [[ profesor, supervisor ]]

@@ -1,0 +1,1 @@
+<?php echo link_to('&nbsp;Usuarios online ('.$sf_user->getNumUsuariosConectados().')', 'online/conectados?id='.$sf_user->getCursoMenu(),array('popup' => array('', 'width=180,height=350,left=320,top=0'))) ?></div>
