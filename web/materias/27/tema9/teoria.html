@@ -1,0 +1,551 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Curso RSC</title>
+<script language="javascript" src="../shared/js/estilos.js"></script>
+<script language="javascript" src="menu.js"></script>
+<script type="text/javascript" src="../shared/js/virtualpaginate.js"></script>
+
+<script type="text/javascript" src="../shared/js/BubbleTooltips.js"></script>
+<script type="text/javascript" src="BubbleTooltips.js"></script>
+<script type="text/javascript">
+window.onload=function(){enableTooltips("contenido")};
+</script>
+
+<script type="text/javascript" src="../shared/js/prototype.js"></script>
+<script type="text/javascript" src="../shared/js/bubble.js"></script>
+
+<script language="javascript">
+
+	var tiempo_actual = new Date().getTime();
+	
+	function cerrarVentana() {
+	if (confirm("¿Estás seguro de que quieres abandonar la teoría?")) 
+		window.close();
+	}
+	
+	function completar() {
+	if (confirm("¿Quieres marcar la teoría del tema como Completada?")) {
+		opener.status_completado();
+		window.close();
+		}
+	}	
+		
+</script>
+<link href="../shared/css/bubble.css" rel="stylesheet" type="text/css" />
+
+<link href="../shared/css/curso.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+/*Sample CSS used for the Virtual Pagination Demos. Modify/ remove as desired*/
+
+.virtualpage, .virtualpage2, .virtualpage3{
+/*hide the broken up pieces of contents until script is called. Remove if desired*/
+display: none;
+}
+
+.paginationstyle{ /*Style for demo pagination divs*/
+	width: 250px;
+	padding: 2px 0;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.paginationstyle select{ /*Style for demo pagination divs' select menu*/
+	border: 1px solid navy;
+	margin: 0 15px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+}
+
+.paginationstyle a{ /*Pagination links style*/
+padding: 0 5px;
+text-decoration: none;
+border: 1px solid black;
+color: navy;
+background-color: white;
+}
+
+.paginationstyle a:hover, .paginationstyle a.selected{
+color: #000;
+background-color: #FEE496;
+}
+
+.paginationstyle a.imglinks{ /*Pagination Image links style (class="imglinks") */
+border: 0;
+padding: 0;
+}
+
+.paginationstyle a.imglinks img{
+vertical-align: middle;
+border: 0;
+}
+
+.paginationstyle a.imglinks a:hover{
+background: none;
+}
+
+.paginationstyle .flatview a:hover, .paginationstyle .flatview a.selected{ /*Pagination div "flatview" links style*/
+color: #000;
+background-color: yellow;
+}
+
+#page #listingpaginate {
+	position: absolute;
+	left: 244px;
+	top: 551px;
+	vertical-align: top;
+}
+body {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+</style>
+</head>
+
+<body onunload="javascript: window.opener.setElapsedTime(); window.opener.location.reload();">
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip">This DIV has a tip!!.</div>
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip2">This DIV has a tip!!.</div>
+<div id="page">
+	  <div class="super" id="super"><img src="../shared/imagenes/logo.gif" alt="Responsabilidad Social Corporativa" width="247" height="33"/></div> 
+	 
+	<div id="menusup">
+	  <div align="right"><a href="javascript:cerrarVentana()"><img src="../shared/imagenes/home.jpg" width="25" height="31" hspace="5" border="0" onmouseover="ddrivetip('Volver al Indice'); return false;" onmouseout="hideddrivetip()"/></a>
+	  <script language="javascript">
+	  	var estado = opener.status;
+		if (estado == "completed") {
+			document.writeln("<a href=\"cuestionario.html\"><img src=\"../shared/imagenes/ejercic.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Ir al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" /></a>");
+		} else {
+			document.writeln("<img src=\"../shared/imagenes/ejercic_no.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Aun no tienes acceso al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" />");
+		}
+	  </script>
+	  <a href="javascript:void(0)" onclick="open ('../shared/bibliografia.html','biblio','left=100,top=90,width=760,height=620,scrollbars=1,toolbar=1,resizable=1');"><img src="../shared/imagenes/biblio.jpg" width="25" height="31" hspace="5"  onmouseover="ddrivetip('Bibliografía'); return false;" onmouseout="hideddrivetip()" border="0"/></a></div>
+  </div>
+	<div id="contenido">
+  		<div class="virtualpage">
+			<p class="titulo"><strong>9.- la gestión e implementaci&oacute;n de loa RSC</strong></p>
+    <p class="titulo"><strong>9.1.- el compromiso: liderazgo &eacute;tico, misi&oacute;n y valores de la empresa</strong></p>
+    <p>La RSC tiene su <strong>origen en un  compromiso voluntariamente asumido</strong> por la empresa. Es un <strong>compromiso  estrat&eacute;gico</strong>, esto es, <strong>a largo plazo y global</strong>, y que <strong>condiciona la  conducta y la cultura </strong>de la <img src="imagenes/tema9.pag1.jpg" width="250" height="186" align="right" class="imgint" />empresa. </p>
+    <p>Al ser una <strong>decisi&oacute;n  estrat&eacute;gica</strong>, la <strong>Alta   Direcci&oacute;n</strong> debe determinar el <strong>contenido y alcance</strong> del compromiso social y ambiental de la empresa, siendo <strong>esta tarea la  primera que debe realizarse</strong> y sobre la que se construye las estrategias y  pr&aacute;cticas de <strong>la empresa responsable. </strong></p>
+    <p>Debe ser un  compromiso que rompe con lo moment&aacute;neo y parcial para ser un <strong>compromiso  aut&eacute;ntico que se proyecta en el futuro</strong> de la empresa y que influye en las  decisiones de la organizaci&oacute;n. Por tanto, el compromiso es una decisi&oacute;n interna  de la empresa, <strong>fruto de una reflexi&oacute;n sobre la responsabilidad </strong>que la  empresa tiene y sobre los agentes ante los que es responsable. El compromiso  responsable nace del interior de la propia empresa, <strong>debe ser compartido por  todos y cada uno de los empleados</strong> de la organizaci&oacute;n y <strong>debe comunicarse  a las partes interesadas</strong> de la organizaci&oacute;n. </p>
+    </div>
+	<div class="virtualpage">
+			<p>El <strong>l&iacute;der de  la empresa </strong>socialmente responsable sabe que la gesti&oacute;n &eacute;tica de la empresa  es la mejor gesti&oacute;n posible no s&oacute;lo desde el punto de vista moral sino tambi&eacute;n  desde el punto de vista t&eacute;cnico, pues <strong>proporciona la legitimidad necesaria</strong> para la toma de decisiones y que estas sean <strong>compartidas por todos los  integrantes de la organizaci&oacute;n.</strong></p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td align="center">
+          <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="577" height="382">
+            <param name="movie" value="imagenes/tema9_pag2.swf" />
+            <param name="quality" value="high" />
+			<param name="wmode" value="transparent" />
+            <embed src="imagenes/tema9_pag2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="577" height="382" wmode="transparent"></embed>
+          </object>
+        </td>
+      </tr>
+    </table>
+	</div>
+<div class="virtualpage">
+    <p>La <strong>misi&oacute;n y  la visi&oacute;n deben estar integradas y ser coherentes y compatibles</strong> entre s&iacute;.  Para evitar que la empresa se quede en una mera declaraci&oacute;n debe existir un <strong>concordancia  clara entre la visi&oacute;n y el comportamiento cotidiano</strong> de la empresa. Por  &uacute;ltimo, y a medida que <strong>la empresa y el entorno se van transformando</strong>, la  organizaci&oacute;n debe <strong>revisar peri&oacute;dicamente</strong> <strong>su misi&oacute;n y visi&oacute;n</strong> para  asegurar que se corresponde con <strong>los valores con los que se dirige la empresa</strong>. </p>
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="660" height="155">
+        <param name="movie" value="imagenes/tema9.pag3.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag3.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="660" height="155" wmode="transparent"></embed>
+      </object>
+    </p>
+  </div>
+  <div class="virtualpage">
+    <p class="titulo"><strong>9.2.- la pol&iacute;tica empresarial y el sistema de objetivos de la RSC: objetivos, resultados y metas.</strong></p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>La empresa <strong>institucionaliza  y documenta p&uacute;blicamente su compromiso social y ambiental </strong>en la <strong>Pol&iacute;tica Empresarial</strong> de RSC, que es una <strong>Declaraci&oacute;n de Principios</strong> de la organizaci&oacute;n que  relaciona su <strong>desempe&ntilde;o econ&oacute;mico, social y ambiental</strong>. Las pol&iacute;ticas  empresariales de RSC son fruto del desarrollo natural de las <strong>pol&iacute;ticas de calidad y  medio ambiente </strong>y de la madurez y experiencia probada de los <strong>Sistemas de  Gesti&oacute;n de Calidad y Gesti&oacute;n Medioambiental</strong>.</td>
+      </tr>
+      <tr>
+        <td>Aunque <strong>cada empresa debe elaborar su propia Pol&iacute;tica de RSC</strong>, es  oportuno que la pol&iacute;tica haga referencia a algunas <strong>cuestiones b&aacute;sicas</strong>: </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300">
+            <param name="movie" value="imagenes/colorMenu.swf" />
+            <param name="quality" value="high" />
+			<param name="wmode" value="transparent" />
+            <embed src="imagenes/colorMenu.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300" wmode="transparent"></embed>
+          </object>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="virtualpage">
+    <p>La<strong> pol&iacute;tica  de RSC</strong> <strong>debe ser p&uacute;blica</strong>, formulada por la <strong>Alta Direcci&oacute;n</strong>,  y proporcionar <strong>un marco para la acci&oacute;n y el establecimiento de objetivos</strong>.No es conveniente una generalizaci&oacute;n de las Pol&iacute;ticas de  RSC. </p>
+    <p>Conviene seguir  un <strong>proceso estructurado</strong> <strong>para desarrollar una Pol&iacute;tica de RSC</strong>:</p>
+    <p align="center">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="660" height="160">
+        <param name="movie" value="imagenes/tema9.pag5.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag5.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="660" height="160" wmode="transparent"></embed>
+      </object>
+    </p>
+    <p>Una de las  mejores formas de asumir un compromiso con RSC es integrar consideraciones  sociales y ambientales en el <strong>sistema de objetivos</strong> de la empresa. </p>
+ </div>
+ <div class="virtualpage">
+    <p>Una de las mejores formas de asumir un compromiso  con RSC es integrar consideraciones sociales y ambientales en el <strong>sistema de  objetivos</strong> de la empresa.</p>
+    <p>Los <strong>objetivos</strong> de RSC <strong>son fines de car&aacute;cter general coherentes con la pol&iacute;tica</strong> empresarial  general y en particular con la de RSC. </p>
+    <p>Los objetivos <strong>deben  reunir una serie de</strong> <strong>caracter&iacute;sticas</strong>:    </p>
+    <div align="center">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="660" height="187">
+        <param name="movie" value="imagenes/tema9.pag5_b.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag5_b.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="660" height="187" wmode="transparent"></embed>
+      </object>
+  	</div>
+  </div>
+  <div class="virtualpage">
+    <p class="titulo"><strong>9.3.- el compromiso de la empresa con la sociedad: declaraciones de RSC</strong></p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><p>La empresa puede <strong>declarar su compromiso</strong> con la sociedad mediante <strong>la adhesi&oacute;n o asunci&oacute;n  de los convenios, tratados y declaraciones </strong>relativos a la   RSC.</p>        </td>
+      </tr>
+      <tr>
+        <td>En los &uacute;ltimos  a&ntilde;os han proliferado este tipo de iniciativas, siendo el <strong>Pacto Mundial de  las Naciones  Unidas</strong> la m&aacute;s relevante por su alcance y aceptaci&oacute;n  internacional y la <strong>Carta</strong><strong> de C&aacute;mara Internacional de Comercio para el Desarrollo Sostenible y las Directrices de la <a href="http://es.wikipedia.org/wiki/Organizaci%C3%B3n_para_la_Cooperaci%C3%B3n_y_el_Desarrollo_Econ%C3%B3mico" target="_blank" title="Si quieres saber más mira en...">OCDE</a> para empresas  multinacionales. </strong></td>
+      </tr>
+      <tr>
+        <td><p align="center">El <strong>Pacto  Mundial de la ONU</strong> tiene una serie de <strong>Principios Fundamentales</strong> de implantaci&oacute;n que son los  siguientes:</br>
+        
+          <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300">
+            <param name="movie" value="imagenes/colorMenu2.swf" />
+            <param name="quality" value="high" />
+			<param name="wmode" value="transparent" />
+            <embed src="imagenes/colorMenu2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300" wmode="transparent"></embed>
+          </object>
+        </p></td>
+      </tr>
+    </table>
+  </div>
+  <div class="virtualpage">
+    <p class="titulo"><strong>9.4.- diagn&oacute;stico y planificai&oacute;n de la RSC</strong></p>
+    <p>Una vez la  empresa ha determinado su fin &uacute;ltimo y su compromiso social y ambiental,  necesita <strong>conocer su situaci&oacute;n actual</strong>, el punto de partida desde el que  tiene que emprender el camino hacia la excelencia. </p>
+    <p>Este <strong>diagn&oacute;stico</strong> es doble: por un lado, del <strong>entorno de la empresa</strong>, y por otro, de la <strong>propia  organizaci&oacute;n</strong>. Efectivamente, los dos elementos esenciales del an&aacute;lisis empresarial son: </p>
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="547" height="95">
+        <param name="movie" value="imagenes/tema9.pag7.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag7.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="547" height="95" wmode="transparent"></embed>
+      </object>
+    </p>
+    <p>La empresa  comenzar&aacute; a trabajar en su compromiso en el<strong> an&aacute;lisis externo, </strong>este  an&aacute;lisis comprende:</p>
+    <p align="center">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="658" height="105">
+        <param name="movie" value="imagenes/tema9.pag7_b.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag7_b.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="658" height="105" wmode="transparent"></embed>
+      </object>
+    </p>
+  </div>
+  <div class="virtualpage">
+    <p>La herramienta  de gesti&oacute;n m&aacute;s utilizada en el an&aacute;lisis externo es el <strong>mapa de stakeholders</strong> o grupos de inter&eacute;s. Tambi&eacute;n es &uacute;til realizar un <strong><em><a href="http://es.wikipedia.org/wiki/Benchmark" target="_blank" title="Si quieres saber más sobre este concepto entra en...">benchmarking</a> </em></strong>de  las mejores pr&aacute;cticas de la competencia. </p>
+    <p>Los aspectos de  RSC deben evaluarse para determinar una prioridad en funci&oacute;n d<img src="imagenes/tema9.pag8.jpg" width="250" height="189" align="right" class="imgint" />e su nivel de  significaci&oacute;n. La magnitud del impacto, la frecuencia o la capacidad de control  son <strong>criterios</strong> que se utilizan frecuentemente para clasificar los  aspectos. </p>
+    <p>Una vez  realizado el an&aacute;lisis externo la empresa se centrar&aacute; en el<strong> an&aacute;lisis interno. </strong>El an&aacute;lisis interno consiste en un diagn&oacute;stico de, por una parte, las <strong>actuales pr&aacute;cticas</strong> de RSC de la empresa y, por  otra, de los <strong>valores, recursos y capacidades</strong> con los que cuenta la  empresa para gestionarse de una manera sostenible.</p>
+    <p>Otro aspecto  esencial del an&aacute;lisis interno es el an&aacute;lisis de los <strong>riesgos sociales</strong>, <strong>ambientales</strong> y de <strong>la reputaci&oacute;n</strong> de la organizaci&oacute;n. </p>
+    <p>El <strong>proceso de  an&aacute;lisis</strong> de estos riesgos incluye la <strong>identificaci&oacute;n de las fuentes de riesgo,  la estimaci&oacute;n del riesgo, la valoraci&oacute;n del riesgo, y finalmente su gesti&oacute;n. </strong></p>
+  </div>
+  <div class="virtualpage">
+    <p class="titulo"><strong>9.5.- la implantaci&oacute;n: estructura organizativa.</strong></p>
+    <p>    La implantaci&oacute;n  de la RSC exige  un <strong>soporte organizativo</strong> que asegure que se llevan a cabo <strong>las tareas  planificadas</strong> y se cumplen los objetivos fijados. Por tanto, la Direcci&oacute;n debe <strong>definir  las funciones,  responsabilidad y autoridad de los responsables</strong> de la gesti&oacute;n de la RSC. </p>
+    <p><img src="imagenes/tema9.1.jpg" width="250" height="188" align="left" class="imgint" />La empresa puede  optar entre varias soluciones en funci&oacute;n de sus necesidades y caracter&iacute;sticas. Es usual que un departamento  actual de la empresa asuma estas funciones. Departamentos como los de <strong>Calidad,  Medio Ambiente o Comunicaci&oacute;n</strong> suelen ser los elegidos. Otra opci&oacute;n es <strong>crear  un departamento de RSC</strong> o nombrar un coordinador. Estos son modelos organizativos <strong>centralizados</strong> que tienen su alternativo en los modelos <strong>descentralizados</strong> (puros o mixtos). </p>
+    <p>Adem&aacute;s de esto,  la empresa puede fortalecer la estructura organizativa de la RSC nombrando un <strong>Consejero  del Consejo de Administraci&oacute;n</strong> responsable de esta materia o una <strong>Comisi&oacute;n Delegada del Consejo,</strong> y creando un <strong>Comit&eacute; de RSC</strong> formado por directivos de las &aacute;reas de la empresa m&aacute;s implicadas en estas  cuestiones. </p>
+  </div>
+  <div class="virtualpage">
+    <p>Desde esta  perspectiva el <strong>Sistema de Gesti&oacute;n de la RSC</strong> es un <strong>sistema documentado</strong>, por lo  que la empresa deber&aacute; desarrollar los documentos pertinentes que faciliten la  implantaci&oacute;n de la RSC. La documentaci&oacute;n b&aacute;sica del sistema est&aacute; formada por: </p>
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="709" height="186">
+        <param name="movie" value="imagenes/tema9.pag10.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag10.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="709" height="186" wmode="transparent"></embed>
+      </object>
+    </p>
+    <p>La <strong>cultura  empresarial</strong> que genera todos estos documentos facilita que la organizaci&oacute;n  actu&eacute; mediante el <strong>conjunto de normas, valores y formas de pensar</strong> que  caracterizan la <strong>conducta de los miembros de la organizaci&oacute;n en todos los  niveles</strong> de la empresa, as&iacute; como en la <strong>propia presentaci&oacute;n de la imagen  de la empresa</strong>.</p>
+
+  </div>
+  <div class="virtualpage">
+    <p>El objetivo de  la cultura empresarial es definir qu&eacute; <strong>valores y normas generales</strong> son los  que definen la empresa y definir <strong>espacios &eacute;ticos</strong> de actuaci&oacute;n libre y  responsable con los que conseguir la <strong>capacidad de innovaci&oacute;n, imaginaci&oacute;n y  flexibilidad</strong> que un <strong>mercado diferenciado y complejo</strong> exige. Este  conjunto de valores constituyen una herramienta fundamental para la <strong>toma de  decisiones</strong> en la empresa y la soluci&oacute;n de dilemas, a la vez que permiten  construir <strong>relaciones de confianza</strong> con las partes interesadas.</p>
+    <p>Entre otros <strong>valores</strong> <strong>caracter&iacute;sticos de la empresa responsable</strong> est&aacute;n la <strong>integridad, la  honestidad, el compromiso, la lealtad o el respeto a los dem&aacute;s</strong>. Sin  embargo, la empresa debe elaborar una cultura que responda a su <strong>car&aacute;cter  propio</strong>, para lo que es preciso un diagn&oacute;stico del modo en el que la empresa  act&uacute;a y por el que desea ser reconocida. </p>
+    <p>El<strong> C&oacute;digo  &Eacute;tico </strong>es el <strong>documento que establece las reglas y principios que definen  el comportamiento de la organizaci&oacute;n </strong>y que, por tanto, configuran el marco  normativo y los criterios que determinan lo que es correcto o no.</p>
+    <p>Aunque suele  haber <strong>c&oacute;digos &eacute;ticos</strong> <strong>sectoriales</strong> que la empresa puede asumir,  cada organizaci&oacute;n <strong>debe redactar su C&oacute;digo &Eacute;tico</strong> en el que explicite y  comunique su car&aacute;cter propio que la identifica y diferencia de otras empresas. El C&oacute;digo &Eacute;tico es una presentaci&oacute;n ante todas las partes interesadas de la  conducta de la empresa. </p>
+    <p>La <strong>institucionalizaci&oacute;n  del C&oacute;digo &Eacute;tico</strong> facilita la <strong>transparencia</strong> que es una de las  caracter&iacute;sticas <strong>distintivas de la empresa responsable</strong> que, asumiendo su  responsabilidad con las <strong>partes interesadas</strong>, desarrolla una <strong>potente  actividad de comunicaci&oacute;n informando de sus actividades y de los impactos</strong> de las mismas e interactuando con su entorno escuchando las demandas y  expectativas de sus interlocutores. </p>
+  </div>
+  <div class="virtualpage">
+    <p>El c&oacute;digo &eacute;tico  cumple las siguientes <strong>funciones</strong>:</p>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><div align="center">
+          <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300">
+            <param name="movie" value="imagenes/colorMenu3.swf" />
+            <param name="quality" value="high" />
+			<param name="wmode" value="transparent" />
+            <embed src="imagenes/colorMenu3.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300" wmode="transparent"></embed>
+          </object>
+        </div></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p>No existe una  estructura ni reglas fijas ni una &uacute;nica f&oacute;rmula para la elaboraci&oacute;n de un  C&oacute;digo &Eacute;tico. La estructura y contenido del c&oacute;digo <strong>deben adaptarse a las  caracter&iacute;sticas de cada empresa y a las de su entorno</strong>. </p>
+  </div>
+  <div class="virtualpage">
+    <p>El di&aacute;logo  abierto y sincero con las partes interesadas, la transparencia de las  organizaciones empresariales, ofrece una serie de <strong>ventajas</strong> a las  empresa:</p>
+    <ul>
+      <ul>
+        <li class="lista">Responde a la demanda de informaci&oacute;n de los GI.</li>
+        <li class="lista">Aumenta el conocimiento del entorno. </li>
+        <li class="lista">Mejora la reputaci&oacute;n de la empresa.</li>
+        <li class="lista">Demuestra una actitud proactiva.</li>
+        <li class="lista">Facilita la gesti&oacute;n de las crisis. </li>
+        <li class="lista">Mejora la posici&oacute;n competitiva de la empresa.</li>
+        <li class="lista">Estimula la mejora del sistema de comunicaci&oacute;n.</li>
+      </ul>
+    </ul>
+    <p>La <strong>comunicaci&oacute;n  responsable</strong> tiene las siguientes <strong>caracter&iacute;sticas que son  ineludibles</strong>: veraz, accesible, comprensible, relevante, oportuna,  comparable, cre&iacute;ble, respetuosa, bidireccional, completa, continua y  contrastable.</p>
+    <p>La empresa puede  realizar varios <strong>tipos</strong> de comunicaci&oacute;n, entre los que destacan: </p>
+    <blockquote>
+      <p align="left">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="373" height="117">
+          <param name="movie" value="imagenes/tema9.pag13.swf" />
+          <param name="quality" value="high" />
+		  <param name="wmode" value="transparent" />
+          <embed src="imagenes/tema9.pag13.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="373" height="117" wmode="transparent"></embed>
+        </object>
+      </p>
+    </blockquote>
+  </div>
+  <div class="virtualpage">
+    <p>En todo caso, la  empresa debe elaborar un <strong>plan de comunicaci&oacute;n</strong> <strong>social y ambiental</strong> que incluya el conjunto de <strong>receptores, tipos y acciones de comunicaci&oacute;n</strong> debidamente ordenados y organizados. El plan abarca la  comunicaci&oacute;n interna y externa. </p>
+    <p align="center"><img src="imagenes/img3.4.gif" width="572" height="326" /></p>
+  </div>
+  <div class="virtualpage">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>La herramienta  de comunicaci&oacute;n que m&aacute;s desarrollo est&aacute; experimentando es la <strong>Memoria</strong> o <strong>informe  de RSC</strong>, informe de car&aacute;cter voluntario que realizan las empresas  comprometidas con la RSC  atendiendo a la <strong>triple cuenta de resultados</strong>: <strong>econ&oacute;mica, ambiental y  social.</strong></td>
+      </tr>
+      <tr>
+        <td>Para garantizar  la uniformidad de los Informes de RSC se han desarrollado una serie de <strong>est&aacute;ndares que establecen los  principios y el contenido para la elaboraci&oacute;n de los informes</strong>. El est&aacute;ndar  m&aacute;s aceptado es el <strong><em><a href="http://www.globalreporting.org/Home" target="_blank" title="Si quieres saber más información visita ela página...">Global Reporting Initiative</a> </em>(GRI).</strong> El GRI fue <strong>constituido  en 1997</strong> como una <strong>iniciativa conjunta</strong> de la organizaci&oacute;n no  gubernamental estadounidense <strong><a href="http://www.ceres-cert.com/" target="_blank" title="Si quieres saber más visita...">CERES </a>(<em>Coalition for Environmentally  Responsable Economies</em>) y el <a href="http://www.pnuma.org/dmma2006/index.htm" target="_blank" title="Si quieres saber más de este programa entra en...">PNUMA</a> (Programa de las Naciones Unidas para el  Medio Ambiente),</strong> con el <strong>objetivo de fomentar la calidad, el rigor y la utilidad de las memorias</strong> de RSC.</td>
+      </tr>
+      <tr>
+        <td>Las Memorias o informes de sostenibilidad Social  Corporativa deben elaborarse en base a unos <strong>principios b&aacute;sicos</strong>: </td>
+      </tr>
+      <tr>
+        <td><div align="center">
+          <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300">
+            <param name="movie" value="imagenes/colorMenu4.swf" />
+            <param name="quality" value="high" />
+			<param name="wmode" value="transparent" />
+            <embed src="imagenes/colorMenu4.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300" wmode="transparent"></embed>
+          </object>
+        </div></td>
+      </tr>
+    </table>
+    </div>
+  <div class="virtualpage">
+    <p>El <strong><em>Global Reporting Initiative</em>. </strong><strong>GRI propone la siguiente</strong> <strong>estructura</strong> para el <strong>contenido  del Informe de RSC</strong>: </p>
+    <table width="100%" border="0" cellspacing="2" cellpadding="2">
+      <tr>
+        <td bordercolor="#00FFFF" bgcolor="#E4E1FF"><div align="center">Visi&oacute;n y estrategia </div></td>
+        <td bordercolor="#00FFFF" bgcolor="#E4E1FF"><div align="center">Perfil de la organizaci&oacute;n </div></td>
+        <td bordercolor="#00FFFF" bgcolor="#E4E1FF"><div align="center">Estructura de gobierno y sistemas de gesti&oacute;n </div></td>
+        <td bordercolor="#00FFFF" bgcolor="#E4E1FF"> <div align="center">&Iacute;ndice</div></td>
+        <td bordercolor="#00FFFF" bgcolor="#E4E1FF"> <div align="center">Indicadores de desempe&ntilde;o</div></td>
+      </tr>
+    </table>
+    <p>&nbsp;</p>
+    <p>Los elementos  b&aacute;sicos y comunes de la implantaci&oacute;n de la RSC, tienen su continuidad en la <strong>implantaci&oacute;n  funcional</strong> de la RSC y son los siquientes:</p>
+    <p align="center">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="432" height="84">
+        <param name="movie" value="imagenes/tema9.pag16_1.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag16_1.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="432" height="84" wmode="transparent"></embed>
+      </object>
+    </p>
+    <p>Las funciones  con mayor implicaci&oacute;n en cuestiones de RSC deben implantar pr&aacute;cticas  espec&iacute;ficas para gestionar sus procesos de una manera sostenible. Algunas de  las <strong>funciones</strong> m&aacute;s comunes en la mayor&iacute;a de las empresas <strong>son la  producci&oacute;n, la gesti&oacute;n de los recursos  humanos, comercializaci&oacute;n, compras y financiaci&oacute;n</strong>. </p>
+    
+  </div>
+  <div class="virtualpage">
+    <p>La RSC se aplica a las  operaciones de la empresa, una de las principales es la <strong>producci&oacute;n</strong> o  prestaci&oacute;n del servicio de su oferta comercial. La funci&oacute;n de producci&oacute;n debe considerar los impactos sociales y  ambientales de todos los aspectos relevantes durante el <strong>ciclo de vida</strong> de  los productos, <span class="txtcursiva"><strong>&quot;de la cuna a la tumba</strong>&quot;</span>, para lo cual debe tener en cuenta, entre  otros, aspectos como:</p>
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="694" height="117">
+        <param name="movie" value="imagenes/tema9.pag17.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag17.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="694" height="117" wmode="transparent"></embed>
+    </object>La <strong>gesti&oacute;n de  los recursos humanos</strong> es otra funci&oacute;n esencial en las empresas.  Naturalmente, aspectos b&aacute;sicos como el respeto de los derechos laborales son  una cuesti&oacute;n esencial (trabajo infantil, libertad de asociaci&oacute;n, no  discriminaci&oacute;n, ...), pero no son suficientes. Asegurados los <strong>est&aacute;ndares  m&iacute;nimos</strong> <strong>aceptados por los organismos internacionales</strong>, la empresa  tiene el <strong>reto de gestionar integralmente los recursos humanos con el objetivo  de atraer, desarrollar y retener el talento</strong>. En este terreno, cobran  protagonismo cuestiones como<strong>:</strong></p>
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="694" height="147">
+        <param name="movie" value="imagenes/tema9.pag17_2.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag17_2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="694" height="147" wmode="transparent"></embed>
+      </object>
+    </p>
+  </div>
+  <div class="virtualpage">
+    <p>La <strong>funci&oacute;n  comercial</strong> y las relaciones con los clientes son otra &aacute;rea central de la  gesti&oacute;n de las empresas. Las <strong>cuatro P&rsquo;s del marketing</strong> se ven afectadas  por la RSC.</p>
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="694" height="163">
+        <param name="movie" value="imagenes/tema9.pag18_2.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag18_2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="694" height="163" wmode="transparent"></embed>
+      </object>La <strong>funci&oacute;n de  compras</strong> tambi&eacute;n tiene dos aspectos clave relacionados con la RSC. El primero se centra  en la <strong>integridad del proceso de compras,</strong> promoviendo la igualdad de oportunidades entre los proveedores o evitando sobornos o cualquier otra  pr&aacute;ctica inaceptable. Por otro lado, la empresa responsable <strong>extiende las  buenas pr&aacute;cticas a los proveedores incluyendo criterios sociales y ambientales</strong> en la selecci&oacute;n y evaluaci&oacute;n de proveedores. </p>
+    <p>Por &uacute;ltimo,<strong> la funci&oacute;n</strong> <strong>financiera</strong> debe considerar aspectos como:</p>
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="694" height="119">
+        <param name="movie" value="imagenes/tema9.pag18.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag18.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="694" height="119" wmode="transparent"></embed>
+      </object>
+    </p>
+  </div>
+  <div class="virtualpage">
+    <p class="titulo"><strong>9.6.-  verificaci&oacute;n de consecuaci&oacute;n de objetivos y resultados.</strong></p>
+    <p>Una vez <strong>implantada  la estrategia de RSC y las acciones planificadas,</strong> la empresa debe verificar  los resultados obtenidos y <strong>comprobar en qu&eacute; medida se cumplen los requisitos  y objetivos</strong> fijados. </p>
+    <p>Los <strong>Sistemas  de Verificaci&oacute;n y Control</strong> se componen de <strong>tres elementos b&aacute;sicos</strong>: </p>
+    <ul>
+      <li class="lista_flag">Una estructura organizativa dividida en &aacute;reas de  responsabilidad. </li>
+      </ul>
+    <ul>
+      <li class="lista_flag">Un proceso de comprobaci&oacute;n o Proceso de  Auditoria.</li>
+      </ul>
+    <ul>
+      <li class="lista_flag">Un Sistema de Informaci&oacute;n.</li>
+    </ul>
+    <p>La <strong>verificaci&oacute;n  y control del desempe&ntilde;o econ&oacute;mico, social y ambiental</strong> de la empresa exige  de un <strong>sistema de informaci&oacute;n</strong> que junto con los <strong>registros financieros</strong> ofrezca, tanto en una dimensi&oacute;n interna como externa una informaci&oacute;n integral  sobre los resultados sociales y ambientales de la empresa. El <strong>Informe de RSC</strong> es el instrumento de control fundamental, adem&aacute;s de ser la herramienta de  comunicaci&oacute;n m&aacute;s potente en materia de sostenibilidad. </p>
+  </div>
+  <div class="virtualpage">
+    <p>El <strong>proceso de  control</strong> se divide en <strong>cinco etapas fundamentales</strong>:</p>
+    <p align="center">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="300" height="300">
+        <param name="movie" value="imagenes/colorMenu5.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/colorMenu5.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="300" height="300" wmode="transparent"></embed>
+      </object>
+    </p>
+    <p>La RSC es un <strong>proceso de mejora  continua hacia la excelencia</strong>, por lo que la empresa debe <strong>auditar  regularmente</strong> <strong>su desempe&ntilde;o social y ambiental</strong> para <strong>identificar  desviaciones respecto a lo planificado e implantar medidas correctoras</strong> que  impulsen esa mejora continua de la empresa. </p>
+    </div>
+    <div class="virtualpage">
+    <p>Al igual que las <strong>auditor&iacute;as financieras</strong> o de los <strong>sistemas de gesti&oacute;n de la calidad,</strong> <strong>medio ambiente o prevenci&oacute;n de los riesgos laborales</strong>, la <strong>gesti&oacute;n  socialmente responsable debe someterse a auditor&iacute;as peri&oacute;dicas </strong>para  determinar la <strong>eficacia del sistema</strong> y el grado de <strong>cumplimiento de los  requisitos establecidos</strong>. </p>
+    <p>La <strong>auditoria  de RSC</strong> es un <strong>instrumento de gesti&oacute;n</strong> en la empresa de car&aacute;cter  correctivo que comprende una <strong>evaluaci&oacute;n sistem&aacute;tica, documentada, peri&oacute;dica  y objetiva</strong> de la eficacia de la organizaci&oacute;n, el sistema de gesti&oacute;n y los procedimientos de RSC.</p>
+    <p>La auditoria de  RSC es una herramienta <strong>flexible</strong> cuyo alcance est&aacute; determinado por las <strong>necesidades  y prioridades</strong> de cada empresa. Su realizaci&oacute;n permite conocer la situaci&oacute;n  actual de la organizaci&oacute;n, en cuanto a si se cumple o no con una correcta  gesti&oacute;n social y ambiental, y con la legislaci&oacute;n y requisitos, as&iacute; como  facilitar la b&uacute;squeda de soluciones en los casos en que no se cumpla. La  auditor&iacute;a de RSC puede ser <strong>interna</strong> o <strong>externa</strong>.</p>
+    <p>La <strong>auditor&iacute;a  externa</strong>:</p>
+    <p align="center"><img src="imagenes/tema9.pag21.gif" width="500" height="100" /></p>
+  </div>
+  <div class="virtualpage">
+    <p>Para garantizar  la independencia y eficacia de la auditor&iacute;a, deben aplicarse una serie de <strong>principios  generales</strong> aplicables a los auditores y a las auditor&iacute;as. </p>
+    <p align="center">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="536" height="143">
+        <param name="movie" value="imagenes/tema9.pag21_2.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag21_2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="536" height="143" wmode="transparent"></embed>
+      </object>
+</p>
+    <p>Pero la empresa se ve sometida al escrutinio y <strong>control externo</strong>.  Los m&aacute;s relevantes son:</p>
+    <blockquote>
+      <p align="center">
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="516" height="142">
+          <param name="movie" value="imagenes/tema9.pag23.swf" />
+          <param name="quality" value="high" />
+		  <param name="wmode" value="transparent" />
+          <embed src="imagenes/tema9.pag23.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="516" height="142" wmode="transparent"></embed>
+        </object>
+      </p>
+    </blockquote>
+  </div>
+  <div class="virtualpage">
+    <p><strong>Auditor&iacute;a interna etapas: </strong></p>
+    <div align="center">
+      <table width="659" border="0" cellpadding="2" cellspacing="2" bordercolor="#D2E9FF" bgcolor="#FFFFFF">
+        <tr bgcolor="#0099FF">
+          <td width="107" valign="top" bordercolor="#0099FF" bgcolor="#DDF1FF"><div align="left"><strong>Planificaci&oacute;n de la auditoria.</strong></div></td>
+          <td width="538" bordercolor="#0099FF" bgcolor="#DDF1FF"><div align="left">Las auditorias internas se realizan <strong>peri&oacute;dicamente</strong> (al menos una vez al a&ntilde;o) y de un modo <strong>planificado</strong>.  El plan de auditor&iacute;as internas deben recoger, al menos, el <strong>alcance</strong> de la  auditor&iacute;a, el <strong>auditor</strong> interno asignado y el <strong>calendario</strong> de la  auditor&iacute;a. Una vez acordados los t&eacute;rminos del Plan de Auditor&iacute;a con los  departamentos y funciones de la empresa, el <strong>Comit&eacute; de RSC</strong> aprueba el  Plan de Auditor&iacute;a Interna. </div></td>
+        </tr>
+        <tr>
+          <td height="36" valign="top" bgcolor="#DDF1FF"><div align="left"><strong>Implementaci&oacute;n de la auditoria.</strong></div></td>
+          <td valign="top" bordercolor="#0099FF" bgcolor="#DDF1FF">El desarrollo de la auditor&iacute;a supone: <strong>Comunicar </strong>el plan de auditor&iacute;a a las  partes implicadas y <strong>Comunicar </strong>el plan de auditor&iacute;a a las  partes implicadas. </td>
+        </tr>
+        <tr>
+          <td valign="top" bgcolor="#DDF1FF"><div align="left"><strong>Ejecuci&oacute;n de la auditoria.</strong></div></td>
+          <td valign="top" bordercolor="#0099FF" bgcolor="#DDF1FF"><div align="left">La evaluaci&oacute;n del desempe&ntilde;o social y ambiental de la  empresa puede ser tan informal como preguntar al responsable de RSC c&oacute;mo  van las cosas o puede estructurarse en un proceso formal. </div></td>
+        </tr>
+        <tr>
+          <td valign="top" bgcolor="#DDF1FF"><div align="left">La <strong>revisi&oacute;n documental</strong>.</div></td>
+          <td valign="top" bordercolor="#0099FF" bgcolor="#DDF1FF"><div align="left">Implica el <strong>an&aacute;lisis de los documentos  del sistema</strong> - Pol&iacute;tica RSC, Manual, Procedimientos, Registros.- en busca de <strong>evidencias de la correcta implantaci&oacute;n del sistema de gesti&oacute;n de la RSC. </strong></div></td>
+        </tr>
+        <tr>
+          <td valign="top" bgcolor="#DDF1FF"><div align="left">Las <strong>entrevistas</strong> <strong>con las partes interesadas.</strong></div></td>
+          <td valign="top" bordercolor="#0099FF" bgcolor="#DDF1FF"><div align="left">Son otra fuente  de informaci&oacute;n para la RSC  y un complemento a la revisi&oacute;n documental. </div></td>
+        </tr>
+        <tr>
+          <td height="52" valign="top" bgcolor="#DDF1FF"><div align="left"><strong>Redactar el informe de auditoria.</strong></div></td>
+          <td valign="top" bordercolor="#0099FF" bgcolor="#DDF1FF">El resultado de la auditor&iacute;a se documenta en el  Informe de Auditor&iacute;a que recoja los detalles y los hallazgos de la auditor&iacute;a.  Este informe se comunicar&aacute; a la direcci&oacute;n y a los departamentos y funciones  auditadas como base para la propuesta de acciones de mejora. </td>
+        </tr>
+        <tr>
+          <td valign="top" bgcolor="#DDF1FF"><div align="left"><strong>Seguimiento de la auditoria.</strong></div></td>
+          <td valign="top" bordercolor="#0099FF" bgcolor="#DDF1FF"><div align="left"> El proceso  de auditor&iacute;a debe ser objeto de revisi&oacute;n para asegurar su eficacia</div></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="virtualpage">
+    <p class="titulo"><strong>9.7.-  revisi&oacute;n y mejora del sistema de RSC.</strong></p>
+    <p>La &uacute;ltima fase  del proceso de gesti&oacute;n de la RSC  es la <strong>revisi&oacute;n del sistema por parte de la Alta Direcci&oacute;n de  la organizaci&oacute;n</strong>. La revisi&oacute;n se realiza a intervalos planificados, para  asegurar la conveniencia, adecuaci&oacute;n y eficacia continuas del sistema. La  revisi&oacute;n es el principal mecanismo de <strong>retroalimentaci&oacute;n y actualizaci&oacute;n</strong> del sistema. </p>
+    <p>Para que la <strong>Alta Direcci&oacute;n</strong> pueda realizar la revisi&oacute;n necesita informaci&oacute;n sobre la organizaci&oacute;n, el  entorno y el sistema de gesti&oacute;n de la RSC. Los <strong>inputs de informaci&oacute;n</strong> son, entre  otros:</p>
+    <p>
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="695" height="243">
+        <param name="movie" value="imagenes/tema9.pag23_2.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="imagenes/tema9.pag23_2.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="695" height="243" wmode="transparent"></embed>
+      </object>
+    </p>
+  </div>
+  <div class="virtualpage">
+    <p>El resultado de  la revisi&oacute;n por la direcci&oacute;n debe incluir todas las decisiones y acciones  tomadas relacionadas con posibles cambios en los elementos del sistema de  gesti&oacute;n de la RSC,  coherentes con el <strong>compromiso de mejora continua</strong>. </p>
+    <div id="final">
+      <p align="center"><a href="#" onmouseout="MM_swapImgRestore()" onclick="completar()" title="Marcar 'Tema Completado'" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/completado.gif" alt="Marcar Tema Completado" width="76" height="80" border="0" id="completa"/></a></p>
+      <p align="center" class="txtfinal">&iexcl;Enhorabuena! has llegado al final del Tema 9, para poder realizar la autoevaluaci&oacute;n aseg&uacute;rate de haber<br />
+        revisado bien la teor&iacute;a 
+        y pulsa el bot&oacute;n de Marcar Tema Completado. </p>
+    </div>
+  </div>
+  </div>
+ 
+	<div id="listingpaginate" class="paginationstyle">
+		<a href="#" rel="previous" class="imglinks"><img src="../shared/imagenes/atras.jpg" align="absmiddle" /></a>
+		<select name="select" id="selnum">
+	  </select>
+  <a href="#" rel="next" class="imglinks"><img src="../shared/imagenes/adelante.jpg" align="absmiddle" /></a>  </div>
+	<script type="text/javascript">
+		//virtualpaginate(className, pieces_to_show_per_page)
+		var pagecontent=new virtualpaginate("virtualpage", 1)
+		pagecontent.buildpagination("listingpaginate")
+	</script>
+  	<div id="arbol">INICIO > TEORIA > GETIÓN E IMPLENTACI&Oacute;N DE RSC EN LA EMPRESA </div>
+	<div id="sign">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="80" height="20" class="flash">
+        <param name="movie" value="../shared/imagenes/menu.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="../shared/imagenes/menu.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="80" height="20" wmode="transparent"></embed>
+      </object>
+  </div>
+</div>
+</body>
+</html>

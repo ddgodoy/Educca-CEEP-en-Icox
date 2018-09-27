@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<nodo ca=" 1" le="01" label = "1.-Introducción. Elementos de Excel" path="Capitulo1/FCapitulo1.swf" >
+<nodo ca=" 1" le="00" label = "Entorno básico de Excel2007        " path="Capitulo1/CAPITULO0101.flv" icon="ACheckBox"/>
+</nodo>		 
+<nodo ca=" 2" le="00" label = "2.-Empezando a trabajar con Excel  " path="Capitulo2/FCapitulo2.swf">
+<nodo ca=" 2" le="00" label = "Introducir y modificar texto       " path="Capitulo2/CAPITULO0201.flv" icon="ACheckBox"/>
+<nodo ca=" 2" le="00" label = "Autoevaluación                     " path="Capitulo2/evaulacion021/evaulacion021.swf" icon="ARadioButton" />
+</nodo>		   
+<nodo ca=" 3" le="00" label = "3.-Operaciones con archivos	      " path="Capitulo3/FCapitulo3.swf">
+<nodo ca=" 3" le="00" label = "Abrir un libro de trabajo          " path="Capitulo3/CAPITULO0304.flv" icon="ACheckBox"/>
+<nodo ca=" 3" le="01" label = "Cerrar un libro de trabajo         " path="Capitulo3/CAPITULO0302.flv"  icon="ACheckBox"/>
+<nodo ca=" 3" le="02" label = "Guardar un libro de trabajo        " path="Capitulo3/CAPITULO0301.flv"  icon="ACheckBox"/>
+<nodo ca=" 3" le="03" label = "Crear un nuevo libro de trabajo    " path="Capitulo3/CAPITULO0303.flv"  icon="ACheckBox"/>
+<nodo ca=" 3" le="00" label = "Evaulación Capítulo              " path="Capitulo3/evaulacion31/evaulacion31.swf" icon="ARadioButton" />
+</nodo>		  
+<nodo ca=" 4" le="00" label = "4.-Fórmulas y Funciones	          " path="Capitulo4/FCapitulo4.swf" >
+<nodo ca=" 4" le="00" label = "Insertar Funciones                 " path="Capitulo4/CAPITULO0401.flv" icon="ACheckBox"/>
+<nodo ca=" 4" le="00" label = "Evaluación Capítulo              " path="Capitulo4/evaulacion41/evaulacion41.swf" icon="ARadioButton" />
+<nodo ca=" 4" le="03" label = "Ejercicios                         " path=""     icon="ADataGrid">
+<nodo ca=" 4" le="03" label = "Fórmulas,funciones y rangos       " path="Capitulo0/Formyfuncs.swf"     icon="ADataGrid"/>
+<nodo ca=" 4" le="04" label = "Fórmulas y funciones.             " path="Capitulo0/Tallas.swf"         icon="ADataGrid"/>
+<nodo ca=" 4" le="05" label = "Fórmulas y funciones              " path="Capitulo0/Habslect.swf"       icon="ADataGrid"/>
+<nodo ca=" 4" le="05" label = "Fórmulas largas                   " path="Capitulo0/Formulaslargas.swf" icon="ADataGrid"/>
+<nodo ca=" 4" le="06" label = "Función Si.                       " path="Capitulo0/FuncionSI.swf"      icon="ADataGrid"/>
+<nodo ca=" 4" le="07" label = "Función Si.                       " path="Capitulo0/FuncionSIrep.swf"   icon="ADataGrid"/>
+<nodo ca=" 4" le="08" label = "Función Si.                       " path="Capitulo0/Fichaalmacen.swf"   icon="ADataGrid"/>
+<nodo ca=" 4" le="09" label = "Funcion Buscar                     " path="Capitulo0/BUSCARV.swf"        icon="ADataGrid"/>
+<nodo ca=" 4" le="10" label = "Funcion Buscar                     " path="Capitulo0/Regcompras.swf"     icon="ADataGrid"/>
+<nodo ca=" 4" le="11" label = "Funcion Buscar                     " path="Capitulo0/Andaluciamotor.swf" icon="ADataGrid"/>
+<nodo ca=" 4" le="12" label = "Funcion Buscar                     " path="Capitulo0/CalculoNIF.swf"     icon="ADataGrid"/>
+</nodo>
+</nodo>		   
+<nodo ca=" 5" le="00" label = "5.-Manipulando celdas	          " path="Capitulo5/FCapitulo5.swf" >
+<nodo ca=" 5" le="00" label ="Seleccionar filas,celdas y columnas " path="Capitulo5/CAPITULO0501.flv" icon="ACheckBox"/>
+<nodo ca=" 5" le="01" label = "Copiar celdas                      " path="Capitulo5/CAPITULO0502.flv"  icon="ACheckBox"/>
+<nodo ca=" 5" le="02" label = "Copiar celdas con el ratón        " path="Capitulo5/CAPITULO0503.flv"  icon="ACheckBox"/>
+<nodo ca=" 5" le="03" label = "Pegado especial                    " path="Capitulo5/CAPITULO0504.flv"  icon="ACheckBox"/>
+<nodo ca=" 5" le="04" label = "Mover celdas                       " path="Capitulo5/CAPITULO0505.flv"  icon="ACheckBox"/>
+<nodo ca=" 5" le="05" label = "Borrar celdas                      " path="Capitulo5/CAPITULO0506.flv"  icon="ACheckBox"/>
+<nodo ca=" 5" le="00" label = "Evaluación Capítulo              " path="Capitulo5/evaulacion51/evaulacion51.swf" icon="ARadioButton" />
+</nodo>		  
+<nodo ca=" 6" le="00" label = "6.-Formato de celdas	              " path="Capitulo6/FCapitulo6.swf">
+<nodo ca=" 6" le="00" label = "Cambiar el tipo de letra           " path="Capitulo6/CAPITULO0601.flv"  icon="ACheckBox"/>
+<nodo ca=" 6" le="01" label = "Alinear el contenido de las celdas " path="Capitulo6/CAPITULO0602.flv"  icon="ACheckBox"/>
+<nodo ca=" 6" le="02" label = "Bordes                             " path="Capitulo6/CAPITULO0603.flv"  icon="ACheckBox"/>
+<nodo ca=" 6" le="03" label = "Colorear celdas                    " path="Capitulo6/CAPITULO0606.flv"  icon="ACheckBox"/>
+<nodo ca=" 6" le="04" label = "Formato de celdas                  " path="Capitulo6/CAPITULO0605.flv"  icon="ACheckBox"/>
+<nodo ca=" 6" le="00" label = "Evaluación Capítulo              " path="Capitulo6/evaulacion61/evaulacion61.swf" icon="ARadioButton" />
+<nodo ca=" 6" le="00" label = "Ejercicios Guiados                 " path=""     icon="ADataGrid">
+<nodo ca=" 6" le="01" label = "Formato; Rellenos de Series        " path="Capitulo0/Temperaturas.swf"   icon="ADataGrid" />
+<nodo ca=" 6" le="02" label = "Formato; Rellenos de Series        " path="Capitulo0/Formatoyseries.swf" icon="ADataGrid"/>
+</nodo>
+</nodo>		   
+<nodo ca=" 7" le="00" label = "7.-Cambios de estructura	          " path="Capitulo7/FCapitulo7.swf">
+<nodo ca=" 7" le="00" label = "Alto de filas                      " path="Capitulo7/CAPITULO0701.flv"  icon="ACheckBox"/>
+<nodo ca=" 7" le="01" label = "Ocultar filas                      " path="Capitulo7/CAPITULO0702.flv"  icon="ACheckBox"/>
+<nodo ca=" 7" le="02" label = "Ancho de columna                   " path="Capitulo7/CAPITULO0703.flv"  icon="ACheckBox"/>
+<nodo ca=" 7" le="03" label = "Ocultar columnas                   " path="Capitulo7/CAPITULO0704.flv"  icon="ACheckBox"/>
+<nodo ca=" 7" le="04" label = "Cambiar el nombre a una hoja       " path="Capitulo7/CAPITULO0705.flv"  icon="ACheckBox"/>
+<nodo ca=" 7" le="00" label = "Evaluación Capítulo                " path="Capitulo7/evaulacion71/evaulacion71.swf" icon="ARadioButton" />
+</nodo>		   
+<nodo ca=" 8" le="00" label = "8.-Insertar y eliminar elementos   " path="Capitulo8/FCapitulo8.swf" >
+<nodo ca=" 8" le="00" label = "Insertar filas                     " path="Capitulo8/CAPITULO0801.flv"  icon="ACheckBox"/>
+<nodo ca=" 8" le="01" label = "Insertar columnas                  " path="Capitulo8/CAPITULO0802.flv"  icon="ACheckBox"/>
+<nodo ca=" 8" le="02" label = "Insertar hojas                     " path="Capitulo8/CAPITULO0803.flv"  icon="ACheckBox"/>
+<nodo ca=" 8" le="03" label = "Copiar y mover una hoja            " path="Capitulo8/CAPITULO0804.flv"  icon="ACheckBox"/>
+<nodo ca=" 8" le="04" label = "Eliminar elementos                 " path="Capitulo8/CAPITULO0805.flv"  icon="ACheckBox"/>
+<nodo ca=" 8" le="00" label = "Evaluación Capítulo                " path="Capitulo8/evaulacion81/evaulacion81.swf" icon="ARadioButton" />
+</nodo>		   
+<nodo ca=" 9" le="00" label = "9.-Corrección de la ortografía     " path="Capitulo9/FCapitulo9.swf">
+<nodo ca=" 9" le="00" label = "Autocorrección Ortográfica         " path="Capitulo9/CAPITULO1301.flv" icon="ACheckBox"/>
+<nodo ca=" 9" le="01" label = "Corrección Ortográfica             " path="Capitulo9/CAPITULO1302.flv"  icon="ACheckBox"/>
+<nodo ca=" 9" le="00" label = "Evaluación Capítulo                " path="Capitulo9/evaulacion91/evaulacion91.swf" icon="ARadioButton" />
+</nodo>		   
+<nodo ca="10" le="00" label = "10.-Impresión		          " path="Capitulo10/FCapitulo10.swf">
+<nodo ca="10" le="00" label = "Configurar página                  " path="Capitulo10/CAPITULO1401.flv" icon="ACheckBox"/>
+<nodo ca="10" le="01" label = "Imprimir                           " path="Capitulo10/CAPITULO1402.flv"  icon="ACheckBox"/>
+<nodo ca="10" le="00" label = "Evaluación Capítulo                " path="Capitulo10/evaulacion101/evaulacion101.swf" icon="ARadioButton" />
+</nodo>		  
+<nodo ca="11" le="00" label = "11.-Gráficos		                 " path="Capitulo11/FCapitulo11.swf">
+<nodo ca="11" le="00" label = "Crear gráficos con el asistene     " path="Capitulo11/CAPITULO0901.flv" icon="ACheckBox"/>
+<nodo ca="11" le="00" label = "Evaluación Capítulo                " path="Capitulo11/evaulacion111/evaulacion111.swf" icon="ARadioButton" />
+<nodo ca="11" le="00" label = "Ejercicios Guiados                 " path=""     icon="ADataGrid">
+<nodo ca="11" le="13" label = "Gráficos                           " path="Capitulo0/Graficos.swf"       icon="ADataGrid"/>
+<nodo ca="11" le="14" label = "Gráficos                           " path="Capitulo0/Graficosxy.swf"     icon="ADataGrid"/>
+<nodo ca="11" le="15" label = "Gráficos                           " path="Capitulo0/Repgraficos.swf"    icon="ADataGrid"/>
+</nodo>
+</nodo>		   
+<nodo ca="12" le="00" label = "12.-Imágenes		          " path="Capitulo12/FCapitulo12.swf">
+<nodo ca="12" le="00" label = "Evaluación Capítulo                " path="Capitulo12/evaulacion121/evaulacion121.swf" icon="ARadioButton" />
+</nodo>		   
+<nodo ca="13" le="00" label = "13.-Esquemas y vistas	          " path="Capitulo13/FCapitulo13.swf">
+<nodo ca="13" le="00" label = "Crear un esquema de forma manual   " path="Capitulo13/CAPITULO1001.flv" icon="ACheckBox"/>
+<nodo ca="13" le="00" label = "Evaluación Capítulo                " path="Capitulo13/evaulacion131/evaulacion131.swf" icon="ARadioButton" />
+</nodo>		   
+<nodo ca="14" le="00" label = "14.-Importar datos en Excel	  " path="Capitulo14/Capitulo14.swf" >
+<nodo ca="14" le="00" label = "Importar texto con el asistente    " path="Capitulo14/CAPITULO1101.flv" icon="ACheckBox"/>
+<nodo ca="14" le="00" label = "Evaluación Capítulo                " path="Capitulo14/evaulacion141/evaulacion141.swf" icon="ARadioButton" />
+</nodo>		   
+<nodo ca="15" le="00" label = "15.-Las tablas de datos	          " path="Capitulo15/FCapitulo15.swf" >
+<nodo ca="15" le="00" label = "Trabajando con listas              " path="Capitulo15/CAPITULO1102.flv" icon="ACheckBox"/>
+<nodo ca="15" le="00" label = "Evaluación Capítulo                " path="Capitulo15/evaulacion151/evaulacion151.swf" icon="ARadioButton" />
+<nodo ca="15" le="00" label = "Ejercicios Guiados                 " path=""     icon="ADataGrid">
+<nodo ca="15" le="24" label = "Tablas de datos                    " path="Capitulo0/Tablas1.swf"        icon="ADataGrid"/>
+<nodo ca="15" le="25" label = "Tablas y funciones financieras     " path="Capitulo0/Tablas2.swf"        icon="ADataGrid"/>
+</nodo>
+</nodo>		   
+<nodo ca="16" le="00" label = "16.-Tablas dinámicas	          " path="Capitulo16/FCapitulo16.swf" >
+<nodo ca="16" le="00" label = "Tablas dinámicas                   " path="Capitulo16/CAPITULO1103.flv" icon="ACheckBox"/>
+<nodo ca="16" le="00" label = "Evaluación Capítulo                " path="Capitulo16/evaulacion161/evaulacion161.swf" icon="ARadioButton" />
+<nodo ca="16" le="00" label = "Ejercicios Guiados                 " path=""     icon="ADataGrid">
+<nodo ca="16" le="17" label = "Listas y tablas dinámicas          " path="Capitulo0/Tabladin.swf"       icon="ADataGrid"/>
+<nodo ca="16" le="18" label = "Listas y tablas dinámicas          " path="Capitulo0/Tabladin2.swf"      icon="ADataGrid"/>
+<nodo ca="16" le="19" label = "Listas,filtros y tablas dinámicas  " path="Capitulo0/Repasolistasytablasdin.swf"  icon="ADataGrid"/>
+<nodo ca="16" le="16" label = "Gestión de datos: Listas           " path="Capitulo0/Listaproys.swf"     icon="ADataGrid"/>
+</nodo>
+</nodo>		   
+<nodo ca="17" le="00" label = "17.-Características avanzadas      " path="Capitulo17/FCapitulo17.swf">
+<nodo ca="17" le="00" label = "Formatos de números personalizados " path="Capitulo17/CAPITULO1201.flv" icon="ACheckBox"/>
+<nodo ca="17" le="01" label = "Personalizar barras y menús        " path="Capitulo17/CAPITULO1202.flv"  icon="ACheckBox"/>
+<nodo ca="17" le="02" label = "Formato condicional y validación   " path="Capitulo17/CAPITULO1203.flv"  icon="ACheckBox"/>
+<nodo ca="17" le="03" label = "Enlazar y consolidar hojas         " path="Capitulo17/CAPITULO1204.flv"  icon="ACheckBox"/>
+<nodo ca="17" le="04" label = "Excel e internet                   " path="Capitulo17/CAPITULO1205.flv"  icon="ACheckBox"/>
+<nodo ca="17" le="00" label = "Evaluación Capítulo                " path="Capitulo17/evaulacion171/evaulacion171.swf" icon="ARadioButton" />
+</nodo>		  
+<nodo ca="18" le="00" label = "18.-Macros			  " path="Capitulo18/FCapitulo18.swf" >
+<nodo ca="18" le="00" label = "Crear una macro automáticamente    " path="Capitulo18/CAPITULO1501.flv" icon="ACheckBox" />
+<nodo ca="18" le="01" label = "Asignar una macro a un botón       " path="Capitulo18/CAPITULO1502.flv" icon="ACheckBox"/>
+<nodo ca="18" le="00" label = "Evaluación Capítulo                " path="Capitulo18/evaulacion181/evaulacion181.swf" icon="ARadioButton" />
+</nodo>
+<nodo ca="00" le="00" label = "Ejercicios Guiados				  " path="" >
+<nodo ca="00" le="20" label = "Análisis con solver                " path="Capitulo0/Solver.swf"         icon="ADataGrid"/>
+<nodo ca="00" le="21" label = "Análisis con solver                " path="Capitulo0/Solver2.swf"        icon="ADataGrid"/>
+<nodo ca="00" le="22" label = "Escenarios y protección de celdas  " path="Capitulo0/Evolucionventas.swf" icon="ADataGrid"/>
+<nodo ca="00" le="23" label = "Solver,escenarios y tablas         " path="Capitulo0/toletras.swf"       icon="ADataGrid"/>
+<nodo ca="00" le="26" label = "Trabajo con hojas Extensas         " path="Capitulo0/Hojasext.swf"       icon="ADataGrid"/>
+<nodo ca="00" le="27" label = "Repaso general                     " path="Capitulo0/Repgral.swf"        icon="ADataGrid"/>
+<nodo ca="00" le="28" label = "Repaso general                     " path="Capitulo0/Repasogeneral.swf"  icon="ADataGrid"/>
+</nodo>
