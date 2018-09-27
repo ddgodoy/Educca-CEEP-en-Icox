@@ -1,0 +1,10 @@
+set:
+  log_errors:                  on
+  arg_separator.output:        |
+    &amp;
+
+check:
+  # zend.ze1_compatibility_mode: off
+
+warn:
+  session.auto_start:          off
