@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.2 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="Gestión de Proyectos" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd" version="1.2">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <adlcp:location />
+  </metadata>
+  <organizations default="ORG-32723D0B-6D20-DEF6-453F-DDFD462820FA">
+    <organization identifier="ORG-32723D0B-6D20-DEF6-453F-DDFD462820FA" structure="hierarchical">
+      <title>Curso de Gestión de Proyectos</title>
+      <item identifier="ITEM-89F52720-9EB6-A78D-31FB-F74881BCA5A3" identifierref="RES-57BF6807-C441-6C3B-A251-B92640BA8229" isvisible="true">
+        <title>Tema 1: Introducción a la Gestión de Proyectos</title>
+      </item>
+      <item identifier="ITEM-E57579CD-B84D-0A67-0F97-DACB71A64155" identifierref="RES-B6C8B7D5-73C7-D3EE-1ABD-C8ABC18F10BE" isvisible="true">
+        <title>Tema 2: Definición de Proyectos y Gestión</title>
+      </item>
+      <item identifier="ITEM-C3EAA436-E01A-29B0-A08C-A10CCE9857B2" identifierref="RES-30E9F95D-95D6-09CE-2989-2CDD41918360" isvisible="true">
+        <title>Tema 3: Parte 1 Planificación y Programación de Proyectos</title>
+      </item>
+      <item identifier="ITEM-0EA6EE90-3224-E1D4-27EA-379048AF2C07" identifierref="RES-0C7B5478-90A7-91A9-F512-C4AD3EB23D98" isvisible="true">
+        <title>Tema 4: Parte 2 Planificación y Programación de Proyectos</title>
+      </item>
+      <item identifier="ITEM-B5F21F21-ED44-10B6-CC11-47C096902B39" identifierref="RES-251DD125-84F4-946C-0032-2774CB03AF5F" isvisible="true">
+        <title>Tema 5:  Parte 3 Planificación y Programación de Proyectos</title>
+      </item>
+      <item identifier="ITEM-74CE7941-D49B-57DF-0947-B8388FCD3AAC" identifierref="RES-08AF8405-A858-6F79-296E-C1E0B643F1FA" isvisible="true">
+        <title>Tema 6: Parte 4 Planificación y Programación de Proyectos</title>
+      </item>
+      <item identifier="ITEM-201EDF1F-6627-9AE8-65B6-A2DF758BC27D" identifierref="RES-E4CA6599-A44E-2E20-188B-78D108BBC81E" isvisible="true">
+        <title>Tema 7:Parte 1 Ejecución y Control del Trabajo</title>
+      </item>
+      <item identifier="ITEM-F98AB4E5-8000-C420-E5FE-FFCBAA5D78F1" identifierref="RES-53C41895-D0FD-A6A8-811D-9907CF1BBA7F" isvisible="true">
+        <title>Tema 8:Parte 2 Ejecución y Control del Trabajo</title>
+      </item>
+      <item identifier="ITEM-0CAD18B6-CB85-0463-E1AF-57E744B7CB44" identifierref="RES-BE9621E4-B909-100B-22E2-FC873D356162" isvisible="true">
+        <title>Tema 9: Recursos Humanos y Planificación</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource href="tema1/0.html" identifier="RES-57BF6807-C441-6C3B-A251-B92640BA8229" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema1/0.html" />
+      <file href="tema1/1.swd" />
+      <file href="tema1/1.swf" />
+      <file href="tema1/cuestionario.html" />
+      <file href="tema1/cuestionario.js" />
+      <file href="tema1/ej1.pdf" />
+      <file href="tema1/ej2.pdf" />
+      <file href="tema1/ej3.pdf" />
+      <file href="tema1/ej4.pdf" />
+      <file href="tema1/ej5.pdf" />
+      <file href="tema1/ej6.pdf" />
+      <file href="tema1/imagen.jpg" />
+      <file href="tema1/intro_student.js" />
+      <dependency identifierref="R_shared" />
+    </resource>
+    <resource href="tema2/2.html" identifier="RES-B6C8B7D5-73C7-D3EE-1ABD-C8ABC18F10BE" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema2/2.html" />
+      <file href="tema2/2.swf" />
+      <file href="tema2/cuestionario.html" />
+      <file href="tema2/cuestionario.js" />
+      <file href="tema2/ej10.pdf" />
+      <file href="tema2/ej11.pdf" />
+      <file href="tema2/ej12.pdf" />
+      <file href="tema2/ej13.pdf" />
+      <file href="tema2/ej14.pdf" />
+      <file href="tema2/ej15.pdf" />
+      <file href="tema2/ej16.pdf" />
+      <file href="tema2/ej17.pdf" />
+      <file href="tema2/ej18.pdf" />
+      <file href="tema2/ej19.pdf" />
+      <file href="tema2/ej20.pdf" />
+      <file href="tema2/ej21.pdf" />
+      <file href="tema2/ej22.pdf" />
+      <file href="tema2/ej7.pdf" />
+      <file href="tema2/ej8.pdf" />
+      <file href="tema2/ej9.pdf" />
+      <file href="tema2/intro_student.js" />
+      <dependency identifierref="R_shared" />
+    </resource>
+    <resource href="tema3/3.html" identifier="RES-30E9F95D-95D6-09CE-2989-2CDD41918360" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema3/3.html" />
+      <file href="tema3/3.swf" />
+      <file href="tema3/cuestionario.html" />
+      <file href="tema3/cuestionario.js" />
+      <file href="tema3/intro_student.js" />
+      <dependency identifierref="R_shared" />
+    </resource>
+    <resource href="tema4/4.html" identifier="RES-0C7B5478-90A7-91A9-F512-C4AD3EB23D98" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema4/4.html" />
+      <file href="tema4/4.swf" />
+      <file href="tema4/cuestionario.html" />
+      <file href="tema4/cuestionario.js" />
+      <file href="tema4/intro_student.js" />
+      <dependency identifierref="R_shared" />
+    </resource>
+    <resource href="tema5/5.html" identifier="RES-251DD125-84F4-946C-0032-2774CB03AF5F" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema5/5.html" />
+      <file href="tema5/5.swf" />
+      <file href="tema5/cuestionario.html" />
+      <file href="tema5/cuestionario.js" />
+      <file href="tema5/intro_student.js" />
+      <dependency identifierref="R_shared" />
+    </resource>
+    <resource href="tema6/6.html" identifier="RES-08AF8405-A858-6F79-296E-C1E0B643F1FA" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema6/6.html" />
+      <file href="tema6/6.swf" />
+      <file href="tema6/cuestionario.html" />
+      <file href="tema6/cuestionario.js" />
+      <file href="tema6/intro_student.js" />
+      <dependency identifierref="R_shared" />
+    </resource>
+    <resource href="tema7/7.html" identifier="RES-E4CA6599-A44E-2E20-188B-78D108BBC81E" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema7/7.html" />
+      <file href="tema7/7.swf" />
+      <file href="tema7/cuestionario.html" />
+      <file href="tema7/cuestionario.js" />
+      <file href="tema7/intro_student.js" />
+      <dependency identifierref="R_shared" />
+    </resource>
+    <resource href="tema8/8.html" identifier="RES-53C41895-D0FD-A6A8-811D-9907CF1BBA7F" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema8/8.html" />
+      <file href="tema8/8.swf" />
+      <file href="tema8/cuestionario.html" />
+      <file href="tema8/cuestionario.js" />
+      <file href="tema8/intro_student.js" />
+      <file href="tema8/Thumbs.db" />
+      <dependency identifierref="R_shared" />
+    </resource>
+    <resource identifier="R_shared" adlcp:scormtype="asset" type="webcontent">
+      <file href="shared/js/apiwrapper.js" />
+      <file href="shared/js/Thumbs.db" />
+      <file href="shared/ayuda.pdf" />
+    </resource>
+    <resource href="tema9/9.html" identifier="RES-BE9621E4-B909-100B-22E2-FC873D356162" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema9/9.html" />
+      <file href="tema9/9.swf" />
+      <dependency identifierref="R_shared" />
+    </resource>
+  </resources>
+</manifest>
+

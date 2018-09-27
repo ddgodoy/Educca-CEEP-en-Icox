@@ -1,0 +1,2 @@
+var lesson;
+var langtrings;

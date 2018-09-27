@@ -1,0 +1,278 @@
+﻿<public:component lightweight="true">
+<!--
+LEGAL NOTICE:
+
+This component is protected by copyright law and international treaties. Unauthorized reproduction or distribution
+of this component, or any portion of it is strictly forbidden, and may result in severe civil and criminal penalties, 
+and will be prosecuted to the maximum extent possible under law.
+
+Composica Ltd. (c) 2002-2008.
+-->
+ <public:attach event="ondocumentready" for="element" onevent="initDragDrop()" /> <public:event name="oncheck" id="eCheck" />  <public:property name="isHost" get="getIsHost" /> <public:method name="getGlobalResult" /> <public:method name="getRangeResult" /> <public:method name="isCustomMatch" /> <public:method name="checkAnswer" /> <public:method name="showFix" /> <public:property name="correctPattern" get="getCorrectPattern" /> <public:property name="userPattern" get="getUserPattern" />  <public:emuproperty name="alreadyDone" /> <public:emuproperty name="randPrefix" /> <public:emuproperty name="tries" />  <public:attach event="ondocumentready" for="element" onevent="initVar()" /> <public:method name="isVarSupported" /> <public:method name="getVarValue" /> <public:event name="onvarchange" id="eVarChg" /> <script language="jscript">var oDoc=element.document,oDrops={},oDrags={},aErrors=[],aEmpty=[],aDummy=[],iTotalCorrect=0,iCorrect=0,pCorrectPattern,pUserPattern,oFeedBack,iTotalAttempts,bDone=false,pOrderFix,sOpacity,iDuration,oTimer,bInFix=false,bInRestore=false,iCurZ=1000,iRatio
+function initDragDrop(){var oSrc,aDrags,aDrops,sAnimate
+pOrderFix=element.getAttribute("orderfix")
+oFeedBack=element.getElementsByTagName("feedback")[0]
+sOpacity=element.getAttribute("dragopacity")
+sOpacity=sOpacity===null?100:sOpacity*1
+sAnimate=element.getAttribute("animatefix")||"true"
+iDuration=sAnimate=="true"?(element.getAttribute("fixduration")||1500)*1:0
+if(oFeedBack)iTotalAttempts=oFeedBack.getAttribute("attempts")*1
+if(element.alreadyDone)bDone=true
+if(!element.randPrefix)element.randPrefix="DD"+Math.floor(Math.random()*1000000)+""+new Date().getTime()
+if(!element.tries)element.tries=0
+if(element.getAttribute("randomizedrag")=="true"){randomizeCollection(element.getElementsByTagName("dragitem"))
+element.setAttribute("randomizedrag","false")}
+if(element.getAttribute("randomizedrop")=="true"){randomizeCollection(element.getElementsByTagName("droparea"))
+element.setAttribute("randomizedrop","false")}
+aDrags=element.getElementsByTagName("dragitem")
+aDrops=element.getElementsByTagName("droparea")
+for(var iDrag=0;iDrag<aDrags.length;iDrag++){oSrc=aDrags[iDrag]
+opacityOverlay(oSrc)
+if(!oSrc.origX){oSrc.id=element.randPrefix+"I"+iDrag
+oSrc.origX=oSrc.offsetLeft
+oSrc.origY=oSrc.offsetTop
+oSrc.style.marginLeft=0
+oSrc.style.marginTop=0
+oSrc.setAttribute("marginLeft",oSrc.origX-oSrc.offsetLeft)
+oSrc.setAttribute("marginTop",oSrc.origY-oSrc.offsetTop)
+oSrc.style.left=oSrc.offsetLeft+oSrc.marginLeft
+oSrc.style.right="auto"
+oSrc.style.top=oSrc.offsetTop+oSrc.marginTop
+oSrc.style.bottom="auto"
+oSrc.setAttribute("origX",oSrc.offsetLeft)
+oSrc.setAttribute("origY",oSrc.offsetTop)
+oSrc.style.right="auto"}else{oSrc.origX*=1
+oSrc.origY*=1
+oSrc.marginLeft*=1
+oSrc.marginTop*=1}
+oSrc.origParent=oSrc.parentElement
+oSrc.onmousedown=startDrag
+if(oSrc.ddindex!=-1){oDrops[oSrc.ddindex]=[]
+if(!oDrags[oSrc.ddindex]){oDrags[oSrc.ddindex]=[]}
+oDrags[oSrc.ddindex].push(oSrc)}}
+pCorrectPattern=[]
+for(var iDrop=0;iDrop<aDrops.length;iDrop++){oSrc=aDrops[iDrop]
+if(!oSrc.id)oSrc.id=element.randPrefix+"A"+iDrop
+var iOpacity=oSrc.opacity
+if(iOpacity!=100&&iOpacity!==null){oSrc.style.filter="alpha(opacity="+iOpacity+")"}else{opacityOverlay(oSrc)}
+if(oSrc.ddindex!=-1&&oDrops[oSrc.ddindex]){oDrops[oSrc.ddindex].push(oSrc)
+pCorrectPattern.push(oSrc.ddindex+"[.]"+oSrc.ddindex)}else{aDummy.push(oSrc)}}
+oDoc.body.attachEvent("onfinishpage",handleFinish)}
+function handleFinish(event){cleanUp()
+if(bInRestore){try{fastRestore()}catch(oErr){}}else if(bInFix){try{fastFix()}catch(oErr){}}}
+function cleanUp(){try{if(oTimer){clearTimeout(oTimer)
+oTimer=null}
+if(flyDrag.flying){flyDrag.flying.duration=0
+flyDrag(flyDrag.flying)
+flyDrag.flying=null}}catch(oErr){}}
+function randomizeCollection(aTemp){for(var iElem=0;iElem<aTemp.length;iElem++){var oElem=aTemp[iElem],oTarget=aTemp[Math.floor(Math.random()*aTemp.length)],oSaveTarget={position:oTarget.style.position,left:oTarget.style.left,top:oTarget.style.top,right:oTarget.style.right,bottom:oTarget.style.bottom}
+oTarget.swapNode(oElem)
+oTarget.style.position=oElem.style.position
+oTarget.style.left=oElem.style.left
+oTarget.style.top=oElem.style.top
+oTarget.style.right=oElem.style.right
+oTarget.style.bottom=oElem.style.bottom
+oElem.style.position=oSaveTarget.position
+oElem.style.left=oSaveTarget.left
+oElem.style.top=oSaveTarget.top
+oElem.style.right=oSaveTarget.right
+oElem.style.bottom=oSaveTarget.bottom}}
+function startDrag(){if(bDone)return false
+cleanUp()
+var oSrc=this
+iRatio=window.scaleRatio||1
+oSrc.posX=event.clientX/iRatio
+oSrc.posY=event.clientY/iRatio
+oSrc.posL=oSrc.offsetLeft
+oSrc.posT=oSrc.offsetTop
+oSrc.onmousemove=handleDrag
+oSrc.onmouseup=endDrag
+oSrc.parentElement.origZ=oSrc.parentElement.style.zIndex
+oSrc.parentElement.style.zIndex=++iCurZ
+if(sOpacity!=100){oSrc.style.filter="alpha(opacity="+sOpacity+")"}
+oSrc.style.zIndex=++iCurZ
+oSrc.setCapture()
+if(oSrc.droparea){oDoc.getElementById(oSrc.droparea).removeAttribute("dragitem")
+oSrc.removeAttribute("droparea")}
+event.returnValue=false}
+function handleDrag(){var oSrc=this,iNewX=event.clientX/iRatio,iNewY=event.clientY/iRatio
+oSrc.posL=oSrc.posL+iNewX-oSrc.posX
+oSrc.posT=oSrc.posT+iNewY-oSrc.posY
+oSrc.style.left=oSrc.posL
+oSrc.style.top=oSrc.posT
+oSrc.posX=iNewX
+oSrc.posY=iNewY
+event.returnValue=false}
+function endDrag(){var oSrc=this,oDrop
+oSrc.onmousemove=null
+oSrc.onmouseup=null
+oSrc.releaseCapture()
+oSrc.style.display='none'
+if(sOpacity!=100){oSrc.style.filter=""}
+oDrop=oDoc.elementFromPoint(event.clientX/iRatio,event.clientY/iRatio)
+oSrc.style.display='block'
+oSrc.style.zIndex=1
+oSrc.parentElement.style.zIndex=oSrc.parentElement.origZ
+if(oDrop){oSrc.style.zIndex=oDrop.currentStyle.zIndex*1+1
+while(oDrop.tagName!="droparea"){if(oDrop.tagName=="BODY"||oDrop.tagName=="dragitem")break
+oDrop=oDrop.parentElement}
+if(oDrop.tagName=="droparea"&&!oDrop.dragitem){if(element.dropreject=="true"&&oSrc.ddindex!=oDrop.ddindex){restoreDragitem(oSrc)}else{dropDragitem(oDrop,oSrc)}}else{if(element.dropover=="true"&&(oDrop.tagName=="droparea"||(oDrop.tagName=="dragitem"&&oDrop.droparea))){if(element.dropreject=="true"&&oSrc.ddindex!=oDrop.ddindex){restoreDragitem(oSrc)}else{if(oDrop.tagName=="dragitem")oDrop=oDoc.getElementById(oDrop.droparea)
+var oCurSrc=oDoc.getElementById(oDrop.dragitem)
+restoreDragitem(oCurSrc)
+dropDragitem(oDrop,oSrc)}}else{restoreDragitem(oSrc)}}}}
+function dropDragitem(oDrop,oDrag){if(oDrag.parentElement!=oDrop.parentElement){oDrop.parentElement.appendChild(oDrag)}
+oDrag.targetElem=oDrop
+oDrag.setAttribute("droparea",oDrop.id)
+oDrop.setAttribute("dragitem",oDrag.id)
+startFlyDrag(oDrop,oDrag,finishDragDropItem,iDuration?500:0)}
+function finishDragDropItem(oDrag){var oDrop=oDrag.targetElem,oPos=calculateDropPos(oDrop,oDrag)
+if(oDrag.parentElement!=oDrop.parentElement){oDrop.parentElement.appendChild(oDrag)}
+oDrag.style.left=oPos.left
+oDrag.style.top=oPos.top
+oDrag.style.zIndex=oDrop.currentStyle.zIndex*1+1
+oDrag.setAttribute("droparea",oDrop.id)
+oDrop.setAttribute("dragitem",oDrag.id)
+oDrag.drop=null
+fastFix.flyDrag=null}
+function calculateDropPos(oDrop,oDrag){var sAlign=element.getAttribute("dropalign"),oPos={}
+oPos.left=oDrop.offsetLeft+oDrag.marginLeft
+oPos.top=oDrop.offsetTop+oDrag.marginTop
+if(sAlign=="center"&&oDrop.tagName){oPos.left+=Math.round((oDrop.offsetWidth-oDrag.offsetWidth)/2)
+oPos.top+=Math.round((oDrop.offsetHeight-oDrag.offsetHeight)/2)}
+return oPos}
+function restoreDragitem(oSrc){if(oSrc.origParent&&oSrc.parentElement!=oSrc.origParent){oSrc.origParent.appendChild(oSrc)}
+if(oSrc.droparea){oDoc.getElementById(oSrc.droparea).removeAttribute("dragitem")
+oSrc.removeAttribute("droparea")}
+var oTraget={offsetLeft:oSrc.origX,offsetTop:oSrc.origY}
+startFlyDrag(oTraget,oSrc,finishRestoreDragItem)}
+function finishRestoreDragItem(oDrag,bFull){oDrag.style.left=oDrag.origX
+oDrag.style.top=oDrag.origY
+if(bFull&&oDrag.droparea){oDoc.getElementById(oDrag.droparea).removeAttribute("dragitem")
+oDrag.removeAttribute("droparea")}
+fastRestore.flyDrag=null}
+function checkDragDrop(){var aDrops
+aErrors=[]
+aEmpty=[]
+pUserPattern=[]
+for(var iIdx in oDrops){aDrops=oDrops[iIdx]
+iEmpty=0
+for(var i=0;i<aDrops.length;i++){var oCurDrop=aDrops[i]
+if(oCurDrop.dragitem){var iDragIdx=oDoc.getElementById(oCurDrop.dragitem).ddindex
+iTotalCorrect++
+if(iDragIdx==iIdx){iCorrect++}else{aErrors.push(oDoc.getElementById(oCurDrop.dragitem))}
+pUserPattern.push(iDragIdx+"[.]"+iIdx)}else{aEmpty.push(oCurDrop)
+iEmpty++}}
+var iMaxDrop=Math.min(aDrops.length,oDrags[iIdx].length),iDiff=iEmpty-(aDrops.length-iMaxDrop)
+if(iDiff>0){iTotalCorrect+=iDiff}}}
+function getCorrectPattern(){return pCorrectPattern.join("[,]")}
+function getUserPattern(){return pUserPattern.join("[,]")}
+function checkAnswer(event){if(!oFeedBack)return false
+element.tries++
+checkDragDrop()
+eCheck.fire()
+iTotalAttempts=oFeedBack.getAttribute("attempts")*1
+bDone=oFeedBack.showResults(element.tries>=iTotalAttempts)
+if(bDone)element.alreadyDone=true
+iCorrect=0
+iTotalCorrect=0
+return bDone}
+function getGlobalResult(){if(iCorrect==iTotalCorrect)return"RIGHT"
+if(iCorrect==0)return"WRONG"
+return"PARTIAL"}
+function getRangeResult(){return{correct:iCorrect,total:iTotalCorrect}}
+function isCustomMatch(sCondition){if(!sCondition)return false
+var aValues=sCondition.split(";"),iEmpty,sLogic="AND"
+for(var i=0;i<aValues.length;i++){if(aValues[i]=="AND"||aValues[i]=="OR"){sLogic=aValues[i]
+aValues[i]=null
+break}}
+for(var i=0;i<aValues.length;i++){if(aValues[i]!=null){var aPair=aValues[i].split(":"),iIndex=aPair[0],sMatch=aPair[1],aDrops=oDrops[iIndex],iEmpty=0
+for(var iDrop=0;iDrop<aDrops.length;iDrop++){var oCurDrop=aDrops[iDrop],bMatch=false
+if(sMatch!="E"){if(oCurDrop.dragitem){var iDD=oDoc.getElementById(oCurDrop.dragitem).ddindex
+if(iDD==sMatch||(sMatch.indexOf("Not")==0&&iDD!=sMatch.replace("Not ",""))){bMatch=true
+break}}else if(sMatch.indexOf("Not")==0&&oCurDrop.ddindex==sMatch.replace("Not ","")){bMatch=true
+break}}else{if(!oCurDrop.dragitem){iEmpty++}}}
+if(sMatch=="E"&&iEmpty>aDrops.length-oDrags[iIndex].length){bMatch=true}
+if(sLogic=="AND"&&!bMatch)return false
+if(sLogic=="OR"&&bMatch)return true}}
+return sLogic=="AND"?true:false}
+function showFix(){if(aErrors.length==0)checkDragDrop()
+var oDrop
+for(var i=0;i<aDummy.length;i++){oDrop=aDummy[i]
+if(oDrop.dragitem){aErrors.push(oDoc.getElementById(oDrop.dragitem))}}
+aErrors.reverse()
+animateFix()}
+function orderFunc(a,b){var iA=(a.getAttribute("ddorder")*1)||1,iB=(b.getAttribute("ddorder")*1)||0
+return iB-iA}
+function animateFix(){try{element;}catch(e){return;}
+if(aErrors.length){bInRestore=true
+oTimer=setTimeout(restoreItem,600)}else{bInRestore=false
+if(pOrderFix=="true"){aEmpty.sort(orderFunc)}else{aEmpty.reverse()}
+bInFix=true
+oTimer=setTimeout(fixItem,600)}}
+function restoreItem(bFastFix){try{element;}catch(e){return;}
+var oDrag=aErrors.pop()
+aEmpty.push(oDoc.getElementById(oDrag.droparea))
+var oTraget={offsetLeft:oDrag.origX,offsetTop:oDrag.origY}
+if(!bFastFix){fastRestore.flyDrag=oDrag
+startFlyDrag(oTraget,oDrag,finishRestoreItem)}else{finishRestoreDragItem(oDrag,true)}}
+function fastFix(){if(fastFix.flyDrag){finishDragDropItem(fastFix.flyDrag)}
+while(aEmpty.length){fixItem(false,true)}}
+function fastRestore(){if(fastRestore.flyDrag){finishRestoreDragItem(fastRestore.flyDrag,true)}
+while(aErrors.length){restoreItem(true)}
+fastFix()}
+function fixItem(bRight,bFastFix){var oDrop,aDrags,bCanDrop=true,bMatch
+if(!bRight&&aEmpty.length){oDrop=aEmpty.pop()
+aDrags=oDrags[oDrop.ddindex]
+if(aDrags){if(pOrderFix=="true"){aDrags.sort(orderFunc)}
+bMatch=false
+for(var i=0;i<aDrags.length;i++){if(pOrderFix=="true"){bCanDrop=(oDrop.getAttribute("ddorder")*1||1)==aDrags[i].getAttribute("ddorder")*1||1}
+if(!aDrags[i].droparea&&bCanDrop){if(!bFastFix){fastFix.flyDrag=aDrags[i]
+startFlyDrag(oDrop,aDrags[i],finishDropItem)}else{aDrags[i].targetElem=oDrop
+finishDragDropItem(aDrags[i])}
+bMatch=true
+break}}
+if(!bMatch&&aEmpty.length){fixItem()}}}else{bInFix=false}}
+function startFlyDrag(oTargetItem,oDragItem,fOnFinish,iCustomDuration){var oTargetPos=calculateDropPos(oTargetItem,oDragItem)
+cleanUp()
+if(oDragItem.origParent){oDragItem.origParent.appendChild(oDragItem)
+oDragItem.origParent=null}else if(oTargetItem.parentElement&&oDragItem.parentElement!=oTargetItem.parentElement){oTargetItem.parentElement.appendChild(oDragItem)}
+oDragItem.startX=oDragItem.offsetLeft
+oDragItem.startY=oDragItem.offsetTop
+oDragItem.distX=oTargetPos.left-oDragItem.startX
+oDragItem.distY=oTargetPos.top-oDragItem.startY
+oDragItem.time=0
+oDragItem.duration=iCustomDuration||iDuration
+oDragItem.delay=50
+oDragItem.targetElem=oTargetItem
+oDragItem.style.zIndex=++iCurZ
+oDragItem.onfinish=fOnFinish
+flyDrag(oDragItem)}
+function flyDrag(oDragItem){try{element;}catch(e){return;}
+if((oDragItem.time+=oDragItem.delay)>=oDragItem.duration){oDragItem.onfinish(oDragItem)
+oDragItem.targetElem=null
+oDragItem.targetLeft=null
+oDragItem.targetTop=null
+oDragItem.stepX=null
+oDragItem.stepY=null
+oDragItem.zIndex=null
+oDragItem.onfinish=null
+flyDrag.flying=null}else{var iPos=flyFunc(oDragItem.time,0,1,oDragItem.duration)
+oDragItem.style.left=oDragItem.startX+iPos*oDragItem.distX
+oDragItem.style.top=oDragItem.startY+iPos*oDragItem.distY
+flyDrag.flying=oDragItem
+oTimer=setTimeout(function(){flyDrag(oDragItem)},15)}}
+function finishDropItem(oDragItem){finishDragDropItem(oDragItem)
+oTimer=setTimeout(fixItem,600)}
+function finishRestoreItem(oDragItem){finishRestoreDragItem(oDragItem,true)
+animateFix()}
+function flyFunc(t,b,c,d){return(t==d)?b+c:c*(-Math.pow(2,-10*t/d)+1)+b}
+function getIsHost(){return true}
+var oVariables={"correct answers":null,"total answers":null,"attempts left":null,"current attempt":null,"total attempts":null}
+function isVarSupported(sVar){return oVariables[sVar]!==undefined}
+function getVarValue(sVar){return oVariables[sVar]}
+function initVar(){element.attachEvent("oncheck",function(){oVariables["correct answers"]=iCorrect
+oVariables["total answers"]=iTotalCorrect
+oVariables["attempts left"]=iTotalAttempts-element.tries
+oVariables["current attempt"]=element.tries
+oVariables["total attempts"]=iTotalAttempts
+eVarChg.fire()})}</script> </public:component>
