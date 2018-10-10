@@ -1,0 +1,259 @@
+BODY {
+	font-size:8px;
+	margin-left: 5px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	scrollbar-face-color: #C4BDB5;
+	scrollbar-shadow-color: #F4F4F0;
+	scrollbar-highlight-color: #F4F4F0;
+	scrollbar-3dlight-color: #F4F4F0;
+	scrollbar-darkshadow-color: #F4F4F0;
+	scrollbar-track-color: #F4F4F0;
+	scrollbar-arrow-color: #F4F4F0
+}
+.flash {
+	z-index: 0;
+}
+
+ 
+#menusup {
+	position: absolute;
+	height: 32px;
+	width: 224px;
+	left: 517px;
+	top: 47px;
+}
+
+#arbol {
+	font-size:8px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	background-color: #FFFFFF;
+	position: absolute;
+	width: 500px;
+	left: 17px;
+	top: 47px;
+}
+.super {
+	background-image: url(../imagenes/tope1.gif);
+	background-repeat: repeat-x;
+	position: relative;
+	height: 33px;
+	width: 730px;
+}
+#menu, #menu2{
+	background-image: url(../imagenes/fondo.gif);
+	background-repeat: repeat;
+	position: absolute;
+	border: thin solid #C0C0C0;
+	background-color: #FFFFFF;
+	layer-background-color:#FFFFFF;
+	z-index: 150;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-variant: small-caps;
+	text-transform: capitalize;
+}
+
+#page {
+	border: thin solid #5176B5;
+	height: 600px;
+	width: 730px;
+}
+#pasap {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	position: absolute;
+	width: 200px;
+	left: 247px;
+	top: 544px;
+	font-weight: bolder;
+}
+
+#contenido {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	position: absolute;
+	height: 516px;
+	width: 690px;
+	left: 27px;
+	top: 97px;
+	text-align: justify;
+}
+.lista {
+	list-style-image: url(../imagenes/vin1.gif);
+}
+
+
+.imgint {
+	margin: 10px;
+	border: 1px solid #333333;
+}
+.imgtxtpregunta {
+	vertical-align: top;
+	cursor: help;
+}
+.txtcursiva {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: oblique;
+	color: #003366;
+}
+
+.scroll {
+	SCROLLBAR-FACE-COLOR: #FFFFFF; 
+	SCROLLBAR-HIGHLIGHT-COLOR: #FFFFFF; 
+	SCROLLBAR-SHADOW-COLOR: #FFFFFF; 
+	SCROLLBAR-3DLIGHT-COLOR: #C4BDB5; 
+	SCROLLBAR-DARKSHADOW-COLOR: #C4BDB5; 
+	SCROLLBAR-ARROW-COLOR: #C4BDB5; 
+	SCROLLBAR-TRACK-COLOR: #C4BDB5; 
+	SCROLLBAR-BASE-COLOR: #C4BDB5;
+}
+.titulo {
+	font-family: Arial, Helvetica, sans-serif;
+	font-variant: small-caps;
+	text-transform: capitalize;
+	font-style: normal;
+	text-decoration: underline;
+	font-size: 14px;
+}
+
+.txtmenu {
+	text-decoration:none;
+}
+.bubble {
+border-bottom-color:#FFFFFF
+}
+
+A:HOVER.txtmenu {
+	text-decoration:none;
+	font-size:10px;
+	color:#FF0000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+#tip {
+	position: absolute;
+	left: 499px;
+	top: 62px;
+	width: 188px;
+	height: 52px;
+	border: thin solid #CCCCCC;
+	font-size: 10px;
+}
+
+#page #contenido a {
+	text-decoration:underline;
+	border-bottom: 1px solid darkgreen;
+	padding-bottom: 1px;
+	color: #000000;
+}
+#page #contenido a:hover {
+	text-decoration: underline;
+	border-bottom: 1px solid darkgreen;
+	padding-bottom: 1px;
+	color: #000000;
+}
+#page #contenido a:visited {
+	text-decoration: underline;
+	border-bottom: 1px solid darkgreen;
+	padding-bottom: 1px;
+	color: #000000;
+}
+
+#page_intro {
+
+	border: thin solid #5176B5;
+	height: 600px;
+	width: 730px;
+}
+#page_intro {
+	border: thin solid #d11b0a;
+	height: 600px;
+	width: 730px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+#dhtmltooltip2{
+	position: absolute;
+	width: 150px;
+	text-align: left;
+	padding: 2px;
+	visibility: hidden;
+	z-index: 100;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	background-color: #FFFFFF;
+	border: thin solid #999999;
+}
+
+#dhtmltooltip{
+	position: absolute;
+	width: 150px;
+	text-align: center;
+	padding: 2px;
+	visibility: hidden;
+	z-index: 100;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+pre{background-color:#EFEFEF;}
+#footer {position:absolute; bottom:0px;}
+#footer table {border-collapse:collapse;}
+.superindice {
+	color: #0000FF;
+}
+.lista_flag {
+
+	list-style-image: url(../imagenes/flag.gif);
+}
+.lista_pregunta {
+
+
+	list-style-image: url(../imagenes/qmark.gif);
+}
+
+.listadedo {
+	list-style-image: url(../imagenes/thumb.gif);
+}
+.listaplus {
+	list-style-image: url(../imagenes/plus.gif);
+}
+.txtfinal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+}
+#final {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 9px;
+	position: absolute;
+	left: 85px;
+	top: 339px;
+}
+
+#contenidobiblio {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	position: absolute;
+	height: 1593px;
+	width: 698px;
+	left: 27px;
+	top: 97px;
+	text-align: justify;
+}
+#pagebiblio {
+
+	border: thin solid #5176B5;
+	height: 1300px;
+	width: 730px;
+}
+#pageayuda {
+
+
+	border: thin solid #5176B5;
+	height: 5300px;
+	width: 730px;
+}
+

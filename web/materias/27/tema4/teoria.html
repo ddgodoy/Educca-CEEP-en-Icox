@@ -1,0 +1,316 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Curso RSC</title>
+<script language="javascript" src="../shared/js/estilos.js"></script>
+<script language="javascript"  src="menu.js"></script>
+<script type="text/javascript" src="../shared/js/virtualpaginate.js"></script>
+
+<script type="text/javascript" src="../shared/js/BubbleTooltips.js"></script>
+<script type="text/javascript" src="BubbleTooltips.js"></script>
+<script type="text/javascript">
+window.onload=function(){enableTooltips("contenido")};
+</script>
+
+<script type="text/javascript" src="../shared/js/prototype.js"></script>
+<script type="text/javascript" src="../shared/js/bubble.js"></script>
+
+<script language="javascript">
+
+	var tiempo_actual = new Date().getTime();
+	
+	function cerrarVentana() {
+	if (confirm("¿Estás seguro de que quieres abandonar la teoría?")) 
+		window.close();
+	}
+	
+	function completar() {
+	if (confirm("¿Quieres marcar la teoría del tema como Completada?")) {
+		opener.status_completado();
+		window.close();
+		}
+	}	
+		
+</script>
+<link href="../shared/css/bubble.css" rel="stylesheet" type="text/css" />
+
+<link href="../shared/css/curso.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+/*Sample CSS used for the Virtual Pagination Demos. Modify/ remove as desired*/
+
+.virtualpage, .virtualpage2, .virtualpage3{
+/*hide the broken up pieces of contents until script is called. Remove if desired*/
+display: none;
+}
+
+.paginationstyle{ /*Style for demo pagination divs*/
+	width: 250px;
+	padding: 2px 0;
+	margin: 10px 0;
+	text-align: center;
+}
+
+.paginationstyle select{ /*Style for demo pagination divs' select menu*/
+	border: 1px solid navy;
+	margin: 0 15px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #999999;
+}
+
+.paginationstyle a{ /*Pagination links style*/
+padding: 0 5px;
+text-decoration: none;
+border: 1px solid black;
+color: navy;
+background-color: white;
+}
+
+.paginationstyle a:hover, .paginationstyle a.selected{
+color: #000;
+background-color: #FEE496;
+}
+
+.paginationstyle a.imglinks{ /*Pagination Image links style (class="imglinks") */
+border: 0;
+padding: 0;
+}
+
+.paginationstyle a.imglinks img{
+vertical-align: middle;
+border: 0;
+}
+
+.paginationstyle a.imglinks a:hover{
+background: none;
+}
+
+.paginationstyle .flatview a:hover, .paginationstyle .flatview a.selected{ /*Pagination div "flatview" links style*/
+color: #000;
+background-color: yellow;
+}
+
+#page #listingpaginate {
+	position: absolute;
+	left: 244px;
+	top: 551px;
+	vertical-align: top;
+}
+body {
+	margin-left: 10px;
+	margin-top: 10px;
+}
+#gmap {display:block; width:425px; height:282px; background:url(imagenes/tema4.4.jpg); position:relative; margin:0 auto 2em auto;}
+#gmap a {color:#000; font-family:arial, sans-serif; font-size:1.2em; font-weight:bold; text-transform:uppercase;}
+
+a#title2, a#title2:visited {
+	display:block;
+	width:425px;
+	height:0;
+	padding-top:282px;
+	position:absolute;
+	left:0;
+	top:0;
+	background:transparent url(imagenes/tema4.4col.jpg) no-repeat 400px 400px;
+	cursor:default;
+	text-decoration:none;
+}
+* html a#title2 {height:282px; he\ight:0;}
+#gmap a#title2:hover {background-position: 0 0; overflow:visible; color:#c00;}
+	
+a#direccion {display:block; width:65px; height:0; padding-top:246px; overflow:visible; position:absolute; left:170px; top:31px; background:transparent url(imagenes/tema4.direccion.jpg) no-repeat 400px 400px;}
+* html a#direccion {height:0; he\ight:0;}
+a#direccion:hover {background-position: 0 0; overflow:visible;}
+
+a#proveedor {display:block; width:65px; height:0; padding-top:246px; overflow:visible; position:absolute; left:217px; top:30px; background:transparent url(imagenes/tema4.proveedora.jpg) no-repeat 400px 400px;}
+* html a#provedor {height:0; he\ight:0;}
+a#proveedor:hover {background-position: 0 0; overflow:visible;}
+
+a#administrador {display:block; width:43px; height:0; padding-top:246px; overflow:visible; position:absolute; left:260px; top:8px; background:transparent url(imagenes/tema4.administrador.jpg) no-repeat 400px 400px;}
+* html a#administrador {height:0; he\ight:0;}
+a#administrador:hover {background-position: 0 0; overflow:visible;}
+
+a#comunidad {display:block; width:46px; height:0; padding-top:246px; overflow:visible; position:absolute; left:292px; top:11px; background:transparent url(imagenes/tema4.comunidadlocal.jpg) no-repeat 400px 400px;}
+* html a#comunidad {height:0; he\ight:0;}
+a#comunidad:hover {background-position: 0 0; overflow:visible;}
+
+a#representante {display:block; width:60px; height:0; padding-top:246px; overflow:visible; position:absolute; left:124px; top:38px; background:transparent url(imagenes/tema4.representante.jpg) no-repeat 400px 400px;}
+* html a#representante {height:0; he\ight:0;}
+a#representante:hover {background-position: 0 0; overflow:visible;}
+
+a#trabajador {display:block; width:60px; height:0; padding-top:246px; overflow:visible; position:absolute; left:88px; top:44px; background:transparent url(imagenes/tema4.trabajador.jpg) no-repeat 400px 400px;}
+* html a#trabajador {height:0; he\ight:0;}
+a#trabajador:hover {background-position: 0 0; overflow:visible;}
+
+a#consumidor {display:block; width:41px; height:0; padding-top:246px; overflow:visible; position:absolute; left:58px; top:58px; background:transparent url(imagenes/tema4.consumidora.jpg) no-repeat 400px 400px;}
+* html a#consumidor {height:0; he\ight:0;}
+a#consumidor:hover {background-position: 0 0; overflow:visible;}
+
+
+</style>
+</head>
+
+<body onunload="javascript: window.opener.setElapsedTime(); window.opener.location.reload();">
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip">This DIV has a tip!!.</div>
+<div style="top: 10px; visibility: hidden; left: 0px;" id="dhtmltooltip2">This DIV has a tip!!.</div>
+<div id="page">
+	  <div class="super" id="super"><img src="../shared/imagenes/logo.gif" alt="Responsabilidad Social Corporativa" width="247" height="33"/></div> 
+	 
+	<div id="menusup">
+	  <div align="right"><a href="javascript:cerrarVentana()"><img src="../shared/imagenes/home.jpg" width="25" height="31" hspace="5" border="0" onmouseover="ddrivetip('Volver al Indice'); return false;" onmouseout="hideddrivetip()"/></a>
+	  <script language="javascript">
+	  	var estado = opener.status;
+		if (estado == "completed") {
+			document.writeln("<a href=\"cuestionario.html\"><img src=\"../shared/imagenes/ejercic.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Ir al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" /></a>");
+		} else {
+			document.writeln("<img src=\"../shared/imagenes/ejercic_no.jpg\" width=\"25\" height=\"31\" hspace=\"5\" border=\"0\" onmouseover=\"ddrivetip('Aun no tienes acceso al Cuestionario'); return false;\" onmouseout=\"hideddrivetip()\" />");
+		}
+	  </script>
+	  <a href="javascript:void(0)" onclick="open ('../shared/bibliografia.html','biblio','left=100,top=90,width=760,height=620,scrollbars=1,toolbar=1,resizable=1');"><img src="../shared/imagenes/biblio.jpg" width="25" height="31" hspace="5"  onmouseover="ddrivetip('Bibliografía'); return false;" onmouseout="hideddrivetip()" border="0"/></a></div>
+  </div>
+  <div id="contenido">
+  		<div class="virtualpage">
+		<p>
+		  <strong class="titulo">4.1.- los grupos de interés o stakeholders</strong></a><strong> </strong></p>
+    <p><img src="imagenes/tema4.1.jpg" alt="Libro Freeman" width="200" height="301" align="right" class="imgint" /></p>
+    <p><br />
+    La  responsabilidad social corporativa es fundamentalmente un <strong>proceso sistematizado</strong> que tiene como <strong>objetivo crear valor e implementarlo a las diversas partes interesadas</strong>,  que interact&uacute;an y desarrollan estrategias que les van a permitir alcanzar sus  objetivos.  </p>
+          <p>En el  contexto econ&oacute;mico y de gesti&oacute;n empresarial, <strong>capital social hace referencia a las relaciones entre actores  econ&oacute;micos</strong> y se expresa en el grado de <strong>reciprocidad  y de confianza </strong>necesarias para realizar de forma conjunta y coordinada una  actividad productiva.          </p>
+          <p>Se  considera que, <strong>cuanto mayor capital  social hay en las empresas, m&aacute;s posibilidades tienen &eacute;stas de &eacute;xito empresarial</strong> en un entorno altamente competitivo.            </p>
+          <p>Ya no  se expresa que la empresa es un lugar de <strong>conflicto  y confrontaci&oacute;n entre diversos actores</strong> intervinientes cuyo resultado es la  ineficiencia empresarial, sino un lugar de <strong>conciliaci&oacute;n  de intereses que avanzan de forma conjuntada</strong> para lograr ventajas  competitivas y nuevas oportunidades.</p>
+		</div>
+		<div class="virtualpage">
+		   <p><br />
+Seg&uacute;n  el estudio realizado por <strong><span class="txtcursiva">European Foundation for de Improvement of  Living and Working Conditions </span></strong>EFIWC, de 2003, la empresa se enfrenta a <strong>tres cuestiones importantes</strong>:<img src="imagenes/tema4.2.jpg" width="150" height="164" align="right" /></p>
+    <ul>
+      <li><img src="imagenes/img4.1.gif" width="256" height="23" class="imgtxtpregunta" /></li>
+      <li><img src="imagenes/img4.2.gif" width="180" height="23" class="imgtxtpregunta" /></li>
+      <li><img src="imagenes/img4.3.gif" width="97" height="23" class="imgtxtpregunta" /></li>
+    </ul>
+    <p>La <strong>teor&iacute;a de los stakeholders </strong>considera que estos son<strong><span class="txtcursiva"> &ldquo;aquellos</span></strong> <strong><span class="txtcursiva">grupos sin cuyo apoyo la organizaci&oacute;n dejar&iacute;a de  existir&rdquo;</span></strong>y que se relaciona con <strong><span class="txtcursiva">&ldquo;cualquier grupo o individuo </span></strong>
+      <strong><span class="txtcursiva">que  pueda afectar al logro de los objetivos de la empresa o se pueda ver afectado  por el mismo&rdquo;.</span></strong></p>
+    <p>Desde  esta perspectiva de partes interesadas se puede hacer a priori una  clasificaci&oacute;n simple de los stakeholders o multistakeholders:<img src="imagenes/tema4.3.jpg" width="250" height="168" align="right" class="imgint" /></p>
+    <p>&nbsp;</p>
+    <ul><li>Entre las partes  interesadas que est&aacute;n implicadas en el dialogo social y las que no lo est&aacute;n</li>
+      <li>Entre las que est&aacute;n  directamente implicadas con la marcha de la empresa y las que solo est&aacute;n  interesadas e implicadas de forma indirecta.</li>
+      <li>Entre aquellas que  pueden expresarse por si mismas y aquellas que no pueden, como por ejemplo las  generaciones futuras.</li>
+    </ul>
+		</div>		
+		<div class="virtualpage">
+		<p>La <strong>identificaci&oacute;n de los stakeholders</strong> supone poner en marcha unos mecanismos de dialogo social que deber&aacute; de ser  sincero, abierto y activo entre todas las partes interesadas, que permitan a la  empresa determinar <strong>qui&eacute;n esta implicado</strong> con sus actividades y <strong>en que medid</strong>a,  algunas partes interesadas son obvias otras no.    </p>
+    <p>Una  vez definidas las partes interesadas y su legitimidad deben conocerse las <strong>expectativas que estos grupos</strong> tienen  respecto de la empresa, <strong>mediante  herramientas de mediciones cualitativas y cuantitativas</strong> y examinar en que  medida convergen o se separan del resto de los grupos de inter&eacute;s</p>
+    <p>Seg&uacute;n el estudio de EFIWC, antes citado, las principales partes interesadas son:</p>    
+    <dl id="gmap" style="border-left:1px solid darkgreen;border-top:1px solid darkgreen;border-right:1px solid darkgreen;border-bottom:1px solid darkgreen; padding-bottom:0">
+	<dt><a id="title2" title="Pasa el ratón por encima de cada persona" href="#"></a></dt>
+<dd><a id="direccion" title="La dirección empresarial: es a quien corresponde la decisión de establecer la RSC" href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="proveedor" title="Los proveedores: son los que proveen a las empresas de recursos." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="administrador" title="Las administraciones públicas: contribuyen a su establecimiento de forma activa para paliar desequilibrios." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="comunidad" title="La comunidad local: se corresponde con la localización donde actúa la empresa." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="representante" title="Los representantes de los trabajadores: su implicación es fundamental en la RSC para obtener los resultados que se esperan obtener." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="trabajador" title="Los trabajadores: se pueden implicar desde la perspectiva de mejora de las condiciones de vida." href="#" style="border-bottom: 0px"></a></dd>
+<dd><a id="consumidor" title="Los consumidores: son la razón de ser de toda empresa." href="#" style="border-bottom: 0px"></a></dd>
+</dl>
+		</div>
+	<div class="virtualpage">
+	<p><strong>4.2.-  <span class="titulo">El modelo de gesti&oacute;n de los grupos de inter&eacute;s </span></strong></p>
+    <p>La <strong>evoluci&oacute;n de la empresa</strong> lleva aparejada  una <strong>adaptaci&oacute;n a un entorno cambiante y  muy exigente a nivel global competitivo</strong>, tesis contrapuesta y alejada de la  visi&oacute;n del <strong>modelo neocl&aacute;sico empresarial</strong>,  y en cierta medida interrelacionada con la visi&oacute;n del <strong>modelo directivo</strong> y vinculada de forma total con la visi&oacute;n del <strong>modelo de la empresa basada en los  stakeholders</strong>.</p>
+    <p>Desde  este paradigma puede decirse que la propia <strong>identidad de la empresa</strong> puede  describirse como resultado de un <strong>proceso complejo, din&aacute;mico y reciproco</strong> entre la direcci&oacute;n de la empresa y el resto de los stakeholders con que se  relaciona de forma directa e indirecta.</p>
+    <p>La RSC generalmente  exige <strong>recursos humanos, financieros y de tiempo</strong>. Como consecuencia, las  empresas en regiones ricas disponen de m&aacute;s recursos y tienen mayores  posibilidades de invertir en temas relacionados con la responsabilidad social  corporativa. </p>
+    <p><strong><span class="txtcursiva"><img src="imagenes/img4.4.gif" width="250" height="70" align="left" class="imgint" /></span></strong>Seg&uacute;n un estudio realizado por a <strong><span class="txtcursiva">European Foundation for the Improvement of  Living an Working Conditions </span></strong>en las regiones que registran un mayor  desarrollo econ&oacute;mico, las empresas centran su atenci&oacute;n en el dialogo con los  grupos de inter&eacute;s y por tanto, la responsabilidad social corporativa est&aacute;  presente en todos sus actividades, mientras que en las regiones menos  desarrolladas, la RSC  se centra en cuestiones mas b&aacute;sicas como la filantrop&iacute;a.</p>
+    <p>Este estudio, tambi&eacute;n afirma que las empresas que  operan en determinados sectores y est&aacute;n mas expuestas a reacciones adversas de  los grupos de inter&eacute;s, caso de las empresas de energ&iacute;a, transporte, textil,  qu&iacute;mica y energ&iacute;a nuclear desarrollan m&aacute;s su responsabilidad social de cara a  ganarse el favor de la comunidad en la que operan. As&iacute; por ejemplo Inditex ha  desarrollado un c&oacute;digo de conducta com&uacute;n para todos sus proveedores denominado <strong><span class="txtcursiva">Business Social Compliance Iniciative</span></strong>(BSCI). </p>
+
+	</div>
+	<div class="virtualpage">
+		<p>El <strong>modelo  de stakeholders</strong>, as&iacute; a simple vista, parece un poco simple por lo que se  podr&iacute;an <strong>categorizar </strong>en funci&oacute;n de c&oacute;mo se adjudican unos recursos  escasos empresariales, al fin de <strong>satisfacer las prioridades</strong> de estos  grupos de inter&eacute;s y las <strong>relaciones multidisciplinares </strong>que enfrentan a la  organizaci&oacute;n de empresa.</p>
+    <p><br />
+      <img src="imagenes/tema5.jpg" width="250" height="160" align="left" class="imgint" />El  principal rasgo que caracteriza la <strong>literatura  de la RSC pone el  &eacute;nfasis en la satisfacci&oacute;n de aquellos stakeholders que tradicionalmente hab&iacute;an  sido menos considerados,</strong> b&aacute;sicamente <strong>la comunidad y los empleados</strong>.  Frente al <strong>grupo de los propietarios </strong>cuyos  objetivos hab&iacute;an constituidos la principal preocupaci&oacute;n de las empresas. De  este hecho se fundamenta la <strong>acci&oacute;n  social de las empresas</strong>.      </p>
+    <p>La  adecuada direcci&oacute;n de los stakeholders <strong>implica considerar y atender las  demandas planteadas por todos los diferentes grupos</strong> que mantengan una  relaci&oacute;n con la empresa. En un primer momento es conveniente fijarse en los que  mantienen una <strong>relaci&oacute;n comercial directa</strong>, para luego hacerlo con los que  se tienen una <strong>relaci&oacute;n indirecta</strong> </p>
+    <p>Para todo  este desempe&ntilde;o socialmente responsable se debe invertir en actividades de <strong>clasificaci&oacute;n,  selecci&oacute;n, control y formaci&oacute;n de proveedores y distribuidores, </strong>aunque<strong> </strong>con  frecuencia se puede incurrir en suministros m&aacute;s caros, aunque como ya se ha  se&ntilde;alado la estrategia que sigue la empresa responsable es una <strong>estrategia de  diferenciaci&oacute;n y no de liderazgo en costes</strong>. </p>
+    <p>Aquellos  proveedores o distribuidores mas comprometidos socialmente soportaran unos  costes adicionales pero como compensaci&oacute;n conseguir&aacute;n diferenciarse del resto  pudiendo solicitar un sobreprecio por sus servicios.</p>
+	</div>
+	<div class="virtualpage">
+	  <p class="titulo"><strong>4.3.- El mercado y los stakeholders: comercio justo, mercado verde y marketing con causa </strong></p>
+    <p>Entre los  stakeholders de la empresa, <strong>los consumidores y clientes</strong> constituyen un  grupo especialmente destacado puesto que la <strong>satisfacci&oacute;n de sus necesidades</strong> es el hecho que da sentido a la propia existencia de la empresa.</p>
+    <p>Para  desarrollar las <strong>actuaciones la empresa de cara a sus clientes</strong> es preciso  que se den <strong>dos circunstancias simult&aacute;neas</strong>:</p>
+    <p align="center"><img src="imagenes/tema4.6.jpg" width="250" height="167" class="imgint" /><img src="imagenes/tema4.7.jpg" width="250" height="166" class="imgint" /></p>
+    <p>Los  estudios emp&iacute;ricos ponen en evidencia que la informaci&oacute;n existente sobre RSC  pueden tener un <strong>impacto significativo en la evaluaci&oacute;n que los consumidores</strong> realizan de las empresas y de sus productos y pueden condicionar su conducta,  pero lo que desde luego ha quedado patente es que las conductas poco &eacute;ticas o  irresponsables han generado un efecto negativo que en algunos casos han llevado  a campa&ntilde;as de boicot contra la empresa.</p>
+	</div>
+	<div class="virtualpage">
+		<p align="justify">Tambi&eacute;n  hay que tener en cuenta que desde hace tiempo existe un nuevo tipo de  consumidor de marcada preocupaci&oacute;n medioambiental y social dispuesto a seguir  una conducta de compra que demanda mayor preocupaci&oacute;n del mercado de las  empresas por los <strong>productos verdes o ecol&oacute;gicos</strong> y el <strong>comercio justo.</strong>    
+    <p align="left"><img src="imagenes/tema4.8.jpg" width="250" height="150" align="right" class="imgint" />
+    
+    <p>Este nuevo  mercado verde y de comercio justo se sustenta en un enfoque alternativo de las  relaciones entre los diversos actores: productores, importadores, tiendas y  consumidores, que se gu&iacute;an por criterios de funcionamiento democr&aacute;ticos,  igualdad de genero, ausencia de explotaci&oacute;n laboral infantil y trabajos  forzosos, respeto por el medioambiente y transparencia en su funcionamiento.</p>
+    <p>De otro  lado, para las empresas el marketing constituye un elemento esencial de  planificaci&oacute;n estrat&eacute;gica de mercado, que eval&uacute;a necesidades y determina  posiciones en los mercados. El denominado <span class="txtcursiva">&ldquo;<strong>marketing con causa&rdquo;</strong></span> hace que  la empresa vincule sus productos y marcas a la ayuda de causas sociales, <strong>obra  social</strong>, como compromiso solidario en beneficio de la imagen corporativa. </p>
+    <p>Las empresas que ejecutan pol&iacute;ticas de  Responsabilidad Social Corporativa alcanzan <strong>mayor credibilidad</strong> que  aquellas que no lo hacen, ya que <strong>se alinean con los valores e inquietudes de  los ciudadanos</strong> y este hecho repercute positivamente en los resultados que  obtienen.</p>
+    <p>El  marketing con causa esta ligado a los <strong>medios de comunicaci&oacute;n</strong> que ejercen  un papel esencial de transmisores de la imagen corporativa. Dado que los  asuntos de RSC constituyen por su propia naturaleza un asunto de gran inter&eacute;s  para las personas y organizaciones, los medios de comunicaci&oacute;n se erigen en <strong>grandes  creadores de opini&oacute;n</strong> al respecto y aportan, mediante su difusi&oacute;n <strong>un gran  alcance a la sensibilizaci&oacute;n de la ciudadan&iacute;a</strong>, un plus de relevancia  esencial para las empresas. Este stakeholder merece una atenci&oacute;n especial desde  la direcci&oacute;n de las compa&ntilde;&iacute;as.</p>
+	</div>
+	<div class="virtualpage">
+		<p>Otro de  los grupos de inter&eacute;s que merece un apartado especial en esta revisi&oacute;n es el de <strong>los competidores</strong>, por su gran valor estrat&eacute;gico y su reacci&oacute;n a los  programas de RSC en los mercados. Es frecuente que en las memorias de RSC no  exista un apartado dedicado a este stakeholder, pero es verdad que incide de  forma directa y condiciona la forma en que la empresa va a competir o  establecer acuerdos para desarrollar acciones sociales conjuntas.</p>
+    <p><strong>&nbsp;</strong></p>
+    <p class="titulo"><strong>4.4.- Los stakeholders estrat&eacute;gicos en la diferenciaci&oacute;n empresarial</strong></p>
+    <p><img src="imagenes/tema4.9.jpg" width="250" height="198" align="right" class="imgint" />Por la <strong>gran  difusi&oacute;n que desde los medios de comunicaci&oacute;n</strong> se hace de las <strong>actividades  de las ONGs</strong>, de sus propuestas y denuncias, el papel de este stakeholder es  cada vez m&aacute;s especial. Principalmente la finalidad perseguida tiene que ver con  el desarrollo comunitario, la previsi&oacute;n de servicios sociales b&aacute;sicos y la  mejora de las condiciones de los m&aacute;s desfavorecidos o la protecci&oacute;n del  medioambiente y los derechos humanos.</p>
+    <p>La  presencia de <strong>las ONGs</strong> en los &uacute;ltimos a&ntilde;os ha sido creciente y juegan un  papel esencial en la <strong>concienciaci&oacute;n y sensibilizaci&oacute;n de la opini&oacute;n publica</strong>.  La empresa debe adoptar una postura transparente, ofreciendo toda la  informaci&oacute;n pertinente sobre su RSC y mantener un dialogo continuo con las ONGs  para as&iacute; detectar con antelaci&oacute;n suficiente aquellos puntos d&eacute;biles que merecen  un cambio de pol&iacute;tica empresarial. La participaci&oacute;n de las ONGs como expertos  stakeholders resultar&aacute; de gran valor para la RSC y la mejora continua.</p>
+	</div>
+	<div class="virtualpage">
+	<p><img src="imagenes/tema4.10.jpg" width="200" height="220" align="left" class="imgint" />La   RSC y el stakeholder de <strong>los sindicatos</strong> se  concibe de distintas formas: <strong>plantea desaf&iacute;os a los sindicatos, pero tambi&eacute;n  constituye una oportunidad de acci&oacute;n</strong>. El <strong>desaf&iacute;o para el sindicalismo</strong> consiste en evitar que la RSC  se convierta en un sustituto del papel que deben desempe&ntilde;ar los gobiernos y los  sindicatos, lo que exigir&aacute; un enfoque distinto seg&uacute;n el &aacute;rea de que se trate. </p>
+    <p>Para hacer frente a los  desaf&iacute;os y sacar provecho de las oportunidades se deber&aacute; adoptar un enfoque  distinto seg&uacute;n el &aacute;rea de que se trate. La RSC ha proporcionado herramientas que se pueden  utilizar como palanca con las empresas. Este nuevo entorno ha dado lugar a <strong>c&oacute;digos de conducta</strong>, a un <strong>mayor respaldo a las acciones sindicales  impulsadas por los accionistas</strong> y a <strong>mejores  procedimientos de seguimiento en las directrices de la OCDE</strong> para las empresas  multinacionales.</p>
+    <p>No se deben pasar por  alto esas oportunidades, pero, al mismo tiempo, no se deben dejar de mirar de  frente <strong>los desaf&iacute;os que se plantean a  los sindicatos</strong>. <strong>La oportunidad</strong> para los sindicatos radica en poder utilizar la RSC para promover una <strong>cultura de acatamiento de las leyes y respeto de las normas, adem&aacute;s de  promover buenas relaciones laborales y respeto el papel de los sindicatos</strong>. </p>
+    <p>A menudo los  departamentos de RSC no efect&uacute;an distinci&oacute;n alguna entre ONG y sindicatos y  muchos no tienen en cuenta a los sindicatos. Esto sucede incluso en empresas  cuyos empleados est&aacute;n afiliados a sindicatos. Uno de los motivos es que, dentro  de una empresa, las actividades en materia de RSC <strong>tienden a estar separadas de las funciones relativas a recursos humanos  y personal</strong>. Cuando el departamento encargado de la RSC no comprende la <strong>&iacute;ndole dual de los sindicatos</strong> como  organizaciones laborales y, al mismo tiempo, como organizaciones de la sociedad  civil, tampoco est&aacute;n comprendiendo c&oacute;mo una empresa puede enraizarse realmente  en una comunidad a trav&eacute;s de los sindicatos de sus empleados.</p>
+	</div>
+	<div class="virtualpage">
+			 <p>Los sindicalistas est&aacute;n a  favor de las normas laborales y de su aplicaci&oacute;n. El fen&oacute;meno de la RSE y especialmente de los  c&oacute;digos de conducta para los proveedores han dado oportunidad de promover un  reconocimiento y valoraci&oacute;n de las normas de la OIT m&aacute;s grande que nunca. En verdad fue el  movimiento sindical internacional el que introdujo la utilizaci&oacute;n de las normas  internacionales del trabajo en el debate sobre <strong>los c&oacute;digos de conducta que abarcan las pr&aacute;cticas laborales</strong>. Sin  embargo, los sindicalistas enfrentan una serie de graves desaf&iacute;os en lo  relativo al respeto de las normas. Las empresas est&aacute;n utilizando los c&oacute;digos de  conducta y otras formas de actividad normativa privada del &aacute;mbito social para  redefinir o reinterpretar las normas a fin de que parezca que su  responsabilidad es menor de lo que realmente es. Por ejemplo, muchas empresas  prometen respetar la libertad sindical solamente cuando as&iacute; lo prescribe la ley  y no aceptan asumir responsabilidad alguna al respecto por operar en entornos  donde no se autoriza este derecho humano fundamental. Si bien el derecho de  negociaci&oacute;n colectiva ahora se reconoce como uno de los derechos laborales  fundamentales, las empresas raramente lo incluyen, ni siquiera&nbsp; cuando han aceptado respetar la libertad  sindical de los trabajadores.    
+    <p>Muchas empresas sostienen  que los convenios de la OIT  no se aplican a las empresas y hacen caso omiso de que con la <strong>Declaraci&oacute;n</strong><strong> tripartita de la OIT</strong> sobre las empresas multinacionales  y la pol&iacute;tica social, <strong>empleadores,  gobiernos y trabajadores</strong> reconocieron que los principios subyacentes de  muchos de los convenios de la OIT  se podr&iacute;an y deber&iacute;an aplicar al comportamiento empresarial. El hecho de que  los convenios de la OIT  den definiciones y vayan acompa&ntilde;ados de jurisprudencia que aclara su  significado en circunstancias espec&iacute;ficas no ha desalentado a las empresas ni a  sus asesores en materia de RSC, que se han ocupado de redefinir de manera m&aacute;s  conveniente para ellos expresiones como &laquo;trabajo infantil&raquo; o de promover  mecanismos dominados por los empleadores sustituyendo a la libertad sindical.
+    <p>El desaf&iacute;o para los  sindicatos es asegurarse de que se elaboren normas para los <strong>auditores sociales </strong>y que las  inspecciones privadas de los lugares de trabajo que sean compatibles con las  mejores pr&aacute;cticas de la <strong>Inspecci&oacute;n</strong><strong> del Trabajo</strong>, que promuevan una <strong>cultura de acatamiento a la ley y quesean  coherentes con el papel de las relaciones laborales</strong>. </p>
+	</div>
+	<div class="virtualpage">
+		<p class="titulo"><strong>4.5.- Las estrategias de RSC </strong></p>
+    <p>La RSC es una  estrategia que permite incrementar la reputaci&oacute;n y, por consiguiente, facilitar  la competitividad econ&oacute;mica de las empresas.</p>
+    <p>La Comisi&oacute;n de la UE considera que la RSC es una <strong>estrategia  valida para cualquier dimensi&oacute;n de empresa, grandes, medianas y peque&ntilde;as  empresas</strong>, ya que la incidencia econ&oacute;mica de la RSC puede verse de los efectos  directos y los efectos indirectos: </p>
+    <p align="center"><img src="imagenes/img4.5.gif" width="550" height="200" /></p>
+    <p>El objetivo de toda empresa es  conseguir el m&aacute;ximo de beneficios en funci&oacute;n del capital invertido de ello se  deparan <strong>dos niveles b&aacute;sicos de estrategia</strong>: la <strong>estrategia corporativa</strong> y la <strong>estrategia de negocio</strong>. De estos dos par&aacute;metros depender&aacute; la  utilizaci&oacute;n delos recursos disponibles en los distintos departamentos o &aacute;reas  de la organizaci&oacute;n.</p>
+	</div>
+	<div class="virtualpage">
+		<p align="center">&nbsp;</p>
+    <p align="center"><img src="imagenes/img4.6.gif" width="550" height="57" /><img src="imagenes/img4.7.gif" width="550" height="57" /></p>
+    <p>La   RSC  constituye un elemento <strong>condicionante de la estrategia empresaria</strong>l, en  los dos niveles, corporativo y competitivo, por todo la asunci&oacute;n de la RSC por parte de la empresa  tiene m&aacute;s que ver con su <strong>car&aacute;cter estrat&eacute;gico</strong> que con su <strong>vertiente  filantr&oacute;pica de altruismo </strong>o cuestiones morales, es por ello que no debe  causar extra&ntilde;eza que las <strong>pol&iacute;ticas de compromiso social</strong> con el prop&oacute;sito  de beneficio social tambi&eacute;n lo sean de <strong>inter&eacute;s</strong> <strong>econ&oacute;mico para la empresa</strong>, por  ejemplo el uso de energ&iacute;as renovables y el reciclado o pol&iacute;ticas de personal  solidarias, integradoras y respetuosas con los empleados. </p>
+    <p>Las ventajas a nivel competitivo  derivadas del compromiso social crean<strong> valor a&ntilde;adido </strong>a productos y servicios ofertados y buscan la <strong>diferenciaci&oacute;n del negocio de los  competidores</strong>. </p>
+    <p>Comportarse  de una forma socialmente responsable a menudo conlleva sacrificios a corto  plazo, pero tambi&eacute;n y con frecuencia origina ganancias a largo plazo, el  objetivo a alcanzar se traduce, aunque sea indirectamente, en un beneficio  econ&oacute;mico.</p>
+    <p align="center">&nbsp;</p>
+	</div>
+	<div class="virtualpage">
+		<p>La <strong>estrategia  competitiva basada en la diferenciaci&oacute;n</strong> supondr&aacute; a la empresa unos <strong>costes  adicionales</strong>, por lo que la estrategia tendr&aacute; sentido cuando el mercado es  maduro y estos, los clientes, est&aacute;n dispuestos a pagar el <strong>sobreprecio </strong>que  tiene dicho coste. 
+    <p>La RSC asumida  por la empresa puede condicionar ciertos <strong>atributos tangibles</strong> de los  productos, por lo que condicionar&aacute;n las caracter&iacute;sticas de los productos y, en  muchas ocasiones, supondr&aacute;n un incremento del coste de fabricaci&oacute;n.</p>
+	<div id="final">
+      <p align="center"><a href="#" onmouseout="MM_swapImgRestore()" onclick="completar()" title="Marcar 'Tema Completado'" style="border-bottom-color:#FFFFFF"><img src="../shared/imagenes/completado.gif" alt="Marcar Tema Completado" width="76" height="80" border="0" id="completa"/></a></p>
+      <p align="center" class="txtfinal">&iexcl;Enhorabuena! has llegado al final del Tema 4, para poder realizar la autoevaluaci&oacute;n aseg&uacute;rate de haber<br />
+        revisado bien la teor&iacute;a 
+        y pulsa el bot&oacute;n de Marcar Tema Completado. </p>
+    </div>
+	</div>
+  </div>
+	<div id="listingpaginate" class="paginationstyle">
+		<a href="#" rel="previous" class="imglinks"><img src="../shared/imagenes/atras.jpg" align="absmiddle" /></a>
+		<select name="select" id="selnum">
+	  </select>
+	  
+  <a href="#" rel="next" class="imglinks"><img src="../shared/imagenes/adelante.jpg" align="absmiddle" /></a>  </div>
+	<script type="text/javascript">
+		//virtualpaginate(className, pieces_to_show_per_page)
+		var pagecontent=new virtualpaginate("virtualpage", 1)
+		pagecontent.buildpagination("listingpaginate")
+	</script>
+  	<div id="arbol">INICIO > TEORIA > LOS STAKEHOLDERS Y LA VISI&Oacute;N ESTRAT&Eacute;GICA</div>
+	
+    <div id="sign">
+      <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="80" height="20" class="flash">
+        <param name="movie" value="../shared/imagenes/menu.swf" />
+        <param name="quality" value="high" />
+		<param name="wmode" value="transparent" />
+        <embed src="../shared/imagenes/menu.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="80" height="20" wmode="transparent"></embed>
+      </object>
+  </div>
+</div>
+</body>
+</html>

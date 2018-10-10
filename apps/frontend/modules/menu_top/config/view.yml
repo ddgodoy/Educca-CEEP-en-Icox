@@ -1,0 +1,6 @@
+all:
+  javascripts: [%SF_PROTOTYPE_WEB_DIR%/js/prototype]
+  components:
+    menu: [menu, variable]
+    menu_top: [menu_top, variable]
+

@@ -1,0 +1,18 @@
+#oTopLevelLayer .linea_flecha_verde {
+	Z-INDEX: -1
+}
+#oTopLevelLayer .rect_redondeado {
+	Z-INDEX: 1; BORDER-LEFT-COLOR: palegreen; VISIBILITY: hidden; BORDER-BOTTOM-COLOR: palegreen; BORDER-TOP-STYLE: none; BORDER-TOP-COLOR: palegreen; BORDER-RIGHT-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-RIGHT-COLOR: palegreen; BORDER-BOTTOM-STYLE: none; lineColor: #000000
+}
+#oTopLevelLayer .titulo_apartados {
+	FONT-WEIGHT: bold; FONT-SIZE: 11pt
+}
+#oTopLevelLayer .rectangulo_azul {
+	Z-INDEX: 1; LEFT: 195px; WIDTH: 187px; POSITION: absolute; TOP: 241px; HEIGHT: 127px; gradientColor: #e0e0f9
+}
+#oTopLevelLayer .texto_estandar {
+	FONT-SIZE: 13px; BORDER-LEFT-COLOR: transparent; BORDER-BOTTOM-COLOR: transparent; WIDTH: 622px; BORDER-TOP-COLOR: transparent; HEIGHT: 404px; BORDER-RIGHT-COLOR: transparent
+}
+#oTopLevelLayer .enlace_ejercicios {
+	COLOR: dodgerblue; TEXT-DECORATION: underline
+}

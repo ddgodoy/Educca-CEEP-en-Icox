@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<root>
+	<content btnText="1" txt="Entorno de trabajo: aspectos relacionados con la conciliaci&#243;n vida laboral-vida profesional, diversidad, retenci&#243;n, motivaci&#243;n, seguridad y salud en el trabajo." color="66cc330099cc"/>
+	<content btnText="2" txt="Medioambiente: gesti&#243;n responsable del agua, energ&#237;a, residuos, proactividad en el eco-dise&#241;o, gesti&#243;n de los productos/envases tras su uso." color="0099cc"/>
+	<content btnText="3" txt="Entorno de mercado: muy ligado al producto y a la marca, y el m&#225;s dif&#237;cil de abordar y gestionar. Aspectos cr&#237;ticos son la seguridad y salud de los productos, las pr&#225;cticas laborales de la cadena de producci&#243;n, la obesidad y la salud, pr&#225;cticas de publicidad respetuosa, informaci&#243;n al consumidor, impacto del consumo de los productos en la sociedad, trazabilidad." color="ff9900"/>
+	<content btnText="4" txt="Entorno social: inversiones en la comunidad, donaciones, actividades de voluntariado, creaci&#243;n de empleo, potenciaci&#243;n del entorno local, patrocinios, acci&#243;n social." color="996699"/>
+	<content btnText="5" txt="Buen gobierno: aspectos de &#233;tica, transparencia, independencia, comunicaci&#243;n y escucha con grupos de inter&#233;s." color="996699"/>
+</root>

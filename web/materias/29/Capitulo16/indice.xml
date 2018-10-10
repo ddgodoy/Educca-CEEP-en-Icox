@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+	<boton texto="Botones del documento maestro  " pagina="2" despy="0" />
+	<boton texto="Crear documento maestro        " pagina="3" despy="139" />
+	<boton texto="Convertir documento en maestro " pagina="4" despy="220" />
+	<boton texto="Manipulando documento maestro  " pagina="5" despy="0" />
+	<boton texto="Combinar/dividir subdocumentos " pagina="5" despy="740" />
+</menu>

@@ -1,0 +1,1 @@
+No puede insertar topics no esta inscrito en el curso <?php echo $forum ?>

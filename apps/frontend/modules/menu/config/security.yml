@@ -1,0 +1,14 @@
+all:
+  is_secure:    off
+alumno:
+  is_secure:    on
+  credentials:  alumno
+profesor:
+  is_secure:    on
+  credentials:  profesor
+supervisor:
+  is_secure:    on
+  credentials:  supervisor
+administrador:
+  is_secure:    on
+  credentials:  administrador

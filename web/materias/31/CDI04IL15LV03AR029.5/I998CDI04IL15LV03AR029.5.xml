@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+	<general>
+		<title>
+			
+		<langstring xml:lang="en">Guided tour of TELL ME MORE Online</langstring>
+</title>
+		<catalogentry>
+			<catalog>TELL ME MORE Method - Business language - American English Intermediate</catalog>
+			<entry>
+				
+			<langstring xml:lang="en">I998CDI04IL15LV03AR029.5</langstring>
+</entry>
+		</catalogentry>
+		<language>en</language>
+		<description>
+			
+		<langstring xml:lang="en">Before beginning your foreign language training, we recommend that you have a look at the TELL ME MORE Presentation. This will enable you to learn more about the method, its content and how it works.</langstring>
+</description>
+		<keyword>
+			
+		<langstring xml:lang="en">Guided tour of TELL ME MORE Online</langstring>
+</keyword>
+		<aggregationlevel>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">2</langstring>
+			</value>
+		</aggregationlevel>
+	</general>
+	<lifecycle>
+		<version>
+			<langstring>1.1</langstring>
+		</version>
+		<status>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">Final</langstring>
+			</value>
+		</status>
+		<contribute>
+			<role>
+				<source>
+					<langstring xml:lang="x-none">LOMv1.0</langstring>
+				</source>
+				<value>
+					<langstring xml:lang="x-none">Author</langstring>
+				</value>
+			</role>
+			<centity>
+				<vcard>BEGIN:vCard ORG:AURALOG END:vCard</vcard>
+			</centity>
+			<date>
+				<datetime>2000-01-27</datetime>
+			</date>
+		</contribute>
+	</lifecycle>
+	<metametadata>
+		<metadatascheme>ADL SCORM 1.2</metadatascheme>
+	</metametadata>
+	<technical>
+		<format>text/html/flash</format>
+		<size>6000</size>
+		<location type="URI">COURSE_PATH/ITEM_ID.xml</location>
+		<location type="URI">course.htm</location>
+		<requirement>
+	        <type>
+            	<source>
+               	<langstring xml:lang="x-none">LOMv1.0</langstring>
+	        </source>
+            	<value>
+               	<langstring xml:lang="x-none">Browser</langstring>
+            	</value>
+         	</type>
+         	<name>
+            	<source>
+		<langstring xml:lang="x-none">LOMv1.0</langstring>
+		</source>
+		<value>
+		<langstring xml:lang="x-none">Microsoft Internet Explorer</langstring>
+		</value>
+		</name>
+		<minimumversion>5.0</minimumversion>
+		</requirement>
+
+		<installationremarks>
+			<langstring>ActiveX Enabled Browser</langstring>
+		</installationremarks>
+	</technical>
+	<educational>
+		<learningresourcetype>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">Narrative Text</langstring>
+			</value>
+		</learningresourcetype>
+		<interactivitylevel>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">very high</langstring>
+			</value>
+		</interactivitylevel>
+		<typicallearningtime>
+			<datetime>2:00:00</datetime>
+		</typicallearningtime>
+	</educational>
+	<rights>
+		<cost>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">no</langstring>
+			</value>
+		</cost>
+		<copyrightandotherrestrictions>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">yes</langstring>
+			</value>
+		</copyrightandotherrestrictions>
+		<description>
+			<langstring>Copyrighted material.</langstring>
+		</description>
+	</rights>
+	<classification>
+		<purpose>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">Discipline</langstring>
+			</value>
+		</purpose>
+		<taxonpath>
+			<source>
+				<langstring>DDC</langstring>
+			</source>
+			<taxon>
+				<id>623.89</id>
+				<entry>
+					<langstring>Languages</langstring>
+				</entry>
+				<taxon>
+					<id>627.92</id>
+					<entry>
+						<langstring>Languages Aids</langstring>
+					</entry>
+				</taxon>
+			</taxon>
+		</taxonpath>
+		<description>
+			<langstring>Lesson description.</langstring>
+		</description>
+		<keyword>
+			<langstring>Keyword</langstring>
+		</keyword>
+	</classification>
+</lom>

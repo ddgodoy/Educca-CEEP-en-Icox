@@ -1,0 +1,858 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This is a Reload version 2.5.2 SCORM 1.2 Content Package document-->
+<!--Spawned from the Reload Content Package Generator - http://www.reload.ac.uk-->
+<manifest xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:imsmd="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" identifier="Curso de Windows Vista" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd" version="1.0">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <adlcp:location />
+  </metadata>
+  <organizations default="ORG-69165668-76CE-6819-898A-52DFADCF78B3">
+    <organization identifier="ORG-69165668-76CE-6819-898A-52DFADCF78B3" structure="hierarchical">
+      <title>Curso de Windows Vista</title>
+      <item identifier="ITEM-2D6683CB-0A21-56E1-7BBE-8A8A02FB46D9" identifierref="RES-4BCDF65D-6889-2055-B1B4-0CB87188FDE4" isvisible="true">
+        <title>Tema 1: Introducción</title>
+        <adlcp:masteryscore>5</adlcp:masteryscore>
+      </item>
+      <item identifier="ITEM-34A806F9-F97E-8FBB-5BA5-BCF8DFBBF8FE" identifierref="RES-D3E8626D-5B9A-2968-8063-54EFC112CB34" isvisible="true">
+        <title>Tema 2: Instalar y Desistalar Programas</title>
+        <adlcp:masteryscore>13</adlcp:masteryscore>
+      </item>
+      <item identifier="ITEM-843B011C-A745-2FDF-6980-894206800B70" identifierref="RES-0611D63A-E13D-D162-18BF-258C60E10B7A" isvisible="true">
+        <title>Tema 3: Personalizar Windows</title>
+        <adlcp:masteryscore>13</adlcp:masteryscore>
+      </item>
+      <item identifier="ITEM-58693DD2-6B56-F65B-B291-B6E83360F7C8" identifierref="RES-453170BB-6E78-CE95-FC6F-01F3304B2A03" isvisible="true">
+        <title>Tema 4: Añadir y Quitar Hardware</title>
+        <adlcp:masteryscore>5</adlcp:masteryscore>
+      </item>
+      <item identifier="ITEM-CA76060C-0740-0C14-E839-B569150C3ACB" identifierref="RES-CA9D4531-F274-3E42-863C-B2FBED7D26F1" isvisible="true">
+        <title>Tema 5: Configurar una red</title>
+        <adlcp:masteryscore>8</adlcp:masteryscore>
+      </item>
+      <item identifier="ITEM-57F32985-A5D3-2BF6-00D3-FF5A0B2ABB28" identifierref="RES-053DCC71-97BE-60E5-AB13-92346B27DC54" isvisible="true">
+        <title>Tema 6: Añadir y modificar usuarios</title>
+        <adlcp:masteryscore>14</adlcp:masteryscore>
+      </item>
+      <item identifier="ITEM-2B6B6BCA-6F55-7BF5-A8BD-4260D879CE18" identifierref="RES-9EDF5197-C366-0152-CC0B-DF5CF555CEB5" isvisible="true">
+        <title>Tema 7: Seguridad</title>
+        <adlcp:masteryscore>5</adlcp:masteryscore>
+      </item>
+      <item identifier="ITEM-842E8B7B-16CE-DBF3-ED23-85BF6D890168" identifierref="RES-B1ACD74B-E320-51EF-005E-094C5EC55EDD" isvisible="true">
+        <title>Tema 8: Mantenimiento de Windows</title>
+        <adlcp:masteryscore>13</adlcp:masteryscore>
+      </item>
+      <item identifier="ITEM-29738D58-493E-A160-2826-BBF27872692A" identifierref="RES-5BCFCCBB-153A-67D5-A52E-A0F4EEA3CBDA" isvisible="true">
+        <title>Tema 9: Utilizando el explorador de Windows</title>
+      </item>
+      <item identifier="ITEM-13E1C383-B816-1D78-A85E-32750B9B1F8E" identifierref="RES-28DF06BF-E139-F502-7A33-9B143064C4C5" isvisible="true">
+        <title>Tema 10: Buscar desde el Menú de Inicio</title>
+      </item>
+      <item identifier="ITEM-3E1D5EFE-23B0-94AB-320C-45A97ADF0356" identifierref="RES-917BDF95-4691-22D3-90F1-430B90F8296F" isvisible="true">
+        <title>Tema 11: Reproductor de Windows Media</title>
+      </item>
+      <item identifier="ITEM-DAA01A62-3180-F55E-03CD-9E6B9F3F49D2" identifierref="RES-18C60069-7F6B-409D-D28E-61CA393C7D44" isvisible="true">
+        <title>Tema 12: Ver fotos y Videos</title>
+        <adlcp:masteryscore>11</adlcp:masteryscore>
+      </item>
+      <item identifier="ITEM-38C8C0A0-AC51-6011-EDF6-4D1E4B0E1D04" identifierref="RES-F81C5527-8EAD-FE37-6C38-C8340D96792D" isvisible="true">
+        <title>Tema 13: Usando Internet Explorer 7</title>
+        <adlcp:masteryscore>9</adlcp:masteryscore>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource href="tema1/index.html" identifier="RES-4BCDF65D-6889-2055-B1B4-0CB87188FDE4" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema1/201.html" />
+      <file href="tema1/201.swf" />
+      <file href="tema1/201_config.xml" />
+      <file href="tema1/201_controller.swf" />
+      <file href="tema1/201_nofp_bg.gif" />
+      <file href="tema1/201_preload.swf" />
+      <file href="tema1/202.html" />
+      <file href="tema1/202.swf" />
+      <file href="tema1/202_config.xml" />
+      <file href="tema1/202_controller.swf" />
+      <file href="tema1/202_nofp_bg.gif" />
+      <file href="tema1/202_preload.swf" />
+      <file href="tema1/203.html" />
+      <file href="tema1/203.swf" />
+      <file href="tema1/203_config.xml" />
+      <file href="tema1/203_controller.swf" />
+      <file href="tema1/203_nofp_bg.gif" />
+      <file href="tema1/203_preload.swf" />
+      <file href="tema1/204.html" />
+      <file href="tema1/204.swf" />
+      <file href="tema1/204_config.xml" />
+      <file href="tema1/204_controller.swf" />
+      <file href="tema1/204_nofp_bg.gif" />
+      <file href="tema1/204_preload.swf" />
+      <file href="tema1/205.html" />
+      <file href="tema1/205.swf" />
+      <file href="tema1/205_config.xml" />
+      <file href="tema1/205_controller.swf" />
+      <file href="tema1/205_nofp_bg.gif" />
+      <file href="tema1/205_preload.swf" />
+      <file href="tema1/206.html" />
+      <file href="tema1/206.swf" />
+      <file href="tema1/206_config.xml" />
+      <file href="tema1/206_controller.swf" />
+      <file href="tema1/206_nofp_bg.gif" />
+      <file href="tema1/206_preload.swf" />
+      <file href="tema1/207.html" />
+      <file href="tema1/207.swf" />
+      <file href="tema1/207_config.xml" />
+      <file href="tema1/207_controller.swf" />
+      <file href="tema1/207_nofp_bg.gif" />
+      <file href="tema1/207_preload.swf" />
+      <file href="tema1/208.html" />
+      <file href="tema1/208.swf" />
+      <file href="tema1/208_config.xml" />
+      <file href="tema1/208_controller.swf" />
+      <file href="tema1/208_nofp_bg.gif" />
+      <file href="tema1/208_preload.swf" />
+      <file href="tema1/209.html" />
+      <file href="tema1/209.swf" />
+      <file href="tema1/209_config.xml" />
+      <file href="tema1/209_controller.swf" />
+      <file href="tema1/209_nofp_bg.gif" />
+      <file href="tema1/209_preload.swf" />
+      <file href="tema1/APIWrapper.js" />
+      <file href="tema1/cam_embed.js" />
+      <file href="tema1/FlashTemplate.css" />
+      <file href="tema1/index.html" />
+      <file href="tema1/index.swf" />
+      <file href="tema1/leccion1.html" />
+      <file href="tema1/leccion1.swf" />
+      <file href="tema1/ProductionInfo.xml" />
+      <file href="tema1/swfobject.js" />
+    </resource>
+    <resource href="tema2/index.html" identifier="RES-D3E8626D-5B9A-2968-8063-54EFC112CB34" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema2/401.html" />
+      <file href="tema2/401.swf" />
+      <file href="tema2/401_config.xml" />
+      <file href="tema2/401_controller.swf" />
+      <file href="tema2/401_nofp_bg.gif" />
+      <file href="tema2/401_preload.swf" />
+      <file href="tema2/402.html" />
+      <file href="tema2/402.swf" />
+      <file href="tema2/402_config.xml" />
+      <file href="tema2/402_controller.swf" />
+      <file href="tema2/402_nofp_bg.gif" />
+      <file href="tema2/402_preload.swf" />
+      <file href="tema2/403.html" />
+      <file href="tema2/403.swf" />
+      <file href="tema2/403_config.xml" />
+      <file href="tema2/403_controller.swf" />
+      <file href="tema2/403_nofp_bg.gif" />
+      <file href="tema2/403_preload.swf" />
+      <file href="tema2/404.html" />
+      <file href="tema2/404.swf" />
+      <file href="tema2/404_config.xml" />
+      <file href="tema2/404_controller.swf" />
+      <file href="tema2/404_nofp_bg.gif" />
+      <file href="tema2/404_preload.swf" />
+      <file href="tema2/405.html" />
+      <file href="tema2/405.swf" />
+      <file href="tema2/405_config.xml" />
+      <file href="tema2/405_controller.swf" />
+      <file href="tema2/405_nofp_bg.gif" />
+      <file href="tema2/405_preload.swf" />
+      <file href="tema2/406.html" />
+      <file href="tema2/406.swf" />
+      <file href="tema2/406_config.xml" />
+      <file href="tema2/406_controller.swf" />
+      <file href="tema2/406_nofp_bg.gif" />
+      <file href="tema2/406_preload.swf" />
+      <file href="tema2/407.html" />
+      <file href="tema2/407.swf" />
+      <file href="tema2/407_config.xml" />
+      <file href="tema2/407_controller.swf" />
+      <file href="tema2/407_nofp_bg.gif" />
+      <file href="tema2/407_preload.swf" />
+      <file href="tema2/408.html" />
+      <file href="tema2/408.swf" />
+      <file href="tema2/408_config.xml" />
+      <file href="tema2/408_controller.swf" />
+      <file href="tema2/408_nofp_bg.gif" />
+      <file href="tema2/408_preload.swf" />
+      <file href="tema2/409.html" />
+      <file href="tema2/409.swf" />
+      <file href="tema2/409_config.xml" />
+      <file href="tema2/409_controller.swf" />
+      <file href="tema2/409_nofp_bg.gif" />
+      <file href="tema2/409_preload.swf" />
+      <file href="tema2/APIWrapper.js" />
+      <file href="tema2/cam_embed.js" />
+      <file href="tema2/FlashTemplate.css" />
+      <file href="tema2/index.html" />
+      <file href="tema2/index.swf" />
+      <file href="tema2/leccion2.html" />
+      <file href="tema2/leccion2.swf" />
+      <file href="tema2/ProductionInfo.xml" />
+      <file href="tema2/swfobject.js" />
+    </resource>
+    <resource href="tema3/index.html" identifier="RES-0611D63A-E13D-D162-18BF-258C60E10B7A" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema3/301.html" />
+      <file href="tema3/301.swf" />
+      <file href="tema3/301_config.xml" />
+      <file href="tema3/301_controller.swf" />
+      <file href="tema3/301_nofp_bg.gif" />
+      <file href="tema3/301_preload.swf" />
+      <file href="tema3/302.html" />
+      <file href="tema3/302.swf" />
+      <file href="tema3/302_config.xml" />
+      <file href="tema3/302_controller.swf" />
+      <file href="tema3/302_nofp_bg.gif" />
+      <file href="tema3/302_preload.swf" />
+      <file href="tema3/303.html" />
+      <file href="tema3/303.swf" />
+      <file href="tema3/303_config.xml" />
+      <file href="tema3/303_controller.swf" />
+      <file href="tema3/303_nofp_bg.gif" />
+      <file href="tema3/303_preload.swf" />
+      <file href="tema3/304.html" />
+      <file href="tema3/304.swf" />
+      <file href="tema3/304_config.xml" />
+      <file href="tema3/304_controller.swf" />
+      <file href="tema3/304_nofp_bg.gif" />
+      <file href="tema3/304_preload.swf" />
+      <file href="tema3/305.html" />
+      <file href="tema3/305.swf" />
+      <file href="tema3/305_config.xml" />
+      <file href="tema3/305_controller.swf" />
+      <file href="tema3/305_nofp_bg.gif" />
+      <file href="tema3/305_preload.swf" />
+      <file href="tema3/306.html" />
+      <file href="tema3/306.swf" />
+      <file href="tema3/306_config.xml" />
+      <file href="tema3/306_controller.swf" />
+      <file href="tema3/306_nofp_bg.gif" />
+      <file href="tema3/306_preload.swf" />
+      <file href="tema3/307.html" />
+      <file href="tema3/307.swf" />
+      <file href="tema3/307_config.xml" />
+      <file href="tema3/307_controller.swf" />
+      <file href="tema3/307_nofp_bg.gif" />
+      <file href="tema3/307_preload.swf" />
+      <file href="tema3/308.html" />
+      <file href="tema3/308.swf" />
+      <file href="tema3/308_config.xml" />
+      <file href="tema3/308_controller.swf" />
+      <file href="tema3/308_nofp_bg.gif" />
+      <file href="tema3/308_preload.swf" />
+      <file href="tema3/309.html" />
+      <file href="tema3/309.swf" />
+      <file href="tema3/309_config.xml" />
+      <file href="tema3/309_controller.swf" />
+      <file href="tema3/309_nofp_bg.gif" />
+      <file href="tema3/309_preload.swf" />
+      <file href="tema3/310.html" />
+      <file href="tema3/310.swf" />
+      <file href="tema3/310_config.xml" />
+      <file href="tema3/310_controller.swf" />
+      <file href="tema3/310_nofp_bg.gif" />
+      <file href="tema3/310_preload.swf" />
+      <file href="tema3/311.html" />
+      <file href="tema3/311.swf" />
+      <file href="tema3/311_config.xml" />
+      <file href="tema3/311_controller.swf" />
+      <file href="tema3/311_nofp_bg.gif" />
+      <file href="tema3/311_preload.swf" />
+      <file href="tema3/312.html" />
+      <file href="tema3/312.swf" />
+      <file href="tema3/312_config.xml" />
+      <file href="tema3/312_controller.swf" />
+      <file href="tema3/312_nofp_bg.gif" />
+      <file href="tema3/312_preload.swf" />
+      <file href="tema3/313.html" />
+      <file href="tema3/313.swf" />
+      <file href="tema3/313_config.xml" />
+      <file href="tema3/313_controller.swf" />
+      <file href="tema3/313_nofp_bg.gif" />
+      <file href="tema3/313_preload.swf" />
+      <file href="tema3/314.html" />
+      <file href="tema3/314.swf" />
+      <file href="tema3/314_config.xml" />
+      <file href="tema3/314_controller.swf" />
+      <file href="tema3/314_nofp_bg.gif" />
+      <file href="tema3/314_preload.swf" />
+      <file href="tema3/315.html" />
+      <file href="tema3/315.swf" />
+      <file href="tema3/315_config.xml" />
+      <file href="tema3/315_controller.swf" />
+      <file href="tema3/315_nofp_bg.gif" />
+      <file href="tema3/315_preload.swf" />
+      <file href="tema3/317.html" />
+      <file href="tema3/317.swf" />
+      <file href="tema3/317_config.xml" />
+      <file href="tema3/317_controller.swf" />
+      <file href="tema3/317_nofp_bg.gif" />
+      <file href="tema3/317_preload.swf" />
+      <file href="tema3/AC_RunActiveContent.js" />
+      <file href="tema3/APIWrapper.js" />
+      <file href="tema3/cam_embed.js" />
+      <file href="tema3/FlashTemplate.css" />
+      <file href="tema3/index.html" />
+      <file href="tema3/index.swf" />
+      <file href="tema3/leccion3.html" />
+      <file href="tema3/leccion3.swf" />
+      <file href="tema3/ProductionInfo.xml" />
+      <file href="tema3/swfobject.js" />
+    </resource>
+    <resource href="tema4/index.html" identifier="RES-453170BB-6E78-CE95-FC6F-01F3304B2A03" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema4/501.html" />
+      <file href="tema4/501.swf" />
+      <file href="tema4/501_config.xml" />
+      <file href="tema4/501_controller.swf" />
+      <file href="tema4/501_nofp_bg.gif" />
+      <file href="tema4/501_preload.swf" />
+      <file href="tema4/502.html" />
+      <file href="tema4/502.swf" />
+      <file href="tema4/502_config.xml" />
+      <file href="tema4/502_controller.swf" />
+      <file href="tema4/502_nofp_bg.gif" />
+      <file href="tema4/502_preload.swf" />
+      <file href="tema4/503.html" />
+      <file href="tema4/503.swf" />
+      <file href="tema4/503_config.xml" />
+      <file href="tema4/503_controller.swf" />
+      <file href="tema4/503_nofp_bg.gif" />
+      <file href="tema4/503_preload.swf" />
+      <file href="tema4/504.html" />
+      <file href="tema4/504.swf" />
+      <file href="tema4/504_config.xml" />
+      <file href="tema4/504_controller.swf" />
+      <file href="tema4/504_nofp_bg.gif" />
+      <file href="tema4/504_preload.swf" />
+      <file href="tema4/505.html" />
+      <file href="tema4/505.swf" />
+      <file href="tema4/505_config.xml" />
+      <file href="tema4/505_controller.swf" />
+      <file href="tema4/505_nofp_bg.gif" />
+      <file href="tema4/505_preload.swf" />
+      <file href="tema4/AC_RunActiveContent.js" />
+      <file href="tema4/APIWrapper.js" />
+      <file href="tema4/cam_embed.js" />
+      <file href="tema4/FlashTemplate.css" />
+      <file href="tema4/index.html" />
+      <file href="tema4/index.swf" />
+      <file href="tema4/iteraciones.txt" />
+      <file href="tema4/leccion4.html" />
+      <file href="tema4/ProductionInfo.xml" />
+      <file href="tema4/swfobject.js" />
+    </resource>
+    <resource href="tema5/index.html" identifier="RES-CA9D4531-F274-3E42-863C-B2FBED7D26F1" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema5/601.html" />
+      <file href="tema5/601.swf" />
+      <file href="tema5/6010.html" />
+      <file href="tema5/6010.swf" />
+      <file href="tema5/6010_config.xml" />
+      <file href="tema5/6010_controller.swf" />
+      <file href="tema5/6010_nofp_bg.gif" />
+      <file href="tema5/6010_preload.swf" />
+      <file href="tema5/601_config.xml" />
+      <file href="tema5/601_controller.swf" />
+      <file href="tema5/601_nofp_bg.gif" />
+      <file href="tema5/601_preload.swf" />
+      <file href="tema5/602.html" />
+      <file href="tema5/602.swf" />
+      <file href="tema5/602_config.xml" />
+      <file href="tema5/602_controller.swf" />
+      <file href="tema5/602_nofp_bg.gif" />
+      <file href="tema5/602_preload.swf" />
+      <file href="tema5/603.html" />
+      <file href="tema5/603.swf" />
+      <file href="tema5/603_config.xml" />
+      <file href="tema5/603_controller.swf" />
+      <file href="tema5/603_nofp_bg.gif" />
+      <file href="tema5/603_preload.swf" />
+      <file href="tema5/604.html" />
+      <file href="tema5/604.swf" />
+      <file href="tema5/604_config.xml" />
+      <file href="tema5/604_controller.swf" />
+      <file href="tema5/604_nofp_bg.gif" />
+      <file href="tema5/604_preload.swf" />
+      <file href="tema5/605.html" />
+      <file href="tema5/605.swf" />
+      <file href="tema5/605_config.xml" />
+      <file href="tema5/605_controller.swf" />
+      <file href="tema5/605_nofp_bg.gif" />
+      <file href="tema5/605_preload.swf" />
+      <file href="tema5/606.html" />
+      <file href="tema5/606.swf" />
+      <file href="tema5/606_config.xml" />
+      <file href="tema5/606_controller.swf" />
+      <file href="tema5/606_nofp_bg.gif" />
+      <file href="tema5/606_preload.swf" />
+      <file href="tema5/607.html" />
+      <file href="tema5/607.swf" />
+      <file href="tema5/607_config.xml" />
+      <file href="tema5/607_controller.swf" />
+      <file href="tema5/607_nofp_bg.gif" />
+      <file href="tema5/607_preload.swf" />
+      <file href="tema5/608.html" />
+      <file href="tema5/608.swf" />
+      <file href="tema5/608_config.xml" />
+      <file href="tema5/608_controller.swf" />
+      <file href="tema5/608_nofp_bg.gif" />
+      <file href="tema5/608_preload.swf" />
+      <file href="tema5/AC_RunActiveContent.js" />
+      <file href="tema5/APIWrapper.js" />
+      <file href="tema5/cam_embed.js" />
+      <file href="tema5/FlashTemplate.css" />
+      <file href="tema5/index.html" />
+      <file href="tema5/index.swf" />
+      <file href="tema5/leccion5.html" />
+      <file href="tema5/leccion5.swf" />
+      <file href="tema5/ProductionInfo.xml" />
+      <file href="tema5/swfobject.js" />
+    </resource>
+    <resource href="tema6/index.html" identifier="RES-053DCC71-97BE-60E5-AB13-92346B27DC54" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema6/702.html" />
+      <file href="tema6/702.swf" />
+      <file href="tema6/702_config.xml" />
+      <file href="tema6/702_controller.swf" />
+      <file href="tema6/702_nofp_bg.gif" />
+      <file href="tema6/702_preload.swf" />
+      <file href="tema6/703.html" />
+      <file href="tema6/703.swf" />
+      <file href="tema6/703_config.xml" />
+      <file href="tema6/703_controller.swf" />
+      <file href="tema6/703_nofp_bg.gif" />
+      <file href="tema6/703_preload.swf" />
+      <file href="tema6/704.html" />
+      <file href="tema6/704.swf" />
+      <file href="tema6/704_config.xml" />
+      <file href="tema6/704_controller.swf" />
+      <file href="tema6/704_nofp_bg.gif" />
+      <file href="tema6/704_preload.swf" />
+      <file href="tema6/705.html" />
+      <file href="tema6/705.swf" />
+      <file href="tema6/705_config.xml" />
+      <file href="tema6/705_controller.swf" />
+      <file href="tema6/705_nofp_bg.gif" />
+      <file href="tema6/705_preload.swf" />
+      <file href="tema6/706.html" />
+      <file href="tema6/706.swf" />
+      <file href="tema6/706_config.xml" />
+      <file href="tema6/706_controller.swf" />
+      <file href="tema6/706_nofp_bg.gif" />
+      <file href="tema6/706_preload.swf" />
+      <file href="tema6/707.html" />
+      <file href="tema6/707.swf" />
+      <file href="tema6/707_config.xml" />
+      <file href="tema6/707_controller.swf" />
+      <file href="tema6/707_nofp_bg.gif" />
+      <file href="tema6/707_preload.swf" />
+      <file href="tema6/708.html" />
+      <file href="tema6/708.swf" />
+      <file href="tema6/708_config.xml" />
+      <file href="tema6/708_controller.swf" />
+      <file href="tema6/708_nofp_bg.gif" />
+      <file href="tema6/708_preload.swf" />
+      <file href="tema6/709.html" />
+      <file href="tema6/709.swf" />
+      <file href="tema6/709_config.xml" />
+      <file href="tema6/709_controller.swf" />
+      <file href="tema6/709_nofp_bg.gif" />
+      <file href="tema6/709_preload.swf" />
+      <file href="tema6/710.html" />
+      <file href="tema6/710.swf" />
+      <file href="tema6/710_config.xml" />
+      <file href="tema6/710_controller.swf" />
+      <file href="tema6/710_nofp_bg.gif" />
+      <file href="tema6/710_preload.swf" />
+      <file href="tema6/712.html" />
+      <file href="tema6/712.swf" />
+      <file href="tema6/712_config.xml" />
+      <file href="tema6/712_controller.swf" />
+      <file href="tema6/712_nofp_bg.gif" />
+      <file href="tema6/712_preload.swf" />
+      <file href="tema6/AC_RunActiveContent.js" />
+      <file href="tema6/APIWrapper.js" />
+      <file href="tema6/cam_embed.js" />
+      <file href="tema6/FlashTemplate.css" />
+      <file href="tema6/index.html" />
+      <file href="tema6/index.swf" />
+      <file href="tema6/leccion6.html" />
+      <file href="tema6/leccion6.swf" />
+      <file href="tema6/ProductionInfo.xml" />
+      <file href="tema6/swfobject.js" />
+    </resource>
+    <resource href="tema7/index.html" identifier="RES-9EDF5197-C366-0152-CC0B-DF5CF555CEB5" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema7/801.html" />
+      <file href="tema7/801.swf" />
+      <file href="tema7/801_config.xml" />
+      <file href="tema7/801_controller.swf" />
+      <file href="tema7/801_nofp_bg.gif" />
+      <file href="tema7/801_preload.swf" />
+      <file href="tema7/802.html" />
+      <file href="tema7/802.swf" />
+      <file href="tema7/802_config.xml" />
+      <file href="tema7/802_controller.swf" />
+      <file href="tema7/802_nofp_bg.gif" />
+      <file href="tema7/802_preload.swf" />
+      <file href="tema7/803_4.html" />
+      <file href="tema7/803_4.swf" />
+      <file href="tema7/803_4_config.xml" />
+      <file href="tema7/803_4_controller.swf" />
+      <file href="tema7/803_4_nofp_bg.gif" />
+      <file href="tema7/803_4_preload.swf" />
+      <file href="tema7/805_6.html" />
+      <file href="tema7/805_6.swf" />
+      <file href="tema7/805_6_config.xml" />
+      <file href="tema7/805_6_controller.swf" />
+      <file href="tema7/805_6_nofp_bg.gif" />
+      <file href="tema7/805_6_preload.swf" />
+      <file href="tema7/807.html" />
+      <file href="tema7/807.swf" />
+      <file href="tema7/807_config.xml" />
+      <file href="tema7/807_controller.swf" />
+      <file href="tema7/807_nofp_bg.gif" />
+      <file href="tema7/807_preload.swf" />
+      <file href="tema7/AC_RunActiveContent.js" />
+      <file href="tema7/APIWrapper.js" />
+      <file href="tema7/cam_embed.js" />
+      <file href="tema7/FlashTemplate.css" />
+      <file href="tema7/imsmanifest.xml" />
+      <file href="tema7/index.html" />
+      <file href="tema7/index.swf" />
+      <file href="tema7/leccion7_viewlet_swf.html" />
+      <file href="tema7/ProductionInfo.xml" />
+      <file href="tema7/swfobject.js" />
+    </resource>
+    <resource href="tema8/index.html" identifier="RES-B1ACD74B-E320-51EF-005E-094C5EC55EDD" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema8/901.html" />
+      <file href="tema8/901.swf" />
+      <file href="tema8/901_config.xml" />
+      <file href="tema8/901_controller.swf" />
+      <file href="tema8/901_nofp_bg.gif" />
+      <file href="tema8/901_preload.swf" />
+      <file href="tema8/AC_RunActiveContent.js" />
+      <file href="tema8/APIWrapper.js" />
+      <file href="tema8/cam_embed.js" />
+      <file href="tema8/FlashTemplate.css" />
+      <file href="tema8/index.html" />
+      <file href="tema8/index.swf" />
+      <file href="tema8/leccion8.html" />
+      <file href="tema8/leccion8.swf" />
+      <file href="tema8/ProductionInfo.xml" />
+      <file href="tema8/swfobject.js" />
+      <file href="tema8/902.html" />
+      <file href="tema8/902.swf" />
+      <file href="tema8/902_config.xml" />
+      <file href="tema8/902_controller.swf" />
+      <file href="tema8/902_nofp_bg.gif" />
+      <file href="tema8/902_preload.swf" />
+      <file href="tema8/903.html" />
+      <file href="tema8/903.swf" />
+      <file href="tema8/903_config.xml" />
+      <file href="tema8/903_controller.swf" />
+      <file href="tema8/903_nofp_bg.gif" />
+      <file href="tema8/903_preload.swf" />
+      <file href="tema8/906.html" />
+      <file href="tema8/906.swf" />
+      <file href="tema8/906_config.xml" />
+      <file href="tema8/906_controller.swf" />
+      <file href="tema8/906_nofp_bg.gif" />
+      <file href="tema8/906_preload.swf" />
+      <file href="tema8/907.html" />
+      <file href="tema8/907.swf" />
+      <file href="tema8/907_config.xml" />
+      <file href="tema8/907_controller.swf" />
+      <file href="tema8/907_nofp_bg.gif" />
+      <file href="tema8/907_preload.swf" />
+      <file href="tema8/908.html" />
+      <file href="tema8/908.swf" />
+      <file href="tema8/908_config.xml" />
+      <file href="tema8/908_controller.swf" />
+      <file href="tema8/908_nofp_bg.gif" />
+      <file href="tema8/908_preload.swf" />
+      <file href="tema8/910.html" />
+      <file href="tema8/910.swf" />
+      <file href="tema8/910_config.xml" />
+      <file href="tema8/910_controller.swf" />
+      <file href="tema8/910_nofp_bg.gif" />
+      <file href="tema8/910_preload.swf" />
+      <file href="tema8/911.html" />
+      <file href="tema8/911.swf" />
+      <file href="tema8/911_config.xml" />
+      <file href="tema8/911_controller.swf" />
+      <file href="tema8/911_nofp_bg.gif" />
+      <file href="tema8/911_preload.swf" />
+      <file href="tema8/912.html" />
+      <file href="tema8/912.swf" />
+      <file href="tema8/912_config.xml" />
+      <file href="tema8/912_controller.swf" />
+      <file href="tema8/912_nofp_bg.gif" />
+      <file href="tema8/912_preload.swf" />
+      <file href="tema8/913.html" />
+      <file href="tema8/913.swf" />
+      <file href="tema8/913_config.xml" />
+      <file href="tema8/913_controller.swf" />
+      <file href="tema8/913_nofp_bg.gif" />
+      <file href="tema8/913_preload.swf" />
+      <file href="tema8/914.html" />
+      <file href="tema8/914.swf" />
+      <file href="tema8/914_config.xml" />
+      <file href="tema8/914_controller.swf" />
+      <file href="tema8/914_nofp_bg.gif" />
+      <file href="tema8/914_preload.swf" />
+    </resource>
+    <resource href="tema9/index.html" identifier="RES-5BCFCCBB-153A-67D5-A52E-A0F4EEA3CBDA" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema9/1006.html" />
+      <file href="tema9/1006.swf" />
+      <file href="tema9/1006_config.xml" />
+      <file href="tema9/1006_controller.swf" />
+      <file href="tema9/1006_nofp_bg.gif" />
+      <file href="tema9/1006_preload.swf" />
+      <file href="tema9/AC_RunActiveContent.js" />
+      <file href="tema9/cam_embed.js" />
+      <file href="tema9/FlashTemplate.css" />
+      <file href="tema9/index.html" />
+      <file href="tema9/index.swf" />
+      <file href="tema9/ProductionInfo.xml" />
+      <file href="tema9/swfobject.js" />
+    </resource>
+    <resource href="tema10/index.html" identifier="RES-28DF06BF-E139-F502-7A33-9B143064C4C5" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema10/1101.html" />
+      <file href="tema10/1101.swf" />
+      <file href="tema10/1101_config.xml" />
+      <file href="tema10/1101_controller.swf" />
+      <file href="tema10/1101_nofp_bg.gif" />
+      <file href="tema10/1101_preload.swf" />
+      <file href="tema10/1102.html" />
+      <file href="tema10/1102.swf" />
+      <file href="tema10/1102_config.xml" />
+      <file href="tema10/1102_controller.swf" />
+      <file href="tema10/1102_nofp_bg.gif" />
+      <file href="tema10/1102_preload.swf" />
+      <file href="tema10/1103.html" />
+      <file href="tema10/1103.swf" />
+      <file href="tema10/1103_config.xml" />
+      <file href="tema10/1103_controller.swf" />
+      <file href="tema10/1103_nofp_bg.gif" />
+      <file href="tema10/1103_preload.swf" />
+      <file href="tema10/1106.html" />
+      <file href="tema10/1106.swf" />
+      <file href="tema10/1106_config.xml" />
+      <file href="tema10/1106_controller.swf" />
+      <file href="tema10/1106_nofp_bg.gif" />
+      <file href="tema10/1106_preload.swf" />
+      <file href="tema10/AC_RunActiveContent.js" />
+      <file href="tema10/cam_embed.js" />
+      <file href="tema10/FlashTemplate.css" />
+      <file href="tema10/index.html" />
+      <file href="tema10/index.swf" />
+      <file href="tema10/ProductionInfo.xml" />
+      <file href="tema10/swfobject.js" />
+    </resource>
+    <resource href="tema11/index.html" identifier="RES-917BDF95-4691-22D3-90F1-430B90F8296F" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema11/1201.html" />
+      <file href="tema11/1201.swf" />
+      <file href="tema11/1201_config.xml" />
+      <file href="tema11/1201_controller.swf" />
+      <file href="tema11/1201_nofp_bg.gif" />
+      <file href="tema11/1201_preload.swf" />
+      <file href="tema11/1202.html" />
+      <file href="tema11/1202.swf" />
+      <file href="tema11/1202_config.xml" />
+      <file href="tema11/1202_controller.swf" />
+      <file href="tema11/1202_nofp_bg.gif" />
+      <file href="tema11/1202_preload.swf" />
+      <file href="tema11/1203.html" />
+      <file href="tema11/1203.swf" />
+      <file href="tema11/1203_config.xml" />
+      <file href="tema11/1203_controller.swf" />
+      <file href="tema11/1203_nofp_bg.gif" />
+      <file href="tema11/1203_preload.swf" />
+      <file href="tema11/1204.html" />
+      <file href="tema11/1204.swf" />
+      <file href="tema11/1204_config.xml" />
+      <file href="tema11/1204_controller.swf" />
+      <file href="tema11/1204_nofp_bg.gif" />
+      <file href="tema11/1204_preload.swf" />
+      <file href="tema11/1205.html" />
+      <file href="tema11/1205.swf" />
+      <file href="tema11/1205_config.xml" />
+      <file href="tema11/1205_controller.swf" />
+      <file href="tema11/1205_nofp_bg.gif" />
+      <file href="tema11/1205_preload.swf" />
+      <file href="tema11/1206.html" />
+      <file href="tema11/1206.swf" />
+      <file href="tema11/1206_config.xml" />
+      <file href="tema11/1206_controller.swf" />
+      <file href="tema11/1206_nofp_bg.gif" />
+      <file href="tema11/1206_preload.swf" />
+      <file href="tema11/1208.html" />
+      <file href="tema11/1208.swf" />
+      <file href="tema11/1208_config.xml" />
+      <file href="tema11/1208_controller.swf" />
+      <file href="tema11/1208_nofp_bg.gif" />
+      <file href="tema11/1208_preload.swf" />
+      <file href="tema11/cam_embed.js" />
+      <file href="tema11/FlashTemplate.css" />
+      <file href="tema11/ProductionInfo.xml" />
+      <file href="tema11/swfobject.js" />
+      <file href="tema11/index.swf" />
+      <file href="tema11/index.html" />
+    </resource>
+    <resource href="tema12/index.html" identifier="RES-18C60069-7F6B-409D-D28E-61CA393C7D44" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema12/1301.html" />
+      <file href="tema12/1301.swf" />
+      <file href="tema12/1301_config.xml" />
+      <file href="tema12/1301_controller.swf" />
+      <file href="tema12/1301_nofp_bg.gif" />
+      <file href="tema12/1301_preload.swf" />
+      <file href="tema12/1302.html" />
+      <file href="tema12/1302.swf" />
+      <file href="tema12/1302_config.xml" />
+      <file href="tema12/1302_controller.swf" />
+      <file href="tema12/1302_nofp_bg.gif" />
+      <file href="tema12/1302_preload.swf" />
+      <file href="tema12/1303.html" />
+      <file href="tema12/1303.swf" />
+      <file href="tema12/1303_config.xml" />
+      <file href="tema12/1303_controller.swf" />
+      <file href="tema12/1303_nofp_bg.gif" />
+      <file href="tema12/1303_preload.swf" />
+      <file href="tema12/1304.html" />
+      <file href="tema12/1304.swf" />
+      <file href="tema12/1304_config.xml" />
+      <file href="tema12/1304_controller.swf" />
+      <file href="tema12/1304_nofp_bg.gif" />
+      <file href="tema12/1304_preload.swf" />
+      <file href="tema12/1305.html" />
+      <file href="tema12/1305.swf" />
+      <file href="tema12/1305_config.xml" />
+      <file href="tema12/1305_controller.swf" />
+      <file href="tema12/1305_nofp_bg.gif" />
+      <file href="tema12/1305_preload.swf" />
+      <file href="tema12/1306.html" />
+      <file href="tema12/1306.swf" />
+      <file href="tema12/1306_config.xml" />
+      <file href="tema12/1306_controller.swf" />
+      <file href="tema12/1306_nofp_bg.gif" />
+      <file href="tema12/1306_preload.swf" />
+      <file href="tema12/1307.html" />
+      <file href="tema12/1307.swf" />
+      <file href="tema12/1307_config.xml" />
+      <file href="tema12/1307_controller.swf" />
+      <file href="tema12/1307_nofp_bg.gif" />
+      <file href="tema12/1307_preload.swf" />
+      <file href="tema12/1308.html" />
+      <file href="tema12/1308.swf" />
+      <file href="tema12/1308_config.xml" />
+      <file href="tema12/1308_controller.swf" />
+      <file href="tema12/1308_nofp_bg.gif" />
+      <file href="tema12/1308_preload.swf" />
+      <file href="tema12/1309.html" />
+      <file href="tema12/1309.swf" />
+      <file href="tema12/1309_config.xml" />
+      <file href="tema12/1309_controller.swf" />
+      <file href="tema12/1309_nofp_bg.gif" />
+      <file href="tema12/1309_preload.swf" />
+      <file href="tema12/1310.html" />
+      <file href="tema12/1310.swf" />
+      <file href="tema12/1310_config.xml" />
+      <file href="tema12/1310_controller.swf" />
+      <file href="tema12/1310_nofp_bg.gif" />
+      <file href="tema12/1310_preload.swf" />
+      <file href="tema12/1311.html" />
+      <file href="tema12/1311.swf" />
+      <file href="tema12/1311_config.xml" />
+      <file href="tema12/1311_controller.swf" />
+      <file href="tema12/1311_nofp_bg.gif" />
+      <file href="tema12/1311_preload.swf" />
+      <file href="tema12/1313.html" />
+      <file href="tema12/1313.swf" />
+      <file href="tema12/1313_config.xml" />
+      <file href="tema12/1313_controller.swf" />
+      <file href="tema12/1313_nofp_bg.gif" />
+      <file href="tema12/1313_preload.swf" />
+      <file href="tema12/AC_RunActiveContent.js" />
+      <file href="tema12/APIWrapper.js" />
+      <file href="tema12/cam_embed.js" />
+      <file href="tema12/FlashTemplate.css" />
+      <file href="tema12/index.html" />
+      <file href="tema12/index.swf" />
+      <file href="tema12/lecciones_9,10,11,12.html" />
+      <file href="tema12/lecciones_9,10,11,12.swf" />
+      <file href="tema12/ProductionInfo.xml" />
+      <file href="tema12/swfobject.js" />
+    </resource>
+    <resource href="tema13/index.html" identifier="RES-F81C5527-8EAD-FE37-6C38-C8340D96792D" adlcp:scormtype="sco" type="webcontent">
+      <file href="tema13/1401.html" />
+      <file href="tema13/1401.swf" />
+      <file href="tema13/1401_config.xml" />
+      <file href="tema13/1401_controller.swf" />
+      <file href="tema13/1401_nofp_bg.gif" />
+      <file href="tema13/1401_preload.swf" />
+      <file href="tema13/1402.html" />
+      <file href="tema13/1402.swf" />
+      <file href="tema13/1402_config.xml" />
+      <file href="tema13/1402_controller.swf" />
+      <file href="tema13/1402_nofp_bg.gif" />
+      <file href="tema13/1402_preload.swf" />
+      <file href="tema13/1403.html" />
+      <file href="tema13/1403.swf" />
+      <file href="tema13/1403_config.xml" />
+      <file href="tema13/1403_controller.swf" />
+      <file href="tema13/1403_nofp_bg.gif" />
+      <file href="tema13/1403_preload.swf" />
+      <file href="tema13/1404.html" />
+      <file href="tema13/1404.swf" />
+      <file href="tema13/1404_config.xml" />
+      <file href="tema13/1404_controller.swf" />
+      <file href="tema13/1404_nofp_bg.gif" />
+      <file href="tema13/1404_preload.swf" />
+      <file href="tema13/1405.html" />
+      <file href="tema13/1405.swf" />
+      <file href="tema13/1405_config.xml" />
+      <file href="tema13/1405_controller.swf" />
+      <file href="tema13/1405_nofp_bg.gif" />
+      <file href="tema13/1405_preload.swf" />
+      <file href="tema13/1406.html" />
+      <file href="tema13/1406.swf" />
+      <file href="tema13/1406_config.xml" />
+      <file href="tema13/1406_controller.swf" />
+      <file href="tema13/1406_nofp_bg.gif" />
+      <file href="tema13/1406_preload.swf" />
+      <file href="tema13/1407.html" />
+      <file href="tema13/1407.swf" />
+      <file href="tema13/1407_config.xml" />
+      <file href="tema13/1407_controller.swf" />
+      <file href="tema13/1407_nofp_bg.gif" />
+      <file href="tema13/1407_preload.swf" />
+      <file href="tema13/1408.html" />
+      <file href="tema13/1408.swf" />
+      <file href="tema13/1408_config.xml" />
+      <file href="tema13/1408_controller.swf" />
+      <file href="tema13/1408_nofp_bg.gif" />
+      <file href="tema13/1408_preload.swf" />
+      <file href="tema13/1409.html" />
+      <file href="tema13/1409.swf" />
+      <file href="tema13/1409_config.xml" />
+      <file href="tema13/1409_controller.swf" />
+      <file href="tema13/1409_nofp_bg.gif" />
+      <file href="tema13/1409_preload.swf" />
+      <file href="tema13/1411.html" />
+      <file href="tema13/1411.swf" />
+      <file href="tema13/1411_config.xml" />
+      <file href="tema13/1411_controller.swf" />
+      <file href="tema13/1411_nofp_bg.gif" />
+      <file href="tema13/1411_preload.swf" />
+      <file href="tema13/AC_RunActiveContent.js" />
+      <file href="tema13/APIWrapper.js" />
+      <file href="tema13/cam_embed.js" />
+      <file href="tema13/FlashTemplate.css" />
+      <file href="tema13/index.html" />
+      <file href="tema13/index.swf" />
+      <file href="tema13/leccion13.html" />
+      <file href="tema13/leccion13.swf" />
+      <file href="tema13/ProductionInfo.xml" />
+      <file href="tema13/swfobject.js" />
+    </resource>
+  </resources>
+</manifest>
+

@@ -1,0 +1,15 @@
+nuevo:
+  is_secure:    on           
+  credentials:  profesor     
+
+modificar:
+  is_secure:    on           
+  credentials:  profesor     
+
+eliminar:
+  is_secure:    on           
+  credentials:  profesor    
+
+all:
+  is_secure:    on
+  credentials:  [[ alumno, profesor, supervisor, administrador ]]

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="MCDI06IL33Pceep" version="1.1" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd
+                              http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd
+                              http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+	<organizations default="CDI06IL33Pceep">
+		<organization identifier="CDI06IL33Pceep">
+			<title>M&#x00E9;todo TELL ME MORE - Programa de formaci&#x00F3;n personalizado - Espa&#x00F1;ol</title>
+			<item identifier="I997CDI06IL33Pceep" identifierref="R_I997CDI06IL33Pceep" isvisible="true">
+<title>Test del ordenador</title>
+				<metadata>
+				<schema>ADL SCORM</schema>
+				<schemaversion>1.2</schemaversion>
+				<adlcp:location>CDI06IL33Pceep/I997CDI06IL33Pceep.xml</adlcp:location>
+				</metadata>
+  </item>
+<item identifier="bD06IL33ceep" identifierref="R_bD06IL33ceep" isvisible="true">
+<title>Programa de formaci&#x00F3;n personalizado</title>
+				<metadata>
+				<schema>ADL SCORM</schema>
+				<schemaversion>1.2</schemaversion>
+				<adlcp:location>CDI06IL33Pceep/bD06IL33ceep.xml</adlcp:location>
+				</metadata>
+				<adlcp:maxtimeallowed>0023:59:59</adlcp:maxtimeallowed>
+				<adlcp:timelimitaction>continue,no message</adlcp:timelimitaction>
+				<adlcp:masteryscore>90</adlcp:masteryscore>
+  </item>
+<metadata>
+				<schema>ADL SCORM</schema>
+				<schemaversion>1.2</schemaversion>
+				<adlcp:location>CDI06IL33Pceep.xml</adlcp:location>
+			</metadata>
+		</organization>
+	</organizations>
+	<resources>
+		<resource identifier="R_bD06IL33ceep" type="webcontent" adlcp:scormtype="sco" href="CDI06IL33Pceep/bD06IL33ceep/lesson_launch.htm">
+<file href="CDI06IL33Pceep/bD06IL33ceep/lesson_launch.htm"/>
+<file href="CDI06IL33Pceep/bD06IL33ceep/lesson.xml"/>
+<file href="CDI06IL33Pceep/bD06IL33ceep/localsettings.js"/>
+<dependency identifierref="R_D1"/>
+</resource>
+<resource identifier="R_I997CDI06IL33Pceep" type="webcontent" adlcp:scormtype="sco" href="CDI06IL33Pceep/I997CDI06IL33Pceep/lesson_launch.htm">
+<file href="CDI06IL33Pceep/I997CDI06IL33Pceep/lesson_launch.htm"/>
+<file href="CDI06IL33Pceep/I997CDI06IL33Pceep/lesson.xml"/>
+<file href="CDI06IL33Pceep/I997CDI06IL33Pceep/localsettings.js"/>
+<dependency identifierref="R_D1"/>
+</resource>
+<resource identifier="R_D1" adlcp:scormtype="asset" type="webcontent">
+			<file href="include/ADL_SCOFunctions.js"/>
+			<file href="include/ADL_APIWrapper.js"/>
+			<file href="include/browsers.js"/>
+			<file href="include/windows.js"/>
+			<file href="include/childwindow.vbs"/>
+			<file href="include/utils.js"/>
+			<file href="include/tol.js"/>
+			<file href="include/close_lesson.htm"/>
+			<file href="include/config.js"/>
+			<file href="include/visual.js"/>
+			<file href="include/SCORM_Wrapper.js"/> 
+			<file href="include/lesson_fill.js"/> 
+			<file href="include/styles.css"/> 
+			<file href="lesson_v1.xsd"/> 
+			<file href="platforms.swf"/>
+		</resource>
+	</resources>
+</manifest>

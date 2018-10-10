@@ -1,0 +1,17 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+.LessonTittle {
+   display: box;
+   border: 1px solid black;
+   margin-bottom: 0.5em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+.LessonDescription {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+}
+

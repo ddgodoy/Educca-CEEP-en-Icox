@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+	<general>
+		<title>
+			
+		<langstring xml:lang="en">M&#x00E9;todo TELL ME MORE - Programa de formaci&#x00F3;n personalizado - Italiano</langstring>
+</title>
+		<catalogentry>
+			<catalog>M&#x00E9;todo TELL ME MORE - Programa de formaci&#x00F3;n personalizado - Italiano</catalog>
+			<entry>
+				
+			<langstring xml:lang="en">CDI05IL33Pceep</langstring>
+</entry>
+		</catalogentry>
+		<language>en</language>
+		<description>
+			
+		<langstring xml:lang="en">El contenido de este curso comprende uno o varios m&#x00F3;dulos de aprendizaje realizados y personalizados por su Tutor seg&#x00FA;n sus objetivos de aprendizaje.</langstring>
+</description>
+		<keyword>
+			
+		<langstring xml:lang="en">M&#x00E9;todo TELL ME MORE - Programa de formaci&#x00F3;n personalizado - Italiano</langstring>
+</keyword>
+		<aggregationlevel>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">3</langstring>
+			</value>
+		</aggregationlevel>
+	</general>
+	<lifecycle>
+		<version>
+			<langstring>1.1</langstring>
+		</version>
+		<status>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">Final</langstring>
+			</value>
+		</status>
+		<contribute>
+			<role>
+				<source>
+					<langstring xml:lang="x-none">LOMv1.0</langstring>
+				</source>
+				<value>
+					<langstring xml:lang="x-none">Author</langstring>
+				</value>
+			</role>
+			<centity>
+				<vcard>BEGIN:vCard ORG:AURALOG END:vCard</vcard>
+			</centity>
+			<date>
+				<datetime>2000-01-28</datetime>
+			</date>
+		</contribute>
+	</lifecycle>
+	<metametadata>
+		<catalogentry>
+			<catalog>Auralog</catalog>
+			<entry>
+				<langstring>Course Metadata</langstring>
+			</entry>
+		</catalogentry>
+		<metadatascheme>ADL SCORM 1.2</metadatascheme>
+		<language>en</language>
+	</metametadata>
+	<technical>
+		<format>text/html</format>
+		<location type="URI">COURSE_ID.htm</location>
+		<requirement>
+	        <type>
+            	<source>
+               	<langstring xml:lang="x-none">LOMv1.0</langstring>
+	        </source>
+            	<value>
+               	<langstring xml:lang="x-none">Browser</langstring>
+            	</value>
+         	</type>
+         	<name>
+            	<source>
+		<langstring xml:lang="x-none">LOMv1.0</langstring>
+		</source>
+		<value>
+		<langstring xml:lang="x-none">Microsoft Internet Explorer</langstring>
+		</value>
+		</name>
+		<minimumversion>5.0</minimumversion>
+		</requirement>
+	</technical>
+	<educational>
+		<learningresourcetype>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">Narrative Text</langstring>
+			</value>
+		</learningresourcetype>
+		<learningresourcetype>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">Figure</langstring>
+			</value>
+		</learningresourcetype>
+		<learningresourcetype>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">Questionnaire</langstring>
+			</value>
+		</learningresourcetype>
+	</educational>
+	<rights>
+		<cost>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">no</langstring>
+			</value>
+		</cost>
+		<copyrightandotherrestrictions>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">yes</langstring>
+			</value>
+		</copyrightandotherrestrictions>
+		<description>
+			<langstring>Copyrighted material.</langstring>
+		</description>
+	</rights>
+	<classification>
+		<purpose>
+			<source>
+				<langstring xml:lang="x-none">LOMv1.0</langstring>
+			</source>
+			<value>
+				<langstring xml:lang="x-none">Discipline</langstring>
+			</value>
+		</purpose>
+		<taxonpath>
+			<source>
+				<langstring>DDC</langstring>
+			</source>
+			<taxon>
+				<id>623.89</id>
+				<entry>
+					<langstring>Language</langstring>
+				</entry>
+			</taxon>
+		</taxonpath>
+		<description>
+			<langstring>Course description</langstring>
+		</description>
+		<keyword>
+			<langstring>Language</langstring>
+		</keyword>
+	</classification>
+</lom>

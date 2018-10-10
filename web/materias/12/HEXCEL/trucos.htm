@@ -1,0 +1,4160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+
+  
+  <meta http-equiv="Content-Language" content="es">
+
+  
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+
+  
+  <link rel="File-List" href="trucos_archivos/filelist.xml.htm">
+
+  
+  
+  <title>Excel Avanzado</title>
+  <meta content="Excel Avanzado Macros Matem&aacute;tica Financiera Truco Regresi&oacute;n Simplex optimizaci&oacute;n simulaci&oacute;n media movil van tir amortizaci&oacute;n pr&eacute;stamo m&eacute;todo franc&eacute;s modelo inter&eacute;s renta ejercicio resuelto ejemplo pr&aacute;ctico forward sensibilidad Montecarlo Gauss base datos" name="keywords">
+
+  
+  <meta content="Casos pr&aacute;cticos ejemplo gesti&oacute;n empresarial aplicaciones fiancieras con Excel macros Excel avanzado Trucos Excel C&aacute;lculo financiero matem&aacute;ticas financieras Programaci&oacute;n VBA Visual Basic Applications Adolfo Aparicio URJC Universidad Rey Juan Carlos Madrid" name="description">
+<!--[if gte mso 9]><xml>
+
+ <o:DocumentProperties>
+
+  <o:Author>Adolfo Aparicio</o:Author>
+
+
+
+  <o:Revision>28</o:Revision>
+
+  <o:TotalTime>285</o:TotalTime>
+
+  <o:Created>2004-04-25T09:49:00Z</o:Created>
+
+  <o:LastSaved>2004-05-02T11:08:00Z</o:LastSaved>
+
+  <o:Pages>1</o:Pages>
+
+  <o:Words>576</o:Words>
+
+  <o:Characters>3172</o:Characters>
+
+  <o:Company>www.excelavanzado.com</o:Company>
+
+  <o:Lines>26</o:Lines>
+
+  <o:Paragraphs>7</o:Paragraphs>
+
+  <o:CharactersWithSpaces>3741</o:CharactersWithSpaces>
+
+  <o:Version>10.2625</o:Version>
+
+ </o:DocumentProperties>
+
+ <o:CustomDocumentProperties>
+
+  <o:Versión dt:dt="string">9.0.2111</o:Versión>
+
+  <o:Idioma dt:dt="string">3082</o:Idioma>
+
+ </o:CustomDocumentProperties>
+
+</xml><![endif]--><!--[if gte mso 9]><xml>
+
+ <w:WordDocument>
+
+  <w:SpellingState>Clean</w:SpellingState>
+
+  <w:GrammarState>Clean</w:GrammarState>
+
+  <w:HyphenationZone>21</w:HyphenationZone>
+
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+
+  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
+
+  <w:UseMarginsForDrawingGridOrigin/>
+
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+
+ </w:WordDocument>
+
+</xml><![endif]-->
+
+  
+  <style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Lucida Sans Unicode";
+	panose-1:2 11 6 2 3 5 4 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-2147476737 14699 0 0 63 0;}
+@font-face
+	{font-family:"Arial Narrow";
+	panose-1:2 11 5 6 2 2 2 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:"Franklin Gothic Medium";
+	panose-1:2 11 6 3 2 1 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-bidi-font-family:"Times New Roman"; margin-left:0cm; margin-right:0cm; margin-top:0cm}
+h1
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	font-size:18.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:16.0pt;}
+h2
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	mso-bidi-font-size:14.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	font-style:italic;}
+h3
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	font-size:12.0pt;
+	mso-bidi-font-size:13.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";}
+h4
+	{mso-style-next:Normal;
+	margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:14.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";}
+h5
+	{mso-style-next:Normal;
+	margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:5;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-bidi-font-family:"Times New Roman";
+	font-weight:normal;
+	font-style:italic;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;
+	text-underline:single;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;
+	text-underline:single;}
+pre
+	{margin:0cm;
+	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:"Courier New";
+	mso-fareast-font-family:"Times New Roman";}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes}
+@page Section1
+	{size:595.45pt 841.7pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;
+	mso-header-margin:36.0pt;
+	mso-footer-margin:36.0pt;
+	mso-paper-source:0;}
+div.Section1
+	{page:Section1;}
+-->
+  </style><!--[if gte mso 10]>
+
+<style>
+
+ /* Style Definitions */
+
+ table.MsoNormalTable
+
+	{mso-style-name:"Tabla normal";
+
+	mso-tstyle-rowband-size:0;
+
+	mso-tstyle-colband-size:0;
+
+	mso-style-noshow:yes;
+
+	mso-style-parent:"";
+
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+
+	mso-para-margin:0cm;
+
+	mso-para-margin-bottom:.0001pt;
+
+	mso-pagination:widow-orphan;
+
+	font-size:10.0pt;
+
+	font-family:"Times New Roman"}
+
+table.MsoTableWeb2
+
+	{mso-style-name:"Tabla Web 2";
+
+	mso-tstyle-rowband-size:0;
+
+	mso-tstyle-colband-size:0;
+
+	mso-cellspacing:2.0pt;
+
+	border:inset 1.0pt;
+
+	mso-border-alt:inset windowtext .75pt;
+
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+
+	mso-border-insideh:.75pt inset windowtext;
+
+	mso-border-insidev:.75pt inset windowtext;
+
+	mso-para-margin:0cm;
+
+	mso-para-margin-bottom:.0001pt;
+
+	mso-pagination:widow-orphan;
+
+	font-size:10.0pt;
+
+	font-family:"Times New Roman";}
+
+table.MsoTableWeb2FirstRow
+
+	{mso-style-name:"Tabla Web 2";
+
+	mso-table-condition:first-row;
+
+	mso-tstyle-diagonal-down:0cm none windowtext;
+
+	mso-tstyle-diagonal-up:0cm none windowtext;
+
+	color:windowtext;}
+
+table.MsoTableGrid
+
+	{mso-style-name:"Tabla con cuadrícula";
+
+	mso-tstyle-rowband-size:0;
+
+	mso-tstyle-colband-size:0;
+
+	border:solid windowtext 1.0pt;
+
+	mso-border-alt:solid windowtext .5pt;
+
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+
+	mso-border-insideh:.5pt solid windowtext;
+
+	mso-border-insidev:.5pt solid windowtext;
+
+	mso-para-margin:0cm;
+
+	mso-para-margin-bottom:.0001pt;
+
+	mso-pagination:widow-orphan;
+
+	font-size:10.0pt;
+
+	font-family:"Times New Roman";}
+
+</style>
+
+<![endif]--><!--[if gte mso 9]><xml>
+
+ <o:shapelayout v:ext="edit">
+
+  <o:idmap v:ext="edit" data="1"/>
+
+ </o:shapelayout></xml><![endif]--><!--[if !mso]>
+
+<style>
+
+v\:*         { behavior: url(#default#VML) }
+
+o\:*         { behavior: url(#default#VML) }
+
+w\:*         { behavior: url(#default#VML) }
+
+.shape       { behavior: url(#default#VML) }
+
+</style>
+
+<![endif]--><!--[if gte mso 9]>
+
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+
+</xml><![endif]-->
+  
+  <link href="/wn3/css/es-ES.css" type="text/css" rel="Stylesheet">
+
+  
+  <link href="/library/mnp/2/aspx/css.aspx?locale=es-es&amp;name=Menu&amp;static=Page" type="text/css" rel="Stylesheet">
+
+  
+  <link href="/library/toolbar/3.0/css.aspx?c=/office/community/es-es/Configuration.xml" type="text/css" rel="stylesheet">
+</head>
+
+
+<body style="" lang="ES" link="blue" vlink="purple">
+
+<div class="Section1">
+<p class="MsoNormal" style="text-align: center; color: rgb(255, 102, 0);" align="center"><span style="font-size: 36pt; font-family: &quot;Lucida Sans Unicode&quot;;">Trucos
+Excel</span></p>
+
+<p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 11pt; font-family: &quot;Franklin Gothic Medium&quot;;">Comentarios
+a
+<span style="color: rgb(102, 0, 0);">Adolfo
+Aparicio</span></span></p>
+
+<p class="MsoNormal" style="text-align: center;" align="center">
+<span style="font-family: Franklin Gothic Medium;"><font color="#808080" size="1"><img alt="CorreoAdolfo" src="correo.gif" style="width: 243px; height: 36px;"></font></span></p>
+
+<div style="text-align: center;">
+<address>&nbsp;<big><big><big><a href="http://www.excelavanzado.com">www.excelavanzado.com</a></big></big></big></address>
+
+</div>
+
+<p class="MsoNormal" style="text-align: center;" align="center"><span style="font-size: 10pt; font-family: &quot;Times New Roman&quot;;"><o:p><br>
+
+</o:p></span></p>
+
+<div align="center">
+<table class="MsoTableWeb2" style="border: 0px inset ;" border="1" cellpadding="0" cellspacing="3" width="720">
+
+  <tbody>
+
+    <tr style="">
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#33ccff" width="17"> 1</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#33ccff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b><span lang="es">Para
+rellenar una Base de Datos</span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">podemos pasar de
+un dato a otro de la misma fila con &lt;TAB&gt; y si despu&eacute;s de
+introducir el &uacute;ltimo dato de la fila pulsamos &lt;INTRO&gt; el cursor
+se posicionar&aacute; en el primer dato de la siguiente fila.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#33ccff"> Base de Datos</td>
+
+    </tr>
+
+    <tr style="">
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#e9ffdf" width="17"> 2</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#e9ffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Para separar
+un sector circular en un gr&aacute;fico</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">se pulsa con el
+rat&oacute;n sobre &eacute;l y luego se separa. Tambi&eacute;n se puede cambiar el color de
+un sector pulsando sobre &eacute;l con el bot&oacute;n derecho del rat&oacute;n y eligiendo
+'Formato de punto de datos...'.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#e9ffdf"> Gr&aacute;ficos</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#e9ffdf" width="17"> 3</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#e9ffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Para incluir
+una nueva serie de datos en un gr&aacute;fico</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">se copia el rango
+de datos nuevo y se pega sobre el gr&aacute;fico.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#e9ffdf"> Gr&aacute;ficos</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dff4ff" width="17"> 4</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dff4ff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Para
+seleccionar una tabla completa</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">basta con
+posicionarse en cualquier celda de la tabla y pulsar [CTRL]+*. (Si usa
+el asterisco del teclado general no olvide que se consigue pulsando
+tambi&eacute;n la tecla [MAYUSCULAS]).</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dff4ff"> Teclado</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dff4ff" width="17"> <span lang="es">5</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dff4ff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b><span lang="es">Para
+poder ver las f&oacute;rmulas de una hoja</span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">puede
+hacer lo siguiente: Herramientas, Opciones, pesta&ntilde;a Ver, y en Opciones
+de Ventana marcar F&oacute;rmulas.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Pero
+tambi&eacute;n existe un m&eacute;todo de Teclado Abreviado que consiste en pulsar
+[ALT]+&ordm; y si se vuelven a pulsar estas dos teclas se muestra la hoja
+como habitualmente la vemos.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dff4ff"> Teclado</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">6</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><span lang="es"><b>A</b></span><b>uto_<span lang="es">O</span>pen()<span lang="es"> y A</span>uto_<span lang="es">C</span>lose()</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Existe una macro
+de autoarranque que se ejecuta cuando se abr<span lang="es">e</span> el
+libro. Se llama auto_open(). </p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Y existe otra que
+se ejecuta justo antes de cerrar el libro que se llama auto_close().</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span lang="es"><font color="#0000ff">Sub</font> Auto_Open()<br>
+
+&nbsp;&nbsp;&nbsp; <font color="#0000ff">Dim</font> hora <font color="#0000ff">As Double<br>
+
+&nbsp;&nbsp;&nbsp; Dim</font> saludo <font color="#0000ff">As String</font><br>
+
+&nbsp;&nbsp;&nbsp; hora = (Now - Int(Now)) * 24<br>
+
+&nbsp;&nbsp;&nbsp; <font color="#0000ff">Select Case</font> hora<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">Case</font>
+6 <font color="#0000ff">To</font> 14<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+saludo = "Buenos d&iacute;as"<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">Case</font>
+14 <font color="#0000ff">To</font> 21<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+saludo = "Buenas tardes"<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">Case
+Else</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+saludo = "Buenas noches"<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">End
+Select</font><br>
+
+&nbsp;&nbsp;&nbsp; MsgBox saludo &amp; " Amo"<br>
+
+      <font color="#0000ff">End Sub</font></span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span lang="es">Equivalente
+a auto_open existe otra macro <b>Workbook_Open</b>, pero &eacute;sta ha de
+ser guardada no en un m&oacute;dulo normal, sino en ThisWorkbook. Pruebe lo
+siguiente:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span lang="es">El
+siguiente procedimiento permite abrir autom&aacute;ticamente el libro
+Balance.xls al abrir el libro Informe.xls. El procedimiento ha de estar
+en ThisWorkbook del libro Informe.xls.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span lang="es">Sub
+Workbook_Open()<br>
+
+&nbsp;&nbsp;&nbsp; 'Apertura de libro Balance</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span lang="es">&nbsp;&nbsp;&nbsp;
+Workbooks.Open Filename:="C:/Contabilidad/Balance.xls"</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span lang="es">&nbsp;&nbsp;&nbsp;
+'Activaci&oacute;n del libro Informe</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span lang="es">&nbsp;&nbsp;&nbsp;
+Windows("Informe.xls").Activate</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span lang="es">End
+Sub</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">7</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b><span lang="es">Personal.xls</span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Podemos crear una
+macro para que este disponible en todas las hojas de c&aacute;lculo. Esto se
+hace con el libro <font color="#ff0000">PERSONAL.XLS</font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Personal.xls es
+un Libro que se carga cada vez que se inicia Excel, pero no esta
+visible ya que tiene el atributo de Escondido (Hidden), por lo que si
+necesitamos modificarlo lo debemos hacer a trav&eacute;s del comando "Mostrar"
+del men&uacute; "Ventana". En caso que no exista lo podemos crear con un libro
+de trabajo nuevo, salvarlo con este nombre y dejarlo en la carpeta
+"InicioXL" (XLStart), que se encuentra en la carpeta "Office" del
+directorio donde esta instalado MSOffice.<span lang="es"> </span>Cada
+vez que dejamos de trabajar con este archivo, lo debemos salvar y luego
+activar el comando "Ocultar" del men&uacute; "Ventana", para que no se vea
+cuando iniciamos la aplicaci&oacute;n.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">La
+ruta de mi fichero es:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">C:\Documents and
+Settings\Adolfo\Datos de
+programa\Microsoft\Excel\XLSTART\[PERSONAL.XLS]Hoja1</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">8</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b><span lang="es">Saludo
+al arrancar</span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Crear un libro
+Personal.xls como se ha indicado anteriormente con la macro de
+autoarranque siguiente:</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><font color="#0000ff">Sub</font> Auto_open()<br>
+
+&nbsp;&nbsp; MsgBox ("Que tengas un buen d&iacute;a")<br>
+
+      <font color="#0000ff">End Sub</font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Esta macro creada
+en el libro Personal.xls hace que al iniciar Excel nos salga un mensaje
+salud&aacute;ndonos.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">9</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b><span lang="es">Nombrar&nbsp;
+Hoja desde una celda</span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Esta
+macro permite asignar el nombre que pongamos en la celda A1 como nombre
+de la Hoja actual.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><font color="#0000ff">Sub</font><font color="#800000"> </font> <span lang="es">NombreHoja</span>()<br>
+
+&nbsp;&nbsp; <span lang="es">ActiveSheet.Name = Range("A1").Value</span><font color="#800000"><br>
+
+      </font><font color="#0000ff">End Sub</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">10</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><span lang="es"><b>Protecci&oacute;n
+de una hoja</b></span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Las
+celdas por defecto vienen bloqueadas. Si deseamos desbloquear algunas
+de ellas debemos hacer lo siguiente: Formato, Celda, pesta&ntilde;a Proteger,
+quitar la casilla de verificaci&oacute;n que esta puesta por defecto en
+'Bloqueada'. Si marcamos 'Oculta' no se ver&aacute; el contenido de la celda
+en la barra de f&oacute;rmulas. Esto se hace cuando no se desea que alguien
+vea la f&oacute;rmula de una celda. Despu&eacute;s se debe proteger la hoja con:
+Herramientas, Proteger, Proteger hoja. Se le pueden permitir m&aacute;s o
+menos acciones al usuario. Si no le permitimos seleccionar las celdas
+bloqueadas y desbloqueadas no podr&aacute; posicionarse con el cursor sobre
+ellas. Si &uacute;nicamente le dejamos seleccionar las desbloqueadas nos
+encontraremos con algo parecido a un formulario.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">11</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><span lang="es"><b>P</b></span><b><span lang="es">ropiedad EnableSelection</span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 2px;"><span lang="es">Para
+reforzar el bloqueo del paso anterior podemos hacer lo siguiente:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Ir
+al Editor de Visual Basic. En el Explorador de proyectos ir a la hoja
+que queramos proteger. En la Ventana de propiedades buscar la propiedad
+EnableSelection y ponerle el valor 1. Cerrar el editor, volver a Excel
+y grabar la plantilla.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Con
+la doble opci&oacute;n (protecci&oacute;n de hoja y la propiedad EnableSelection)
+ser&aacute; imposible seleccionar una celda, y por lo tanto copiar o modificar
+cualquier valor. Este procedimiento no funciona en Excel 2000 y en las
+versiones anteriores, porque la propiedad EnableSelection no conserva
+el valor modificado al cerrar la plantilla. Aunque lo cierto es que
+pocos usuarios conocen la citada propiedad.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">12</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 6px;"><b>EnableSelection
+= xlUnlockedCells</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Para
+paliar el inconveniente citado anteriormente para las versiones de
+Excel 2000 y anteriores se puede hacer lo siguiente:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Ir
+al Editor de Visual Basic. En el Explorador de proyectos ir a la hoja
+que queramos proteger. En la Ventana de propiedades buscar la propiedad
+EnableSelection y ponerle el valor 1. Cerrar el editor, volver a Excel
+y grabar la plantilla.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Con
+la doble opci&oacute;n (protecci&oacute;n de hoja y la propiedad EnableSelection)
+ser&aacute; imposible seleccionar una celda, y por lo tanto copiar o modificar
+cualquier valor. Este procedimiento no funciona en Excel 2000 y en las
+versiones anteriores, porque la propiedad EnableSelection no conserva
+el valor modificado al cerrar la plantilla.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><span lang="es">Ese
+procedimiento se puede realizar tambi&eacute;n mediante una macro:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><font color="#800000">Private Sub Workbook_Open()<br>
+
+&nbsp; Worksheets("<span lang="es">Hoja1</span>").EnableSelection =
+xlUnlockedCells<br>
+
+End Sub</font></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 0pt;"><span lang="es">El
+valor por defecto es </span><i>xlNoRestrictions</i></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#33ccff" width="17"> 1<span lang="es">3</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#33ccff" valign="top">
+      
+      <p style="margin-bottom: 0pt;"><b><span lang="es">Opciones de
+Ordenaci&oacute;n</span></b></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 0pt;"> <span lang="es">Al
+ordenar un rango de datos podemos elegir en Opciones que la ordenaci&oacute;n
+sea Normal (alfab&eacute;tica) o seg&uacute;n una de las Listas Personalizadas de
+Excel.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Puede distinguir
+may&uacute;sculas de min&uacute;sculas</font><span lang="es"><font size="2">.</font></span></span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Puede ordenar en
+vertical (que es lo normal) o en horizontal.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#33ccff"> Base de Datos</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#33ccff" width="17"> 1<span lang="es">4</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#33ccff" valign="top">
+      
+      <p style="margin-bottom: 0pt;"><b> <span lang="es">Criterios
+utilizados para filtrar una base de datos</span></b></p>
+
+      
+      <p style="margin-top: 8px; margin-bottom: 5px;"> <span lang="es">Un
+criterio est&aacute; formado al menos por dos celdas. La primera es un nombre
+de campo y la segunda que estar&aacute; debajo es el criterio propiamente
+dicho.</span></p>
+
+      
+      <table x:str="" style="border-collapse: collapse; width: 48pt;" border="0" cellpadding="0" cellspacing="0" width="64">
+
+        <colgroup><col style="width: 48pt;" width="64"></colgroup> <tbody>
+
+          <tr style="height: 12.75pt;" height="17">
+
+            <td style="border: 0.5pt solid windowtext; height: 12.75pt; width: 48pt; font-weight: 700; text-align: center; color: windowtext; font-size: 10pt; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; padding-left: 1px; padding-right: 1px; padding-top: 1px;" height="17" width="64"> <span style="font-weight: 400;"><font face="Times New Roman"> <a name="RANGE!F10:F11">Salario</a></font></span></td>
+
+          </tr>
+
+          <tr style="height: 12.75pt;" height="17">
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 0.5pt 0.5pt; height: 12.75pt; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap; padding-left: 1px; padding-right: 1px; padding-top: 1px;" height="17"> <font face="Times New Roman">&gt;=30.000</font></td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 0pt;"><span lang="es">Cuando
+usamos varios criterios estos se relacionan entre si mediante
+concatenadores l&oacute;gicos Y u O. Por ejemplo, supongamos que deseamos
+filtrar de una base de datos los registros correspondientes a
+trabajadores que cumplan que su salario esta comprendido entre 30.000 y
+40.000 euros, o bien su edad es de 30 a&ntilde;os y se llaman Maria. En ese
+caso el criterio esta formado por m&uacute;ltiples celdas, de forma que los
+criterios que estan en la misma fila se han de cumplir ambos (operador
+Y), y si est&aacute;n en fila distinta se han de cumplir unos u otros
+(operador O).</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#33ccff"> Base de Datos</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">15</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><b><span lang="es">Varias
+l&iacute;neas en una celda</span></b></p>
+
+      
+      <p style="margin-top: 5px;"><span style="font-style: normal; font-weight: 400;"> <font face="Times New Roman" size="2">Para escribir varias l&iacute;neas en la
+misma celda<span lang="es"> </span>puedes escribir lo que quieras y
+para abrir un espacio hacia abajo en la misma celda pulsar Alt+Enter.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">16</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><b><span lang="es">Mover
+celdas entre hojas</span></b></p>
+
+      
+      <p style="margin-top: 5px;"><span style="font-family: Times New Roman;"> <font size="2">Seleccione el
+rango a mover. Ll&eacute;velo hasta la pesta&ntilde;a de la hoja de destino, presione
+ALT y mantenga presionado hasta que deje el rango en la parte de la
+hoja de destino que desee</font></span><span style="font-style: normal; font-weight: 400;"><font face="Times New Roman" size="2">.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">17</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <b>Insertar
+filas o columnas r&aacute;pidamente</b></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 0pt;">En una hoja de <span lang="es">E</span>xcel que ya tengas rellena, prueba a hacer esto:</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Vete al principio
+de lo que tengas escrito</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Pon el rat&oacute;n
+sobre el control de relleno (es el puntito negro que tiene el cursor
+abajo a la derecha). Sabes que est&aacute;s encima del control de relleno,
+porque la cruz blanca que es normalmente el rat&oacute;n se cambia a color
+negro</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Ahora pulsa la
+tecla de may&uacute;sculas (no la de bloq. may&uacute;s) y sin soltarla pulsa el
+bot&oacute;n izquierdo del rat&oacute;n y arr&aacute;stralo hacia abajo o hacia la derecha,
+ver&aacute;s que se insertan filas o columnas<span lang="es">.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">18</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Copiar en
+Excel XP arrastrando con Ctrl</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Se puede copiar
+una celda arrastrando con Ctrl desde alguno de los 4 lados del borde de
+la celda activa.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Si no se emplea
+el Ctrl la celda no se copia, se mueve.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">19</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Edici&oacute;n,
+Rellenar, Series</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Poner el primer
+n&uacute;mero y arrastrar el controlador de relleno con la tecla Ctrl pulsada.
+Esto nos dar&aacute; una serie con incrementos unitarios.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#e9ffdf" width="17"> <span lang="es">20</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#e9ffdf" valign="top">
+      
+      <p style="margin-bottom: 5px;"><b>Algunas teclas de
+navegaci&oacute;n&nbsp;</b>&nbsp;&nbsp; </p>
+
+      
+      <table class="MsoNormalTable" style="width: 100%; border-collapse: collapse;" border="1" cellpadding="0" cellspacing="0" width="100%">
+
+        <tbody>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Ctrl +
+Intro</td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Ir a A1</td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Fin -
+Flecha abajo</td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&Uacute;ltima
+celda de un rango.</td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Ctrl +
+Flecha abajo</td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&Uacute;ltima
+celda de un rango.</td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Ctrl + Fin</td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Celda
+inferior derecha al &aacute;rea activa</td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Alt + AvPg</td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">P&aacute;gina a
+la derecha</td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Shift +
+Barra de desplazamiento vertical u horizontal</td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Permite
+desplazamientos m&aacute;s r&aacute;pidos</td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Ctrl +
+AvPg</td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">Avanza
+entre las hojas de un libro</td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Para ir al
+extremo superior de un bloque de datos, haga doble clic en el extremo
+superior de la celda seleccionada. Con los dem&aacute;s bloques puede ir a los
+dem&aacute;s extremos del bloque. Y si lo hace mientras presiona la tecla
+Shift podr&aacute; seleccionar rangos.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#e9ffdf"> Teclado</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">21</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>C&aacute;lculo
+autom&aacute;tico en la barra de estado</b></p>
+
+Al seleccionar un
+rango de n&uacute;meros vemos su suma en la barra de estado (abajo). Pulsando
+sobre ella con el bot&oacute;n derecho del rat&oacute;n podemos cambiar la suma por
+un promedio, el m&aacute;ximo, el m&iacute;nimo o contar los elementos seleccionados
+en el rango.<span style="font-family: times new roman;"><br>
+
+      <img alt="" src="trucos_archivos/image002.jpg" style="width: 576px; height: 338px;"><br>
+
+      </span> </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#e9ffdf" width="17"> <span lang="es">22</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#e9ffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b><span lang="es">Algunas
+abreviaturas de teclado</span></b></p>
+
+      
+      <table class="MsoNormalTable" style="width: 100%; border-collapse: collapse;" border="1" cellpadding="0" cellspacing="0" width="100%">
+
+        <tbody>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&nbsp;Ctrl
++ <span lang="es"> C</span></td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&nbsp;<span lang="es">Copiar</span></td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&nbsp;Ctrl
++ <span lang="es"> V</span></td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&nbsp;<span lang="es">Pegar</span></td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&nbsp;Ctrl
++ <span lang="es"> X</span></td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&nbsp;<span lang="es">Cortar</span></td>
+
+          </tr>
+
+          <tr>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&nbsp;Ctrl
++ <span lang="es"> Z</span></td>
+
+            <td style="padding: 0cm; width: 50%;" width="50%">&nbsp;<span lang="es">Deshacer</span></td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#e9ffdf"> Teclado</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#e9ffdf" width="17"> <span lang="es">23</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#e9ffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Al pulsar
+Intro se desplaza el cursor hacia abajo, pero se puede cambiar</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Puede cambiarlo
+en Herramientas, Opciones, Modificar, Mover selecci&oacute;n despu&eacute;s de ENTRAR.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#e9ffdf"> Teclado</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#e9ffdf" width="17"> 2<span lang="es">4</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#e9ffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>F11</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Pulsando F11
+sobre una serie de datos se construye un gr&aacute;fico completo y de forma
+autom&aacute;tica</font><span lang="es"><font size="2">.</font></span></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#e9ffdf"> Gr&aacute;ficos</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">25</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Proteger celdas</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Con Formato,
+Celda, Protege, quitar la casilla de verificaci&oacute;n en Bloqueada se
+consigue que en estas celdas se pueda escribir despu&eacute;s de ejecutar
+Herramientas, Proteger, Proteger hoja.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Con TAB se puede
+saltar de una a otra celda de las desbloqueadas. Y con May&uacute;sculas + TAB
+se salta hacia atr&aacute;s.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">26</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Ocultar la
+formula en una celda</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Con Formato,
+Celda, Proteger, Oculta se marcan las celdas cuyas f&oacute;rmulas o contenido
+visto en la l&iacute;nea de edici&oacute;n se desee ocultar. Despu&eacute;s se ha de
+proteger la hoja, con Herramientas, Proteger, Proteger hoja.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">27</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Copiar una hoja</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Para copiar una
+hoja completa dispone de dos sistemas:</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">El primero y m&aacute;s
+f&aacute;cil es se&ntilde;alar con el rat&oacute;n la pesta&ntilde;a de la hoja a copiar, pulsar
+Ctrl y sin soltar arrastrar la pesta&ntilde;a con el rat&oacute;n. Al soltar se habr&aacute;
+duplicado completamente la hoja. Si la hoja a copiar se llamaba 'Hoja
+1', la nueva hoja se llamar&aacute;<span lang="es"> </span>&nbsp;'Hoja 1 (2)'</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Es segundo m&eacute;todo
+consiste en situar el rat&oacute;n en el cuadradito que queda como
+intersecci&oacute;n del indicador de filas y columnas. Esto selecciona la hoja
+completamente. Seguidamente se copia al portapapeles, por ejemplo con
+Ctrl + C. Se inserta una hoja nueva y pulsando sobre ella en el citado
+cuadradito se pega el contenido del portapapeles, por ejemplo con Ctrl
++ V.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">28</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Insertar
+Comentarios</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Se pueden
+insertar comentarios en las celdas. Para ello, pulse con el bot&oacute;n
+derecho del rat&oacute;n y elija 'Insertar Comentario'. Puede verlos
+completamente, solo la indicaci&oacute;n de que la celta tiene un comentario,
+o no verlos en absoluto seg&uacute;n elija una opci&oacute;n u otra en Herramientas,
+Opciones, Ver, Comentarios.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">29</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Texto con
+diversos formatos en una misma celda</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Se pueden dar
+distintos formatos a los caracteres o palabras de una misma celda.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Por ejemplo:
+puede poner en una celda la siguiente expresi&oacute;n:<span lang="es">&nbsp;&nbsp;
+      </span>Volumen (<span style="color: red;">m<sup>3</sup></span>)</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;">V&eacute;ase el distinto
+color de la fuente y el 3 como super&iacute;ndice.</p>
+
+      
+      <table class="MsoNormalTable" style="width: 170pt; border-collapse: collapse;" border="0" cellpadding="0" cellspacing="0" height="75" width="227">
+
+        <tbody>
+
+          <tr style="height: 12.75pt;">
+
+            <td style="border: 1pt solid windowtext; padding: 0.75pt 0.75pt 0cm; width: 60pt; height: 20px;" nowrap="nowrap" valign="bottom" width="80">
+            
+            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;</span></p>
+
+            </td>
+
+            <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.75pt 0.75pt 0cm; width: 50pt; height: 20px;" nowrap="nowrap" valign="bottom" width="67">
+            
+            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;</span></p>
+
+            </td>
+
+            <td style="border-style: solid solid solid none; border-color: windowtext windowtext windowtext -moz-use-text-color; border-width: 1pt 1pt 1pt medium; padding: 0.75pt 0.75pt 0cm; width: 60pt; height: 20px;" nowrap="nowrap" valign="bottom" width="80">
+            
+            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;</span></p>
+
+            </td>
+
+          </tr>
+
+          <tr style="height: 33pt;">
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.75pt 0.75pt 0cm; height: 36px;" nowrap="nowrap" valign="bottom">
+            
+            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;</span></p>
+
+            </td>
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.75pt 0.75pt 0cm; width: 50pt; height: 36px;" valign="bottom" width="67">
+            
+            <p class="MsoNormal" style="text-align: center;" align="center"> <span style="font-size: 10pt; font-family: Arial;">Volumen
+(<span style="color: red;">m<sup>3</sup></span>)</span></p>
+
+            </td>
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.75pt 0.75pt 0cm; height: 36px;" nowrap="nowrap" valign="bottom">
+            
+            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;</span></p>
+
+            </td>
+
+          </tr>
+
+          <tr style="height: 13.5pt;">
+
+            <td style="border-style: none solid solid; border-color: -moz-use-text-color windowtext windowtext; border-width: medium 1pt 1pt; padding: 0.75pt 0.75pt 0cm; height: 19px;" nowrap="nowrap" valign="bottom">
+            
+            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;</span></p>
+
+            </td>
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.75pt 0.75pt 0cm; height: 19px;" nowrap="nowrap" valign="bottom">
+            
+            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;</span></p>
+
+            </td>
+
+            <td style="border-style: none solid solid none; border-color: -moz-use-text-color windowtext windowtext -moz-use-text-color; border-width: medium 1pt 1pt medium; padding: 0.75pt 0.75pt 0cm; height: 19px;" nowrap="nowrap" valign="bottom">
+            
+            <p class="MsoNormal"><span style="font-size: 10pt; font-family: Arial;">&nbsp;</span></p>
+
+            </td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 0pt;">Esto se consigue
+se&ntilde;alando en la barra de f&oacute;rmulas el car&aacute;cter o caracteres que se
+quieren cambiar<span lang="es"> y aplic&aacute;ndoles el formato deseado</span>.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">30</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Trabajar
+simult&aacute;neamente en varias hojas</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Antes de escribir
+texto, formulas, dar formato, etc.. en varias hojas simult&aacute;neamente ha
+de se&ntilde;alarlas primero.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Si son un
+conjunto de hojas correlativas, se&ntilde;ale la primera haciendo clic con el
+rat&oacute;n sobre la pesta&ntilde;a que indica el nombre de la primera y haga
+May&uacute;sculas + clic en la &uacute;ltima.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Si las hojas no
+son consecutivas selecciones la primera con un clic y las restantes con
+un Ctrl + clic en cada una.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Cuando haya
+terminado de introducir la informaci&oacute;n y formatos comunes haga clic en
+cualquier pesta&ntilde;a y as&iacute; se desactivar&aacute; el modo de trabajo conjunto.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">31</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Escribir en
+varias celdas simult&aacute;neamente</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"> <span style="font-family: Times New Roman;"><font size="2">Se&ntilde;ale las celdas
+donde quiere escribir una misma expresi&oacute;n. Incluso si son de rangos
+separados. Escriba dicha expresi&oacute;n. Y valide su introducci&oacute;n con Ctrl +
+Intro.</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">32</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Ver todas las
+f&oacute;rmulas de una hoja</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Se consigue
+pulsando Alt + &ordm;&nbsp; (esto es, la tecla Alt y simult&aacute;neamente la
+tecla de 1&ordm; que est&aacute; a la izquierda del n&uacute;mero 1). Para volver a la
+situaci&oacute;n anterior volver a pulsar.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Tambi&eacute;n se puede
+conseguir mediante: Herramientas, Opciones, Ver, F&oacute;rmulas.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">33</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Borrar</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Con el comando
+Edici&oacute;n, Borrar se puede elegir entre Todo, Formatos, Contenido (Supr)
+o Comentarios.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Para borrar un
+rango primero seleccione el rango y luego presione Shift mientras
+arrastra con el rat&oacute;n el indicador de relleno hacia el extremo superior
+izquierdo del rango. Si no presiona Shift conseguir&aacute; borrar el
+contenido pero no los formatos.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">34</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>La fuente por
+defecto en Excel es la Arial 10 pero se puede cambiar</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Se puede cambiar
+para todos los libros nuevos mediante: Herramientas, Opciones, General
+y elegir la Fuente Est&aacute;ndar y el tama&ntilde;o. </p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Pero tambi&eacute;n se
+puede cambiar la fuente s&oacute;lo en el libro activo de la siguiente forma.
+Activar el libro en el que se quiere cambiar la fuente por defecto.
+Ejecute Formato, Estilo y dentro del formato de estilo Normal elegir
+Modificar, Fuente y proceder a cambiar la fuente. Finalmente Aceptar.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">35</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Plantillas&nbsp;&nbsp;
+*.xlt</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Las plantillas
+permiten predefinir formatos, estilos, textos, f&oacute;rmulas,&nbsp; barras
+de herramientas personalizadas e incluso macros, que se utilizar&aacute;n en
+todos los nuevos libros abiertos (si la plantilla se llama libro.xlt) u
+hojas nuevas insertadas (si la plantilla se llama hoja.xlt). Tambi&eacute;n
+pueden existir otras plantillas para diferentes usos, por ejemplo, para
+predefinir una factura, cierto informe mensual, un balance, etc.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">La plantilla de
+libro predeterminada (libro.xlt) y la plantilla de hoja predeterminada
+(hoja.xlt) se han de grabar como plantilla en el directorio INICIAR que
+para la versi&oacute;n XP suele estar en:</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 10pt;">C:\Documents and Settings\nombreusuario\Datos
+de programa\Microsoft\Excel\INICIAR</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">o bien en:</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 10pt;">C:\Documents and Settings\nombreusuario\Datos
+de programa\Microsoft\Excel\XLSTART</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Tanto las
+plantillas que tenga en la carpeta de inicio predeterminada de Excel
+como las que haya definido en la carpeta de plantillas (<span style="font-size: 10pt;">C:\Documents and Settings\nombreusuario\Datos
+de programa\Microsoft\Plantillas</span>) las tendr&aacute; disponibles cuando
+haga Archivo, Nuevo y salga el Panel de Tareas y en el elija Plantillas
+Generales.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">36</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Puede trabajar
+con Estilos</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">En Formato,
+Estilo puede modificar el estilo normal o crear nuevos estilos, pero
+s&oacute;lo estar&aacute;n disponibles en el Libro Activo.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Si se desea que
+los estilos est&eacute;n disponibles de forma permanente sigua los siguientes
+pasos: Abra el libro cuyos Estilos quiere guardar permanentemente. Abra
+un libro nuevo y combine los Estilos en &eacute;ste. Ejecute Archivo, Guardar
+como, elija como tipo Plantilla (*.xlt). Escriba como nombre de fichero
+Libro.xlt o Hoja.xlt y gu&aacute;rdelo en la carpeta de inicio de Excel (<span style="font-size: 10pt;">C:\Documents and Settings\nombreusuario\Datos
+de programa\Microsoft\Excel\INICIAR)</span>. De esta forma cada vez que
+abra un libro u hoja nuevos se dispondr&aacute; de estos Estilos.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Puede convertir
+el estilo de una celda en un tipo de estilo personalizado. Sit&uacute;ese en
+la celda patr&oacute;n y elija Formato, Estilo y cambie el nombre por uno
+nuevo de su elecci&oacute;n.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Puede transferir
+los estilos de un libro a otro mediante Formato, Estilo, Combinar. Para
+ello abra los dos ficheros (o m&aacute;s) y ejecute los pasos se&ntilde;alados desde
+el fichero hacia el que quiere llevar los nuevos estilos.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#fdffdf" width="17"> <span lang="es">37</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#fdffdf" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>Libros que se
+abren al iniciar Excel</b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Los libros que
+coloque en la carpeta de inicio de Excel:</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 10pt;">C:\Documents and Settings\nombreusuario\Datos
+de programa\Microsoft\Excel\INICIAR</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">o bien en</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span style="font-size: 10pt;">C:\Documents and Settings\nombreusuario\Datos
+de programa\Microsoft\Excel\XLSTART</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Se abrir&aacute;n al
+iniciar Excel.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Tambi&eacute;n puede
+definir una carpeta de inicio de Excel en Herramientas, Opciones,
+General, "Al inicio, abrir todos los libros en:"</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#fdffdf"> Personalizaci&oacute;n</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ffcc99" width="17"> <span lang="es">38</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ffcc99" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>L<span lang="es">a funci&oacute;n =CELDA</span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">L<span lang="es">a
+funci&oacute;n CELDA es la t&iacute;pica funci&oacute;n que sirve para varias cosas seg&uacute;n
+que argumentos se utilicen.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Si
+se usa con "nombrearchivo"</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">=CELDA("nombrearchivo")</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">proporciona
+el nombre y ruta del archivo (siempre que est&eacute; grabado). En la ayuda
+hay un error y en lugar de poner "nombrearchivo" pone "archivo".</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Otro
+argumento interesante es "contenido".</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">=CELDA("contenido";A3)<span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Proporciona el contenido de
+la celda A3.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ffcc99"> <span lang="es">Funci&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">39</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;">Exportar un m&oacute;dulo</p>
+
+      </b><font size="2"><font face="Times New Roman"> </font></font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font size="2"><font face="Times New Roman">1. Pase al editor de visual
+basic y active el m&oacute;dulo a exportar.</font></font></p>
+
+      <font size="2"><font face="Times New Roman"> </font></font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font size="2"><font face="Times New Roman">2. <span lang="es"> Seleccione</span>
+      <b>Archivo/ Exportar archivo</b>. Aparece un cuadro de di&aacute;logo.</font></font></p>
+
+      <font size="2"><font face="Times New Roman"> </font></font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font size="2"><font face="Times New Roman">3. En cuadro de edici&oacute;n <b>Nombre
+de Archivo</b>, teclee el nombre para el archivo donde se guardar&aacute; el</font></font></p>
+
+      <font size="2"><font face="Times New Roman"> </font></font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font size="2"><font face="Times New Roman">m&oacute;dulo, por ejemplo
+"General.Bas", observe que <font color="#ff0000">.BAS </font>es la
+extensi&oacute;n de estos archivos.</font></font></p>
+
+      <font size="2"><font face="Times New Roman"> </font></font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font size="2"><font face="Times New Roman">4. Pulse sobre el bot&oacute;n <b>Guardar</b>.</font></font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">40</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b><span lang="es">Importar
+un m&oacute;dulo</span></b></p>
+
+      <font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">1. Active el editor Visual Basic.</font></p>
+
+      <font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">2.&nbsp; Seleccione&nbsp; <b>Archivo/
+Importar Archivo</b>. Aparece un cuadro de di&aacute;logo.</font></p>
+
+      <font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">3. Seleccione en la lista <b>Buscar
+en: </b>la carpeta donde tiene ubicado el archivo a importar<span lang="es">.</span></font></p>
+
+      <font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">4. Una vez localizada la carpeta,
+seleccione el archivo a importar (General.Bas en el ejemplo) y pulse</font></p>
+
+      <font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">sobre <b>Abrir</b>.</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">41</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">La
+cl&aacute;usula Private</p>
+
+      </b><font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">Puede anteponer la cl&aacute;usula private a
+todos los procedimientos y funciones que sean llamados s&oacute;lo desde</font></p>
+
+      <font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">el mismo m&oacute;dulo, es una forma de
+ahorrar memoria y hacer que el programa corra un poco m&aacute;s r&aacute;pido. Si</font></p>
+
+      <font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">necesita llamar un procedimiento o
+funci&oacute;n desde otro m&oacute;dulo, nunca debe precederlo por la cl&aacute;usula</font></p>
+
+      <font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">private, recuerde que esta cl&aacute;usula
+restringe el &aacute;mbito de utilizaci&oacute;n de un procedimiento a su propio</font></p>
+
+      <font face="Times New Roman" size="2"> </font>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font face="Times New Roman" size="2">m&oacute;dulo.</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">42</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> Inspecci&oacute;n r&aacute;pida de variables</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">C</span><font face="Times New Roman" size="2">uando ejecuta <span lang="es">un</span> programa paso a paso, si<span lang="es"> </span>sit&uacute;a
+el puntero de rat&oacute;n sobre una variable, se muestra el valor de la misma.</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">43</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">Modificar
+el valor de una variable en tiempo de ejecuci&oacute;n</p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"> <font face="Times New Roman" size="2">A veces resulta interesante cambiar el
+valor de alguna variable cuando se est&aacute; ejecutando el programa,</font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"> <font face="Times New Roman" size="2">para ver que ocurre si coge
+determinados valores, para terminar un bucle, etc.</font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"> <font face="Times New Roman" size="2">Para ello agregue a la ventana de
+inspecci&oacute;n la variable que desee cambiar, cambie su valor sobre la
+propia ventana de inspecci&oacute;n y contin&uacute;e la ejecuci&oacute;n del programa.</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">44</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> Ventana Inmediato</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"> <span lang="es">Puedes inspeccionar variables desde esta ventana
+anteponiendo la palabra <b>print</b> antes de la variable, o el signo </span><b>
+      <span lang="es">?</span></b><font face="Times New Roman" size="2">.</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">45</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> Debug.Print</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"> <span lang="es">Esta expresi&oacute;n permite efectuar la depuraci&oacute;n del programa
+de forma m&aacute;s c&oacute;moda. Se introduce en un programa antecediendo a una
+variable que se desea comprobar en la ventana Inmediato. De esta forma
+conseguiremos ver todos los valores que toma la variable cada vez que
+el programa pasa por este comando. Se ven en la <b><font color="#000080">Ventana Inmediato</font></b> [Ctr+G].</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"> <span lang="es">.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"> <span lang="es">Ejemplo: </span> </p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"> <span lang="es"><font color="#0000ff">Sub</font> Dos_a_la_diez()<br>
+
+&nbsp;&nbsp; <font color="#0000ff">Dim</font> i <font color="#0000ff">As
+Integer<br>
+
+&nbsp;&nbsp; Dim</font> t <font color="#0000ff">As Integer</font><br>
+
+&nbsp;&nbsp; t = 1<br>
+
+&nbsp;&nbsp; <font color="#0000ff">For</font> i = 1 <font color="#0000ff">To </font>10<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; t = t * 2<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Debug.Print "Dos a la " &amp; i &amp; "
+= " &amp; t<br>
+
+&nbsp;&nbsp; <font color="#0000ff">Next</font><br>
+
+&nbsp;&nbsp; MsgBox t<br>
+
+      <font color="#0000ff">End Sub</font></span></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 0pt;" align="left"> <span lang="es">Despu&eacute;s de efectuada la depuraci&oacute;n se quita la l&iacute;nea que
+contiene el comando Debug.Print.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">46</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">Propiedad
+ListFillRange <span lang="es">del ComboBox</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">Con
+esta propiedad deberemos definir los elementos que debe mostrar la
+lista, debe especificarse el rango</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">que
+contiene los elementos a mostrar, el rango debe ser una columna (o dos
+, o tres, etc.). </p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">47</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b> </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><b>Propiedad
+LinKedCell <span lang="es">del ComboBox</span></b></p>
+
+      <b> </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">En
+esta propiedad debe especificar en que celda debe copiarse el elemento
+seleccionado de la lista.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">Cuidado
+con esta propiedad, tenga en cuenta que los elementos de la lista son
+tratados como datos de</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">tipo
+String aunque contenga n&uacute;meros o fechas, por lo que en estos casos, a
+veces ser&aacute; necesario aplicar</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">funciones
+de conversi&oacute;n de datos antes que el dato se copie en la hoja. Por
+ejemplo, si alguna vez</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">construye
+una lista con n&uacute;meros ver&aacute; que el dato seleccionado se alinea a la
+derecha, si son fechas, no se</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">muestra
+con el formato correspondiente.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">48</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">Propiedad
+ListIndex<span lang="es"> del ComboBox</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">Mediante
+esta propiedad podremos saber que elemento de la lista es el
+seleccionado por su n&uacute;mero de</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">orden.
+Es decir, si est&aacute; seleccionado el primero, ListIndex valdr&aacute; 0, si est&aacute;
+seleccionado el segundo valdr&aacute;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">1,
+etc. Si no hay ning&uacute;n elemento seleccionado valdr&aacute; -1. Tenga en cuenta
+que esta propiedad s&oacute;lo est&aacute;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">disponible
+en tiempo de ejecuci&oacute;n, es decir la podremos leer mientras est&eacute;
+funcionando el programa, no</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">se
+puede establecer en modo dise&ntilde;o, observe que no aparece en la ventana
+propiedades del cuadro</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">combinado.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ffcc99" width="17"> <span lang="es">49</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ffcc99" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>L<span lang="es">a funci&oacute;n =</span></b><span lang="es"><b>TEXTO</b></span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Esta
+funci&oacute;n permite convertir un valor num&eacute;rico en un texto. Su funci&oacute;n
+contraria es <b> <font color="#ff0000">=VALOR</font></b>. </span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Al
+escribir un n&uacute;mero en una celda queda alineado a la derecha, si se
+escribe como texto (anteponi&eacute;ndole una comilla simple) quedar&aacute; alineado
+a la izquierda. Ejemplo: '54</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">La
+funci&oacute;n TEXTO tiene dos argumentos que seg&uacute;n la ayuda son: =<b>TEXTO</b>(<b>valor</b>;formato)</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">valor:
+es el n&uacute;mero que queremos convertir a texto</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">formato:
+es el formato que queremos darle. Es un argumento optativo</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Pero
+la ayuda no se corresponde con la realidad de la funci&oacute;n, ya que en la
+pr&aacute;ctica esta funci&oacute;n tiene los argumentos cambiados de orden.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Pruebe
+=TEXTO(;"43")</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Pero
+si prueba =TEXTO("43") obtendr&aacute; un error</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ffcc99"> <span lang="es">Funci&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ffcc99" width="17"> <span lang="es">50</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ffcc99" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><span lang="es"><b>Curiosidades
+de alguna funciones con valor propio</b></span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Algunos
+nombres de funci&oacute;n tienen valor propio si se escriben un una celda y
+sin argumentos. O al menos eso es lo que he podido comprobar en la
+versi&oacute;n XP.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Ponga
+en una celda cualquiera +PRECIO y al pulsar intro ver&aacute; que aparece un
+valor. A mi me da -1965686714.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">Las
+funciones que he visto que tienen valor propio son las siguientes:</span></p>
+
+      
+      <table x:str="" style="border-collapse: collapse; width: 122pt;" border="0" cellpadding="0" cellspacing="0" width="162">
+
+        <colgroup><col span="2" style="width: 61pt;" width="81"></colgroup>
+        <tbody>
+
+          <tr style="height: 12.75pt;" height="17">
+
+            <td style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 12.75pt; width: 61pt; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" x:str="'=PRECIO" height="17" width="81"> =PRECIO</td>
+
+            <td style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; width: 61pt; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" x:num="-1965686714" x:fmla="=+PRECIO" align="right" width="81">-1965686714</td>
+
+          </tr>
+
+          <tr style="height: 12.75pt;" height="17">
+
+            <td style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 12.75pt; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" x:str="'=AMORTIZ.LIN" height="17"> =AMORTIZ.LIN</td>
+
+            <td x:num="1477378140" x:fmla="=AMORTIZ.LIN" style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" align="right"> 1477378140</td>
+
+          </tr>
+
+          <tr style="height: 12.75pt;" height="17">
+
+            <td style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 12.75pt; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" x:str="'=CUPON.DIAS" height="17"> =CUPON.DIAS</td>
+
+            <td x:num="-1799028673" x:fmla="=CUPON.DIAS" style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" align="right"> -1799028673</td>
+
+          </tr>
+
+          <tr style="height: 12.75pt;" height="17">
+
+            <td style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 12.75pt; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" x:str="'=DURACION" height="17"> =DURACION</td>
+
+            <td x:num="-1525481390" x:fmla="=DURACION" style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" align="right"> -1525481390</td>
+
+          </tr>
+
+          <tr style="height: 12.75pt;" height="17">
+
+            <td style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 12.75pt; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" x:str="'=VNA.NO.PER" height="17"> =VNA.NO.PER</td>
+
+            <td x:num="" x:fmla="=VNA.NO.PER" style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" align="right"> -269746088</td>
+
+          </tr>
+
+          <tr style="height: 12.75pt;" height="17">
+
+            <td style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; height: 12.75pt; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" x:str="'=DIAS.LAB" height="17"> =DIAS.LAB</td>
+
+            <td x:num="" x:fmla="=DIAS.LAB" style="border: medium none ; padding: 0px; background: rgb(204, 255, 255) none repeat scroll 0% 50%; -moz-background-clip: initial; -moz-background-origin: initial; -moz-background-inline-policy: initial; color: windowtext; font-size: 10pt; font-weight: 400; font-style: normal; text-decoration: none; font-family: Arial; vertical-align: bottom; white-space: nowrap;" align="right"> 270991416</td>
+
+          </tr>
+
+        
+        </tbody>
+      
+      </table>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es">y
+muchas m&aacute;s. Por lo que veo, son las que aparece al ampliar las
+funciones al instalar las complementarias, con</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><span lang="es"><b>Herramientas</b>,
+      <b>Complementos</b>, <b>Herramientas para An&aacute;lisis</b>.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ffcc99"> <span lang="es">Funci&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">51</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> Cambiar el nombre de un M&oacute;ludo</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Al insertar m&oacute;dulos en el Editor de Visual Basic, se
+utilizan los nombres: M&oacute;dulo 1, M&oacute;dulo 2, etc. Podemos cambiar el
+nombre el un m&oacute;dulo en sus propiedades (F4). La &uacute;nica propiedad de un
+M&oacute;dulo es 'name'.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">52</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Nombre de usuario: UserName</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Vamos a crear una funci&oacute;n que proporcione el nombre de
+usuario. Primero utilizando la Grabadora de Macros. Haga lo siguiente.
+Active la Grabadora y luego seleccione Herramientas, Opciones, pesta&ntilde;a
+General. Realice un cambio en el nombre de usuario. Cerrar la ventana
+de Opciones pulsando en Aceptar. Y detener la Grabadora. La macro
+obtenida ser&aacute; la siguiente:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es"> <font color="#0000ff">Sub</font> Macro1()<br>
+
+      <font color="#008000">'<br>
+
+' Macro1 Macro<br>
+
+' Macro grabada el 06/08/2004 por Adolfo<br>
+
+'<br>
+
+      <br>
+
+'</font><br>
+
+&nbsp;&nbsp;&nbsp; <font color="#0000ff">With</font> Application<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .UserName = "Adolfo Aparicio"<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .StandardFont = "Arial"<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .StandardFontSize = "10"<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .DefaultFilePath =
+"C:\Documents and Settings\Adolfo\Mis documentos"<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .EnableSound = <font color="#0000ff"> False</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .RollZoom = <font color="#0000ff"> False<br>
+
+&nbsp;&nbsp;&nbsp; End With<br>
+
+End Sub</font></span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Ahora vamos a crear la funci&oacute;n =Usuario siguiendo el
+procedimiento inverso.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es"> <font color="#0000ff">Funcition</font> Usuario()</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">&nbsp;&nbsp;&nbsp; Usuario = Application.UserName</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><font color="#0000ff"> <span lang="es">End Function</span></font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Puede probarla. La encontrar&aacute; en la categor&iacute;a de Funciones
+Definidas por el usuario.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">53</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> Extensiones de los nombres de macro</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">- <b> M&oacute;dulos de clase</b>. Extensi&oacute;n <font color="#ff0000"><b>.cls</b></font>.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">- <b> Formularios</b>. Extensi&oacute;n <font color="#ff0000"><b>.frm</b></font>.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">- <b> M&oacute;dulos</b> estandar. Extensi&oacute;n <font color="#ff0000"><b>.bas</b></font>.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">54</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Exit Sub, Exit Function</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Se usan eventualmente para salir de un procedimiento o
+funci&oacute;n.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">55</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Macro que pregunta si se desea salir de la aplicaci&oacute;n</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> <font color="#0000ff">Sub</font> SalirAplic()</span><b><span lang="es"><br>
+
+      </span> </b> <span lang="es">&nbsp;&nbsp;&nbsp; <font color="#0000ff">If</font> MsgBox("&iquest;Quiere salir de la aplicaci&oacute;n",
+vbQuestion + vbYesNo, "Ultima pregunta") = vbYes <font color="#0000ff">Then</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Application.Quit<br>
+
+&nbsp;&nbsp;&nbsp; <font color="#0000ff">End If<br>
+
+End Sub</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">56</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> Llamada a un procedimiento</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">[<font color="#ff0000">Call</font>] NombreProc [(lista de
+argumentos)]</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">La palabra clave Call es opcional para llamar a un
+procedimiento, salvo que existan argumentos, en cuyo caso es
+obligatoria. Los argumentos deben ir entre par&eacute;ntesis y pueden ser
+valores o variables.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><font color="#0000ff">Sub</font> Suma(a <span style="color: rgb(51, 51, 255);">As Byte</span>, b <span style="color: rgb(51, 51, 255);">As Byte</span>)<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span>MsgBox "La suma es "
+&amp; a + b<br>
+
+      <font color="#0000ff">End Sub</font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><br>
+
+      <font color="#0000ff">Sub </font>sumar()<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span><font color="#0000ff">Call</font>
+Suma(3, 4)<br>
+
+      <font color="#0000ff">End Sub</font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><b><span lang="es"> Para llamar a un procedimiento de otro m&oacute;dulo</span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> NombreDelM&oacute;dulo<b>.</b>NombreDelProcedimiento</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"><i> Ejemplo:</i> ThisWorkbook<b>.</b>SalirAplic</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"><b> Para llamar a un procedimiento de otro libro</b></span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> <font color="#ff0000">Application.Run</font>
+"NombreDelLibro!NombreDelM&oacute;dulo.NombreDelProcedimiento"</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"><i> Ejemplo:</i> Application.Run
+"Informe.xls!ThisWorkbook.SalirAplic.xls"</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Al ejecutar este comando, el libro Informe.xls debe estar
+abierto.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">57</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">Proteger
+con contrase&ntilde;a las macros</p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><font size="2">Alt + F11<br>
+
+Herramientas =&gt; Propiedades de VBAProject =&gt; Protecci&oacute;n =&gt;
+Bloquear proyecto para visualizaci&oacute;n =&gt; Contrase&ntilde;a</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">58</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> Convertir una funci&oacute;n en un Complemento</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> Podemos hacer que una funci&oacute;n creada por el usuario este
+disponible en todos los Libros. Para ello, hemos de convertir el Libro
+que contiene la funci&oacute;n en un Complemento.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Los Complementos disponibles se ven haciendo: </span><font size="2">Herramientas =&gt; <span lang="es">Complementos.</span></font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">Excel
+carga los complementos guardados en el directorio donde teng&aacute;is
+instalado MsOffice <span lang="es">y luego en una carpeta que var&iacute;a
+con la versi&oacute;n que tengas instalada. Para XP puede ser:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">C:\Documents and Settings\Adolfo\Datos de
+programa\Microsoft\AddIns\</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">Para
+convertir el libro que contiene nuestra Funci&oacute;n en un <span lang="es">Complemento,</span>
+bastara ir al Men&uacute; Archivo/Guardar como y elegir el formato Complemento
+de Microsoft Excel (*.xla). Si lo guard&aacute;is en el directorio <span lang="es">que tiene tu versi&oacute;n asignado</span> estar&aacute; siempre
+disponible.<br>
+
+Un aspecto a tener en cuenta es que los Complementos no son editables,
+es decir no <span lang="es">podr&aacute;s</span> modificar o a&ntilde;adir mas <span lang="es"> F</span>unciones. Por eso es recomendable guardar primero
+el Libro en formato *.xls y luego como *.xla.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ccff99" width="17"> <span lang="es">59</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ccff99" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Hacer referencia a un RANGO</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> Sintaxis para hacer referencia a un Rango:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Si el rango est&aacute; en la misma Hoja:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"> <font color="#008000" face="TTE16406F0t00" size="3"><b><span lang="es">Rango</span></b></font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Si est&aacute; en otra Hoja del mismo Libro:</span></p>
+
+      <b><font color="#ff0000" face="TTE16406F0t00" size="4"> </font></b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"><b><font color="#ff0000" face="TTE16406F0t00" size="4">'</font></b></span><span lang="es"><b><font color="#008000" face="TTE16406F0t00" size="3">Nombre
+de Hoja</font></b></span><b><font color="#ff0000" face="TTE16406F0t00" size="4"><span lang="es">'</span></font><font color="#0000ff" face="TTE16406F0t00" size="4"><span lang="es">!</span></font><font color="#008000" face="TTE16406F0t00" size="3"><span lang="es">Rango</span></font></b></p>
+
+      <b><font color="#008000" face="TTE16406F0t00" size="3"> </font></b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Si est&aacute; en una Hoja de otro Libro, y el Libro se encuentra
+en la misma carpeta que el actual:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><b> <font color="#ff0000" face="TTE16406F0t00" size="4"><span lang="es">'</span></font><span lang="es"><font color="#008000" face="TTE16406F0t00" size="3">[Nombre
+de Libro.xls]Nombre de Hoja</font></span><font color="#ff0000" face="TTE16406F0t00" size="4"><span lang="es">'</span></font><font color="#0000ff" face="TTE16406F0t00" size="4"><span lang="es">!</span></font><font color="#008000" face="TTE16406F0t00" size="3"><span lang="es">Rango</span></font></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Si est&aacute; en una Hoja de otro Libro, y el Libro se encuentra
+en diferente carpeta que el actual:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><b> <font color="#ff0000" face="TTE16406F0t00" size="4"><span lang="es">'</span></font><span lang="es"><font color="#008000" face="TTE16406F0t00" size="3">c:\Carpeta\SubCarpeta\[Nombre
+de Libro.xls]Nombre de Hoja</font></span><font color="#ff0000" face="TTE16406F0t00" size="4"><span lang="es">'</span></font><font color="#0000ff" face="TTE16406F0t00" size="4"><span lang="es">!</span></font><font color="#008000" face="TTE16406F0t00" size="3"><span lang="es">Rango</span></font></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Si el rango est&aacute; en otro ordenador conectado al nuestro por
+una Intranet:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><b> <font color="#ff0000" face="TTE16406F0t00" size="4"><span lang="es">'</span></font><span lang="es"><font color="#008000" face="TTE16406F0t00" size="3">\\Servidor\Carpeta\[Nombre
+de Libro.xls]Nombre de Hoja</font></span><font color="#ff0000" face="TTE16406F0t00" size="4"><span lang="es">'</span></font><font color="#0000ff" face="TTE16406F0t00" size="4"><span lang="es">!</span></font><font color="#008000" face="TTE16406F0t00" size="3"><span lang="es">Rango</span></font></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;" align="left"><span lang="es">Si el rango est&aacute; en otro ordenador conectado al nuestro por
+Intrernet:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><b> <font color="#ff0000" face="TTE16406F0t00" size="4"><span lang="es">'</span></font><span lang="es"><font color="#008000" face="TTE16406F0t00" size="3">http://www.servidor.com/Carpeta/[Libro.xls]Hoja</font></span><font color="#ff0000" face="TTE16406F0t00" size="4"><span lang="es">'</span></font><font color="#0000ff" face="TTE16406F0t00" size="4"><span lang="es">!</span></font><font color="#008000" face="TTE16406F0t00" size="3"><span lang="es">Rango</span></font></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Los ap&oacute;strofes (</span><sub><b><font color="#ff0000" size="4"><span lang="es">'</span></font></b></sub><span lang="es">) son&nbsp;
+necesarios si existen espacios. </span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"><b> <font color="#3366ff">Ejemplo</font></b>: Prueba a
+poner esto en una celda de una hoja de Excel cualquiera:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">=BUSCARV(200;'http://www.fcjs.urjc.es/finan/[busquedas.xls]Hoja1'!tab1;2)</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Si todo va bien, y tienes acceso a Internet ver&aacute;s como
+respuesta la letra B.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ccff99"> <span lang="es">Edici&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> 60</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top"> <b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Para localizar la &uacute;ltima celda de una lista</span></p>
+
+      </b>
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es"> <font color="#0000ff">Sub</font> Final()<br>
+
+&nbsp;&nbsp;&nbsp; <font color="#0000ff">While</font> ActiveCell.Value
+&lt;&gt; ""<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ActiveCell.Offset(1,
+0).Select<br>
+
+&nbsp;&nbsp;&nbsp; <font color="#0000ff">Wend<br>
+
+End Sub</font></span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> 61</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"> <span id="textcapitol" name="textcapitol"><strong>Abrir un libro existente:</strong></span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><font color="#0000ff">Sub </font> AbrirLibro() </p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;&nbsp;&nbsp;
+Workbooks.Open ("C:\Mis documentos\Ejemplo.xls") </p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><font color="#0000ff">End Sub </font></p>
+
+      
+      <p style="margin-top: 6px; margin-bottom: 4px;"><strong>Activar
+un libro ya abierto:</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><font color="#0000ff">Sub</font> ACtivarLibro() </p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;&nbsp;&nbsp;
+Workbooks("Ejemplo.xls").Activate </p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><font color="#0000ff">End Sub </font></p>
+
+      
+      <p style="margin-top: 6px; margin-bottom: 4px;"><strong>Crear un
+libro nuevo:</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><font color="#0000ff">Sub</font> NuevoLibro() </p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">&nbsp;&nbsp;&nbsp;
+Workbooks.Add </p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;"><font color="#0000ff">End Sub </font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">&nbsp;</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> 62</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><strong>Borrar
+un registro de una tabla que contenga un dato concreto</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Sub</font> BorrarFilas()<br>
+
+      <font color="#0000ff">&nbsp;&nbsp;&nbsp; While</font>
+ActiveCell.Value &lt;&gt; ""<br>
+
+      <font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+If </font> ActiveCell.Value &lt;&gt; "Cadiz" <font color="#0000ff">Then</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ActiveCell.Offset(1, 0).Range("A1").Select<br>
+
+      <font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Else</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Selection.EntireRow.Delete<br>
+
+      <font color="#0000ff">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+End If<br>
+
+&nbsp;&nbsp;&nbsp; Wend<br>
+
+End Sub</font><br>
+
+&nbsp;</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> 63</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><strong>Creaci&oacute;n
+de una F&oacute;rmula personalizada</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"> <strong style="font-weight: 400;">C&aacute;lculo del t&eacute;rmino amortizativo de un
+pr&eacute;stamo tipo franc&eacute;s (de pagos constantes). Similar a la f&oacute;rmula
+=PAGO pero en este caso usando tipo nominal y con fraccionamiento.</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Function</font> Termino(Principal@, A&ntilde;os <span style="color: rgb(51, 51, 255);">As Byte</span>,
+tipo_nominal!, fraccionamiento <span style="color: rgb(51, 51, 255);">As
+Byte</span>)<br>
+
+&nbsp;&nbsp;&nbsp; <font color="#0000ff">Dim </font>im! <font color="#008000"> 'Tipo efectivo del subperiodo</font><br>
+
+&nbsp;&nbsp;&nbsp; im = tipo_nominal / fraccionamiento / 100<br>
+
+&nbsp;&nbsp;&nbsp; Termino = Principal * im / (1 - (1 + im) ^ (-A&ntilde;os *
+fraccionamiento))<br>
+
+      <font color="#0000ff">End Function</font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left">Pongamos
+un ejemplo para un principal de 100.000 &euro;, 10 a&ntilde;os, tipo
+nominal anual del 6%, con fraccionamiento mensual. En este caso, al ser
+el fraccionamiento mensual el t&eacute;rmino obtenido es la mensualidad.</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Sub</font> ejemplo()<p:colorscheme colors="#800000,#FFFFFF,#602000,#FFFFCC,#FF3300,#000000,#EBF25A,#F2AA68"></p:colorscheme></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff">End Sub</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> 64</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><strong>Macro
+que cierra Excel</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"> <strong style="font-weight: 400;">Se puede asociar a un bot&oacute;n o a un icono.</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Sub</font> Auto_Close()</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left">&nbsp;&nbsp;&nbsp;
+Application.Quit<br>
+
+      <font color="#0000ff">End Sub</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> 65</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><strong>Macro
+que elimina las barras de desplazamiento</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Sub</font> Desbarra()</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left">&nbsp;&nbsp;&nbsp;
+      <font color="#0000ff">With</font> ActiveWindow<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .DisplayHorizontalScrollBar
+= False<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .DisplayVerticalScrollBar =
+False<br>
+
+      <font color="#0000ff">&nbsp;&nbsp;&nbsp; End With</font><br>
+
+      <font color="#0000ff">End Sub</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> 66</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><strong>Macro
+que protege el libro y la hoja</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Sub</font> Blindaje()</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left">&nbsp;&nbsp;&nbsp;
+ActiveWorkbook.Protect Password:="1234"<br>
+
+&nbsp;&nbsp;&nbsp; Sheets("Hoja1").Protect Password:="1234"<br>
+
+      <font color="#0000ff">End Sub</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ffcc99" width="17"> 67</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ffcc99" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>L<span lang="es">a funci&oacute;n <font color="#ff0000">=EXTRAE</font> y la funci&oacute;n
+      <font color="#ff0000"> =ENCONTRAR</font></span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">Si en B6 pones el
+nombre de una persona, por ejemplo: "Andr&eacute;s Suarez Oliveira" la
+siguiente funci&oacute;n obtiene las tres iniciales (ASO).</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 0pt;">=IZQUIERDA(B6;1)&amp;+EXTRAE(B6;ENCONTRAR("
+";B6)+1;1)&amp;EXTRAE(B6;+ENCONTRAR(" ";B6;ENCONTRAR(" ";B6)+1)+1;1)</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ffcc99"> <span lang="es">Funci&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ffcc99" width="17"> 68</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ffcc99" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><b>L<span lang="es">a funci&oacute;n <font color="#ff0000">=RESIDUO </font>&nbsp;permite
+calcular la parte Fraccionario</span></b></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;">En Excel
+disponemos de <font color="#ff0000">=ENTERO</font> que calcula la
+parte entera, pero no disponemos de FRAC que calcularia la parte
+fraccionaria. Para calcular la parte Fraccionaria deber&iacute;amos usar uno
+de estos dos m&eacute;todos:</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;">=A1-ENTERO(A1)</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;">=RESIDUO(A1;1)</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ffcc99"> <span lang="es">Funci&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> 69</td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>Macro
+que borra los ceros de un rango</strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Sub</font> BorrarCeros()<br>
+
+&nbsp;&nbsp; <font color="#0000ff">&nbsp;For Each </font>Celda <font color="#0000ff">In</font> Range("C11:G24")<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">If </font>
+Celda.Value = 0 <font color="#0000ff">Then </font>Celda.ClearContents<br>
+
+&nbsp; <font color="#0000ff">&nbsp; Next<br>
+
+End Sub</font></p>
+
+      
+      <p style="margin-top: 4px; margin-bottom: 4px;" align="left">Si
+s&oacute;lo se quieren ocultar los ceros se ha de poner formato de celda
+personalizado de #.###</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">70</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>Macro
+que <span lang="es">reemplaza una palabra por otra</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Sub</font> RemplazarPalabra()<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span><font color="#0000ff">Dim</font>
+Palabra As String<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span><font color="#0000ff">Dim</font>
+Hoja <font color="#0000ff">As Long</font><br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span>Palabra =
+Trim(InputBox("<span lang="es">Introduzca la palabra a buscar: </span>"))<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span><font color="#0000ff">For</font>
+Hoja = 1 <font color="#0000ff">To</font> Sheets.Count<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Sheets(Hoja).Activate<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+Cells.Replace What:=Palabra, Replacement:="", LookAt:=xlPart, _<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>SearchOrder:=xlByRows,
+MatchCase:=<font color="#0000ff">False</font>, SearchFormat:=<font color="#0000ff">False</font>, _<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+ReplaceFormat:=<font color="#0000ff">False</font><br>
+
+&nbsp; <font color="#0000ff">&nbsp; Next</font><span lang="es"> Hoja</span><font color="#0000ff"><br>
+
+End Sub</font></p>
+
+      
+      <p style="margin-top: 4px; margin-bottom: 4px;" align="left"> <span lang="es">En este caso reemplazamos por "", lo que supone borrar la
+palabra buscada.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">71</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Calculo del NIF</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"> <span lang="es">Esta funci&oacute;n calcula el NIF (N&uacute;mero de Identificaci&oacute;n
+Fiscal) utilizado en Espa&ntilde;a.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Function</font> nif(dni <font color="#0000ff">As Long</font>)
+      <font color="#0000ff">As String</font><br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span>nif =
+Mid("TRWAGMYFPDXBNJZSQVHLCKE", (dni <font color="#0000ff">Mod</font>
+23) + 1, 1)<br>
+
+      <font color="#0000ff">End Function</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">72</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Funci&oacute;n que calcula la fila que ocupa cierto
+valor en una tabla</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"> <span lang="es">Est&aacute; pensado para que la matriz se ponga comenzando en la
+celda A1, sin encabezado y sin que se repitan los elementos.</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Function</font> DimeFila(Rango <font color="#0000ff">As</font>
+Range, Valor_a_buscar) <font color="#0000ff">As Integer</font><br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span><font color="#0000ff">For
+Each </font>c In Rango<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <font color="#0000ff">If </font>c.Value = Valor_a_buscar <font color="#0000ff"> Then</font><br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>DimeFila = c.Row<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+      <font color="#0000ff">End If<br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span>Next</font><br>
+
+      <font color="#0000ff">End Function</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ffcc99" width="17"> <span lang="es">73</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ffcc99" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;"><span lang="es"><b>Para
+poner el nombre del fichero en una celda</b></span></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;">=EXTRAE(CELDA("NOMBREARCHIVO";A1);ENCONTRAR("[";</p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;">CELDA("NOMBREARCHIVO";A1))+1;+(ENCONTRAR("]";</p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;">CELDA<span lang="es">("NOMBREARCHIVO";A1)))-ENCONTRAR("[";</span></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;"><span lang="es">CELDA("NOMBREARCHIVO";A1))-1)</span></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;"><span lang="es">Requiere
+grabar el fichero. Las 4 l&iacute;neas anteriores son una misma f&oacute;rmula.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ffcc99"> <span lang="es">Funci&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ffcc99" width="17"> <span lang="es">74</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ffcc99" valign="top">
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;"><span lang="es"><b>Para
+poner el nombre de la hoja en una </b>celda=EXTRAE(CELDA("nombrearchivo");ENCONTRAR("]";CELDA("nombrearchivo"))+1;255)</span></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;"><span lang="es">Requiere
+grabar el fichero.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ffcc99"> <span lang="es">Funci&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">75</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Funci&oacute;n que muestra la f&oacute;rmula de una celda</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"> <span lang="es">Devuelve la f&oacute;rmula que contiene una celda en lenguaje local</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Function</font>&nbsp; DisplayCellFormula(InputCell <font color="#0000ff">As</font> Range) <font color="#0000ff">As String</font><br>
+
+      <span lang="es">&nbsp;&nbsp;&nbsp; </span>DisplayCellFormula =
+InputCell.FormulaLocal<br>
+
+      <font color="#0000ff">End Function</font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left">&nbsp;</p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"> <span lang="es">Si se quita la palabra 'Local' devuelve la f&oacute;rmula en ingl&eacute;s.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">76</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Determinaci&oacute;n de si un n&uacute;mero es primo o no es
+primo</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> Sub</font> primo()<br>
+
+      <font color="#0000ff">&nbsp;&nbsp;&nbsp; Dim</font> primo <font color="#0000ff">As Boolean</font><br>
+
+      <font color="#0000ff">&nbsp;&nbsp;&nbsp; Dim</font> n <font color="#0000ff">As Long</font><br>
+
+      <font color="#0000ff">&nbsp;&nbsp;&nbsp; Dim</font> d <font color="#0000ff">As Long</font><br>
+
+&nbsp;&nbsp;&nbsp; n = Val(InputBox("Introduce un n&uacute;mero natural",
+"Entrada de Datos"))<br>
+
+&nbsp;&nbsp;&nbsp; d = 2<br>
+
+&nbsp;&nbsp;&nbsp; primo = <font color="#0000ff">True</font><br>
+
+&nbsp;&nbsp; <font color="#0000ff">&nbsp;Do While</font> primo <font color="#0000ff">And </font>d &lt; n<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">If</font>
+n <font color="#0000ff">Mod</font> d = 0 <font color="#0000ff">Then</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+primo = <font color="#0000ff">False</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">End If</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; d = d + 1<br>
+
+&nbsp;&nbsp;&nbsp; <font color="#0000ff">Loop</font><br>
+
+&nbsp;&nbsp; <font color="#0000ff">&nbsp;If </font>primo <font color="#0000ff"> Then</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">MsgBox</font>
+(n &amp; " es primo")<br>
+
+&nbsp;&nbsp;&nbsp; <font color="#0000ff">Else</font><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000ff">&nbsp; MsgBox</font>
+(n &amp; " no es primo")<br>
+
+      <font color="#0000ff">&nbsp;&nbsp;&nbsp; End If<br>
+
+End Sub</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; background-color: rgb(0, 204, 204);" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">77</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px; background-color: rgb(0, 204, 204);" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Activar o Desactivar el empleo de la
+funci&oacute;n&nbsp; </span></strong><span style="font-weight: bold; color: rgb(102, 0, 0);">IMPORTARDATOSDINAMICOS</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"> </font>Al intentar operar con formulas que hacen
+referencia a celdas que provienen de una tabla din&aacute;mica con la versi&oacute;n
+XP de Excel nos encontramos con que autom&aacute;ticamente nos pone la funci&oacute;n:<br>
+
+      <span style="color: rgb(102, 0, 0);">IMPORTARDATOSDINAMICOS</span>,
+y nosotros preferir&iacute;amos que esto funcionara como antes.<br>
+
+      <br>
+
+Esto se debe a que desde Office XP la funci&oacute;n <span style="color: rgb(102, 0, 0);">IMPORTARDATOSDINAMICOS</span> se activa
+por defecto cuando nos referimos a celdas que forman parte de una tabla
+din&aacute;mica.<br>
+
+      <br>
+
+Pero podemos desactivarla.<br>
+
+      <br>
+
+Para ello primero tendremos que llevar hasta alguna de las barras de
+herramientas un "bot&oacute;n", llamado "<span style="font-style: italic; font-weight: bold;">General GetPivotData</span>".<br>
+
+      <br>
+
+Para llevar este bot&oacute;n hasta una barra de herramientas sigue estos
+pasos.<br>
+
+      <br>
+
+Selecciona: Ver, Barra de Herramientas, Personalizar.<br>
+
+      <br>
+
+Ve a la pesta&ntilde;a "Comandos". Ahora selecciona la Categor&iacute;a "Datos" y en
+la ventana derecha (Comandos) busca el bot&oacute;n "General Get Pivot Data"
+(est&aacute; cerca del final, aproximadamente el<br>
+
+octavo empezando por el final). Lleva este bot&oacute;n a la barra de
+herramientas de Excel que prefieras (esto se hace arrastrando el icono
+y solt&aacute;ndolo en alguna de las barras de herramientas).<br>
+
+      <br>
+
+Ahora, todo &nbsp;lo que tendremos que hacer es pinchar este bot&oacute;n para
+activar / desactivar la funci&oacute;n <span style="color: rgb(102, 0, 0);">IMPORTARDATOSDINAMICOS</span>,
+que viene activada por defecto.</p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px; background-color: rgb(0, 204, 204);" bordercolor="#800000" bgcolor="#dfdfff">Tablas Din&aacute;micas<br>
+
+      </td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">78</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Factorial</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff">Function </font>facto(n)<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(0, 0, 255);">Dim</span> i <span style="color: rgb(0, 0, 255);">As Integer</span><br>
+
+&nbsp;&nbsp;&nbsp; facto = 1<br>
+
+&nbsp;&nbsp;&nbsp; i = 0<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(0, 0, 255);">Do</span><br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i = i + 1<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; facto = facto * i<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(0, 0, 255);">Loop While</span>
+i &lt;&gt; n<font color="#0000ff"><br>
+
+End Function</font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">79</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Inicializar una matriz</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"><span style="color: rgb(0, 0, 0);">Se inicializa con <span style="color: rgb(0, 0, 153); font-weight: bold;">ERASE</span><br>
+
+      </span></font>
+      
+      <noscript></noscript>
+
+      
+      <script language="Javascript" src="/library/mnp/2/aspx/js.aspx?&amp;name=Menu" type="text/javascript"></script>
+      
+      <script language="Javascript" src="/Office/mnp_utility.mspx/menujs?mnpshell=%2foffice%2fcommunity%2fes-es%2fConfiguration.xml&amp;clicktrax=False" type="text/javascript"></script>
+      
+      <script language="JavaScript">var doImage=doImage;var TType=TType;
+function mhHover(tbl,idx,cls){var t,d;if(document.getElementById)t=document.getElementById(tbl);else t=document.all(tbl);if(t==null)return;if(t.getElementsByTagName)d=t.getElementsByTagName("TD");else d=t.all.tags("TD");if(d==null)return;if(d.length<=idx)return;d[idx].className=cls;}
+function footerjs(doc){if(doImage==null){var tt=TType==null?"PV":TType;doc.write('<layer visibility="hide"><div style="display:none"><img src="http://c.microsoft.com/trans_pixel.asp?source=www&TYPE=' + tt + '&p=office_community_es-es&URI=%2foffice%2fcommunity%2fes-es%2fdefault.mspx%3fquery%3daparicio%26dg%3dmicrosoft.public.es.excel%26cat%3des-es-aplicacionesdeescritorio%26lang%3des%26cr%3dES%26pt%3d%26catlist%3dAA45A2B7-C18A-4BB9-B3F2-604A9AE10E9F%26dglist%3d%26ptlist%3d%26exp%3d%26sloc%3des-es&GUID=1F4FC18C-F71E-47FB-8FC9-612F8EE59C61&r=http%3a%2f%2fwww.microsoft.com%2foffice%2fcommunity%2fes-es%2fdefault.mspx%3fpg%3d74%26lang%3des%26cr%3dES%26guid%3d%26sloc%3des-es%26dg%3dmicrosoft.public.es.excel%26fltr%3d" width=0 height=0 hspace=0 vspace=0 border=0 /></div></layer>');}}</script>
+      
+      <script language="JavaScript" src="/library/svy/broker.js"></script>
+      
+      <script language="Javascript">
+					if (self.name == "MNPMainFrame") top.location.href = self.location.href;</script><span style="color: rgb(0, 153, 0);">'En este caso se ponen todos los
+valores a Empty</span><br>
+
+      <span style="color: rgb(51, 51, 255);">Sub </span>test()<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">Dim</span>
+c(1 <span style="color: rgb(51, 51, 255);">To</span> 20, 1 <span style="color: rgb(51, 51, 255);">To</span> 10) <span style="color: rgb(51, 51, 255);">As Variant</span><br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">For</span> i
+= 1 <span style="color: rgb(51, 51, 255);">To</span> 20<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">For</span> j = 1 <span style="color: rgb(51, 51, 255);">To</span> 10<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c(i,
+j) = RND<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">Next</span> j<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">Next</span> i<br>
+
+&nbsp;&nbsp;&nbsp; MsgBox c(1,1)<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">Erase</span>
+c<br>
+
+&nbsp;&nbsp;&nbsp; MsgBox c(1,1)<br>
+
+      <span style="color: rgb(51, 51, 255);">End Sub</span><font color="#0000ff"><span style="color: rgb(0, 0, 0);"></span></font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"><span style="color: rgb(0, 0, 0);"><br>
+
+      <span style="color: rgb(0, 102, 0);">'En este caso se pone la
+variable c a su estado inicial</span><br style="color: rgb(0, 102, 0);">
+
+      <span style="color: rgb(0, 102, 0);">'Borrandose los valores, las
+dimensiones y recuperandose</span><br style="color: rgb(0, 102, 0);">
+
+      <span style="color: rgb(0, 102, 0);">'la memoria usada.</span><br>
+
+      <span style="color: rgb(51, 51, 255);">Sub</span> test1()<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">Dim</span> c
+      <span style="color: rgb(51, 51, 255);">As Variant</span><br>
+
+&nbsp;&nbsp;&nbsp; c = ActiveSheet.Range("A1:J20").Value<br>
+
+&nbsp;&nbsp;&nbsp; MsgBox c(1, 1)<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">Erase</span>
+c<br>
+
+&nbsp;&nbsp;<span style="color: rgb(0, 102, 0);">&nbsp; 'Esto dara
+error ya que no hay ninguna matriz</span><br>
+
+&nbsp;&nbsp;&nbsp; MsgBox c(1, 1)</span></font>Para evitar que durante
+la ejecuci&oacute;n de una macro se vean todos los
+movimientos y cambios del cursor, para evitar las "chirivitas" que se
+ven al ejecutar una macro:<br>
+
+      <font color="#0000ff"><span style="color: rgb(0, 0, 0);"> <span style="color: rgb(51, 51, 255);">End Sub</span><br>
+
+      </span></font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">80</span><br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Evitar los movimientos de pantalla mientras se
+ejecuta una macro</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"><span style="color: rgb(0, 0, 0);"></span></font>Para
+evitar que durante la ejecuci&oacute;n de una macro se vean todos los
+movimientos y cambios del cursor, para evitar las "chirivitas" que se
+ven al ejecutar una macro:<br>
+
+      <font color="#0000ff"><span style="color: rgb(0, 0, 0);"> <span style="color: rgb(51, 51, 255);"><span style="color: rgb(0, 0, 0);"><br>
+
+Al principio de la macro escribe<br>
+
+      <br>
+
+      </span><span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+Application.ScreenUpdating =</span> False<br>
+
+      <span style="color: rgb(0, 0, 0);"><br>
+
+y al final</span><br>
+
+      <span style="color: rgb(0, 0, 0);"><br>
+
+&nbsp;&nbsp;&nbsp; Application.ScreenUpdating =</span> True</span><br>
+
+      </span></font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">81</span><br>
+
+      </td>
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Evitar que al ejecutar una macro nos haga preguntas</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"><span style="color: rgb(0, 0, 0);"><span style="color: rgb(51, 51, 255);"><span style="color: rgb(0, 0, 0);">Al principio de la macro escribe<br>
+
+      <br>
+
+      </span><span style="color: rgb(0, 0, 0);">&nbsp;&nbsp;&nbsp;
+Application.DisplayAlerts=</span> False<br>
+
+      <span style="color: rgb(0, 0, 0);"><br>
+
+y al final</span><br>
+
+      <span style="color: rgb(0, 0, 0);"><br>
+
+&nbsp;&nbsp;&nbsp; Application.DisplayAlerts=</span>True</span><br>
+
+      </span></font></p>
+
+      </td>
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+    </tr>
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ffcc99" width="17"> <span lang="es">82</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ffcc99" valign="top">
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;"><span lang="es"><b>Formula
+referida siempre a un mismo rango</b><br>
+
+=SUMA(INDIRECTO("A1:B2"))</span></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;"><span lang="es">Esta
+expresi&oacute;n permite sumar siempre el rango indicado aunque dicho rango se
+mueva a otra zona de la hoja.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ffcc99"> <span lang="es">Funci&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">83</span><br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">While...Wend</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"><span style="color: rgb(0, 0, 0);"></span></font>Esta
+estructura permite ejecutar las instrucciones contenidas mientras la
+condici&oacute;n sea verdadera.<br>
+
+      <font color="#0000ff"><span style="color: rgb(0, 0, 0);"> <span style="color: rgb(51, 51, 255);"><span style="color: rgb(0, 0, 0);"><br>
+
+La siguiente macro posiciona el cursor en la &uacute;ltima celda llena de la
+columna A de la Hoja1.</span><span style="color: rgb(0, 0, 0);"><br>
+
+      </span></span></span></font></p>
+
+      <small><span style="font-family: arial;"><span style="color: rgb(51, 51, 255);">Sub</span> final1()<br>
+
+&nbsp;&nbsp;&nbsp; i = 1<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">While</span>
+Worksheets("Hoja1").Cells(i, 1).Value &lt;&gt; ""<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Worksheets("Hoja1").Cells(i,
+1).Select<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i = i + 1<br>
+
+&nbsp;&nbsp;&nbsp;<span style="color: rgb(0, 0, 153);"> <span style="color: rgb(51, 51, 255);">Wend</span></span><br style="color: rgb(0, 0, 153);">
+
+      <span style="color: rgb(51, 51, 255);">End Sub</span></span><span style="font-family: Arial;" lang="ES-MX"></span></small>
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"><span style="color: rgb(0, 0, 0);"><span style="color: rgb(51, 51, 255);"><span style="color: rgb(0, 0, 0);"></span></span><br>
+
+Otra variante:<br>
+
+      </span></font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"><span style="color: rgb(0, 0, 0);"><span style="color: rgb(51, 51, 255);">Sub</span> final2()<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">While</span>
+ActiveCell.Value &lt;&gt; ""<br>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ActiveCell.Offset(1,
+0).Select<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(51, 51, 255);">Wend</span><br>
+
+&nbsp;&nbsp;&nbsp; ActiveCell.Offset(-1, 0).Select<br>
+
+      <span style="color: rgb(0, 0, 153);"><span style="color: rgb(51, 51, 255);">End Sub</span><br>
+
+      </span></span></font></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><font color="#0000ff"><span style="color: rgb(0, 0, 0);"><span style="color: rgb(0, 0, 153);"><span style="color: rgb(51, 0, 51);">La
+segunda macro requiere posicionar inicialmente el cursor en la primera
+celda llena.</span><br>
+
+      </span> </span></font></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#ffcc99" width="17"> <span lang="es">84</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#ffcc99" valign="top">
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;"><span lang="es"><b>Contar
+cuantas veces se repite un mismo caracter en un texto</b><br>
+
+=+LARGO(F3)-LARGO(SUSTITUIR(F3;"-";""))</span></p>
+
+      
+      <p style="margin-top: 5px; margin-bottom: 5px;"><span lang="es">Esta
+f&oacute;rmula cuenta cuantos guiones (-) existen en un texto que esta en la
+celda F3.</span></p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#ffcc99"> <span lang="es">Funci&oacute;n</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">85</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Manejo de Rangos</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"> <span lang="es">Para se&ntilde;alar una tabla se hace con CurrentRegion. Un ejemplo:</span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><br>
+
+      <span lang="es"><span style="color: rgb(51, 51, 255);">Dim</span>
+R <span style="color: rgb(0, 0, 255);">As Range</span><br>
+
+      <span style="color: rgb(0, 0, 255);">Dim</span> filas <span style="color: rgb(0, 0, 255);">As Long</span><br>
+
+      <span style="color: rgb(51, 51, 255);">Set</span> R =
+Range("A1").CurrentRegion<br>
+
+filas = R.Rows.Count</span><br>
+
+      </p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">86</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Ocultar Hojas</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Podemos ocultar o mostrar Hojas de un libro. En el ejemplo
+siguiente, la Hoja2 esta inicialmente oculta, y para poder trabajar con
+ella la macro la mustra, y al finalizar la vuelve a ocultar.<br>
+
+      </span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><br>
+
+      <span lang="es"><span style="color: rgb(0, 0, 255);"></span><span style="color: rgb(51, 51, 255);">Sub</span> oculta()<br>
+
+&nbsp;&nbsp;&nbsp; Sheets("Hoja2").Visible = <span style="color: rgb(51, 51, 255);">True</span><br>
+
+&nbsp;&nbsp;&nbsp; ActiveWorkbook.Sheets("Hoja2").Activate<br>
+
+&nbsp;&nbsp;&nbsp; <span style="color: rgb(0, 153, 0);">'... ...</span><br>
+
+&nbsp;&nbsp;&nbsp; Sheets("Hoja2").Visible = <span style="color: rgb(51, 51, 255);">False</span><br>
+
+      <span style="color: rgb(51, 51, 255);">End Sub</span></span><br>
+
+      </p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+    <tr>
+
+      <td style="border: medium none ; padding: 0cm 5.4pt;" width="1"> <br>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt;" bordercolor="#800000" align="center" bgcolor="#dfdfff" width="17"> <span lang="es">87</span></td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 589px;" bordercolor="#800000" bgcolor="#dfdfff" valign="top">
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><strong>
+      <span lang="es">Determinar la fila hasta la que llega un rango</span></strong></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 5px;" align="left"><span lang="es">Podemos determinar facilmente la fila hasta la que llega un
+rango. Supongamos el rango B5:B100, del que sabemos en que fila acaba
+(la 100), pero no sabemos en que fila comienza. Ejecutando la macro la
+variable n tomar&aacute; el valor 5, que es la fila de comienzo del rango.<br>
+
+      </span></p>
+
+      
+      <p style="margin-top: 0pt; margin-bottom: 4px;" align="left"><br>
+
+      <span lang="es"><span style="color: rgb(0, 0, 255);"></span><span style="color: rgb(51, 51, 255);">Dim<span style="color: rgb(0, 0, 0);">
+n </span>As Long<br>
+
+      <span style="color: rgb(0, 0, 0);">Range("B100").End(xlUp).Select</span><br style="color: rgb(0, 0, 0);">
+
+      <span style="color: rgb(0, 0, 0);">n = Selection.Row</span></span><span style="color: rgb(51, 51, 255);"></span></span><br>
+
+      </p>
+
+      </td>
+
+      <td style="border: 1px solid ; padding: 0cm 5.4pt; width: 86px;" bordercolor="#800000" bgcolor="#dfdfff"> Macros</td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+<p><font color="#0000ff" size="2">&nbsp;</font></p>
+
+<table id="AutoNumber1" style="border: 0px solid teal;" fpstyle="8,011110000" border="1" cellpadding="0" cellspacing="0" width="87%">
+
+  <tbody>
+
+    <tr>
+
+      <td style="border-style: none; border-width: medium; border-top: medium none aqua; color: white;" align="center" width="14%">&nbsp;</td>
+
+      <td style="border-style: solid none none; border-top: 0.75pt solid aqua; color: white; border-left-width: medium;" align="center" bgcolor="#defe01" width="16%"> <a style="color: blue; text-decoration: underline;" href="http://www.excelavanzado.com">P&aacute;gina de Inicio</a></td>
+
+      <td style="border-style: solid none none; border-top: 0.75pt solid aqua; color: white;" align="center" bgcolor="#defe01" width="18%"> <a href="excel.htm" style="color: blue; text-decoration: underline;"> Excel</a></td>
+
+      <td style="border-style: solid none none; border-top: 0.75pt solid aqua; color: white;" align="center" bgcolor="#defe01" width="16%"> <a href="financieras.htm" style="color: blue; text-decoration: underline;"> Financieras</a></td>
+
+      <td style="border-style: solid none none; border-top: 0.75pt solid aqua; color: white; border-right-width: medium;" align="center" bgcolor="#defe01" width="20%"> <a href="macros.htm"> <span style="color: rgb(0, 0, 255); text-decoration: underline;" lang="es">Macros</span></a></td>
+
+      <td style="border-style: none; border-width: medium; border-top: medium none aqua; color: white;" align="center" width="60%">&nbsp;</td>
+
+    </tr>
+
+  
+  </tbody>
+</table>
+
+<p align="left">
+<a style="color: blue; text-decoration: underline;" href="http://www.excelavanzado.com"><font face="Wingdings 3">&Aring;</font>
+Home</a></p>
+
+<p align="right"><font color="#008000" face="Times New Roman" size="1">Adolfo
+Aparicio &copy; 2004-2007</font></p>
+
+</div>
+
+</div>
+
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1632610-1";
+urchinTracker();
+</script>
+</body>
+</html>

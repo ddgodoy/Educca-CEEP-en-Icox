@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+	<boton texto="Aplicar estilos              " pagina="1"  despy="397" />
+	<boton texto="Crear estilos                " pagina="3"  despy="413" />
+</menu>
