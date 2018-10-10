@@ -1078,6 +1078,7 @@ class cursoActions extends sfActions
                                         705=>array('book'=>'9788448612191', 'license'=>'CBF4WY46', 'type'=>'S'),
                                         706=>array('book'=>'9788448612191', 'license'=>'RTT6RF56', 'type'=>'S'),
                                         707=>array('book'=>'9788448612191', 'license'=>'FJTJ9636', 'type'=>'S'),
+                                        711=>array('book'=>'9788448612191', 'license'=>'TQNWY216', 'type'=>'S'),    
                                 ), 
 
                             //Higiene del medio hospitalario 18/19    
@@ -1124,6 +1125,7 @@ class cursoActions extends sfActions
                                         705=>array('book'=>'9788448609665', 'license'=>'WBH5A866', 'type'=>'S'),
                                         706=>array('book'=>'9788448609665', 'license'=>'GRV11HH6', 'type'=>'S'),
                                         707=>array('book'=>'9788448609665', 'license'=>'FBA3BKN6', 'type'=>'S'),
+                                        711=>array('book'=>'9788448609665', 'license'=>'MEVD2GD6', 'type'=>'S'),
                                 ),
 
                             // Formación y Orientación Laboral Grado Medio 18/19    
@@ -1169,6 +1171,7 @@ class cursoActions extends sfActions
                                         705=>array('book'=>'9788448611996', 'license'=>'F4K4DVT6', 'type'=>'S'),
                                         706=>array('book'=>'9788448611996', 'license'=>'9SR9M1S6', 'type'=>'S'),
                                         707=>array('book'=>'9788448611996', 'license'=>'B561XHX6', 'type'=>'S'),
+                                        711=>array('book'=>'9788448611996', 'license'=>'RGQFSAF6', 'type'=>'S'),
                                 ), 
           
           
@@ -1216,6 +1219,7 @@ class cursoActions extends sfActions
                                         705=>array('book'=>'9788448612092', 'license'=>'YHFUAM36', 'type'=>'S'),
                                         706=>array('book'=>'9788448612092', 'license'=>'L74SJ1Q6', 'type'=>'S'),
                                         707=>array('book'=>'9788448612092', 'license'=>'RW6H92R6', 'type'=>'S'),
+                                        711=>array('book'=>'9788448612092', 'license'=>'D7U4UHT6', 'type'=>'S'),
                                 ),
 
                             // Promoción de la salud 18/19    
@@ -1261,6 +1265,7 @@ class cursoActions extends sfActions
                                         705=>array('book'=>'9788448612054', 'license'=>'XGB5KEP6', 'type'=>'S'),
                                         706=>array('book'=>'9788448612054', 'license'=>'XTV7TFV6', 'type'=>'S'),
                                         707=>array('book'=>'9788448612054', 'license'=>'BP9JD3H6', 'type'=>'S'),
+                                        711=>array('book'=>'9788448612054', 'license'=>'Y5YQ7TU6', 'type'=>'S'),
                                 ),
 
                             // Operaciones administrativas 18/19        
@@ -1306,6 +1311,7 @@ class cursoActions extends sfActions
                                         705=>array('book'=>'9788448612030', 'license'=>'NSXEJQG6', 'type'=>'S'),
                                         706=>array('book'=>'9788448612030', 'license'=>'AUQ9XZ26', 'type'=>'S'),
                                         707=>array('book'=>'9788448612030', 'license'=>'WCPNBL16', 'type'=>'S'),
+                                        711=>array('book'=>'9788448612030', 'license'=>'GBXMQQ56', 'type'=>'S'),
                                 ),
 
                             // Relaciones en el equipo de trabajo 18/19    
@@ -1351,6 +1357,7 @@ class cursoActions extends sfActions
                                         705=>array('book'=>'9788448608569', 'license'=>'9B1UR1L6', 'type'=>'S'),
                                         706=>array('book'=>'9788448608569', 'license'=>'659CW276', 'type'=>'S'),
                                         707=>array('book'=>'9788448608569', 'license'=>'7G1SH2Q6', 'type'=>'S'),
+                                        711=>array('book'=>'9788448608569', 'license'=>'D7Z3UPR6', 'type'=>'S'),
                                       
                                 ),         
       );

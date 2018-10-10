@@ -17,7 +17,6 @@
   <table class="tabla_cambiar_tareas">
     <?php $ahora = time();?>
     <?php for ($index = 0; $index < sizeof($eventos); $index++): ?>
-       <?php if($tarea->getId() != 354): ?>
             <?php $fondo = (($index % 2 == 0))? " id=\"filarayada_verde\"" : ""; ?>
             <?php echo("<tr$fondo>"); ?>
              <?php $tarea = $tareas[$index];?>
@@ -30,8 +29,7 @@
              <td class="td3"><?php echo $tipo_evento->getDescripcion() ?></td>
              <td class="td4"><?php echo $tarea->contar_alumnos() ?></td>
              <td class="td5"><?php echo($evento->getFechaInicio('d-m-Y')); ?></td>
-             <td class="td6"><?php echo($evento->getFechaFin('d-m-Y')); ?></td>
-        <?php endif; ?>      
+             <td class="td6"><?php echo($evento->getFechaFin('d-m-Y')); ?></td>     
       </tr>
     <?php endfor; ?>
     </table>

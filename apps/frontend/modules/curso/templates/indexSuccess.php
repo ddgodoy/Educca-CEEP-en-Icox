@@ -199,7 +199,7 @@
             <?php echo link_to(image_tag('bot_ej_asignar.gif', 'Title=Tareas y ex&aacute;menes'), '/tareas/index',array('id' => 'ln_tarea_ico' )) ?>
           </td>
           <td class="explica">
-            <div class="titulo"><?php echo link_to('Tareas y ex&aacute;menes', '/tareas/index',array('id' => 'ln_tarea_texto' )) ?></div>
+            <div class="titulo"><?php echo link_to('Tareas y ex&aacute;menes', '/tareas/index?idcurso='.$idcurso,array('id' => 'ln_tarea_texto' )) ?></div>
             <div class="explicacion">Desde este apartado se pueden poner tareas o un examen para los alumnos del curso, modificar las fechas o los plazos de entrega de estos.</div>
           </td>
         </tr>
