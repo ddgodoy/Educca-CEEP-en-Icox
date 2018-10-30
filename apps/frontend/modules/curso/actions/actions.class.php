@@ -903,6 +903,7 @@ class cursoActions extends sfActions
                                       694=>array('book'=>'9788448609740', 'license'=>'HTYL62Z6', 'type'=>'S'),  
                                       699=>array('book'=>'9788448609740', 'license'=>'GW6GJA56', 'type'=>'S'),
                                       702=>array('book'=>'9788448609740', 'license'=>'44Q1AAC6', 'type'=>'S'),
+                                      715=>array('book'=>'9788448609740', 'license'=>'8XU5L846', 'type'=>'S'),
                                 ),
           
                             //apoyo Comunicación y atención al cliente
@@ -926,6 +927,7 @@ class cursoActions extends sfActions
                                        694=>array('book'=>'9788448609702', 'license'=>'9ND3HA66', 'type'=>'S'),  
                                        699=>array('book'=>'9788448609702', 'license'=>'G2K286B6', 'type'=>'S'),
                                        702=>array('book'=>'9788448609702', 'license'=>'Y5F4NNW6', 'type'=>'S'),
+                                       715=>array('book'=>'9788448609702', 'license'=>'ZW3E5XS6', 'type'=>'S'),
                                 ),
           
                             //apoyo Gestión de la documentación jurídica y empresarial. GS. 
@@ -950,6 +952,7 @@ class cursoActions extends sfActions
                                        694=>array('book'=>'9788448187354', 'license'=>'V26BLHZ6', 'type'=>'S'),  
                                        699=>array('book'=>'9788448187354', 'license'=>'36PYSAC6', 'type'=>'S'),
                                        702=>array('book'=>'9788448187354', 'license'=>'RY2LTBT6', 'type'=>'S'),
+                                       715=>array('book'=>'9788448187354', 'license'=>'TSQZKKM6', 'type'=>'S'),
                                 
                                 ),
           
@@ -974,6 +977,7 @@ class cursoActions extends sfActions
                                        694=>array('book'=>'9788448609689', 'license'=>'LHXCY286', 'type'=>'S'),  
                                        699=>array('book'=>'9788448609689', 'license'=>'U8Z2WKT6', 'type'=>'S'),
                                        702=>array('book'=>'9788448609689', 'license'=>'MC3LHHD6', 'type'=>'S'),
+                                       715=>array('book'=>'9788448609689', 'license'=>'MMAYFY66', 'type'=>'S'),
                                 
                                 ),
           
@@ -998,6 +1002,7 @@ class cursoActions extends sfActions
                                        694=>array('book'=>'9788448191917', 'license'=>'9VU1VPM6', 'type'=>'S'),  
                                        699=>array('book'=>'9788448191917', 'license'=>'ETFCWES6', 'type'=>'S'),
                                        702=>array('book'=>'9788448191917', 'license'=>'E34SSFG6', 'type'=>'S'),
+                                       715=>array('book'=>'9788448191917', 'license'=>'XFZLTPM6', 'type'=>'S'),
                                 ),
           
                             //apoyo Ofimática y proceso de información      
