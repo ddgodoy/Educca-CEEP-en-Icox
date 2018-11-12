@@ -339,6 +339,8 @@ class cursoActions extends sfActions
        
        if($array_book){
            $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license'], $array_book['type']); 
+       }elseif($this->idcurso == 240){
+           $this->url_libro = 'https://visor.sintesis.com/Ebook/9788490778562';
        }
     }
 	//
