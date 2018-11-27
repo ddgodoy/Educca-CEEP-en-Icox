@@ -56,7 +56,7 @@ class MensajeMapBuilder {
 
 		$tMap->addColumn('SUPERVISOR', 'Supervisor', 'int', CreoleTypes::TINYINT, false, 1);
 
-		$tMap->addColumn('ADJUNTOS', 'Adjuntos', 'int', CreoleTypes::TINYINT, false, 2);
+		$tMap->addColumn('ADJUNTOS', 'Adjuntos', 'int', CreoleTypes::BIGINT, false, 10);
 
 	} 
 } 

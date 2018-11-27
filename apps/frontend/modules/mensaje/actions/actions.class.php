@@ -286,6 +286,17 @@ class mensajeActions extends sfActions
 
 
     if (!count($errores)) {
+      
+      $mensaje_emisor = new Mensaje();
+      $mensaje_emisor->setIdEmisor($emisor);
+      $mensaje_emisor->setIdPropietario($emisor);
+      $mensaje_emisor->setIdCurso($curso);
+      $mensaje_emisor->setIdAsunto($asunto);
+      $mensaje_emisor->setContenido($contenido); 
+      $mensaje_emisor->setLeido(0);
+      $mensaje_emisor->save();
+        
+        
       $listado_destinatarios = "";
       $i = 0;
 
@@ -316,6 +327,7 @@ class mensajeActions extends sfActions
         $mensaje->setContenido($contenido);
         $mensaje->setListaDestinatarios($nombre);
         $mensaje->setLeido(0);
+        $mensaje->setAdjuntos($mensaje_emisor->getId());
 
         if ($id_a==$this->getRequestParameter('asunto'))
         {//mensaje para supervisor
@@ -348,14 +360,9 @@ class mensajeActions extends sfActions
         $i++;
       }
 
-      $mensaje = new Mensaje();
-      $mensaje->setIdEmisor($emisor);
-      $mensaje->setIdPropietario($emisor);
-      $mensaje->setIdCurso($curso);
-      $mensaje->setIdAsunto($asunto);
-      $mensaje->setContenido($contenido);
-      $mensaje->setListaDestinatarios($listado_destinatarios);
-      $mensaje->setLeido(0);
+      
+      $mensaje_emisor->setListaDestinatarios($listado_destinatarios);
+      
 
       if ($this->getRequestParameter('respuesta_profesor')) {
 
@@ -365,9 +372,9 @@ class mensajeActions extends sfActions
           $seguimiento->save();
       }
 
-      $mensaje->save();
+      $mensaje_emisor->save();
       
-      $ruta = SF_ROOT_DIR.'/web/uploads/correo/'.$mensaje->getId().'/';
+      $ruta = SF_ROOT_DIR.'/web/uploads/correo/'.$mensaje_emisor->getId().'/';
       
       if(!file_exists($ruta)){
          mkdir($ruta, 0777);
@@ -392,7 +399,7 @@ class mensajeActions extends sfActions
           
       }
       
-      $this->mensaje = $mensaje;
+      $this->mensaje = $mensaje_emisor;
       $this->redirect('mensaje/mensajesEnviados');
     }
 
@@ -410,13 +417,14 @@ class mensajeActions extends sfActions
 
     $this->files = array();
     
-    $folder = $mensaje->getId()+1;
-    
-    $ruta = SF_ROOT_DIR.'/web/uploads/correo/'.$folder.'/';
-    if(file_exists($ruta)){
-        $this->files = scandir($ruta);
-        $this->files = array_diff(scandir($ruta), array('.', '..'));
-    }    
+    if($mensaje->getAdjuntos()!= 0){
+        $folder = $mensaje->getAdjuntos();
+        $ruta = SF_ROOT_DIR.'/web/uploads/correo/'.$folder.'/';
+        if(file_exists($ruta)){
+            $this->files = scandir($ruta);
+            $this->files = array_diff(scandir($ruta), array('.', '..'));
+        }    
+    }
     
     if ($this->hasRequestParameter('opcion')) {
       $opcion = $this->getRequestParameter('opcion');
