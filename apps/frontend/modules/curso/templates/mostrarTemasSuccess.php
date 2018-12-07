@@ -148,9 +148,25 @@ window.onload = function() {
 
             <tr class="cont_fil" <?= $fondo ?>>
               <?php $ruta_libro = ''; ?>
-                <?php if($sco->getTitle() === 'LIBRO' && $url_libro): 
+                <?php 
+                if($sco->getTitle() === 'LIBRO' && $url_libro): 
                     $ruta_libro = '&ruta='.urlencode($url_libro);
-                endif; ?>
+                elseif($sco->getTitle() === 'PRESENTACIÓN' && $capitulo_0):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_0);
+                elseif($sco->getTitle() === 'Capítulo I: HISTORIA Y EXPLORACIÓN CLÍNICA' && $capitulo_1):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_1);
+                elseif($sco->getTitle() === 'Capítulo II: MATERIAL Y EQUIPO PARA LA TOMA DE IMPRESIONES' && $capitulo_2):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_2);
+                elseif($sco->getTitle() === 'Capítulo III: ELABORACIÓN DE MODELOS Y REGISTRO DE OCLUSIÓN' && $capitulo_3):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_3);
+                elseif($sco->getTitle() === 'Capítulo IV: ADAPTACIÓN Y CONSERVACIÓN DE PRÓTESIS' && $capitulo_4):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_4);
+                elseif($sco->getTitle() === 'Capítulo V: AYUDA AL TRATAMIENTO DE ORTODONCIA' && $capitulo_5):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_5);
+                elseif($sco->getTitle() === 'Capítulo VI: ADAPTACIÓN Y CONSERVACIÓN DE LA APARATOLOGÍA EN ORTODONCIA' && $capitulo_6):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_6);
+                endif; 
+                ?>
                 <?php 
               
                       $ct  = new Criteria();

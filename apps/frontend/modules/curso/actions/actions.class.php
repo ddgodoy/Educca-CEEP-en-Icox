@@ -341,6 +341,14 @@ class cursoActions extends sfActions
            $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license'], $array_book['type']); 
        }elseif($this->idcurso == 240){
            $this->url_libro = 'https://visor.sintesis.com/Ebook/9788490778562';
+       }elseif ($this->idcurso == 241) {
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%229%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%2257%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";       
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%2289%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%22123%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%22153%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%22183%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";       
        }
     }
 	//
