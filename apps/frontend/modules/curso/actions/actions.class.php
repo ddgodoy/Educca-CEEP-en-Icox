@@ -314,6 +314,21 @@ class cursoActions extends sfActions
        $this->idcurso = $this->getRequestParameter('idcurso');
        $this->getUser()->comprobarPermiso($this->idcurso);
        $this->is_alumno = $this->getUser()->hasCredential('alumno');
+       
+       $this->capitulo_0 = "";
+       $this->title_0    = "";
+       $this->capitulo_1 = "";
+       $this->title_1    = "";
+       $this->capitulo_2 = "";       
+       $this->title_2    = "";
+       $this->capitulo_3 = "";
+       $this->title_3    = "";
+       $this->capitulo_4 = "";
+       $this->title_4    = "";
+       $this->capitulo_5 = "";
+       $this->title_5    = "";
+       $this->capitulo_6 = "";       
+       $this->title_6    = "";
 
        $c = new Criteria();
        $c->add(CursoPeer::ID, $this->idcurso);
@@ -343,12 +358,34 @@ class cursoActions extends sfActions
            $this->url_libro = 'https://visor.sintesis.com/Ebook/9788490778562';
        }elseif ($this->idcurso == 241) {
            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%229%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_0    = "PRESENTACIÓN";
            $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_1    = "Capítulo I: HISTORIA Y EXPLORACIÓN CLÍNICA";
            $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%2257%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";       
+           $this->title_2    = "Capítulo II: MATERIAL Y EQUIPO PARA LA TOMA DE IMPRESIONES";
            $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%2289%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_3    = "Capítulo III: ELABORACIÓN DE MODELOS Y REGISTRO DE OCLUSIÓN";
            $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%22123%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_4    = "Capítulo IV: ADAPTACIÓN Y CONSERVACIÓN DE PRÓTESIS";
            $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%22153%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_5    = "Capítulo V: AYUDA AL TRATAMIENTO DE ORTODONCIA";
            $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%22183%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";       
+           $this->title_6    = "Capítulo VI: ADAPTACIÓN Y CONSERVACIÓN DE LA APARATOLOGÍA EN ORTODONCIA";
+       }elseif ($this->idcurso == 243) {
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_0    = "PRESENTACIÓN";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_1    = "Capítulo I: LA CARIES Y SU TRATAMIENTO: OBTURACIÓN DENTAL";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%2253%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";       
+           $this->title_2    = "Capítulo II: TRATAMIENTO DE CONDUCTOS RADICULARES";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%2283%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_3    = "Capítulo III: TINCIONES DENTALES INTRÍNSECAS";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_4    = "Capítulo IV: PERIODONCIA";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%22157%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_5    = "Capítulo V: EXODONCIA Y CIRUGÍA BUCAL";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%22203%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";       
+           $this->title_6    = "Capítulo VI: IMPLANTES DENTALES";
        }
     }
 	//
