@@ -608,8 +608,48 @@ class cursoActions extends sfActions
            $this->title_8    = "Capítulo VIII: LA FISCALIDAD";
            $this->capitulo_9 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_9    = "Capítulo IX: EL PLAN DE EMPRESA";
+       }elseif ($this->idcurso == 245) {
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_0    = "PRESENTACIÓN";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_1    = "Capítulo I: SELLADO DE FOSAS Y FISURAS";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%2245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_2    = "Capítulo II: APLICACIÓN DE FLUORUROS TÓPICOS";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%2267%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_3    = "Capítulo III: ELIMINACIÓN DE CÁLCULOS DENTALES";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%2291%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_4    = "Capítulo IV: TINCIONES DENTALES";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%22109%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_5    = "Capítulo V: PULIDO DE OBTURACIONES DENTARIAS";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%22129%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_6    = "Capítulo VI: ELIMINACIÓN DE LA PLACA BACTERIANA O BIOFILM	";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%22157%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_7    = "Capítulo VII: CONTROL DE LA HIPERSENSIBILIDAD DENTINARIA	";
+       }elseif ($this->idcurso == 244) {
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_0    = "PRESENTACIÓN";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_1    = "Capítulo I: DEMOGRAFÍA";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%2241%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_2    = "Capítulo II: EPIDEMIOLOGÍA";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%2263%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_3    = "Capítulo III: ESTUDIOS DESCRIPTIVOS";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%2289%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_4    = "Capítulo IV: ESTUDIOS ANALÍTICOS";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%22115%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_5    = "Capítulo V: ESTADÍSTICA DESCRIPTIVA";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%22143%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_6    = "Capítulo VI: ESTADÍSTICA ANALÍTICA";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%22175%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_7    = "Capítulo VII: COMUNICACIÓN CIENTÍFICA";
+           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%22199%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_8    = "Capítulo VIII: EPIDEMIOLOGÍA DE DIFERENTES TIPOS DE ENFERMEDADES";
+           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%22225%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_9    = "Capítulo IX: INDICADORES DE SALUD ORAL";
+           $this->capitulo_10 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%22257%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_10    = "Capítulo X: SALUD ORAL COMUNITARIA";
         }
-    }
+    }    
 	//
     public function executeMostrarBibliografia()
     {
