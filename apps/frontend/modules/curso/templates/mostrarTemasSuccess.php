@@ -165,6 +165,18 @@ window.onload = function() {
                     $ruta_libro = '&ruta='.urlencode($capitulo_5);
                 elseif($sco->getTitle() === $title_6 && $capitulo_6):
                     $ruta_libro = '&ruta='.urlencode($capitulo_6);
+               elseif($sco->getTitle() === $title_7 && $capitulo_7):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_7);
+               elseif($sco->getTitle() === $title_8 && $capitulo_8):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_8);
+               elseif($sco->getTitle() === $title_9 && $capitulo_9):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_9);
+               elseif($sco->getTitle() === $title_10 && $capitulo_10):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_10);
+               elseif($sco->getTitle() === $title_11 && $capitulo_11):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_11);
+               elseif($sco->getTitle() === $title_12 && $capitulo_12):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_12);
                 endif; 
                 
                 ?>
