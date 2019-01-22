@@ -567,7 +567,7 @@ class cursoActions extends sfActions
            $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788491717300#{%22Pagina%22:%22199%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_6    = "Capítulo VI: ALMACENAMIENTO DE LA INFORMACIÓN";
            $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788491717300#{%22Pagina%22:%22219%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_7    = "Capítulo VII: SISTEMAS DE GESTIÓN DE LA INFORMACIÓN";       
+           $this->title_7    = "Capítulo VII: SISTEMAS DE GESTIÓN DE LA INFORMACIÓN";
        }elseif ($this->idcurso == 256) {
            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490775592#{%22Pagina%22:%229%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_0    = "PRESENTACIÓN";
@@ -649,7 +649,7 @@ class cursoActions extends sfActions
            $this->capitulo_10 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%22257%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_10    = "Capítulo X: SALUD ORAL COMUNITARIA";
         }
-    }    
+    }
 	//
     public function executeMostrarBibliografia()
     {
@@ -1698,8 +1698,44 @@ class cursoActions extends sfActions
                                         712=>array('book'=>'9788448608569', 'license'=>'QZ7ZSRM6', 'type'=>'S'),
                                         713=>array('book'=>'9788448608569', 'license'=>'5XA7LFY6', 'type'=>'S'),
                                         718=>array('book'=>'9788448608569', 'license'=>'G6KFAYN6', 'type'=>'S'),
+                                ),    
+
+                            250=>array(
+                                       562=>array('book'=>'9788448612078', 'license'=>'W6UR1GB6', 'type'=>'T'),
+                                       722=>array('book'=>'9788448612078', 'license'=>'4KLBWQC6', 'type'=>'T'),
+
+                                       716=>array('book'=>'9788448612078', 'license'=>'LCNCB8H6', 'type'=>'S'),
+                                       722=>array('book'=>'9788448612078', 'license'=>'F2ZPEVQ6', 'type'=>'S'),
 
                                 ),
+
+                            254=>array(
+                                       562=>array('book'=>'9788448615369', 'license'=>'EFWBM7A6', 'type'=>'T'),
+                                       723=>array('book'=>'9788448615369', 'license'=>'Q5ZFXC26', 'type'=>'T'),
+
+                                       720=>array('book'=>'9788448615369', 'license'=>'8FD23N56', 'type'=>'S'),
+                                       721=>array('book'=>'9788448615369', 'license'=>'P2W3DUW6', 'type'=>'S'),
+
+
+                                ),
+
+                            260=>array(
+                                       562=>array('book'=>'9788448612078', 'license'=>'9BVWY4S6', 'type'=>'T'),
+                                       724=>array('book'=>'9788448612078', 'license'=>'A7JJMH36', 'type'=>'T'),
+
+                                       720=>array('book'=>'9788448612078', 'license'=>'NSWVL5X6', 'type'=>'S'),
+                                       721=>array('book'=>'9788448612078', 'license'=>'FECGM9V6', 'type'=>'S'),
+
+                                ),
+
+                            258=>array(
+                                       562=>array('book'=>'9788448615369', 'license'=>'HSUH8XU6', 'type'=>'T'),
+                                       725=>array('book'=>'9788448615369', 'license'=>'K6P5XQG6', 'type'=>'T'),
+
+                                       728=>array('book'=>'9788448615369', 'license'=>'Y612EFR6', 'type'=>'S'),
+                                       729=>array('book'=>'9788448615369', 'license'=>'NXA25AC6', 'type'=>'S'),
+
+                                ),                    
       );
 
       return !empty($array_return[$id_curso][$id_user])?$array_return[$id_curso][$id_user]:false;
