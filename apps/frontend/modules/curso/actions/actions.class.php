@@ -648,6 +648,23 @@ class cursoActions extends sfActions
            $this->title_9    = "Capítulo IX: INDICADORES DE SALUD ORAL";
            $this->capitulo_10 = "https://visor.sintesis.com/Ebook/9788490778180#{%22Pagina%22:%22257%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_10    = "Capítulo X: SALUD ORAL COMUNITARIA";
+       }elseif ($this->idcurso == 261) {
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%229%22}";
+           $this->title_0    = "PRESENTACIÓN";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%2211%22}";
+           $this->title_1    = "Capítulo I: INTRODUCCIÓN A LOS SISTEMAS INFORMÁTICOS";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%2229%22}";
+           $this->title_2    = "Capítulo II: MODOS DE INSTALACIÓN DE SISTEMAS OPERATIVOS";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%2255%22}";
+           $this->title_3    = "Capítulo III: INSTALACIÓN DE LINUX";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%22103%22}";
+           $this->title_4    = "Capítulo IV: INSTALACIÓN DE WINDOWS SERVER";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%22155%22}";
+           $this->title_5    = "Capítulo V: ADMINISTRACIÓN DE USUARIOS Y GRUPOS EN LINUX";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%22205%22}";
+           $this->title_6    = "Capítulo VI: ADMINISTRACIÓN DE USUARIOS Y GRUPOS EN WINDOWS SERVER";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%22247%22}";
+           $this->title_7    = "Capítulo VII: COMPARTICIÓN DE RECURSOS EN REDES MIXTAS";
         }
     }
 	//
@@ -1055,8 +1072,8 @@ class cursoActions extends sfActions
 
         $response = curl_exec($curl);
 
-        /*echo $response;
-        exit();*/
+        //echo $response;
+        //exit();
 
         $err = curl_error($curl);
 
@@ -1702,33 +1719,33 @@ class cursoActions extends sfActions
 
                             250=>array(
                                        562=>array('book'=>'9788448612078', 'license'=>'W6UR1GB6', 'type'=>'T'),
-                                       722=>array('book'=>'9788448612078', 'license'=>'4KLBWQC6', 'type'=>'T'),
+                                       722=>array('book'=>'9788448612078', 'license'=>'CNC5S196', 'type'=>'T'),
 
                                        716=>array('book'=>'9788448612078', 'license'=>'LCNCB8H6', 'type'=>'S'),
-                                       722=>array('book'=>'9788448612078', 'license'=>'F2ZPEVQ6', 'type'=>'S'),
+                                       717=>array('book'=>'9788448612078', 'license'=>'F5FF7NL6', 'type'=>'S'),
 
                                 ),
 
                             254=>array(
                                        562=>array('book'=>'9788448615369', 'license'=>'EFWBM7A6', 'type'=>'T'),
-                                       723=>array('book'=>'9788448615369', 'license'=>'Q5ZFXC26', 'type'=>'T'),
+                                       723=>array('book'=>'9788448615369', 'license'=>'6K6ZXHT6', 'type'=>'T'),
 
                                        720=>array('book'=>'9788448615369', 'license'=>'8FD23N56', 'type'=>'S'),
-                                       721=>array('book'=>'9788448615369', 'license'=>'P2W3DUW6', 'type'=>'S'),
+                                       721=>array('book'=>'9788448615369', 'license'=>'MUJMPVR6', 'type'=>'S'),
 
 
                                 ),
 
                             260=>array(
                                        562=>array('book'=>'9788448612078', 'license'=>'9BVWY4S6', 'type'=>'T'),
-                                       724=>array('book'=>'9788448612078', 'license'=>'A7JJMH36', 'type'=>'T'),
+                                       724=>array('book'=>'9788448612078', 'license'=>'LRU8BQA6', 'type'=>'T'),
 
-                                       720=>array('book'=>'9788448612078', 'license'=>'NSWVL5X6', 'type'=>'S'),
-                                       721=>array('book'=>'9788448612078', 'license'=>'FECGM9V6', 'type'=>'S'),
+                                       726=>array('book'=>'9788448612078', 'license'=>'NSWVL5X6', 'type'=>'S'),
+                                       727=>array('book'=>'9788448612078', 'license'=>'FECGM9V6', 'type'=>'S'),
 
                                 ),
 
-                            258=>array(
+                            268=>array(
                                        562=>array('book'=>'9788448615369', 'license'=>'HSUH8XU6', 'type'=>'T'),
                                        725=>array('book'=>'9788448615369', 'license'=>'K6P5XQG6', 'type'=>'T'),
 
