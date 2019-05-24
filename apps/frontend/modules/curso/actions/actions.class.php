@@ -665,6 +665,25 @@ class cursoActions extends sfActions
            $this->title_6    = "Capítulo VI: ADMINISTRACIÓN DE USUARIOS Y GRUPOS EN WINDOWS SERVER";
            $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%22247%22}";
            $this->title_7    = "Capítulo VII: COMPARTICIÓN DE RECURSOS EN REDES MIXTAS";
+        }elseif ($this->idcurso == 249) {
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_0    = "PRESENTACIÓN";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_1    = "Capítulo I: ORGANIZACIÓN DE LAS ACTIVIDADES EN LA CLÍNICA DENTAL";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%2235%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_2    = "Capítulo II: APLICACIÓN DE PROCESOS PARA LA RECEPCIÓN DE PACIENTES";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%2257%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_3    = "Capítulo III: GESTIÓN DE FICHEROS DE PACIENTES";
+           $this->capitulo_4 = " https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%2275%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_4    = "Capítulo IV: GESTIÓN DE LA DOCUMENTACIÓN CLÍNICA";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%22105%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_5    = "Capítulo V: REALIZACIÓN DE LA PREPARACIÓN Y PUESTA EN MARCHA DE EQUIPOS";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%22131%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_6    = "Capítulo VI: ORGANIZACIÓN DE LA ADQUISICIÓN Y ALMACENAMIENTO DE MATERIAL";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%22155%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_7    = "Capítulo VII: APLICACIÓN DE NORMAS DE PRL Y PROTECCIÓN AMBIENTAL";
+           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%22173%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_8    = "RECEPCIÓN Y LOGÍSTICA EN LA CLÍNICA DENTAL";
         }
     }
 	//
