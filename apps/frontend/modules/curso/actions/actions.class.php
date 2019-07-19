@@ -341,6 +341,12 @@ class cursoActions extends sfActions
        $this->title_11    = "";
        $this->capitulo_12 = "";
        $this->title_12    = "";
+       $this->capitulo_13 = "";
+       $this->title_13    = "";
+       $this->capitulo_14 = "";
+       $this->title_14    = "";
+       $this->capitulo_15 = "";
+       $this->title_15    = "";
 
        $c = new Criteria();
        $c->add(CursoPeer::ID, $this->idcurso);
@@ -516,25 +522,25 @@ class cursoActions extends sfActions
            $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788490778586#{%22Pagina%22:%22279%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "Capítulo VIII: IDENTIFICACIÓN DE FACTORES DE RIESGO EN PACIENTES ESPECIALES";
        }elseif ($this->idcurso == 253) {
-           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_0    = "PRÓLOGO";
-           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_1    = "Capítulo I: LA INICIATIVA EMPRENDEDORA";
-           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_2    = "Capítulo II: LA EMPRESA Y SU ENTORNO";
-           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2285%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2285%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_3    = "Capítulo III: CREACIÓN DE UNA EMPRESA";
-           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_4    = "Capítulo IV: PUESTA EN MARCHA DE UNA EMPRESA";
-           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22135%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22135%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_5    = "Capítulo V: EL PLAN DE INVERSIÓN Y FINANCIACIÓN";
-           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_6    = "Capítulo VI: LA CONTABILIDAD EN LA EMPRESA";
-           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_7    = "Capítulo VII: GESTIÓN ADMINISTRATIVA DE UNA EMPRESA";
-           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "Capítulo VIII: LA FISCALIDAD";
-           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_9    = "Capítulo IX: EL PLAN DE EMPRESA";
        }elseif ($this->idcurso == 257) {
            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788491717324#{%22Pagina%22:%229%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
@@ -588,25 +594,25 @@ class cursoActions extends sfActions
            $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788490775592#{%22Pagina%22:%22175%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "Capítulo VIII: LAS BASES DE DATOS OBJETO-RELACIONALES";
        }elseif ($this->idcurso == 259) {
-           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_0    = "PRÓLOGO";
-           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_1    = "Capítulo I: LA INICIATIVA EMPRENDEDORA";
-           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_2    = "Capítulo II: LA EMPRESA Y SU ENTORNO";
-           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2285%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2285%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_3    = "Capítulo III: CREACIÓN DE UNA EMPRESA";
-           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_4    = "Capítulo IV: PUESTA EN MARCHA DE UNA EMPRESA";
-           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22135%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22135%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_5    = "Capítulo V: EL PLAN DE INVERSIÓN Y FINANCIACIÓN";
-           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_6    = "Capítulo VI: LA CONTABILIDAD EN LA EMPRESA";
-           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_7    = "Capítulo VII: GESTIÓN ADMINISTRATIVA DE UNA EMPRESA";
-           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "Capítulo VIII: LA FISCALIDAD";
-           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_9    = "Capítulo IX: EL PLAN DE EMPRESA";
        }elseif ($this->idcurso == 245) {
            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
@@ -684,7 +690,60 @@ class cursoActions extends sfActions
            $this->title_7    = "Capítulo VII: APLICACIÓN DE NORMAS DE PRL Y PROTECCIÓN AMBIENTAL";
            $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%22173%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "RECEPCIÓN Y LOGÍSTICA EN LA CLÍNICA DENTAL";
+        }elseif($this->idcurso == 263){
+            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_0    = "PRESENTACIÓN";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_1    = "Capítulo I: INTRODUCCIÓN Y CONCEPTOS BÁSICOS";
+           $this->capitulo_2 = " https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%2231%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_2    = "Capítulo II: FICHEROS";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%2269%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_3    = "Capítulo III: BASES DE DATOS RELACIONALES";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22105%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_4    = "Capítulo IV: CORRESPONDENCIA OBJETO-RELACIONAL";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22161%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_5    = "Capítulo V: BASES DE DATOS DE OBJETOS";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_6    = "Capítulo VI: XML";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22237%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_7    = "Capítulo VII: BASES DE DATOS DE XML";
+           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22271%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_8    = "Capítulo VIII: COMPONENTES PARA EL ACCESO A DATOS";
+        }elseif($this->idcurso == 242){
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_0    = "PRESENTACIÓN";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_1    = "Capítulo I: INTRODUCCIÓN A LA PROGRAMACIÓN";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_2    = "Capítulo II: PROGRAMACIÓN ORIENTADA A OBJETOS";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2255%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_3    = "Capítulo II: LENGUAJES DE PROGRAMACIÓN";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2279%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_4    = "Capítulo IV: ELEMENTOS DE UN PROGRAMA INFORMÁTICO";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2297%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_5    = "Capítulo V: ESTRUCTURAS DE CONTROL";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22113%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_6    = "Capítulo VI: CLASES Y UTILIZACIÓN DE OBJETOS";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22129%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_7    = "Capítulo VII: CLASES AVANZADAS";
+           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22147%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_8    = "Capítulo VIII: ESTRUCTURAS DE ALMACENAMIENTO";
+           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_9    = "Capítulo IX: COLECCIONES Y TIPOS ABSTRACTOS DE DATOS";
+           $this->capitulo_10 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22189%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_10    = "Capítulo X: CONTROL Y MANEJO DE EXCEPCIONES";
+           $this->capitulo_11 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22203%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_11    = "Capítulo XI: RECURSIVIDAD Y COMPLEJIDAD ALGORÍTMICA";
+           $this->capitulo_12 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22217%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_12    = "Capítulo XII: LECTURA Y ESCRITURA DE INFORMACIÓN";
+           $this->capitulo_13 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_13    = "Capítulo XIII: MANTENIMIENTO DE LA PERSISTENCIA";
+           $this->capitulo_14 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22273%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_14    = "Capítulo XIV: GESTIÓN DE BASE DE DATOS RELACIONALES";
+           $this->capitulo_15 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22289%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->title_15    = "Capítulo XV: CREACIÓN DE INTERFACES GRÁFICAS";
         }
+        
     }
 	//
     public function executeMostrarBibliografia()

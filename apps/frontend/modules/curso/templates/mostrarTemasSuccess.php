@@ -177,7 +177,13 @@ window.onload = function() {
                     $ruta_libro = '&ruta='.urlencode($capitulo_11);
                elseif($sco->getTitle() === $title_12 && $capitulo_12):
                     $ruta_libro = '&ruta='.urlencode($capitulo_12);
-                endif; 
+               elseif($sco->getTitle() === $title_13 && $capitulo_13):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_13);
+               elseif($sco->getTitle() === $title_14 && $capitulo_14):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_14);
+               elseif($sco->getTitle() === $title_15 && $capitulo_15):
+                    $ruta_libro = '&ruta='.urlencode($capitulo_15);
+               endif; 
                 
                 ?>
                 <?php 
