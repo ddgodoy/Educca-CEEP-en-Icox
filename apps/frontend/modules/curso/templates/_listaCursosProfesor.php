@@ -1,6 +1,6 @@
-<?php use_helper('Text') ?>
-<?php if ($cursos || $paquetes): ?>
-  <div class="tit_box_cursos"><h2 class="titbox">Mis Cursos</h2></div>
+<?php use_helper('Text'); ?>
+<?php if ($cursos || $paquetes): ?>  
+   <div class="tit_box_cursos"><h2 class="titbox">Mis Cursos</h2></div>
   <div class="cont_box_grande">
     <div class="nombrescol">
         <table class="tablacursos" cellspacing="0">

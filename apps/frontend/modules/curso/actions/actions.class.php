@@ -32,7 +32,7 @@ class cursoActions extends sfActions
   	}
 
       //Consulta fecha primer y ultima conexion al curso
-       /*$c = new Criteria();
+       $c = new Criteria();
        $c->add(Rel_usuario_rol_cursoPeer::ID_USUARIO, $this->getUser()->getAnyId());
        $c->add(Rel_usuario_rol_cursoPeer::ID_CURSO, $this->idcurso);
        $handler = Rel_usuario_rol_cursoPeer::doSelectOne($c);
@@ -54,6 +54,7 @@ class cursoActions extends sfActions
               }
             }
 
+          
             //actualizar fecha primer y ultima conexion al curso
             $con = Propel::getConnection();
             $c1 = new Criteria();
@@ -64,12 +65,13 @@ class cursoActions extends sfActions
             $c2->add(Rel_usuario_rol_cursoPeer::FECHA_PRIMER_CONEX, $fechaPrimerConex);
             $c2->add(Rel_usuario_rol_cursoPeer::FECHA_ULTIMA_CONEX, $fechaUltimaConex);
             BasePeer::doUpdate($c1, $c2, $con);
+          
 
        $this-> fecha_primer_conex = $fechaPrimerConex;
-       $this-> fecha_ultima_conex = $fechaUltimaConex;*/
+       $this-> fecha_ultima_conex = $fechaUltimaConex; 
+
+
 //FIN DE MI CAMBIO RK
-
-
 
   }
 
@@ -79,7 +81,8 @@ class cursoActions extends sfActions
     $c->addAscendingOrderByColumn(CursoPeer::ID);
 
     $this->cursos = CursoPeer::doSelect($c);
-    $this->forward404Unless($this->cursos);
+    $this->forward404Unless($this->cursos);     
+    
   }
 
    public function executeCalendario()
@@ -315,6 +318,9 @@ class cursoActions extends sfActions
        $this->getUser()->comprobarPermiso($this->idcurso);
        $this->is_alumno = $this->getUser()->hasCredential('alumno');
 
+       $capitulo_ = "";
+       $title_    = "";       
+
        $this->capitulo_0 = "";
        $this->title_0    = "";
        $this->capitulo_1 = "";
@@ -341,12 +347,6 @@ class cursoActions extends sfActions
        $this->title_11    = "";
        $this->capitulo_12 = "";
        $this->title_12    = "";
-       $this->capitulo_13 = "";
-       $this->title_13    = "";
-       $this->capitulo_14 = "";
-       $this->title_14    = "";
-       $this->capitulo_15 = "";
-       $this->title_15    = "";
 
        $c = new Criteria();
        $c->add(CursoPeer::ID, $this->idcurso);
@@ -366,15 +366,56 @@ class cursoActions extends sfActions
        $this->materia = $materia;
        $this->id_usuario = $this->getUser()->getAnyId();
 
-       $array_book = $this->getBookAndLicense($this->id_usuario, $this->idcurso);
+       //$array_book = $this->getBookAndLicense($this->id_usuario, $this->idcurso);
+
+       //Busqueda de Licencias Blink en base de datos
+       $d = new Criteria();
+       $d->add(Licencia_libroPeer::ID_USUARIO, $this->id_usuario);
+       $d->add(Licencia_libroPeer::ID_CURSO, $this->idcurso);       
+       $handler2 = Licencia_libroPeer::doSelectOne($d);
+
+       if ($handler2)
+       {
+           $licenciasLibro = $handler2->getBook();
+           $licenciasLicence = $handler2->getLicence();
+           $licenciasType = $handler2->getType();    
+           
+
+           $this-> libro = $licenciasLibro;
+           $this-> licencia = $licenciasLicence;
+           $this-> type = $licenciasType;
+        }       
+
+
+       //Busqueda de Licencias Sintesis en base de datos
+       $e = new Criteria();
+       $e->add(Licencia_sintesisPeer::ID_CURSO, $this->idcurso);       
+       $handler3 = Licencia_sintesisPeer::doSelect($e);
+
+       $this-> sintesis = $handler3;
+
+       /* if ($handler3)
+       {
+           $licenciasLibro = $handler2->getBook();
+           $licenciasLicence = $handler2->getLicence();
+           $licenciasType = $handler2->getType();    
+           
+
+           $this-> libro = $licenciasLibro;
+           $this-> licencia = $licenciasLicence;
+           $this-> type = $licenciasType;
+        }*/
 
        $this->url_libro = NULL;
 
-       if($array_book){
-           $this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license'], $array_book['type']);
+       if($handler2){
+           //$this->url_libro = $this->getUrlBlinkBook($array_book['book'],$array_book['license'], $array_book['type']);
+           $this->url_libro = $this->getUrlBlinkBook($this-> libro,$this-> licencia, $this-> type);
        }elseif($this->idcurso == 240){
            $this->url_libro = 'https://visor.sintesis.com/Ebook/9788490778562';
-       }elseif ($this->idcurso == 241) {
+       }
+
+       /*elseif ($this->idcurso == 241) {
            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%229%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_0    = "PRESENTACIÓN";
            $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
@@ -389,19 +430,25 @@ class cursoActions extends sfActions
            $this->title_5    = "Capítulo V: AYUDA AL TRATAMIENTO DE ORTODONCIA";
            $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490778562#{%22Pagina%22:%22183%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_6    = "Capítulo VI: ADAPTACIÓN Y CONSERVACIÓN DE LA APARATOLOGÍA EN ORTODONCIA";
-       }elseif ($this->idcurso == 243) {
+       } elseif ($this->idcurso == 243) {
            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_0    = "PRESENTACIÓN";
+
            $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_1    = "Capítulo I: LA CARIES Y SU TRATAMIENTO: OBTURACIÓN DENTAL";
+
            $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%2253%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_2    = "Capítulo II: TRATAMIENTO DE CONDUCTOS RADICULARES";
+
            $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%2283%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_3    = "Capítulo III: TINCIONES DENTALES INTRÍNSECAS";
+
            $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_4    = "Capítulo IV: PERIODONCIA";
+
            $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%22157%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_5    = "Capítulo V: EXODONCIA Y CIRUGÍA BUCAL";
+
            $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490778197#{%22Pagina%22:%22203%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_6    = "Capítulo VI: IMPLANTES DENTALES";
        }elseif ($this->idcurso == 246) {
@@ -522,25 +569,25 @@ class cursoActions extends sfActions
            $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788490778586#{%22Pagina%22:%22279%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "Capítulo VIII: IDENTIFICACIÓN DE FACTORES DE RIESGO EN PACIENTES ESPECIALES";
        }elseif ($this->idcurso == 253) {
-           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_0    = "PRÓLOGO";
-           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_1    = "Capítulo I: LA INICIATIVA EMPRENDEDORA";
-           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_2    = "Capítulo II: LA EMPRESA Y SU ENTORNO";
-           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2285%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2285%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_3    = "Capítulo III: CREACIÓN DE UNA EMPRESA";
-           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_4    = "Capítulo IV: PUESTA EN MARCHA DE UNA EMPRESA";
-           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22135%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22135%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_5    = "Capítulo V: EL PLAN DE INVERSIÓN Y FINANCIACIÓN";
-           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_6    = "Capítulo VI: LA CONTABILIDAD EN LA EMPRESA";
-           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_7    = "Capítulo VII: GESTIÓN ADMINISTRATIVA DE UNA EMPRESA";
-           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "Capítulo VIII: LA FISCALIDAD";
-           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_9    = "Capítulo IX: EL PLAN DE EMPRESA";
        }elseif ($this->idcurso == 257) {
            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788491717324#{%22Pagina%22:%229%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
@@ -594,25 +641,25 @@ class cursoActions extends sfActions
            $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788490775592#{%22Pagina%22:%22175%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "Capítulo VIII: LAS BASES DE DATOS OBJETO-RELACIONALES";
        }elseif ($this->idcurso == 259) {
-           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_0    = "PRÓLOGO";
-           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_1    = "Capítulo I: LA INICIATIVA EMPRENDEDORA";
-           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_2    = "Capítulo II: LA EMPRESA Y SU ENTORNO";
-           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%2285%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%2285%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_3    = "Capítulo III: CREACIÓN DE UNA EMPRESA";
-           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22117%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_4    = "Capítulo IV: PUESTA EN MARCHA DE UNA EMPRESA";
-           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22135%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22135%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_5    = "Capítulo V: EL PLAN DE INVERSIÓN Y FINANCIACIÓN";
-           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_6    = "Capítulo VI: LA CONTABILIDAD EN LA EMPRESA";
-           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_7    = "Capítulo VII: GESTIÓN ADMINISTRATIVA DE UNA EMPRESA";
-           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "Capítulo VIII: LA FISCALIDAD";
-           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/0000000000900#{%22Pagina%22:%22239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
+           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/9788490777862#{%22Pagina%22:%22239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_9    = "Capítulo IX: EL PLAN DE EMPRESA";
        }elseif ($this->idcurso == 245) {
            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788490778173#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
@@ -671,7 +718,7 @@ class cursoActions extends sfActions
            $this->title_6    = "Capítulo VI: ADMINISTRACIÓN DE USUARIOS Y GRUPOS EN WINDOWS SERVER";
            $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788491718291#{%22Pagina%22:%22247%22}";
            $this->title_7    = "Capítulo VII: COMPARTICIÓN DE RECURSOS EN REDES MIXTAS";
-        }elseif ($this->idcurso == 249) {
+       }elseif ($this->idcurso == 249) {
            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_0    = "PRESENTACIÓN";
            $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
@@ -690,60 +737,8 @@ class cursoActions extends sfActions
            $this->title_7    = "Capítulo VII: APLICACIÓN DE NORMAS DE PRL Y PROTECCIÓN AMBIENTAL";
            $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788491718468#{%22Pagina%22:%22173%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
            $this->title_8    = "RECEPCIÓN Y LOGÍSTICA EN LA CLÍNICA DENTAL";
-        }elseif($this->idcurso == 263){
-            $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%2211%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_0    = "PRESENTACIÓN";
-           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_1    = "Capítulo I: INTRODUCCIÓN Y CONCEPTOS BÁSICOS";
-           $this->capitulo_2 = " https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%2231%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_2    = "Capítulo II: FICHEROS";
-           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%2269%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_3    = "Capítulo III: BASES DE DATOS RELACIONALES";
-           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22105%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_4    = "Capítulo IV: CORRESPONDENCIA OBJETO-RELACIONAL";
-           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22161%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_5    = "Capítulo V: BASES DE DATOS DE OBJETOS";
-           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22193%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_6    = "Capítulo VI: XML";
-           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22237%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_7    = "Capítulo VII: BASES DE DATOS DE XML";
-           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788491718819#{%22Pagina%22:%22271%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_8    = "Capítulo VIII: COMPONENTES PARA EL ACCESO A DATOS";
-        }elseif($this->idcurso == 242){
-           $this->capitulo_0 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2213%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_0    = "PRESENTACIÓN";
-           $this->capitulo_1 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2215%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_1    = "Capítulo I: INTRODUCCIÓN A LA PROGRAMACIÓN";
-           $this->capitulo_2 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2239%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_2    = "Capítulo II: PROGRAMACIÓN ORIENTADA A OBJETOS";
-           $this->capitulo_3 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2255%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_3    = "Capítulo II: LENGUAJES DE PROGRAMACIÓN";
-           $this->capitulo_4 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2279%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_4    = "Capítulo IV: ELEMENTOS DE UN PROGRAMA INFORMÁTICO";
-           $this->capitulo_5 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%2297%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_5    = "Capítulo V: ESTRUCTURAS DE CONTROL";
-           $this->capitulo_6 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22113%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_6    = "Capítulo VI: CLASES Y UTILIZACIÓN DE OBJETOS";
-           $this->capitulo_7 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22129%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_7    = "Capítulo VII: CLASES AVANZADAS";
-           $this->capitulo_8 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22147%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_8    = "Capítulo VIII: ESTRUCTURAS DE ALMACENAMIENTO";
-           $this->capitulo_9 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22167%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_9    = "Capítulo IX: COLECCIONES Y TIPOS ABSTRACTOS DE DATOS";
-           $this->capitulo_10 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22189%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_10    = "Capítulo X: CONTROL Y MANEJO DE EXCEPCIONES";
-           $this->capitulo_11 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22203%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_11    = "Capítulo XI: RECURSIVIDAD Y COMPLEJIDAD ALGORÍTMICA";
-           $this->capitulo_12 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22217%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_12    = "Capítulo XII: LECTURA Y ESCRITURA DE INFORMACIÓN";
-           $this->capitulo_13 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22245%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_13    = "Capítulo XIII: MANTENIMIENTO DE LA PERSISTENCIA";
-           $this->capitulo_14 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22273%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_14    = "Capítulo XIV: GESTIÓN DE BASE DE DATOS RELACIONALES";
-           $this->capitulo_15 = "https://visor.sintesis.com/Ebook/9788491718352#{%22Pagina%22:%22289%22,%22Vista%22:%22Indice%22,%22Busqueda%22:%22%22}";
-           $this->title_15    = "Capítulo XV: CREACIÓN DE INTERFACES GRÁFICAS";
-        }
-        
+       }*/
+
     }
 	//
     public function executeMostrarBibliografia()
@@ -777,12 +772,23 @@ class cursoActions extends sfActions
 	   $this->libros = LibroPeer::doSelect($c);
 
      $this->usuario =  UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
+    
+
+       $b = new Criteria();
+       $b->add(Licencia_libroPeer::ID_CURSO, $this->idcurso);       
+       $handler4 = Licencia_libroPeer::doSelect($b);
+       if ($handler4)
+       {
+       $this-> licencias = $handler4;
+       }
+
     }
 
+
    // Nombre del metodo: NuevoLibro()
-  // Añadida por: Santiago Martinez de la Riva
-  // Modificada por: Jacobo Chaquet. Pasa hacer 2 acciones nuevoLibro y guardarLibro
-  /* Descripcion: Genera la plantilla del nuevo libro
+   // Añadida por: Santiago Martinez de la Riva
+   // Modificada por: Jacobo Chaquet. Pasa hacer 2 acciones nuevoLibro y guardarLibro
+   /* Descripcion: Genera la plantilla del nuevo libro
   				  Puede recibir parametros:
 					  - idcurso y idalumno: si los recibe en su template no apareceran los select de estos // Nombre del metodo: GuardarLibro()
                       - Guarda un nuevo libro, que sera mostrado en la Bibliografia tanto de
@@ -1169,11 +1175,11 @@ class cursoActions extends sfActions
    * @param int $id_curso
    * @return array
    */
-  private function getBookAndLicense($id_user, $id_curso){
+ /* private function getBookAndLicense($id_user, $id_curso){
 
-      $array_return = array(
+        $array_return = array(
                             /*TECNICO CUIDADOS AUXILIARES ENFERMERIA*/
-                            197=>array(562=>array('book'=>'9788448612191', 'license'=>'RUJ62M39', 'type'=>'T'),
+            /*/*                197=>array(562=>array('book'=>'9788448612191', 'license'=>'RUJ62M39', 'type'=>'T'),
                                        634=>array('book'=>'9788448612191', 'license'=>'SU4WB4A9', 'type'=>'T'),
                                        635=>array('book'=>'9788448612191', 'license'=>'DYJVCN39', 'type'=>'S'),
                                        638=>array('book'=>'9788448612191', 'license'=>'N7J2XJ49', 'type'=>'S')),
@@ -1220,7 +1226,7 @@ class cursoActions extends sfActions
                                        638=>array('book'=>'9788448608569', 'license'=>'Q2PEJX69', 'type'=>'S')),
 
                             /*1º T. S. EN ADMINISTRACIÓN Y FINANZAS*/
-                            207=>array(562=>array('book'=>'9788448609740', 'license'=>'ZZQVJRN9', 'type'=>'T'),
+/*                            207=>array(562=>array('book'=>'9788448609740', 'license'=>'ZZQVJRN9', 'type'=>'T'),
                                        636=>array('book'=>'9788448609740', 'license'=>'65U3EFU9', 'type'=>'T'),
                                        639=>array('book'=>'9788448609740', 'license'=>'JR7T75S9', 'type'=>'S'),
                                        640=>array('book'=>'9788448609740', 'license'=>'FHEHW719', 'type'=>'S')),
@@ -1254,9 +1260,9 @@ class cursoActions extends sfActions
                                        636=>array('book'=>'9788448609726', 'license'=>'XTYFHQF9', 'type'=>'T'),
                                        639=>array('book'=>'9788448609726', 'license'=>'NAC8XQM9', 'type'=>'S'),
                                        640=>array('book'=>'9788448609726', 'license'=>'JUEYPPG9', 'type'=>'S')),
-
+*/
                             /*2º T. S. EN ADMINISTRACIÓN Y FINANZAS*/
-                            213=>array(562=>array('book'=>'9788448612252', 'license'=>'7G1Q8V99', 'type'=>'T'),
+  /*                          213=>array(562=>array('book'=>'9788448612252', 'license'=>'7G1Q8V99', 'type'=>'T'),
                                        637=>array('book'=>'9788448612252', 'license'=>'P4U9V869', 'type'=>'T'),
                                        641=>array('book'=>'9788448612252', 'license'=>'8RJFEPS9', 'type'=>'S'),
                                        642=>array('book'=>'9788448612252', 'license'=>'JMWXXN79', 'type'=>'S')),
@@ -1289,12 +1295,12 @@ class cursoActions extends sfActions
                             218=>array(562=>array('book'=>'9788448611972', 'license'=>'CXDF5RP9', 'type'=>'T'),
                                        637=>array('book'=>'9788448611972', 'license'=>'35SRVUN9', 'type'=>'T'),
                                        641=>array('book'=>'9788448611972', 'license'=>'Z1L6UN79', 'type'=>'S'),
-                                       642=>array('book'=>'9788448611972', 'license'=>'T6FK68Z9', 'type'=>'S')),
+                                       642=>array('book'=>'9788448611972', 'license'=>'T6FK68Z9', 'type'=>'S')),*/
 
                             // region Administración y Finanzas
                             //
                             //Comunicación y atención al cliente
-                            220=>array(45=>array('book'=>'9788448609740', 'license'=>'GYQS51710', 'type'=>'T'),
+  /*                          220=>array(45=>array('book'=>'9788448609740', 'license'=>'GYQS51710', 'type'=>'T'),
                                       636=>array('book'=>'9788448609740', 'license'=>'PYSE5QT6', 'type'=>'T'),
                                       663=>array('book'=>'9788448609740', 'license'=>'Y7HC38H6', 'type'=>'S'),
                                       664=>array('book'=>'9788448609740', 'license'=>'C3F6KY56', 'type'=>'S'),
@@ -1307,18 +1313,18 @@ class cursoActions extends sfActions
                                       694=>array('book'=>'9788448609740', 'license'=>'HTYL62Z6', 'type'=>'S'),
                                       699=>array('book'=>'9788448609740', 'license'=>'GW6GJA56', 'type'=>'S'),
                                       702=>array('book'=>'9788448609740', 'license'=>'44Q1AAC6', 'type'=>'S'),
-                                ),
+                                ),*/
 
                             //apoyo Comunicación y atención al cliente
-                            234=>array(
+  /*                          234=>array(
                                       687=>array('book'=>'9788448609740', 'license'=>'ZMUBTWQ6', 'type'=>'S'),
                                       688=>array('book'=>'9788448609740', 'license'=>'KCP2EM66', 'type'=>'S'),
                                       689=>array('book'=>'9788448609740', 'license'=>'VUA6EXX6', 'type'=>'S'),
                                       715=>array('book'=>'9788448609740', 'license'=>'8XU5L846', 'type'=>'S'),
-                                ),
+                                ),*/
 
                             //Gestión de la documentación jurídica y empresarial. GS.
-                            221=>array(626=>array('book'=>'9788448609702', 'license'=>'1ZDHC2D10', 'type'=>'T'),
+/*                            221=>array(626=>array('book'=>'9788448609702', 'license'=>'1ZDHC2D10', 'type'=>'T'),
                                        636=>array('book'=>'9788448609702', 'license'=>'54K9W7N6', 'type'=>'T'),
                                        663=>array('book'=>'9788448609702', 'license'=>'M7YANDH6', 'type'=>'S'),
                                        664=>array('book'=>'9788448609702', 'license'=>'BQ5CY576', 'type'=>'S'),
@@ -1332,19 +1338,19 @@ class cursoActions extends sfActions
                                        699=>array('book'=>'9788448609702', 'license'=>'G2K286B6', 'type'=>'S'),
                                        702=>array('book'=>'9788448609702', 'license'=>'Y5F4NNW6', 'type'=>'S'),
 
-                                ),
+                                ),*/
 
                             //apoyo Gestión de la documentación jurídica y empresarial. GS.
-                            235=>array(
+ /*                           235=>array(
                                        687=>array('book'=>'9788448609702', 'license'=>'CU48X1Y6', 'type'=>'S'),
                                        688=>array('book'=>'9788448609702', 'license'=>'35AXBUL6', 'type'=>'S'),
                                        689=>array('book'=>'9788448609702', 'license'=>'1ETUTFJ6', 'type'=>'S'),
                                        715=>array('book'=>'9788448609702', 'license'=>'ZW3E5XS6', 'type'=>'S'),
                                 ),
-
+*/
 
                             //Ingles
-                            222=>array(617=>array('book'=>'9788448187354', 'license'=>'3CRBGXY10', 'type'=>'T'),
+  /*                          222=>array(617=>array('book'=>'9788448187354', 'license'=>'3CRBGXY10', 'type'=>'T'),
                                        636=>array('book'=>'9788448187354', 'license'=>'LEGZ1FH10', 'type'=>'T'),
                                        663=>array('book'=>'9788448187354', 'license'=>'ULZDBM26', 'type'=>'S'),
                                        664=>array('book'=>'9788448187354', 'license'=>'9Y55EKA6', 'type'=>'S'),
@@ -1359,18 +1365,18 @@ class cursoActions extends sfActions
                                        702=>array('book'=>'9788448187354', 'license'=>'RY2LTBT6', 'type'=>'S'),
 
 
-                                ),
+                                ),*/
 
                             //apoyo Ingles
-                            236=>array(
+       /*                     236=>array(
                                        687=>array('book'=>'9788448187354', 'license'=>'8F2W6V76', 'type'=>'S'),
                                        688=>array('book'=>'9788448187354', 'license'=>'ZPSU6RW6', 'type'=>'S'),
                                        689=>array('book'=>'9788448187354', 'license'=>'C6XHXT66', 'type'=>'S'),
                                        715=>array('book'=>'9788448187354', 'license'=>'TSQZKKM6', 'type'=>'S'),
-                                ),
+                                ),*/
 
                             //Proceso Integral de la actividad comercial
-                            223=>array(626=>array('book'=>'9788448609689', 'license'=>'47ENEEC10', 'type'=>'T'),
+  /*                          223=>array(626=>array('book'=>'9788448609689', 'license'=>'47ENEEC10', 'type'=>'T'),
                                        636=>array('book'=>'9788448609689', 'license'=>'M3ZNTFQ6', 'type'=>'T'),
                                        663=>array('book'=>'9788448609689', 'license'=>'E7XJCFH6', 'type'=>'S'),
                                        664=>array('book'=>'9788448609689', 'license'=>'C1JHDNB6', 'type'=>'S'),
@@ -1385,18 +1391,18 @@ class cursoActions extends sfActions
                                        702=>array('book'=>'9788448609689', 'license'=>'MC3LHHD6', 'type'=>'S'),
 
 
-                                ),
+                                ),*/
 
                             //apoyo Proceso Integral de la actividad comercial
-                            238=>array(
+ /*                           238=>array(
                                        687=>array('book'=>'9788448609689', 'license'=>'8WSHX1B6', 'type'=>'S'),
                                        688=>array('book'=>'9788448609689', 'license'=>'B6CD6F86', 'type'=>'S'),
                                        689=>array('book'=>'9788448609689', 'license'=>'7P5BA7K6', 'type'=>'S'),
                                        715=>array('book'=>'9788448609689', 'license'=>'MMAYFY66', 'type'=>'S'),
-                                ),
+                                ),*/
 
                             //Ofimática y proceso de información
-                            224=>array(651=>array('book'=>'9788448191917', 'license'=>'2SXZA8K10', 'type'=>'T'),
+      /*                      224=>array(651=>array('book'=>'9788448191917', 'license'=>'2SXZA8K10', 'type'=>'T'),
                                        636=>array('book'=>'9788448191917', 'license'=>'RFFJM3W6', 'type'=>'T'),
                                        663=>array('book'=>'9788448191917', 'license'=>'G2HFFNA6', 'type'=>'S'),
                                        664=>array('book'=>'9788448191917', 'license'=>'6W6GX7D6', 'type'=>'S'),
@@ -1410,18 +1416,18 @@ class cursoActions extends sfActions
                                        699=>array('book'=>'9788448191917', 'license'=>'ETFCWES6', 'type'=>'S'),
                                        702=>array('book'=>'9788448191917', 'license'=>'E34SSFG6', 'type'=>'S'),
 
-                                ),
+                                ),*/
 
                             //apoyo Ofimática y proceso de información
-                            237=>array(
+    /*                        237=>array(
                                        687=>array('book'=>'9788448191917', 'license'=>'NEJBZET6', 'type'=>'S'),
                                        688=>array('book'=>'9788448191917', 'license'=>'RKQWDSF6', 'type'=>'S'),
                                        689=>array('book'=>'9788448191917', 'license'=>'L37RDKS6', 'type'=>'S'),
                                        715=>array('book'=>'9788448191917', 'license'=>'XFZLTPM6', 'type'=>'S'),
-                                ),
+                                ),*/
 
                             //Recursos humanos y responsabilidad social corporativa
-                            225=>array(626=>array('book'=>'9788448609726', 'license'=>'3CWLQWA10', 'type'=>'T'),
+/*                            225=>array(626=>array('book'=>'9788448609726', 'license'=>'3CWLQWA10', 'type'=>'T'),
                                        636=>array('book'=>'9788448609726', 'license'=>'APZ3WXC6', 'type'=>'T'),
                                        663=>array('book'=>'9788448609726', 'license'=>'STGTP876', 'type'=>'S'),
                                        664=>array('book'=>'9788448609726', 'license'=>'B7XJ1XK6', 'type'=>'S'),
@@ -1436,19 +1442,19 @@ class cursoActions extends sfActions
                                        702=>array('book'=>'9788448609726', 'license'=>'MVM3AYJ6', 'type'=>'S'),
 
                                 ),
-
+*/
                             //apoyo Recursos humanos y responsabilidad social corporativa
-                            239=>array(
+     /*                       239=>array(
                                        687=>array('book'=>'9788448609726', 'license'=>'3X2A1946', 'type'=>'S'),
                                        688=>array('book'=>'9788448609726', 'license'=>'CZRFYMS6', 'type'=>'S'),
                                        689=>array('book'=>'9788448609726', 'license'=>'S9NPSPP6', 'type'=>'S'),
-                                ),
+                                ),*/
                             // endregion Administración y Finanzas
 
                             //Técnico en Cuidados Auxiliares de Enfermería
 
                             // Técnicas Básicas de Enfermería 18/19
-                            226=>array( 629=>array('book'=>'9788448612191', 'license'=>'QE5VG6110', 'type'=>'T'),
+/*                            226=>array( 629=>array('book'=>'9788448612191', 'license'=>'QE5VG6110', 'type'=>'T'),
                                         652=>array('book'=>'9788448612191', 'license'=>'LSWSPQ510', 'type'=>'T'),
                                         634=>array('book'=>'9788448612191', 'license'=>'VD3UF6910', 'type'=>'T'),
                                         708=>array('book'=>'9788448612191', 'license'=>'FUB5TBC6', 'type'=>'T'),
@@ -1496,10 +1502,10 @@ class cursoActions extends sfActions
                                         713=>array('book'=>'9788448612191', 'license'=>'T7L7T2W6', 'type'=>'S'),
                                         714=>array('book'=>'9788448612191', 'license'=>'RQWGVLM6', 'type'=>'S'),
                                         718=>array('book'=>'9788448612191', 'license'=>'WU6V2ZR6', 'type'=>'S'),
-                                ),
+                                ),*/
 
                             //Higiene del medio hospitalario 18/19
-                            227=>array( 631=>array('book'=>'9788448609665', 'license'=>'X4HW21U10', 'type'=>'T'),
+/*                            227=>array( 631=>array('book'=>'9788448609665', 'license'=>'X4HW21U10', 'type'=>'T'),
                                         653=>array('book'=>'9788448609665', 'license'=>'RVM5XGX10', 'type'=>'T'),
                                         634=>array('book'=>'9788448609665', 'license'=>'U1MWCR96', 'type'=>'T'),
                                         708=>array('book'=>'9788448609665', 'license'=>'APU5GC86', 'type'=>'T'),
@@ -1547,10 +1553,10 @@ class cursoActions extends sfActions
                                         713=>array('book'=>'9788448609665', 'license'=>'WXZZXWG6', 'type'=>'S'),
                                         714=>array('book'=>'9788448609665', 'license'=>'5R6HZKE6', 'type'=>'S'),
                                         718=>array('book'=>'9788448609665', 'license'=>'HR6JBEQ6', 'type'=>'S'),
-                                ),
+                                ),*/
 
                             //Técnicas de ayuda Odontológica/Estomatológica 18/19
-                            229=>array( 629=>array('book'=>'9788448612092', 'license'=>'US1YHLY10', 'type'=>'T'),
+  /*                          229=>array( 629=>array('book'=>'9788448612092', 'license'=>'US1YHLY10', 'type'=>'T'),
                                         634=>array('book'=>'9788448612092', 'license'=>'GG3N7YS10', 'type'=>'T'),
                                         653=>array('book'=>'9788448612092', 'license'=>'SN8BFBF6', 'type'=>'T'),
                                         708=>array('book'=>'9788448612092', 'license'=>'2SMNVLQ6', 'type'=>'T'),
@@ -1597,10 +1603,10 @@ class cursoActions extends sfActions
                                         712=>array('book'=>'9788448612092', 'license'=>'NVWH1KZ6', 'type'=>'S'),
                                         713=>array('book'=>'9788448612092', 'license'=>'H2F3E9P6', 'type'=>'S'),
                                         718=>array('book'=>'9788448612092', 'license'=>'H8WK4SX6', 'type'=>'S'),
-                                ),
+                                ),*/
 
                             // Promoción de la salud 18/19
-                            230=>array( 649=>array('book'=>'9788448612054', 'license'=>'L13JMTB10', 'type'=>'T'),
+/*                            230=>array( 649=>array('book'=>'9788448612054', 'license'=>'L13JMTB10', 'type'=>'T'),
                                         634=>array('book'=>'9788448612054', 'license'=>'HKFQ3YL10', 'type'=>'T'),
                                         708=>array('book'=>'9788448612054', 'license'=>'HMKZ9EZ6', 'type'=>'T'),
                                         655=>array('book'=>'9788448612054', 'license'=>'1J7HPS66', 'type'=>'S'),
@@ -1744,11 +1750,11 @@ class cursoActions extends sfActions
                                         712=>array('book'=>'9788448611996', 'license'=>'3D4UYRA6', 'type'=>'S'),
                                         713=>array('book'=>'9788448611996', 'license'=>'B6J919V6', 'type'=>'S'),
                                         718=>array('book'=>'9788448611996', 'license'=>'7NPG38X6', 'type'=>'S'),
-                                ),
+                                ),*/
 
                             // Relaciones en el equipo de trabajo 18/19
-                            232=>array( 45=>array('book'=>'9788448608569', 'license'=>'TDFPJ2K10', 'type'=>'T'),
-                                        634=>array('book'=>'9788448608569', 'license'=>'U61EWY96', 'type'=>'T'),
+  /*                           232=>array( 45=>array('book'=>'9788448608569', 'license'=>'TDFPJ2K10', 'type'=>'T'),
+                                       634=>array('book'=>'9788448608569', 'license'=>'U61EWY96', 'type'=>'T'),
                                         708=>array('book'=>'9788448608569', 'license'=>'VF9TPKY6', 'type'=>'T'),
                                         655=>array('book'=>'9788448608569', 'license'=>'CJT79UZ6', 'type'=>'S'),
                                         656=>array('book'=>'9788448608569', 'license'=>'NVL225D6', 'type'=>'S'),
@@ -1834,6 +1840,226 @@ class cursoActions extends sfActions
       );
 
       return !empty($array_return[$id_curso][$id_user])?$array_return[$id_curso][$id_user]:false;
+  }*/  
+
+  public function executeMostrarLicencias()
+    {
+      $this->idcurso = $this->getRequestParameter('idcurso');
+
+      $this->getUser()->comprobarPermiso($this->idcurso);
+
+      $this->getUser()->setCursoMenu($this->idcurso);
+      $c = new Criteria();
+      $c->add(CursoPeer::ID, $this->idcurso);
+      $this->curso = CursoPeer::doSelectOne($c);
+      $this->forward404Unless($this->curso);      
+
+      $usuario = $this->getUser();
+
+      $this->rol = $usuario->obtenerCredenciales();
+
+      $this->idcurso = $this->getRequestParameter('idcurso');
+
+      $c = new Criteria();
+      $c->add(CursoPeer::ID, $this->idcurso);
+      $this->curso = CursoPeer::doSelectOne($c);
+
+      $this->idmateria = $this->curso->getMateriaId();
+      $this->nombrecurso = $this->curso->getNombre();
+    
+      $this->usuario =  UsuarioPeer::retrieveByPk($this->getUser()->getAnyId());
+     
+
+       $b = new Criteria();
+       $b->add(Licencia_libroPeer::ID_CURSO, $this->idcurso);       
+       $handler4 = Licencia_libroPeer::doSelect($b);
+       if ($handler4)
+       {
+       $this-> licencias = $handler4;  
+       $this-> formulario = 'mcgraw';     
+       }else{
+        $this-> licencias = 0;
+        $this-> formulario = 'mcgraw';
+       }  
+
+
+       //Busqueda de Licencias Sintesis en base de datos
+       $e = new Criteria();
+       $e->add(Licencia_sintesisPeer::ID_CURSO, $this->idcurso);       
+       $handler3 = Licencia_sintesisPeer::doSelect($e);
+
+       if ($handler3)
+       {
+       $this-> sintesis = $handler3;
+       $this-> formulario = 'sintesis';
+       }else{
+        $this-> sintesis = 0;
+        $this-> formulario = 'sintesis';
+       }  
+
+
+    } 
+
+
+  public function executeNuevaLicencia()
+  {  
+
+    $u = new Criteria();
+    $usuariosSelect = UsuarioPeer::doSelect($u);
+    $this->usuarioId = 0;    
+    $usuarios = array();
+    foreach($usuariosSelect as $usuario_temp) {
+      $usuarios[$usuario_temp->getId()] = $usuario_temp->getNombreusuario();
+    }
+    $this->usuarios = $usuarios;
+
+
+    $this->idcurso = $this->getRequestParameter('idcurso');
+
+    if ($this->getRequest()->getMethod() == sfRequest::POST)
+     {
+        $c = new Criteria();
+        $c->add(CursoPeer::ID, $this->idcurso);
+        $this->curso = CursoPeer::doSelectOne($c);
+        $this->forward404Unless($this->curso);
+
+        //Se inserta la nueva licencia con los atributos correspondientes
+       $licencia = new Licencia_libro();
+       $licencia->setIdCurso($this->curso->getId());
+       $licencia->setIdUsuario($this->getRequestParameter('usuario'));
+       $licencia->setBook($this->getRequestParameter('book'));
+       $licencia->setLicence($this->getRequestParameter('licencia'));
+       $licencia->setType($this->getRequestParameter('type'));
+       $hoy = date("Y-m-d H:i:s");
+       $licencia->setCreatedAt($this-> hoy);
+       $licencia->save();
+       
+       $this->mostrarForm='No'; // para que en el template no vuelva ha salir el formulario
+       return;
+     }
+     else
+     {
+        $c = new Criteria();
+        $c->add(CursoPeer::ID, $this->idcurso);
+        $this->curso = CursoPeer::doSelectOne($c);
+        $this->forward404Unless($this->curso);
+     }    
+          
   }
+
+  public function executeModificarLicencia()
+  {
+      $this->getUser()->comprobarPermiso($this->getUser()->getCursoMenu());
+      $this->licencia = Licencia_libroPeer::retrieveByPk($this->getRequestParameter('idlicencia'));
+      $this->forward404Unless($this->licencia);   
+
+      if ($this->getRequest()->getMethod() == sfRequest::POST)
+       {
+        $con = Propel::getConnection();
+        try
+          {
+                $con->begin();
+                $this->licencia->setIdUsuario($this->getRequestParameter('idusuario'));
+                $this->licencia->setBook($this->getRequestParameter('book'));
+                $this->licencia->setLicence($this->getRequestParameter('licencia'));
+                $this->licencia->setType($this->getRequestParameter('type'));
+                $this->licencia->save($con);
+                $con->commit();
+          }
+        catch (Exception $e)
+          { $con->rollback();
+            throw $e;
+          }
+        $this->mostrarForm='No'; // para que en el template no vuelva ha salir el formulario
+        return;
+      } else { return;      }
+  }
+
+
+  public function executeEliminarLicencia() {
+
+      $this->getUser()->comprobarPermiso($this->getUser()->getCursoMenu());
+      $licencia = Licencia_libroPeer::retrieveByPk($this->getRequestParameter('idlicencia'));
+      $this->forward404Unless($licencia);
+      
+      $licencia->delete();
+      return $this->redirect('curso/mostrarLicencias?idcurso='.$this->getUser()->getCursoMenu());
+  }
+
+
+
+  public function executeNuevaLicenciaSintesis()
+  {  
+
+    $this->idcurso = $this->getRequestParameter('idcurso');
+
+     if ($this->getRequest()->getMethod() == sfRequest::POST)
+     {
+        $c = new Criteria();
+        $c->add(CursoPeer::ID, $this->idcurso);
+        $this->curso = CursoPeer::doSelectOne($c);
+        $this->forward404Unless($this->curso);
+
+        //Se inserta la nueva licencia con los atributos correspondientes
+       $licenciaSintesis = new Licencia_sintesis();
+       $licenciaSintesis->setIdCurso($this->curso->getId());
+       $licenciaSintesis->setTitle($this->getRequestParameter('title'));
+       $licenciaSintesis->setCapitulo($this->getRequestParameter('capitulo'));
+       $hoy = date("Y-m-d H:i:s");
+       $licenciaSintesis->setCreatedAt($this-> hoy);
+       $licenciaSintesis->save();
+       
+       $this->mostrarForm='No'; // para que en el template no vuelva ha salir el formulario
+       return;
+     }
+     else
+     {
+        $c = new Criteria();
+        $c->add(CursoPeer::ID, $this->idcurso);
+        $this->curso = CursoPeer::doSelectOne($c);
+        $this->forward404Unless($this->curso);
+     }
+     
+  }
+
+  public function executeModificarLicenciaSintesis()
+  {
+    $this->getUser()->comprobarPermiso($this->getUser()->getCursoMenu());
+    $this->licenciaSintesis = Licencia_sintesisPeer::retrieveByPk($this->getRequestParameter('idlicenciasintesis'));
+      $this->forward404Unless($this->licenciaSintesis);   
+
+      if ($this->getRequest()->getMethod() == sfRequest::POST)
+       {
+        $con = Propel::getConnection();
+        try
+          {
+                $con->begin();
+                $this->licenciaSintesis->setIdCurso($this->getRequestParameter('idcurso'));            
+                $this->licenciaSintesis->setTitle($this->getRequestParameter('title'));
+                $this->licenciaSintesis->setCapitulo($this->getRequestParameter('capitulo'));               
+                $this->licenciaSintesis->save($con);
+                $con->commit();
+          }
+        catch (Exception $e)
+          { $con->rollback();
+            throw $e;
+          }
+        $this->mostrarForm='No'; // para que en el template no vuelva ha salir el formulario
+        return;
+      } else { return;      }
+  }
+
+
+  public function executeEliminarLicenciaSintesis() {
+
+      $this->getUser()->comprobarPermiso($this->getUser()->getCursoMenu());
+      $licenciaSintesis = Licencia_sintesisPeer::retrieveByPk($this->getRequestParameter('idlicenciasintesis'));
+      $this->forward404Unless($licenciaSintesis);
+      
+      $licenciaSintesis->delete();
+      return $this->redirect('curso/mostrarLicencias?idcurso='.$this->getUser()->getCursoMenu());
+  }
+
+
 
 } // end class

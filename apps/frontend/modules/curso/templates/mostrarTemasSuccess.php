@@ -33,9 +33,9 @@ window.onload = function() {
           <?php if ($materia->getTipo() == 'segmentada'): ?>
             <?php
               $c = new Criteria();
-        	    $c->add(TemaPeer::ID_MATERIA, $idmateria);
-        	    $c->addAscendingOrderByColumn(TemaPeer::NUMERO_TEMA);
-        	    $temas = TemaPeer::doSelect($c);
+              $c->add(TemaPeer::ID_MATERIA, $idmateria);
+              $c->addAscendingOrderByColumn(TemaPeer::NUMERO_TEMA);
+              $temas = TemaPeer::doSelect($c);
             ?>
             <?php foreach($temas as $tema): ?>
             <?php $fondo = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
@@ -55,9 +55,9 @@ window.onload = function() {
 
               <?php
                 $c = new Criteria();
-		            $c->add(Rel_usuario_temaPeer::ID_TEMA, $tema->getId());
-		            $c->add(Rel_usuario_temaPeer::ID_USUARIO, $sf_user->getAlumnoId());
-		            $RelTiempos = Rel_usuario_temaPeer::doSelectOne($c);
+                $c->add(Rel_usuario_temaPeer::ID_TEMA, $tema->getId());
+                $c->add(Rel_usuario_temaPeer::ID_USUARIO, $sf_user->getAlumnoId());
+                $RelTiempos = Rel_usuario_temaPeer::doSelectOne($c);
               ?>
 
               <td style="text-align: center; width: 20%;">
@@ -102,9 +102,9 @@ window.onload = function() {
           <?php if ($materia->getTipo() == 'compo'): ?>
             <?php
               $c = new Criteria();
-        	    $c->add(TemaPeer::ID_MATERIA, $idmateria);
-        	    $c->addAscendingOrderByColumn(TemaPeer::NUMERO_TEMA);
-        	    $temas = TemaPeer::doSelect($c);
+              $c->add(TemaPeer::ID_MATERIA, $idmateria);
+              $c->addAscendingOrderByColumn(TemaPeer::NUMERO_TEMA);
+              $temas = TemaPeer::doSelect($c);
             ?>
 
             <?php foreach($temas as $tema): ?>
@@ -138,10 +138,10 @@ window.onload = function() {
           <?php if ($materia->getTipo() == 'scorm1.2'): ?>
             <?php
               $c = new Criteria();
-        	    $c->add(Sco12Peer::ID_MATERIA, $idmateria);
-        	    $c->addAscendingOrderByColumn(Sco12Peer::ID);
-        	    $scos = Sco12Peer::DoSelect($c);
-        	    $total = 0;
+              $c->add(Sco12Peer::ID_MATERIA, $idmateria);
+              $c->addAscendingOrderByColumn(Sco12Peer::ID);
+              $scos = Sco12Peer::DoSelect($c);
+              $total = 0;
             ?>
             <?php foreach($scos as $sco): ?>
             <?php $fondo = (($i % 2 == 0))? "id=\"filarayada\"" : ""; ?>
@@ -151,7 +151,20 @@ window.onload = function() {
                 <?php 
                 if($sco->getTitle() === 'LIBRO' && $url_libro): 
                     $ruta_libro = '&ruta='.urlencode($url_libro);
-                elseif($sco->getTitle() === $title_0 && $capitulo_0):
+
+                    else:
+                    
+                         foreach($sintesis as $sintesi):
+
+                         if($sco->getTitle() === $sintesi->getTitle() && $sintesi->getCapitulo())
+                         {
+                                 $ruta_libro = '&ruta='.urlencode($sintesi->getCapitulo());
+                         }
+
+                         endforeach;
+                    
+
+               /* elseif($sco->getTitle() === $title_0 && $capitulo_0):
                     $ruta_libro = '&ruta='.urlencode($capitulo_0);
                 elseif($sco->getTitle() === $title_1 && $capitulo_1):
                     $ruta_libro = '&ruta='.urlencode($capitulo_1);
@@ -182,7 +195,8 @@ window.onload = function() {
                elseif($sco->getTitle() === $title_14 && $capitulo_14):
                     $ruta_libro = '&ruta='.urlencode($capitulo_14);
                elseif($sco->getTitle() === $title_15 && $capitulo_15):
-                    $ruta_libro = '&ruta='.urlencode($capitulo_15);
+                    $ruta_libro = '&ruta='.urlencode($capitulo_15);*/
+
                endif; 
                 
                 ?>
@@ -260,14 +274,14 @@ window.onload = function() {
         </table>
       </div>
 
-	    <div class="cursos">
-	        <table style="width: 100%;">
-	            <tr class="cont_fil">
-	                <td style="width: 50%; text-align: left; padding-left: 5px;"">
-	                <?php if ($materia->getTipo() == 'compo'): ?>
-	                  <div style="display: block; margin-top: 3px; margin-bottom: 3px;">
+      <div class="cursos">
+          <table style="width: 100%;">
+              <tr class="cont_fil">
+                  <td style="width: 50%; text-align: left; padding-left: 5px;"">
+                  <?php if ($materia->getTipo() == 'compo'): ?>
+                    <div style="display: block; margin-top: 3px; margin-bottom: 3px;">
                     Tiempo total invertido en el curso:
-	                  <strong>
+                    <strong>
                     <?php
 
                       $c = new Criteria();
@@ -330,22 +344,22 @@ window.onload = function() {
                       }
                       echo $texto_puntuacion;
                     ?>
-	                <?php else: ?>
-        	          <?php echo image_tag('nointentado.png'); ?> Tema no intentado.
-        					 	<?php echo image_tag('incompleto.png'); ?> Tema incompleto.
-        						<?php echo image_tag('finalizado.png'); ?> Tema finalizado.
-	                <?php endif; ?>
+                  <?php else: ?>
+                    <?php echo image_tag('nointentado.png'); ?> Tema no intentado.
+                    <?php echo image_tag('incompleto.png'); ?> Tema incompleto.
+                    <?php echo image_tag('finalizado.png'); ?> Tema finalizado.
+                  <?php endif; ?>
                         </td>
                         <td style="width: 50%; text-align: right; padding-right: 5px;">
                           <?php if ($materia->getTipo() == 'scorm1.2') {echo "Tiempo total invertido en el curso: <strong>$horas_t</strong> horas &nbsp; <strong>$minutos_t</strong> minutos &nbsp; <strong>$segundos_t</strong> segundos ";} ?>
                         </td>
-	            </tr>
-	        </table>
-	    </div>
+              </tr>
+          </table>
+      </div>
 
       <?php use_helper('volver'); ?>
       <br /><br />
-	    <?php if ($materia->getTipo() == 'compo'): ?>
+      <?php if ($materia->getTipo() == 'compo'): ?>
         <center>
         <table border='0' width='100%'>
           <tr>

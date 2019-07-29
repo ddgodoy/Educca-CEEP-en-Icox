@@ -491,12 +491,12 @@ class supervisorActions extends sfActions
 		$pdf->SetFont('', 'B', 9);
 
     // TAMAÑO MAXIMO = 267  267  267  267  267  267  267  267  267  267  267  267  267  267  267  267
-    $pdf->Cell(40, 6, " Nombre", 1, 0, 'L', 1); 
+    $pdf->Cell(37, 6, " Nombre", 1, 0, 'L', 1); 
     $pdf->Cell(18, 6, " DNI", 1, 0, 'L', 1);  
     $pdf->Cell(70, 6, "Tiempo dedicado al curso", 1, 0, 'C', 1);
     $pdf->Cell(90, 6, "Ejercicios realizados", 1, 0, 'C', 1);
     $pdf->Cell(13, 6, "Nota", 1, 0, 'C', 1);
-    $pdf->Cell(36, 6, "Primera Conexión", 1, 0, 'C', 1);
+    $pdf->Cell(48, 6, "Primer/Ult Conexión", 1, 0, 'C', 1);
    // $pdf->Cell(15, 6, "FUC", 1, 0, 'C', 1);
     $pdf->Ln();
 
@@ -509,7 +509,7 @@ class supervisorActions extends sfActions
       $nombre_alumno = ' '.$alumno->getApellidos().', '.$alumno->getNombre();
       if (strlen($nombre_alumno) > 28) {$nombre_alumno = substr($nombre_alumno, 0, 25).'...';} //Estaba en 60 anteriormente substr 0, 57
 
-      $pdf->Cell(40, 6, $nombre_alumno, 'LR', 0, 'L', $fill);  
+      $pdf->Cell(37, 6, $nombre_alumno, 'LR', 0, 'L', $fill);  
 
       $pdf->Cell(18, 6, $alumno->getDni(), 'LR', 0, 'L', $fill);  
       $tteoria     = $alumno->getTiempoTotalTeoria($curso->getId());	
@@ -536,6 +536,7 @@ class supervisorActions extends sfActions
 
       $pdf->Cell(13, 6, $nota_final, 'LR', 0, 'C', $fill);
 
+      
        //Consulta fecha primer y ultima conexion al curso
        $c = new Criteria();
        $c->add(Rel_usuario_rol_cursoPeer::ID_USUARIO, $alumno->getId());
@@ -544,14 +545,20 @@ class supervisorActions extends sfActions
        $fechaPrimerConex = $handler->getFechaPrimerConex();
        $fechaUltimaConex = $handler->getFechaUltimaConex();
 
-       $pdf->Cell(36, 6, $fechaPrimerConex, 'LR', 0, 'C', $fill);
-       //$pdf->Cell(15, 6, $fechaUltimaConex, 'LR', 0, 'L', $fill);
+       $fechaPrimerConexF = date("d/m/Y", strtotime($fechaPrimerConex));
+       $fechaUltimaConexF = date("d/m/Y H:i:s", strtotime($fechaUltimaConex));
+       //$fechaPrimerConex = date_format($fechaPrimerConex, 'Y-m-d H:i:s');
 
+       //$pdf->Cell(48, 6, $fechaPrimerConex.'-'.$fechaUltimaConex, 'LR', 0, 'L', $fill);
+       $pdf->Cell(48, 6, $fechaPrimerConexF.'-'.$fechaUltimaConexF, 'LR', 0, 'C', $fill);
+
+       //$pdf->Cell(15, 6, $fechaUltimaConex, 'LR', 0, 'L', $fill);
+      
 
       $pdf->Ln();
       $fill = !$fill;
     }
-    $pdf->Cell(267,0,'','T');
+    $pdf->Cell(276,0,'','T');
     $pdf->Ln();
     $pdf->Output("evaluacion_tripartita.pdf", "I");
     exit(); 

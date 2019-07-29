@@ -13,10 +13,9 @@
 
 <div id="miscursos_g">
   <div class="tit_box_mensajes">
-    <h2 class="titbox"><?php echo $curso->getNombre(120);?></h2>
+    <h2 class="titbox"><?php echo $curso->getNombre(120);?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
     <div style="display: flex; align-items: center; height: 30px; " align="right" > <?php echo 'Primer conex: '.$fecha_primer_conex.' / '.'fecha ultima conex: '.$fecha_ultima_conex;?> </div>
-  </div>
-  <div class="cont_box_correo">
+  </div> 
       <table class="tablaopciones">
 		<?php if ($curso->getMenuInfo()) : ?>
         <tr>

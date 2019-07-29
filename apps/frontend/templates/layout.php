@@ -48,7 +48,7 @@
 		  <div style="float:right;">
 	          <div id="header" style="background: #<?php echo $colortop; ?>"><table class="tablalogo" cellpadding="0" cellspacing="0">
 			  						<tr>
-									  <td width="185"><?php echo link_to(image_tag('logo-1.png', 'alt='.$nombrelms.' style="margin-left: 55px;"'), 'https://www.grupoceep.com',array('target'=>'_blanck')) ?></td>
+									  <td width="185" align="left"><?php echo link_to(image_tag('logo-223.png', 'alt='.$nombrelms.' style="margin-left: 55px;"'), 'https://www.grupoceep.com',array('target'=>'_blanck')) ?></td>
                                       <td width="337">&nbsp;</td>
                                       <td width="428"><?php echo image_tag('header_right.jpg', 'alt='.$nombrelms) ?></td>
 									</tr>
@@ -84,7 +84,7 @@
 	              </div> <!-- fin col3 -->
 	          </div>
                   <div style="margin-top: 10px; margin-bottom: 10px">
-                    <?php echo image_tag('footer.png') ?>
+                    <?php echo image_tag('footer2.png') ?>
                   </div>
           </div>
        </div>
